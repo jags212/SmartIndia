@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Hl72ZHh9eXg16tK0u06Xqsqx12h28W6zwWJWavGVpNRvq56QuPRkaZ6EVeW4HMZINfHZ7L1+Cig5DvXa9gWfGQ==",
+  "dgSpecHash": "G55yeI7Xdo93ocMpbtGJwqngWPXb39+Ztf48s1fCY2mAq2/T6fVW+0g+G/g/Bh95Ki8kRvHvecpU+PyTRT7/nA==",
   "success": true,
-  "projectFilePath": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\SmartIndia\\SmartIndia.RestAPI\\SmartIndia.RestAPI.csproj",
+  "projectFilePath": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\smart-india\\SmartIndia.RestAPI\\SmartIndia.RestAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Officail\\.nuget\\packages\\dapper\\2.0.35\\dapper.2.0.35.nupkg.sha512",
     "C:\\Users\\Officail\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.6\\microsoft.aspnetcore.authentication.jwtbearer.3.1.6.nupkg.sha512",

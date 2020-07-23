@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\SmartIndia\\SmartIndia.Data\\SmartIndia.Data.csproj": {}
+    "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\smart-india\\SmartIndia.Data\\SmartIndia.Data.csproj": {}
   },
   "projects": {
-    "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\SmartIndia\\SmartIndia.Data\\SmartIndia.Data.csproj": {
+    "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\smart-india\\SmartIndia.Data\\SmartIndia.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\SmartIndia\\SmartIndia.Data\\SmartIndia.Data.csproj",
+        "projectUniqueName": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\smart-india\\SmartIndia.Data\\SmartIndia.Data.csproj",
         "projectName": "SmartIndia.Data",
-        "projectPath": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\SmartIndia\\SmartIndia.Data\\SmartIndia.Data.csproj",
+        "projectPath": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\smart-india\\SmartIndia.Data\\SmartIndia.Data.csproj",
         "packagesPath": "C:\\Users\\Officail\\.nuget\\packages\\",
-        "outputPath": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\SmartIndia\\SmartIndia.Data\\obj\\",
+        "outputPath": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\smart-india\\SmartIndia.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Officail\\AppData\\Roaming\\NuGet\\NuGet.Config",
