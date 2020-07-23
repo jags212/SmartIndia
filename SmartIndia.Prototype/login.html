@@ -1,0 +1,193 @@
+﻿<!doctype html>
+<html lang="en">
+    
+<head>
+<!-- Required meta tags -->
+
+<meta charset="utf-8"/>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+<title>OCR</title>
+
+<link rel="icon" type="image/png" href="assets/img/favicon.png" />
+<!-- Vendors Min CSS -->
+<link rel="stylesheet" href="assets/css/vendors.min.css"/>
+<!-- Fontawesome CSS -->
+<link rel="stylesheet" href="assets/css/all.min.css">
+<!-- Style CSS -->
+<link rel="stylesheet" href="assets/css/style.css"/>
+<!-- Responsive CSS -->
+<link rel="stylesheet" href="assets/css/responsive.css"/>
+<!-- Custom CSS -->
+<link rel="stylesheet" href="assets/css/custom.css" />
+<!-- Country Code CSS -->
+<link rel="stylesheet" href="assets/css/intlTelInput.css" />
+
+<script>
+ function Loginvalidateform()
+ {
+	 var lemail = document.login.lemail.value;
+	 var lpassword = document.login.lpassword.value;
+     var reg = "";// /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+	 
+	 //Email
+	 if(lemail == null || lemail == "")
+	 {
+		 lemail.focus;
+		 document.getElementById('email_error').style.display = "inline-block";
+		 return false;
+	 }
+	 else
+	 {
+		 document.getElementById('email_error').style.display = "none";
+	 }
+	 if(reg.test(lemail) == false)
+	 {
+		 lemail.focus;
+		 document.getElementById('emailver_error').style.display = "inline-block";
+		 return false;
+	 }
+	 else
+	 {
+		 document.getElementById('emailver_error').style.display = "none";
+	 }
+	 
+	 //Password
+	 if(lpassword == null || lpassword == "")
+	 {
+		 lpassword.focus;
+		 document.getElementById('pass_error').style.display = "inline-block";
+		 return false;
+	 }
+	 else
+	 {
+		 document.getElementById('pass_error').style.display = "none";
+	 }
+ }
+</script>
+
+</head>
+
+
+    <body class="main-body">
+        <!-- Main Content Layout -->
+        
+    <!--Start Header Area-->
+    <div class="learn-main-content">
+      <div class="col-position">
+        <div id="black-topbar" class="hidden-xs noanimate" role="navigation" aria-label="Resources">
+           <div class="container" role="menubar">
+              <ul class="list-inline pull-right" role="menubar">
+                 <li role="none">
+                    <a role="menuitem" href="javascript:void(0);">Get App</a>
+                 </li>
+                 <li>
+                   <a role="menuitem" href="javascript:void(0);">Support</a>
+                 </li>
+              </ul>
+            </div>
+         </div>
+        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white border-bottom shadow-sm header-position">
+        
+           <div class="pull-left pull-left-width">
+              <a href="login.html">
+                 <img src="assets/img/logo.png" alt="OCR" />
+               </a>
+            </div>
+            <div class="pull-right">
+               <a class="btn btn-red" href="login.html">Sign In</a>
+            </div>   
+        </div>
+    </div>
+ 
+<!--End Header Area-->
+
+  <!-- Start Login Area -->
+    <div class="login-area">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="login-form">
+
+                    <h2>Sign In</h2>
+
+                    <form name="login">
+                        <div class="form-group cerror">
+                           <input type="text" id="lemail" class="form-control" name="email" placeholder="Email">
+                            <span class="label-title">
+                                <i class='bx bx-envelope'></i>
+                            </span>
+                        </div>
+                        <div id="email_error" class="cvalidation">Email requried!</div>
+                         <div id="emailver_error" class="cvalidation">Invalid Email!</div>
+                         
+                         <div class="clearfix"></div>
+                         
+                        <div class="form-group">
+                            <input type="password" id="lpassword" class="form-control" name="password" placeholder="Password">
+                            <span class="label-title">
+                                <i class='bx bx-lock'></i>
+                            </span>
+                            <span toggle="#lpassword" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                        </div>
+                        <div id="pass_error" class="cvalidation">Password is requried!</div>
+                         
+                         <div class="clearfix"></div>
+
+                        <div class="form-group">
+                            <div class="remember-forgot">
+                                <a href="forgot-password.html" class="forgot-password">Forgot password?</a>
+                            </div>
+                        </div>
+
+                        <a href="attendee-dashboard.html" class="login-btn" onClick="return Loginvalidateform()">Login</a>
+                        
+                       <!--<div class="text-center text-dark">
+                          <p class="ride-line"><span>or</span></p>
+			                 <p class="gap-items-2 mb-20">
+                               <a class="social-login-btn login-btn-google" href="javascript:void(0);">Sign in with Google</a>
+                               <a class="social-login-btn login-btn-facebook" href="javascript:void(0);">Sign in with Facebook</a>
+				             </p>	
+			            </div>-->
+            
+                        <p class="mb-0">Don’t have an account? <a href="register.html">Sign Up</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>  
+  <div class="clearfix"></div>
+<!-- End Login Area -->
+
+<!-- Start Footer Area -->
+
+   <footer class="footer">
+      <div class="container">
+        <span class="footer-text-muted">Copyright ©2020 OCR. All rights reserved. </span>
+      </div>
+    </footer>
+    
+<!-- End Footer Area -->
+   
+<!-- Footer Scripts -->
+<!-- Vendors Min JS -->
+<script src="assets/js/vendors.min.js"></script>
+<!-- Custom JS -->
+<script src="assets/js/custom.js"></script>
+<!-- Password visibile JS -->
+<script>
+  $(".toggle-password").click(function() {
+
+  $(this).toggleClass("fa-eye fa-eye-slash");
+  var input = $($(this).attr("toggle"));
+  if (input.attr("type") == "password") {
+    input.attr("type", "text");
+  } else {
+    input.attr("type", "password");
+  }
+});
+</script> 
+
+  </body>
+</html>

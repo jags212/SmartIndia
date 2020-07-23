@@ -1,0 +1,2 @@
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.Prototype\obj\Debug\SmartIndia.Prototype.csprojAssemblyReference.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.Prototype\obj\Debug\SmartIndia.Prototype.csproj.CoreCompileInputs.cache
