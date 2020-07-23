@@ -39,12 +39,12 @@
             <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white border-bottom shadow-sm header-position">
 
                 <div class="pull-left pull-left-width">
-                    <a href="index.html">
+                    <a asp-area="ManageUsers" asp-controller="Users" asp-action="Login">
                         <img src="~/assets/img/logo.png" alt="OCR" />
                     </a>
                 </div>
                 <div class="pull-right">
-                    <a class="btn btn-red" href="javascript:void(0);" data-toggle="modal" data-target="#ModalSignIn">Sign In</a>
+                    <a class="btn btn-red" asp-area="ManageUsers" asp-controller="Users" asp-action="Login">Sign In</a>
                 </div>
             </div>
         </div>
@@ -64,8 +64,7 @@
 
     <!-- End Footer Area -->
     <!-- Vendors Min JS -->
-    <script src="~/assets/js/vendors.min.js"></script>
-    <script src="~/assets/js/vendors.min.js"></script>
+    <script src="~/assets/js/vendors.min.js"></script> 
     <!-- jvectormap Min JS -->
     <script src="~/assets/js/jvectormap-1.2.2.min.js"></script>
     <!-- jvectormap World Mill JS -->
