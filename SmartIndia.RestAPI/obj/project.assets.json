@@ -8606,11 +8606,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\SmartIndia\\SmartIndia.RestAPI\\SmartIndia.RestAPI.csproj",
+      "projectUniqueName": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\smart-india\\SmartIndia.RestAPI\\SmartIndia.RestAPI.csproj",
       "projectName": "SmartIndia.RestAPI",
-      "projectPath": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\SmartIndia\\SmartIndia.RestAPI\\SmartIndia.RestAPI.csproj",
+      "projectPath": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\smart-india\\SmartIndia.RestAPI\\SmartIndia.RestAPI.csproj",
       "packagesPath": "C:\\Users\\Officail\\.nuget\\packages\\",
-      "outputPath": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\SmartIndia\\SmartIndia.RestAPI\\obj\\",
+      "outputPath": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\smart-india\\SmartIndia.RestAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Officail\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8626,8 +8626,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\SmartIndia\\SmartIndia.Data\\SmartIndia.Data.csproj": {
-              "projectPath": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\SmartIndia\\SmartIndia.Data\\SmartIndia.Data.csproj"
+            "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\smart-india\\SmartIndia.Data\\SmartIndia.Data.csproj": {
+              "projectPath": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\smart-india\\SmartIndia.Data\\SmartIndia.Data.csproj"
             }
           }
         }

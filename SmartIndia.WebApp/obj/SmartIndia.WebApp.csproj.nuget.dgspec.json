@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\SmartIndia\\SmartIndia.WebApp\\SmartIndia.WebApp.csproj": {}
+    "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\smart-india\\SmartIndia.WebApp\\SmartIndia.WebApp.csproj": {}
   },
   "projects": {
-    "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\SmartIndia\\SmartIndia.WebApp\\SmartIndia.WebApp.csproj": {
+    "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\smart-india\\SmartIndia.WebApp\\SmartIndia.WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\SmartIndia\\SmartIndia.WebApp\\SmartIndia.WebApp.csproj",
+        "projectUniqueName": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\smart-india\\SmartIndia.WebApp\\SmartIndia.WebApp.csproj",
         "projectName": "SmartIndia.WebApp",
-        "projectPath": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\SmartIndia\\SmartIndia.WebApp\\SmartIndia.WebApp.csproj",
+        "projectPath": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\smart-india\\SmartIndia.WebApp\\SmartIndia.WebApp.csproj",
         "packagesPath": "C:\\Users\\Officail\\.nuget\\packages\\",
-        "outputPath": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\SmartIndia\\SmartIndia.WebApp\\obj\\",
+        "outputPath": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\smart-india\\SmartIndia.WebApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Officail\\AppData\\Roaming\\NuGet\\NuGet.Config",

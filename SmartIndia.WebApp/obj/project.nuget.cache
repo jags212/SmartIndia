@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Da4jVRURsEVuUNkaXrAyqU4J8rpH96qg/sKPi/ufR+jQ/mgTxHhfrG9TQgI5N1+WcJDZuEDgpkT9BKTu053JTA==",
+  "dgSpecHash": "ijjTHcPy6FrLsS3iNvAXoOcXBp48op/GRe7JQsTYPi4S1zxGUDxB41F1esS/u6v2KPpBQ0GyuC7Bcj3KkiLcZQ==",
   "success": true,
-  "projectFilePath": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\SmartIndia\\SmartIndia.WebApp\\SmartIndia.WebApp.csproj",
+  "projectFilePath": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\smart-india\\SmartIndia.WebApp\\SmartIndia.WebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Officail\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Officail\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

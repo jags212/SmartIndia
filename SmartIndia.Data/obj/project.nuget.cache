@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sJeCVRZ/dm6PISSwY+Dkk/arnYbBO0TK/pThTuAeGjI0zWa+78OVydLpLWhR/8Kj2XD6iBLIIWogZnTXZEWg0g==",
+  "dgSpecHash": "GrXtzTrcqOzyWB+BwjtUwofzBIKIdPDjuDUMz5OcV7pH9EG5LN5xFFOG4M4kJ9LIQGeXC8oUkaEyM1amTljmwQ==",
   "success": true,
-  "projectFilePath": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\SmartIndia\\SmartIndia.Data\\SmartIndia.Data.csproj",
+  "projectFilePath": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\smart-india\\SmartIndia.Data\\SmartIndia.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Officail\\.nuget\\packages\\dapper\\2.0.35\\dapper.2.0.35.nupkg.sha512",
     "C:\\Users\\Officail\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
