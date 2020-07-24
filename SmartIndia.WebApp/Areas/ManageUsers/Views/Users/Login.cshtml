@@ -1,4 +1,4 @@
-﻿
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = "Login";
     Layout = "~/Views/Shared/_LayoutLogin.cshtml";
@@ -72,21 +72,15 @@
 
                     <div class="form-group">
                         <div class="remember-forgot">
-                            <a href="forgot-password.html" class="forgot-password">Forgot password?</a>
+                            <a asp-area="ManageUsers" asp-controller="Users" asp-action="ForgotPassword" class="forgot-password">Forgot password?</a>
                         </div>
                     </div>
 
                     <a href="attendee-dashboard.html" class="login-btn" onclick="Loginvalidateform();">Login</a>
-
-                    <!--<div class="text-center text-dark">
-                      <p class="ride-line"><span>or</span></p>
-                         <p class="gap-items-2 mb-20">
-                           <a class="social-login-btn login-btn-google" href="javascript:void(0);">Sign in with Google</a>
-                           <a class="social-login-btn login-btn-facebook" href="javascript:void(0);">Sign in with Facebook</a>
-                         </p>
-                    </div>-->
-
-                    <p class="mb-0">Don’t have an account? <a href="register.html">Sign Up</a></p>
+                    <p class="mb-0">
+                        Don’t have an account?
+                        <a asp-area="ManageUsers" asp-controller="Users" asp-action="SignUp">Sign Up</a>
+                    </p>
                 </form>
             </div>
         </div>
