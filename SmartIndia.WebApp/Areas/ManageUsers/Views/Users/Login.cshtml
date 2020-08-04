@@ -4,79 +4,37 @@
     Layout = "~/Views/Shared/_LayoutLogin.cshtml";
 }
 @section Scripts{
-    <script>
-        function Loginvalidateform() {
-            var lemail = document.login.lemail.value;
-            var lpassword = document.login.lpassword.value;
-            var reg = /^([A-Za-z0-9_\-\.])+\([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-
-            //Email
-            if (lemail == null || lemail == "") {
-                lemail.focus;
-                document.getElementById('email_error').style.display = "inline-block";
-                return false;
-            }
-            else {
-                document.getElementById('email_error').style.display = "none";
-            }
-            if (reg.test(lemail) == false) {
-                lemail.focus;
-                document.getElementById('emailver_error').style.display = "inline-block";
-                return false;
-            }
-            else {
-                document.getElementById('emailver_error').style.display = "none";
-            }
-
-            //Password
-            if (lpassword == null || lpassword == "") {
-                lpassword.focus;
-                document.getElementById('pass_error').style.display = "inline-block";
-                return false;
-            }
-            else {
-                document.getElementById('pass_error').style.display = "none";
-            }
-        }
-    </script>
+    <!-- Password visible JS -->
+    <script src="~/assets/js/password-visible.js"></script>
+    <!-- Custom Bootstrap Valiation JS -->
+    <script src="~/js/Common/custom-validate.js"></script>
+    <script src="~/js/UserRegistration/login-validate.js"></script>
 }
 <div class="login-area">
     <div class="d-table">
         <div class="d-table-cell">
             <div class="login-form">
-
                 <h2>Sign In</h2>
-
                 <form name="login">
                     <div class="form-group cerror">
-                        <input type="text" id="lemail" class="form-control" name="email" placeholder="Email">
+                        <input type="text" id="txtEmail" class="form-control" name="email" placeholder="Email" maxlength="60">
                         <span class="label-title">
                             <i class='bx bx-envelope'></i>
                         </span>
                     </div>
-                    <div id="email_error" class="cvalidation">Email requried!</div>
-                    <div id="emailver_error" class="cvalidation">Invalid Email!</div>
-
-                    <div class="clearfix"></div>
-
                     <div class="form-group">
-                        <input type="password" id="lpassword" class="form-control" name="password" placeholder="Password">
+                        <input type="password" id="txtPassword" class="form-control" name="password" placeholder="Password" maxlength="20">
                         <span class="label-title">
                             <i class='bx bx-lock'></i>
                         </span>
                         <span toggle="#lpassword" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                     </div>
-                    <div id="pass_error" class="cvalidation">Password is requried!</div>
-
-                    <div class="clearfix"></div>
-
                     <div class="form-group">
                         <div class="remember-forgot">
                             <a asp-area="ManageUsers" asp-controller="Users" asp-action="ForgotPassword" class="forgot-password">Forgot password?</a>
                         </div>
-                    </div>
-
-                    <a href="attendee-dashboard.html" class="login-btn" onclick="Loginvalidateform();">Login</a>
+                    </div> 
+                    <input type="button" id="btnLogin" class="login-btn" value="Login" />
                     <p class="mb-0">
                         Don’t have an account?
                         <a asp-area="ManageUsers" asp-controller="Users" asp-action="SignUp">Sign Up</a>

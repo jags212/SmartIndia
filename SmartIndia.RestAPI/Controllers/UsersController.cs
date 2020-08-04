@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SmartIndia.Data.Entities;
 using SmartIndia.Data.Models;
 using SmartIndia.Data.Services;
 
@@ -38,9 +39,9 @@ namespace SmartIndia.RestAPI.Controllers
 
         [AllowAnonymous]
         [HttpPost("refresh-token")]
-        public IActionResult RefreshToken()
+        public IActionResult RefreshToken(TokenParam rfrshToken)
         {
-            var refreshToken = Request.Cookies["refreshToken"];
+            var refreshToken = rfrshToken.Token;//Request.Cookies["refreshToken"];
             var response = _userService.RefreshToken(refreshToken, ipAddress());
 
             if (response == null)

@@ -947,3 +947,4 @@ F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\staticwebasse
 F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.dll
 F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.pdb
 F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.genruntimeconfig.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Areas\ManageUsers\Views\Users\Thankyou.cshtml.g.cs
