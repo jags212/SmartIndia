@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "YLYNtv08NuApHubk+Tc3QGWO53IBe8oLbnrH8Y1MsH72xqtEG/ZymWHZIGYwmaPHxegYKVBEzCaREqlo5G+77w==",
+  "success": true,
+  "projectFilePath": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\smart-india\\dummy\\dummy.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Officail\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Officail\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
