@@ -1,0 +1,181 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "HostDashboard";
+    Layout = "~/Views/Shared/_FrontPannelLayout.cshtml";
+}
+
+<!-- End Top Navbar Area -->
+<!-- Main Content Layout -->
+<!-- Start -->
+<title>OCR - Host Dashboard</title>
+<div class="mt-40">
+    <div class="calendar-container mb-30">
+        <div class="calendar-header">
+            <h3 class="mb-0">Calendar</h3>
+            <a class="calendar-scheduler" asp-area="ManageUsers" asp-controller="Hosts" asp-action="Schedular">
+                Add Scheduler<i class="bx bx-plus bx-pad"></i>
+            </a>
+        </div>
+
+        <!-- Start Calendar -->
+        <div class="card-body">
+            <div id="calendar"></div>
+        </div>
+        <!-- End Calendar -->
+    </div>
+</div>
+<!-- End -->
+<!-- Start -->
+<div class="row">
+    <div class="col-lg-6 col-md-12">
+        <!-- Start Class Attendance Chart -->
+        <div class="card mb-30">
+            <div class="card-header d-flex mobile-d-flex justify-content-between align-items-center">
+                <h3>Class Attendance</h3>
+
+                <div class="dropdown">
+                    <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class='bx bx-dots-horizontal-rounded'></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                            <i class='bx bx-show'></i> View
+                        </a>
+                        <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                            <i class='bx bx-edit-alt'></i> Edit
+                        </a>
+                        <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                            <i class='bx bx-trash'></i> Delete
+                        </a>
+                        <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                            <i class='bx bx-printer'></i> Print
+                        </a>
+                        <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                            <i class='bx bx-download'></i> Download
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-body">
+                <div id="apex-column-with-data-labels"></div>
+            </div>
+        </div>
+        <!-- End Class Attendance Chart -->
+    </div>
+
+    <div class="col-lg-6 col-md-12">
+
+        <!-- Class Analytics -->
+        <div class="card mb-30">
+            <div class="card-header d-flex mobile-d-flex justify-content-between align-items-center">
+                <h3>Registration / Capacity</h3>
+
+                <div class="dropdown">
+                    <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class='bx bx-dots-horizontal-rounded'></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                            <i class='bx bx-show'></i> View
+                        </a>
+                        <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                            <i class='bx bx-edit-alt'></i> Edit
+                        </a>
+                        <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                            <i class='bx bx-trash'></i> Delete
+                        </a>
+                        <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                            <i class='bx bx-printer'></i> Print
+                        </a>
+                        <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                            <i class='bx bx-download'></i> Download
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-body">
+                <div id="website-analytics-chart" class="extra-margin"></div>
+            </div>
+        </div>
+        <!-- End Class Analytics -->
+
+    </div>
+</div>
+<!-- End -->
+<!-- Start -->
+<div class="row">
+    <div class="col-lg-5 col-md-12">
+        <div class="card mb-30 pt-2">
+            <div class="card-body activity-timeline-chart-box">
+                <div id="activity-timeline-chart"></div>
+
+                <div class="activity-timeline-content">
+                    <div class="card-header">
+                        <h3>Top 4 Courses (Monthly)</h3>
+                    </div>
+                    <ul>
+                        <li>
+                            <i class='bx bx-check-double'></i>
+                            <span>Physics</span>
+                            95
+                        </li>
+                        <li>
+                            <i class='bx bx-check-double'></i>
+                            <span>Chemistry</span>
+                            80
+                        </li>
+                        <li>
+                            <i class='bx bx-check-double'></i>
+                            <span>Literature</span>
+                            90
+                        </li>
+                        <li>
+                            <i class='bx bx-check-double'></i>
+                            <span>Business</span>
+                            81
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-7 col-md-12">
+        <!-- Revenue Growth -->
+        <div class="card mb-30">
+            <div class="card-header d-flex mobile-d-flex justify-content-between align-items-center">
+                <h3>Monthly Revenue</h3>
+
+                <div class="dropdown">
+                    <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class='bx bx-dots-horizontal-rounded'></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item d-flex mobile-d-flex mobile-d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                            <i class='bx bx-show'></i> View
+                        </a>
+                        <a class="dropdown-item d-flex mobile-d-flex mobile-d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                            <i class='bx bx-edit-alt'></i> Edit
+                        </a>
+                        <a class="dropdown-item d-flex mobile-d-flex mobile-d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                            <i class='bx bx-trash'></i> Delete
+                        </a>
+                        <a class="dropdown-item d-flex mobile-d-flex mobile-d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                            <i class='bx bx-printer'></i> Print
+                        </a>
+                        <a class="dropdown-item d-flex mobile-d-flex mobile-d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                            <i class='bx bx-download'></i> Download
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-body">
+                <div id="revenue-growth-chart" class="extra-margin"></div>
+            </div>
+        </div>
+        <!-- End Revenue Growth -->
+    </div>
+</div>

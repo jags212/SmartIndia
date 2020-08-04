@@ -6201,19 +6201,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Officail\\.nuget\\packages\\": {}
+    "C:\\Users\\kk\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\smart-india\\SmartIndia.WebApp\\SmartIndia.WebApp.csproj",
+      "projectUniqueName": "D:\\EBAY\\SmartIndia\\smart-india\\SmartIndia.WebApp\\SmartIndia.WebApp.csproj",
       "projectName": "SmartIndia.WebApp",
-      "projectPath": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\smart-india\\SmartIndia.WebApp\\SmartIndia.WebApp.csproj",
-      "packagesPath": "C:\\Users\\Officail\\.nuget\\packages\\",
-      "outputPath": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\smart-india\\SmartIndia.WebApp\\obj\\",
+      "projectPath": "D:\\EBAY\\SmartIndia\\smart-india\\SmartIndia.WebApp\\SmartIndia.WebApp.csproj",
+      "packagesPath": "C:\\Users\\kk\\.nuget\\packages\\",
+      "outputPath": "D:\\EBAY\\SmartIndia\\smart-india\\SmartIndia.WebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Officail\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kk\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6264,7 +6264,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
       }
     }
   }
