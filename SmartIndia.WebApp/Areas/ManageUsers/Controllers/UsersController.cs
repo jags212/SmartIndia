@@ -20,6 +20,10 @@ namespace SmartIndia.WebApp.Areas.ManageUsers.Controllers
         public IActionResult ForgotPassword()
         {
             return View();
+        } 
+        public IActionResult Thankyou()
+        {
+            return View();
         }
     }
 }

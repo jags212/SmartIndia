@@ -1,45 +1,48 @@
-﻿
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = "SignUp";
     Layout = "~/Views/Shared/_LayoutLogin.cshtml";
 }
 @section Scripts{
-    <!-- OTP Box JS -->
-    <script src="~/assets/js/otp-box.js"></script>
     <!-- Country Code JS -->
     <script src="~/assets/js/countrycode.js"></script>
     <!-- Password visible JS -->
     <script src="~/assets/js/password-visible.js"></script>
-
+    <!-- Custom Bootstrap Valiation JS -->
+    <script src="~/js/Common/custom-validate.js"></script>
+    <!-- Api JS -->
+    <script src="~/js/UserRegistration/api-call.js"></script>
+    <script src="~/js/UserRegistration/user-signup-validate.js"></script>
 }
 <div class="register-area">
     <div class="d-table">
         <div class="d-table-cell">
             <div class="register-form">
-
                 <h2>Register</h2>
-
-                <form>
+                <form id="frmSubmit">
                     <div class="form-group">
-                        <input type="text" class="form-control" name="name" placeholder="Name">
+                        <input type="text" id="txtFirstName" maxlength="20" class="form-control" name="firstname" placeholder="First Name">
                         <span class="label-title">
                             <i class='bx bx-user'></i>
                         </span>
                     </div>
-
                     <div class="form-group">
-                        <input type="text" class="form-control" name="email" placeholder="Email">
+                        <input type="text" id="txtLastName" maxlength="20" class="form-control" name="lastname" placeholder="Last Name">
+                        <span class="label-title">
+                            <i class='bx bx-user'></i>
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="txtEmail" maxlength="80" class="form-control" name="email" placeholder="Email">
                         <span class="label-title">
                             <i class='bx bx-envelope'></i>
                         </span>
                     </div>
-
                     <div class="form-group">
-                        <input id="rmobileno" type="tel" name="mobileno" class="form-control pl-115" oninput="this.value = this.value.replace(/[^0-9-()+ ]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" data-eloqua-input="mobileno" autocomplete="off" data-intl-tel-input-id="0" placeholder="Mobile No">
+                        <input id="txtMobileNo" type="tel" maxlength="15" name="mobileno" class="form-control pl-115" oninput="this.value = this.value.replace(/[^0-9-()+ ]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" data-eloqua-input="mobileno" autocomplete="off" data-intl-tel-input-id="0" placeholder="Mobile No">
                         <span class="label-title">
                             <i class='bx bx-mobile mobile-padd'></i>
                         </span>
-
                         <!--- Start Country Code --->
                         <div id="intel-flag-title" class="intl-tel-input allow-dropdown separate-dial-code" data-toggle="tooltip" data-placement="bottom" title="United States of America: +1">
                             <div class="flag-container">
@@ -297,14 +300,10 @@
                                     <li class="country standard" tabindex="-1" id="iti-item-zm" role="option" data-dial-code="260" data-country-code="zm"><div class="flag-box"><div class="iti-flag zm"></div></div><span class="country-name">Zambia</span><span class="dial-code">+260</span></li>
                                     <li class="country standard" tabindex="-1" id="iti-item-zw" role="option" data-dial-code="263" data-country-code="zw"><div class="flag-box"><div class="iti-flag zw"></div></div><span class="country-name">Zimbabwe</span><span class="dial-code">+263</span></li>
                                 </ul>
-
                             </div>
                         </div>
-
                         <!--- End Country Code --->
-
                     </div>
-
                     <div class="row form-group regi-form-group" id="cframe">
                         <div class="col res-col">
                             <input type="text" class="form-control" name="code" placeholder="4-digit Email OTP">
@@ -319,21 +318,20 @@
                             </span>
                         </div>
                     </div>
-
                     <div class="re-note" id="rnote">
                         (Use first 4-digit OTP from email and second 4-digit OTP from registered mobile)
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" name="password" placeholder="Password" id="password-field">
+                        <input type="password" class="form-control" maxlength="20" name="password" placeholder="Password" id="txtPassword">
                         <span class="label-title">
                             <i class='bx bx-lock'></i>
                         </span>
-                        <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-                        <span class="fa fa-info-circle password-info" data-toggle="tooltip" data-placement="top" title="Password must contain one uppercase letter, one lowercase letter, two numbers and one special character. The minimum allowed length is eight characters."></span>
+                        <span toggle="#txtPassword" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                        <span class="fa fa-info-circle password-info" data-toggle="tooltip" data-placement="top" title="Passwords must be at least 8 characters and contain at 3 of 4 of the following: upper case (A-Z), lower case (a-z), number (0-9) and special character @("(e.g. !@#$%^&*)")."></span>
                     </div>
 
                     <div class="form-group">
-                        <input type="password" class="form-control" name="confirmpassword" placeholder="Confirm Password">
+                        <input id="txtCnfmPassword" type="password" maxlength="20" class="form-control" name="confirmpassword" placeholder="Confirm Password">
                         <span class="label-title">
                             <i class='bx bx-lock-alt'></i>
                         </span>
@@ -343,15 +341,17 @@
                         <div class="terms-conditions">
                             <label class="checkbox-box">
                                 I accept <a href="javascript:void(0);" data-toggle="modal" data-target="#TermsModal">Terms and Conditions</a>
-                                <input type="checkbox">
+                                <input type="checkbox" id="chkTC">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                     </div>
 
-                    <a href="javascript:void(0);" class="register-btn">Sign Up</a>
-
-                    <p class="mb-0">Already have account? <a href="login.html">Sign In</a></p>
+                    <input type="button" id="btnSignUp" class="register-btn" value="Sign Up" />
+                    <p class="mb-0">
+                        Already have account?
+                        <a asp-area="ManageUsers" asp-controller="Users" asp-action="Login">Sign In</a>
+                    </p>
                 </form>
             </div>
         </div>
@@ -405,5 +405,3 @@
     </div>
 </div>
 <!-- End Modal -->
-<h1>SignUp</h1>
-
