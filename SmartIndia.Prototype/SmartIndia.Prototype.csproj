@@ -201,6 +201,7 @@
     <Content Include="register.html" />
     <Content Include="reset-password.html" />
     <Content Include="schedular.html" />
+    <Content Include="thank-you.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
