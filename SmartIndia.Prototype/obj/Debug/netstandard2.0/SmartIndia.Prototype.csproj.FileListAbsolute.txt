@@ -1,9 +1,0 @@
-E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.Prototype\bin\Debug\netstandard2.0\SmartIndia.Prototype.dll.config
-E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.Prototype\bin\Debug\netstandard2.0\SmartIndia.Prototype.deps.json
-E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.Prototype\bin\Debug\netstandard2.0\SmartIndia.Prototype.dll
-E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.Prototype\bin\Debug\netstandard2.0\SmartIndia.Prototype.pdb
-E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.Prototype\obj\Debug\netstandard2.0\SmartIndia.Prototype.csproj.CoreCompileInputs.cache
-E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.Prototype\obj\Debug\netstandard2.0\SmartIndia.Prototype.AssemblyInfoInputs.cache
-E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.Prototype\obj\Debug\netstandard2.0\SmartIndia.Prototype.AssemblyInfo.cs
-E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.Prototype\obj\Debug\netstandard2.0\SmartIndia.Prototype.dll
-E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.Prototype\obj\Debug\netstandard2.0\SmartIndia.Prototype.pdb
