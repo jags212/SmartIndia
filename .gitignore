@@ -356,3 +356,4 @@ packages
 /SmartIndia.WebApp/obj/Debug/netcoreapp3.1/*.cache
 >>>>>>> master
 /SmartIndia.Prototype/obj/Debug/netstandard2.0/*.txt
+/.vs/SmartIndia/v16/*.suo
