@@ -8601,19 +8601,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HP\\.nuget\\packages\\": {}
+    "C:\\Users\\kk\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Lipi\\Work\\smart-india\\SmartIndia.RestAPI\\SmartIndia.RestAPI.csproj",
+      "projectUniqueName": "D:\\EBAY\\SmartIndia\\smart-india\\SmartIndia.RestAPI\\SmartIndia.RestAPI.csproj",
       "projectName": "SmartIndia.RestAPI",
-      "projectPath": "F:\\Lipi\\Work\\smart-india\\SmartIndia.RestAPI\\SmartIndia.RestAPI.csproj",
-      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "F:\\Lipi\\Work\\smart-india\\SmartIndia.RestAPI\\obj\\",
+      "projectPath": "D:\\EBAY\\SmartIndia\\smart-india\\SmartIndia.RestAPI\\SmartIndia.RestAPI.csproj",
+      "packagesPath": "C:\\Users\\kk\\.nuget\\packages\\",
+      "outputPath": "D:\\EBAY\\SmartIndia\\smart-india\\SmartIndia.RestAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kk\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8626,8 +8626,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "F:\\Lipi\\Work\\smart-india\\SmartIndia.Data\\SmartIndia.Data.csproj": {
-              "projectPath": "F:\\Lipi\\Work\\smart-india\\SmartIndia.Data\\SmartIndia.Data.csproj"
+            "D:\\EBAY\\SmartIndia\\smart-india\\SmartIndia.Data\\SmartIndia.Data.csproj": {
+              "projectPath": "D:\\EBAY\\SmartIndia\\smart-india\\SmartIndia.Data\\SmartIndia.Data.csproj"
             }
           }
         }

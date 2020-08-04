@@ -6201,19 +6201,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HP\\.nuget\\packages\\": {}
+    "C:\\Users\\kk\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Lipi\\Work\\smart-india\\SmartIndia.WebApp\\SmartIndia.WebApp.csproj",
+      "projectUniqueName": "D:\\EBAY\\SmartIndia\\smart-india\\SmartIndia.WebApp\\SmartIndia.WebApp.csproj",
       "projectName": "SmartIndia.WebApp",
-      "projectPath": "F:\\Lipi\\Work\\smart-india\\SmartIndia.WebApp\\SmartIndia.WebApp.csproj",
-      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "F:\\Lipi\\Work\\smart-india\\SmartIndia.WebApp\\obj\\",
+      "projectPath": "D:\\EBAY\\SmartIndia\\smart-india\\SmartIndia.WebApp\\SmartIndia.WebApp.csproj",
+      "packagesPath": "C:\\Users\\kk\\.nuget\\packages\\",
+      "outputPath": "D:\\EBAY\\SmartIndia\\smart-india\\SmartIndia.WebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kk\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
