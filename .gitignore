@@ -348,11 +348,8 @@ obj
 *.dll
 packages
 /FTP.Web/Logs
-<<<<<<< HEAD
-=======
 /.vs/SmartIndia/DesignTimeBuild/.dtbcache.v2
 /SmartIndia.Data/obj/Debug/netstandard2.0/*.cache
 /SmartIndia.RestAPI/obj/Debug/netcoreapp3.1/*.cache
 /SmartIndia.WebApp/obj/Debug/netcoreapp3.1/*.cache
->>>>>>> master
 /SmartIndia.Prototype/obj/Debug/netstandard2.0/*.txt

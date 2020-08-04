@@ -1,8 +1,0 @@
-E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\dummy\bin\Debug\netstandard2.0\dummy.deps.json
-E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\dummy\bin\Debug\netstandard2.0\dummy.dll
-E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\dummy\bin\Debug\netstandard2.0\dummy.pdb
-E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\dummy\obj\Debug\netstandard2.0\dummy.csproj.CoreCompileInputs.cache
-E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\dummy\obj\Debug\netstandard2.0\dummy.AssemblyInfoInputs.cache
-E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\dummy\obj\Debug\netstandard2.0\dummy.AssemblyInfo.cs
-E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\dummy\obj\Debug\netstandard2.0\dummy.dll
-E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\dummy\obj\Debug\netstandard2.0\dummy.pdb
