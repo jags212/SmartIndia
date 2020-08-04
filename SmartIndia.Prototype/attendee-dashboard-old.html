@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="en">
+    
+<head>
+
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>OCR - Attendee Dashboard</title>
+
+<link rel="icon" type="image/png" href="assets/img/favicon.png" />
+
+<!-- Vendors Min CSS -->
+<link rel="stylesheet" href="assets/css/vendors.min.css" />
+<!-- Style CSS -->
+<link rel="stylesheet" href="assets/css/style.css" />
+<!-- Responsive CSS -->
+<link rel="stylesheet" href="assets/css/responsive.css"/>
+<!-- Custom CSS -->
+<link rel="stylesheet" href="assets/css/custom.css" />
+
+</head>
+
+    <body>
+        <!-- Side Menu -->
+        <!-- Start Sidemenu Area -->
+<div class="sidemenu-area">
+    <div class="sidemenu-header">
+        <a href="login.html" class="navbar-brand d-flex mobile-d-flex align-items-center">
+            <img src="assets/img/small-logo.png" alt="OCR" />
+            <span>OCR</span>
+        </a>
+
+        <div class="burger-menu d-none d-lg-block">
+            <span class="top-bar"></span>
+            <span class="middle-bar"></span>
+            <span class="bottom-bar"></span>
+        </div>
+
+        <div class="responsive-burger-menu d-block d-lg-none">
+            <span class="top-bar"></span>
+            <span class="middle-bar"></span>
+            <span class="bottom-bar"></span>
+        </div>
+    </div>
+
+    <div class="sidemenu-body">
+        <ul class="sidemenu-nav metisMenu h-100" id="sidemenu-nav" data-simplebar>
+            <li class="nav-item mm-active">
+                <a href="attendee-dashboard.html" class="nav-link">
+                    <span class="icon">
+                        <i class='bx bx-home-circle'></i>
+                    </span>
+                    <span class="menu-title">Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:void(0);" class="nav-link">
+                    <span class="icon">
+                        <i class='bx bx-card'></i>
+                    </span>
+                    <span class="menu-title">Class Wall</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:void(0);" class="nav-link">
+                    <span class="icon">
+                        <i class='bx bx-video-recording'></i>
+                    </span>
+                    <span class="menu-title">Upcoming Classes</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:void(0);" class="nav-link">
+                    <span class="icon">
+                        <i class='bx bxl-discourse'></i>
+                    </span>
+                    <span class="menu-title">Enroll Courses</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:void(0);" class="nav-link host-color" data-toggle="modal" data-target="#GetHostModal">
+                    <span class="icon">
+                        <i class='bx bxs-face'></i>
+                    </span>
+                    <span class="menu-title">Be A Host</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- End Sidemenu Area -->
+
+        <!-- Main Content Wrapper -->
+        <div class="main-content d-flex mobile-d-flex flex-column">
+            <!-- Top Navbar -->
+            <!-- Top Navbar Area -->
+<nav class="navbar top-navbar navbar-expand">
+    <div class="collapse navbar-collapse" id="navbarSupportContent">
+        <div class="responsive-burger-menu d-block d-lg-none">
+            <span class="top-bar"></span>
+            <span class="middle-bar"></span>
+            <span class="bottom-bar"></span>
+        </div>
+
+        <ul class="navbar-nav left-nav align-items-center">
+            <li class="blinking" data-toggle="modal" data-target="#GetHostModal">
+              Be A Host
+            </li>
+        </ul>
+
+        <ul class="navbar-nav right-nav align-items-center ml-auto">
+            <li class="nav-item">
+                <a class="nav-link bx-fullscreen-btn" id="fullscreen-button">
+                    <i class="bx bx-fullscreen"></i>
+                </a>
+            </li>
+
+            <li class="nav-item dropdown language-switch-nav-item">
+                <a href="javascript:void(0);" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" class="btn lh-btn-outline"><i class="bx bx-user-check"></i></button>
+                    <span>Attendee <i class='bx bx-chevron-down'></i></span>
+                </a>
+
+                <div class="dropdown-menu">
+                    <a href="javascript:void(0);" class="dropdown-item d-flex mobile-d-flex justify-content-between align-items-center" data-title="Make this as primary">
+                        <span>Host</span>
+                         <input class="form-check-input" type="radio" name="hlradio" id="Host" value="Host">
+                    </a>
+                    <a href="javascript:void(0);" class="dropdown-item d-flex mobile-d-flex justify-content-between align-items-center" data-title="Make this as primary">
+                        <span>Attendee</span>
+                        <input class="form-check-input" type="radio" name="hlradio" id="Learner" value="Learner" checked="">
+                    </a>
+                </div>
+            </li>
+            
+            <li class="nav-item notification-box dropdown">
+                <a href="javascript:void(0);" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="notification-btn">
+                        <i class='bx bx-bell'></i>
+                        <span class="badge badge-secondary">5</span>
+                    </div>
+                </a>
+
+                <div class="dropdown-menu">
+                    <div class="dropdown-header d-flex mobile-d-flex justify-content-between align-items-center">
+                        <span class="title d-inline-block">6 New Notifications</span>
+                        <span class="mark-all-btn d-inline-block">Mark all as read</span>
+                    </div>
+
+                    <div class="dropdown-body">
+                        <a href="javascript:void(0);" class="dropdown-item d-flex mobile-d-flex align-items-center">
+                            <div class="icon">
+                                <i class='bx bx-message-rounded-dots'></i>
+                            </div>
+                            <div class="content">
+                                <span class="d-block">Just sent a new message!</span>
+                                <p class="sub-text mb-0">2 sec ago</p>
+                            </div>
+                        </a>
+
+                        <a href="javascript:void(0);" class="dropdown-item d-flex mobile-d-flex align-items-center">
+                            <div class="icon">
+                                <i class='bx bx-user'></i>
+                            </div>
+                            <div class="content">
+                                <span class="d-block">New customer registered</span>
+                                <p class="sub-text mb-0">5 sec ago</p>
+                            </div>
+                        </a>
+
+                        <a href="javascript:void(0);" class="dropdown-item d-flex mobile-d-flex align-items-center">
+                            <div class="icon">
+                                <i class='bx bx-layer'></i>
+                            </div>
+                            <div class="content">
+                                <span class="d-block">Apps are ready for update</span>
+                                <p class="sub-text mb-0">3 min ago</p>
+                            </div>
+                        </a>
+
+                        <a href="javascript:void(0);" class="dropdown-item d-flex mobile-d-flex align-items-center">
+                            <div class="icon">
+                                <i class='bx bx-hourglass'></i>
+                            </div>
+                            <div class="content">
+                                <span class="d-block">Your item is shipped</span>
+                                <p class="sub-text mb-0">7 min ago</p>
+                            </div>
+                        </a>
+
+                        <a href="javascript:void(0);" class="dropdown-item d-flex mobile-d-flex align-items-center">
+                            <div class="icon">
+                                <i class='bx bx-comment-dots'></i>
+                            </div>
+                            <div class="content">
+                                <span class="d-block">Steven commented on your post</span>
+                                <p class="sub-text mb-0">1 sec ago</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="dropdown-footer">
+                        <a href="javascript:void(0);" class="dropdown-item">View All</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown profile-nav-item">
+                <a href="javascript:void(0);" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="menu-profile">
+                        <span class="name">Hi! Arnab</span>
+                        <img src="assets/img/user1.jpg" class="rounded-circle" alt="image">
+                    </div>
+                </a>
+
+                <div class="dropdown-menu">
+                    <div class="dropdown-header d-flex mobile-d-flex flex-column align-items-center">
+                        <div class="figure mb-3">
+                            <img src="assets/img/user1.jpg" class="rounded-circle" alt="image">
+                        </div>
+                        <div class="info text-center">
+                            <span class="name">Arnab Sahoo</span>
+                            <p class="mb-3 email">arnab@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-body">
+                        <ul class="profile-nav p-0 pt-3">
+                            <li class="nav-item">
+                                <a href="javascript:void(0);" class="nav-link">
+                                    <i class='bx bx-user'></i> <span>Profile</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:void(0);" class="nav-link">
+                                    <i class='bx bx-envelope'></i> <span>My Inbox</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:void(0);" class="nav-link">
+                                    <i class='bx bx-edit-alt'></i> <span>Edit Profile</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-footer">
+                        <ul class="profile-nav">
+                            <li class="nav-item">
+                                <a href="login.html" class="nav-link">
+                                    <i class='bx bx-log-out'></i> <span>Logout</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- End Top Navbar Area -->
+
+<!-- Main Content Layout -->
+
+  <!-- Start Timeline Area -->
+    <div class="timeline mb-30 mt-40">
+        <div class="timeline-month">
+            July, 2020
+        </div>
+
+        <div class="timeline-section">
+            <div class="timeline-date">
+                07, Tuesday
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="timeline-box">
+                        <div class="box-title">
+                            <i class='bx bxs-florist'></i> Physics
+                        </div>
+
+                        <div class="box-content">
+                            <div class="box-item"><p class="mb-0">Physics is the natural science that studies matter, its motion and behavior through space and time, and the related entities of energy and force.</p></div>
+                            <div class="box-item"><strong>Start Time</strong>: 03.00 PM</div>
+                        </div>
+
+                        <div class="box-footer">- Mahesh</div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="timeline-box">
+                        <div class="box-title">
+                            <i class='bx bxs-thermometer'></i> Chemistry
+                        </div>
+
+                        <div class="box-content">
+                            <div class="box-item"><p class="mb-0">Chemistry is the scientific discipline involved with elements and compounds composed of atoms, molecules and ions: their composition, structure, properties, behavior and the changes they undergo during a reaction with other substances.</p></div>
+                            <div class="box-item"><strong>Start Time</strong>: 06.00 PM</div>
+                        </div>
+
+                        <div class="box-footer">- Amar Dash</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-section">
+            <div class="timeline-date">
+                08, Wednesday
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="timeline-box">
+                        <div class="box-title">
+                            <i class='bx bx-brightness'></i> Literature
+                        </div>
+
+                        <div class="box-content">
+                            <div class="box-item"><p class="mb-0">Literature, most generically, is any body or collection of written work. More restrictively, literature refers to writing considered to be an art form or any single writing deemed to have artistic or intellectual value, and sometimes deploys language in ways that differ from ordinary usage. </p></div>
+                            <div class="box-item"><strong>Start Time</strong>: 10.00 AM</div>
+                        </div>
+
+                        <div class="box-footer">- Dipti Dash</div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="timeline-box">
+                        <div class="box-title">
+                            <i class='bx bx-task'></i> New Classes To Do
+                        </div>
+
+                        <div class="box-content">
+                            <div class="box-item"><strong>Host</strong>: Mahesh</div>
+                            <div class="box-item"><strong>To Do</strong>: Physics is the branch of science that deals with the structure of matter and how the fundamental constituents of the universe interact. It studies objects ranging from the very small using quantum mechanics to the entire universe using general relativity.</div>
+                        </div>
+
+                        <div class="box-footer">- Mahesh</div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="timeline-box">
+                        <div class="box-title">
+                            <i class='bx bx-task'></i> New Course To Do
+                        </div>
+
+                        <div class="box-content">
+                            <div class="box-item"><strong>Host</strong>: Avi Ram</div>
+                            <div class="box-item"><strong>To Do</strong>: Chemistry is the study of matter, its properties, how and why substances combine or separate to form other substances, and how substances interact with energy.</div>
+                        </div>
+
+                        <div class="box-footer">- Avi Ram</div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="timeline-box">
+                        <div class="box-title">
+                            <i class='bx bxs-thermometer'></i> Pschrometrics
+                        </div>
+
+                        <div class="box-content">
+                            <div class="box-item"><strong>Temp.</strong>: 23 <sup>o</sup>C</div>
+                            <div class="box-item"><strong>Rh </strong>: 42</div>
+                            <div class="box-item"><strong>Comments</strong>: Integer nec placerat ipsum. Aliquam id ligula suscipit, ornare dui nec, laoreet tortor.</div>
+                        </div>
+
+                        <div class="box-footer">- Nabin</div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="timeline-box">
+                        <div class="box-title">
+                            <i class='bx bx-building'></i> Business
+                        </div>
+
+                        <div class="box-content">
+                            <div class="box-item"><strong>Name</strong>: Business & Management</div>
+                            <div class="box-item"><strong>Book</strong>: The 4 A' of Managements</div>
+                            <div class="box-item"><strong>Lesson </strong>: 2</div>
+                        </div>
+
+                        <div class="box-footer">- Himanshu Nautiyal</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-section">
+            <div class="timeline-date">
+                09, Thursday
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="timeline-box">
+                        <div class="box-title">
+                            <i class='bx bx-task'></i> Course To Do Completed
+                        </div>
+
+                        <div class="box-content">
+                            <div class="box-item"><strong>Host</strong>: Rishabh Goyal</div>
+                            <div class="box-item"><strong>Host Response</strong>: He has even cleared the exam for the brokerage firm and worked for some time in organization.</div>
+                        </div>
+
+                        <div class="box-footer">- Rishabh Goyal</div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="timeline-box">
+                        <div class="box-title">
+                            <i class='bx bx-cog'></i> Equipment Entry
+                        </div>
+
+                        <div class="box-content">
+                            <div class="box-item"><strong>ID</strong>: TW-3232</div>
+                            <div class="box-item"><strong>Name</strong>: HEPA 600</div>
+                            <div class="box-item"><strong>Date In</strong>: 07/22/2020</div>
+                        </div>
+
+                        <div class="box-footer">- Prateek Singh</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Timeline Area -->
+ 
+  
+<!-- Footer -->
+<div class="flex-grow-1"></div>
+
+<!-- Start Footer -->
+<footer class="footer-area">
+    <div class="row align-items-center">
+        <div class="col-lg-6 col-sm-6 col-md-6">
+            <p>Copyright <i class='bx bx-copyright'></i> 2020 <a href="javascript:void(0);">OCR</a>. All rights reserved</p>
+        </div>
+
+        <div class="col-lg-6 col-sm-6 col-md-6 text-right">
+            <p></p>
+        </div>
+    </div>
+</footer>
+<!-- End Footer -->
+</div>
+<!-- End Main Content Wrapper -->
+
+<!-- Start Host Plan Modal -->
+<div class="modal fade basicModalLG plan-modal" id="GetPerminumModal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered cascading-modal" role="document">
+        <div class="modal-content p-20">
+            <div class="modal-header light-blue">
+                <h4 class="modal-title white-text title"><i class="bx bxs-crown"></i> Host Plans</h4>
+            </div>
+            <div class="modal-body">
+                <button type="button" class="close per-close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+               <!-- Start Pricing Area -->
+    <section class="pricing-area ptb-100">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="single-pricing-box">
+                    <div class="pricing-header">
+                        <h3>Free</h3>
+                    </div>
+
+                    <div class="price">
+                        <sub>₹</sub>
+                        00.00
+                        <sub>/mo</sub>
+                    </div>
+
+                    <ul class="price-features-list">
+                        <li><i class='bx bx-check-double'></i> 3 Attendee</li>
+                        <li><i class='bx bx-check-double'></i> Email Support</li>
+                        <li><i class='bx bx-check-double'></i> Phone Support</li>
+                        <li><i class='bx bx-check-double'></i> Article Promotion</li>
+                        <li><i class='bx bx-check-double'></i> Editorial Services</li>
+                        <li><i class='bx bx-x'></i> Profile Management</li>
+                        <li><i class='bx bx-x'></i> Selection Support</li>
+                    </ul>
+
+                    <a href="host-dashboard.html" class="get-started-btn">Get Started</a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="single-pricing-box red">
+                    <div class="pricing-header">
+                        <h3>Starter</h3>
+                    </div>
+
+                    <div class="price">
+                        <sub>₹</sub>
+                        999.99
+                        <sub>/mo</sub>
+                    </div>
+
+                    <ul class="price-features-list">
+                        <li><i class='bx bx-check-double'></i> 50 Attendee</li>
+                        <li><i class='bx bx-check-double'></i> Email Support</li>
+                        <li><i class='bx bx-check-double'></i> Phone Support</li>
+                        <li><i class='bx bx-check-double'></i> Article Promotion</li>
+                        <li><i class='bx bx-check-double'></i> Editorial Services</li>
+                        <li><i class='bx bx-check-double'></i> Profile Management</li>
+                        <li><i class='bx bx-x'></i> Selection Support</li>
+                    </ul>
+
+                    <a href="host-dashboard.html" class="get-started-btn">Get Started</a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
+                <div class="single-pricing-box orange">
+                    <div class="pricing-header">
+                        <h3>Extended</h3>
+                    </div>
+
+                    <div class="price">
+                        <sub>₹</sub>
+                        4999.99
+                        <sub>/mo</sub>
+                    </div>
+
+                    <ul class="price-features-list">
+                        <li><i class='bx bx-check-double'></i> 100 Attendee</li>
+                        <li><i class='bx bx-check-double'></i> Email Support</li>
+                        <li><i class='bx bx-check-double'></i> Phone Support</li>
+                        <li><i class='bx bx-check-double'></i> Article Promotion</li>
+                        <li><i class='bx bx-check-double'></i> Editorial Services</li>
+                        <li><i class='bx bx-check-double'></i> Profile Management</li>
+                        <li><i class='bx bx-check-double'></i> Selection Support</li>
+                    </ul>
+
+                    <a href="host-dashboard.html" class="get-started-btn">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Pricing Area -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Host Plan Modal -->
+
+
+<!-- Start Host Modal -->
+<div class="modal fade basicModalLG host-modal" id="GetHostModal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered cascading-modal modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header light-blue">
+                <h4 class="modal-title white-text title pt-30"><i class="bx bx-user-check"></i> Be A Host</h4>
+                 <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body p-20 mt-10">
+       
+                <p>
+This Site OCR does not offer any financial or legal advice through the site. The information – including Articles written in blog, contents of our newsletter, video courses, investment ideas and other features and tools provided on the site are solely for individual education and understanding the financial and investment issues involved and help you make sensible financial decisions yourself. OCR is neither a Portfolio Manager, Broker or a Sub-broker and is not registered with any stock exchange. OCR does not manage your funds nor advises or directs you to acquire, dispose of or retain any securities. OCR does NOT come under the purview of the SEBI( Portfolio Managers ) Regulations 1993 or SEBI ( Stock Brokers and Sub Brokers) Regulations 1992. This website is for educational purposes only.</p>
+
+<p>
+The transmission of information from this site to you is not intended to create nor does it create an advisor-client relationship between OCR and you.</p>
+<p>
+Though every effort is made to make accurate, reliable and current information on the website, OCR makes no representation, warranty or claim that the information available on the website is current or accurate. OCR is not responsible for any errors or omissions in the resources or information available at or from the website. The transmission of information from this site to you is not intended to create nor does it create an advisor-client relationship between OCR and you. The information on the Site is not to be reproduced without OCR express consent.</p>
+
+<p>
+All content on OCR belongs to us, any copy without our consent shall be deemed breach of copyright and may result in legal implications.</p>
+
+<p>
+OCR states that the on-line resources that can be accessed from the Site by use of hypertext links are not maintained or controlled by us, OCR is therefore not responsible for the content of such linked resources promoted by Partners. OCR is not responsible for the security of such other sites, nor for the terms of use or security / privacy policies of such sites. It is your responsibility to review such other sites for policies and practices of concern to you. OCR makes no warranty express or implied with respect to the use of the links provided nor does OCR guarantee the accuracy, completeness, usefulness or adequacy of any resource, information, system, product or process available at or from the website.</p>
+
+<p>
+Users who have paid to access courses and classes may not copy the material in any way. Such act will result in legally implicating the individual or company. OCR reserves right to deactivate / suspend / restrict / terminate any account in the interest of OCR or in the general interest without any prior notice without giving any reason thereof or also on grounds of non-payment, unauthorized use, incorrect incomplete or untrue disclosure of information, objectionable displays or behaviour without any claim for refund. OCR reserves the right to change features/functionalities –entitlement to users at any point without prior intimation to users.</p>
+
+<p>
+You agree not to – impersonate any other person or entity or to use a false name or a name that you are not authorised to use, or disclose your password or user name to any other person, or allow your password or user name to be used by any other person to access the Services.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#GetPerminumModal">Agree</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Host Modal -->
+
+<!-- Footer Scripts -->
+
+<!-- Vendors Min JS -->
+<script src="assets/js/vendors.min.js"></script>
+
+<!-- ApexCharts JS -->
+<script src="assets/js/apexcharts/apexcharts.min.js"></script>
+<script src="assets/js/apexcharts/apex-custom-line-chart.js"></script>
+<script src="assets/js/apexcharts/apex-custom-pie-donut-chart.js"></script>
+
+<!-- ChartJS -->
+<script src="assets/js/chartjs/chartjs.min.js"></script>
+
+<!-- jvectormap Min JS -->
+<script src="assets/js/jvectormap-1.2.2.min.js"></script>
+<!-- jvectormap World Mill JS -->
+<script src="assets/js/jvectormap-world-mill-en.js"></script>
+
+<!-- Custom JS -->
+<script src="assets/js/custom.js"></script>
+
+   </body>
+</html>

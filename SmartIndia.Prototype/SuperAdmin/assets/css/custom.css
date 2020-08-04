@@ -1,0 +1,89 @@
+﻿.btn-red, .btn-pink, .btn-yellow {
+    font-size: 15px;
+}
+.btn-red {
+    color: #e1000a;
+}
+        .btn-red:hover, .btn-red:focus {
+            color: #df1922;
+        }
+.btn-pink {
+    color: #fc6765;
+}
+    .btn-pink:hover, .btn-pink:focus {
+        color: #f37a79;
+    }
+.btn-yellow {
+    color: #ffa143;
+}
+
+    .btn-yellow:hover, .btn-yellow:focus {
+        color: #f1a04e;
+    }
+.sside-nav-bar{
+    display: none;
+}
+.cside-nav-bar {
+    display: none;
+}
+.sidebar-mini .sside-nav-bar {
+    display: block;
+}
+.sidebar-mini .fside-nav-bar {
+    display: none;
+}
+.sidebar-show .sside-nav-bar {
+    display: none;
+}
+.sidebar-show .cside-nav-bar {
+    display: block;
+    float: right;
+    margin-top: -5px;
+}
+.sidebar-show .sidebar-brand {
+    float: left;
+}
+.clearfix {
+    clear: both;
+}
+.badge-width {
+    width: 100%;
+}
+.allports-sidebar:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu > li.active ul.dropdown-menu .active a {
+    background: rgb(28 99 116);
+}
+.sidebar-mini .main-sidebar .sidebar-menu li ul.dropdown-menu li a{
+    padding-left: 50px;
+}
+    .sidebar-mini .main-sidebar .sidebar-menu li ul.dropdown-menu li a:before {
+        left: 25px;
+    }
+    .sidebar-mini .main-sidebar .sidebar-menu li ul.dropdown-menu li a:hover:before {
+        left: 28px;
+    }
+.purple-sidebar.sidebar-mini .main-sidebar .sidebar-menu li.active ul li a {
+    color: #a9b7d0;
+}
+    .purple-sidebar.sidebar-mini .main-sidebar .sidebar-menu li.active ul li a:hover {
+        color: #fff;
+    }
+.purple-sidebar.sidebar-mini .main-sidebar .sidebar-menu li.active ul .active a {
+    background: rgb(28 99 116);
+    color: #fff;
+}
+    .purple-sidebar.sidebar-mini .main-sidebar .sidebar-menu li.active ul .active a:hover {
+        background: rgb(28 99 116);
+        color: #fff !important;
+    }
+
+/*-------- Responsive --------------*/
+@media(min-width: 320px) and (max-width: 767px) {
+    .section .section-header .section-header-breadcrumb-content .section-header-breadcrumb {
+        display: none;
+    }
+
+    .section .section-header .section-header-breadcrumb-content h1 {
+        font-size: 19px;
+    }
+}
+

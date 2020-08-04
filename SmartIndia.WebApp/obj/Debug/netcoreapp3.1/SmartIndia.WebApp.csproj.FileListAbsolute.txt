@@ -1,0 +1,950 @@
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\appsettings.Development.json
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\appsettings.json
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.exe
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.deps.json
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.runtimeconfig.json
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.runtimeconfig.dev.json
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.pdb
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.Views.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.Views.pdb
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.csprojAssemblyReference.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.csproj.CoreCompileInputs.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.MvcApplicationPartsAssemblyInfo.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.RazorAssemblyInfo.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.RazorAssemblyInfo.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.AssemblyInfoInputs.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.AssemblyInfo.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.TagHelpers.input.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.TagHelpers.output.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.RazorCoreGenerate.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.RazorTargetAssemblyInfo.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.RazorTargetAssemblyInfo.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.Views.pdb
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\staticwebassets\SmartIndia.WebApp.StaticWebAssets.Manifest.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\staticwebassets\SmartIndia.WebApp.StaticWebAssets.xml
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.pdb
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.genruntimeconfig.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia.RestAPI\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.csproj.CopyComplete
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\appsettings.Development.json
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\appsettings.json
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.exe
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.deps.json
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.runtimeconfig.json
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.runtimeconfig.dev.json
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.pdb
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.Views.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.Views.pdb
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.csprojAssemblyReference.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.RazorAssemblyInfo.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.RazorAssemblyInfo.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.AssemblyInfoInputs.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.AssemblyInfo.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.TagHelpers.input.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.TagHelpers.output.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.RazorCoreGenerate.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.RazorTargetAssemblyInfo.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.RazorTargetAssemblyInfo.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.Views.pdb
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\staticwebassets\SmartIndia.WebApp.StaticWebAssets.Manifest.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\staticwebassets\SmartIndia.WebApp.StaticWebAssets.xml
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.pdb
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.genruntimeconfig.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.csproj.CopyComplete
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutLogin.cshtml.g.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.csproj.CoreCompileInputs.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.MvcApplicationPartsAssemblyInfo.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Areas\ManageUsers\Views\Users\Login.cshtml.g.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\appsettings.Development.json
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\appsettings.json
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.exe
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.deps.json
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.runtimeconfig.json
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.runtimeconfig.dev.json
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.pdb
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.Views.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.Views.pdb
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.csprojAssemblyReference.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.RazorAssemblyInfo.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.RazorAssemblyInfo.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.AssemblyInfoInputs.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.AssemblyInfo.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.TagHelpers.input.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.TagHelpers.output.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.RazorCoreGenerate.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Areas\ManageUsers\Views\Users\Login.cshtml.g.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutLogin.cshtml.g.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.RazorTargetAssemblyInfo.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.RazorTargetAssemblyInfo.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.Views.pdb
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.csproj.CopyComplete
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\staticwebassets\SmartIndia.WebApp.StaticWebAssets.Manifest.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\staticwebassets\SmartIndia.WebApp.StaticWebAssets.xml
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.pdb
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.genruntimeconfig.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Antiforgery.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Abstractions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Cookies.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Core.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.OAuth.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authorization.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authorization.Policy.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.Authorization.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.Forms.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.Server.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.Web.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Connections.Abstractions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.CookiePolicy.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Cors.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Cryptography.Internal.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.DataProtection.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.DataProtection.Extensions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Diagnostics.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Diagnostics.HealthChecks.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.HostFiltering.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Hosting.Abstractions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Hosting.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Html.Abstractions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Abstractions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Connections.Common.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Connections.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Extensions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Features.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.HttpOverrides.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.HttpsPolicy.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Identity.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Localization.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Localization.Routing.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Metadata.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Abstractions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.ApiExplorer.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Core.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Cors.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.DataAnnotations.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Formatters.Xml.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Localization.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Razor.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.RazorPages.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.TagHelpers.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Razor.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Razor.Runtime.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.ResponseCaching.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.ResponseCompression.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Rewrite.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Routing.Abstractions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Routing.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.HttpSys.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.IIS.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.IISIntegration.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.Kestrel.Core.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.Kestrel.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Session.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.SignalR.Common.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.SignalR.Core.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.SignalR.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.StaticFiles.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.WebSockets.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.WebUtilities.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.CSharp.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Caching.Abstractions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Caching.Memory.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.Binder.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.CommandLine.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.FileExtensions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.Ini.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.Json.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.KeyPerFile.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.UserSecrets.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.Xml.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.DependencyInjection.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Diagnostics.HealthChecks.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Abstractions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Composite.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Embedded.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Physical.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileSystemGlobbing.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Hosting.Abstractions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Hosting.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Http.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Identity.Core.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Identity.Stores.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Localization.Abstractions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Localization.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.Abstractions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.Configuration.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.Console.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.Debug.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.EventLog.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.EventSource.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.TraceSource.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.ObjectPool.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Options.DataAnnotations.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Options.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Primitives.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.WebEncoders.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.JSInterop.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Net.Http.Headers.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.VisualBasic.Core.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.VisualBasic.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Win32.Primitives.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Win32.Registry.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\mscorlib.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\netstandard.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.AppContext.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Buffers.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Collections.Concurrent.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Collections.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Collections.Immutable.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Collections.NonGeneric.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Collections.Specialized.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.Annotations.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.DataAnnotations.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.EventBasedAsync.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.Primitives.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.TypeConverter.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Configuration.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Console.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Core.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Data.Common.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Data.DataSetExtensions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Data.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Contracts.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Debug.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.DiagnosticSource.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.EventLog.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.FileVersionInfo.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Process.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.StackTrace.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.TextWriterTraceListener.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Tools.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.TraceSource.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Tracing.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Drawing.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Drawing.Primitives.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Dynamic.Runtime.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Globalization.Calendars.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Globalization.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Globalization.Extensions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.IO.Compression.Brotli.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.IO.Compression.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.IO.Compression.FileSystem.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.IO.Compression.ZipFile.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.IO.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.DriveInfo.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.Primitives.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.Watcher.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.IO.IsolatedStorage.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.IO.MemoryMappedFiles.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.IO.Pipelines.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.IO.Pipes.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.IO.UnmanagedMemoryStream.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Linq.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Linq.Expressions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Linq.Parallel.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Linq.Queryable.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Memory.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.Http.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.HttpListener.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.Mail.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.NameResolution.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.NetworkInformation.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.Ping.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.Primitives.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.Requests.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.Security.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.ServicePoint.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.Sockets.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.WebClient.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.WebHeaderCollection.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.WebProxy.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.WebSockets.Client.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.WebSockets.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Numerics.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Numerics.Vectors.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.ObjectModel.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Reflection.DispatchProxy.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Reflection.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Reflection.Emit.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Reflection.Emit.ILGeneration.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Reflection.Emit.Lightweight.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Reflection.Extensions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Reflection.Metadata.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Reflection.Primitives.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Reflection.TypeExtensions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Resources.Reader.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Resources.ResourceManager.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Resources.Writer.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.CompilerServices.Unsafe.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.CompilerServices.VisualC.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.Extensions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.Handles.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.InteropServices.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.InteropServices.WindowsRuntime.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.Intrinsics.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.Loader.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.Numerics.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Formatters.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Json.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Primitives.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Xml.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Security.AccessControl.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Security.Claims.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Algorithms.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Cng.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Csp.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Encoding.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Primitives.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.X509Certificates.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Xml.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Security.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Security.Permissions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Security.Principal.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Security.Principal.Windows.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Security.SecureString.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.ServiceModel.Web.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.ServiceProcess.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Text.Encoding.CodePages.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Text.Encoding.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Text.Encoding.Extensions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Text.Encodings.Web.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Text.RegularExpressions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Threading.Channels.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Threading.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Threading.Overlapped.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Threading.Tasks.Dataflow.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Threading.Tasks.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Threading.Tasks.Extensions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Threading.Tasks.Parallel.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Threading.Thread.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Threading.ThreadPool.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Threading.Timer.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Transactions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Transactions.Local.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.ValueTuple.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Web.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Web.HttpUtility.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Windows.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Windows.Extensions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Xml.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Xml.Linq.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Xml.ReaderWriter.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Xml.Serialization.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Xml.XDocument.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Xml.XmlDocument.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Xml.XmlSerializer.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Xml.XPath.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Xml.XPath.XDocument.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\WindowsBase.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.csproj.CoreCompileInputs.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.MvcApplicationPartsAssemblyInfo.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.MvcApplicationPartsAssemblyInfo.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Areas\ManageUsers\Views\Users\SignUp.cshtml.g.cs
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Areas\ManageUsers\Views\Users\ForgotPassword.cshtml.g.cs
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\appsettings.Development.json
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\appsettings.json
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.exe
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.deps.json
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.runtimeconfig.json
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.runtimeconfig.dev.json
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.pdb
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Antiforgery.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Abstractions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Cookies.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Core.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.OAuth.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authorization.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authorization.Policy.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.Authorization.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.Forms.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.Server.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Components.Web.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Connections.Abstractions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.CookiePolicy.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Cors.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Cryptography.Internal.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.DataProtection.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.DataProtection.Extensions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Diagnostics.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Diagnostics.HealthChecks.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.HostFiltering.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Hosting.Abstractions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Hosting.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Html.Abstractions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Abstractions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Connections.Common.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Connections.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Extensions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Http.Features.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.HttpOverrides.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.HttpsPolicy.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Identity.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Localization.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Localization.Routing.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Metadata.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Abstractions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.ApiExplorer.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Core.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Cors.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.DataAnnotations.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Formatters.Xml.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Localization.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.Razor.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.RazorPages.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.TagHelpers.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Razor.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Razor.Runtime.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.ResponseCaching.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.ResponseCompression.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Rewrite.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Routing.Abstractions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Routing.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.HttpSys.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.IIS.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.IISIntegration.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.Kestrel.Core.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.Kestrel.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Session.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.SignalR.Common.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.SignalR.Core.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.SignalR.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.StaticFiles.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.WebSockets.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.WebUtilities.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.CSharp.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Caching.Abstractions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Caching.Memory.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.Abstractions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.Binder.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.CommandLine.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.FileExtensions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.Ini.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.Json.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.KeyPerFile.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.UserSecrets.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.Xml.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.DependencyInjection.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Diagnostics.HealthChecks.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Abstractions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Composite.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Embedded.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Physical.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileSystemGlobbing.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Hosting.Abstractions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Hosting.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Http.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Identity.Core.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Identity.Stores.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Localization.Abstractions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Localization.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.Abstractions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.Configuration.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.Console.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.Debug.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.EventLog.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.EventSource.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Logging.TraceSource.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.ObjectPool.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Options.DataAnnotations.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Options.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Primitives.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.WebEncoders.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.JSInterop.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Net.Http.Headers.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.VisualBasic.Core.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.VisualBasic.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Win32.Primitives.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\Microsoft.Win32.Registry.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\mscorlib.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\netstandard.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.AppContext.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Buffers.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Collections.Concurrent.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Collections.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Collections.Immutable.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Collections.NonGeneric.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Collections.Specialized.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.Annotations.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.DataAnnotations.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.EventBasedAsync.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.Primitives.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.TypeConverter.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Configuration.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Console.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Core.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Data.Common.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Data.DataSetExtensions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Data.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Contracts.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Debug.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.DiagnosticSource.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.EventLog.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.FileVersionInfo.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Process.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.StackTrace.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.TextWriterTraceListener.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Tools.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.TraceSource.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.Tracing.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Drawing.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Drawing.Primitives.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Dynamic.Runtime.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Globalization.Calendars.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Globalization.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Globalization.Extensions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.IO.Compression.Brotli.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.IO.Compression.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.IO.Compression.FileSystem.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.IO.Compression.ZipFile.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.IO.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.DriveInfo.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.Primitives.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.IO.FileSystem.Watcher.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.IO.IsolatedStorage.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.IO.MemoryMappedFiles.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.IO.Pipelines.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.IO.Pipes.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.IO.UnmanagedMemoryStream.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Linq.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Linq.Expressions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Linq.Parallel.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Linq.Queryable.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Memory.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.Http.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.HttpListener.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.Mail.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.NameResolution.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.NetworkInformation.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.Ping.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.Primitives.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.Requests.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.Security.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.ServicePoint.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.Sockets.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.WebClient.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.WebHeaderCollection.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.WebProxy.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.WebSockets.Client.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Net.WebSockets.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Numerics.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Numerics.Vectors.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.ObjectModel.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Reflection.DispatchProxy.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Reflection.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Reflection.Emit.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Reflection.Emit.ILGeneration.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Reflection.Emit.Lightweight.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Reflection.Extensions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Reflection.Metadata.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Reflection.Primitives.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Reflection.TypeExtensions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Resources.Reader.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Resources.ResourceManager.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Resources.Writer.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.CompilerServices.Unsafe.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.CompilerServices.VisualC.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.Extensions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.Handles.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.InteropServices.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.InteropServices.RuntimeInformation.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.InteropServices.WindowsRuntime.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.Intrinsics.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.Loader.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.Numerics.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Formatters.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Json.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Primitives.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Runtime.Serialization.Xml.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Security.AccessControl.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Security.Claims.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Algorithms.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Cng.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Csp.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Encoding.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Primitives.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.X509Certificates.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Security.Cryptography.Xml.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Security.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Security.Permissions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Security.Principal.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Security.Principal.Windows.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Security.SecureString.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.ServiceModel.Web.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.ServiceProcess.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Text.Encoding.CodePages.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Text.Encoding.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Text.Encoding.Extensions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Text.Encodings.Web.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Text.RegularExpressions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Threading.Channels.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Threading.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Threading.Overlapped.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Threading.Tasks.Dataflow.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Threading.Tasks.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Threading.Tasks.Extensions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Threading.Tasks.Parallel.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Threading.Thread.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Threading.ThreadPool.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Threading.Timer.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Transactions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Transactions.Local.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.ValueTuple.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Web.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Web.HttpUtility.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Windows.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Windows.Extensions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Xml.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Xml.Linq.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Xml.ReaderWriter.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Xml.Serialization.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Xml.XDocument.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Xml.XmlDocument.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Xml.XmlSerializer.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Xml.XPath.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\System.Xml.XPath.XDocument.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\refs\WindowsBase.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.Views.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\SmartIndia.WebApp.Views.pdb
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.csprojAssemblyReference.cache
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.AssemblyInfoInputs.cache
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.AssemblyInfo.cs
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.csproj.CoreCompileInputs.cache
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.MvcApplicationPartsAssemblyInfo.cs
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.MvcApplicationPartsAssemblyInfo.cache
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.RazorAssemblyInfo.cache
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.RazorAssemblyInfo.cs
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.TagHelpers.input.cache
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.TagHelpers.output.cache
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.RazorCoreGenerate.cache
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Areas\ManageUsers\Views\Users\ForgotPassword.cshtml.g.cs
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Areas\ManageUsers\Views\Users\Login.cshtml.g.cs
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Areas\ManageUsers\Views\Users\SignUp.cshtml.g.cs
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutLogin.cshtml.g.cs
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.RazorTargetAssemblyInfo.cache
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.RazorTargetAssemblyInfo.cs
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.Views.pdb
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.csproj.CopyComplete
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\staticwebassets\SmartIndia.WebApp.StaticWebAssets.Manifest.cache
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\staticwebassets\SmartIndia.WebApp.StaticWebAssets.xml
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.dll
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.pdb
+F:\Lipi\Work\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\SmartIndia.WebApp.genruntimeconfig.cache
+E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.WebApp\obj\Debug\netcoreapp3.1\Razor\Areas\ManageUsers\Views\Users\Thankyou.cshtml.g.cs
