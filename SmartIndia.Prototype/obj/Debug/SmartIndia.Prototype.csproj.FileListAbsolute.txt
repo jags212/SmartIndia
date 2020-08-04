@@ -2,5 +2,5 @@ E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.Pr
 E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\SmartIndia\SmartIndia.Prototype\obj\Debug\SmartIndia.Prototype.csproj.CoreCompileInputs.cache
 E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.Prototype\obj\Debug\SmartIndia.Prototype.csprojAssemblyReference.cache
 E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.Prototype\obj\Debug\SmartIndia.Prototype.csproj.CoreCompileInputs.cache
-D:\EBAY\SmartIndia\smart-india\SmartIndia.Prototype\obj\Debug\SmartIndia.Prototype.csprojAssemblyReference.cache
-D:\EBAY\SmartIndia\smart-india\SmartIndia.Prototype\obj\Debug\SmartIndia.Prototype.csproj.CoreCompileInputs.cache
+F:\Lipi\Work\smart-india\SmartIndia.Prototype\obj\Debug\SmartIndia.Prototype.csprojAssemblyReference.cache
+F:\Lipi\Work\smart-india\SmartIndia.Prototype\obj\Debug\SmartIndia.Prototype.csproj.CoreCompileInputs.cache

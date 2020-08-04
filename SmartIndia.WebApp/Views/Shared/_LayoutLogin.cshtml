@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+<!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -19,6 +21,9 @@
     <link rel="stylesheet" href="~/assets/css/custom.css" />
     <!-- Country Code CSS -->
     <link rel="stylesheet" href="~/assets/css/intlTelInput.css" />
+    <!-- Bootstrap Dialog Alert CSS -->
+    <link href="~/assets/css/bootstrap-dialog.min.css" rel="stylesheet" />
+
 </head>
 <body class="main-body">
     <div class="learn-main-content">
@@ -54,23 +59,29 @@
 
     </div>
     <div class="clearfix"></div>
-    <!-- Start Footer Area -->
 
+    <!-- Start Footer Area -->
     <footer class="footer">
         <div class="container">
             <span class="footer-text-muted">Copyright ©2020 Smart India. All rights reserved. </span>
         </div>
     </footer>
-
     <!-- End Footer Area -->
+
+    <script type="text/javascript">
+        ServiceURL = "@Configuration.GetSection("HostURL")["ServiceURL"]";
+    </script>
     <!-- Vendors Min JS -->
-    <script src="~/assets/js/vendors.min.js"></script> 
+    <script src="~/assets/js/vendors.min.js"></script>
     <!-- jvectormap Min JS -->
     <script src="~/assets/js/jvectormap-1.2.2.min.js"></script>
     <!-- jvectormap World Mill JS -->
     <script src="~/assets/js/jvectormap-world-mill-en.js"></script>
     <!-- Custom JS -->
-    <script src="~/assets/js/custom.js"></script>
+    <script src="~/assets/js/custom.js"></script> 
+    <!-- Bootstrap Dialog Min Alert JS -->
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/bootstrap-dialog.min.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

@@ -8,7 +8,7 @@ namespace SmartIndia.Data.Models
     public class AuthenticateRequest
     {
         [Required]
-        public string Username { get; set; }
+        public string EmailID { get; set; }
 
         [Required]
         public string Password { get; set; }

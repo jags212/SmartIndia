@@ -25,12 +25,12 @@ E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.D
 E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.Data\obj\Debug\netstandard2.0\SmartIndia.Data.AssemblyInfo.cs
 E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.Data\obj\Debug\netstandard2.0\SmartIndia.Data.dll
 E:\Office Work\Surya Work\EasternBay\SmartIndia_Project\smart-india\SmartIndia.Data\obj\Debug\netstandard2.0\SmartIndia.Data.pdb
-D:\EBAY\SmartIndia\smart-india\SmartIndia.Data\bin\Debug\netstandard2.0\SmartIndia.Data.deps.json
-D:\EBAY\SmartIndia\smart-india\SmartIndia.Data\bin\Debug\netstandard2.0\SmartIndia.Data.dll
-D:\EBAY\SmartIndia\smart-india\SmartIndia.Data\bin\Debug\netstandard2.0\SmartIndia.Data.pdb
-D:\EBAY\SmartIndia\smart-india\SmartIndia.Data\obj\Debug\netstandard2.0\SmartIndia.Data.csprojAssemblyReference.cache
-D:\EBAY\SmartIndia\smart-india\SmartIndia.Data\obj\Debug\netstandard2.0\SmartIndia.Data.AssemblyInfoInputs.cache
-D:\EBAY\SmartIndia\smart-india\SmartIndia.Data\obj\Debug\netstandard2.0\SmartIndia.Data.AssemblyInfo.cs
-D:\EBAY\SmartIndia\smart-india\SmartIndia.Data\obj\Debug\netstandard2.0\SmartIndia.Data.csproj.CoreCompileInputs.cache
-D:\EBAY\SmartIndia\smart-india\SmartIndia.Data\obj\Debug\netstandard2.0\SmartIndia.Data.dll
-D:\EBAY\SmartIndia\smart-india\SmartIndia.Data\obj\Debug\netstandard2.0\SmartIndia.Data.pdb
+F:\Lipi\Work\smart-india\SmartIndia.Data\bin\Debug\netstandard2.0\SmartIndia.Data.deps.json
+F:\Lipi\Work\smart-india\SmartIndia.Data\bin\Debug\netstandard2.0\SmartIndia.Data.dll
+F:\Lipi\Work\smart-india\SmartIndia.Data\bin\Debug\netstandard2.0\SmartIndia.Data.pdb
+F:\Lipi\Work\smart-india\SmartIndia.Data\obj\Debug\netstandard2.0\SmartIndia.Data.csprojAssemblyReference.cache
+F:\Lipi\Work\smart-india\SmartIndia.Data\obj\Debug\netstandard2.0\SmartIndia.Data.AssemblyInfoInputs.cache
+F:\Lipi\Work\smart-india\SmartIndia.Data\obj\Debug\netstandard2.0\SmartIndia.Data.AssemblyInfo.cs
+F:\Lipi\Work\smart-india\SmartIndia.Data\obj\Debug\netstandard2.0\SmartIndia.Data.csproj.CoreCompileInputs.cache
+F:\Lipi\Work\smart-india\SmartIndia.Data\obj\Debug\netstandard2.0\SmartIndia.Data.dll
+F:\Lipi\Work\smart-india\SmartIndia.Data\obj\Debug\netstandard2.0\SmartIndia.Data.pdb

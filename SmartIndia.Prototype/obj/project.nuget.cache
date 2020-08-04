@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "092PGtdc7O+9ZIYIIDvKgWwtuwW1+XVyBY5JKpdibfeQ8W4bP2bwEsf5Ecairr/iUOfabdSDvDiJPwZ6wkX+QQ==",
+  "success": true,
+  "projectFilePath": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\smart-india\\SmartIndia.Prototype\\SmartIndia.Prototype.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Officail\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Officail\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
