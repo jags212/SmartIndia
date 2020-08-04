@@ -1997,19 +1997,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Officail\\.nuget\\packages\\": {}
+    "C:\\Users\\HP\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\smart-india\\SmartIndia.Data\\SmartIndia.Data.csproj",
+      "projectUniqueName": "F:\\Lipi\\Work\\smart-india\\SmartIndia.Data\\SmartIndia.Data.csproj",
       "projectName": "SmartIndia.Data",
-      "projectPath": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\smart-india\\SmartIndia.Data\\SmartIndia.Data.csproj",
-      "packagesPath": "C:\\Users\\Officail\\.nuget\\packages\\",
-      "outputPath": "E:\\Office Work\\Surya Work\\EasternBay\\SmartIndia_Project\\smart-india\\SmartIndia.Data\\obj\\",
+      "projectPath": "F:\\Lipi\\Work\\smart-india\\SmartIndia.Data\\SmartIndia.Data.csproj",
+      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+      "outputPath": "F:\\Lipi\\Work\\smart-india\\SmartIndia.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Officail\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2090,7 +2090,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
       }
     }
   }
