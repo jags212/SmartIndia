@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
     
 <head>
@@ -7,7 +7,7 @@
 <meta charset="utf-8"/>
 <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-<meta http-equiv = "refresh" content = "0; url = login.html" />
+<!--<meta http-equiv = "refresh" content = "0; url = login.html" />-->
 <title>OCR</title>
 
 <link rel="icon" type="image/png" href="assets/img/favicon.png" />
@@ -19,6 +19,8 @@
 <link rel="stylesheet" href="assets/css/responsive.css"/>
 <!-- Custom CSS -->
 <link rel="stylesheet" href="assets/css/custom.css" />
+
+<link href="assets/css/bootstrap-dialog.min.css" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -125,6 +127,33 @@
 <script src="assets/js/jvectormap-world-mill-en.js"></script>
 <!-- Custom JS -->
 <script src="assets/js/custom.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="assets/js/bootstrap-dialog.min.js"></script>
+
+<script>
+  $( document ).ready(function() {
+      BootstrapDialog.confirm({
+          title: 'WARNING',
+          message: 'Warning! Drop your banana?',
+          type: BootstrapDialog.TYPE_WARNING, // <-- Default value is BootstrapDialog.TYPE_PRIMARY
+          closable: true, // <-- Default value is false
+          draggable: true, // <-- Default value is false
+          btnCancelLabel: 'Cancel', // <-- Default value is 'Cancel',
+          btnOKLabel: 'OK', // <-- Default value is 'OK',
+          btnOKClass: 'btn-success', // <-- If you didn't specify it, dialog type will be used,
+          callback: function (result) {
+              // result will be true if button was click, while it will be false if users close the dialog directly.
+              if (result) {
+                  alert('Yup.');
+              } else {
+                  alert('Nope.');
+              }
+          }
+      });
+  });
+</script>
 
     </body>
 </html>
