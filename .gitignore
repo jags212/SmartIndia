@@ -348,3 +348,8 @@ obj/
 *.dll
 packages 
 
+.vs
+/.vs
+obj
+obj
+/SmartIndia.WebApp/obj
