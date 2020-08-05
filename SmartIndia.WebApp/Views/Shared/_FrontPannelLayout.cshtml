@@ -1,0 +1,328 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    @*<title>OCR - Host Dashboard</title>*@
+
+    <link rel="icon" type="image/png" href="~/assets/img/favicon.png" />
+
+    <!-- Vendors Min CSS -->
+    <link rel="stylesheet" href="~/assets/css/vendors.min.css" />
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="~/assets/css/all.min.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="~/assets/css/style.css" />
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="~/assets/css/responsive.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/assets/css/custom.css" />
+    <!-- Calendar CSS -->
+    <link rel="stylesheet" href="~/assets/calendar/css/fullcalendar.css" />
+    <link rel="stylesheet" href="~/assets/calendar/css/fullcalendar.print.css" media="print" />
+    <!-- Country Code CSS -->
+    <link rel="stylesheet" href="~/assets/css/intlTelInput.css" />
+
+
+</head>
+
+<body>
+    <!-- Side Menu -->
+    <!-- Start Sidemenu Area -->
+    <div class="sidemenu-area">
+        <div class="sidemenu-header">
+            <a class="navbar-brand d-flex mobile-d-flex align-items-center" asp-area="ManageUsers" asp-controller="Hosts" asp-action="HostDashboard">
+                <img src="~/assets/img/small-logo.png" alt="OCR" />
+                <span>OCR</span>
+            </a>
+
+            <div class="burger-menu d-none d-lg-block">
+                <span class="top-bar"></span>
+                <span class="middle-bar"></span>
+                <span class="bottom-bar"></span>
+            </div>
+
+            <div class="responsive-burger-menu d-block d-lg-none">
+                <span class="top-bar"></span>
+                <span class="middle-bar"></span>
+                <span class="bottom-bar"></span>
+            </div>
+        </div>
+
+        <div class="sidemenu-body">
+            <ul class="sidemenu-nav metisMenu h-100" id="sidemenu-nav" data-simplebar>
+                <li class="nav-item mm-active">
+                    <a class="nav-link" asp-area="ManageUsers" asp-controller="Hosts" asp-action="HostDashboard">
+                        <span class="icon">
+                            <i class='bx bx-home-circle'></i>
+                        </span>
+                        <span class="menu-title">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="ManageUsers" asp-controller="Hosts" asp-action="Courses">
+                        <span class="icon">
+                            <i class='bx bxl-discourse'></i>
+                        </span>
+                        <span class="menu-title">Courses</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="ManageUsers" asp-controller="Hosts" asp-action="schedular">
+                        <span class="icon">
+                            <i class='bx bx-book-content'></i>
+                        </span>
+                        <span class="menu-title">Schedular</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="javascript:void(0);" class="nav-link">
+                        <span class="icon">
+                            <i class='bx bx-card'></i>
+                        </span>
+                        <span class="menu-title">Class Wall</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="javascript:void(0);" class="nav-link">
+                        <span class="icon">
+                            <i class='bx bx-video-recording'></i>
+                        </span>
+                        <span class="menu-title">Upcoming Classes</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="javascript:void(0);" class="nav-link">
+                        <span class="icon">
+                            <i class='bx bxs-user-detail'></i>
+                        </span>
+                        <span class="menu-title">Attendees</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+
+                    <a class="nav-link" asp-area="ManageUsers" asp-controller="Hosts" asp-action="rescheduling">
+                        <span class="icon">
+                            <i class='bx bxs-book-content'></i>
+                        </span>
+                        <span class="menu-title">Rescheduling</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- End Sidemenu Area -->
+    <!-- Main Content Wrapper -->
+    <div class="main-content d-flex mobile-d-flex flex-column">
+        <!-- Top Navbar -->
+        <!-- Top Navbar Area -->
+        <nav class="navbar top-navbar navbar-expand">
+            <div class="collapse navbar-collapse" id="navbarSupportContent">
+                <div class="responsive-burger-menu d-block d-lg-none">
+                    <span class="top-bar"></span>
+                    <span class="middle-bar"></span>
+                    <span class="bottom-bar"></span>
+                </div>
+
+                <ul class="navbar-nav right-nav align-items-center ml-auto res-right-nav">
+                    <li class="nav-item">
+                        <a class="nav-link bx-fullscreen-btn" id="fullscreen-button">
+                            <i class="bx bx-fullscreen"></i>
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown language-switch-nav-item">
+                        <a href="javascript:void(0);" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button type="button" class="btn lh-btn-outline"><i class="bx bx-user-check"></i></button>
+                            <span>Host <i class='bx bx-chevron-down'></i></span>
+                        </a>
+
+                        <div class="dropdown-menu">
+                            <a href="javascript:void(0);" class="dropdown-item d-flex mobile-d-flex justify-content-between align-items-center" data-title="Make this as primary">
+                                <span>Host</span>
+                                <input class="form-check-input" type="radio" name="hlradio" id="Host" value="Host" checked="">
+                            </a>
+                            <a href="javascript:void(0);" class="dropdown-item d-flex mobile-d-flex justify-content-between align-items-center" data-title="Make this as primary">
+                                <span>Attendee</span>
+                                <input class="form-check-input" type="radio" name="hlradio" id="Learner" value="Learner">
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item notification-box dropdown">
+                        <a href="javascript:void(0);" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="notification-btn">
+                                <i class='bx bx-bell'></i>
+                                <span class="badge badge-secondary">5</span>
+                            </div>
+                        </a>
+
+                        <div class="dropdown-menu">
+                            <div class="dropdown-header d-flex mobile-d-flex justify-content-between align-items-center">
+                                <span class="title d-inline-block">6 New Notifications</span>
+                                <span class="mark-all-btn d-inline-block">Mark all as read</span>
+                            </div>
+
+                            <div class="dropdown-body">
+                                <a href="javascript:void(0);" class="dropdown-item d-flex mobile-d-flex align-items-center">
+                                    <div class="icon">
+                                        <i class='bx bx-message-rounded-dots'></i>
+                                    </div>
+                                    <div class="content">
+                                        <span class="d-block">Just sent a new message!</span>
+                                        <p class="sub-text mb-0">2 sec ago</p>
+                                    </div>
+                                </a>
+
+                                <a href="javascript:void(0);" class="dropdown-item d-flex mobile-d-flex align-items-center">
+                                    <div class="icon">
+                                        <i class='bx bx-user'></i>
+                                    </div>
+                                    <div class="content">
+                                        <span class="d-block">New customer registered</span>
+                                        <p class="sub-text mb-0">5 sec ago</p>
+                                    </div>
+                                </a>
+
+                                <a href="javascript:void(0);" class="dropdown-item d-flex mobile-d-flex align-items-center">
+                                    <div class="icon">
+                                        <i class='bx bx-layer'></i>
+                                    </div>
+                                    <div class="content">
+                                        <span class="d-block">Apps are ready for update</span>
+                                        <p class="sub-text mb-0">3 min ago</p>
+                                    </div>
+                                </a>
+
+                                <a href="javascript:void(0);" class="dropdown-item d-flex mobile-d-flex align-items-center">
+                                    <div class="icon">
+                                        <i class='bx bx-hourglass'></i>
+                                    </div>
+                                    <div class="content">
+                                        <span class="d-block">Your item is shipped</span>
+                                        <p class="sub-text mb-0">7 min ago</p>
+                                    </div>
+                                </a>
+
+                                <a href="javascript:void(0);" class="dropdown-item d-flex mobile-d-flex align-items-center">
+                                    <div class="icon">
+                                        <i class='bx bx-comment-dots'></i>
+                                    </div>
+                                    <div class="content">
+                                        <span class="d-block">Steven commented on your post</span>
+                                        <p class="sub-text mb-0">1 sec ago</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="dropdown-footer">
+                                <a href="javascript:void(0);" class="dropdown-item">View All</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown profile-nav-item">
+                        <a href="javascript:void(0);" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="menu-profile">
+                                <span class="name">Hi! Prateek</span>
+                                <img src="~/assets/img/user1.jpg" class="rounded-circle" alt="image">
+                            </div>
+                        </a>
+
+                        <div class="dropdown-menu">
+                            <div class="dropdown-header d-flex mobile-d-flex flex-column align-items-center">
+                                <div class="figure mb-3">
+                                    <img src="~/assets/img/user1.jpg" class="rounded-circle" alt="image">
+                                </div>
+                                <div class="info text-center">
+                                    <span class="name">Prateek Singh</span>
+                                    <p class="mb-3 email">prateek@gmail.com</p>
+                                </div>
+                            </div>
+
+                            <div class="dropdown-body">
+                                <ul class="profile-nav p-0 pt-3">
+                                    <li class="nav-item">
+                                      
+                                            <a class="nav-link" asp-area="ManageUsers" asp-controller="Hosts" asp-action="HostProfile">
+                                                <i class='bx bx-user'></i> <span>Profile</span>
+                                            </a>
+</li>
+                                    <li class="nav-item">
+                                        <a href="javascript:void(0);" class="nav-link">
+                                            <i class='bx bx-envelope'></i> <span>My Inbox</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="dropdown-footer">
+                                <ul class="profile-nav">
+                                    <li class="nav-item">
+                                        <a href="login.html" class="nav-link">
+                                            <i class='bx bx-log-out'></i> <span>Logout</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- End Top Navbar Area -->
+
+
+        @RenderBody()
+
+        <!-- Footer -->
+        <div class="flex-grow-1"></div>
+
+        <!-- Start Footer -->
+        <footer class="footer-area">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-sm-6 col-md-6">
+                    <p>Copyright <i class='bx bx-copyright'></i> 2020 <a href="javascript:void(0);">OCR</a>. All rights reserved</p>
+                </div>
+
+                <div class="col-lg-6 col-sm-6 col-md-6 text-right">
+                    <p></p>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+    </div>
+    <!-- End Main Content Wrapper -->
+    <!-- Footer Scripts -->
+    <!-- Vendors Min JS -->
+    <script src="~/assets/js/vendors.min.js"></script>
+
+    <!-- ApexCharts JS -->
+    <script src="~/assets/js/apexcharts/apexcharts.min.js"></script>
+    <script src="~/assets/js/apexcharts/apex-custom-line-chart.js"></script>
+    <script src="~/assets/js/apexcharts/apex-custom-pie-donut-chart.js"></script>
+    <script src="~/assets/js/apexcharts/apex-custom-column-chart.js"></script>
+
+    <!-- ChartJS -->
+    <script src="~/assets/js/chartjs/chartjs.min.js"></script>
+
+    <!-- jvectormap Min JS -->
+    <script src="~/assets/js/jvectormap-1.2.2.min.js"></script>
+    <!-- jvectormap World Mill JS -->
+    <script src="~/assets/js/jvectormap-world-mill-en.js"></script>
+
+    <!-- Custom JS -->
+    <script src="~/assets/js/custom.js"></script>
+
+    <!-- Calendar JS -->
+    <script src="~/assets/calendar/js/moment.min.js"></script>
+    <script src="~/assets/calendar/js/fullcalendar.min.js"></script>
+    <script src="~/assets/calendar/js/calendar.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
