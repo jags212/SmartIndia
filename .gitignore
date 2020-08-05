@@ -353,3 +353,6 @@ packages
 obj
 obj
 /SmartIndia.WebApp/obj
+/SmartIndia.Prototype/obj
+/SmartIndia.RestAPI/obj
+/SmartIndia.Data/obj
