@@ -339,20 +339,20 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 
-.vs
+.vs/
 *.suo
 *.user
 _ReSharper.*
-bin
-obj
+bin/
+obj/
 *.dll
-packages
-/FTP.Web/Logs
-<<<<<<< HEAD
-=======
-/.vs/SmartIndia/DesignTimeBuild/.dtbcache.v2
-/SmartIndia.Data/obj/Debug/netstandard2.0/*.cache
-/SmartIndia.RestAPI/obj/Debug/netcoreapp3.1/*.cache
-/SmartIndia.WebApp/obj/Debug/netcoreapp3.1/*.cache
->>>>>>> master
-/SmartIndia.Prototype/obj/Debug/netstandard2.0/*.txt
+packages 
+
+.vs
+/.vs
+obj
+obj
+/SmartIndia.WebApp/obj
+/SmartIndia.Prototype/obj
+/SmartIndia.RestAPI/obj
+/SmartIndia.Data/obj
