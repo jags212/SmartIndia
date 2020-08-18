@@ -55,11 +55,13 @@
     <None Include="wwwroot\assets\webfonts\fontello.woff" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Areas\Hosts\Data\" />
+    <Folder Include="Areas\Hosts\Models\" />
     <Folder Include="Areas\ManageUsers\Data\" />
     <Folder Include="Areas\ManageUsers\Models\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.6" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.3" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
   </ItemGroup>
 </Project>
