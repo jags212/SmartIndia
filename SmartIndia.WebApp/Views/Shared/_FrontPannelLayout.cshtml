@@ -35,86 +35,7 @@
     <!-- Side Menu -->
     <!-- Start Sidemenu Area -->
     <div class="sidemenu-area">
-        <div class="sidemenu-header">
-            <a class="navbar-brand d-flex mobile-d-flex align-items-center" asp-area="ManageUsers" asp-controller="Hosts" asp-action="HostDashboard">
-                <img src="~/assets/img/small-logo.png" alt="OCR" />
-                <span>OCR</span>
-            </a>
-
-            <div class="burger-menu d-none d-lg-block">
-                <span class="top-bar"></span>
-                <span class="middle-bar"></span>
-                <span class="bottom-bar"></span>
-            </div>
-
-            <div class="responsive-burger-menu d-block d-lg-none">
-                <span class="top-bar"></span>
-                <span class="middle-bar"></span>
-                <span class="bottom-bar"></span>
-            </div>
-        </div>
-
-        <div class="sidemenu-body">
-            <ul class="sidemenu-nav metisMenu h-100" id="sidemenu-nav" data-simplebar>
-                <li class="nav-item mm-active">
-                    <a class="nav-link" asp-area="ManageUsers" asp-controller="Hosts" asp-action="HostDashboard">
-                        <span class="icon">
-                            <i class='bx bx-home-circle'></i>
-                        </span>
-                        <span class="menu-title">Dashboard</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" asp-area="ManageUsers" asp-controller="Hosts" asp-action="Courses">
-                        <span class="icon">
-                            <i class='bx bxl-discourse'></i>
-                        </span>
-                        <span class="menu-title">Courses</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" asp-area="ManageUsers" asp-controller="Hosts" asp-action="schedular">
-                        <span class="icon">
-                            <i class='bx bx-book-content'></i>
-                        </span>
-                        <span class="menu-title">Schedular</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="javascript:void(0);" class="nav-link">
-                        <span class="icon">
-                            <i class='bx bx-card'></i>
-                        </span>
-                        <span class="menu-title">Class Wall</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="javascript:void(0);" class="nav-link">
-                        <span class="icon">
-                            <i class='bx bx-video-recording'></i>
-                        </span>
-                        <span class="menu-title">Upcoming Classes</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="javascript:void(0);" class="nav-link">
-                        <span class="icon">
-                            <i class='bx bxs-user-detail'></i>
-                        </span>
-                        <span class="menu-title">Attendees</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-
-                    <a class="nav-link" asp-area="ManageUsers" asp-controller="Hosts" asp-action="rescheduling">
-                        <span class="icon">
-                            <i class='bx bxs-book-content'></i>
-                        </span>
-                        <span class="menu-title">Rescheduling</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
+        <partial name="_Menu" />
     </div>
     <!-- End Sidemenu Area -->
     <!-- Main Content Wrapper -->
@@ -248,11 +169,11 @@
                             <div class="dropdown-body">
                                 <ul class="profile-nav p-0 pt-3">
                                     <li class="nav-item">
-                                      
-                                            <a class="nav-link" asp-area="ManageUsers" asp-controller="Hosts" asp-action="HostProfile">
-                                                <i class='bx bx-user'></i> <span>Profile</span>
-                                            </a>
-</li>
+
+                                        <a class="nav-link" asp-area="ManageUsers" asp-controller="Hosts" asp-action="HostProfile">
+                                            <i class='bx bx-user'></i> <span>Profile</span>
+                                        </a>
+                                    </li>
                                     <li class="nav-item">
                                         <a href="javascript:void(0);" class="nav-link">
                                             <i class='bx bx-envelope'></i> <span>My Inbox</span>

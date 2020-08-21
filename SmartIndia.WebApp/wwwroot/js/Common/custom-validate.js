@@ -1065,3 +1065,12 @@ function trim(strString) {
     strCopy = strCopy.replace(/\s+$/, "")
     return strCopy.toString()
 }
+//-------------------------------------Function to Generate 4 digit Random Number for OTP--------------------------------------------
+function generateOTP() { 
+    var digits = '0123456789';
+    let OTP = '';
+    for (let i = 0; i < 4; i++) {
+        OTP += digits[Math.floor(Math.random() * 10)];
+    }
+    return OTP;
+} 

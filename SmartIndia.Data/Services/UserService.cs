@@ -43,9 +43,9 @@ namespace SmartIndia.Data.Services
         {
             object[] objArrayUser = new object[] {
                      "@ACTIONCODE", 'A'
-                    ,"@EmailID", model.EmailID 
+                    ,"@EmailID", model.EmailID
             };
-            DynamicParameters paramUser = objArrayUser.ToDynamicParameters(); 
+            DynamicParameters paramUser = objArrayUser.ToDynamicParameters();
             var getUser = DBConnection.QueryFirstOrDefault("USP_LoginManagement_ACTION", paramUser, commandType: CommandType.StoredProcedure);
             if (getUser == null) return null;
             var hashCode = getUser.VCode;
@@ -77,7 +77,7 @@ namespace SmartIndia.Data.Services
             paramToken.Add("@Expires", refreshToken.Expires, DbType.DateTime, ParameterDirection.Input);
             paramToken.Add("@Created", refreshToken.Created, DbType.DateTime, ParameterDirection.Input);
             DBConnection.Execute("USP_LoginManagement_ACTION", paramToken, commandType: CommandType.StoredProcedure);
-             
+
             return new AuthenticateResponse(userRegistration, jwtToken, refreshToken.Token);
         }
 
@@ -121,7 +121,7 @@ namespace SmartIndia.Data.Services
             // save new refresh token
             object[] objArrayNewToken = new object[] {
                      "@ACTIONCODE", 'I'
-                    ,"@Token", newRefreshToken.Token 
+                    ,"@Token", newRefreshToken.Token
                     ,"@CreatedByIp", newRefreshToken.CreatedByIp
                     ,"@UserRegistrationUserId", userRegistration.UserId
             };
@@ -160,12 +160,14 @@ namespace SmartIndia.Data.Services
 
         public IEnumerable<UserRegistration> GetAll()
         {
-            return _context.UserRegistrations;
+            var res = DBConnection.Query<UserRegistration>("select * from UserRegistrations").ToList();
+            return res;
         }
 
         public UserRegistration GetById(Int64 id)
         {
-            return _context.UserRegistrations.Find(id);
+            var res = DBConnection.Query<UserRegistration>("select * from UserRegistrations where UserId=" + id + "").FirstOrDefault();
+            return res;
         }
 
         // helper methods
@@ -188,7 +190,7 @@ namespace SmartIndia.Data.Services
         }
 
         private RefreshToken generateRefreshToken(string ipAddress)
-        { 
+        {
             using (var rngCryptoServiceProvider = new RNGCryptoServiceProvider())
             {
                 var randomBytes = new byte[64];

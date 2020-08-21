@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewData["Title"] = "Verification";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<div class="forgot-password-area recover-password-area">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="forgot-password-content">
+                <div class="row m-0">
+                    <div class="col-lg-12 p-0">
+                        <div class="forgot-password-form">
+                            <h2>Validate OTP</h2>
+                            <form>
+                                <div class="row form-group regi-rec-form-group res-row">
+                                    <div class="col res-col">
+                                        <input type="text" class="form-control" name="code" placeholder="4-digit Email OTP">
+                                        <span class="label-title">
+                                            <i class="bx bx-label l-25"></i>
+                                        </span>
+                                    </div>
+                                    <div class="col res-col">
+                                        <input type="text" class="form-control" name="code" placeholder="4-digit Mobile OTP">
+                                        <span class="label-title">
+                                            <i class="bx bx-label l-25"></i>
+                                        </span>
+                                    </div>
+                                    <div class="re-note ml-20">
+                                        (Use first 4-digit OTP from email and second 4-digit OTP from registered mobile)
+                                    </div>
+                                </div>
+                                <a href="thank-you.html" class="forgot-password-btn">Verify</a>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

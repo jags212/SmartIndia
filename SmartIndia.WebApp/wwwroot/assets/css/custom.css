@@ -306,7 +306,7 @@
 .recover-password-area
 {
 	padding-top: 135px;
-	padding-bottom: 141px;
+	padding-bottom: 135px;
 }
 .host-color
 {
@@ -799,27 +799,27 @@
 	background-color: #c6e8cd;
     color: #13bb37;
     text-align: center;
-    border: #c6e8cd;
-	padding: .375rem 0.1rem;
+    border: 1px solid #c6e8cd;
+	padding: 1px 5px;
+	height: auto;
 }
-.table-edit:hover, .table-edit:focus
-{
-	background-color: #13bb37;
-	color: #ffffff;
-}
-.table-cancel
-{
+	.table-edit:hover, .table-edit:focus {
+		background-color: #13bb37;
+		color: #ffffff;
+		border: 1px solid #c6e8cd;
+	}
+.table-cancel {
 	background-color: #f9d0d9;
-    color: #e1000a;
-    text-align: center;
-    border: #c6e8cd;
-	padding: .375rem 0.1rem;
+	color: #e1000a;
+	text-align: center;
+	border: 1px solid #f9d0d9;
+	padding: 1px 5px;
+	height: auto;
 }
-.table-cancel:hover, .table-cancel:focus
-{
-	background-color: #e1000a;
-	color: #ffffff;
-}
+	.table-cancel:hover, .table-cancel:focus {
+		background-color: #e1000a;
+		color: #ffffff;
+	}
 .regi-form-group
 {
 	width: 107% !important;
@@ -1060,7 +1060,7 @@
 	background-color: #d1def5;
 	color: #4788ff;
 	text-align: center;
-	border: #d1def5;
+	border: 1px solid #d1def5;
 	padding: .375rem 0.1rem;
 }
 	.table-publish:hover {
@@ -1083,6 +1083,85 @@
 	font-size: 100px;
 	color: #28a745;
 }
+.m-10{
+	margin: 10px;
+}
+.search-form-control {
+	width: 100%;
+	color: #2a2a2a;
+	border: 1px solid #cdd0d2;
+	padding: 5px 10px;
+	border-radius: 5px;
+	font-family: "Nunito", sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+}
+.profile-link:hover{
+	text-decoration: none;
+}
+.pl-110{
+	padding-left: 110px !important;
+}
+.table-view {
+	background-color: #a9a09c;
+	color: #1b1a1a;
+	text-align: center;
+	border: 1px solid #a9a09c;
+	padding: 1px 3px;
+	height: auto;
+}
+	.table-view:hover, .table-view:focus {
+		background-color: #1b1a1a;
+		color: #ffffff;
+		border: 1px solid #a9a09c;
+	}
+.action-inline {
+	display: inline-block;
+}
+.table-saction-width {
+	width: 12%;
+}
+.table-rsaction-width {
+	width: 9%;
+}
+/*--------------Start Custom File-------------------*/
+.custom-file {
+	color: transparent;
+}
+
+	.custom-file::-webkit-file-upload-button {
+		visibility: hidden;
+	}
+
+	.custom-file::before {
+		content: 'Select some files';
+		color: #e1000a;
+		display: inline-block;
+		background: #f9ecef;
+		border: 1px solid #e1000a;
+		border-radius: 3px;
+		padding: 5px 8px;
+		outline: none;
+		white-space: nowrap;
+		-webkit-user-select: none;
+		cursor: pointer;
+		font-weight: 700;
+		font-size: 10pt;
+	}
+
+	.custom-file:hover::before {
+		background: #e1000a;
+		color: #ffffff;
+	}
+
+	.custom-file:active {
+		outline: 0;
+	}
+
+		.custom-file:active::before {
+			background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+		}
+/*--------------End Custom File-------------------*/
 
 /*------------------- Responsive ------------------------------------*/
 @media(min-width: 320px) and (max-width: 767px) {
@@ -1184,6 +1263,9 @@
 	.breadcrumb-area h1 {
 		float: none;
 	}
+	.res-mb-16 {
+		margin-bottom: 16px;
+	}
 }
 
 @media(min-width: 768px) and (max-width: 1208px) {
@@ -1228,14 +1310,20 @@
 	.resm-mb-20 {
 		margin-bottom: 20px;
 	}
-
 	.search-group {
 		width: 100%;
 		margin-right: 0;
 	}
-
 	.table-edit {
-		padding: .375rem .75rem;
+		margin: 5px 0;
+	}
+	.recover-password-area {
+		padding-top: 145px;
+		padding-bottom: 142px;
+	}
+	.thank-you-area {
+		padding-top: 150px;
+		padding-bottom: 45px;
 	}
 }
 

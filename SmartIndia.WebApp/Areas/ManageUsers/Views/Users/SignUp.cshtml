@@ -13,7 +13,11 @@
     <!-- Api JS -->
     <script src="~/js/UserRegistration/api-call.js"></script>
     <script src="~/js/UserRegistration/user-signup-validate.js"></script>
-}
+    <!-- SMS JS -->
+    <script src="~/js/Common/sms-gateway.js"></script>
+    <!-- EMAIL JS -->
+    <script src="~/js/Common/mail-gateway.js"></script>
+    }
 <div class="register-area">
     <div class="d-table">
         <div class="d-table-cell">
@@ -44,6 +48,7 @@
                             <i class='bx bx-mobile mobile-padd'></i>
                         </span>
                         <!--- Start Country Code --->
+
                         <div id="intel-flag-title" class="intl-tel-input allow-dropdown separate-dial-code" data-toggle="tooltip" data-placement="bottom" title="United States of America: +1">
                             <div class="flag-container">
                                 <div id="selected-flag-title" class="selected-flag" role="combobox" aria-owns="country-listbox">
@@ -52,7 +57,11 @@
                                     <div class="iti-arrow up"></div>
                                 </div>
                                 <ul class="country-list dropup" id="country-listbox" aria-expanded="true" role="listbox" aria-activedescendant="iti-item-us">
-                                    <li class="country preferred" tabindex="-1" id="iti-item-us" role="option" data-dial-code="1" data-country-code="us" aria-selected="true"><div class="flag-box"><div class="iti-flag us"></div></div><span class="country-name">United States of America</span><span class="dial-code">+1</span></li>
+                                    <div class="m-10"><input type="text" class="search-form-control" placeholder="Search Country" id="searchCountry" /></div>
+                                    <li class="country preferred" tabindex="-1" id="iti-item-us" role="option" data-dial-code="1" data-country-code="us" aria-selected="true">
+                                        <div class="flag-box"><div class="iti-flag us"></div></div>
+                                        <span class="country-name">United States of America</span><span class="dial-code">+1</span>
+                                    </li>
                                     <li class="country preferred" tabindex="-1" id="iti-item-gb" role="option" data-dial-code="44" data-country-code="gb"><div class="flag-box"><div class="iti-flag gb"></div></div><span class="country-name">United Kingdom</span><span class="dial-code">+44</span></li>
                                     <li class="divider" role="separator" aria-disabled="true"></li>
                                     <li class="country standard" tabindex="-1" id="iti-item-af" role="option" data-dial-code="93" data-country-code="af"><div class="flag-box"><div class="iti-flag af"></div></div><span class="country-name">Afghanistan</span><span class="dial-code">+93</span></li>
@@ -169,7 +178,7 @@
                                     <li class="country standard" tabindex="-1" id="iti-item-kz" role="option" data-dial-code="7" data-country-code="kz"><div class="flag-box"><div class="iti-flag kz"></div></div><span class="country-name">Kazakhstan</span><span class="dial-code">+7</span></li>
                                     <li class="country standard" tabindex="-1" id="iti-item-ke" role="option" data-dial-code="254" data-country-code="ke"><div class="flag-box"><div class="iti-flag ke"></div></div><span class="country-name">Kenya</span><span class="dial-code">+254</span></li>
                                     <li class="country standard" tabindex="-1" id="iti-item-ki" role="option" data-dial-code="686" data-country-code="ki"><div class="flag-box"><div class="iti-flag ki"></div></div><span class="country-name">Kiribati</span><span class="dial-code">+686</span></li>
-                                    <li class="country standard" tabindex="-1" id="iti-item-kr" role="option" data-dial-code="82" data-country-code="kr"><div class="flag-box"><div class="iti-flag kr"></div></div><span class="country-name">Korea, the Republic of</span><span class="dial-code">+82</span></li>
+                                    <li class="country standard" tabindex="-1" id="iti-item-kr" role="option" data-dial-code="82" data-country-code="kr"><div class="flag-box"><div class="iti-flag kr"></div></div><span class="country-name">Korea</span><span class="dial-code">+82</span></li>
                                     <li class="country standard" tabindex="-1" id="iti-item-kw" role="option" data-dial-code="965" data-country-code="kw"><div class="flag-box"><div class="iti-flag kw"></div></div><span class="country-name">Kuwait</span><span class="dial-code">+965</span></li>
                                     <li class="country standard" tabindex="-1" id="iti-item-kg" role="option" data-dial-code="996" data-country-code="kg"><div class="flag-box"><div class="iti-flag kg"></div></div><span class="country-name">Kyrgyzstan</span><span class="dial-code">+996</span></li>
                                     <li class="country standard" tabindex="-1" id="iti-item-la" role="option" data-dial-code="856" data-country-code="la"><div class="flag-box"><div class="iti-flag la"></div></div><span class="country-name">Lao People's Democratic Republic</span><span class="dial-code">+856</span></li>
@@ -284,8 +293,6 @@
                                     <li class="country standard" tabindex="-1" id="iti-item-ug" role="option" data-dial-code="256" data-country-code="ug"><div class="flag-box"><div class="iti-flag ug"></div></div><span class="country-name">Uganda</span><span class="dial-code">+256</span></li>
                                     <li class="country standard" tabindex="-1" id="iti-item-ua" role="option" data-dial-code="380" data-country-code="ua"><div class="flag-box"><div class="iti-flag ua"></div></div><span class="country-name">Ukraine</span><span class="dial-code">+380</span></li>
                                     <li class="country standard" tabindex="-1" id="iti-item-ae" role="option" data-dial-code="971" data-country-code="ae"><div class="flag-box"><div class="iti-flag ae"></div></div><span class="country-name">United Arab Emirates</span><span class="dial-code">+971</span></li>
-                                    <li class="country standard" tabindex="-1" id="iti-item-gb" role="option" data-dial-code="44" data-country-code="gb"><div class="flag-box"><div class="iti-flag gb"></div></div><span class="country-name">United Kingdom</span><span class="dial-code">+44</span></li>
-                                    <li class="country standard" tabindex="-1" id="iti-item-us" role="option" data-dial-code="1" data-country-code="us"><div class="flag-box"><div class="iti-flag us"></div></div><span class="country-name">United States of America</span><span class="dial-code">+1</span></li>
                                     <li class="country standard" tabindex="-1" id="iti-item-um" role="option" data-dial-code="699" data-country-code="um"><div class="flag-box"><div class="iti-flag um"></div></div><span class="country-name">United States Minor Outlying Islands</span><span class="dial-code">+699</span></li>
                                     <li class="country standard" tabindex="-1" id="iti-item-uy" role="option" data-dial-code="598" data-country-code="uy"><div class="flag-box"><div class="iti-flag uy"></div></div><span class="country-name">Uruguay</span><span class="dial-code">+598</span></li>
                                     <li class="country standard" tabindex="-1" id="iti-item-uz" role="option" data-dial-code="998" data-country-code="uz"><div class="flag-box"><div class="iti-flag uz"></div></div><span class="country-name">Uzbekistan</span><span class="dial-code">+998</span></li>
@@ -300,8 +307,10 @@
                                     <li class="country standard" tabindex="-1" id="iti-item-zm" role="option" data-dial-code="260" data-country-code="zm"><div class="flag-box"><div class="iti-flag zm"></div></div><span class="country-name">Zambia</span><span class="dial-code">+260</span></li>
                                     <li class="country standard" tabindex="-1" id="iti-item-zw" role="option" data-dial-code="263" data-country-code="zw"><div class="flag-box"><div class="iti-flag zw"></div></div><span class="country-name">Zimbabwe</span><span class="dial-code">+263</span></li>
                                 </ul>
+
                             </div>
                         </div>
+
                         <!--- End Country Code --->
                     </div>
                     <div class="row form-group regi-form-group" id="cframe">

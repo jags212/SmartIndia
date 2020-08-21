@@ -83,7 +83,7 @@ namespace SmartIndia.RestAPI
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+          //  app.UseHttpsRedirection();
 
             app.UseRouting();
             // global cors policy
