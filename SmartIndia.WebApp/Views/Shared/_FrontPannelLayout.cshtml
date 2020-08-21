@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -27,7 +29,8 @@
     <link rel="stylesheet" href="~/assets/calendar/css/fullcalendar.print.css" media="print" />
     <!-- Country Code CSS -->
     <link rel="stylesheet" href="~/assets/css/intlTelInput.css" />
-
+    <!-- Bootstrap Dialog Alert CSS -->
+    <link href="~/assets/css/bootstrap-dialog.min.css" rel="stylesheet" />
 
 </head>
 
@@ -221,6 +224,9 @@
     <!-- End Main Content Wrapper -->
     <!-- Footer Scripts -->
     <!-- Vendors Min JS -->
+    <script type="text/javascript">
+        ServiceURL = "@Configuration.GetSection("HostURL")["ServiceURL"]";
+    </script>
     <script src="~/assets/js/vendors.min.js"></script>
 
     <!-- ApexCharts JS -->
@@ -244,6 +250,9 @@
     <script src="~/assets/calendar/js/moment.min.js"></script>
     <script src="~/assets/calendar/js/fullcalendar.min.js"></script>
     <script src="~/assets/calendar/js/calendar.js"></script>
+    <!-- Bootstrap Dialog Min Alert JS -->
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/bootstrap-dialog.min.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
