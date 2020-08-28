@@ -198,7 +198,7 @@ namespace SmartIndia.Data.Services
                 return new RefreshToken
                 {
                     Token = Convert.ToBase64String(randomBytes),
-                    Expires = DateTime.UtcNow.AddMinutes(20),
+                    Expires = DateTime.UtcNow.AddDays(7),
                     Created = DateTime.UtcNow,
                     CreatedByIp = ipAddress
                 };

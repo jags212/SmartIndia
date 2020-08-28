@@ -2,7 +2,7 @@
 function BootstrapAlert(msg, cntr) {
     var $textAndPic = $('<div></div>');
     $textAndPic.append('<img src="../../assets/img/white-logo.png" />');
-    $textAndPic.append('Confirmation');
+    $textAndPic.append('Information');
 
     BootstrapDialog.show({
         message: msg,
@@ -1074,3 +1074,13 @@ function generateOTP() {
     }
     return OTP;
 } 
+//-----------------------Get Query String Parameter values using param name
+function GetParameterValues(param) {
+    var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for (var i = 0; i < url.length; i++) {
+        var urlparam = url[i].split('=');
+        if (urlparam[0] == param) {
+            return urlparam[1];
+        }
+    }
+}  

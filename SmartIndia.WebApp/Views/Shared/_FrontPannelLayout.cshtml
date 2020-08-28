@@ -31,7 +31,6 @@
     <link rel="stylesheet" href="~/assets/css/intlTelInput.css" />
     <!-- Bootstrap Dialog Alert CSS -->
     <link href="~/assets/css/bootstrap-dialog.min.css" rel="stylesheet" />
-
 </head>
 
 <body>
@@ -188,7 +187,7 @@
                             <div class="dropdown-footer">
                                 <ul class="profile-nav">
                                     <li class="nav-item">
-                                        <a href="login.html" class="nav-link">
+                                        <a asp-area="ManageUsers" asp-controller="Users" asp-action="Login" onclick="ClearData();" class="nav-link">
                                             <i class='bx bx-log-out'></i> <span>Logout</span>
                                         </a>
                                     </li>
@@ -204,6 +203,8 @@
 
         @RenderBody()
 
+        <div class="loader" id="img" style="display:none">
+        </div>
         <!-- Footer -->
         <div class="flex-grow-1"></div>
 
@@ -253,6 +254,25 @@
     <!-- Bootstrap Dialog Min Alert JS -->
     <script src="~/assets/js/bootstrap.min.js"></script>
     <script src="~/assets/js/bootstrap-dialog.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajaxSetup({
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.getItem("jwtToken"));
+                    $('#img').show();
+                },
+                complete: function () {
+                    $('#img').hide();
+                }
+            }); 
+        });
+        function ClearData() {
+            localStorage.clear();
+            var cookies = document.cookie.split(";");
+            for (var i = 0; i < cookies.length; i++)
+                eraseCookie(cookies[i].split("=")[0]);
+        }
+    </script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

@@ -1,13 +1,14 @@
 ﻿
 @{
-    ViewData["Title"] = "Verification";
+    ViewData["Title"] = "EmailVerification";
     Layout = "~/Views/Shared/_LayoutLogin.cshtml";
 }
+
 @section Scripts{
 
     <!-- Custom Bootstrap Valiation JS -->
     <script src="~/ApplicationScripts/Common/custom-validate.js"></script>
-    <script src="~/ApplicationScripts/UserRegistration/verification.js"></script>
+    <script src="~/ApplicationScripts/UserRegistration/forgot-verification.js"></script>
 }
 <div class="forgot-password-area recover-password-area">
     <div class="d-table">
@@ -27,18 +28,6 @@
                                         <a id="resendEmail" class="resend-otp" onclick="CallEmailOTP();">
                                             <i class="bx bx-repeat pr-1"></i>Resend Email OTP
                                         </a>
-                                    </div>
-                                    <div class="col res-col">
-                                        <input type="text" id="txtSMSOTP" autocomplete="off" class="form-control" maxlength="4" name="code" placeholder="4-digit Mobile OTP" oninput="this.value = this.value.replace(/[^0-9-()+ ]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');">
-                                        <span class="label-title">
-                                            <i class="bx bx-label l-25"></i>
-                                        </span>
-                                        <a id="resendOTP" class="resend-otp" onclick="CallSMSOTP();">
-                                            <i class="bx bx-repeat pr-1"></i>Resend SMS OTP
-                                        </a>
-                                    </div>
-                                    <div class="re-note ml-20">
-                                        (Use first 4-digit OTP from email and second 4-digit OTP from registered mobile)
                                     </div>
                                 </div>
                                 <input type="button" id="btnVerify" class="forgot-password-btn" value="Verify" />

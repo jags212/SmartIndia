@@ -72,6 +72,7 @@ namespace SmartIndia.RestAPI.Controllers
             return Ok(new { message = "Token revoked" });
         }
         [EnableCors]
+        [AllowAnonymous]
         [HttpGet]
         public IActionResult GetAll()
         {

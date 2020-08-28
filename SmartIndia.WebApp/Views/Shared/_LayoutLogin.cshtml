@@ -23,7 +23,6 @@
     <link rel="stylesheet" href="~/assets/css/intlTelInput.css" />
     <!-- Bootstrap Dialog Alert CSS -->
     <link href="~/assets/css/bootstrap-dialog.min.css" rel="stylesheet" />
-
 </head>
 <body class="main-body">
     <div class="learn-main-content">
@@ -56,7 +55,8 @@
         <!--End Header Area-->
 
         @RenderBody()
-
+        <div class="loader" id="img" style="display:none">
+        </div>
     </div>
     <div class="clearfix"></div>
 
@@ -78,10 +78,22 @@
     <!-- jvectormap World Mill JS -->
     <script src="~/assets/js/jvectormap-world-mill-en.js"></script>
     <!-- Custom JS -->
-    <script src="~/assets/js/custom.js"></script> 
+    <script src="~/assets/js/custom.js"></script>
     <!-- Bootstrap Dialog Min Alert JS -->
     <script src="~/assets/js/bootstrap.min.js"></script>
     <script src="~/assets/js/bootstrap-dialog.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajaxSetup({
+                beforeSend: function (xhr) {
+                    $('#img').show();
+                },
+                complete: function () {
+                    $('#img').hide();
+                }
+            });
+        });
+    </script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
