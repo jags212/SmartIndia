@@ -70,7 +70,7 @@ function getallcourses() {
     $("#btnUpdate").hide();
     jQuery.support.cors = true;
     //var UserId = localStorage.getItem("UserId");
-    var UId = 1;
+    var UId = 6;
     var usersParam = JSON.stringify({
         UserId: UId,
         ACTIONCODE: "B"
