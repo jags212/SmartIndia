@@ -112,11 +112,18 @@
 .country-checked {
     background: #bfe8ef;
 }
+.profile-intl-tel-input {
+    top: 28px;
+    left: 14px;
+    border-radius: 5px;
+}
+.intl-tel-input.separate-dial-code .profile-selected-flag {
+    padding: 10px 6px 0 8px;
+}
 
 /* --------- Country Code Responsive -----------------*/
-@media(min-width: 320px) and (max-width: 1024px)
-{
-	.intl-tel-input
+@media(min-width: 320px) and (max-width: 1024px) {
+    .intl-tel-input
 	{
 		width: auto;
 	}

@@ -17,11 +17,23 @@ namespace SmartIndia.WebApp.Areas.ManageUsers.Controllers
         {
             return View();
         }
+        public IActionResult Verification()
+        {
+            return View();
+        }
         public IActionResult ForgotPassword()
         {
             return View();
         } 
         public IActionResult Thankyou()
+        {
+            return View();
+        }
+        public IActionResult EmailVerification()
+        {
+            return View();
+        }
+        public IActionResult ResetPassword()
         {
             return View();
         }

@@ -19,7 +19,7 @@
     }
 }
 $('#btnLogin').click(function () {
-    function CallSave() {
+    function CallSave() { 
         var pass = $('#txtPassword').val();
         $('#txtPassword').val($('#txtPassword').val() + Math.random());
         var usersParam = JSON.stringify({
@@ -31,20 +31,18 @@ $('#btnLogin').click(function () {
             type: "POST",
             data: usersParam,
             dataType: "json",
-            contentType: "application/json; charset=utf-8",
+            contentType: "application/json",
             success: function (data) {
                 if (data.id != "") {
                     localStorage.setItem("userID", data.id);
                     localStorage.setItem("emailID", data.emailID);
                     localStorage.setItem("firstName", data.firstName);
-                    $.ajaxSetup({
-                        beforeSend: function (xhr) {
-                            xhr.setRequestHeader('Authorization', 'Bearer ' + data.jwtToken + '');
-                        }
-                    });
+                    localStorage.setItem("jwtToken", data.jwtToken);
+                    localStorage.setItem("refreshToken", data.refreshToken); 
+                    window.location.href = "/Attendee/Dashboard/AttendeeDashboard";
                 }
             },
-            error: function (jqXHR, textStatus, errorThrown) {
+            error: function (jqXHR, textStatus, errorThrown) { 
                 BootstrapAlert(jqXHR.responseJSON.message, 'txtPassword');
                 $('#txtPassword').val("");
             }
@@ -53,4 +51,14 @@ $('#btnLogin').click(function () {
     if (ValidateForm()) {
         CallSave();
     }
-}); 
+});
+$(document).ready(function () {
+    $("#MyForm").keypress(function (e) {
+        kCode = e.keyCode || e.charCode //for cross browser
+        if (kCode == 13) {
+            var defaultbtn = $(this).attr("DefaultButton");
+            $("#" + defaultbtn).click();
+            return false;
+        }
+    });
+});
