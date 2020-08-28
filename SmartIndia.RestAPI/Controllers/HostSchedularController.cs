@@ -1,0 +1,78 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using SmartIndia.Data.Entities.Host;
+using SmartIndia.Data.Factory;
+using SmartIndia.Data.Models;
+using SmartIndia.Data.Services.Host;
+
+namespace SmartIndia.RestAPI.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class HostSchedularController : ControllerBase
+    {
+        private readonly IConnectionFactory connectionFactory;
+
+        public HostSchedularController(IConnectionFactory connectionFactory)
+        {
+            this.connectionFactory = connectionFactory;
+        }
+        [HttpPost("AddSchedular")]
+        public async Task<string> HostSchedularAction(List<HostSchedular> obj)
+        {
+            using (var hostSchedularServices = new HostSchedularServices(connectionFactory))
+            {
+                return await Task.FromResult(hostSchedularServices.HostSchedularAction(obj));
+            }
+        }
+        [HttpPost("AddSchedularOnce")]
+        public async Task<string> HostSchedularActionOnce(HostSchedular obj)
+        {
+            using (var hostSchedularServices = new HostSchedularServices(connectionFactory))
+            {
+                return await Task.FromResult(hostSchedularServices.HostSchedularActionOnce(obj));
+            }
+        }
+
+        [HttpGet("GetHostSchedular")]
+        public async Task<List<GetSchedularDetails>> GetHSchedular([FromQuery] getHostRecSchedularParameter obj)
+        //public async Task<List<HostSchedular>> GetHSchedular( GetActionCode obj)// for postman 
+        {
+            using (var hostSchedularServices = new HostSchedularServices(connectionFactory))
+            {
+                return await Task.FromResult(hostSchedularServices.GetHSchedular(obj));
+
+            }
+        }
+        [HttpGet("BindSchedular")]
+        public async Task<List<BindHostSchedular>> BindSchedular([FromQuery] HostParameter obj) 
+        {
+            using (var hostSchedularServices = new HostSchedularServices(connectionFactory))
+            {
+                return await Task.FromResult(hostSchedularServices.BindSchedular(obj));
+
+            }
+        }
+        [HttpGet("UpdateSchedular")]
+        public async Task<List<UpdateHostSchedular>> UpdateHSchedular([FromQuery] UpdateHostParameter obj)
+        {
+            using (var hostSchedularServices = new HostSchedularServices(connectionFactory))
+            {
+                return await Task.FromResult(hostSchedularServices.UpdateHSchedular(obj));
+
+            }
+        }
+        [HttpPost("Publish")]
+        public async Task<string> HostSchedularPublish(getHostRecSchedularParameter obj)
+        {
+            using (var hostSchedularServices = new HostSchedularServices(connectionFactory))
+            {
+                return await Task.FromResult(hostSchedularServices.PublishSchedular(obj));
+            }
+        }
+    }
+}
