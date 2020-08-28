@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SmartIndia.Data.Entities;
@@ -12,6 +13,7 @@ using SmartIndia.Data.Services;
 namespace SmartIndia.RestAPI.Controllers
 {
     [Authorize]
+    [EnableCors]
     [Route("api/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase
@@ -24,6 +26,7 @@ namespace SmartIndia.RestAPI.Controllers
         }
 
         [AllowAnonymous]
+        [EnableCors]
         [HttpPost("authenticate")]
         public IActionResult Authenticate(AuthenticateRequest model)
         {
@@ -36,7 +39,7 @@ namespace SmartIndia.RestAPI.Controllers
 
             return Ok(response);
         }
-
+        [EnableCors]
         [AllowAnonymous]
         [HttpPost("refresh-token")]
         public IActionResult RefreshToken(TokenParam rfrshToken)
@@ -51,7 +54,7 @@ namespace SmartIndia.RestAPI.Controllers
 
             return Ok(response);
         }
-
+        [EnableCors]
         [HttpPost("revoke-token")]
         public IActionResult RevokeToken([FromBody] RevokeTokenRequest model)
         {
@@ -68,13 +71,15 @@ namespace SmartIndia.RestAPI.Controllers
 
             return Ok(new { message = "Token revoked" });
         }
-     
+        [EnableCors]
+        [AllowAnonymous]
         [HttpGet]
         public IActionResult GetAll()
         {
             var users = _userService.GetAll();
             return Ok(users);
         }
+        [EnableCors]
         [Authorize]
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
@@ -84,7 +89,7 @@ namespace SmartIndia.RestAPI.Controllers
 
             return Ok(user);
         }
-
+        [EnableCors]
         [HttpGet("{id}/refresh-tokens")]
         public IActionResult GetRefreshTokens(int id)
         {

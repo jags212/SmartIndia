@@ -3,30 +3,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <Content Remove="wwwroot\assets\fonts\boxicons.eot" />
-    <Content Remove="wwwroot\assets\fonts\boxicons.ttf" />
-    <Content Remove="wwwroot\assets\fonts\boxicons.woff" />
-    <Content Remove="wwwroot\assets\fonts\boxicons.woff2" />
-    <Content Remove="wwwroot\assets\fonts\summernote.eot" />
-    <Content Remove="wwwroot\assets\fonts\summernote.ttf" />
-    <Content Remove="wwwroot\assets\fonts\summernote.woff" />
-    <Content Remove="wwwroot\assets\fonts\summernote.woff2" />
-    <Content Remove="wwwroot\assets\fonts\summernoted41d.eot" />
-    <Content Remove="wwwroot\assets\webfonts\fa-brands-400.eot" />
-    <Content Remove="wwwroot\assets\webfonts\fa-brands-400.ttf" />
-    <Content Remove="wwwroot\assets\webfonts\fa-brands-400.woff" />
-    <Content Remove="wwwroot\assets\webfonts\fa-brands-400.woff2" />
-    <Content Remove="wwwroot\assets\webfonts\fa-regular-400.eot" />
-    <Content Remove="wwwroot\assets\webfonts\fa-regular-400.ttf" />
-    <Content Remove="wwwroot\assets\webfonts\fa-regular-400.woff" />
-    <Content Remove="wwwroot\assets\webfonts\fa-regular-400.woff2" />
-    <Content Remove="wwwroot\assets\webfonts\fa-solid-900.eot" />
-    <Content Remove="wwwroot\assets\webfonts\fa-solid-900.ttf" />
-    <Content Remove="wwwroot\assets\webfonts\fa-solid-900.woff" />
-    <Content Remove="wwwroot\assets\webfonts\fa-solid-900.woff2" />
-    <Content Remove="wwwroot\assets\webfonts\fontello.eot" />
-    <Content Remove="wwwroot\assets\webfonts\fontello.ttf" />
-    <Content Remove="wwwroot\assets\webfonts\fontello.woff" />
+    <Compile Remove="Areas\ManageUsers\Data\**" />
+    <Content Remove="Areas\ManageUsers\Data\**" />
+    <EmbeddedResource Remove="Areas\ManageUsers\Data\**" />
+    <None Remove="Areas\ManageUsers\Data\**" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\assets\fonts\boxicons.eot" />
@@ -55,8 +35,6 @@
     <None Include="wwwroot\assets\webfonts\fontello.woff" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\Hosts\Data\" />
-    <Folder Include="Areas\Hosts\Models\" />
     <Folder Include="Areas\ManageUsers\Data\" />
     <Folder Include="Areas\ManageUsers\Models\" />
   </ItemGroup>
@@ -64,4 +42,5 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.6" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
   </ItemGroup>
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 </Project>

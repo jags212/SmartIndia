@@ -2,7 +2,7 @@
 function BootstrapAlert(msg, cntr) {
     var $textAndPic = $('<div></div>');
     $textAndPic.append('<img src="../../assets/img/white-logo.png" />');
-    $textAndPic.append('Confirmation');
+    $textAndPic.append('Information');
 
     BootstrapDialog.show({
         message: msg,
@@ -1065,3 +1065,22 @@ function trim(strString) {
     strCopy = strCopy.replace(/\s+$/, "")
     return strCopy.toString()
 }
+//-------------------------------------Function to Generate 4 digit Random Number for OTP--------------------------------------------
+function generateOTP() { 
+    var digits = '0123456789';
+    let OTP = '';
+    for (let i = 0; i < 4; i++) {
+        OTP += digits[Math.floor(Math.random() * 10)];
+    }
+    return OTP;
+} 
+//-----------------------Get Query String Parameter values using param name
+function GetParameterValues(param) {
+    var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for (var i = 0; i < url.length; i++) {
+        var urlparam = url[i].split('=');
+        if (urlparam[0] == param) {
+            return urlparam[1];
+        }
+    }
+}  
