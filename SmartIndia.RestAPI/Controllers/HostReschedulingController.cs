@@ -23,6 +23,7 @@ namespace SmartIndia.RestAPI.Controllers
         }
 
         [HttpGet("Bindrescheduling")]
+        
         public async Task<List<GetReschedulingDetails>> BindSchedular([FromQuery] HostParameter obj)
         {
             using (var hostSchedulingServices = new HostReschedulingServices(connectionFactory))
@@ -32,7 +33,8 @@ namespace SmartIndia.RestAPI.Controllers
             }
         }
 
-        [HttpGet("UpdateSchedular")]
+        [HttpGet("GetSchedular")]
+    
         public async Task<List<UpdateHostSchedular>> UpdateHSchedular([FromQuery] UpdateHostParameter obj)
         {
             using (var hostSchedulingServices = new HostReschedulingServices(connectionFactory))

@@ -36,13 +36,14 @@ namespace SmartIndia.Data.Entities.Host
         public Int64 UserId { get; set; }
         public Int64 CourseId { get; set; }
         public string CourseName { get; set; }
-        public string ScheduleDate { get; set; }
+        public DateTime ScheduleDate { get; set; }
         public string StartTime { get; set; }
         public string EndTime { get; set; }
         public string Duration { get; set; }
         public string BatchName { get; set; }
         public string ClassRoomPwd { get; set; }
         public bool IsDeleted { get; set; }
+        public int IsPublished { get; set; }
         public Int64 UpdatedById { get; set; }
         public DateTime CreatedOn { get; set; }
         public DateTime UpdatedOn { get; set; }
@@ -79,6 +80,7 @@ namespace SmartIndia.Data.Entities.Host
         public string EndTime { get; set; }
         public string ClassRoomPwd { get; set; }
         public bool IsDeleted { get; set; }
+        public int IsPublished { get; set; }
         public Int64 UpdatedById { get; set; }
         public DateTime CreatedOn { get; set; }
         public DateTime UpdatedOn { get; set; }

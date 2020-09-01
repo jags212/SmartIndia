@@ -1,13 +1,14 @@
 ﻿$('#btnSubmit').click(function () {
     function CallSave() {
+        var UId = localStorage.getItem("userID");
         var usersParam = JSON.stringify({
             ACTIONCODE: 'A',
+            UserId: parseInt(UId),
             CourseName: $('#txtName').val(),
             CourseDesc: $('#txtDesc').val(),
             Topics: $('#txtTopics').val(),
             StartDate: $('#fdate').val(),
             EndDate: $('#edate').val(),
-
             Duration: parseInt($('#durationDate').val(), 10),
             Cost: parseFloat($('#txtCost').val()),
             ClassFrequency: $('#ddlFrequency').val(),
@@ -69,10 +70,9 @@ function getallcourses() {
     $("#btnSubmit").show();
     $("#btnUpdate").hide();
     jQuery.support.cors = true;
-    //var UserId = localStorage.getItem("UserId");
-    var UId = 6;
+    var UId = localStorage.getItem("userID");
     var usersParam = JSON.stringify({
-        UserId: UId,
+        UserId: parseInt(UId),
         ACTIONCODE: "B"
     });
     $.ajax(
@@ -176,7 +176,9 @@ function getcoursedetails(CID) {
 //update 
 $('#btnUpdate').click(function () {
     function CallUpdate() {
+        var UId = localStorage.getItem("userID");
         var usersParam = JSON.stringify({
+            UserId: parseInt(UId),
             ACTIONCODE: 'U',
             CourseId: parseInt($('#CourseId').val(), 10),
             CourseName: $('#txtName').val(),

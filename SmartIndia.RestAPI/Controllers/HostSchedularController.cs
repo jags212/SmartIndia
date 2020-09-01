@@ -37,8 +37,16 @@ namespace SmartIndia.RestAPI.Controllers
                 return await Task.FromResult(hostSchedularServices.HostSchedularActionOnce(obj));
             }
         }
-
+        [HttpPost("UpdateSchedular")]
+        public async Task<string> UpdateHostSchedularActionOnce(HostSchedular obj)
+        {
+            using (var hostSchedularServices = new HostSchedularServices(connectionFactory))
+            {
+                return await Task.FromResult(hostSchedularServices.UpdateHostSchedularActionOnce(obj));
+            }
+        }
         [HttpGet("GetHostSchedular")]
+        [Obsolete]
         public async Task<List<GetSchedularDetails>> GetHSchedular([FromQuery] getHostRecSchedularParameter obj)
         //public async Task<List<HostSchedular>> GetHSchedular( GetActionCode obj)// for postman 
         {
@@ -49,6 +57,7 @@ namespace SmartIndia.RestAPI.Controllers
             }
         }
         [HttpGet("BindSchedular")]
+        [Obsolete]
         public async Task<List<BindHostSchedular>> BindSchedular([FromQuery] HostParameter obj) 
         {
             using (var hostSchedularServices = new HostSchedularServices(connectionFactory))
@@ -57,7 +66,8 @@ namespace SmartIndia.RestAPI.Controllers
 
             }
         }
-        [HttpGet("UpdateSchedular")]
+        [HttpGet("GetSchedular")]
+        [Obsolete]
         public async Task<List<UpdateHostSchedular>> UpdateHSchedular([FromQuery] UpdateHostParameter obj)
         {
             using (var hostSchedularServices = new HostSchedularServices(connectionFactory))
