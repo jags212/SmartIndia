@@ -5,10 +5,7 @@
 }
 
 
-<!--  Date format JS -->
-<script src="~/ApplicationScripts/Common/date-format-converter.js"></script>
 
-<script src="~/ApplicationScripts/Common/custom-validate.js"></script>
 <!-- Datepicker CSS -->
 <link rel="stylesheet" href="~/assets/css/gijgo.min.css" />
 <!-- Timepicker CSS -->
@@ -16,6 +13,10 @@
 <!-- Bootstrap Datatable CSS -->
 <link rel="stylesheet" href="~/assets/css/datatables.min.css" />
 @section Scripts{
+    <!--  Date format JS -->
+    <script src="~/ApplicationScripts/Common/date-format-converter.js"></script>
+
+    <script src="~/ApplicationScripts/Common/custom-validate.js"></script>
     <!-- Datepicker JS -->
     <script src="~/assets/js/gijgo.min.js"></script>
     <script>
@@ -46,17 +47,6 @@
     <script src="~/ApplicationScripts/Host/bindcourse.js"></script>
     <!--bootstrap validation js-->
     <script src="~/ApplicationScripts/Host/host-schedular-validate.js"></script>
-    <script>
-        $("#Duration").change(function () {
-            var duration = $('option:selected', $(this)).val();
-            var timestr = $("#StartTime").val();
-            debugger;
-            var now = new Date('1900-01-01 ' + timestr + ':00');
-            var endtime = new Date(now.getTime() + parseInt(duration) * 60000);
-            $("#hfEndTime").val(endtime.toTimeString().split(' ')[0].toString('hh:mm'));
-
-        });
-    </script>
 }
 <!-- Main Content Layout -->
 <!-- Breadcrumb Area -->
@@ -73,164 +63,6 @@
 </div>
 <!-- End Breadcrumb Area -->
 <!-- Start -->
-<div class="card mb-30" id="rescheduling-section">
-    <div class="card-body">
-        <div class="existing-date">Scheduled Date: <span class="col-black" id="existingdate" name="existingdate">09/07/2020</span></div>
-        <form>
-            <div class="row form-group">
-                <div class="col-md-4">
-                    <input type="hidden" class="form-control" name="hfSchedularId" id="hfSchedularId">
-                    <label>Courses</label>
-                    <select id="inputCourses" name="inputCourses" class="form-control" disabled>
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <label>Batch Name</label>
-                    <input type="text" id="BatchNameOnce" name="BatchNameOnce" class="form-control" placeholder="Batch Name">
-                </div>
-                <div class="col-md-4">
-                    <label>Date</label>
-                    <input type="hidden" class="form-control" name="SccDate" id="SccDate">
-                    <input type="hidden" class="form-control" name="hfEndTime" id="hfEndTime">
-                    <input type="text" id="ScDate" name="ScDate" class="form-control" placeholder="Pick the date" disabled>
-                </div>
-            </div>
-            <!--New Time Duration Start-->
-            <div class="row form-group">
-                <div class="col">
-                    <label>Start Time</label>
-                    <select class="form-control" id="StartTime" name="StartTime">
-                        <option selected value="0">---Select---</option>
-                        <option value="08:00">8 : 00 AM</option>
-                        <option value="08:15">8 : 15 AM</option>
-                        <option value="08:30">8 : 30 AM</option>
-                        <option value="08:45">8 : 45 AM</option>
-                        <option value="09:00">9 : 00 AM</option>
-                        <option value="09:15">9 : 15 AM</option>
-                        <option value="09:30">9 : 30 AM</option>
-                        <option value="09:45">9 : 45 AM</option>
-                        <option value="10:00">10 : 00 AM</option>
-                        <option value="10:15">10 : 15 AM</option>
-                        <option value="10:30">10 : 30 AM</option>
-                        <option value="10:45">10 : 45 AM</option>
-                        <option value="11:00">11 : 00 AM</option>
-                        <option value="11:15">11 : 15 AM</option>
-                        <option value="11:30">11 : 30 AM</option>
-                        <option value="11:45">11 : 45 AM</option>
-                        <option value="12:00">12 : 00 PM</option>
-                        <option value="12:15">12 : 15 PM</option>
-                        <option value="12:30">12 : 30 PM</option>
-                        <option value="12:45">12 : 45 PM</option>
-
-                        <option value="13:00">1 : 00 PM</option>
-                        <option value="13:15">1 : 15 PM</option>
-                        <option value="13:30">1 : 30 PM</option>
-                        <option value="13:45">1 : 45 PM</option>
-                        <option value="14:00">2 : 00 PM</option>
-                        <option value="14:15">2 : 15 PM</option>
-                        <option value="14:30">2 : 30 PM</option>
-                        <option value="14:45">2 : 45 PM</option>
-                        <option value="15:00">3 : 00 PM</option>
-                        <option value="15:15">3 : 15 PM</option>
-                        <option value="15:30">3 : 30 PM</option>
-                        <option value="15:45">3 : 45 PM</option>
-                        <option value="16:00">4 : 00 PM</option>
-                        <option value="16:15">4 : 15 PM</option>
-                        <option value="16:30">4 : 30 PM</option>
-                        <option value="16:45">4 : 45 PM</option>
-                        <option value="17:00">5 : 00 PM</option>
-                        <option value="17:15">5 : 15 PM</option>
-                        <option value="17:30">5 : 30 PM</option>
-                        <option value="17:45">5 : 45 PM</option>
-                        <option value="18:00">6 : 00 PM</option>
-                        <option value="18:15">6 : 15 PM</option>
-                        <option value="18:30">6 : 30 PM</option>
-                        <option value="18:45">6 : 45 PM</option>
-                        <option value="19:00">7 : 00 PM</option>
-                        <option value="19:15">7 : 15 PM</option>
-                        <option value="19:30">7 : 30 PM</option>
-                        <option value="19:45">7 : 45 PM</option>
-                        <option value="20:00">8 : 00 PM</option>
-                        <option value="20:15">8 : 15 PM</option>
-                        <option value="20:30">8 : 30 PM</option>
-                        <option value="20:45">8 : 45 PM</option>
-                        <option value="21:00">9 : 00 PM</option>
-                        <option value="21:15">9 : 15 PM</option>
-                        <option value="21:30">9 : 30 PM</option>
-                        <option value="21:45">9 : 45 PM</option>
-                        <option value="22:00">10 : 00 PM</option>
-                        <option value="22:15">10 : 15 PM</option>
-                        <option value="22:30">10 : 30 PM</option>
-                        <option value="22:45">10 : 45 PM</option>
-                        <option value="23:00">11 : 00 PM</option>
-                        <option value="23:15">11 : 15 PM</option>
-                        <option value="23:30">11 : 30 PM</option>
-                        <option value="23:45">11 : 45 PM</option>
-                        <option value="00:00">00 : 00 AM</option>
-                        <option value="00:15">00 : 15 AM</option>
-                        <option value="00:30">00 : 30 AM</option>
-                        <option value="00:45">00 : 45 AM</option>
-
-                        <option value="1:00">1 : 00 AM</option>
-                        <option value="1:15">1 : 15 AM</option>
-                        <option value="1:30">1 : 30 AM</option>
-                        <option value="1:45">1 : 45 AM</option>
-                        <option value="2:00">2 : 00 AM</option>
-                        <option value="2:15">2 : 15 AM</option>
-                        <option value="2:30">2 : 30 AM</option>
-                        <option value="2:45">2 : 45 AM</option>
-                        <option value="3:00">3 : 00 AM</option>
-                        <option value="3:15">3 : 15 AM</option>
-                        <option value="3:30">3 : 30 AM</option>
-                        <option value="3:45">3 : 45 AM</option>
-                        <option value="4:00">4 : 00 AM</option>
-                        <option value="4:15">4 : 15 AM</option>
-                        <option value="4:30">4 : 30 AM</option>
-                        <option value="4:45">4 : 45 AM</option>
-                        <option value="5:00">5 : 00 AM</option>
-                        <option value="5:15">5 : 15 AM</option>
-                        <option value="5:30">5 : 30 AM</option>
-                        <option value="5:45">5 : 45 AM</option>
-                        <option value="6:00">6 : 00 AM</option>
-                        <option value="6:15">6 : 15 AM</option>
-                        <option value="6:30">6 : 30 AM</option>
-                        <option value="6:45">6 : 45 AM</option>
-                        <option value="7:00">7 : 00 AM</option>
-                        <option value="7:15">7 : 15 AM</option>
-                        <option value="7:30">7 : 30 AM</option>
-                        <option value="7:45">7 : 45 AM</option>
-                    </select>
-                    <i class="bx bx-time-five time-clock" role="right-icon"></i>
-                </div>
-                <div class="col">
-                    <label>Duration</label>
-                    <select class="form-control" id="Duration" name="Duration">
-                        <option selected value="0">---Select---</option>
-                        <option value="30">0 : 30 Mins</option>
-                        <option value="45">0 : 45 Mins</option>
-                        <option value="60">1 : 00 Hrs</option>
-                        <option value="75">1 : 15 Hrs</option>
-                        <option value="90">1 : 30 Hrs</option>
-                        <option value="105">1 : 45 Hrs</option>
-                        <option value="120">2 : 00 Hrs</option>
-                    </select>
-                    <i class="bx bx-time-five time-clock" role="right-icon"></i>
-                </div>
-            </div>
-            <!--New Time duration end-->
-            <div class="row form-group">
-                <div class="col">
-                    <label>Remarks</label>
-                    <input type="text" id="Remarks" name="Remarks" class="form-control" placeholder="Remarks">
-                </div>
-            </div>
-            <button type="button" id="btnRSUpdate" class="btn btn-primary">Submit</button>
-            <button type="button" id="btnCancel" class="btn btn-danger">Cancel</button>
-        </form>
-
-    </div>
-</div>
-
 <div class="card mb-30">
     <div class="card-body">
 
@@ -314,8 +146,6 @@
 
 <!-- End Rescheduled Modal -->
 <!-- Start Cancel Confirm Modal -->
-
-
 <!-- End Cancel Confirm Modal -->
 <!-- Start Cancel Modal -->
 <div class="modal fade" id="CancelModal" role="dialog" aria-hidden="true">
@@ -331,10 +161,185 @@
                 <textarea class="form-control" rows="8" placeholder="Reason..." id="cancelReason"></textarea>
             </div>
             <div class="modal-footer re-modal-footer">
-                <a  class="btn btn-primary" data-dismiss="modal" id="btcancel">Submit</a>
+                <a class="btn btn-primary" data-dismiss="modal" id="btcancel">Submit</a>
             </div>
         </div>
     </div>
 </div>
 
 <!-- End Cancel Modal -->
+<!-- Start Rescheduling Modal -->
+<div class="modal fade" id="reschedulingModal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Rescheduling</h5>
+                <button type="button" class="close col-black" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body re-modal-body">
+                <div class="card-body">
+                    <div class="existing-date">Scheduled Date: <span class="col-black" id="existingdate" name="existingdate">09/07/2020</span></div>
+                    <form>
+                        <div class="row form-group">
+                            <div class="col-md-4">
+                                <input type="hidden" class="form-control" name="hfSchedularId" id="hfSchedularId">
+                                <label>Courses</label>
+                                <select id="inputCourses" name="inputCourses" class="form-control" disabled>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Batch Name</label>
+                                <input type="text" id="BatchNameOnce" name="BatchNameOnce" class="form-control" placeholder="Batch Name">
+                            </div>
+                            <div class="col-md-4">
+                                <label>Date</label>
+                                <input type="hidden" class="form-control" name="SccDate" id="SccDate">
+                                <input type="hidden" class="form-control" name="hfEndTime" id="hfEndTime">
+                                <input type="text" id="ScDate" name="ScDate" class="form-control" placeholder="Pick the date" disabled>
+                            </div>
+                        </div>
+                        <!--New Time Duration Start-->
+                        <div class="row form-group">
+                            <div class="col">
+                                <label>Start Time</label>
+                                <select class="form-control" id="StartTime" name="StartTime">
+                                    <option selected value="0">---Select---</option>
+                                    <option value="08:00">8 : 00 AM</option>
+                                    <option value="08:15">8 : 15 AM</option>
+                                    <option value="08:30">8 : 30 AM</option>
+                                    <option value="08:45">8 : 45 AM</option>
+                                    <option value="09:00">9 : 00 AM</option>
+                                    <option value="09:15">9 : 15 AM</option>
+                                    <option value="09:30">9 : 30 AM</option>
+                                    <option value="09:45">9 : 45 AM</option>
+                                    <option value="10:00">10 : 00 AM</option>
+                                    <option value="10:15">10 : 15 AM</option>
+                                    <option value="10:30">10 : 30 AM</option>
+                                    <option value="10:45">10 : 45 AM</option>
+                                    <option value="11:00">11 : 00 AM</option>
+                                    <option value="11:15">11 : 15 AM</option>
+                                    <option value="11:30">11 : 30 AM</option>
+                                    <option value="11:45">11 : 45 AM</option>
+                                    <option value="12:00">12 : 00 PM</option>
+                                    <option value="12:15">12 : 15 PM</option>
+                                    <option value="12:30">12 : 30 PM</option>
+                                    <option value="12:45">12 : 45 PM</option>
+
+                                    <option value="13:00">1 : 00 PM</option>
+                                    <option value="13:15">1 : 15 PM</option>
+                                    <option value="13:30">1 : 30 PM</option>
+                                    <option value="13:45">1 : 45 PM</option>
+                                    <option value="14:00">2 : 00 PM</option>
+                                    <option value="14:15">2 : 15 PM</option>
+                                    <option value="14:30">2 : 30 PM</option>
+                                    <option value="14:45">2 : 45 PM</option>
+                                    <option value="15:00">3 : 00 PM</option>
+                                    <option value="15:15">3 : 15 PM</option>
+                                    <option value="15:30">3 : 30 PM</option>
+                                    <option value="15:45">3 : 45 PM</option>
+                                    <option value="16:00">4 : 00 PM</option>
+                                    <option value="16:15">4 : 15 PM</option>
+                                    <option value="16:30">4 : 30 PM</option>
+                                    <option value="16:45">4 : 45 PM</option>
+                                    <option value="17:00">5 : 00 PM</option>
+                                    <option value="17:15">5 : 15 PM</option>
+                                    <option value="17:30">5 : 30 PM</option>
+                                    <option value="17:45">5 : 45 PM</option>
+                                    <option value="18:00">6 : 00 PM</option>
+                                    <option value="18:15">6 : 15 PM</option>
+                                    <option value="18:30">6 : 30 PM</option>
+                                    <option value="18:45">6 : 45 PM</option>
+                                    <option value="19:00">7 : 00 PM</option>
+                                    <option value="19:15">7 : 15 PM</option>
+                                    <option value="19:30">7 : 30 PM</option>
+                                    <option value="19:45">7 : 45 PM</option>
+                                    <option value="20:00">8 : 00 PM</option>
+                                    <option value="20:15">8 : 15 PM</option>
+                                    <option value="20:30">8 : 30 PM</option>
+                                    <option value="20:45">8 : 45 PM</option>
+                                    <option value="21:00">9 : 00 PM</option>
+                                    <option value="21:15">9 : 15 PM</option>
+                                    <option value="21:30">9 : 30 PM</option>
+                                    <option value="21:45">9 : 45 PM</option>
+                                    <option value="22:00">10 : 00 PM</option>
+                                    <option value="22:15">10 : 15 PM</option>
+                                    <option value="22:30">10 : 30 PM</option>
+                                    <option value="22:45">10 : 45 PM</option>
+                                    <option value="23:00">11 : 00 PM</option>
+                                    <option value="23:15">11 : 15 PM</option>
+                                    <option value="23:30">11 : 30 PM</option>
+                                    <option value="23:45">11 : 45 PM</option>
+                                    <option value="00:00">00 : 00 AM</option>
+                                    <option value="00:15">00 : 15 AM</option>
+                                    <option value="00:30">00 : 30 AM</option>
+                                    <option value="00:45">00 : 45 AM</option>
+
+                                    <option value="1:00">1 : 00 AM</option>
+                                    <option value="1:15">1 : 15 AM</option>
+                                    <option value="1:30">1 : 30 AM</option>
+                                    <option value="1:45">1 : 45 AM</option>
+                                    <option value="2:00">2 : 00 AM</option>
+                                    <option value="2:15">2 : 15 AM</option>
+                                    <option value="2:30">2 : 30 AM</option>
+                                    <option value="2:45">2 : 45 AM</option>
+                                    <option value="3:00">3 : 00 AM</option>
+                                    <option value="3:15">3 : 15 AM</option>
+                                    <option value="3:30">3 : 30 AM</option>
+                                    <option value="3:45">3 : 45 AM</option>
+                                    <option value="4:00">4 : 00 AM</option>
+                                    <option value="4:15">4 : 15 AM</option>
+                                    <option value="4:30">4 : 30 AM</option>
+                                    <option value="4:45">4 : 45 AM</option>
+                                    <option value="5:00">5 : 00 AM</option>
+                                    <option value="5:15">5 : 15 AM</option>
+                                    <option value="5:30">5 : 30 AM</option>
+                                    <option value="5:45">5 : 45 AM</option>
+                                    <option value="6:00">6 : 00 AM</option>
+                                    <option value="6:15">6 : 15 AM</option>
+                                    <option value="6:30">6 : 30 AM</option>
+                                    <option value="6:45">6 : 45 AM</option>
+                                    <option value="7:00">7 : 00 AM</option>
+                                    <option value="7:15">7 : 15 AM</option>
+                                    <option value="7:30">7 : 30 AM</option>
+                                    <option value="7:45">7 : 45 AM</option>
+                                </select>
+                                <i class="bx bx-time-five time-clock" role="right-icon"></i>
+                            </div>
+                            <div class="col">
+                                <label>Duration</label>
+                                <select class="form-control" id="Duration" name="Duration">
+                                    <option selected value="0">---Select---</option>
+                                    <option value="30">0 : 30 Mins</option>
+                                    <option value="45">0 : 45 Mins</option>
+                                    <option value="60">1 : 00 Hrs</option>
+                                    <option value="75">1 : 15 Hrs</option>
+                                    <option value="90">1 : 30 Hrs</option>
+                                    <option value="105">1 : 45 Hrs</option>
+                                    <option value="120">2 : 00 Hrs</option>
+                                </select>
+                                <i class="bx bx-time-five time-clock" role="right-icon"></i>
+                            </div>
+                        </div>
+                        <!--New Time duration end-->
+                        <div class="row form-group">
+                            <div class="col">
+                                <label>Remarks</label>
+                                <textarea class="form-control" maxlength="512" name="Remarks" id="Remarks" placeholder="Remarks"></textarea>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+            <div class="modal-footer re-modal-footer">
+                <button type="button" id="btnRSUpdate" class="btn btn-primary">Submit</button>
+                <button type="button" id="btnCancel" class="btn btn-danger">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- End Rescheduling Modal -->

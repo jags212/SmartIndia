@@ -23,7 +23,7 @@ namespace SmartIndia.Data.Services.Host
             object[] objArray = new object[] {
                      "@P_ACTIONCODE", hostCourses.ACTIONCODE
                     ,"@CourseID",hostCourses.CourseId
-                    ,"@UserId",1
+                    ,"@UserId",hostCourses.UserId
                     ,"@CourseName", hostCourses.CourseName
                     ,"@CourseDesc", hostCourses.CourseDesc
                     ,"@Topics", hostCourses.Topics
@@ -31,7 +31,7 @@ namespace SmartIndia.Data.Services.Host
                     ,"@ClassFrequency", hostCourses.ClassFrequency
                     ,"@NoOfClass", hostCourses.NoOfClass
                     ,"@Cost",hostCourses.Cost
-                    ,"@UpdatedById", 1
+                    ,"@UpdatedById", hostCourses.UserId
                     ,"@CurrencyId",1
         };
             try

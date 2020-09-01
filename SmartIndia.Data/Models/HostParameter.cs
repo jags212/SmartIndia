@@ -28,5 +28,8 @@ namespace SmartIndia.Data.Models
         public int IsPublished { get; set; }
         public DateTime StartScheduleDate { get; set; }
         public DateTime EndScheduleDate { get; set; }
+        public string StartTime { get; set; }
+        public string EndTime { get; set; }
+
     }
 }

@@ -3,10 +3,9 @@
 })
 function getallSchedular() {
     jQuery.support.cors = true;
-    //var UserId = localStorage.getItem("UserId");
-    var UId = 6;
+    var UId = localStorage.getItem("userID");
     var usersParam = JSON.stringify({
-        UserId: UId,
+        UserId: parseInt(UId),
         ACTIONCODE: "P"
     });
     $.ajax(
@@ -18,26 +17,33 @@ function getallSchedular() {
             contentType: "application/json",
             success: function (data) {
                 var trHTML = '';
+                var cancel = '';
                 $.each(data, function (i, item) {
 
-                    trHTML += '<tr  class=""><td>' + (i + 1) + '</td><td>' + data[i].courseName + '</td><td>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yyyy') + '</td><td>' + timeConvert(data[i].startTime) + '</td><td>' + timeConvert(data[i].endTime) + '</td> <td>' + data[i].batchName + '</td><td>     <div class="action-inline" data-toggle="tooltip" data-placement="top" title="Rescheduling">  <a href="javascript:void(0);" onclick="getcourseidd(' + data[i].schedularId + ')"  class="form-control table-edit" ><i class="bx bx-copy-alt"></i></a> </div>   <div class="action-inline" data-toggle="tooltip" data-placement="top" title="Cancel"><a href="javascript:void(0);"onclick="getschedularId(' + data[i].schedularId + ')" class="form-control table-cancel" data-toggle="modal" data-target="#ConCancelModal"><i class="bx bx-trash"></i></a></div> </td> </tr>';
+                    if (data[i].status == 0) {
+                        cancel = '<div class="text-red">Canceled</div>';
+                    }
+                    else if (data[i].status == 1) {
+                        cancel = '<div class="action-inline" data-toggle="tooltip" data-placement="right" title="Rescheduling">  <a href="javascript:void(0);" onclick="getcourseidd(' + data[i].schedularId + ')"  class="form-control table-edit" ><i class="bx bx-copy-alt"></i></a> </div>   <div class="action-inline" data-toggle="tooltip" data-placement="right" title="Cancel"><a href="javascript:void(0);"onclick="getschedularId(' + data[i].schedularId + ')" class="form-control table-cancel" data-toggle="modal" data-target="#ConCancelModal"><i class="bx bx-trash"></i></a></div>';
+                    }
+
+                    trHTML += '<tr  class=""><td>' + (i + 1) + '</td><td>' + data[i].courseName + '</td><td>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yyyy') + '</td><td>' + timeConvert(data[i].startTime) + '</td><td>' + timeConvert(data[i].endTime) + '</td> <td>' + data[i].batchName + '</td><td> ' + cancel + ' </td> </tr>';
 
                 });
                 $('#dataTable').append(trHTML);
+                $('.action-inline').tooltip();
             },
             error: function (msg) {
                 alert(msg.responseText);
             }
         });
 }
-
+$('#btnCancel').click(function () {
+    $("#reschedulingModal").modal("hide");
+});
 function getcourseidd(CID) {
     function Update() {
-
-
-            $("#rescheduling-section").css("display", "block");
-            $("#rescheduling-section").focus();
-
+        $("#reschedulingModal").modal("show");
         $("#btnUpdate").show();
         $("#hfSchedularId").val(CID);
         var usersParam1 = JSON.stringify({
@@ -47,10 +53,9 @@ function getcourseidd(CID) {
 
         $.ajax(
             {
-
                 type: "GET",
                 //url: "https://localhost:44394/api/HostCourses/GetHostCourse",
-                url: ServiceURL + "/api/HostRescheduling/UpdateSchedular",
+                url: ServiceURL + "/api/HostRescheduling/GetSchedular",
                 data: JSON.parse(usersParam1),
                 dataType: "json",
                 contentType: "application/json",
@@ -64,7 +69,7 @@ function getcourseidd(CID) {
                     $("#hfEndTime").val(data[0].endTime)
                     $("#BatchNameOnce").val(data[0].batchName);
                     
-                    $("#inputCourses").focus();
+                    $("#BatchNameOnce").focus();
                 },
                 error: function (msg) {
 
@@ -72,7 +77,7 @@ function getcourseidd(CID) {
                 }
             });
     }
-    if (BootStrapSubmit('btnRSUpdate', 'Are You Sure To Edit ?', 'Are You Sure To Update ?', Update)) {
+    if (BootStrapSubmit('btnRSUpdate', 'Are You Sure To Reschedule ?', 'Are You Sure To Update ?', Update)) {
         return false;
     }
     else {
@@ -83,21 +88,26 @@ function getcourseidd(CID) {
 // for update
 $('#btnRSUpdate').click(function () {
     function CallSave() {
-        var UId = 6;
+
+            var duration = $("#Duration").val();
+            var timestr = $("#StartTime").val();
+            var now = new Date('1900-01-01 ' + timestr + ':00');
+            var endtime = new Date(now.getTime() + parseInt(duration) * 60000);
+
+        var UId = localStorage.getItem("userID");
         var usersParam;
         usersParam = JSON.stringify({
             ACTIONCODE: 'A',
-            UserId: UId,
-            UpdatedById: UId,
+            UserId: parseInt(UId),
+            UpdatedById: parseInt(UId),
             SchedularId: parseInt($('#hfSchedularId').val(), 10),
             CourseId: parseInt($('#inputCourses').val(), 10),
             ScheduleDate: dateFormat($('#SccDate').val(), 'yyyy-mm-dd'),
             StartTime: $('#StartTime').val(),
-            EndTime: $('#hfEndTime').val(),
+            EndTime: endtime.toTimeString().split(' ')[0].toString('hh:mm'),
             Duration: $('#Duration').val(),
             BatchName: $('#BatchNameOnce').val(),
             Remarks: $('#Remarks').val(),
-
         })
         $.ajax({
             url: ServiceURL + "/api/HostRescheduling/UpdateSchedular",
@@ -106,11 +116,12 @@ $('#btnRSUpdate').click(function () {
             dataType: "json",
             contentType: "application/json; charset=utf-8",
             success: function (data) {
-                clearinput();
                 $('#dataTable tbody').empty();
                 getallSchedular();
                 if (data == "1") {
-                    BootstrapAlert('Save Successfully.');
+                    $("#reschedulingModal").modal("hide");
+                    clearinput();
+                    BootstrapAlert('Saved Successfully.');
                 }
                 else if (data == "3") {
                     BootstrapAlert('Data Alreday Exist.');
@@ -125,7 +136,7 @@ $('#btnRSUpdate').click(function () {
         });
     }
     if (ValidateSchedulingForm()) {
-        if (BootStrapSubmit('btnRSUpdate', 'Are You Sure To Submit ?', 'Are You Sure To Update ?', CallSave)) {
+        if (BootStrapSubmit('btnRSUpdate', 'Are You Sure To Reschedule ?', 'Are You Sure To Update ?', CallSave)) {
             return false;
         }
         else {
@@ -166,12 +177,12 @@ function getschedularId(CID) {
 }
 $('#btcancel').click(function () {
     function CallSave() {
-        var UId = 6;
+        var UId = localStorage.getItem("userID");
         var usersParam;
         usersParam = JSON.stringify({
             ACTIONCODE: 'C',
-            UserId: UId,
-            UpdatedById: UId,
+            UserId: parseInt(UId),
+            UpdatedById: parseInt(UId),
             SchedularId: parseInt($('#hfSchedularId').val()),
             Remarks: $('#cancelReason').val(),
         })
@@ -186,7 +197,7 @@ $('#btcancel').click(function () {
                 $('#dataTable tbody').empty();
                 getallSchedular();
                 if (data == "1") {
-                    BootstrapAlert('Cancel Successfully.');
+                    BootstrapAlert('Canceled Successfully.');
                 }
                 else if (data == "3") {
                     BootstrapAlert('Data Alreday Exist.');
@@ -201,7 +212,7 @@ $('#btcancel').click(function () {
         });
     }
     if (ValidateReschedulingCancel()) {
-        if (BootStrapSubmit('btnCancel', 'Are You Sure To Submit ?', 'Are You Sure To Update ?', CallSave)) {
+        if (BootStrapSubmit('btnCancel', 'Are You Sure To Cancel ?', 'Are You Sure To Update ?', CallSave)) {
             return false;
         }
         else {
