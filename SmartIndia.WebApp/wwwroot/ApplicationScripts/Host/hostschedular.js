@@ -26,9 +26,8 @@
                 contentType: "application/json; charset=utf-8",
                 success: function (data) {
                     $('#dataTable tbody').empty();
-                    getallSchedular();
                     if (data == "1") {
-                        BootstrapAlert('Saved Successfully.');
+                        BootStrapRedirect(' Saved Successfully.', '/Hosts/Schedular/Schedular');
                         clearinput();
                     }
                     else if (data == "3") {
@@ -88,9 +87,8 @@
                     success: function (data) {
                         usersParam = null;
                         $('#dataTable tbody').empty();
-                        getallSchedular();
                         if (data == "1") {
-                            BootstrapAlert('Saved Successfully.');
+                            BootStrapRedirect(' Saved Successfully.', '/Hosts/Schedular/Schedular');
                             clearinput();
                         }
                         else if (data == "3") {
@@ -99,7 +97,7 @@
                         else {
                             BootstrapAlert('Something went wrong. Please try again');
                         }
-                        
+
                     },
                     error: function (error) {
                         console.log(error.statusText);
@@ -146,6 +144,7 @@ function clearinput() {
 //------------------------------------- get host schedular-----------------------------------------
 $(document).ready(function () {
     getallSchedular();
+
 })
 function getallSchedular() {
     $("#btnSubmit").show();
@@ -158,27 +157,34 @@ function getallSchedular() {
     });
     $.ajax(
         {
+
             type: "GET",
             url: ServiceURL + "/api/HostSchedular/BindSchedular",
             data: JSON.parse(usersParam),
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
-
                 var trHTML = '';
                 var publish = '';
                 $.each(data, function (i, item) {
                     if (data[i].isPublished == 0) {
-                        publish = '<a href="javascript: void (0); " class="form-control table-publish">Publish</a>';
+                        publish = '<div class="form-control table-publish">Publish</div>';
                     }
                     else if (data[i].isPublished == 1) {
-                        publish = '<a href="javascript: void (0); " class="form-control publish-active">Published</a>';
+                        publish = '<div class="form-control publish-active">Published</div>';
                     }
 
                     trHTML += '<tr  class=""><td>' + (i + 1) + '</td><td>' + data[i].courseName + '</td><td>' + dateFormat(data[i].startScheduleDate, 'dd-mmm-yyyy') + '</td><td>' + dateFormat(data[i].endScheduleDate, 'dd-mmm-yyyy') + '</td><td>' + timeConvert(data[i].startTime) + '</td><td>' + timeConvert(data[i].endTime) + '</td><td>' + data[i].duration + '</td><td>' + data[i].batchName + '</td> <td>      <div class="action-inline" data-toggle="tooltip" data-placement="right" title="View">  <a href="javascript:void(0);" onclick="getSchedulardetails(' + data[i].courseId + ',' + "'" + dateFormat(data[i].startScheduleDate, 'mm-dd-yyyy') + "'" + ',' + "'" + dateFormat(data[i].endScheduleDate, 'mm-dd-yyyy') + "'" + ',' + "'" + data[i].startTime + "'" + ',' + "'" + data[i].endTime + "'" + ',' + "'" + data[i].isPublished + "'" + ')" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a> </div>  </td> <td id="buPublish">' + publish + '</td> </tr>';
                 });
-                $('#dataTable').append(trHTML);
+                $('#tblSchedular').append(trHTML);
                 $('.action-inline').tooltip();
+                $('#tblSchedular').DataTable({
+                    'columnDefs': [{
+                        'targets': [8, 9],
+                        'orderable': false,
+                    }],
+                    order: [[2, 'desc']],
+                });
             },
             error: function (msg) {
                 alert(msg.responseText);
@@ -187,48 +193,39 @@ function getallSchedular() {
 }
 
 function getcourseidd(HSID) {
-    function Update() {
+    $("#reschedulingModal").modal("show");
+    $("#ViewDetailsModal").modal("hide");
+    $("#divremark").hide();
+    // $("#btnUpdate").show();
+    $("#uhfSchedularId").val(HSID);
+    var usersParam1 = JSON.stringify({
+        ACTIONCODE: 'G',
+        SchedularId: parseInt(HSID),
+    });
+    $.ajax(
+        {
+            type: "GET",
+            url: ServiceURL + "/api/HostSchedular/GetSchedular",
+            data: JSON.parse(usersParam1),
+            dataType: "json",
+            contentType: "application/json",
+            success: function (data) {
+                $("#uexistingdate").html(dateFormat(data[0].scheduleDate, 'dd-mmm-yyyy'));
+                $("#uinputCourses").val(data[0].courseId);
+                $("#uSccDate").val(data[0].scheduleDate);
+                $("#uScDate").val(dateFormat(data[0].scheduleDate, 'dd-mmm-yyyy'));
+                $("#uStartTime").val(data[0].startTime);
+                $("#uDuration").val(data[0].duration);
+                $("#uhfEndTime").val(data[0].endTime)
+                $("#uBatchNameOnce").val(data[0].batchName);
 
-        $("#reschedulingModal").modal("show");
-        $("#ViewDetailsModal").modal("hide");
-        $("#divremark").hide();
-       // $("#btnUpdate").show();
-        $("#uhfSchedularId").val(HSID);
-        var usersParam1 = JSON.stringify({
-            ACTIONCODE: 'G',
-            SchedularId: parseInt(HSID),
+                $("#uBatchNameOnce").focus();
+            },
+            error: function (msg) {
+
+                alert(msg.responseText);
+            }
         });
-        $.ajax(
-            {
-                type: "GET",
-                url: ServiceURL + "/api/HostSchedular/GetSchedular",
-                data: JSON.parse(usersParam1),
-                dataType: "json",
-                contentType: "application/json",
-                success: function (data) {
-                    $("#uexistingdate").html(dateFormat(data[0].scheduleDate, 'dd-mmm-yyyy'));
-                    $("#uinputCourses").val(data[0].courseId);
-                    $("#uSccDate").val(data[0].scheduleDate);
-                    $("#uScDate").val(dateFormat(data[0].scheduleDate, 'dd-mmm-yyyy'));
-                    $("#uStartTime").val(data[0].startTime);
-                    $("#uDuration").val(data[0].duration);
-                    $("#uhfEndTime").val(data[0].endTime)
-                    $("#uBatchNameOnce").val(data[0].batchName);
-
-                    $("#uBatchNameOnce").focus();
-                },
-                error: function (msg) {
-
-                    alert(msg.responseText);
-                }
-            });
-    }
-    if (BootStrapSubmit('btnRSUpdate', 'Are You Sure To Reschedule ?', 'Are You Sure To Update ?', Update)) {
-        return false;
-    }
-    else {
-        return true;
-    }
 }
 // for update
 $('#btnRSUpdate').click(function () {
@@ -256,18 +253,16 @@ $('#btnRSUpdate').click(function () {
         })
         $.ajax({
             url: ServiceURL + "/api/HostSchedular/UpdateSchedular",
-            //url: ServiceURL + "/api/HostSchedular/AddSchedular",
             type: "POST",
             data: usersParam,
             dataType: "json",
             contentType: "application/json; charset=utf-8",
             success: function (data) {
                 $('#dataTable tbody').empty();
-                getallSchedular();
                 if (data == "2") {
                     $("#reschedulingModal").modal("hide");
                     clearinput();
-                    BootstrapAlert('Updated Successfully.');
+                    BootStrapRedirect(' Updated Successfully.', '/Hosts/Schedular/Schedular');
                 }
                 else if (data == "3") {
                     BootstrapAlert('Data Alreday Exist.');
@@ -300,7 +295,7 @@ function getSchedulardetails(CID, sdate, edate, stime, etime, isPub) {
     $("#hfEdate").val(dateFormat(edate, "yyyy-mm-dd"));
     $("#StartTime").val(stime);
     $("#hfEndTime").val(etime);
-    
+
     var UId = localStorage.getItem("userID");
     var usersParam2 = JSON.stringify({
         ACTIONCODE: 'U',
@@ -320,35 +315,45 @@ function getSchedulardetails(CID, sdate, edate, stime, etime, isPub) {
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
-
+                $('#tblDetails thead').empty();
                 $('#tblDetails tbody').empty();
+
                 var trHTML = '';
+                var thead;
+                if (isPub == "0") {
+                    $("#btnPublish").show();
+                    thead = '<tr class="thead-dark"><th scope="col">SL#</th><th scope="col">Courses</th><th scope="col">Schedule Date</th><th scope="col">Start Time</th><th scope="col">End Time</th><th scope="col">Duration (Mins)</th><th scope="col">Batch Name</th><th scope="col" class="table-rsaction-width">Action</th></tr>';
+                }
+                else {
+
+                    $("#btnPublish").hide();
+                    thead = '<tr class="thead-dark"><th scope="col">SL#</th><th scope="col">Courses</th><th scope="col">Schedule Date</th><th scope="col">Start Time</th><th scope="col">End Time</th><th scope="col">Duration (Mins)</th><th scope="col">Batch Name</th></tr>';
+
+                }
+
                 $.each(data, function (i, item) {
 
                     if (isPub == "0") {
                         publish = ' <div class="action-inline" data-toggle="tooltip" data-placement="top" title="Edit"> <a  id= "scId" href="javascript:void(0);" onclick="getcourseidd(' + data[i].schedularId + ')"  class="form-control table-edit "><i class="bx bx-edit-alt"></i></a> </div>  ';
+                        trHTML += '<tr  class=""><td>' + (i + 1) + '</td><td>' + data[i].courseName + '</td><td>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yyyy') + '</td><td>' + timeConvert(data[i].startTime) + '</td><td>' + timeConvert(data[i].endTime) + '</td><td>' + data[i].duration + '</td><td>' + data[i].batchName + '</td> <td> ' + publish + ' </td>  </tr>';
                     }
                     else if (isPub == "1") {
-                        publish = '<div class="text-red">###</div>';
+                        publish = '';
+                        trHTML += '<tr  class=""><td>' + (i + 1) + '</td><td>' + data[i].courseName + '</td><td>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yyyy') + '</td><td>' + timeConvert(data[i].startTime) + '</td><td>' + timeConvert(data[i].endTime) + '</td><td>' + data[i].duration + '</td><td>' + data[i].batchName + '</td>   </tr>';
                     }
-                    trHTML += '<tr  class=""><td>' + (i + 1) + '</td><td>' + data[i].courseName + '</td><td>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yyyy') + '</td><td>' + timeConvert(data[i].startTime) + '</td><td>' + timeConvert(data[i].endTime) + '</td><td>' + data[i].duration + '</td><td>' + data[i].batchName + '</td> <td> ' + publish + ' </td>  </tr>';
-                });
-                $('#tblDetails').append(trHTML);
-                if (isPub == "0") {
-                    $("#btnPublish").show();
-                }
-                else {
-                   
-                    $("#btnPublish").hide();
 
-                }
+                });
+                $("#tblDetails").append(thead);
+                $('#tblDetails').append(trHTML);
+
+
             },
             error: function (msg) {
                 alert(msg.responseText);
             }
         }
     );
-   
+
 }
 
 $('#btnPublish').click(function () {

@@ -77,7 +77,8 @@ namespace SmartIndia.Data.Services.Host
                         EndDate = TimeZone.CurrentTimeZone.ToLocalTime(item.EndDate),
                         Duration = item.Duration,
                         ClassFrequency = item.ClassFrequency,
-                        NoOfClass = item.NoOfClass
+                        NoOfClass = item.NoOfClass,
+                        Cost = item.Cost
                     };
                     HostCourses.Add(modal);
                 }

@@ -1,11 +1,11 @@
 ﻿$(document).ready(function () {
-    getallcourses();
+    getallcoursesDDL();
 }); $("#btnSubmit").show();
 $("#btnUpdate").hide();
 
 
 
-function getallcourses() {
+function getallcoursesDDL() {
     jQuery.support.cors = true;
     var UId = localStorage.getItem("userID");
     var usersParam = JSON.stringify({
