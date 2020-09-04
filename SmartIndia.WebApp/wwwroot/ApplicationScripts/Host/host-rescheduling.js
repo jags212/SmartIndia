@@ -1,7 +1,7 @@
 ﻿$(document).ready(function () {
-    getallSchedular();
+    getallReScheduling();
 })
-function getallSchedular() {
+function getallReScheduling() {
     jQuery.support.cors = true;
     var UId = localStorage.getItem("userID");
     var usersParam = JSON.stringify({
@@ -24,7 +24,7 @@ function getallSchedular() {
                         cancel = '<div class="text-red">Canceled</div>';
                     }
                     else if (data[i].status == 1) {
-                        cancel = '<div class="action-inline" data-toggle="tooltip" data-placement="right" title="Rescheduling">  <a href="javascript:void(0);" onclick="getcourseidd(' + data[i].schedularId + ')"  class="form-control table-edit" ><i class="bx bx-copy-alt"></i></a> </div>   <div class="action-inline" data-toggle="tooltip" data-placement="right" title="Cancel"><a href="javascript:void(0);"onclick="getschedularId(' + data[i].schedularId + ')" class="form-control table-cancel" data-toggle="modal" data-target="#ConCancelModal"><i class="bx bx-trash"></i></a></div>';
+                        cancel = '<div class="action-inline" data-toggle="tooltip" data-placement="right" title="Rescheduling">  <a href="javascript:void(0);" onclick="getcourseidd(' + data[i].schedularId + ')"  class="form-control table-edit" ><i class="bx bx bx-reset"></i></a> </div>   <div class="action-inline" data-toggle="tooltip" data-placement="right" title="Cancel"><a href="javascript:void(0);"onclick="getschedularId(' + data[i].schedularId + ')" class="form-control table-cancel" data-toggle="modal" data-target="#ConCancelModal"><i class="bx bx-trash"></i></a></div>';
                     }
 
                     trHTML += '<tr  class=""><td>' + (i + 1) + '</td><td>' + data[i].courseName + '</td><td>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yyyy') + '</td><td>' + timeConvert(data[i].startTime) + '</td><td>' + timeConvert(data[i].endTime) + '</td> <td>' + data[i].batchName + '</td><td> ' + cancel + ' </td> </tr>';
@@ -32,6 +32,12 @@ function getallSchedular() {
                 });
                 $('#dataTable').append(trHTML);
                 $('.action-inline').tooltip();
+                $('#dataTable').DataTable({
+                    'columnDefs': [{
+                        'targets': [6],
+                        'orderable': false,
+                    }],
+                });
             },
             error: function (msg) {
                 alert(msg.responseText);
@@ -117,11 +123,11 @@ $('#btnRSUpdate').click(function () {
             contentType: "application/json; charset=utf-8",
             success: function (data) {
                 $('#dataTable tbody').empty();
-                getallSchedular();
                 if (data == "1") {
                     $("#reschedulingModal").modal("hide");
                     clearinput();
-                    BootstrapAlert('Saved Successfully.');
+                    BootStrapRedirect(' Saved Successfully.', '/Hosts/Rescheduling/Rescheduling');
+
                 }
                 else if (data == "3") {
                     BootstrapAlert('Data Alreday Exist.');
@@ -195,9 +201,8 @@ $('#btcancel').click(function () {
             success: function (data) {
                 clearinput();
                 $('#dataTable tbody').empty();
-                getallSchedular();
                 if (data == "1") {
-                    BootstrapAlert('Canceled Successfully.');
+                    BootStrapRedirect(' Canceled Successfully.', '/Hosts/Rescheduling/Rescheduling');
                 }
                 else if (data == "3") {
                     BootstrapAlert('Data Alreday Exist.');

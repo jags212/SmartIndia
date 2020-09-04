@@ -34,7 +34,6 @@
 
     <!-- Bootstrap Datatable JS -->
     <script src="~/assets/js/datatables.min.js" type="text/javascript"></script>
-    <script src="~/assets/js/datatables.js" type="text/javascript"></script>
 
     <!-- Publish JS -->
     <script src="~/assets/js/publish.js" type="text/javascript"></script>
@@ -206,7 +205,7 @@
                     <input type="hidden" class="form-control" name="SccDate" id="SccDate">
                     <input type="hidden" class="form-control" name="SccTo" id="SccTo">
                     <input type="hidden" class="form-control" name="hfEndTime" id="hfEndTime">
-                    <input type="text" id="ScDate" name="ScDate" class="form-control" placeholder="Pick the date" disabled>
+                    <input type="text" id="ScDate" name="ScDate" class="form-control date-form-control" placeholder="Pick the date" disabled>
                 </div>
             </div>
 
@@ -284,13 +283,13 @@
                         <div class="col" id="dtpReccStart">
                             <label class="res-label"> From Date</label>
 
-                            <input type="text" id="datepickerFrom" name="datepickerFrom" class="form-control" placeholder="Pick the  date" disabled>
+                            <input type="text" id="datepickerFrom" name="datepickerFrom" class="form-control date-form-control" placeholder="Pick the  date" disabled>
 
                         </div>
                         <div class="col" id="dtpReccEnd">
                             <label class="res-label">To Date</label>
                             <input type="hidden" class="form-control" name="hfSccDate" id="hfSccDate">
-                            <input type="text" id="datepickerTo" name="datepickerTo" class="form-control" placeholder="Pick the  date" disabled>
+                            <input type="text" id="datepickerTo" name="datepickerTo" class="form-control date-form-control" placeholder="Pick the  date" disabled>
 
 
                         </div>
@@ -521,7 +520,7 @@
 <div class="card mb-30">
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-hover" id="dataTable" name="dataTable">
+            <table class="table table-hover" id="tblSchedular" name="tblSchedular">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">SL#</th>
@@ -558,17 +557,7 @@
                     <input type="hidden" class="form-control" name="hfSdate" id="hfSdate">
                     <input type="hidden" class="form-control" name="hfEdate" id="hfEdate">
                     <table class="table table-hover" id="tblDetails" name="tblDetails">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th scope="col">SL#</th>
-                                <th scope="col">Courses</th>
-                                <th scope="col">Schedule Date</th>
-                                <th scope="col">Start Time</th>
-                                <th scope="col">End Time</th>
-                                <th scope="col">Duration (Mins)</th>
-                                <th scope="col">Batch Name</th>
-                                <th scope="col" class="table-rsaction-width">Action</th>
-                            </tr>
+                        <thead>
                         </thead>
                         <tbody>
                         </tbody>
@@ -603,13 +592,13 @@
                             </div>
                             <div class="col-md-4">
                                 <label>Batch Name</label>
-                                <input type="text" id="uBatchNameOnce" name="uBatchNameOnce" class="form-control" placeholder="Batch Name">
+                                <input type="text" id="uBatchNameOnce" name="uBatchNameOnce" class="form-control" placeholder="Batch Name" disabled>
                             </div>
                             <div class="col-md-4">
                                 <label>Date</label>
                                 <input type="hidden" class="form-control" name="uSccDate" id="uSccDate">
                                 <input type="hidden" class="form-control" name="uhfEndTime" id="uhfEndTime">
-                                <input type="text" id="uScDate" name="u" class="form-control" placeholder="Pick the date" disabled>
+                                <input type="text" id="uScDate" name="u" class="form-control date-form-control" placeholder="Pick the date" disabled>
                             </div>
                         </div>
                         <!--New Time Duration Start-->
@@ -735,7 +724,7 @@
                             </div>
                         </div>
                         <!--New Time duration end-->
-                        <div class="row form-group" id="divremark" >
+                        <div class="row form-group" id="divremark">
                             <div class="col">
                                 <label>Remarks</label>
                                 <textarea class="form-control" maxlength="512" name="Remarks" id="Remarks" placeholder="Remarks"></textarea>
