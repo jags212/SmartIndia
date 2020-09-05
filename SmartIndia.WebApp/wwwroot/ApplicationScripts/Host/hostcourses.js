@@ -1,13 +1,14 @@
 ﻿$('#btnSubmit').click(function () {
     function CallSave() {
+        var UId = localStorage.getItem("userID");
         var usersParam = JSON.stringify({
             ACTIONCODE: 'A',
+            UserId: parseInt(UId),
             CourseName: $('#txtName').val(),
             CourseDesc: $('#txtDesc').val(),
             Topics: $('#txtTopics').val(),
             StartDate: $('#fdate').val(),
             EndDate: $('#edate').val(),
-
             Duration: parseInt($('#durationDate').val(), 10),
             Cost: parseFloat($('#txtCost').val()),
             ClassFrequency: $('#ddlFrequency').val(),
@@ -22,10 +23,9 @@
             contentType: "application/json",
             success: function (data) {
                 clearinput();
-                $('#dataTable tbody').empty();
-                getallcourses();
+                
                 if (data == "1") {
-                    BootstrapAlert('Course Save Successfully.');
+                    BootStrapRedirect('Course Saved Successfully.', '/Hosts/Courses/Courses');
                 }
                 else if (data == "3") {
                     BootstrapAlert('Data Alreday Exist.');
@@ -64,41 +64,47 @@ function clearinput() {
 
 $(document).ready(function () {
     getallcourses();
-})
+});
 function getallcourses() {
     $("#btnSubmit").show();
     $("#btnUpdate").hide();
-    jQuery.support.cors = true;
-    //var UserId = localStorage.getItem("UserId");
-    var UId = 6;
+    var UId = localStorage.getItem("userID");
     var usersParam = JSON.stringify({
-        UserId: UId,
+        UserId: parseInt(UId),
         ACTIONCODE: "B"
     });
     $.ajax(
-        {
-
+        { 
             type: "GET",
             url: ServiceURL + "/api/HostCourses/GetHostCourse",
             data: JSON.parse(usersParam),
             dataType: "json",
             contentType: "application/json",
-            success: function (data) {
-
+            success: function (data) { 
+                $('#tblCourses tbody').empty();
                 var trHTML = '';
 
                 $.each(data, function (i, item) {
-                    trHTML += '<tr  class=""><td>' + (i + 1) + '</td><td>' + data[i].courseName + '</td><td>' + data[i].courseDesc + '</td><td>' + data[i].topics + '</td><td>' + dateFormat(data[i].startDate, 'dd-mmm-yyyy') + '</td><td>' + dateFormat(data[i].endDate, 'dd-mmm-yyyy') + '</td><td>' + data[i].duration + '</td> <td> <div class="action-inline" data-toggle="tooltip" data-placement="top" title="Edit"> <a href="javascript:void(0);" onclick="getcourseidd(' + data[i].courseId + ')"  class="form-control table-edit "><i class="bx bx-edit-alt"></i></a> </div>     <div class="action-inline" data-toggle="tooltip" data-placement="top" title="View">  <a href="javascript:void(0);" onclick="getcoursedetails(' + data[i].courseId + ')" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a> </div>  </td> </tr>';
+                    trHTML += '<tr  class=""><td>' + (i + 1) + '</td><td>' + data[i].courseName + '</td><td>' + data[i].courseDesc + '</td><td>' + data[i].topics + '</td><td>' + dateFormat(data[i].startDate, 'dd-mmm-yyyy') + '</td><td>' + dateFormat(data[i].endDate, 'dd-mmm-yyyy') + '</td><td>' + data[i].duration + '</td> <td> <div class="action-inline" data-toggle="tooltip" data-placement="right" title="Edit"> <a href="javascript:void(0);" onclick="getcourseidd(' + data[i].courseId + ')"  class="form-control table-edit "><i class="bx bx-edit-alt"></i></a> </div>     <div class="action-inline" data-toggle="tooltip" data-placement="right" title="View">  <a href="javascript:void(0);" onclick="getcoursedetails(' + data[i].courseId + ')" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a> </div>  </td> </tr>';
                 });
 
-                $('#dataTable').append(trHTML); 
+                $('#tblCourses').append(trHTML);
+               // $('#tblCourses').dataTable();
+                $('#tblCourses').dataTable({
+                    'columnDefs': [{
+                        'targets': [7],
+                        'orderable': false,
+                    }]
+                });
+                $('.action-inline').tooltip();
             },
 
-            error: function (msg) { 
+            error: function (msg) {
                 alert(msg.responseText);
             }
         });
 }
+
 function getcourseidd(CID) {
     function Update() {
         $("#btnSubmit").hide();
@@ -110,8 +116,8 @@ function getcourseidd(CID) {
         });
 
         $.ajax(
-            { 
-                type: "GET", 
+            {
+                type: "GET",
                 url: ServiceURL + "/api/HostCourses/GetHostCourse",
                 data: JSON.parse(usersParam1),
                 dataType: "json",
@@ -131,7 +137,7 @@ function getcourseidd(CID) {
                     $("#txtNoOfClass").val(data[0].noOfClass);
                     $("#txtName").focus();
                 },
-                error: function (msg) { 
+                error: function (msg) {
                     alert(msg.responseText);
                 }
             });
@@ -144,14 +150,14 @@ function getcourseidd(CID) {
     }
 }
 
-function getcoursedetails(CID) { 
+function getcoursedetails(CID) {
     var usersParam2 = JSON.stringify({
         ACTIONCODE: 'U',
         UserId: CID,
     });
     $.ajax(
         {
-            type: "GET", 
+            type: "GET",
             url: ServiceURL + "/api/HostCourses/GetHostCourse",
             data: JSON.parse(usersParam2),
             dataType: "json",
@@ -161,13 +167,13 @@ function getcoursedetails(CID) {
                 $("#cdesc").html(data[0].courseDesc);
                 $("#topic").html(data[0].topics);
                 $("#sdt").html(dateFormat(data[0].startDate, 'dd-mmm-yyyy'));
-                $("#edt").html(dateFormat(data[0].endDate, 'dd-mmm-yyyy')); 
+                $("#edt").html(dateFormat(data[0].endDate, 'dd-mmm-yyyy'));
                 $("#duration").html(data[0].duration);
                 $("#ccost").html(data[0].cost);
-                $("#Cf").html(data[0].classFrequency); 
+                $("#Cf").html(data[0].classFrequency);
                 $("#noclass").html(data[0].noOfClass);
             },
-            error: function (msg) { 
+            error: function (msg) {
                 alert(msg.responseText);
             }
         });
@@ -176,32 +182,32 @@ function getcoursedetails(CID) {
 //update 
 $('#btnUpdate').click(function () {
     function CallUpdate() {
+        var UId = localStorage.getItem("userID");
         var usersParam = JSON.stringify({
+            UserId: parseInt(UId),
             ACTIONCODE: 'U',
             CourseId: parseInt($('#CourseId').val(), 10),
             CourseName: $('#txtName').val(),
             CourseDesc: $('#txtDesc').val(),
             Topics: $('#txtTopics').val(),
             StartDate: $('#fdate').val(),
-            EndDate: $('#edate').val(), 
+            EndDate: $('#edate').val(),
             Duration: parseInt($('#durationDate').val(), 10),
             Cost: parseFloat($('#txtCost').val()),
             ClassFrequency: $('#ddlFrequency').val(),
             NoOfClass: parseInt($('#txtNoOfClass').val(), 10)
 
         });
-        $.ajax({ 
+        $.ajax({
             url: ServiceURL + "/api/HostCourses/AddCourse",
             type: "POST",
             data: usersParam,
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
-                clearinput();
-                $('#dataTable tbody').empty();
-                getallcourses();
+                clearinput(); 
                 if (data == "2") {
-                    BootstrapAlert('Course Update Successfully.');
+                    BootStrapRedirect('Course Updated Successfully.', '/Hosts/Courses/Courses');
                 }
                 else if (data == "3") {
                     BootstrapAlert('Data Alreday Exist.');

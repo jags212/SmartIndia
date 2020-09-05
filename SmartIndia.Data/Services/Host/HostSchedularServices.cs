@@ -20,7 +20,7 @@ namespace SmartIndia.Data.Services.Host
         }
         public string HostSchedularAction(List<HostSchedular> hostSchedular)
         {
-           
+
 
             try
             {
@@ -90,7 +90,9 @@ namespace SmartIndia.Data.Services.Host
             object[] objArray = new object[] {
                      "@P_ACTIONCODE",hostParameter.ACTIONCODE,
                      "@UserId",hostParameter.UserId,
-                     "@CourseId",hostParameter.CourseId
+                     "@CourseId",hostParameter.CourseId,
+                     "@StartTime",hostParameter.StartTime,
+                     "@EndTime",hostParameter.EndTime
             };
             try
             {
@@ -105,13 +107,14 @@ namespace SmartIndia.Data.Services.Host
                     {
                         CourseId = item.CourseId,
                         UserId = item.UserId,
-                        SchedularId=item.SchedularId,
+                        SchedularId = item.SchedularId,
                         CourseName = item.CourseName,
                         BatchName = item.BatchName,
                         ScheduleDate = TimeZone.CurrentTimeZone.ToLocalTime(item.ScheduleDate),
                         Duration = item.Duration,
                         StartTime = item.StartTime,
-                        EndTime = item.EndTime
+                        EndTime = item.EndTime,
+                        IsPublished=item.IsPublished
                     };
                     GetSchedularDetails.Add(modal);
                 }
@@ -148,7 +151,7 @@ namespace SmartIndia.Data.Services.Host
                         Duration = item.Duration,
                         StartTime = item.StartTime,
                         EndTime = item.EndTime,
-                        IsPublished=item.IsPublished
+                        IsPublished = item.IsPublished
                     };
                     BindHostSchedular.Add(modal);
                 }
@@ -159,6 +162,8 @@ namespace SmartIndia.Data.Services.Host
                 return null;
             }
         }
+
+        [Obsolete]
         public List<UpdateHostSchedular> UpdateHSchedular(UpdateHostParameter hostParameter)
         {
             object[] objArray = new object[] {
@@ -169,7 +174,26 @@ namespace SmartIndia.Data.Services.Host
             {
                 DynamicParameters param = objArray.ToDynamicParameters();
                 var result = DBConnection.Query<UpdateHostSchedular>("USP_GetHostSchedular_ACTION", param, commandType: CommandType.StoredProcedure).ToList();
-                return result;
+
+                List<UpdateHostSchedular> UpdateHostSchedular = new List<UpdateHostSchedular>();
+                foreach (var item in result)
+                {
+                    var modal = new UpdateHostSchedular()
+                    {
+                        CourseId = item.CourseId,
+                        UserId = item.UserId,
+                        CourseName = item.CourseName,
+                        BatchName = item.BatchName,
+                        ScheduleDate = TimeZone.CurrentTimeZone.ToLocalTime(item.ScheduleDate),
+                        Duration = item.Duration,
+                        StartTime = item.StartTime,
+                        EndTime = item.EndTime,
+                        IsPublished = item.IsPublished
+                    };
+                    UpdateHostSchedular.Add(modal);
+                }
+
+                return UpdateHostSchedular;
             }
             catch (Exception ex)
             {
@@ -182,7 +206,10 @@ namespace SmartIndia.Data.Services.Host
             object[] objArray = new object[] {
                      "@P_ACTIONCODE",getHostRecSchedularParameter.ACTIONCODE,
                      "@CourseId",getHostRecSchedularParameter.CourseId,
+                     "@StartTime",getHostRecSchedularParameter.StartTime,
+                     "@EndTime",getHostRecSchedularParameter.EndTime,
                      "@IsPublished",(int)RecordPublished.Publish
+
             };
             try
             {
@@ -200,7 +227,40 @@ namespace SmartIndia.Data.Services.Host
             }
             return retMsg;
         }
-
+        public string UpdateHostSchedularActionOnce(HostSchedular hostSchedular)
+        {
+            object[] objArray = new object[] {
+                         "@P_ACTIONCODE", hostSchedular.ACTIONCODE
+                        ,"@SchedularId",hostSchedular.SchedularId
+                        ,"@CourseID",hostSchedular.CourseId
+                        ,"@UserId",hostSchedular.UserId
+                        ,"@StartTime",hostSchedular.StartTime
+                        ,"@EndTime",hostSchedular.EndTime
+                        ,"@BatchName",hostSchedular.BatchName
+                        ,"@ClassRoomPwd", "PWD"
+                        ,"@UpdatedById", hostSchedular.UpdatedById
+                        ,"@Duration",hostSchedular.Duration
+                        ,"@BatchName",hostSchedular.BatchName
+                        ,"@ScheduleDate",hostSchedular.ScheduleDate
+            };
+           
+            try
+            {
+                DynamicParameters param = objArray.ToDynamicParameters("@PVCH_MSGOUT");
+                param.Add("@ScheduleDate", hostSchedular.ScheduleDate.ToUniversalTime(), DbType.DateTime, ParameterDirection.Input);
+                param.Add("@StartTime", hostSchedular.StartTime);
+                param.Add("@EndTime", hostSchedular.EndTime);
+                var result = DBConnection.Execute("USP_HostSchedular_ACTION", param, commandType: CommandType.StoredProcedure);
+                retMsg = param.Get<string>("PVCH_MSGOUT");
+            }
+            catch (Exception ex)
+            {
+                // throw new Exception(ex.Message);
+                retMsg = "";
+                // log.Error(ex);
+            }
+            return retMsg;
+        }
 
     }
 }

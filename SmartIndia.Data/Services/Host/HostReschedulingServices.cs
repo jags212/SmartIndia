@@ -20,6 +20,8 @@ namespace SmartIndia.Data.Services.Host
         {
 
         }
+
+        [Obsolete]
         public List<GetReschedulingDetails> BindSchedular(HostParameter hostParameter)
         {
             object[] objArray = new object[] {
@@ -30,13 +32,37 @@ namespace SmartIndia.Data.Services.Host
             {
                 DynamicParameters param = objArray.ToDynamicParameters();
                 var result = DBConnection.Query<GetReschedulingDetails>("USP_GetHostSchedular_ACTION", param, commandType: CommandType.StoredProcedure).ToList();
-                return result;
+                List<GetReschedulingDetails> GetReschedulingDetails = new List<GetReschedulingDetails>();
+                foreach (var item in result)
+                {
+                    var modal = new GetReschedulingDetails()
+                    {
+                        CourseId = item.CourseId,
+                        UserId = item.UserId,
+                        SchedularId = item.SchedularId,
+                        CourseName = item.CourseName,
+                        BatchName = item.BatchName,
+                        ScheduleDate = TimeZone.CurrentTimeZone.ToLocalTime(item.ScheduleDate),
+                        Duration = item.Duration,
+                        StartTime = item.StartTime,
+                        EndTime = item.EndTime,
+                        IsPublished = item.IsPublished,
+                        Status=item.Status
+
+                    };
+                    GetReschedulingDetails.Add(modal);
+                }
+                return GetReschedulingDetails;
+
+
             }
             catch (Exception ex)
             {
                 return null;
             }
         }
+
+        [Obsolete]
         public List<UpdateHostSchedular> UpdateHSchedular(UpdateHostParameter hostParameter)
         {
             object[] objArray = new object[] {
@@ -47,7 +73,26 @@ namespace SmartIndia.Data.Services.Host
             {
                 DynamicParameters param = objArray.ToDynamicParameters();
                 var result = DBConnection.Query<UpdateHostSchedular>("USP_GetHostSchedular_ACTION", param, commandType: CommandType.StoredProcedure).ToList();
-                return result;
+                List<UpdateHostSchedular> UpdateHostSchedular = new List<UpdateHostSchedular>();
+                foreach (var item in result)
+                {
+                    var modal = new UpdateHostSchedular()
+                    {
+                        CourseId = item.CourseId,
+                        UserId = item.UserId,
+                        SchedularId = item.SchedularId,
+                        CourseName = item.CourseName,
+                        BatchName = item.BatchName,
+                        ScheduleDate = TimeZone.CurrentTimeZone.ToLocalTime(item.ScheduleDate),
+                        Duration = item.Duration,
+                        StartTime = item.StartTime,
+                        EndTime = item.EndTime,
+                        IsPublished = item.IsPublished,
+                        Status = item.Status
+                    };
+                    UpdateHostSchedular.Add(modal);
+                }
+                return UpdateHostSchedular;
             }
             catch (Exception ex)
             {
@@ -141,6 +186,6 @@ namespace SmartIndia.Data.Services.Host
             return retMsg;
         }
     }
-   
+
 
 }

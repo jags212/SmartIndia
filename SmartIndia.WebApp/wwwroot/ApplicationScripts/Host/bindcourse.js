@@ -1,16 +1,15 @@
 ﻿$(document).ready(function () {
-    getallcourses();
+    getallcoursesDDL();
 }); $("#btnSubmit").show();
 $("#btnUpdate").hide();
 
 
 
-function getallcourses() {
+function getallcoursesDDL() {
     jQuery.support.cors = true;
-    //var UserId = localStorage.getItem("UserId");
-    var UId = 6;
+    var UId = localStorage.getItem("userID");
     var usersParam = JSON.stringify({
-        UserId: UId,
+        UserId: parseInt(UId),
         ACTIONCODE: "B"
     });
 
@@ -32,7 +31,7 @@ function getallcourses() {
                     s += '<option value="' + response[i].courseId + '">' + response[i].courseName + '</option>';
                 }
                 $("#inputCourses").html(s);
-
+                $("#uinputCourses").html(s);
 
 
             },

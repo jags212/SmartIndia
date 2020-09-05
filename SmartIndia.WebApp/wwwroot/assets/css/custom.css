@@ -1352,30 +1352,3 @@
 		width: auto;
 	}
 }
-/*------------Schedular page----------------------------*/
-#divdailyrecurring {
-	display: none;
-}
-
-#divDayofweek {
-	display: none;
-}
-
-#divDayofMonth {
-	display: none;
-}
-
-#divmonthdate {
-	display: none;
-}
-
-#divdateforweekly {
-	display: none;
-}
-.radio-inline
-{
-	padding-left: 5px;
-}
-.radio-inline input{
-	margin-right: 3px;
-}
