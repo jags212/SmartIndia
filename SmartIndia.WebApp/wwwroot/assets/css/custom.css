@@ -1124,6 +1124,21 @@
 .table-rsaction-width {
 	width: 9%;
 }
+.resend-otp {
+	font-size: 12px;
+	color: #007bff !important;
+	cursor: pointer;
+}
+/*-------------------loader-----------------*/
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url('../img/loader.gif') 50% 50% no-repeat rgb(249,249,249);
+}
 
 /*------------------- Responsive ------------------------------------*/
 @media(min-width: 320px) and (max-width: 767px) {
