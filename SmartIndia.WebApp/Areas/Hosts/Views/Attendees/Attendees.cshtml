@@ -1,0 +1,96 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Attendees";
+    Layout = "~/Views/Shared/_FrontPannelLayout.cshtml";
+}
+@section Scripts{
+    <!--  Date format JS -->
+    <script src="~/ApplicationScripts/Common/date-format-converter.js"></script>
+
+    <script src="~/ApplicationScripts/Common/custom-validate.js"></script>
+    <!-- Attendee JS -->
+    <script src="~/ApplicationScripts/Host/attendees.js"></script>
+}
+<!-- Main Content Layout -->
+<!-- Breadcrumb Area -->
+<title>OCR - Attendees</title>
+<div class="breadcrumb-area">
+    <h1>Attendees</h1>
+    <ol class="breadcrumb">
+        <li class="item">
+            <a asp-area="ManageUsers" asp-controller="Hosts" asp-action="HostDashboard"><i class='bx bx-home-alt'></i></a>
+        </li>
+        <li class="item">Dashboard</li>
+        <li class="item">Attendees</li>
+    </ol>
+</div>
+<!-- End Breadcrumb Area -->
+<!-- Start -->
+<div class="card mb-30">
+    <div class="card-body">
+
+        <div class="table-responsive">
+            <table class="table table-hover" id="tbl_attendees" name="tbl_attendees">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">SLNo#</th>
+                        <th scope="col">Course</th>
+                        <th scope="col">Scheduled Date</th>
+                        <th scope="col">No of Attendees</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+<!--End-->
+<div class="modal fade" id="GetAttendeesModal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Attendee Details</h5>
+                <button type="button" class="close col-black" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body re-modal-body">
+                <div class="table-responsive">
+                    <table class="table table-hover" id="dtschedular">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">SLNo#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">MailId</th>
+                                <th scope="col">Mobile No</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Rakesh Sharma</td>
+                                <td>rakesh@gmail.com</td>
+                                <td>9777458761</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Sanat Abakash</td>
+                                <td>sanat@gmail.com</td>
+                                <td>7004789547</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Bikash Sahoo</td>
+                                <td>bikash@gmail.com</td>
+                                <td>8018457845</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
