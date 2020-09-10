@@ -19,11 +19,11 @@
                     curve: 'straight'
                 },
                 series: [{
-                    name: "STOCK ABC",
+                    name: "Host",
                     data: series.monthDataSeries1.prices
                 }],
                 title: {
-                    text: 'Fundamental Analysis of Stocks',
+                    text: '',
                     align: 'left',
                     style: {
                         fontSize: "13px",
@@ -31,7 +31,7 @@
                     }
                 },
                 subtitle: {
-                    text: 'Price Movements',
+                    text: '',
                     align: 'left'
                 },
                 labels: series.monthDataSeries1.dates,

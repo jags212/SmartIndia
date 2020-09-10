@@ -14,6 +14,8 @@
 
     <!-- Vendors Min CSS -->
     <link rel="stylesheet" href="assets/css/vendors.min.css" />
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="assets/css/all.min.css" />
     <!-- Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <!-- Responsive CSS -->
@@ -67,7 +69,7 @@
                         <span class="icon">
                             <i class='bx bxl-discourse'></i>
                         </span>
-                        <span class="menu-title">Courses</span>
+                        <span class="menu-title">Add Course</span>
                     </a>
                 </li>
                 <li class="nav-item mm-active">
@@ -79,15 +81,15 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="javascript:void(0);" class="nav-link">
+                    <a href="host-classwall.html" class="nav-link">
                         <span class="icon">
                             <i class='bx bx-card'></i>
                         </span>
-                        <span class="menu-title">Class Wall</span>
+                        <span class="menu-title">My Class Wall</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="javascript:void(0);" class="nav-link">
+                    <a href="host-upcomingclasses.html" class="nav-link">
                         <span class="icon">
                             <i class='bx bx-video-recording'></i>
                         </span>
@@ -226,7 +228,7 @@
                     <li class="nav-item dropdown profile-nav-item">
                         <a href="javascript:void(0);" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="menu-profile">
-                                <span class="name">Hi! Prateek</span>
+                                <span class="name">Prateek</span>
                                 <img src="assets/img/user1.jpg" class="rounded-circle" alt="image">
                             </div>
                         </a>
@@ -238,6 +240,7 @@
                                 </div>
                                 <div class="info text-center">
                                     <span class="name">Prateek Singh</span>
+                                    <span class="sm-text">(Host)</span>
                                     <p class="mb-3 email">prateek@gmail.com</p>
                                 </div>
                             </div>
@@ -337,8 +340,7 @@
                                 <th scope="col">Date</th>
                                 <th scope="col">Start Time</th>
                                 <th scope="col">End Time</th>
-                                <th scope="col">Action</th>
-                                <th scope="col">Info</th>
+                                <th scope="col" class="table-rsaction-width">Action</th>
                                 <th scope="col">Publish</th>
                             </tr>
                         </thead>
@@ -349,8 +351,14 @@
                                 <td>09-Jul-2020</td>
                                 <td>04.00 pm</td>
                                 <td>05.00 pm</td>
-                                <td><a href="javascript:void(0);" class="form-control table-edit"><i class="bx bx-edit-alt"></i></a></td>
-                                <td><a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="bx bxs-info-circle"></i></a></td>
+                                <td>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="Edit">
+                                        <a href="javascript:void(0);" class="form-control table-edit"><i class="bx bx-edit-alt"></i></a>
+                                    </div>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="View">
+                                        <a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a>
+                                    </div>
+                                </td>
                                 <td id="phPublish"><a href="javascript:void(0);" class="form-control table-publish">Publish</a></td>
                             </tr>
                             <tr>
@@ -359,8 +367,14 @@
                                 <td>11-Jul-2020</td>
                                 <td>06.00 pm</td>
                                 <td>07.00 pm</td>
-                                <td><a href="javascript:void(0);" class="form-control table-edit"><i class="bx bx-edit-alt"></i></a></td>
-                                <td><a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="bx bxs-info-circle"></i></a></td>
+                                <td>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="Edit">
+                                        <a href="javascript:void(0);" class="form-control table-edit"><i class="bx bx-edit-alt"></i></a>
+                                    </div>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="View">
+                                        <a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a>
+                                    </div>
+                                </td>
                                 <td id="chPublish"><a href="javascript:void(0);" class="form-control table-publish">Publish</a></td>
                             </tr>
                             <tr>
@@ -369,8 +383,14 @@
                                 <td>18-Aug-2020</td>
                                 <td>10.00 am</td>
                                 <td>12.00 am</td>
-                                <td><a href="javascript:void(0);" class="form-control table-edit"><i class="bx bx-edit-alt"></i></a></td>
-                                <td><a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="bx bxs-info-circle"></i></a></td>
+                                <td>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="Edit">
+                                        <a href="javascript:void(0);" class="form-control table-edit"><i class="bx bx-edit-alt"></i></a>
+                                    </div>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="View">
+                                        <a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a>
+                                    </div>
+                                </td>
                                 <td id="liPublish"><a href="javascript:void(0);" class="form-control table-publish">Publish</a></td>
                             </tr>
                             <tr>
@@ -379,8 +399,14 @@
                                 <td>20-Aug-2020</td>
                                 <td>04.00 pm</td>
                                 <td>05.00 pm</td>
-                                <td><a href="javascript:void(0);" class="form-control table-edit"><i class="bx bx-edit-alt"></i></a></td>
-                                <td><a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="bx bxs-info-circle"></i></a></td>
+                                <td>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="Edit">
+                                        <a href="javascript:void(0);" class="form-control table-edit"><i class="bx bx-edit-alt"></i></a>
+                                    </div>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="View">
+                                        <a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a>
+                                    </div>
+                                </td>
                                 <td id="buPublish"><a href="javascript:void(0);" class="form-control table-publish">Publish</a></td>
                             </tr>
                         </tbody>
@@ -411,7 +437,7 @@
     <!-- End Main Content Wrapper -->
     <!-- Start View Details Modal -->
     <div class="modal fade" id="ViewDetailsModal" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Schedule Details</h5>

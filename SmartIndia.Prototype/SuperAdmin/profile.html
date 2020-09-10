@@ -1,0 +1,589 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <title>Super Admin - Profile</title>
+
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+
+    <!-- General CSS Files -->
+    <link rel="stylesheet" href="assets/css/app.min.css" />
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="assets/bundles/datatables/datatables.min.css" />
+    <link rel="stylesheet" href="assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/bundles/ionicons/css/ionicons.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css" />
+
+</head>
+
+<body class="light theme-white allports-sidebar">
+    <div class="loader"></div>
+    <div id="app">
+        <div class="main-wrapper main-wrapper-1">
+            <div class="navbar-bg"></div>
+            <nav class="navbar navbar-expand-lg main-navbar">
+                <div class="form-inline mr-auto">
+                    <ul class="navbar-nav mr-3">
+                        <li class="fside-nav-bar">
+                            <a href="javascript:void(0);" data-toggle="sidebar" class="nav-link nav-link-lg collapse-btn">
+                                <i class="fas fa-chevron-right"></i>
+                            </a>
+                        </li>
+                        <li class="sside-nav-bar">
+                            <a href="javascript:void(0);" data-toggle="sidebar" class="nav-link nav-link-lg collapse-btn">
+                                <i class="fas fa-chevron-left"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="nav-link nav-link-lg fullscreen-btn">
+                                <i class="fas fa-expand"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="navbar-nav navbar-right">
+                    <li class="dropdown dropdown-list-toggle">
+                        <a href="javascript:void(0);" data-toggle="dropdown"
+                           class="nav-link notification-toggle nav-link-lg"><i class="far fa-bell"></i><span class="notification-count bg-green">4</span></a>
+                        <div class="dropdown-menu dropdown-list dropdown-menu-right">
+                            <div class="dropdown-header">
+                                Notifications
+                                <div class="float-right">
+                                    <a href="javascript:void(0);">Mark All As Read</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-list-content dropdown-list-icons">
+                                <a href="javascript:void(0);" class="dropdown-item dropdown-item-unread">
+                                    <span class="dropdown-item-icon l-bg-green text-white">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </span>
+                                    <span class="dropdown-item-desc">
+                                        5 sales Product
+                                        <span class="time">8 Hours Ago</span>
+                                    </span>
+                                </a>
+                                <a href="javascript:void(0);" class="dropdown-item dropdown-item-unread">
+                                    <span class="dropdown-item-icon l-bg-orange text-white">
+                                        <i class="fa fa-user-plus" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="dropdown-item-desc">
+                                        10 Customers Inquiry
+                                        <span class="time">7 Hours Ago</span>
+                                    </span>
+                                </a>
+                                <a href="javascript:void(0);" class="dropdown-item">
+                                    <span class="dropdown-item-icon l-bg-yellow text-white">
+                                        <i class="fa fa-server" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="dropdown-item-desc">
+                                        Your Subscription Expired
+                                        <span class="time">10 Hours Ago</span>
+                                    </span>
+                                </a>
+                                <a href="javascript:void(0);" class="dropdown-item">
+                                    <span class="dropdown-item-icon l-bg-blue text-white">
+                                        <i class="fas fa-user-edit" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="dropdown-item-desc">
+                                        Update Profile
+                                        <span class="time">9 Hours Ago</span>
+                                    </span>
+                                </a>
+                                <a href="javascript:void(0);" class="dropdown-item">
+                                    <span class="dropdown-item-icon l-bg-purple text-white">
+                                        <i class="far fa-envelope" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="dropdown-item-desc">
+                                        10 Email Notifications
+                                        <span class="time">Yesterday</span>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="dropdown-footer text-center">
+                                <a href="javascript:void(0);">View All <i class="fas fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" data-toggle="dropdown"
+                           class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                            <img src="assets/img/users/user-8.png" class="user-img-radious-style" alt="image" />
+                            <span class="d-sm-none d-lg-inline-block"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <div class="dropdown-title">Hello Rati Dash</div>
+                            <a href="profile.html" class="dropdown-item has-icon">
+                                <i class="far fa-user"></i> Profile
+                            </a>
+                            <a href="javascript:void(0);" class="dropdown-item has-icon">
+                                <i class="fas fa-cog"></i> Settings
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="index.html" class="dropdown-item has-icon text-danger">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="main-sidebar sidebar-style-2">
+                <aside id="sidebar-wrapper">
+                    <div class="sidebar-brand">
+                        <a href="dashboard.html">
+                            <img alt="image" src="assets/img/small-logo.png" class="header-logo" />
+                            <span class="logo-name">OCR</span>
+                        </a>
+                        <a href="javascript:void(0);" data-toggle="sidebar" class="nav-link nav-link-lg collapse-btn cside-nav-bar">
+                            <i class="ion-close-round"></i>
+                        </a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <ul class="sidebar-menu">
+                        <li class="dropdown active" style="display: block;">
+                            <div class="sidebar-profile">
+                                <div class="siderbar-profile-pic">
+                                    <img src="assets/img/users/user-8.png" class="profile-img-circle box-center" alt="User Image" />
+                                </div>
+                                <div class="siderbar-profile-details">
+                                    <div class="siderbar-profile-name"> Rati Dash </div>
+                                    <div class="siderbar-profile-position"> Super Admin </div>
+                                </div>
+                                <div class="sidebar-profile-buttons">
+                                    <a class="tooltips waves-effect waves-block toggled" href="javascript:void(0);" data-toggle="tooltip" title="" data-original-title="Profile">
+                                        <i class="fas fa-user sidebarQuickIcon"></i>
+                                    </a>
+                                    <a class="tooltips waves-effect waves-block" href="index.html" data-toggle="tooltip" title="" data-original-title="Logout">
+                                        <i class="fas fa-share-square sidebarQuickIcon"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="menu-header"></li>
+                        <li class="active">
+                            <a href="dashboard.html" class="nav-link"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="nav-link has-dropdown"><i class="fas fa-align-left"></i><span>Masters</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="master-country.html">Country</a></li>
+                                <li><a class="nav-link" href="master-currency.html">Currency</a></li>
+                                <li><a class="nav-link" href="master-currency-conversion.html">Currency Conversion</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="block-unblock-host.html" class="nav-link"><i class="fas fa-ban"></i><span>Block & Unblock Host</span></a>
+                        </li>
+                        <li>
+                            <a href="block-unblock-attendee.html" class="nav-link"><i class="fas fa-ban"></i><span>Block & Unblock Attendee</span></a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="nav-link has-dropdown"><i class="fas fa-file"></i><span>Reports</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="report-host.html">Host Details</a></li>
+                                <li><a class="nav-link" href="report-attendee.html">Attendee Details</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+            <!-- Main Content -->
+            <div class="main-content">
+                <section class="section">
+                    <div class="section-header">
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                <div class="section-header-breadcrumb-content">
+                                    <h1>Profile</h1>
+                                    <div class="section-header-breadcrumb">
+                                        <div class="breadcrumb-item active"><a href="dashboard.html"><i class="fas fa-home"></i></a></div>
+                                        <div class="breadcrumb-item"><a href="profile.html">Profile</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-body">
+                        <div class="row mt-sm-4 background-image-body">
+                            <div class="col-md-12 col-lg-12 box-center">
+                                <div class="row author-box">
+                                    <img src="assets/img/users/user-8.png" class="rounded-circle author-box-picture box-center mt-4" alt="user image" />
+                                </div>
+                                <div class="row author-box">
+                                    <div class="page-inner box-center align-center">
+                                        <h2><a href="javascript:void(0);">Rati Dash</a></h2>
+                                        <div class="page-description">
+                                            <h5>Super Admin</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-sm-4">
+                            <div class="col-12 col-md-12 col-lg-12">
+                                <div class="card">
+                                    <div class="padding-20">
+                                        <form class="needs-validation">
+                                            <div class="card-header">
+                                                <h4>
+                                                    Personal Info
+                                                </h4>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="form-group col-md-6 col-12">
+                                                        <label>First Name</label>
+                                                        <input type="text" class="form-control" placeholder="Enter first name" value="Rati">
+                                                        <div class="invalid-feedback">
+                                                            Please fill in the first name
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group col-md-6 col-12">
+                                                        <label>Last Name</label>
+                                                        <input type="text" class="form-control" placeholder="Enter last name" value="Dash">
+                                                        <div class="invalid-feedback">
+                                                            Please fill in the last name
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="form-group col-md-6 col-12">
+                                                        <label>Email</label>
+                                                        <input type="email" class="form-control" placeholder="Enter email address" value="rati@gmail.com">
+                                                        <div class="invalid-feedback">
+                                                            Please fill in the email
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group col-md-6 col-12">
+                                                        <label>Mobile Number</label>
+                                                        <input type="tel" class="form-control" placeholder="Enter mobile number" value="987656787">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-header">
+                                                <h4>
+                                                    Address
+                                                </h4>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="form-group col-12">
+                                                        <label>Address</label>
+                                                        <textarea cols="30" rows="5" placeholder="Write something..." class="form-control summernote-simple"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="form-group col-md-6 col-12">
+                                                        <label>Landmark</label>
+                                                        <input type="text" class="form-control" placeholder="Enter Landmark">
+                                                    </div>
+                                                    <div class="form-group col-md-6 col-12">
+                                                        <label>City</label>
+                                                        <input type="text" class="form-control" placeholder="Enter City">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="form-group col-md-6 col-12">
+                                                        <label>State</label>
+                                                        <input type="email" class="form-control" placeholder="Enter State">
+                                                    </div>
+                                                    <div class="form-group col-md-6 col-12">
+                                                        <label>Country</label>
+                                                        <select name="countryCode" class="form-control">
+                                                            <option Selected>Afghanistan</option>
+                                                            <option>Åland Islands</option>
+                                                            <option>Albania</option>
+                                                            <option>Algeria</option>
+                                                            <option>American Samoa</option>
+                                                            <option>Andorra</option>
+                                                            <option>Angola</option>
+                                                            <option>Anguilla</option>
+                                                            <option>Antarctica</option>
+                                                            <option>Antigua and Barbuda</option>
+                                                            <option>Argentina</option>
+                                                            <option>Armenia</option>
+                                                            <option>Aruba</option>
+                                                            <option>Australia</option>
+                                                            <option>Austria</option>
+                                                            <option>Azerbaijan</option>
+                                                            <option>Bahamas</option>
+                                                            <option>Bahrain</option>
+                                                            <option>Bangladesh</option>
+                                                            <option>Barbados</option>
+                                                            <option>Belarus</option>
+                                                            <option>Belgium</option>
+                                                            <option>Belize</option>
+                                                            <option>Benin</option>
+                                                            <option>Bermuda</option>
+                                                            <option>Bhutan</option>
+                                                            <option>Bolivia</option>
+                                                            <option>Bonaire</option>
+                                                            <option>Bosnia and Herzegovina</option>
+                                                            <option>Botswana</option>
+                                                            <option>Brazil</option>
+                                                            <option>British Indian Ocean Territory</option>
+                                                            <option>Brunei Darussalam</option>
+                                                            <option>Bulgaria</option>
+                                                            <option>Burkina Faso</option>
+                                                            <option>Burundi</option>
+                                                            <option>Cambodia</option>
+                                                            <option>Cameroon</option>
+                                                            <option>Canada</option>
+                                                            <option>Cabo Verde</option>
+                                                            <option>Cayman Islands</option>
+                                                            <option>Central African Republic</option>
+                                                            <option>Chad</option>
+                                                            <option>Chile</option>
+                                                            <option>China</option>
+                                                            <option>Christmas Island</option>
+                                                            <option>Cocos (Keeling) Island</option>
+                                                            <option>Colombia</option>
+                                                            <option>Comoros</option>
+                                                            <option>Congo</option>
+                                                            <option>Congo (Democratic Republic)</option>
+                                                            <option>Cook Islands</option>
+                                                            <option>Costa Rica</option>
+                                                            <option>Côte d'Ivoire</option>
+                                                            <option>Croatia</option>
+                                                            <option>Curaçao</option>
+                                                            <option>Cyprus</option>
+                                                            <option>Czech Republic</option>
+                                                            <option>Denmark</option>
+                                                            <option>Djibouti</option>
+                                                            <option>Dominica</option>
+                                                            <option>Dominican Republic</option>
+                                                            <option>Ecuador</option>
+                                                            <option>Egypt</option>
+                                                            <option>El Salvador</option>
+                                                            <option>Equatorial Guinea</option>
+                                                            <option>Eritrea</option>
+                                                            <option>Estonia</option>
+                                                            <option>Eswatini</option>
+                                                            <option>Ethiopia</option>
+                                                            <option>Falkland Islands</option>
+                                                            <option>Faroe Islands</option>
+                                                            <option>Fiji</option>
+                                                            <option>Finland</option>
+                                                            <option>France</option>
+                                                            <option>French Guiana</option>
+                                                            <option>French Polynesia</option>
+                                                            <option>French Southern Territories</option>
+                                                            <option>Gabon</option>
+                                                            <option>Gambia</option>
+                                                            <option>Georgia</option>
+                                                            <option>Germany</option>
+                                                            <option>Ghana</option>
+                                                            <option>Gibraltar</option>
+                                                            <option>Greece</option>
+                                                            <option>Greenland</option>
+                                                            <option>Grenada</option>
+                                                            <option>Guadeloupe</option>
+                                                            <option>Guam</option>
+                                                            <option>Guatemala</option>
+                                                            <option>Guernsey</option>
+                                                            <option>Guinea</option>
+                                                            <option>Guinea-Bissau</option>
+                                                            <option>Guyana</option>
+                                                            <option>Haiti</option>
+                                                            <option>Holy See</option>
+                                                            <option>Honduras</option>
+                                                            <option>Hong Kong</option>
+                                                            <option>Hungary</option>
+                                                            <option>Iceland</option>
+                                                            <option>India</option>
+                                                            <option>Indonesia</option>
+                                                            <option>Iraq</option>
+                                                            <option>Ireland</option>
+                                                            <option>Isle of Man</option>
+                                                            <option>Israel</option>
+                                                            <option>Italy</option>
+                                                            <option>Jamaica</option>
+                                                            <option>Japan</option>
+                                                            <option>Jersey</option>
+                                                            <option>Jordan</option>
+                                                            <option>Kazakhstan</option>
+                                                            <option>Kenya</option>
+                                                            <option>Kiribati</option>
+                                                            <option>Korea</option>
+                                                            <option>Kuwait</option>
+                                                            <option>Kyrgyzstan</option>
+                                                            <option>Lao People's Democratic Republic</option>
+                                                            <option>Latvia</option>
+                                                            <option>Lebanon</option>
+                                                            <option>Lesotho</option>
+                                                            <option>Liberia</option>
+                                                            <option>Libya</option>
+                                                            <option>Liechtenstein</option>
+                                                            <option>Lithuania</option>
+                                                            <option>Luxembourg</option>
+                                                            <option>Macao</option>
+                                                            <option>Madagascar</option>
+                                                            <option>Malawi</option>
+                                                            <option>Malaysia</option>
+                                                            <option>Maldives</option>
+                                                            <option>Mali</option>
+                                                            <option>Malta</option>
+                                                            <option>Marshall Islands</option>
+                                                            <option>Martinique</option>
+                                                            <option>Mauritania</option>
+                                                            <option>Mauritius</option>
+                                                            <option>Mayotte</option>
+                                                            <option>Mexico</option>
+                                                            <option>Micronesia (Federated States of)</option>
+                                                            <option>Moldova</option>
+                                                            <option>Monaco</option>
+                                                            <option>Mongolia</option>
+                                                            <option>Montenegro</option>
+                                                            <option>Montserrat</option>
+                                                            <option>Morocco</option>
+                                                            <option>Mozambique</option>
+                                                            <option>Myanmar</option>
+                                                            <option>Namibia</option>
+                                                            <option>Nauru</option>
+                                                            <option>Nepal</option>
+                                                            <option>Netherlands</option>
+                                                            <option>New Caledonia</option>
+                                                            <option>New Zealand</option>
+                                                            <option>Nicaragua</option>
+                                                            <option>Niger</option>
+                                                            <option>Nigeria</option>
+                                                            <option>Niue</option>
+                                                            <option>Norfolk Island</option>
+                                                            <option>North Macedonia</option>
+                                                            <option>Northern Mariana Islands</option>
+                                                            <option>Norway</option>
+                                                            <option>Oman</option>
+                                                            <option>Pakistan</option>
+                                                            <option>Palau</option>
+                                                            <option>Palestine</option>
+                                                            <option>Panama</option>
+                                                            <option>Papua New Guinea</option>
+                                                            <option>Paraguay</option>
+                                                            <option>Peru</option>
+                                                            <option>Philippines</option>
+                                                            <option>Pitcairn</option>
+                                                            <option>Poland</option>
+                                                            <option>Portugal</option>
+                                                            <option>Puerto Rico</option>
+                                                            <option>Qatar</option>
+                                                            <option>Réunion</option>
+                                                            <option>Romania</option>
+                                                            <option>Russian Federation</option>
+                                                            <option>Rwanda</option>
+                                                            <option>Saba</option>
+                                                            <option>Saint Barthélemy</option>
+                                                            <option>Saint Helena</option>
+                                                            <option>Saint Kitts and Nevis</option>
+                                                            <option>Saint Lucia</option>
+                                                            <option>Saint Martin (French part)</option>
+                                                            <option>Saint Pierre and Miquelon</option>
+                                                            <option>Saint Vincent and The Grenadines</option>
+                                                            <option>Samoa</option>
+                                                            <option>San Marino</option>
+                                                            <option>Sao Tome and Principe</option>
+                                                            <option>Saudi Arabia</option>
+                                                            <option>Senegal</option>
+                                                            <option>Serbia</option>
+                                                            <option>Seychelles</option>
+                                                            <option>Sierra Leone</option>
+                                                            <option>Singapore</option>
+                                                            <option>Sint Maarten</option>
+                                                            <option>Slovakia</option>
+                                                            <option>Slovenia</option>
+                                                            <option>Solomon Islands</option>
+                                                            <option>Somalia</option>
+                                                            <option>South Africa</option>
+                                                            <option>South Georgia and the South Sandwich Islands</option>
+                                                            <option>South Sudan</option>
+                                                            <option>Spain</option>
+                                                            <option>Sri Lanka</option>
+                                                            <option>Sudan</option>
+                                                            <option>Suriname</option>
+                                                            <option>Svalbard</option>
+                                                            <option>Sweden</option>
+                                                            <option>Switzerland</option>
+                                                            <option>Taiwan</option>
+                                                            <option>Tajikistan</option>
+                                                            <option>Tanzania</option>
+                                                            <option>Thailand</option>
+                                                            <option>Timor-Leste</option>
+                                                            <option>Togo</option>
+                                                            <option>Tokelau</option>
+                                                            <option>Tonga</option>
+                                                            <option>Trinidad and Tobago</option>
+                                                            <option>Tunisia</option>
+                                                            <option>Turkey</option>
+                                                            <option>Turkmenistan</option>
+                                                            <option>Turks and Caicos Islands</option>
+                                                            <option>Tuvalu</option>
+                                                            <option>Uganda</option>
+                                                            <option>Ukraine</option>
+                                                            <option>United Arab Emirates</option>
+                                                            <option>United States Minor Outlying Islands</option>
+                                                            <option>United States of America</option>
+                                                            <option>United Kingdom</option>
+                                                            <option>Uruguay</option>
+                                                            <option>Uzbekistan</option>
+                                                            <option>Vanuatu</option>
+                                                            <option>Venezuela</option>
+                                                            <option>Vietnam</option>
+                                                            <option>Virgin Islands (British)</option>
+                                                            <option>Virgin Islands (U.S.)</option>
+                                                            <option>Wallis and Futuna</option>
+                                                            <option>Western Sahara</option>
+                                                            <option>Yemen</option>
+                                                            <option>Zambia</option>
+                                                            <option>Zimbabwe</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-header">
+                                                <h4>
+                                                    Security
+                                                </h4>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="form-group col-12">
+                                                        <span class="text-muted d-block">
+                                                            <a href="change-password.html" class="d-inline-block">Click</a> here to change password.
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer text-right">
+                                                <button class="btn btn-primary">Save Changes</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <footer class="main-footer">
+                <div class="footer-left">
+                    Copyright &copy; 2020 <a href="javascript:void(0);">OCR</a> . All rights reserved
+                </div>
+                <div class="footer-right">
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- General JS Scripts -->
+    <script src="assets/js/app.min.js"></script>
+    <!-- Template JS File -->
+    <script src="assets/js/scripts.js"></script>
+    <script src="assets/bundles/jquery.sparkline.min.js"></script>
+
+</body>
+</html>

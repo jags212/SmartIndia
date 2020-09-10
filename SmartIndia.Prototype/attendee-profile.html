@@ -59,6 +59,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="attendee-enroll-courses.html" class="nav-link">
+                        <span class="icon">
+                            <i class='bx bxl-discourse'></i>
+                        </span>
+                        <span class="menu-title">Enroll Courses</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="attendee-classwall.html" class="nav-link">
                         <span class="icon">
                             <i class='bx bx-card'></i>
@@ -72,14 +80,6 @@
                             <i class='bx bx-video-recording'></i>
                         </span>
                         <span class="menu-title">Upcoming Classes</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="attendee-enroll-courses.html" class="nav-link">
-                        <span class="icon">
-                            <i class='bx bxl-discourse'></i>
-                        </span>
-                        <span class="menu-title">Enroll Courses</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -108,7 +108,7 @@
 
                 <ul class="navbar-nav left-nav align-items-center">
                     <li class="blinking" data-toggle="modal" data-target="#GetHostModal">
-                        Be A Host
+                        Would You Like To Be A Host?
                     </li>
                 </ul>
 
@@ -286,30 +286,42 @@
                                     <h3 class="pro-left"><i class='bx bx-user-circle'></i> Personal Info</h3>
                                     <h3 class="text-right cursor-po" id="profileEdit"><i class="bx bx-edit-alt" data-toggle="tooltip" data-placement="top" title="Edit profile"></i></h3>
                                     <div class="row">
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label>First Name</label>
                                                 <input type="text" class="form-control" placeholder="Enter first name" value="Arnab">
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label>Last Name</label>
                                                 <input type="text" class="form-control" placeholder="Enter last name" value="Sahoo">
                                             </div>
                                         </div>
+
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <label>Profile Name</label>
+                                                <input type="text" class="form-control" placeholder="Enter profile name">
+                                            </div>
+                                        </div>
+
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label>Email Address</label>
                                                 <input type="email" class="form-control" placeholder="Enter email address" value="arnab@gmail.com" id="profileEmail">
+                                            </div>
+                                            <div class="profile-edit">
+                                                <span>(Verified)</span>
+                                                <a href="attendee-change-email.html" class="d-inline-block">Edit</a>
                                             </div>
                                         </div>
 
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label>Mobile Number</label>
-                                                <input type="text" class="form-control pl-110" placeholder="Enter mobile number" value="9876564356">
+                                                <input type="text" class="form-control pl-110" placeholder="Enter mobile number" value="9876564356" id="profileMobileNo">
                                             </div>
 
                                             <!--- Start Country Code --->
@@ -577,37 +589,93 @@
                                             </div>
 
                                             <!--- End Country Code --->
+                                            <div class="profile-edit">
+                                                <a href="attendee-change-mobileno.html" class="d-inline-block">Edit</a>
+                                            </div>
+                                        </div>
+                                    </div>
 
+                                    <h3><i class=" bx bx-flag"></i> Interest Area</h3>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group interest-area">
+                                                <label class="checkbox-label">
+                                                    <input type="checkbox" name="interestarea" value="Academics" />
+                                                    <span class="checkbox-custom"></span>
+                                                </label>
+                                                <span>Academics</span>
+
+                                                <label class="checkbox-label">
+                                                    <input type="checkbox" name="interestarea" value="Hospitality" />
+                                                    <span class="checkbox-custom"></span>
+                                                </label>
+                                                <span>Hospitality</span>
+
+                                                <label class="checkbox-label">
+                                                    <input type="checkbox" name="interestarea" value="Web Development" />
+                                                    <span class="checkbox-custom"></span>
+                                                </label>
+                                                <span>Web Development</span>
+
+                                                <label class="checkbox-label">
+                                                    <input type="checkbox" name="interestarea" value="Management" />
+                                                    <span class="checkbox-custom"></span>
+                                                </label>
+                                                <span>Management</span>
+
+                                                <label class="checkbox-label">
+                                                    <input type="checkbox" name="interestarea" value="Medicine" />
+                                                    <span class="checkbox-custom"></span>
+                                                </label>
+                                                <span>Medicine</span>
+                                            </div>
+                                            <div class="form-group interest-area">
+                                                <label class="checkbox-label">
+                                                    <input type="checkbox" name="interestarea" value="Handicraft" />
+                                                    <span class="checkbox-custom"></span>
+                                                </label>
+                                                <span>Handicraft</span>
+
+                                                <label class="checkbox-label">
+                                                    <input type="checkbox" name="interestarea" value="Engineering" />
+                                                    <span class="checkbox-custom"></span>
+                                                </label>
+                                                <span>Engineering</span>
+
+                                                <label class="checkbox-label">
+                                                    <input type="checkbox" name="interestarea" value="Photography" />
+                                                    <span class="checkbox-custom"></span>
+                                                </label>
+                                                <span>Photography</span>
+
+                                                <label class="checkbox-label">
+                                                    <input type="checkbox" name="interestarea" value="Statistics" />
+                                                    <span class="checkbox-custom"></span>
+                                                </label>
+                                                <span>Statistics</span>
+
+                                                <label class="checkbox-label">
+                                                    <input type="checkbox" name="interestarea" value="Business" />
+                                                    <span class="checkbox-custom"></span>
+                                                </label>
+                                                <span>Business</span>
+                                            </div>
                                         </div>
                                     </div>
 
                                     <h3><i class="bx bx-building"></i> Address</h3>
                                     <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="form-group">
-                                                <label>Address</label>
-                                                <textarea cols="30" rows="5" placeholder="Write something..." class="form-control"></textarea>
-                                            </div>
-                                        </div>
-
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label>Landmark</label>
-                                                <input type="text" class="form-control" placeholder="Enter Landmark">
+                                                <label>Pin Code</label>
+                                                <input type="text" class="form-control" placeholder="Enter pin code">
                                             </div>
                                         </div>
 
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label>City</label>
-                                                <input type="text" class="form-control" placeholder="Enter City">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label>State</label>
-                                                <input type="text" class="form-control" placeholder="Enter State">
+                                                <input type="text" class="form-control" placeholder="Enter city">
                                             </div>
                                         </div>
 
@@ -946,7 +1014,7 @@
                     </p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#GetPerminumModal">Agree</button>
+                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#GetPerminumModal" data-dismiss="modal">Agree</button>
                 </div>
             </div>
         </div>
