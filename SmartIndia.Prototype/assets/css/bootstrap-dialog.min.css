@@ -182,4 +182,10 @@
 	margin-top: -2px;
 	padding-right: 8px;
 }
+
+/*------------Responsive--------------------*/
+@media(min-width:320px) and (max-width: 767px) {
+	.bootstrap-dialog-footer-buttons .btn {
+		width: auto;
+	}
 }

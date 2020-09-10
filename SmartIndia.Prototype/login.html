@@ -21,46 +21,10 @@
     <link rel="stylesheet" href="assets/css/responsive.css" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/custom.css" />
+    <!-- Scrolling Top CSS -->
+    <link rel="stylesheet" href="assets/css/scroll-top.css" />
     <!-- Country Code CSS -->
     <link rel="stylesheet" href="assets/css/intlTelInput.css" />
-    <!-- Bootstrap dialog Alert CSS -->
-    <link href="assets/css/bootstrap-dialog.min.css" rel="stylesheet" type="text/css" />
-
-    <script>
-        function Loginvalidateform() {
-            var lemail = document.login.lemail.value;
-            var lpassword = document.login.lpassword.value;
-            var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-
-            //Email
-            if (lemail == null || lemail == "") {
-                lemail.focus;
-                document.getElementById('email_error').style.display = "inline-block";
-                return false;
-            }
-            else {
-                document.getElementById('email_error').style.display = "none";
-            }
-            if (reg.test(lemail) == false) {
-                lemail.focus;
-                document.getElementById('emailver_error').style.display = "inline-block";
-                return false;
-            }
-            else {
-                document.getElementById('emailver_error').style.display = "none";
-            }
-
-            //Password
-            if (lpassword == null || lpassword == "") {
-                lpassword.focus;
-                document.getElementById('pass_error').style.display = "inline-block";
-                return false;
-            }
-            else {
-                document.getElementById('pass_error').style.display = "none";
-            }
-        }
-    </script>
 
 </head>
 
@@ -68,28 +32,70 @@
 <body class="main-body">
     <!-- Main Content Layout -->
     <!--Start Header Area-->
-    <div class="learn-main-content">
+    <div class="learn-main-content bg-image">
         <div class="col-position">
             <div id="black-topbar" class="hidden-xs noanimate" role="navigation" aria-label="Resources">
-                <div class="container" role="menubar">
-                    <ul class="list-inline pull-right" role="menubar">
-                        <li role="none">
-                            <a role="menuitem" href="javascript:void(0);">Get App</a>
-                        </li>
-                        <li>
-                            <a role="menuitem" href="javascript:void(0);">Support</a>
-                        </li>
-                    </ul>
-                </div>
+                <ul class="list-inline pull-left res-pull-left" role="menubar">
+                    <li>
+                        <span>Call <a href="callto:+123467897">+44 300 303 0266</a></span>
+                    </li>
+                    <li>
+                        <span>
+                            Follow Us
+                            <a href="https://www.facebook.com/" class="nav-social-media"><i class="bx bxl-facebook"></i></a>
+                            <a href="https://twitter.com/" class="nav-social-media"><i class="bx bxl-twitter"></i></a>
+                            <a href="https://www.linkedin.com/" class="nav-social-media"><i class="bx bxl-linkedin"></i></a>
+                            <a href="https://www.instagram.com/" class="nav-social-media"><i class="bx bxl-instagram"></i></a>
+                        </span>
+                    </li>
+                </ul>
+                <ul class="list-inline pull-right" role="menubar">
+                    <li role="none">
+                        <a role="menuitem" href="javascript:void(0);">Get App</a>
+                    </li>
+                    <li>
+                        <a role="menuitem" href="javascript:void(0);">Support</a>
+                    </li>
+                </ul>
             </div>
-            <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white border-bottom shadow-sm header-position">
-
+            <div class="d-flex flex-column flex-md-row align-items-center p-2 px-md-4 bg-white border-bottom shadow-sm header-position">
                 <div class="pull-left pull-left-width">
-                    <a href="login.html">
-                        <img src="assets/img/logo.png" alt="OCR" />
-                    </a>
+                    <!-- Navigation -->
+                    <nav class="navbar new-navbar navbar-expand-lg nav navbar-default static-top">
+                        <div class="container">
+                            <a class="navbar-brand" href="login.html">
+                                <img src="assets/img/logo.png" alt="OCR" />
+                            </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
+                            </button>
+                            <div class="collapse navbar-collapse ocr-main-menu" id="navbarResponsive">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="login.html">
+                                            Home
+                                            <span class="sr-only">(current)</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="javascript:void(0);">About</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="courses-list.html">Courses</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="javascript:void(0);">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
                 </div>
-                <div class="pull-right">
+                <div class="pull-right res-pull-right">
+                    <div class="ocr-search-container">
+                        <input type="text" placeholder="Search anything...">
+                        <div class="ocr-search"></div>
+                    </div>
                     <a class="btn btn-red" href="login.html">Sign In</a>
                 </div>
             </div>
@@ -105,14 +111,12 @@
                         <h2>Sign In</h2>
 
                         <form name="login">
-                            <div class="form-group cerror">
-                                <input type="text" id="lemail" class="form-control" name="email" placeholder="Email">
+                            <div class="form-group">
+                                <input type="text" id="luser" class="form-control" name="username" placeholder="Email Id / Mobile No">
                                 <span class="label-title">
-                                    <i class='bx bx-envelope'></i>
+                                    <i class='bx bx-user'></i>
                                 </span>
                             </div>
-                            <div id="email_error" class="cvalidation">Email requried!</div>
-                            <div id="emailver_error" class="cvalidation">Invalid Email!</div>
 
                             <div class="clearfix"></div>
 
@@ -123,7 +127,6 @@
                                 </span>
                                 <span toggle="#lpassword" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                             </div>
-                            <div id="pass_error" class="cvalidation">Password is requried!</div>
 
                             <div class="clearfix"></div>
 
@@ -133,15 +136,7 @@
                                 </div>
                             </div>
 
-                            <a href="attendee-dashboard.html" class="login-btn" onClick="return Loginvalidateform()">Login</a>
-
-                            <!--<div class="text-center text-dark">
-                               <p class="ride-line"><span>or</span></p>
-                                  <p class="gap-items-2 mb-20">
-                                    <a class="social-login-btn login-btn-google" href="javascript:void(0);">Sign in with Google</a>
-                                    <a class="social-login-btn login-btn-facebook" href="javascript:void(0);">Sign in with Facebook</a>
-                                  </p>
-                             </div>-->
+                            <a href="registration-attendee.html" class="login-btn" onClick="return Loginvalidateform()">Login</a>
 
                             <p class="mb-0">Don’t have an account? <a href="register.html">Sign Up</a></p>
                         </form>
@@ -161,48 +156,17 @@
     </footer>
 
     <!-- End Footer Area -->
+    <!-- Scrolling Top -->
+    <a href="#0" class="cd-top cd-is-visible cd-fade-out"><i class="fa fa-angle-up"></i></a>
     <!-- Footer Scripts -->
     <!-- Vendors Min JS -->
     <script src="assets/js/vendors.min.js"></script>
     <!-- Custom JS -->
     <script src="assets/js/custom.js"></script>
+    <!-- Scrolling Top JS -->
+    <script src="assets/js/scroll-top.js"></script>
     <!-- Password visible JS -->
     <script src="assets/js/password-visible.js"></script>
-
-    <!-- Bootstrap dialog Alert JS -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/bootstrap-dialog.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            //BootstrapDialog.show({
-            //     message: 'Hi Apple!'
-            // });
-
-            var $textAndPic = $('<div></div>');
-            $textAndPic.append('<img src="assets/img/white-logo.png" />');
-            $textAndPic.append('WARNING');
-
-            BootstrapDialog.confirm({
-                title: $textAndPic,
-                message: 'Warning! You can not Login?',
-                type: BootstrapDialog.TYPE_WARNING, // <-- Default value is BootstrapDialog.TYPE_PRIMARY
-                closable: true, // <-- Default value is false
-                draggable: false, // <-- Default value is false
-                btnCancelLabel: 'Cancel', // <-- Default value is 'Cancel',
-                btnOKLabel: 'OK', // <-- Default value is 'OK',
-                btnOKClass: 'btn-success', // <-- If you didn't specify it, dialog type will be used,
-                callback: function (result) {
-                    // result will be true if button was click, while it will be false if users close the dialog directly.
-                    if (result) {
-                        alert('Yup.');
-                    } else {
-                        alert('Nope.');
-                    }
-                }
-            });
-        });
-    </script>
 
 </body>
 </html>

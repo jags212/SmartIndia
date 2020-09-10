@@ -14,7 +14,8 @@
 			firstDay: 1,
 			defaultDate:  new Date(),
 			editable: true,
-			eventLimit: true, // allow "more" link when too many events
+			eventLimit: true, 
+			timeFormat: 'hh:mm a',
 			events: [
 				{
 					title: 'Physics',
