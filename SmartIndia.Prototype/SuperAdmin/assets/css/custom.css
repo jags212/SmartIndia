@@ -4,13 +4,15 @@
 .btn-red {
     color: #e1000a;
 }
-        .btn-red:hover, .btn-red:focus {
-            color: #df1922;
-        }
+    .btn-red:hover, .btn-red:focus {
+        background-color: transparent !important;
+        color: #df1922;
+    }
 .btn-pink {
     color: #fc6765;
 }
     .btn-pink:hover, .btn-pink:focus {
+        background-color: transparent !important;
         color: #f37a79;
     }
 .btn-yellow {
@@ -18,6 +20,7 @@
 }
 
     .btn-yellow:hover, .btn-yellow:focus {
+        background-color: transparent !important;
         color: #f1a04e;
     }
 .sside-nav-bar{
@@ -75,6 +78,48 @@
         background: rgb(28 99 116);
         color: #fff !important;
     }
+.col-form-6 {
+    width: 50%;
+}
+.action-btn {
+    padding: 0 5px;
+}
+.action-inline {
+    display: inline-block;
+}
+.re-modal-body {
+    padding: 30px 20px 10px 20px;
+}
+.re-modal-footer {
+    border-top: none;
+    justify-content: center;
+}
+.re-modal-body .alert-danger{
+    padding: 25px;
+    text-align: center;
+}
+.red {
+    color: #ff0000;
+    font-size: 15px;
+}
+.new-card-body {
+    padding-bottom: 0 !important;
+}
+.card-footer-padd {
+    padding: 0px 25px 20px !important;
+}
+.card-table th {
+    background-color: #0c5566 !important;
+    color: #ffffff !important;
+}
+.text-green {
+    color: #28a745 !important;
+    font-weight: 600;
+}
+.text-red {
+    color: #dc3545 !important;
+    font-weight: 600;
+}
 
 /*-------- Responsive --------------*/
 @media(min-width: 320px) and (max-width: 767px) {
@@ -83,7 +128,10 @@
     }
 
     .section .section-header .section-header-breadcrumb-content h1 {
-        font-size: 19px;
+        font-size: 18px;
+    }
+    .col-form-6 {
+        width: 100%;
     }
 }
 
