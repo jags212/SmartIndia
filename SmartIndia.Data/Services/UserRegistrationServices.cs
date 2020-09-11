@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using SmartIndia.Data.Entities;
 using SmartIndia.Data.Entities.UserManagement;
+using SmartIndia.Data.Enums;
 using SmartIndia.Data.Factory;
 using SmartIndia.Data.Helpers;
 using System;
@@ -30,15 +31,20 @@ namespace SmartIndia.Data.Services
                 object[] objArray = new object[] {
                      "@P_ACTIONCODE", registration.ACTIONCODE
                     ,"@UserId", registration.UserId
+                    ,"@UserName", registration.UserName
                     ,"@FirstName", registration.FirstName
                     ,"@LastName", registration.LastName
+                    ,"@ProfileName", registration.ProfileName
                     ,"@EmailId", registration.EmailId
+                    ,"@EmailConfirmed", registration.EmailConfirmed
                     ,"@MobileNo", registration.MobileNo
+                    ,"@MobileConfirmed", registration.MobileConfirmed
                     ,"@Password", password
                     ,"@VCode", keyNew
                     ,"@UID", Guid.NewGuid()
                     ,"@MobileCountryCode", registration.MobileCountryCode
                     ,"@UserNo", ""
+                    ,"@SignUpBy", registration.SignUpBy
                     ,"@UpdatedById", 0
                 };
 

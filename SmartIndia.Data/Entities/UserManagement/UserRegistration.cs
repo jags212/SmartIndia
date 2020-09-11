@@ -11,16 +11,21 @@ namespace SmartIndia.Data.Entities.UserManagement
         [Key]
         public Int64 UserId { get; set; }
         public string ACTIONCODE { get; set; }
+        public string UserName { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string ProfileName { get; set; }
         public string EmailId { get; set; }
+        public bool EmailConfirmed { get; set; }
         public string MobileNo { get; set; }
+        public bool MobileConfirmed { get; set; }
         [JsonIgnore]
         public string Password { get; set; }
         public string VCode { get; set; }
         public Guid UID { get; set; }
         public DateTime UserTimeZone { get; set; }
         public string MobileCountryCode { get; set; }
+        public int SignUpBy { get; set; }
         public string UserNo { get; set; }
         public bool IsActive { get; set; }
         public bool IsDeleted { get; set; }
