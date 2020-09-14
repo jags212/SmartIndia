@@ -1,6 +1,6 @@
 ﻿<!doctype html>
 <html lang="en">
-    
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -13,6 +13,8 @@
 
     <!-- Vendors Min CSS -->
     <link rel="stylesheet" href="assets/css/vendors.min.css" />
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
     <!-- Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <!-- Responsive CSS -->
@@ -105,16 +107,16 @@
                             <div class="col-lg-12 p-0">
                                 <div class="forgot-password-form">
                                     <h2>Recover your password</h2>
-                                    <p class="mb-0">Use 4-digit OTP for recover your password.</p>
+                                    <p class="mb-0">Use 4-digit OTP for recover your password</p>
                                     <form>
-                                        <div class="row form-group regi-rec-form-group res-row">
-                                            <div class="col res-col">
-                                                <input type="text" class="form-control" name="code" placeholder="4-digit OTP" maxlength="4">
-                                                <span class="label-title">
-                                                    <i class='bx bx-label l-25'></i>
-                                                </span>
-                                            </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="code" placeholder="4-digit OTP" maxlength="4">
+                                            <span class="label-title">
+                                                <i class='bx bx-label'></i>
+                                            </span>
                                         </div>
+                                        <div class="resend font-12"><i class="bx bx-repeat"></i>Resend OTP</div>
+                                        <div class="resend font-14"><i class="bx bx-check"></i>Verification code was resent successfully.</div>
                                         <a href="reset-password.html" class="forgot-password-btn">Verify</a>
                                     </form>
 
