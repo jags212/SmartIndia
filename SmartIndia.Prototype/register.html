@@ -25,13 +25,13 @@
     <link rel="stylesheet" href="assets/css/scroll-top.css" />
     <!-- Country Code CSS -->
     <link rel="stylesheet" href="assets/css/intlTelInput.css" />
-
+    
 </head>
 
 <body class="main-body">
     <!-- Main Content Layout -->
     <!--Start Header Area-->
-    <div class="learn-main-content bg-image">
+    <div class="learn-main-content">
         <div class="col-position">
             <div id="black-topbar" class="hidden-xs noanimate" role="navigation" aria-label="Resources">
                 <ul class="list-inline pull-left res-pull-left" role="menubar">
@@ -521,6 +521,12 @@
     <script src="assets/js/countrycode.js"></script>
     <!-- Password visible JS -->
     <script src="assets/js/password-visible.js"></script>
-
+    <!-- Dynamic add background image -->
+    <script>
+        $(document).ready(function () {
+            $(".learn-main-content").addClass("bg-image"); 
+            $(".ocr-search-container").hide(); 
+        });
+    </script>
 </body>
 </html>

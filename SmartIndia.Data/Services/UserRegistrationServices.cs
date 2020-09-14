@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using RestSharp;
 using SmartIndia.Data.Entities;
 using SmartIndia.Data.Entities.UserManagement;
 using SmartIndia.Data.Enums;
@@ -26,6 +27,7 @@ namespace SmartIndia.Data.Services
         {
             try
             {
+                var ACode = Guid.NewGuid();
                 var keyNew = Helper.GeneratePassword(10);
                 var password = Helper.EncodePassword(registration.Password, keyNew);
                 object[] objArray = new object[] {
@@ -41,7 +43,7 @@ namespace SmartIndia.Data.Services
                     ,"@MobileConfirmed", registration.MobileConfirmed
                     ,"@Password", password
                     ,"@VCode", keyNew
-                    ,"@UID", Guid.NewGuid()
+                    ,"@UID", ACode
                     ,"@MobileCountryCode", registration.MobileCountryCode
                     ,"@UserNo", ""
                     ,"@SignUpBy", registration.SignUpBy
@@ -60,6 +62,17 @@ namespace SmartIndia.Data.Services
                         retOut = arr[0],
                         userID = arr[1]
                     };
+                    if (arr[0] == "1")
+                    {
+                        if (registration.SignUpBy == 1)
+                        {
+                            SendEmail(registration.EmailId, registration.ServiceURL, ACode.ToString());
+                        }
+                        else
+                        {
+                            //Send Mobile SMS OTP
+                        }
+                    }
                 }
                 else
                 {
@@ -94,12 +107,23 @@ namespace SmartIndia.Data.Services
                 DynamicParameters param = objArray.ToDynamicParameters("@PVCH_MSGOUT");
                 var result = DBConnection.Execute("USP_UserRegistrations_ACTION", param, commandType: CommandType.StoredProcedure);
                 string retSP = param.Get<string>("PVCH_MSGOUT");
-
-                retMsg = new ReturnParam
+                if (retSP.Contains(","))
                 {
-                    retOut = retSP,
-                    userID = null
-                };
+                    string[] arr = retSP.Split(',');
+                    retMsg = new ReturnParam
+                    {
+                        retOut = arr[0],
+                        userID = arr[1]
+                    };
+                }
+                else
+                {
+                    retMsg = new ReturnParam
+                    {
+                        retOut = retSP,
+                        userID = null
+                    };
+                }
             }
             catch (Exception ex)
             {
@@ -113,13 +137,13 @@ namespace SmartIndia.Data.Services
             }
             return retMsg;
         }
-        public UserRegistration CheckValidEmail(string email)
+        public UserRegistration CheckValidEmail(string email, string AppURL)
         {
             try
             {
                 object[] objArrayUser = new object[] {
                      "@ACTIONCODE", 'A'
-                    ,"@EmailID", email
+                    ,"@UserName", email
                 };
                 DynamicParameters paramUser = objArrayUser.ToDynamicParameters();
                 var getUser = DBConnection.QueryFirstOrDefault<UserRegistration>("USP_LoginManagement_ACTION", paramUser, commandType: CommandType.StoredProcedure);
@@ -130,6 +154,10 @@ namespace SmartIndia.Data.Services
                 }
                 else
                 {
+                    if (getUser.SignUpBy == (int)SignUpBy.EmailID)
+                    {
+                        SendEmailForResetPassword(email, AppURL, getUser.UID.ToString());
+                    }
                     return getUser;
                 }
             }
@@ -149,7 +177,7 @@ namespace SmartIndia.Data.Services
 
                 object[] objArrayUser = new object[] {
                      "@P_ACTIONCODE", 'R'
-                    ,"@EmailID", resetParam.EmailId
+                    ,"@UID", resetParam.EmailId
                     ,"@Password", hashpassword
                     ,"@VCode", keyNew
                 };
@@ -166,6 +194,103 @@ namespace SmartIndia.Data.Services
                 // log.Error(ex);
             }
             return strRetMsg;
+        }
+
+        public string SendEmail(string emailID, string serviceUrl, string ActivationCode)
+        {
+            var client = new RestClient("https://api.sendinblue.com/v3/smtp/email");
+            client.Timeout = -1;
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("api-key", "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");
+            request.AddHeader("Content-Type", "application/json");
+            request.AddParameter("application/json"
+                , "{" +
+                        "\r\n" +
+                        "\"sender\": " +
+                                "{\r\n" +
+                                    "\"name\": \"Smart India\",\r\n    " +
+                                    "\"email\": \"napoleon.mohanta@gmail.com\"\r\n" +
+                                "},\r\n" +
+                        "\"to\": " +
+                                "[\r\n    " +
+                                    "{\r\n" +
+                                        "\"email\": \"" + emailID + "\",\r\n" +
+                                        "\"name\": \"" + emailID + "\"\r\n    " +
+                                    "}\r\n" +
+                                "],\r\n" +
+                        "\"subject\": \"Smart India Email Confirmation\",\r\n" +
+                        "\"htmlContent\": \"<html><head></head><body><p>Dear User,</p>" +
+                        "<p>Thanks for signing up to Smart India!</p>" +
+                        "<p>To get started, click the link below to confirm your account.</p>" +
+                        "<p><a href='" + serviceUrl + "/ManageUsers/Users/UserVerification?Id=" + ActivationCode + "'>Confirm your account</a></p>" +
+                        "</body></html>\"\r\n" +
+                    "}"
+                , ParameterType.RequestBody);
+            IRestResponse response = client.Execute(request);
+            Console.WriteLine(response.Content);
+            return "";
+        }
+        public string SendEmailForResetPassword(string emailID, string serviceUrl, string ActivationCode)
+        {
+            var client = new RestClient("https://api.sendinblue.com/v3/smtp/email");
+            client.Timeout = -1;
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("api-key", "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");
+            request.AddHeader("Content-Type", "application/json");
+            request.AddParameter("application/json"
+                , "{" +
+                        "\r\n" +
+                        "\"sender\": " +
+                                "{\r\n" +
+                                    "\"name\": \"Smart India\",\r\n    " +
+                                    "\"email\": \"napoleon.mohanta@gmail.com\"\r\n" +
+                                "},\r\n" +
+                        "\"to\": " +
+                                "[\r\n    " +
+                                    "{\r\n" +
+                                        "\"email\": \"" + emailID + "\",\r\n" +
+                                        "\"name\": \"" + emailID + "\"\r\n    " +
+                                    "}\r\n" +
+                                "],\r\n" +
+                        "\"subject\": \"Smart India Reset Your Password\",\r\n" +
+                        "\"htmlContent\": \"<html><head></head><body><p>Dear User,</p>" +
+                        "<p>You recently asked to reset your OCR account password.</p>" +
+                        "<p>Click the link below to reset your password.</p>" +
+                        "<p><a href='" + serviceUrl + "/ManageUsers/Users/ResetPassword?Id=" + ActivationCode + "'>Reset Your Password</a></p>" +
+                        "</body></html>\"\r\n" +
+                    "}"
+                , ParameterType.RequestBody);
+            IRestResponse response = client.Execute(request);
+            Console.WriteLine(response.Content);
+            return "";
+        }
+
+        public bool VerifyUser(string acode)
+        {
+            try
+            {
+                object[] objArrayUser = new object[] {
+                     "@P_ACTIONCODE", "EV"
+                    ,"@UID", acode
+                };
+                DynamicParameters paramUser = objArrayUser.ToDynamicParameters("@PVCH_MSGOUT");
+                var result = DBConnection.Execute("USP_UserRegistrations_ACTION", paramUser, commandType: CommandType.StoredProcedure);
+                string retMsg = paramUser.Get<string>("PVCH_MSGOUT");
+                if (retMsg == "2")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                // throw new Exception(ex.Message);
+                return false;
+                // log.Error(ex);
+            }
         }
     }
 }

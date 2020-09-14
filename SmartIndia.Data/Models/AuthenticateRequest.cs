@@ -13,4 +13,9 @@ namespace SmartIndia.Data.Models
         [Required]
         public string Password { get; set; }
     }
+    public class AuthenticateRequestByEmail
+    {
+        [Required]
+        public string ACode { get; set; } 
+    }
 }
