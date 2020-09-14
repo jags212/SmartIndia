@@ -21,10 +21,14 @@ namespace SmartIndia.WebApp.Areas.ManageUsers.Controllers
         {
             return View();
         }
+        public IActionResult VerificationEmail()
+        {
+            return View();
+        }
         public IActionResult ForgotPassword()
         {
             return View();
-        } 
+        }
         public IActionResult Thankyou()
         {
             return View();
@@ -33,8 +37,20 @@ namespace SmartIndia.WebApp.Areas.ManageUsers.Controllers
         {
             return View();
         }
-        public IActionResult ResetPassword()
+        public IActionResult ResetLink()
         {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult ResetPassword([FromQuery]string Id)
+        {
+            ViewBag.ACode = Id;
+            return View();
+        }
+        [HttpGet]
+        public IActionResult UserVerification([FromQuery]string Id)
+        {
+            ViewBag.ACode = Id;
             return View();
         }
     }

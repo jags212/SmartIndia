@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-    if (!localStorage.getItem("emailOTP")) {
+    if (!localStorage.getItem("smsOTP")) {
         window.location.href = "/ManageUsers/Users/Login";
     }
     $("#MyForm").keypress(function (e) {
@@ -11,43 +11,6 @@
         }
     });
 });
-function CallEmailOTP() {
-    const now = new Date() 
-    const itemEMail = {
-        value: generateOTP(),
-        expiry: now.getTime() + 300000,
-    } 
-    localStorage.setItem("emailOTP", JSON.stringify(itemEMail));
-    var settings = {
-        "url": "https://api.sendinblue.com/v3/smtp/email",
-        "method": "POST",
-        "timeout": 0,
-        "headers": {
-            "api-key": "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",
-            "Content-Type": "application/json"
-        },
-        "data": JSON.stringify(
-            {
-                "sender": {
-                    "name": "Smart India",
-                    "email": "napoleon.mohanta@gmail.com"
-                },
-                "to": [
-                    {
-                        "email": "" + localStorage.getItem("emailID") + "",
-                        "name": "" + localStorage.getItem("firstName") + ""
-                    }
-                ],
-                "subject": "Smart India OTP Confirmation",
-                "htmlContent": "<html><head></head><body><p>Hello " + localStorage.getItem("firstName") + ",</p>Greetings from Smart India. Your OTP is <b>" + itemEMail.value + "</b>. Code valid for 5 minutes only.</p></body></html>"
-            }
-        ),
-    };
-
-    $.ajax(settings).done(function (response) {
-        localStorage.setItem("emailOTP", JSON.stringify(itemEMail));
-    });
-}
 function CallSMSOTP() {
     const now = new Date()
     const itemSMS = {
@@ -65,14 +28,8 @@ function CallSMSOTP() {
         console.log(response);
     });
 }
-function ValidateForm() {
-    if (!BlankTextBox('txtEmailOTP', 'Email OTP')) {
-        return false;
-    }
-    else if (!IsSpecialCharacter1stPalce('txtEmailOTP')) {
-        return false;
-    }
-    else if (!BlankTextBox('txtSMSOTP', 'SMS OTP')) {
+function ValidateForm() { 
+    if (!BlankTextBox('txtSMSOTP', 'SMS OTP')) {
         return false;
     }
     else if (!IsSpecialCharacter1stPalce('txtSMSOTP')) {
@@ -84,39 +41,22 @@ function ValidateForm() {
 }
 $('#btnVerify').click(function () {
     function CallSave() {
-        const itemEmail = localStorage.getItem("emailOTP")
         const itemSMS = localStorage.getItem("smsOTP")
-        if (!itemEmail) {
+        if (!itemSMS) {
             return null
         }
-        else if (!itemSMS) {
-            return null
-        }
-        const emailOTP = JSON.parse(itemEmail)
         const smsOTP = JSON.parse(itemSMS)
         const now = new Date();
-        if (now.getTime() > emailOTP.expiry) {
-            localStorage.removeItem("emailOTP");
-            localStorage.removeItem("smsOTP");
-            BootstrapAlert("Email OTP is expired, Please resend OTP", "txtEmailOTP");
-            return null
-        }
-        else if (now.getTime() > smsOTP.expiry) {
-            localStorage.removeItem("emailOTP");
+        if (now.getTime() > smsOTP.expiry) { 
             localStorage.removeItem("smsOTP");
             BootstrapAlert("SMS OTP is expired, Please resend OTP", "txtSMSOTP");
         }
-        else {
-            if (emailOTP.value == $('#txtEmailOTP').val()) {
-                if (smsOTP.value == $('#txtSMSOTP').val()) {
-                    UpdateVerfiedUser();
-                }
-                else {
-                    BootstrapAlert("SMS OTP do not match", "txtSMSOTP");
-                }
+        else { 
+            if (smsOTP.value == $('#txtSMSOTP').val()) {
+                UpdateVerfiedUser();
             }
             else {
-                BootstrapAlert("Email OTP do not match", "txtEmailOTP");
+                BootstrapAlert("SMS OTP do not match", "txtSMSOTP");
             }
         }
     }
@@ -129,7 +69,7 @@ function UpdateVerfiedUser() {
     var usersParam = JSON.stringify({
         ACTIONCODE: 'V',
         UserId: parseInt(uid)
-    }); 
+    });
     $.ajax({
         url: ServiceURL + "/api/UserRegistration/UpdateVerifiedUser",
         type: "POST",
@@ -139,9 +79,33 @@ function UpdateVerfiedUser() {
         success: function (data) {
             if (data.retOut == "2") {
                 localStorage.clear();
-                window.location.href = "/ManageUsers/Users/Thankyou";
+                var usersParam = JSON.stringify({
+                    ACode: data.userID
+                });
+                $.ajax({
+                    url: ServiceURL + "/api/users/authenticateByEmail",
+                    type: "POST",
+                    data: usersParam,
+                    dataType: "json",
+                    contentType: "application/json",
+                    success: function (data) {
+                        if (data.id != "") {
+                            localStorage.setItem("userID", data.id);
+                            localStorage.setItem("emailID", data.emailID);
+                            localStorage.setItem("firstName", data.firstName);
+                            localStorage.setItem("jwtToken", data.jwtToken);
+                            localStorage.setItem("refreshToken", data.refreshToken);
+                            localStorage.setItem("direct", 1);
+                            window.location.href = "/Attendee/Dashboard/AttendeeDashboard";
+                        }
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        BootstrapAlert(jqXHR.responseJSON.message, 'txtPassword');
+                        $('#txtPassword').val("");
+                    }
+                });
             }
-            else { 
+            else {
                 localStorage.clear();
                 BootStrapRedirect('Something went wrong. Please try again', '/ManageUsers/Users/Login');
             }

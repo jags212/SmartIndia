@@ -556,8 +556,8 @@
   }
   .forgot-password-area {
     height: auto;
-    padding-top: 105px;
-    padding-bottom: 105px;
+    padding-top: 145px;
+    padding-bottom: 142px;
   }
   .forgot-password-area .forgot-password-content {
     max-width: 300px;
@@ -575,8 +575,8 @@
   }
   .reset-password-area {
     height: auto;
-    padding-top: 105px;
-    padding-bottom: 105px;
+    padding-top: 175px;
+    padding-bottom: 120px;
   }
   .reset-password-area .reset-password-content {
     max-width: 300px;

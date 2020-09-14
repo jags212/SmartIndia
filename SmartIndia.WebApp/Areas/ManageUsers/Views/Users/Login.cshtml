@@ -9,6 +9,12 @@
     <!-- Custom Bootstrap Valiation JS -->
     <script src="~/ApplicationScripts/Common/custom-validate.js"></script>
     <script src="~/ApplicationScripts/UserRegistration/login-validate.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".learn-main-content").addClass("bg-image");
+            $(".ocr-search-container").hide();
+        });
+    </script>
 }
 <div class="login-area">
     <div class="d-table">
@@ -17,9 +23,9 @@
                 <h2>Sign In</h2>
                 <form name="login" id="MyForm" defaultbutton='btnLogin'>
                     <div class="form-group cerror">
-                        <input type="text" id="txtEmail" class="form-control" name="email" placeholder="Email" maxlength="60">
+                        <input type="text" id="txtEmail" class="form-control" name="email" placeholder="Email Id / Mobile No" maxlength="60">
                         <span class="label-title">
-                            <i class='bx bx-envelope'></i>
+                            <i class='bx bx-user'></i>
                         </span>
                     </div>
                     <div class="form-group">

@@ -35,3 +35,23 @@ $('#classwallbutton').click(function() {
 	}
 });
 
+$(document).ready(function () {
+	$("#hostCWCalendar").css("display", "none");
+});
+
+//List
+$('#hostClassWallList').click(function () {
+	$("#hostCWlList").css("display", "block");
+	$("#hostCWCalendar").css("display", "none");
+	$("#hostClassWallList").addClass("up-active");
+	$("#hostClassWallCalendar").removeClass("up-active");
+});
+
+
+//Calendar
+$('#hostClassWallCalendar').click(function () {
+	$("#hostCWlList").css("display", "none");
+	$("#hostCWCalendar").css("display", "block");
+	$("#hostClassWallList").removeClass("up-active");
+	$("#hostClassWallCalendar").addClass("up-active");
+});
