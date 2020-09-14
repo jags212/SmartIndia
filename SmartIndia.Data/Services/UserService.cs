@@ -22,6 +22,7 @@ namespace SmartIndia.Data.Services
     public interface IUserService
     {
         AuthenticateResponse Authenticate(AuthenticateRequest model, string ipAddress);
+        AuthenticateResponse AuthenticateByEmail(AuthenticateRequestByEmail model, string ipAddress);
         AuthenticateResponse RefreshToken(string token, string ipAddress);
         bool RevokeToken(string token, string ipAddress);
         IEnumerable<UserRegistration> GetAll();
@@ -43,7 +44,7 @@ namespace SmartIndia.Data.Services
         {
             object[] objArrayUser = new object[] {
                      "@ACTIONCODE", 'A'
-                    ,"@EmailID", model.EmailID
+                    ,"@UserName", model.EmailID
             };
             DynamicParameters paramUser = objArrayUser.ToDynamicParameters();
             var getUser = DBConnection.QueryFirstOrDefault("USP_LoginManagement_ACTION", paramUser, commandType: CommandType.StoredProcedure);
@@ -54,8 +55,37 @@ namespace SmartIndia.Data.Services
             //Check Login Detail User Name Or Password    
             object[] objArrayUserD = new object[] {
                      "@ACTIONCODE", 'B'
-                    ,"@EmailID", model.EmailID
+                    ,"@UserName", model.EmailID
                     ,"@Password", encodingPasswordString
+            };
+            DynamicParameters paramUserD = objArrayUserD.ToDynamicParameters();
+            var userRegistration = DBConnection.QueryFirstOrDefault<UserRegistration>("USP_LoginManagement_ACTION", paramUserD, commandType: CommandType.StoredProcedure);
+            // return null if user not found
+            if (userRegistration == null) return null;
+
+            // authentication successful so generate jwt and refresh tokens
+            var jwtToken = generateJwtToken(userRegistration);
+            var refreshToken = generateRefreshToken(ipAddress);
+
+            // save refresh token
+            object[] objArrayToken = new object[] {
+                     "@ACTIONCODE", 'I'
+                    ,"@Token", refreshToken.Token
+                    ,"@CreatedByIp", refreshToken.CreatedByIp
+                    ,"@UserRegistrationUserId", userRegistration.UserId
+            };
+            DynamicParameters paramToken = objArrayToken.ToDynamicParameters();
+            paramToken.Add("@Expires", refreshToken.Expires, DbType.DateTime, ParameterDirection.Input);
+            paramToken.Add("@Created", refreshToken.Created, DbType.DateTime, ParameterDirection.Input);
+            DBConnection.Execute("USP_LoginManagement_ACTION", paramToken, commandType: CommandType.StoredProcedure);
+
+            return new AuthenticateResponse(userRegistration, jwtToken, refreshToken.Token);
+        }
+        public AuthenticateResponse AuthenticateByEmail(AuthenticateRequestByEmail model, string ipAddress)
+        {
+            object[] objArrayUserD = new object[] {
+                     "@ACTIONCODE", 'E'
+                    ,"@UID", Guid.Parse(model.ACode)
             };
             DynamicParameters paramUserD = objArrayUserD.ToDynamicParameters();
             var userRegistration = DBConnection.QueryFirstOrDefault<UserRegistration>("USP_LoginManagement_ACTION", paramUserD, commandType: CommandType.StoredProcedure);

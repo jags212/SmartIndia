@@ -39,6 +39,20 @@ namespace SmartIndia.RestAPI.Controllers
 
             return Ok(response);
         }
+        [AllowAnonymous]
+        [EnableCors]
+        [HttpPost("authenticateByEmail")]
+        public IActionResult AuthenticateByEmail(AuthenticateRequestByEmail model)
+        {
+            var response = _userService.AuthenticateByEmail(model, ipAddress());
+
+            if (response == null)
+                return BadRequest(new { message = "INVALID REQUEST...EMAIL NOT VERIFY" });
+
+            setTokenCookie(response.RefreshToken);
+
+            return Ok(response);
+        }
         [EnableCors]
         [AllowAnonymous]
         [HttpPost("refresh-token")]

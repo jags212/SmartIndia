@@ -1,26 +1,24 @@
 ﻿function ValidateForm() {
-    if (!BlankTextBox('txtFirstName', 'First Name')) {
-        return false;
+    if ($('#myregiTab li #email-tab').hasClass('active')) {
+        if (!BlankTextBox('txtEmail', 'Email')) {
+            return false;
+        }
+        else if (!IsSpecialCharacter1stPalce('txtEmail')) {
+            return false;
+        }
+        else if (!ValidateEmail('txtEmail')) {
+            return false;
+        }
     }
-    else if (!IsSpecialCharacter1stPalce('txtFirstName')) {
-        return false;
+    else {
+        if (!BlankTextBox('txtMobileNo', 'Mobile No')) {
+            return false;
+        }
+        else if (!IsSpecialCharacter1stPalce('txtMobileNo')) {
+            return false;
+        }
     }
-    else if (!BlankTextBox('txtLastName', 'Last Name')) {
-        return false;
-    }
-    else if (!IsSpecialCharacter1stPalce('txtLastName')) {
-        return false;
-    }
-    else if (!BlankTextBox('txtEmail', 'Email')) {
-        return false;
-    }
-    else if (!IsSpecialCharacter1stPalce('txtEmail')) {
-        return false;
-    }
-    else if (!ValidateEmail('txtEmail')) {
-        return false;
-    }
-    else if (!BlankTextBox('txtPassword', 'Password')) {
+    if (!BlankTextBox('txtPassword', 'Password')) {
         return false;
     }
     else if (!IsWhiteSpace1stPalce('txtPassword')) {

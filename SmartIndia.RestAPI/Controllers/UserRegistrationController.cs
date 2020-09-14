@@ -38,11 +38,11 @@ namespace SmartIndia.RestAPI.Controllers
             }
         }
         [HttpGet("CheckValidEmail")]
-        public async Task<UserRegistration> CheckValidEmail(string email)
+        public async Task<UserRegistration> CheckValidEmail(string email, string AppURL)
         {
             using (var userRegistrationService = new UserRegistrationServices(connectionFactory))
             {
-                return await Task.FromResult(userRegistrationService.CheckValidEmail(email));
+                return await Task.FromResult(userRegistrationService.CheckValidEmail(email, AppURL));
             }
         }
         [HttpPost("ResetPassword")]
@@ -51,6 +51,14 @@ namespace SmartIndia.RestAPI.Controllers
             using (var userRegistrationService = new UserRegistrationServices(connectionFactory))
             {
                 return await Task.FromResult(userRegistrationService.UpdareResetPassword(obj));
+            }
+        }
+        [HttpGet("UserEmailVerification")]
+        public async Task<bool> UserEmailVerification(string acode)
+        {
+            using (var userRegistrationService = new UserRegistrationServices(connectionFactory))
+            {
+                return await Task.FromResult(userRegistrationService.VerifyUser(acode));
             }
         }
     }

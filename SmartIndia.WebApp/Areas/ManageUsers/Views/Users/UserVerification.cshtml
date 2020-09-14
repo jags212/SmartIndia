@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "UserVerification";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+@section Scripts{
+    <!-- Custom Bootstrap Valiation JS -->
+    <script src="~/ApplicationScripts/Common/custom-validate.js"></script>
+
+    <script> 
+    $(document).ready(function () {
+        $.ajax({
+            url: ServiceURL + "/api/UserRegistration/UserEmailVerification",
+            type: "GET",
+            data: { acode : '@ViewBag.ACode' },
+            dataType: "json",
+            success: function (data) { 
+                if (data) {
+                    var usersParam = JSON.stringify({
+                        ACode: '@ViewBag.ACode'
+                    });
+                    $.ajax({
+                        url: ServiceURL + "/api/users/authenticateByEmail",
+                        type: "POST",
+                        data: usersParam,
+                        dataType: "json",
+                        contentType: "application/json",
+                        success: function (data) {
+                            if (data.id != "") {
+                                localStorage.setItem("userID", data.id);
+                                localStorage.setItem("emailID", data.emailID);
+                                localStorage.setItem("firstName", data.firstName);
+                                localStorage.setItem("jwtToken", data.jwtToken);
+                                localStorage.setItem("refreshToken", data.refreshToken);
+                                localStorage.setItem("direct", 1);
+                                window.location.href = "/Attendee/Dashboard/AttendeeDashboard";
+                            }
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            BootstrapAlert(jqXHR.responseJSON.message, 'txtPassword');
+                            $('#txtPassword').val("");
+                        }
+                    });
+                }
+                else {
+                    BootStrapRedirect("Invalid Request. Email Not Varify.", "/ManageUsers/Users/Login");
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                BootstrapAlert(jqXHR.responseJSON.message, 'txtPassword');
+                $('#txtPassword').val("");
+            }
+        });
+
+    });
+    </script>
+}
+
