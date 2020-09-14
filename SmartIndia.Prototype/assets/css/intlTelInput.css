@@ -116,6 +116,7 @@
     top: 28px;
     left: 14px;
     border-radius: 5px;
+    width: 27%;
 }
 .intl-tel-input.separate-dial-code .profile-selected-flag {
     padding: 10px 6px 0 8px;
@@ -124,7 +125,7 @@
     height: 37px;
     top: 28px;
     left: 14px;
-    border-radius: 5px
+    border-radius: 5px;
 }
 
 /* --------- Country Code Responsive -----------------*/

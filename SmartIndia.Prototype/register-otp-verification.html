@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="assets/css/vendors.min.css" />
     <!-- Fontawesome CSS -->
     <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
     <!-- Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <!-- Responsive CSS -->
@@ -29,7 +31,7 @@
 <body class="main-body">
     <!-- Main Content Layout -->
     <!--Start Header Area-->
-    <div class="learn-main-content">
+    <div class="learn-main-content bg-image">
         <div class="col-position">
             <div id="black-topbar" class="hidden-xs noanimate" role="navigation" aria-label="Resources">
                 <ul class="list-inline pull-left res-pull-left" role="menubar">
@@ -107,25 +109,16 @@
                             <div class="col-lg-12 p-0">
                                 <div class="forgot-password-form">
                                     <h2>Validate OTP</h2>
-                                    <p class="mb-0">Use first 4-digit OTP from email and second 4-digit OTP from registered mobile.</p>
+                                    <p class="mb-0">Use 4-digit OTP from registered mobile</p>
                                     <form>
-                                        <div class="row form-group regi-rec-form-group res-row">
-                                            <div class="col res-col">
-                                                <input type="text" class="form-control" name="code" placeholder="4-digit Email OTP" id="emailotp" maxlength="4" onkeyup="movetoNext(this)">
-                                                <span class="label-title">
-                                                    <i class='bx bx-label l-25'></i>
-                                                </span>
-                                            </div>
-                                            <div class="col res-col">
-                                                <input type="text" class="form-control" name="code" placeholder="4-digit Mobile OTP" id="mobileotp" maxlength="4">
-                                                <span class="label-title">
-                                                    <i class='bx bx-label l-25'></i>
-                                                </span>
-                                            </div>
-                                            <!--<div class="re-note ml-20">
-                                                (Use first 4-digit OTP from email and second 4-digit OTP from registered mobile)
-                                            </div>-->
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="code" placeholder="4-digit OTP" maxlength="4">
+                                            <span class="label-title">
+                                                <i class='bx bx-label'></i>
+                                            </span>
                                         </div>
+                                        <div class="resend font-12"><i class="bx bx-repeat"></i>Resend OTP</div>
+                                        <div class="resend font-14"><i class="bx bx-check"></i>Verification code was resent successfully.</div>
                                         <a href="thank-you.html" class="forgot-password-btn">Verify</a>
                                     </form>
 
@@ -157,8 +150,6 @@
     <script src="assets/js/custom.js"></script>
     <!-- Scrolling Top JS -->
     <script src="assets/js/scroll-top.js"></script>
-    <!-- Move To Next JS -->
-    <script src="assets/js/movetonext.js"></script>
 
 </body>
 </html>
