@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="assets/css/custom.css" />
     <!-- Country Code CSS -->
     <link rel="stylesheet" href="assets/css/intlTelInput.css" />
+    <!-- Datepicker CSS -->
+    <link rel="stylesheet" href="assets/css/gijgo.min.css" />
 
 </head>
 
@@ -71,7 +73,7 @@
                         <span class="icon">
                             <i class='bx bx-book-content'></i>
                         </span>
-                        <span class="menu-title">Schedular</span>
+                        <span class="menu-title">Scheduler</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -318,7 +320,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label>Email Address</label>
                                                 <input type="email" class="form-control" placeholder="Enter email address" value="prateek@gmail.com" id="profileEmail">
@@ -329,10 +331,10 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label>Mobile Number</label>
-                                                <input type="text" class="form-control pl-110" placeholder="Enter mobile number" value="8764567324" id="profileMobileNo">
+                                                <input type="text" class="form-control pl-100" placeholder="Enter mobile number" value="8764567324" id="profileMobileNo">
                                             </div>
 
                                             <!--- Start Country Code --->
@@ -604,26 +606,43 @@
                                                 <a href="host-change-mobileno.html" class="d-inline-block">Edit</a>
                                             </div>
                                         </div>
+
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <label>DOB</label>
+                                                <input type="text" class="form-control" placeholder="Enter DOB" id="dobdatepicker">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group d-gender">
+                                                <label>Gender</label>
+                                                <input type="radio" name="gender" /><span>Male</span>
+                                                <input type="radio" name="gender" /><span>Female</span>
+                                                <input type="radio" name="gender" /><span>Other</span>
+                                            </div>
+                                        </div>
+
                                     </div>
 
                                     <h3><i class="bx bx-building"></i> Address</h3>
                                     <div class="row">
 
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-4">
                                             <div class="form-group">
-                                                <label>Landmark</label>
-                                                <input type="text" class="form-control" placeholder="Enter Landmark">
+                                                <label>Pin Code</label>
+                                                <input type="text" class="form-control" placeholder="Enter pin code">
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label>City</label>
                                                 <input type="text" class="form-control" placeholder="Enter City">
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label>Country</label>
                                                 <select name="countryCode" class="form-control">
@@ -948,10 +967,10 @@
                                                 </label>
                                                 <span>Others</span>
                                             </div>
-                                            <div class="col-lg-8" id="otherInterestArea">
+                                            <div class="col-lg-4" id="otherInterestArea">
                                                 <div class="form-group">
                                                     <label>Maximum 30 characters</label>
-                                                    <textarea type="text" class="form-control" placeholder="Add Interest" maxlength="30" id="interestArea"></textarea>
+                                                    <input type="text" class="form-control" placeholder="Add Interest" maxlength="30" id="interestArea"/>
                                                     <span id="rchars">30</span> Character(s) Remaining
                                                 </div>
                                             </div>
@@ -1009,6 +1028,11 @@
     <script src="assets/js/profile.js"></script>
     <!-- Country Code JS -->
     <script src="assets/js/countrycode.js"></script>
+    <!-- Datepicker JS -->
+    <script src="assets/js/gijgo.min.js"></script>
+    <script>
+        $('#dobdatepicker').datepicker({ format: 'dd-mmm-yy' });
+    </script>
     <!-- Limit Character JS -->
     <script src="assets/js/limit-character.js"></script>
 

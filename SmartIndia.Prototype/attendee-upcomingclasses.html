@@ -72,7 +72,7 @@
                         <span class="icon">
                             <i class='bx bx-card'></i>
                         </span>
-                        <span class="menu-title">Class Wall</span>
+                        <span class="menu-title">My Class Wall</span>
                     </a>
                 </li>
                 <li class="nav-item mm-active">
@@ -109,7 +109,7 @@
 
                 <ul class="navbar-nav left-nav align-items-center">
                     <li class="blinking" data-toggle="modal" data-target="#GetHostModal">
-                        Would You Like To Be A Host?
+                        Become A Host
                     </li>
                 </ul>
 
@@ -213,7 +213,7 @@
                     <li class="nav-item dropdown profile-nav-item">
                         <a href="javascript:void(0);" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="menu-profile">
-                                <span class="name">Hi! Arnab</span>
+                                <span class="name">Arnab</span>
                                 <img src="assets/img/user1.jpg" class="rounded-circle" alt="image">
                             </div>
                         </a>
@@ -225,6 +225,7 @@
                                 </div>
                                 <div class="info text-center">
                                     <span class="name">Arnab Sahoo</span>
+                                    <span class="sm-text">(Attendee)</span>
                                     <p class="mb-3 email">arnab@gmail.com</p>
                                 </div>
                             </div>
@@ -276,24 +277,24 @@
         <div class="card mb-30">
             <div class="card-body">
                 <div class="upcoming-section">
-                    <span id="upcomingList" class="up-active" data-toggle="tooltip" data-placement="bottom" title="List"><i class="bx bx-list-ul"></i></span>
-                    <span id="upcomingCalendar" data-toggle="tooltip" data-placement="bottom" title="Calendar"><i class="bx bx-calendar"></i></span>
+                    <span id="attendeeUpcomingList" class="up-active" data-toggle="tooltip" data-placement="bottom" title="List"><i class="bx bx-list-ul"></i></span>
+                    <span id="attendeeUpcomingCalendar" data-toggle="tooltip" data-placement="bottom" title="Calendar"><i class="bx bx-calendar"></i></span>
                 </div>
                 <form>
-                    <input type="text" name="search" class="dashboard-panel-search" placeholder="Search..">
-                    <span class="dashboard-panel-search-icon"><i class="bx bx-search"></i></span>
+                    <div class="ocr-clearable">
+                        <input type="text" name="search" class="dashboard-panel-search" placeholder="Search..">
+                        <i class="ocr-clearable-clear">&times;</i>
+                    </div>
+                    <span class="dashboard-panel-search-icon" data-toggle="tooltip" data-placement="bottom" title="Search"><i class="bx bx-search"></i></span>
                 </form>
                 <div class="clearfix"></div>
                 <!-- List -->
-                <div class="container" id="attendeeupcomingclasses">
+                <div class="container" id="attendeeUPlList">
                     <div class="row">
                         <div class="col-sm-12 col-lg-12 col-md-12">
                             <ul class="list-group">
                                 <li class="list-group-item justify-content-between ocr-list-group">
-                                    <div class="image-parent ocr-float-left">
-                                        <img src="assets/img/6.jpg" class="img-fluid list-image" alt="ocr" />
-                                    </div>
-                                    <div class="ocr-float-left">
+                                    <div class="ocr-float-left p-1">
                                         <div class="sm-card-title" data-toggle="tooltip" data-placement="bottom" title="Physics (Electricity and Magnetism)">
                                             <a href="javascript:void(0);">Physics (Electricity and Magnetism)</a>
                                         </div>
@@ -306,20 +307,17 @@
                                         <p class="card-text sm-cli-text">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
                                         <div class="sm-bottom-info">
                                             <span class="sm-date">
-                                                <i class="bx bx-calendar"></i>05/08/2020
+                                                <i class="bx bx-calendar"></i>30-Aug-20
                                             </span>
                                             <span class="sm-time">
-                                                <i class="bx bx-time"></i>08.30 AM
+                                                <i class="bx bx-time"></i>11:30:20 GMT+05:30
                                             </span>
                                         </div>
                                     </div>
                                 </li>
 
                                 <li class="list-group-item justify-content-between ocr-list-group">
-                                    <div class="image-parent ocr-float-left">
-                                        <img src="assets/img/6.jpg" class="img-fluid list-image" alt="ocr" />
-                                    </div>
-                                    <div class="ocr-float-left">
+                                    <div class="ocr-float-left p-1">
                                         <div class="sm-card-title" data-toggle="tooltip" data-placement="bottom" title="Chemistry (Chemical Bonding)">
                                             <a href="javascript:void(0);">Chemistry (Chemical Bonding)</a>
                                         </div>
@@ -332,20 +330,17 @@
                                         <p class="card-text sm-cli-text">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
                                         <div class="sm-bottom-info">
                                             <span class="sm-date">
-                                                <i class="bx bx-calendar"></i>05/08/2020
+                                                <i class="bx bx-calendar"></i>02-Aug-20
                                             </span>
                                             <span class="sm-time">
-                                                <i class="bx bx-time"></i>08.30 AM
+                                                <i class="bx bx-time"></i>11:30:20 GMT+05:30
                                             </span>
                                         </div>
                                     </div>
                                 </li>
 
                                 <li class="list-group-item justify-content-between ocr-list-group">
-                                    <div class="image-parent ocr-float-left">
-                                        <img src="assets/img/6.jpg" class="img-fluid list-image" alt="ocr" />
-                                    </div>
-                                    <div class="ocr-float-left">
+                                    <div class="ocr-float-left p-1">
                                         <div class="sm-card-title" data-toggle="tooltip" data-placement="bottom" title="Literature (Aging in Literature)">
                                             <a href="javascript:void(0);">Literature (Aging in Literature)</a>
                                         </div>
@@ -358,20 +353,17 @@
                                         <p class="card-text sm-cli-text">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
                                         <div class="sm-bottom-info">
                                             <span class="sm-date">
-                                                <i class="bx bx-calendar"></i>05/08/2020
+                                                <i class="bx bx-calendar"></i>10-Aug-20
                                             </span>
                                             <span class="sm-time">
-                                                <i class="bx bx-time"></i>08.30 AM
+                                                <i class="bx bx-time"></i>11:30:20 GMT+05:30
                                             </span>
                                         </div>
                                     </div>
                                 </li>
 
                                 <li class="list-group-item justify-content-between ocr-list-group">
-                                    <div class="image-parent ocr-float-left">
-                                        <img src="assets/img/6.jpg" class="img-fluid list-image" alt="ocr" />
-                                    </div>
-                                    <div class="ocr-float-left">
+                                    <div class="ocr-float-left p-1">
                                         <div class="sm-card-title" data-toggle="tooltip" data-placement="bottom" title="Web Development (Development Tools/Environment)">
                                             <a href="javascript:void(0);">Web Development (Development Tools/Environment)</a>
                                         </div>
@@ -384,20 +376,17 @@
                                         <p class="card-text sm-cli-text">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
                                         <div class="sm-bottom-info">
                                             <span class="sm-date">
-                                                <i class="bx bx-calendar"></i>05/08/2020
+                                                <i class="bx bx-calendar"></i>05-Aug-20
                                             </span>
                                             <span class="sm-time">
-                                                <i class="bx bx-time"></i>08.30 AM
+                                                <i class="bx bx-time"></i>11:30:20 GMT+05:30
                                             </span>
                                         </div>
                                     </div>
                                 </li>
 
                                 <li class="list-group-item justify-content-between ocr-list-group">
-                                    <div class="image-parent ocr-float-left">
-                                        <img src="assets/img/6.jpg" class="img-fluid list-image" alt="ocr" />
-                                    </div>
-                                    <div class="ocr-float-left">
+                                    <div class="ocr-float-left p-1">
                                         <div class="sm-card-title" data-toggle="tooltip" data-placement="bottom" title="Web Development (Development Tools/Environment)">
                                             <a href="javascript:void(0);">Web Development (Development Tools/Environment)</a>
                                         </div>
@@ -410,10 +399,10 @@
                                         <p class="card-text sm-cli-text">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
                                         <div class="sm-bottom-info">
                                             <span class="sm-date">
-                                                <i class="bx bx-calendar"></i>05/08/2020
+                                                <i class="bx bx-calendar"></i>10-Sept-20
                                             </span>
                                             <span class="sm-time">
-                                                <i class="bx bx-time"></i>08.30 AM
+                                                <i class="bx bx-time"></i>11:30:20 GMT+05:30
                                             </span>
                                         </div>
                                     </div>
@@ -425,7 +414,7 @@
                 </div>
 
                 <!-- Calendar -->
-                <div id="attendeeupcomingclassesCalendar"></div>
+                <div id="attendeeUPCalendar"></div>
 
             </div>
         </div>
@@ -596,20 +585,6 @@
     <!-- Footer Scripts -->
     <!-- Vendors Min JS -->
     <script src="assets/js/vendors.min.js"></script>
-
-    <!-- ApexCharts JS -->
-    <script src="assets/js/apexcharts/apexcharts.min.js"></script>
-    <script src="assets/js/apexcharts/apex-custom-line-chart.js"></script>
-    <script src="assets/js/apexcharts/apex-custom-pie-donut-chart.js"></script>
-
-    <!-- ChartJS -->
-    <script src="assets/js/chartjs/chartjs.min.js"></script>
-
-    <!-- jvectormap Min JS -->
-    <script src="assets/js/jvectormap-1.2.2.min.js"></script>
-    <!-- jvectormap World Mill JS -->
-    <script src="assets/js/jvectormap-world-mill-en.js"></script>
-
     <!-- Custom JS -->
     <script src="assets/js/custom.js"></script>
     <!-- Upcoming Classes JS -->
@@ -617,8 +592,9 @@
     <!-- Calendar JS -->
     <script src="assets/calendar/js/moment.min.js"></script>
     <script src="assets/calendar/js/fullcalendar.min.js"></script>
-    <script src="assets/calendar/js/attendee-upcoming-classes-calendar.js"></script>
-
+    <script src="assets/calendar/js/upcoming-classes-calendar.js"></script>
+    <!-- Clearable Input JS -->
+    <script src="assets/js/clearable-input.js"></script>
 
 </body>
 </html>

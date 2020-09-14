@@ -327,7 +327,7 @@
 
 .recover-password-area {
     padding-top: 200px;
-    padding-bottom: 121px;
+    padding-bottom: 103px;
 }
 
 .host-color {
@@ -1739,6 +1739,10 @@
     margin-top: 80px;
 }
 
+.mt-30 {
+    margin-top: 30px;
+}
+
 .course-area {
     position: relative;
     padding-top: 90px;
@@ -1775,12 +1779,12 @@
     }
 
 .edgt-cli-top-info {
-    padding: 25px 21px 0 23px;
+    padding: 20px 20px 0;
 }
 
 .edgt-cli-excerpt {
-    margin: 13px 0 38px;
-    padding: 0 23px;
+    margin: 10px 0 10px;
+    padding: 0 20px;
 }
 
 .edgt-ci-price-holder {
@@ -1799,13 +1803,14 @@
 }
 
 .edgt-cli-bottom-info {
-    padding: 14px 26px;
+    padding: 14px 20px;
     color: #b9b9b9;
     border-top: 1px solid #e1e1e1;
 }
 
     .edgt-cli-bottom-info .edgt-students-number-holder {
         display: inline;
+        cursor: pointer;
     }
 
         .edgt-cli-bottom-info .edgt-students-number-holder .edgt-student-icon {
@@ -1818,6 +1823,7 @@
         display: inline-block;
         text-align: right;
         margin: 0 0 0 20px;
+        cursor: pointer;
     }
 
 .mt-20 {
@@ -2112,10 +2118,19 @@ aside.edgt-sidebar .widget {
     text-align: initial;
     box-sizing: border-box;
 }
+
+.enroll-course-show .show-interest {
+    right: 6%;
+    top: 2%;
+}
+
+.enroll-course-show .add-to-favorite {
+    right: 2%;
+    top: 2%;
+}
+
 /*----------------------------- //Course -----------------------------------*/
-
 /*--------------------- Search --------------------------------------*/
-
 .ocr-search-container {
     position: absolute;
     top: 65%;
@@ -2283,9 +2298,9 @@ aside.edgt-sidebar .widget {
 }
 
 .dashboard-panel-search-icon {
-    position: absolute;
-    top: 3%;
-    left: 94%;
+    position: relative;
+    top: 7px;
+    left: 90.5%;
     font-size: 25px;
     cursor: pointer;
 }
@@ -2324,7 +2339,7 @@ aside.edgt-sidebar .widget {
     font-size: 25px;
     margin-top: 6px;
     margin-right: 4px;
-    margin-left: 10px;
+    margin-left: 3px;
     cursor: pointer;
 }
 
@@ -2407,6 +2422,16 @@ aside.edgt-sidebar .widget {
 
 .ocr-clearable input::-ms-clear { /* Remove IE default X */
     display: none;
+}
+
+.more-search {
+    position: absolute;
+    right: -50px;
+    top: 13px;
+    color: #007bff;
+    font-weight: 700;
+    text-shadow: 0px 2px #dee2e6;
+    cursor: pointer;
 }
 /*--------------------- //Search ------------------------------------*/
 .ocr-list-group {
@@ -2537,7 +2562,7 @@ aside.edgt-sidebar .widget {
     margin: 10px 0;
 }
 
-#attendeeupcomingclasses, #attendeeupcomingclassesCalendar, #hostCWlList, #hostCWCalendar {
+#hostDashlList, #hostDashCalendar, #hostCWlList, #hostCWCalendar, #attendeeCWlList, #attendeeCWCalendar, #hostUPlList, #hostUPCalendar, #attendeeUPlList, #attendeeUPCalendar {
     animation: fadeIn 1.5s;
 }
 
@@ -2779,7 +2804,7 @@ aside.edgt-sidebar .widget {
 .clearable {
     position: relative;
     display: inline-block;
-    width: 87%;
+    width: 90%;
 }
 
     .clearable input[type=text] {
@@ -2842,10 +2867,95 @@ aside.edgt-sidebar .widget {
     background-position: center;
     background-repeat: no-repeat;
 }
+
     .strikethrough .table-edit, .strikethrough .table-cancel {
         opacity: .5;
         pointer-events: none;
     }
+
+/* Color Legends*/
+.color-legend-section {
+    margin-left: 80px;
+    margin-top: 5px;
+}
+
+.color-legend {
+    float: left;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-top: 3px;
+}
+
+.col-leg-green {
+    background: #4caf50;
+}
+
+.col-leg-red {
+    background: #f44336;
+}
+
+.col-leg-yellow {
+    background: #ffc107;
+}
+
+.col-leg-grey {
+    background: #6c757d;
+}
+
+.col-leg-seablue {
+    background: #17a2b8;
+}
+
+.color-legend-text {
+    float: left;
+    font-size: 15px;
+    font-weight: 500;
+    margin-right: 10px;
+    margin-left: 3px;
+}
+/*---------------------------*/
+
+.resend {
+    margin-top: -25px;
+    margin-left: 10px;
+    margin-bottom: 25px;
+    color: #28a745;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+    .resend i {
+        margin-right: 2px;
+    }
+.font-12 {
+    font-size: 12px;
+}
+.font-14
+{
+    font-size: 14px;
+}
+.pl-100 {
+    padding-left: 100px !important;
+}
+.d-gender input{
+    margin-right: 3px;
+}
+.d-gender span{
+    font-size: 15px;
+    font-weight: 600;
+    padding-right: 5px;
+}
+#hostDashlList {
+    height: 971px;
+    overflow: auto;
+}
+.con-dashboard-section {
+    font-size: 25px;
+    color: #000;
+    cursor: pointer;
+}
+
 /*------------------- Responsive ------------------------------------*/
 @media(min-width: 320px) and (max-width: 767px) {
     .social-login-btn {

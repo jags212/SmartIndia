@@ -22,6 +22,9 @@
     <link rel="stylesheet" href="assets/css/responsive.css" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/custom.css" />
+    <!-- Calendar CSS -->
+    <link rel="stylesheet" href="assets/calendar/css/fullcalendar.css" />
+    <link rel="stylesheet" href="assets/calendar/css/fullcalendar.print.css" media="print" />
 
 </head>
 
@@ -71,7 +74,7 @@
                         <span class="icon">
                             <i class='bx bxs-book-content'></i>
                         </span>
-                        <span class="menu-title">Schedular</span>
+                        <span class="menu-title">Scheduler</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -285,16 +288,20 @@
         <!-- Start -->
         <div class="card mb-30">
             <div class="card-body">
+                <div class="upcoming-section">
+                    <span id="hostUpcomingList" class="up-active" data-toggle="tooltip" data-placement="bottom" title="List"><i class="bx bx-list-ul"></i></span>
+                    <span id="hostUpcomingCalendar" data-toggle="tooltip" data-placement="bottom" title="Calendar"><i class="bx bx-calendar"></i></span>
+                </div>
                 <form>
                     <div class="ocr-clearable">
                         <input type="text" name="search" class="dashboard-panel-search" placeholder="Search..">
                         <i class="ocr-clearable-clear">&times;</i>
                     </div>
-                    <span class="dashboard-panel-search-icon"><i class="bx bx-search"></i></span>
+                    <span class="dashboard-panel-search-icon" data-toggle="tooltip" data-placement="bottom" title="Search"><i class="bx bx-search"></i></span>
                 </form>
                 <div class="clearfix"></div>
                 <!-- List -->
-                <div class="container">
+                <div class="container" id="hostUPlList">
                     <div class="row">
                         <div class="col-sm-12 col-lg-12 col-md-12">
                             <ul class="list-group">
@@ -312,7 +319,7 @@
                                         <p class="card-text sm-cli-text">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
                                         <div class="sm-bottom-info">
                                             <span class="sm-date">
-                                                <i class="bx bx-calendar"></i>05-Aug-2020
+                                                <i class="bx bx-calendar"></i>30-Aug-20
                                             </span>
                                             <span class="sm-time">
                                                 <i class="bx bx-time"></i>11:30:20 GMT+05:30
@@ -335,7 +342,7 @@
                                         <p class="card-text sm-cli-text">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
                                         <div class="sm-bottom-info">
                                             <span class="sm-date">
-                                                <i class="bx bx-calendar"></i>05-Aug-2020
+                                                <i class="bx bx-calendar"></i>02-Aug-20
                                             </span>
                                             <span class="sm-time">
                                                 <i class="bx bx-time"></i>11:30:20 GMT+05:30
@@ -358,7 +365,7 @@
                                         <p class="card-text sm-cli-text">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
                                         <div class="sm-bottom-info">
                                             <span class="sm-date">
-                                                <i class="bx bx-calendar"></i>05-Aug-2020
+                                                <i class="bx bx-calendar"></i>10-Aug-20
                                             </span>
                                             <span class="sm-time">
                                                 <i class="bx bx-time"></i>11:30:20 GMT+05:30
@@ -381,7 +388,7 @@
                                         <p class="card-text sm-cli-text">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
                                         <div class="sm-bottom-info">
                                             <span class="sm-date">
-                                                <i class="bx bx-calendar"></i>05-Aug-2020
+                                                <i class="bx bx-calendar"></i>05-Aug-20
                                             </span>
                                             <span class="sm-time">
                                                 <i class="bx bx-time"></i>11:30:20 GMT+05:30
@@ -404,7 +411,7 @@
                                         <p class="card-text sm-cli-text">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
                                         <div class="sm-bottom-info">
                                             <span class="sm-date">
-                                                <i class="bx bx-calendar"></i>05-Aug-2020
+                                                <i class="bx bx-calendar"></i>10-Sept-20
                                             </span>
                                             <span class="sm-time">
                                                 <i class="bx bx-time"></i>11:30:20 GMT+05:30
@@ -417,6 +424,8 @@
                         </div>
                     </div>
                 </div>
+                <!-- Calendar -->
+                <div id="hostUPCalendar"></div>
             </div>
         </div>
         <!-- End -->
@@ -443,6 +452,12 @@
     <script src="assets/js/vendors.min.js"></script>
     <!-- Custom JS -->
     <script src="assets/js/custom.js"></script>
+    <!-- Upcoming Classes JS -->
+    <script src="assets/js/upcomingclasses.js"></script>
+    <!-- Calendar JS -->
+    <script src="assets/calendar/js/moment.min.js"></script>
+    <script src="assets/calendar/js/fullcalendar.min.js"></script>
+    <script src="assets/calendar/js/upcoming-classes-calendar.js"></script>
     <!-- Clearable Input JS -->
     <script src="assets/js/clearable-input.js"></script>
 
