@@ -1,0 +1,175 @@
+﻿
+@{
+    ViewData["Title"] = "ClassWall";
+    Layout = "~/Views/Shared/_FrontPannelLayout.cshtml";
+}
+@section Scripts
+{
+    <!-- Class Wall JS -->
+    <script src="~/assets/js/class-wall.js"></script>
+
+}
+<!-- Main Content Layout -->
+<!-- Breadcrumb Area -->
+<div class="breadcrumb-area">
+    <h1>My Class Wall</h1>
+    <ol class="breadcrumb">
+        <li class="item">
+            <a href="attendee-dashboard.html"><i class='bx bx-home-alt'></i></a>
+        </li>
+        <li class="item">Dashboard</li>
+        <li class="item">My Class Wall</li>
+    </ol>
+</div>
+<!-- End Breadcrumb Area -->
+<!-- Start -->
+
+<div class="card mb-30">
+    <div class="card-body">
+        <div class="upcoming-section">
+            <span id="hostClassWallList" class="up-active" data-toggle="tooltip" data-placement="bottom" title="List"><i class="bx bx-list-ul"></i></span>
+            <span id="hostClassWallCalendar" data-toggle="tooltip" data-placement="bottom" title="Calendar"><i class="bx bx-calendar"></i></span>
+        </div>
+        <form>
+            <div class="ocr-clearable">
+                <input type="text" name="search" class="dashboard-panel-search" placeholder="Search..">
+                <i class="ocr-clearable-clear">&times;</i>
+            </div>
+            <span class="class-search-icon"><i class="bx bx-search"></i></span>
+        </form>
+        <div class="clearfix"></div>
+        <!-- List -->
+        <div class="container" id="hostCWlList">
+            <div class="row">
+                <div class="col-sm-12 col-lg-12 col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item justify-content-between ocr-list-group">
+                            <div class="ocr-float-left p-1">
+                                <div class="sm-card-title" data-toggle="tooltip" data-placement="bottom" title="Physics (Electricity and Magnetism)">
+                                    <a href="javascript:void(0);">Physics (Electricity and Magnetism)</a>
+                                </div>
+                                <span class="sm-host-name">
+                                    <i class="bx bxs-face"></i>Amy Drufesne
+                                </span>
+                                <span class="sm-batch-name">
+                                    <i class="bx bx-task"></i>Batch I
+                                </span>
+                                <p class="card-text sm-cli-text">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
+                                <div class="sm-bottom-info">
+                                    <span class="sm-date">
+                                        <i class="bx bx-calendar"></i>30-Aug-2020
+                                    </span>
+                                    <span class="sm-time">
+                                        <i class="bx bx-time"></i>11:30:20 GMT+05:30
+                                    </span>
+                                </div>
+                                <div class="sm-bottom-status-info">
+                                    <span class="sm-status sm-attend" data-toggle="tooltip" data-placement="bottom" title="Accomplished">20 </span>
+                                    <span class="sm-status sm-upclasses" data-toggle="tooltip" data-placement="bottom" title="Upcoming">18</span>
+                                    <span class="sm-status sm-reschedule" data-toggle="tooltip" data-placement="bottom" title="Reschedule">5</span>
+                                    <span class="sm-status sm-cancel" data-toggle="tooltip" data-placement="bottom" title="Cancel">1</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item justify-content-between ocr-list-group">
+                            <div class="ocr-float-left p-1">
+                                <div class="sm-card-title" data-toggle="tooltip" data-placement="bottom" title="Chemistry (Chemical Bonding)">
+                                    <a href="javascript:void(0);">Chemistry (Chemical Bonding)</a>
+                                </div>
+                                <span class="sm-host-name">
+                                    <i class="bx bxs-face"></i>Amy Drufesne
+                                </span>
+                                <span class="sm-batch-name">
+                                    <i class="bx bx-task"></i>Batch I
+                                </span>
+                                <p class="card-text sm-cli-text">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
+                                <div class="sm-bottom-info">
+                                    <span class="sm-date">
+                                        <i class="bx bx-calendar"></i>02-Aug-2020
+                                    </span>
+                                    <span class="sm-time">
+                                        <i class="bx bx-time"></i>11:30:20 GMT+05:30
+                                    </span>
+                                </div>
+                                <div class="sm-bottom-status-info">
+                                    <span class="sm-status sm-attend" data-toggle="tooltip" data-placement="bottom" title="Accomplished">15 </span>
+                                    <span class="sm-status sm-upclasses" data-toggle="tooltip" data-placement="bottom" title="Upcoming">8</span>
+                                    <span class="sm-status sm-reschedule" data-toggle="tooltip" data-placement="bottom" title="Missed">2</span>
+                                    <span class="sm-status sm-cancel" data-toggle="tooltip" data-placement="bottom" title="Cancel">3</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item justify-content-between ocr-list-group">
+                            <div class="ocr-float-left p-1">
+                                <div class="sm-card-title" data-toggle="tooltip" data-placement="bottom" title="Literature (Aging in Literature)">
+                                    <a href="javascript:void(0);">Literature (Aging in Literature)</a>
+                                </div>
+                                <span class="sm-host-name">
+                                    <i class="bx bxs-face"></i>Amy Drufesne
+                                </span>
+                                <span class="sm-batch-name">
+                                    <i class="bx bx-task"></i>Batch I
+                                </span>
+                                <p class="card-text sm-cli-text">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
+                                <div class="sm-bottom-info">
+                                    <span class="sm-date">
+                                        <i class="bx bx-calendar"></i>10-Aug-2020
+                                    </span>
+                                    <span class="sm-time">
+                                        <i class="bx bx-time"></i>11:30:20 GMT+05:30
+                                    </span>
+                                </div>
+                                <div class="sm-bottom-status-info">
+                                    <span class="sm-status sm-attend" data-toggle="tooltip" data-placement="bottom" title="Accomplished">10</span>
+                                    <span class="sm-status sm-upclasses" data-toggle="tooltip" data-placement="bottom" title="Upcoming">12</span>
+                                    <span class="sm-status sm-reschedule" data-toggle="tooltip" data-placement="bottom" title="Missed">2</span>
+                                    <span class="sm-status sm-cancel" data-toggle="tooltip" data-placement="bottom" title="Cancel">5</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item justify-content-between ocr-list-group">
+                            <div class="ocr-float-left p-1">
+                                <div class="sm-card-title" data-toggle="tooltip" data-placement="bottom" title="Web Development (Development Tools/Environment)">
+                                    <a href="javascript:void(0);">Web Development (Development Tools/Environment)</a>
+                                </div>
+                                <span class="sm-host-name">
+                                    <i class="bx bxs-face"></i>Amy Drufesne
+                                </span>
+                                <span class="sm-batch-name">
+                                    <i class="bx bx-task"></i>Batch I
+                                </span>
+                                <p class="card-text sm-cli-text">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
+                                <div class="sm-bottom-info">
+                                    <span class="sm-date">
+                                        <i class="bx bx-calendar"></i>05-Aug-2020
+                                    </span>
+                                    <span class="sm-time">
+                                        <i class="bx bx-time"></i>11:30:20 GMT+05:30
+                                    </span>
+                                </div>
+                                <div class="sm-bottom-status-info">
+                                    <span class="sm-status sm-attend" data-toggle="tooltip" data-placement="bottom" title="Accomplished">20</span>
+                                    <span class="sm-status sm-upclasses" data-toggle="tooltip" data-placement="bottom" title="Upcoming">15</span>
+                                    <span class="sm-status sm-reschedule" data-toggle="tooltip" data-placement="bottom" title="Missed">5</span>
+                                    <span class="sm-status sm-cancel" data-toggle="tooltip" data-placement="bottom" title="Cancel">2</span>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calendar -->
+        <div id="hostCWCalendar"></div>
+
+    </div>
+</div>
+<!-- End -->
+<!-- Footer -->
+<div class="flex-grow-1"></div>
+

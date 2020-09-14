@@ -34,7 +34,7 @@ namespace SmartIndia.Data.Services.Host
                     ,"@ClassRoomPwd", "PWD"
                     ,"@UpdatedById", item.UpdatedById
                     ,"@Duration",item.Duration
-                    ,"@BatchName",item.BatchName
+                    ,"@BatchName",item.BatchName.Replace(" ","")
                     ,"@IsPublished",(int)RecordPublished.UnPublished
                 };
                     DynamicParameters param = objArray.ToDynamicParameters("@PVCH_MSGOUT");
@@ -63,7 +63,7 @@ namespace SmartIndia.Data.Services.Host
                         ,"@ClassRoomPwd", "PWD"
                         ,"@UpdatedById", hostSchedular.UpdatedById
                         ,"@Duration",hostSchedular.Duration
-                        ,"@BatchName",hostSchedular.BatchName
+                        ,"@BatchName",hostSchedular.BatchName.Replace(" ","")
                         ,"@IsPublished",(int)RecordPublished.UnPublished
             };
             try

@@ -51,6 +51,36 @@ namespace SmartIndia.Data.Services.Host
                 return null;
             }
         }
+        [Obsolete]
+        public List<GetAWC> BindAWC(HostParameter hostParameter)
+        {
+            object[] objArray = new object[] {
+                     "@P_ACTIONCODE",hostParameter.ACTIONCODE,
+                     "@UserId",hostParameter.UserId
+            };
+            try
+            {
+                DynamicParameters param = objArray.ToDynamicParameters();
+                var result = DBConnection.Query<GetAWC>("USP_ATTENDEEDETAILS_ACTION", param, commandType: CommandType.StoredProcedure).ToList();
+                List<GetAWC> AWCDETAILS = new List<GetAWC>();
+                foreach (var item in result)
+                {
+                    var modal = new GetAWC()
+                    {
+                        UserId = item.UserId,
+                        NoOfCourses = item.NoOfCourses,
+                    };
+                    AWCDETAILS.Add(modal);
+                }
+                return AWCDETAILS;
+
+
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 
 }

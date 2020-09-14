@@ -21,13 +21,13 @@ function getallReScheduling() {
                 $.each(data, function (i, item) {
 
                     if (data[i].status == 0) {
-                        cancel = '<div class="text-red">Canceled</div>';
+                        cancel = '<div class="text-red">Cancelled</div>';
                     }
                     else if (data[i].status == 1) {
                         cancel = '<div class="action-inline" data-toggle="tooltip" data-placement="right" title="Rescheduling">  <a href="javascript:void(0);" onclick="getcourseidd(' + data[i].schedularId + ')"  class="form-control table-edit" ><i class="bx bx bx-reset"></i></a> </div>   <div class="action-inline" data-toggle="tooltip" data-placement="right" title="Cancel"><a href="javascript:void(0);"onclick="getschedularId(' + data[i].schedularId + ')" class="form-control table-cancel" data-toggle="modal" data-target="#ConCancelModal"><i class="bx bx-trash"></i></a></div>';
                     }
 
-                    trHTML += '<tr  class=""><td>' + (i + 1) + '</td><td>' + data[i].courseName + '</td><td>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yyyy') + '</td><td>' + timeConvert(data[i].startTime) + '</td><td>' + timeConvert(data[i].endTime) + '</td> <td>' + data[i].batchName + '</td><td> ' + cancel + ' </td> </tr>';
+                    trHTML += '<tr  class=""><td>' + (i + 1) + '</td><td>' + data[i].courseName + '</td><td>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') + '</td><td>' + timeConvert(data[i].startTime) + '</td><td>' + timeConvert(data[i].endTime) + '</td> <td>' + data[i].batchName + '</td><td> ' + cancel + ' </td> </tr>';
 
                 });
                 $('#dataTable').append(trHTML);
@@ -66,10 +66,10 @@ function getcourseidd(CID) {
                 dataType: "json",
                 contentType: "application/json",
                 success: function (data) {
-                    $("#existingdate").html(dateFormat(data[0].scheduleDate, 'dd-mmm-yyyy'));
+                    $("#existingdate").html(dateFormat(data[0].scheduleDate, 'dd-mmm-yy'));
                     $("#inputCourses").val(data[0].courseId);
                     $("#SccDate").val(data[0].scheduleDate);
-                    $("#ScDate").val(dateFormat(data[0].scheduleDate, 'dd-mmm-yyyy'));
+                    $("#ScDate").val(dateFormat(data[0].scheduleDate, 'dd-mmm-yy'));
                     $("#StartTime").val(data[0].startTime);
                     $("#Duration").val(data[0].duration);
                     $("#hfEndTime").val(data[0].endTime)

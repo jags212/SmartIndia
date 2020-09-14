@@ -22,7 +22,7 @@
     <script>
         $('#ScDate').datepicker(
             {
-                format: 'dd-mmm-yyyy',
+                format: 'dd-mmm-yy',
                 disableDates: function (date) {
                     // allow for today
                     const currentDate = new Date().setHours(0, 0, 0, 0);
@@ -72,7 +72,7 @@
             <table class="table table-hover" id="dataTable" name="dataTable">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">SL#</th>
+                        <th scope="col">Sl#</th>
                         <th scope="col">Courses</th>
                         <th scope="col">Scheduled Date</th>
                         <th scope="col">Start Time</th>

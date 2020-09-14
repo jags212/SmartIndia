@@ -43,7 +43,7 @@
 
         $('#ScDate').datepicker(
             {
-                format: 'dd-mmm-yyyy',
+                format: 'dd-mmm-yy',
                 disableDates: function (date) {
                     // allow for today
                     const currentDate = new Date().setHours(0, 0, 0, 0);
@@ -60,7 +60,7 @@
 
         $('#uScDate').datepicker(
             {
-                format: 'dd-mmm-yyyy',
+                format: 'dd-mmm-yy',
                 disableDates: function (date) {
                     // allow for today
                     const currentDate = new Date().setHours(0, 0, 0, 0);
@@ -75,7 +75,7 @@
     </script>
     <script>
         $('#datepickerFrom').datepicker({
-            format: 'dd-mmm-yyyy',
+            format: 'dd-mmm-yy',
             disableDates: function (date) {
                 // allow for today
                 const currentDate = new Date().setHours(0, 0, 0, 0);
@@ -89,7 +89,7 @@
     </script>
     <script>
         $('#datepickerTo').datepicker({
-            format: 'dd-mmm-yyyy',
+            format: 'dd-mmm-yy',
             disableDates: function (date) {
                 // allow for today
                 const currentDate = new Date().setHours(0, 0, 0, 0);
@@ -155,7 +155,6 @@
         $("#Duration").change(function () {
             var duration = $('option:selected', $(this)).val();
             var timestr = $("#StartTime").val();
-            debugger;
             var now = new Date('1900-01-01 ' + timestr + ':00');
             var endtime = new Date(now.getTime() + parseInt(duration) * 60000);
             $("#hfEndTime").val(endtime.toTimeString().split(' ')[0].toString('hh:mm'));
@@ -196,7 +195,7 @@
                 </div>
                 <div class="col-md-4">
                     <label>Batch Name</label>
-                    <input type="text" id="BatchNameOnce" name="BatchNameOnce" maxlength="64" class="form-control" placeholder="Batch Name">
+                    <input type="text" id="BatchNameOnce" name="BatchNameOnce" maxlength="20" class="form-control" placeholder="Batch Name">
 
                 </div>
                 <div class="col" id="dtponce">
@@ -219,8 +218,8 @@
                         <select class="form-control" name="frequency" id="ddlrecurringschedule">
                             <option selected value="0">---Select---</option>
                             <option value="Daily">Daily</option>
-                            @*<option value="Weekly">Weekly</option>
-                                <option value="Monthly">Monthly</option>*@
+                            <option value="Weekly">Weekly</option>
+                                <option value="Monthly">Monthly</option>
                         </select>
                     </div>
 
@@ -523,7 +522,7 @@
             <table class="table table-hover" id="tblSchedular" name="tblSchedular">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">SL#</th>
+                        <th scope="col">Sl#</th>
                         <th scope="col">Courses</th>
                         <th scope="col">Start Date</th>
                         <th scope="col">End Date</th>
@@ -551,6 +550,13 @@
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
+            <div class="text-padding">
+                <span><strong>Course Name:</strong></span> <span id="divCoursename"></span>
+            </div>
+            <div class="text-padding">
+                <span><strong>Batch Name:</strong></span><span id="divBatchname"></span>
+            </div>
+
             <div class="modal-body re-modal-body">
                 <div class="table-responsive">
                     <input type="hidden" class="form-control" name="hfCourseId" id="hfCourseId">
@@ -569,12 +575,12 @@
     </div>
 </div>
 <!-- End View Details Modal -->
-<!-- Start Rescheduling Modal -->
+<!-- Start Edit Schedular Modal -->
 <div class="modal fade" id="reschedulingModal" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Rescheduling</h5>
+                <h5 class="modal-title">Schedular</h5>
                 <button type="button" class="close col-black" data-dismiss="modal">
                     <span aria-hidden="true">×</span>
                 </button>
@@ -743,4 +749,4 @@
     </div>
 </div>
 
-<!-- End Rescheduling Modal -->
+<!-- End Edit Schedular Modal -->

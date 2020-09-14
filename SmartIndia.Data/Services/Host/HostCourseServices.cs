@@ -78,7 +78,8 @@ namespace SmartIndia.Data.Services.Host
                         Duration = item.Duration,
                         ClassFrequency = item.ClassFrequency,
                         NoOfClass = item.NoOfClass,
-                        Cost = item.Cost
+                        Cost = item.Cost,
+                        Topic=item.Topic
                     };
                     HostCourses.Add(modal);
                 }

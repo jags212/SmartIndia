@@ -85,14 +85,14 @@ function getallcourses() {
                 var trHTML = '';
 
                 $.each(data, function (i, item) {
-                    trHTML += '<tr  class=""><td>' + (i + 1) + '</td><td>' + data[i].courseName + '</td><td>' + data[i].courseDesc + '</td><td>' + data[i].topics + '</td><td>' + dateFormat(data[i].startDate, 'dd-mmm-yyyy') + '</td><td>' + dateFormat(data[i].endDate, 'dd-mmm-yyyy') + '</td><td>' + data[i].duration + '</td> <td> <div class="action-inline" data-toggle="tooltip" data-placement="right" title="Edit"> <a href="javascript:void(0);" onclick="getcourseidd(' + data[i].courseId + ')"  class="form-control table-edit "><i class="bx bx-edit-alt"></i></a> </div>     <div class="action-inline" data-toggle="tooltip" data-placement="right" title="View">  <a href="javascript:void(0);" onclick="getcoursedetails(' + data[i].courseId + ')" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a> </div>  </td> </tr>';
+                    trHTML += '<tr  class=""><td>' + (i + 1) + '</td><td>' + data[i].courseName + '</td><td>' + data[i].topic + '</td><td>' + dateFormat(data[i].startDate, 'dd-mmm-yy') + '</td><td>' + dateFormat(data[i].endDate, 'dd-mmm-yy') + '</td><td>' + data[i].duration + '</td> <td> <div class="action-inline" data-toggle="tooltip" data-placement="right" title="Edit"> <a href="javascript:void(0);" onclick="getcourseidd(' + data[i].courseId + ')"  class="form-control table-edit "><i class="bx bx-edit-alt"></i></a> </div>     <div class="action-inline" data-toggle="tooltip" data-placement="right" title="View">  <a href="javascript:void(0);" onclick="getcoursedetails(' + data[i].courseId + ')" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a> </div>  </td> </tr>';
                 });
 
                 $('#tblCourses').append(trHTML);
                // $('#tblCourses').dataTable();
                 $('#tblCourses').dataTable({
                     'columnDefs': [{
-                        'targets': [7],
+                        'targets': [6],
                         'orderable': false,
                     }]
                 });
@@ -126,8 +126,8 @@ function getcourseidd(CID) {
                     $("#txtName").val(data[0].courseName);
                     $("#txtDesc").val(data[0].courseDesc);
                     $("#txtTopics").val(data[0].topics);
-                    $("#sdatepicker").val(dateFormat(data[0].startDate, 'dd-mmm-yyyy'));
-                    $("#edatepicker").val(dateFormat(data[0].endDate, 'dd-mmm-yyyy'));
+                    $("#sdatepicker").val(dateFormat(data[0].startDate, 'dd-mmm-yy'));
+                    $("#edatepicker").val(dateFormat(data[0].endDate, 'dd-mmm-yy'));
                     $("#durationDate").val(data[0].duration);
                     $("#fdate").val(data[0].startDate);
                     $("#edate").val(data[0].endDate);
@@ -166,8 +166,8 @@ function getcoursedetails(CID) {
                 $("#cname").html(data[0].courseName);
                 $("#cdesc").html(data[0].courseDesc);
                 $("#topic").html(data[0].topics);
-                $("#sdt").html(dateFormat(data[0].startDate, 'dd-mmm-yyyy'));
-                $("#edt").html(dateFormat(data[0].endDate, 'dd-mmm-yyyy'));
+                $("#sdt").html(dateFormat(data[0].startDate, 'dd-mmm-yy'));
+                $("#edt").html(dateFormat(data[0].endDate, 'dd-mmm-yy'));
                 $("#duration").html(data[0].duration);
                 $("#ccost").html(data[0].cost);
                 $("#Cf").html(data[0].classFrequency);

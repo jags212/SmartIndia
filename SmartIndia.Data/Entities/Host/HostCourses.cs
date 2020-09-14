@@ -14,6 +14,7 @@ namespace SmartIndia.Data.Entities.Host
         public string CourseName { get; set; }
         public string CourseDesc { get; set; }
         public string Topics { get; set; }
+        public string Topic { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public int Duration { get; set; }

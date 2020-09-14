@@ -6,7 +6,7 @@ function getallSchedular() {
 	var UId = localStorage.getItem("userID");
 	var usersParam = JSON.stringify({
 		UserId: parseInt(UId),
-		ACTIONCODE: "P"
+		ACTIONCODE: "C"
 	});
 	$.ajax(
 		{

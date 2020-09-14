@@ -22,13 +22,23 @@ namespace SmartIndia.RestAPI.Controllers
             this.connectionFactory = connectionFactory;
         }
 
-        [HttpGet("BindAttendees")]
+        [HttpGet("BindAttendees")]// Course wise attendee
         [Obsolete]
         public async Task<List<GetAttendees>> BindAttendees([FromQuery] HostParameter obj)
         {
             using (var attendeesServices = new AttendeesServices(connectionFactory))
             {
                 return await Task.FromResult(attendeesServices.BindAttendees(obj));
+
+            }
+        }
+        [HttpGet("BindAWC")]//Attendee Wise Course
+        [Obsolete]
+        public async Task<List<GetAWC>> BindAWC([FromQuery] HostParameter obj)
+        {
+            using (var attendeesServices = new AttendeesServices(connectionFactory))
+            {
+                return await Task.FromResult(attendeesServices.BindAWC(obj));
 
             }
         }

@@ -174,7 +174,7 @@ function getallSchedular() {
                         publish = '<div class="form-control publish-active">Published</div>';
                     }
 
-                    trHTML += '<tr  class=""><td>' + (i + 1) + '</td><td>' + data[i].courseName + '</td><td>' + dateFormat(data[i].startScheduleDate, 'dd-mmm-yyyy') + '</td><td>' + dateFormat(data[i].endScheduleDate, 'dd-mmm-yyyy') + '</td><td>' + timeConvert(data[i].startTime) + '</td><td>' + timeConvert(data[i].endTime) + '</td><td>' + data[i].duration + '</td><td>' + data[i].batchName + '</td> <td>      <div class="action-inline" data-toggle="tooltip" data-placement="right" title="View">  <a href="javascript:void(0);" onclick="getSchedulardetails(' + data[i].courseId + ',' + "'" + dateFormat(data[i].startScheduleDate, 'mm-dd-yyyy') + "'" + ',' + "'" + dateFormat(data[i].endScheduleDate, 'mm-dd-yyyy') + "'" + ',' + "'" + data[i].startTime + "'" + ',' + "'" + data[i].endTime + "'" + ',' + "'" + data[i].isPublished + "'" + ')" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a> </div>  </td> <td id="buPublish">' + publish + '</td> </tr>';
+                    trHTML += '<tr  class=""><td>' + (i + 1) + '</td><td>' + data[i].courseName + '</td><td>' + dateFormat(data[i].startScheduleDate, 'dd-mmm-yy') + '</td><td>' + dateFormat(data[i].endScheduleDate, 'dd-mmm-yy') + '</td><td>' + timeConvert(data[i].startTime) + '</td><td>' + timeConvert(data[i].endTime) + '</td><td>' + data[i].duration + '</td><td>' + data[i].batchName + '</td> <td>      <div class="action-inline" data-toggle="tooltip" data-placement="right" title="View">  <a href="javascript:void(0);" onclick="getSchedulardetails(' + data[i].courseId + ',' + "'" + dateFormat(data[i].startScheduleDate, 'mm-dd-yyyy') + "'" + ',' + "'" + dateFormat(data[i].endScheduleDate, 'mm-dd-yyyy') + "'" + ',' + "'" + data[i].startTime + "'" + ',' + "'" + data[i].endTime + "'" + ',' + "'" + data[i].isPublished + "'" + ')" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a> </div>  </td> <td id="buPublish">' + publish + '</td> </tr>';
                 });
                 $('#tblSchedular').append(trHTML);
                 $('.action-inline').tooltip();
@@ -210,10 +210,10 @@ function getcourseidd(HSID) {
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
-                $("#uexistingdate").html(dateFormat(data[0].scheduleDate, 'dd-mmm-yyyy'));
+                $("#uexistingdate").html(dateFormat(data[0].scheduleDate, 'dd-mmm-yy'));
                 $("#uinputCourses").val(data[0].courseId);
                 $("#uSccDate").val(data[0].scheduleDate);
-                $("#uScDate").val(dateFormat(data[0].scheduleDate, 'dd-mmm-yyyy'));
+                $("#uScDate").val(dateFormat(data[0].scheduleDate, 'dd-mmm-yy'));
                 $("#uStartTime").val(data[0].startTime);
                 $("#uDuration").val(data[0].duration);
                 $("#uhfEndTime").val(data[0].endTime)
@@ -315,6 +315,8 @@ function getSchedulardetails(CID, sdate, edate, stime, etime, isPub) {
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
+                $("#divCoursename").html(data[0].courseName);
+                $("#divBatchname").html(data[0].batchName );
                 $('#tblDetails thead').empty();
                 $('#tblDetails tbody').empty();
 
@@ -322,12 +324,12 @@ function getSchedulardetails(CID, sdate, edate, stime, etime, isPub) {
                 var thead;
                 if (isPub == "0") {
                     $("#btnPublish").show();
-                    thead = '<tr class="thead-dark"><th scope="col">SL#</th><th scope="col">Courses</th><th scope="col">Schedule Date</th><th scope="col">Start Time</th><th scope="col">End Time</th><th scope="col">Duration (Mins)</th><th scope="col">Batch Name</th><th scope="col" class="table-rsaction-width">Action</th></tr>';
+                    thead = '<tr class="thead-dark"><th scope="col">SLNo#</th><th scope="col">Schedule Date</th><th scope="col">Start Time</th><th scope="col">End Time</th><th scope="col">Duration (Mins)</th><th scope="col" class="table-rsaction-width">Action</th></tr>';
                 }
                 else {
 
                     $("#btnPublish").hide();
-                    thead = '<tr class="thead-dark"><th scope="col">SL#</th><th scope="col">Courses</th><th scope="col">Schedule Date</th><th scope="col">Start Time</th><th scope="col">End Time</th><th scope="col">Duration (Mins)</th><th scope="col">Batch Name</th></tr>';
+                    thead = '<tr class="thead-dark"><th scope="col">SL#</th><th scope="col">Schedule Date</th><th scope="col">Start Time</th><th scope="col">End Time</th><th scope="col">Duration (Mins)</th></tr>';
 
                 }
 
@@ -335,11 +337,11 @@ function getSchedulardetails(CID, sdate, edate, stime, etime, isPub) {
 
                     if (isPub == "0") {
                         publish = ' <div class="action-inline" data-toggle="tooltip" data-placement="top" title="Edit"> <a  id= "scId" href="javascript:void(0);" onclick="getcourseidd(' + data[i].schedularId + ')"  class="form-control table-edit "><i class="bx bx-edit-alt"></i></a> </div>  ';
-                        trHTML += '<tr  class=""><td>' + (i + 1) + '</td><td>' + data[i].courseName + '</td><td>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yyyy') + '</td><td>' + timeConvert(data[i].startTime) + '</td><td>' + timeConvert(data[i].endTime) + '</td><td>' + data[i].duration + '</td><td>' + data[i].batchName + '</td> <td> ' + publish + ' </td>  </tr>';
+                        trHTML += '<tr  class=""><td>' + (i + 1) + '</td><td>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') + '</td><td>' + timeConvert(data[i].startTime) + '</td><td>' + timeConvert(data[i].endTime) + '</td><td>' + data[i].duration + '</td><td> ' + publish + ' </td>  </tr>';
                     }
                     else if (isPub == "1") {
                         publish = '';
-                        trHTML += '<tr  class=""><td>' + (i + 1) + '</td><td>' + data[i].courseName + '</td><td>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yyyy') + '</td><td>' + timeConvert(data[i].startTime) + '</td><td>' + timeConvert(data[i].endTime) + '</td><td>' + data[i].duration + '</td><td>' + data[i].batchName + '</td>   </tr>';
+                        trHTML += '<tr  class=""><td>' + (i + 1) + '</td><td>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') + '</td><td>' + timeConvert(data[i].startTime) + '</td><td>' + timeConvert(data[i].endTime) + '</td><td>' + data[i].duration + '</td></tr>';
                     }
 
                 });

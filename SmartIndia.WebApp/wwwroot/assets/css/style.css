@@ -67,8 +67,10 @@ a {
   transition: 0.5s;
   outline: 0 !important;
 }
-
-p {
+a:hover {
+    text-decoration: none;
+}
+    p {
   line-height: 1.8;
 }
 
@@ -6986,16 +6988,18 @@ Login CSS
 .login-area {
   /*height: 80vh;*/
   position: relative;
-  z-index: 1;
-  background: #ffffff;
-  padding-top: 180px;
-  /*padding-bottom: 17px;*/
+  /*z-index: 1;
+  background: #ffffff;*/
+  padding-top: 168px;
+  padding-bottom: 80px;
 }
 
-.login-area.bg-image {
-  background-image: url(../img/bg.png);
-  background-repeat: repeat;
-}
+    .login-area.bg-image {
+        background-image: url(../img/bg-image.jpg);
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
 
 .login-area .d-table {
   width: 100%;
@@ -7028,7 +7032,7 @@ Login CSS
 
 .login-area .login-form form {
   margin-top: 25px;
-  margin-bottom: 75px;
+  margin-bottom: 25px;
 }
 
 .login-area .login-form form .form-group {
@@ -7243,21 +7247,27 @@ Login CSS
 /*================================================
 Register CSS
 =================================================*/
+.bg-image {
+    background-image: url(../img/bg-image.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 .register-area {
   /*height: 80vh;*/
   position:relative;
-  z-index: 1;
-  background: #ffffff;
-  padding-top: 110px;
-  padding-bottom: 17px;
+  /*z-index: 1;*/
+  /*background: #ffffff;*/
+  padding-top: 165px;
+  padding-bottom: 50px;
 }
 
-.register-area.bg-image {
-  background-image: url(../img/register-bg.jpg);
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+    .register-area.bg-image {
+        background-image: url(../img/register-bg.jpg);
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
 
 .register-area .d-table {
   width: 100%;
@@ -7272,7 +7282,7 @@ Register CSS
   max-width: 480px;
   background: #ffffff;
   border-radius: 5px;
-  overflow: hidden;
+  /*overflow: hidden;*/
   text-align: center;
   padding: 10px 40px;
   /*-webkit-box-shadow: -4px -5px 24px 0 rgba(68, 102, 242, 0.05);
@@ -7504,18 +7514,18 @@ Reset Password CSS
 .reset-password-area {
   /*height: 100vh;*/
   position: relative;
-  z-index: 1;
-  background: #ffffff;
-  padding-top: 150px;
-  padding-bottom: 72px;
+  /*z-index: 1;
+  background: #ffffff;*/
+  padding-top: 190px;
+  padding-bottom: 90px;
 }
 
-.reset-password-area.bg-image {
-  background-image: url(../img/reset-password-bg.jpg);
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+    .reset-password-area.bg-image {
+        background-image: url(../img/bg-image.jpg);
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
 
 .reset-password-area .d-table {
   width: 100%;
@@ -7531,7 +7541,7 @@ Reset Password CSS
   background: #ffffff;
   border-radius: 5px;
   overflow: hidden;
-  padding: 50px 60px 50px 30px;
+  padding: 10px 60px 50px 30px;
   /*-webkit-box-shadow: 1px 5px 24px 0 rgba(68, 102, 242, 0.05);
           box-shadow: 1px 5px 24px 0 rgba(68, 102, 242, 0.05);*/
   margin-left: auto;
@@ -7692,18 +7702,18 @@ Forgot Password CSS
 .forgot-password-area {
   /*height: 100vh;*/
   position: relative;
-  z-index: 1;
-  background: #ffffff;
-  padding-top: 140px;
-  padding-bottom: 96px;
+  /*z-index: 1;
+  background: #ffffff;*/
+  padding-top: 194px;
+  padding-bottom: 100px;
 }
 
-.forgot-password-area.bg-image {
-  background-image: url(../img/forgot-password-bg.jpg);
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+    .forgot-password-area.bg-image {
+        background-image: url(../img/bg-image.jpg);
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
 
 .forgot-password-area .d-table {
   width: 100%;
@@ -7719,7 +7729,7 @@ Forgot Password CSS
   background: #ffffff;
   border-radius: 5px;
   overflow: hidden;
-  padding: 50px 60px 50px 30px;
+  padding: 10px 60px 50px 30px;
   /*-webkit-box-shadow: 1px 5px 24px 0 rgba(68, 102, 242, 0.05);
           box-shadow: 1px 5px 24px 0 rgba(68, 102, 242, 0.05);*/
   margin-left: auto;

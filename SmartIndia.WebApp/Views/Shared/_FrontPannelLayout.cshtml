@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="~/assets/css/intlTelInput.css" />
     <!-- Bootstrap Dialog Alert CSS -->
     <link href="~/assets/css/bootstrap-dialog.min.css" rel="stylesheet" />
+
 </head>
 
 <body>
@@ -153,7 +154,7 @@
                     <li class="nav-item dropdown profile-nav-item">
                         <a href="javascript:void(0);" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="menu-profile">
-                                <span class="name">Hi! Prateek</span>
+                                <span class="name">Prateek</span>
                                 <img src="~/assets/img/user1.jpg" class="rounded-circle" alt="image">
                             </div>
                         </a>
@@ -165,6 +166,7 @@
                                 </div>
                                 <div class="info text-center">
                                     <span class="name">Prateek Singh</span>
+                                    <span class="sm-text">(Host)</span>
                                     <p class="mb-3 email">prateek@gmail.com</p>
                                 </div>
                             </div>
@@ -265,7 +267,7 @@
                 complete: function () {
                     $('#img').hide();
                 }
-            }); 
+            });
         });
         function ClearData() {
             localStorage.clear();
@@ -274,6 +276,8 @@
                 eraseCookie(cookies[i].split("=")[0]);
         }
     </script>
+    <!-- Clearable Input JS -->
+    <script src="~/assets/js/clearable-input.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
