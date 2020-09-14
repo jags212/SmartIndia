@@ -1,6 +1,6 @@
 ﻿<!doctype html>
 <html lang="en">
-    
+
 <head>
 
     <!-- Required meta tags -->
@@ -8,12 +8,14 @@
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>OCR - Courses</title>
+    <title>OCR - Add Courses</title>
 
     <link rel="icon" type="image/png" href="assets/img/favicon.png" />
 
     <!-- Vendors Min CSS -->
     <link rel="stylesheet" href="assets/css/vendors.min.css" />
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="assets/css/all.min.css" />
     <!-- Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <!-- Responsive CSS -->
@@ -63,7 +65,7 @@
                         <span class="icon">
                             <i class='bx bxl-discourse'></i>
                         </span>
-                        <span class="menu-title">Courses</span>
+                        <span class="menu-title">Add Course</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -75,15 +77,15 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="javascript:void(0);" class="nav-link">
+                    <a href="host-classwall.html" class="nav-link">
                         <span class="icon">
                             <i class='bx bx-card'></i>
                         </span>
-                        <span class="menu-title">Class Wall</span>
+                        <span class="menu-title">My Class Wall</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="javascript:void(0);" class="nav-link">
+                    <a href="host-upcomingclasses.html" class="nav-link">
                         <span class="icon">
                             <i class='bx bx-video-recording'></i>
                         </span>
@@ -222,7 +224,7 @@
                     <li class="nav-item dropdown profile-nav-item">
                         <a href="javascript:void(0);" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="menu-profile">
-                                <span class="name">Hi! Prateek</span>
+                                <span class="name">Prateek</span>
                                 <img src="assets/img/user1.jpg" class="rounded-circle" alt="image">
                             </div>
                         </a>
@@ -234,6 +236,7 @@
                                 </div>
                                 <div class="info text-center">
                                     <span class="name">Prateek Singh</span>
+                                    <span class="sm-text">(Host)</span>
                                     <p class="mb-3 email">prateek@gmail.com</p>
                                 </div>
                             </div>
@@ -271,13 +274,13 @@
         <!-- Main Content Layout -->
         <!-- Breadcrumb Area -->
         <div class="breadcrumb-area">
-            <h1>Courses</h1>
+            <h1>Add Course</h1>
             <ol class="breadcrumb">
                 <li class="item">
                     <a href="host-dashboard.html"><i class='bx bx-home-alt'></i></a>
                 </li>
                 <li class="item">Dashboard</li>
-                <li class="item">Courses</li>
+                <li class="item">Add Course</li>
             </ol>
         </div>
         <!-- End Breadcrumb Area -->
@@ -293,9 +296,16 @@
                         <label>Description</label>
                         <textarea class="form-control"></textarea>
                     </div>
-                    <div class="form-group">
-                        <label>Topics</label>
-                        <input type="text" class="form-control">
+                    <div class="row form-group">
+                        <div class="col-md-8 res-mb-16">
+                            <label>Topics</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="col-md-4 res-mb-16">
+                            <label>Brochure</label>
+                            <input type="file" class="custom-file">
+                            <span class="re-note">(only .jpg,.png,.pdf allowed, maximum file size 1MB.)</span>
+                        </div>
                     </div>
                     <div class="row form-group">
                         <div class="col-md-4 res-mb-16">
@@ -354,7 +364,6 @@
                                 <th scope="col">Class Frequency</th>
                                 <th scope="col">No. Of Classes</th>
                                 <th scope="col">Action</th>
-                                <th scope="col">Info</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -367,8 +376,17 @@
                                 <td>10000</td>
                                 <td>Daily</td>
                                 <td>3</td>
-                                <td><a href="javascript:void(0);" class="form-control table-edit"><i class="bx bx-edit-alt"></i></a></td>
-                                <td><a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="bx bxs-info-circle"></i></a></td>
+                                <td>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="Edit">
+                                        <a href="javascript:void(0);" class="form-control table-edit"><i class="bx bx-edit-alt"></i></a>
+                                    </div>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="View">
+                                        <a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a>
+                                    </div>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="Brochure">
+                                        <a href="javascript:void(0);" class="form-control table-brochure" data-toggle="modal" data-target="#getCourseBrochureModal"><i class="bx bx-file"></i></a>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
@@ -379,8 +397,17 @@
                                 <td>10000</td>
                                 <td>Weekly</td>
                                 <td>2</td>
-                                <td><a href="javascript:void(0);" class="form-control table-edit"><i class="bx bx-edit-alt"></i></a></td>
-                                <td><a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="bx bxs-info-circle"></i></a></td>
+                                <td>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="Edit">
+                                        <a href="javascript:void(0);" class="form-control table-edit"><i class="bx bx-edit-alt"></i></a>
+                                    </div>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="View">
+                                        <a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a>
+                                    </div>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="Brochure">
+                                        <a href="javascript:void(0);" class="form-control table-brochure" data-toggle="modal" data-target="#getCourseBrochureModal"><i class="bx bx-file"></i></a>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
@@ -391,8 +418,17 @@
                                 <td>20000</td>
                                 <td>Monthly</td>
                                 <td>8</td>
-                                <td><a href="javascript:void(0);" class="form-control table-edit"><i class="bx bx-edit-alt"></i></a></td>
-                                <td><a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="bx bxs-info-circle"></i></a></td>
+                                <td>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="Edit">
+                                        <a href="javascript:void(0);" class="form-control table-edit"><i class="bx bx-edit-alt"></i></a>
+                                    </div>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="View">
+                                        <a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a>
+                                    </div>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="Brochure">
+                                        <a href="javascript:void(0);" class="form-control table-brochure" data-toggle="modal" data-target="#getCourseBrochureModal"><i class="bx bx-file"></i></a>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">4</th>
@@ -403,8 +439,17 @@
                                 <td>50000</td>
                                 <td>Yearly</td>
                                 <td>96</td>
-                                <td><a href="javascript:void(0);" class="form-control table-edit"><i class="bx bx-edit-alt"></i></a></td>
-                                <td><a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="bx bxs-info-circle"></i></a></td>
+                                <td>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="Edit">
+                                        <a href="javascript:void(0);" class="form-control table-edit"><i class="bx bx-edit-alt"></i></a>
+                                    </div>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="View">
+                                        <a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a>
+                                    </div>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="Brochure">
+                                        <a href="javascript:void(0);" class="form-control table-brochure" data-toggle="modal" data-target="#getCourseBrochureModal"><i class="bx bx-file"></i></a>
+                                    </div>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -433,7 +478,7 @@
     <!-- End Main Content Wrapper -->
     <!-- Start View Details Modal -->
     <div class="modal fade" id="ViewDetailsModal" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Course Details</h5>
@@ -488,9 +533,23 @@
             </div>
         </div>
     </div>
-
     <!-- End View Details Modal -->
-
+    <!-- Start Course Banner Modal -->
+    <div class="modal fade basicModalLG plan-modal" id="getCourseBrochureModal" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content p-20">
+                <div class="modal-body">
+                    <button type="button" class="close enroll-close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <a href="assets/img/course-pop-up-img.jpg" class="bx bx-download sm-download" download>
+                        <img src="assets/img/course-pop-up-img.jpg" class="banner-img" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Course Banner Modal -->
     <!-- Footer Scripts -->
     <!-- Vendors Min JS -->
     <script src="assets/js/vendors.min.js"></script>

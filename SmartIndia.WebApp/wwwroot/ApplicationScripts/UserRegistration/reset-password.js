@@ -1,7 +1,19 @@
 ﻿$(document).ready(function () {
-    if (!localStorage.getItem("emailOTP")) {
-        window.location.href = "/ManageUsers/Users/Login";
-    }
+    $.ajax({
+        url: ServiceURL + "/api/UserRegistration/UserEmailVerification",
+        type: "GET",
+        data: { acode: ACode },
+        dataType: "json",
+        success: function (data) {
+            if (!data) {
+                BootStrapRedirect("Invalid Request.", "/ManageUsers/Users/Login");
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            BootstrapAlert(jqXHR.responseJSON.message, 'txtPassword');
+            $('#txtPassword').val("");
+        }
+    });
     $("#MyForm").keypress(function (e) {
         kCode = e.keyCode || e.charCode //for cross browser
         if (kCode == 13) {
@@ -40,7 +52,7 @@ $('#btnSubmit').click(function () {
     }
     function CallSave() {
         var usersParam = JSON.stringify({
-            EmailId: localStorage.getItem("emailID"),
+            EmailId: ACode,
             Password: $('#txtCnfmPassword').val()
         });
         $.ajax({

@@ -1,13 +1,10 @@
 ﻿function ValidateForm() {
-    if (!BlankTextBox('txtEmail', 'Email')) {
+    if (!BlankTextBox('txtEmail', 'Email Id / Mobile No')) {
         return false;
     }
     else if (!IsSpecialCharacter1stPalce('txtEmail')) {
         return false;
-    }
-    else if (!ValidateEmail('txtEmail')) {
-        return false;
-    }
+    } 
     else if (!BlankTextBox('txtPassword', 'Password')) {
         return false;
     }

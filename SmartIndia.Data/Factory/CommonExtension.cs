@@ -21,7 +21,7 @@ namespace SmartIndia.Data.Factory
             DynamicParameters param = new DynamicParameters();
             for (int i = 0; i < parameters.Length / 2; i++)
             {
-                param.Add(parameters[2 * i].ToString(), parameters[(2 * i) + 1].ToString());
+                param.Add(Convert.ToString(parameters[2 * i]), Convert.ToString(parameters[(2 * i) + 1]));
             }
 
             return param;
@@ -34,7 +34,7 @@ namespace SmartIndia.Data.Factory
             DynamicParameters param = new DynamicParameters();
             for (int i = 0; i < parameters.Length / 2; i++)
             {
-                param.Add(parameters[2 * i].ToString(), parameters[(2 * i) + 1].ToString());
+                param.Add(Convert.ToString(parameters[2 * i]), Convert.ToString(parameters[(2 * i) + 1]));
             }
             param.Add(outParameter, dbType: dbType, direction: System.Data.ParameterDirection.Output, size: 5215585);
             return param;
@@ -47,7 +47,7 @@ namespace SmartIndia.Data.Factory
             DynamicParameters param = new DynamicParameters();
             for (int i = 0; i < parameters.Length / 2; i++)
             {
-                param.Add(parameters[2 * i].ToString(), parameters[(2 * i) + 1].ToString());
+                param.Add(Convert.ToString(parameters[2 * i]), Convert.ToString(parameters[(2 * i) + 1]));
             }
             param.Add(outParameter, dbType: System.Data.DbType.String, direction: System.Data.ParameterDirection.Output, size: size);
             return param;

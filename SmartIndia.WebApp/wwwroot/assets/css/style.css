@@ -1192,7 +1192,7 @@ Top Navbar CSS
 .top-navbar.navbar .profile-nav-item.dropdown .dropdown-menu .dropdown-header .name {
   display: block;
   color: #2a2a2a;
-  margin-bottom: 2px;
+  margin-bottom: -2px;
   font-size: 17px;
   font-weight: 700;
 }

@@ -114,7 +114,7 @@
               <span class="d-sm-none d-lg-inline-block"></span></a>
             <div class="dropdown-menu dropdown-menu-right">
               <div class="dropdown-title">Hello Rati Dash</div>
-              <a href="javascript:void(0);" class="dropdown-item has-icon">
+              <a href="profile.html" class="dropdown-item has-icon">
                 <i class="far fa-user"></i> Profile
               </a>
               <a href="javascript:void(0);" class="dropdown-item has-icon">
@@ -163,6 +163,14 @@
                   <li class="menu-header"></li>
                   <li>
                       <a href="dashboard.html" class="nav-link"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+                  </li>
+                  <li class="dropdown">
+                      <a href="javascript:void(0);" class="nav-link has-dropdown"><i class="fas fa-align-left"></i><span>Masters</span></a>
+                      <ul class="dropdown-menu">
+                          <li><a class="nav-link" href="master-country.html">Country</a></li>
+                          <li><a class="nav-link" href="master-currency.html">Currency</a></li>
+                          <li><a class="nav-link" href="master-currency-conversion.html">Currency Conversion</a></li>
+                      </ul>
                   </li>
                   <li class="active">
                       <a href="block-unblock-host.html" class="nav-link"><i class="fas fa-ban"></i><span>Block & Unblock Host</span></a>
@@ -221,6 +229,7 @@
                                 <th>% of Class Imparted</th>
                                 <th>No. of Attendee</th>
                                 <th>Plan Enrolled</th>
+                                <th>Active / Inactive</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
@@ -241,6 +250,49 @@
                                 <td>30%</td>
                                 <td>3</td>
                                 <td><div class="btn btn-red">Free</div></td>
+                                <td class="text-green">Active</td>
+                                <td>
+                                    <div class="badge badge-success badge-shadow badge-width">Unblock</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center pt-2">
+                                    <div class="custom-checkbox custom-control">
+                                        <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
+                                               id="checkbox-12">
+                                        <label for="checkbox-12" class="custom-control-label">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td>2</td>
+                                <td>Arun</td>
+                                <td>13/04/2020</td>
+                                <td>10</td>
+                                <td>12</td>
+                                <td>10%</td>
+                                <td>13</td>
+                                <td><div class="btn btn-pink">Starter</div></td>
+                                <td class="text-red">Inactive</td>
+                                <td>
+                                    <div class="badge badge-danger badge-shadow badge-width">Block</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center pt-2">
+                                    <div class="custom-checkbox custom-control">
+                                        <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
+                                               id="checkbox-2">
+                                        <label for="checkbox-2" class="custom-control-label">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td>3</td>
+                                <td>Binaya</td>
+                                <td>21/01/2020</td>
+                                <td>10</td>
+                                <td>5</td>
+                                <td>5%</td>
+                                <td>12</td>
+                                <td><div class="btn btn-pink">Starter</div></td>
+                                <td class="text-red">Inactive</td>
                                 <td>
                                     <div class="badge badge-success badge-shadow badge-width">Unblock</div>
                                 </td>
@@ -249,49 +301,9 @@
                               <td class="text-center pt-2">
                                   <div class="custom-checkbox custom-control">
                                       <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
-                                             id="checkbox-12">
-                                      <label for="checkbox-12" class="custom-control-label">&nbsp;</label>
+                                             id="checkbox-11">
+                                      <label for="checkbox-11" class="custom-control-label">&nbsp;</label>
                                   </div>
-                              </td>
-                              <td>2</td>
-                              <td>Arun</td>
-                              <td>13/04/2020</td>
-                              <td>10</td>
-                              <td>12</td>
-                              <td>10%</td>
-                              <td>13</td>
-                              <td><div class="btn btn-pink">Starter</div></td>
-                              <td>
-                                  <div class="badge badge-danger badge-shadow badge-width">Block</div>
-                              </td>
-                          </tr>
-                          <tr>
-                              <td class="text-center pt-2">
-                                  <div class="custom-checkbox custom-control">
-                                      <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
-                                             id="checkbox-2">
-                                      <label for="checkbox-2" class="custom-control-label">&nbsp;</label>
-                                  </div>
-                              </td>
-                              <td>3</td>
-                              <td>Binaya</td>
-                              <td>21/01/2020</td>
-                              <td>10</td>
-                              <td>5</td>
-                              <td>5%</td>
-                              <td>12</td>
-                              <td><div class="btn btn-pink">Starter</div></td>
-                              <td>
-                                  <div class="badge badge-success badge-shadow badge-width">Unblock</div>
-                              </td>
-                          </tr>
-                          <tr>
-                              <td class="text-center pt-2">
-                                <div class="custom-checkbox custom-control">
-                                  <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
-                                    id="checkbox-11">
-                                  <label for="checkbox-11" class="custom-control-label">&nbsp;</label>
-                                </div>
                               </td>
                               <td>4</td>
                               <td>Bijay</td>
@@ -301,8 +313,9 @@
                               <td>60%</td>
                               <td>34</td>
                               <td><div class="btn btn-pink">Starter</div></td>
+                              <td class="text-green">Active</td>
                               <td>
-                                <div class="badge badge-success badge-shadow badge-width">Unblock</div>
+                                  <div class="badge badge-success badge-shadow badge-width">Unblock</div>
                               </td>
                           </tr>
                           <tr>
@@ -321,6 +334,7 @@
                               <td>40%</td>
                               <td>90</td>
                               <td><div class="btn btn-yellow">Extended</div></td>
+                              <td class="text-green">Active</td>
                               <td>
                                   <div class="badge badge-success badge-shadow badge-width">Unblock</div>
                               </td>
@@ -341,6 +355,7 @@
                               <td>40%</td>
                               <td>50</td>
                               <td><div class="btn btn-yellow">Extended</div></td>
+                              <td class="text-red">Inactive</td>
                               <td>
                                   <div class="badge badge-danger badge-shadow badge-width">Block</div>
                               </td>
@@ -361,17 +376,18 @@
                               <td>40%</td>
                               <td>50</td>
                               <td><div class="btn btn-pink">Starter</div></td>
+                              <td class="text-green">Active</td>
                               <td>
                                   <div class="badge badge-danger badge-shadow badge-width">Block</div>
                               </td>
                           </tr>
                           <tr>
                               <td class="text-center pt-2">
-                                <div class="custom-checkbox custom-control">
-                                  <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
-                                    id="checkbox-13">
-                                  <label for="checkbox-13" class="custom-control-label">&nbsp;</label>
-                                </div>
+                                  <div class="custom-checkbox custom-control">
+                                      <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
+                                             id="checkbox-13">
+                                      <label for="checkbox-13" class="custom-control-label">&nbsp;</label>
+                                  </div>
                               </td>
                               <td>8</td>
                               <td>Mukul</td>
@@ -381,17 +397,18 @@
                               <td>15%</td>
                               <td>3</td>
                               <td><div class="btn btn-red">Free</div></td>
+                              <td class="text-red">Inactive</td>
                               <td>
-                                <div class="badge badge-success badge-shadow badge-width">Unblock</div>
+                                  <div class="badge badge-success badge-shadow badge-width">Unblock</div>
                               </td>
                           </tr>
                           <tr>
                               <td class="text-center pt-2">
-                                <div class="custom-checkbox custom-control">
-                                  <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
-                                    id="checkbox-10">
-                                  <label for="checkbox-10" class="custom-control-label">&nbsp;</label>
-                                </div>
+                                  <div class="custom-checkbox custom-control">
+                                      <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
+                                             id="checkbox-10">
+                                      <label for="checkbox-10" class="custom-control-label">&nbsp;</label>
+                                  </div>
                               </td>
                               <td>9</td>
                               <td>Pratik</td>
@@ -401,17 +418,18 @@
                               <td>30%</td>
                               <td>50</td>
                               <td><div class="btn btn-pink">Starter</div></td>
+                              <td class="text-red">Inactive</td>
                               <td>
-                                <div class="badge badge-danger badge-shadow badge-width">Block</div>
+                                  <div class="badge badge-danger badge-shadow badge-width">Block</div>
                               </td>
                           </tr>
                           <tr>
                               <td class="text-center pt-2">
-                                <div class="custom-checkbox custom-control">
-                                  <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
-                                    id="checkbox-5">
-                                  <label for="checkbox-5" class="custom-control-label">&nbsp;</label>
-                                </div>
+                                  <div class="custom-checkbox custom-control">
+                                      <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
+                                             id="checkbox-5">
+                                      <label for="checkbox-5" class="custom-control-label">&nbsp;</label>
+                                  </div>
                               </td>
                               <td>10</td>
                               <td>Rati</td>
@@ -421,17 +439,18 @@
                               <td>20%</td>
                               <td>90</td>
                               <td><div class="btn btn-yellow">Extended</div></td>
+                              <td class="text-green">Active</td>
                               <td>
-                                <div class="badge badge-danger badge-shadow badge-width">Block</div>
+                                  <div class="badge badge-danger badge-shadow badge-width">Block</div>
                               </td>
                           </tr>
                           <tr>
                               <td class="text-center pt-2">
-                                <div class="custom-checkbox custom-control">
-                                  <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
-                                    id="checkbox-7">
-                                  <label for="checkbox-7" class="custom-control-label">&nbsp;</label>
-                                </div>
+                                  <div class="custom-checkbox custom-control">
+                                      <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
+                                             id="checkbox-7">
+                                      <label for="checkbox-7" class="custom-control-label">&nbsp;</label>
+                                  </div>
                               </td>
                               <td>11</td>
                               <td>Samar</td>
@@ -441,17 +460,18 @@
                               <td>10%</td>
                               <td>54</td>
                               <td><div class="btn btn-yellow">Extended</div></td>
+                              <td class="text-red">Inactive</td>
                               <td>
-                                <div class="badge badge-success badge-shadow badge-width">Unblock</div>
+                                  <div class="badge badge-success badge-shadow badge-width">Unblock</div>
                               </td>
                           </tr>
                           <tr>
                               <td class="text-center pt-2">
-                                <div class="custom-checkbox custom-control">
-                                  <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
-                                    id="checkbox-9">
-                                  <label for="checkbox-9" class="custom-control-label">&nbsp;</label>
-                                </div>
+                                  <div class="custom-checkbox custom-control">
+                                      <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input"
+                                             id="checkbox-9">
+                                      <label for="checkbox-9" class="custom-control-label">&nbsp;</label>
+                                  </div>
                               </td>
                               <td>12</td>
                               <td>Satya</td>
@@ -461,8 +481,9 @@
                               <td>15%</td>
                               <td>3</td>
                               <td><div class="btn btn-red">Free</div></td>
+                              <td class="text-green">Active</td>
                               <td>
-                                <div class="badge badge-danger badge-shadow badge-width">Block</div>
+                                  <div class="badge badge-danger badge-shadow badge-width">Block</div>
                               </td>
                           </tr>
                           <tr>
@@ -481,6 +502,7 @@
                               <td>100%</td>
                               <td>10</td>
                               <td><div class="btn btn-yellow">Extended</div></td>
+                              <td class="text-green">Active</td>
                               <td>
                                   <div class="badge badge-success badge-shadow badge-width">Unblock</div>
                               </td>

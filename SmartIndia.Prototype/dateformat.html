@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!-- Vendors Min CSS -->
+    <link rel="stylesheet" href="assets/css/vendors.min.css" />
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css" />
+    <!-- Datepicker CSS -->
+    <link rel="stylesheet" href="assets/css/gijgo.min.css" />
+</head>
+<body>
+
+    <input type="text" class="form-control" id="edatepicker">
+
+    <!-- Vendors Min JS -->
+    <script src="assets/js/vendors.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/custom.js"></script>
+    <!-- Datepicker JS -->
+    <script src="assets/js/gijgo.min.js"></script>
+    <script>
+        $('#edatepicker').datepicker({ format: 'dd-mmm-yyyy' });
+    </script>
+    <script>
+        $("#edatepicker").change(function () {
+            var enddate = $("#edatepicker").val();
+            var edate = new Date(enddate);
+            var formatdate = edate.toUTCString();
+            //alert(enddate);
+            //alert(edate);
+            alert(formatdate);
+        });
+    </script>
+</body>
+</html>

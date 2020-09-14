@@ -14,6 +14,8 @@
 
     <!-- Vendors Min CSS -->
     <link rel="stylesheet" href="assets/css/vendors.min.css" />
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="assets/css/all.min.css" />
     <!-- Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <!-- Responsive CSS -->
@@ -65,7 +67,7 @@
                         <span class="icon">
                             <i class='bx bxl-discourse'></i>
                         </span>
-                        <span class="menu-title">Courses</span>
+                        <span class="menu-title">Add Course</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -77,15 +79,15 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="javascript:void(0);" class="nav-link">
+                    <a href="host-classwall.html" class="nav-link">
                         <span class="icon">
                             <i class='bx bx-card'></i>
                         </span>
-                        <span class="menu-title">Class Wall</span>
+                        <span class="menu-title">My Class Wall</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="javascript:void(0);" class="nav-link">
+                    <a href="host-upcomingclasses.html" class="nav-link">
                         <span class="icon">
                             <i class='bx bx-video-recording'></i>
                         </span>
@@ -224,7 +226,7 @@
                     <li class="nav-item dropdown profile-nav-item">
                         <a href="javascript:void(0);" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="menu-profile">
-                                <span class="name">Hi! Prateek</span>
+                                <span class="name">Prateek</span>
                                 <img src="assets/img/user1.jpg" class="rounded-circle" alt="image">
                             </div>
                         </a>
@@ -236,6 +238,7 @@
                                 </div>
                                 <div class="info text-center">
                                     <span class="name">Prateek Singh</span>
+                                    <span class="sm-text">(Host)</span>
                                     <p class="mb-3 email">prateek@gmail.com</p>
                                 </div>
                             </div>
@@ -284,72 +287,38 @@
         </div>
         <!-- End Breadcrumb Area -->
         <!-- Start -->
-        <div class="card mb-30" id="rescheduling-section">
-            <div class="card-body">
-                <div class="existing-date">Existing Date: <span class="col-black">09/07/2020</span></div>
-                <form>
-                    <div class="row form-group">
-                        <div class="col">
-                            <label>Courses</label>
-                            <select id="inputCourses" class="form-control" disabled>
-                                <option>Choose...</option>
-                                <option selected>Physics</option>
-                                <option>Chemistry</option>
-                                <option>Literature</option>
-                                <option>Business</option>
-                            </select>
-                        </div>
-                        <div class="col">
-                            <label class="res-label">Rescheduling Date</label>
-                            <input type="text" class="form-control" placeholder="Pick the date" id="datepicker">
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <div class="col">
-                            <label>Start Time</label>
-                            <input type="text" class="form-control timepicker">
-                            <i class="bx bx-time-five time-clock" role="right-icon"></i>
-                        </div>
-                        <div class="col">
-                            <label>End Time</label>
-                            <input type="text" class="form-control timepicker">
-                            <i class="bx bx-time-five time-clock" role="right-icon"></i>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Reschedule</button>
-                    <button type="reset" class="btn btn-warning">Reset</button>
-                </form>
-
-            </div>
-        </div>
-
         <div class="card mb-30">
             <div class="card-body">
-
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead class="thead-dark">
                             <tr>
-                                <th scope="col">#</th>
+                                <th scope="col">Sl.#</th>
                                 <th scope="col">Courses</th>
                                 <th scope="col">Date</th>
                                 <th scope="col">Start Time</th>
                                 <th scope="col">End Time</th>
-                                <th scope="col">Info</th>
-                                <th scope="col">Rescheduling</th>
-                                <th scope="col">Cancel</th>
+                                <th scope="col" class="table-saction-width">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr class="strikethrough">
                                 <th scope="row">1</th>
                                 <td>Physics</td>
                                 <td>09-Jul-2020</td>
                                 <td>04.00 pm</td>
                                 <td>05.00 pm</td>
-                                <td><a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="bx bxs-info-circle"></i></a></td>
-                                <td><a href="javascript:void(0);" class="form-control table-edit" data-toggle="modal" data-target="#RescheduledModal"><i class="bx bx-copy-alt"></i></a></td>
-                                <td><a href="javascript:void(0);" class="form-control table-cancel" data-toggle="modal" data-target="#ConCancelModal"><i class="bx bx-trash"></i></a></td>
+                                <td>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="Rescheduling">
+                                        <a href="javascript:void(0);" class="form-control table-edit" data-toggle="modal" data-target="#ConRescheduledModal"><i class="bx bx-reset"></i></a>
+                                    </div>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="View">
+                                        <a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a>
+                                    </div>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="Cancel">
+                                        <a href="javascript:void(0);" class="form-control table-cancel" data-toggle="modal" data-target="#ConCancelModal"><i class="bx bx-trash"></i></a>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
@@ -357,19 +326,35 @@
                                 <td>11-Jul-2020</td>
                                 <td>06.00 pm</td>
                                 <td>07.00 pm</td>
-                                <td><a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="bx bxs-info-circle"></i></a></td>
-                                <td><a href="javascript:void(0);" class="form-control table-edit" data-toggle="modal" data-target="#RescheduledModal"><i class="bx bx-copy-alt"></i></a></td>
-                                <td><a href="javascript:void(0);" class="form-control table-cancel" data-toggle="modal" data-target="#ConCancelModal"><i class="bx bx-trash"></i></a></td>
+                                <td>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="Rescheduling">
+                                        <a href="javascript:void(0);" class="form-control table-edit" data-toggle="modal" data-target="#ConRescheduledModal"><i class="bx bx-reset"></i></a>
+                                    </div>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="View">
+                                        <a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a>
+                                    </div>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="Cancel">
+                                        <a href="javascript:void(0);" class="form-control table-cancel" data-toggle="modal" data-target="#ConCancelModal"><i class="bx bx-trash"></i></a>
+                                    </div>
+                                </td>
                             </tr>
-                            <tr>
+                            <tr class="strikethrough">
                                 <th scope="row">3</th>
                                 <td>Literature</td>
                                 <td>18-Aug-2020</td>
                                 <td>10.00 am</td>
                                 <td>12.00 am</td>
-                                <td><a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="bx bxs-info-circle"></i></a></td>
-                                <td><a href="javascript:void(0);" class="form-control table-edit" data-toggle="modal" data-target="#RescheduledModal"><i class="bx bx-copy-alt"></i></a></td>
-                                <td><a href="javascript:void(0);" class="form-control table-cancel" data-toggle="modal" data-target="#ConCancelModal"><i class="bx bx-trash"></i></a></td>
+                                <td>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="Rescheduling">
+                                        <a href="javascript:void(0);" class="form-control table-edit" data-toggle="modal" data-target="#ConRescheduledModal"><i class="bx bx-reset"></i></a>
+                                    </div>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="View">
+                                        <a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a>
+                                    </div>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="Cancel">
+                                        <a href="javascript:void(0);" class="form-control table-cancel" data-toggle="modal" data-target="#ConCancelModal"><i class="bx bx-trash"></i></a>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">4</th>
@@ -377,9 +362,17 @@
                                 <td>20-Aug-2020</td>
                                 <td>04.00 pm</td>
                                 <td>05.00 pm</td>
-                                <td><a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="bx bxs-info-circle"></i></a></td>
-                                <td><a href="javascript:void(0);" class="form-control table-edit" data-toggle="modal" data-target="#RescheduledModal"><i class="bx bx-copy-alt"></i></a></td>
-                                <td><a href="javascript:void(0);" class="form-control table-cancel" data-toggle="modal" data-target="#ConCancelModal"><i class="bx bx-trash"></i></a></td>
+                                <td>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="Rescheduling">
+                                        <a href="javascript:void(0);" class="form-control table-edit" data-toggle="modal" data-target="#ConRescheduledModal"><i class="bx bx-reset"></i></a>
+                                    </div>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="View">
+                                        <a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a>
+                                    </div>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="Cancel">
+                                        <a href="javascript:void(0);" class="form-control table-cancel" data-toggle="modal" data-target="#ConCancelModal"><i class="bx bx-trash"></i></a>
+                                    </div>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -409,7 +402,7 @@
     <!-- End Main Content Wrapper -->
     <!-- Start View Details Modal -->
     <div class="modal fade" id="ViewDetailsModal" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Schedule Details</h5>
@@ -446,9 +439,8 @@
     </div>
 
     <!-- End View Details Modal -->
-
-    <!-- Start Rescheduled Modal -->
-    <div class="modal fade" id="RescheduledModal" role="dialog" aria-hidden="true">
+    <!-- Start Rescheduled Confirm Modal -->
+    <div class="modal fade" id="ConRescheduledModal" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-body re-modal-body">
@@ -457,8 +449,67 @@
                     </div>
                 </div>
                 <div class="modal-footer re-modal-footer">
-                    <a href="javascript:void(0);" class="btn btn-success" data-dismiss="modal" id="yrescheduling">Yes</a>
+                    <a href="javascript:void(0);" class="btn btn-success" data-toggle="modal" data-target="#RescheduledModal" data-dismiss="modal">Yes</a>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End Rescheduled Confirm Modal -->
+    <!-- Start Rescheduled Modal -->
+    <div class="modal fade" id="RescheduledModal" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Rescheduling</h5>
+                    <button type="button" class="close col-black" data-dismiss="modal">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body re-modal-body">
+                    <div class="card mb-30">
+                        <div class="card-body">
+                            <div class="existing-date">Existing Date: <span class="col-black">09/07/2020</span></div>
+                            <form>
+                                <div class="row form-group">
+                                    <div class="col">
+                                        <label>Courses</label>
+                                        <select id="inputCourses" class="form-control" disabled>
+                                            <option>Choose...</option>
+                                            <option selected>Physics</option>
+                                            <option>Chemistry</option>
+                                            <option>Literature</option>
+                                            <option>Business</option>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <label class="res-label">Rescheduling Date</label>
+                                        <input type="text" class="form-control" placeholder="Pick the date" id="datepicker">
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col">
+                                        <label>Start Time</label>
+                                        <input type="text" class="form-control timepicker">
+                                        <i class="bx bx-time-five time-clock" role="right-icon"></i>
+                                    </div>
+                                    <div class="col">
+                                        <label>End Time</label>
+                                        <input type="text" class="form-control timepicker">
+                                        <i class="bx bx-time-five time-clock" role="right-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Reason for rescheduling</label>
+                                    <textarea class="form-control" rows="5"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Reschedule</button>
+                                <button type="reset" class="btn btn-warning">Reset</button>
+                            </form>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -504,6 +555,8 @@
     </div>
 
     <!-- End Cancel Modal -->
+    <!-- Scrolling Top -->
+    <a href="#0" class="cd-top cd-is-visible cd-fade-out"><i class="fa fa-angle-up"></i></a>
     <!-- Footer Scripts -->
     <!-- Vendors Min JS -->
     <script src="assets/js/vendors.min.js"></script>

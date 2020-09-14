@@ -523,9 +523,10 @@ temporary rendered events).
 	font-size: .85em;
 	line-height: 1.8;
 	border-radius: 3px;
-	border: 1px solid #0f80f9; /* default BORDER color */
+	/*border: 1px solid #0f80f9;*/ /* default BORDER color */
 	background-color: #007bff; /* default BACKGROUND color */
 	font-weight: normal; /* undo jqui's ui-widget-header bold */
+	box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px #6c757d85;
 }
 .fc-event span {
 	color: #ffffff;

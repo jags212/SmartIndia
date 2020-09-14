@@ -72,9 +72,6 @@
 
 .bootstrap-dialog.type-danger .modal-header {
 	background-color: #e1000a;
-	padding: 8px;
-	height: 35px;
-	line-height: 1.3;
 }
 
 .bootstrap-dialog.size-large .bootstrap-dialog-title {
@@ -184,4 +181,11 @@
 	height: 20px;
 	margin-top: -2px;
 	padding-right: 8px;
-} 
+}
+
+/*------------Responsive--------------------*/
+@media(min-width:320px) and (max-width: 767px) {
+	.bootstrap-dialog-footer-buttons .btn {
+		width: auto;
+	}
+}

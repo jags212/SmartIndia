@@ -14,47 +14,48 @@
 			firstDay: 1,
 			defaultDate:  new Date(),
 			editable: true,
-			eventLimit: true, // allow "more" link when too many events
+			eventLimit: true,
+			timeFormat: 'hh:mm a',
 			events: [
 				{
 					title: 'Physics',
 					start: '2020-09-06T11:00:00',
-					end: '2020-07-06T12:00:00',
+					end: '2020-09-06T12:00:00',
 				},
 				{
 					title: 'Physics',
-					start: '2020-07-03T15:00:00',
-					end: '2020-07-03T16:00:00',
+					start: '2020-09-03T15:00:00',
+					end: '2020-09-03T16:00:00',
 				},
 				{
 					title: 'Chemistry',
 					start: '2020-09-15T16:00:00',
-					end: '2020-07-15T18:00:00'
+					end: '2020-09-15T18:00:00'
 				},
 				{
 					title: 'Chemistry',
-					start: '2020-07-10T11:00:00',
-					end: '2020-07-10T12:30:00'
+					start: '2020-09-10T11:00:00',
+					end: '2020-09-10T12:30:00'
 				},
 			    {
 					title: 'Literature',
-					start: '2020-08-01T16:00:00',
-					end: '2020-08-01T18:00:00'
+					start: '2020-10-01T16:00:00',
+					end: '2020-10-01T18:00:00'
 				},
 				{
 					title: 'Literature',
-					start: '2020-07-22T10:00:00',
-					end: '2020-07-22T12:00:00'
+					start: '2020-09-22T10:00:00',
+					end: '2020-09-22T12:00:00'
 				},
 				{
 					title: 'Business',
-					start: '2020-07-25T12:30:00',
-					end: '2020-07-25T14:30:00'
+					start: '2020-09-25T12:30:00',
+					end: '2020-09-25T14:30:00'
 				},
 				{
 					title: 'Business',
-					start: '2020-08-01T11:00:00',
-					end: '2020-08-01T13:00:00'
+					start: '2020-10-01T11:00:00',
+					end: '2020-10-01T13:00:00'
 				}
 			]
 		});
