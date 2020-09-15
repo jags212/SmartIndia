@@ -400,3 +400,35 @@ $('#btnPublish').click(function () {
 
 });
 
+function checkBatchName() {
+
+    if (!ValidateDropdown('inputCourses', 'Course Name')) {
+        return false;
+    }
+    var usersParam = JSON.stringify({
+        CourseId: parseInt($('#inputCourses').val()),
+        BatchName: $("#BatchNameOnce").val(),
+    });
+    $.ajax(
+        {
+            type: "GET",
+            url: ServiceURL + "/api/HostSchedular/CkeckBatchName",
+            data: JSON.parse(usersParam),
+            dataType: "json",
+            contentType: "application/json",
+            success: function (data) {
+                if (data == true) {
+                    $("#BatchNameOnce").val('');
+                    BootstrapAlert('Batch Name Already Exists...','BatchNameOnce');
+                }
+                else {
+                }
+            },
+            error: function (msg) {
+                alert(msg.responseText);
+            }
+        });
+
+   
+}
+

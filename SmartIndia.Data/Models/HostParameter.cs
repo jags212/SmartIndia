@@ -32,4 +32,9 @@ namespace SmartIndia.Data.Models
         public string EndTime { get; set; }
 
     }
+    public class CheckBatch
+    {
+        public Int64 CourseId { get; set; }
+        public string BatchName { get; set; }
+    }
 }

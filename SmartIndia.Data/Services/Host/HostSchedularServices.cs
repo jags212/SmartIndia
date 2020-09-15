@@ -261,6 +261,33 @@ namespace SmartIndia.Data.Services.Host
             }
             return retMsg;
         }
+        public bool  CkeckBatchName(CheckBatch checkBatch)
+        {
+            object[] objArray = new object[] {
+                     "@P_ACTIONCODE","E",
+                     "@CourseId",checkBatch.CourseId,
+                     "@BatchName",checkBatch.BatchName
+            };
+            try
+            {
+                DynamicParameters param = objArray.ToDynamicParameters("@PVCH_MSGOUT");
+                var result = DBConnection.Execute("USP_HostSchedular_ACTION", param, commandType: CommandType.StoredProcedure);
+                retMsg = param.Get<string>("PVCH_MSGOUT");
+                if (retMsg=="3")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
 
     }
 }

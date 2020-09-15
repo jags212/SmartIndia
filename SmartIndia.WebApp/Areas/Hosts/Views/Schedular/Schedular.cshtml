@@ -160,16 +160,31 @@
             $("#hfEndTime").val(endtime.toTimeString().split(' ')[0].toString('hh:mm'));
         });
     </script>
+    <script>
+        $("#inputCourses").change(function () {
+            //alert($('option:selected', $(this)).text());
+            $("#BatchNameOnce").focus();
+        });
+    </script>
+<script>
+    $(function () {
+        $('#BatchNameOnce').on('keypress', function (e) {
+            if (e.which == 32) {
+                return false;
+            }
+        });
+    });
+</script>
 }
-<title>OCR - Schedular</title>
+<title>OCR - Scheduler</title>
 <div class="breadcrumb-area">
-    <h1>Schedular</h1>
+    <h1>Scheduler</h1>
     <ol class="breadcrumb">
         <li class="item">
             <a asp-area="ManageUsers" asp-controller="Hosts" asp-action="HostDashboard"><i class='bx bx-home-alt'></i></a>
         </li>
         <li class="item">Dashboard</li>
-        <li class="item">Schedular</li>
+        <li class="item">Scheduler</li>
     </ol>
 </div>
 <!-- End Breadcrumb Area -->
@@ -195,7 +210,7 @@
                 </div>
                 <div class="col-md-4">
                     <label>Batch Name</label>
-                    <input type="text" id="BatchNameOnce" name="BatchNameOnce" maxlength="20" class="form-control" placeholder="Batch Name">
+                    <input type="text" id="BatchNameOnce" autocomplete="off" ondrop="return false;" onchange="checkBatchName();" onpaste="return false;" name="BatchNameOnce" maxlength="20" class="form-control" placeholder="Batch Name">
 
                 </div>
                 <div class="col" id="dtponce">

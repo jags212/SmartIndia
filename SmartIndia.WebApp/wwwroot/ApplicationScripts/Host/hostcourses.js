@@ -23,7 +23,7 @@
             contentType: "application/json",
             success: function (data) {
                 clearinput();
-                
+
                 if (data == "1") {
                     BootStrapRedirect('Course Saved Successfully.', '/Hosts/Courses/Courses');
                 }
@@ -74,25 +74,26 @@ function getallcourses() {
         ACTIONCODE: "B"
     });
     $.ajax(
-        { 
+        {
             type: "GET",
             url: ServiceURL + "/api/HostCourses/GetHostCourse",
             data: JSON.parse(usersParam),
             dataType: "json",
             contentType: "application/json",
-            success: function (data) { 
+            success: function (data) {
                 $('#tblCourses tbody').empty();
                 var trHTML = '';
 
                 $.each(data, function (i, item) {
-                    trHTML += '<tr  class=""><td>' + (i + 1) + '</td><td>' + data[i].courseName + '</td><td>' + data[i].topic + '</td><td>' + dateFormat(data[i].startDate, 'dd-mmm-yy') + '</td><td>' + dateFormat(data[i].endDate, 'dd-mmm-yy') + '</td><td>' + data[i].duration + '</td> <td> <div class="action-inline" data-toggle="tooltip" data-placement="right" title="Edit"> <a href="javascript:void(0);" onclick="getcourseidd(' + data[i].courseId + ')"  class="form-control table-edit "><i class="bx bx-edit-alt"></i></a> </div>     <div class="action-inline" data-toggle="tooltip" data-placement="right" title="View">  <a href="javascript:void(0);" onclick="getcoursedetails(' + data[i].courseId + ')" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a> </div>  </td> </tr>';
+                   // trHTML += '<tr  class=""><td>' + (i + 1) + '</td><td>' + data[i].courseName + '</td><td>' + data[i].topic + '</td><td>' + dateFormat(data[i].startDate, 'dd-mmm-yy') + '</td><td>' + dateFormat(data[i].endDate, 'dd-mmm-yy') + '</td><td>' + data[i].duration + '</td> <td> <div class="action-inline" data-toggle="tooltip" data-placement="right" title="Edit"> <a href="javascript:void(0);" onclick="getcourseidd(' + data[i].courseId + ')"  class="form-control table-edit "><i class="bx bx-edit-alt"></i></a> </div>     <div class="action-inline" data-toggle="tooltip" data-placement="right" title="View">  <a href="javascript:void(0);" onclick="getcoursedetails(' + data[i].courseId + ')" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a> </div>  </td> </tr>';
+                    trHTML += '<tr  class=""><td>' + data[i].courseName + '</td><td>' + data[i].topic + '</td><td>' + dateFormat(data[i].startDate, 'dd-mmm-yy') + '</td><td>' + dateFormat(data[i].endDate, 'dd-mmm-yy') + '</td><td>' + data[i].duration + '</td> <td> <div class="action-inline" data-toggle="tooltip" data-placement="right" title="Edit"> <a href="javascript:void(0);" onclick="getcourseidd(' + data[i].courseId + ')"  class="form-control table-edit "><i class="bx bx-edit-alt"></i></a> </div>     <div class="action-inline" data-toggle="tooltip" data-placement="right" title="View">  <a href="javascript:void(0);" onclick="getcoursedetails(' + data[i].courseId + ')" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a> </div>  </td> </tr>';
                 });
 
                 $('#tblCourses').append(trHTML);
-               // $('#tblCourses').dataTable();
+                //$('#tblCourses').DataTable();
                 $('#tblCourses').dataTable({
                     'columnDefs': [{
-                        'targets': [6],
+                        'targets': [5],
                         'orderable': false,
                     }]
                 });
@@ -205,7 +206,7 @@ $('#btnUpdate').click(function () {
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
-                clearinput(); 
+                clearinput();
                 if (data == "2") {
                     BootStrapRedirect('Course Updated Successfully.', '/Hosts/Courses/Courses');
                 }

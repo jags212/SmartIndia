@@ -31,7 +31,8 @@ function getallSchedular() {
 					firstDay: 1,
 					defaultDate: new Date(),
 					editable: true,
-                    eventLimit: true, // allow "more" link when too many events
+					eventLimit: true, // allow "more" link when too many events
+					timeFormat: 'hh:mm a',
                     eventMouseover: function (data, event, view) {
 						tooltip = '<div class="tooltiptopicevent" style="width:auto;height:auto;background:#feb811;position:absolute;z-index:10001;padding:10px 10px 10px 10px ;  line-height: 200%;">' + '' + '' + data.title + '</br>' + ' ' + ' ' + ' ' + timeConvert(data.startTime) + ' - ' + timeConvert(data.endTime) + '</div>';
 						$("body").append(tooltip);
