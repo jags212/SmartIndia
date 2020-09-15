@@ -24,9 +24,6 @@
     <link rel="stylesheet" href="assets/css/custom.css" />
     <!-- Datepicker CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap-datepicker.css" />
-    <!-- Calendar CSS -->
-    <link rel="stylesheet" href="assets/calendar/css/fullcalendar.css" />
-    <link rel="stylesheet" href="assets/calendar/css/fullcalendar.print.css" media="print" />
 
 </head>
 
@@ -76,7 +73,7 @@
                         <span class="icon">
                             <i class='bx bx-card'></i>
                         </span>
-                        <span class="menu-title">Class Wall</span>
+                        <span class="menu-title">My Class Wall</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -113,7 +110,7 @@
 
                 <ul class="navbar-nav left-nav align-items-center">
                     <li class="blinking" data-toggle="modal" data-target="#GetHostModal">
-                        Would You Like To Be A Host?
+                        Become A Host
                     </li>
                 </ul>
 
@@ -217,7 +214,7 @@
                     <li class="nav-item dropdown profile-nav-item">
                         <a href="javascript:void(0);" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="menu-profile">
-                                <span class="name">Hi! Arnab</span>
+                                <span class="name">Arnab</span>
                                 <img src="assets/img/user1.jpg" class="rounded-circle" alt="image">
                             </div>
                         </a>
@@ -229,6 +226,7 @@
                                 </div>
                                 <div class="info text-center">
                                     <span class="name">Arnab Sahoo</span>
+                                    <span class="sm-text">(Attendee)</span>
                                     <p class="mb-3 email">arnab@gmail.com</p>
                                 </div>
                             </div>
@@ -280,17 +278,18 @@
         <div class="card mb-30">
             <div class="card-body">
                 <div class="search-box col-md-8 ml-170 resml-0">
-                    <div class="input-group mb-3 adv-search">
+                    <div class="input-group mb-1 adv-search">
+                        <div class="clearable">
+                            <input type="text" class="form-control" placeholder="Search..." />
+                            <i class="clearable__clear">&times;</i>
+                        </div>
+                        <div class="adv-search-caret advanceSearch" data-toggle="tooltip" data-placement="bottom" title="Show search options">
+                            <i class="fa fa-caret-down"></i>
+                        </div>
                         <div class="input-group-append" data-toggle="tooltip" data-placement="bottom" title="Search">
                             <span class="adv-search-icon"><i class="bx bx-search"></i></span>
                         </div>
-                        <div class="clearable">
-                            <input type="text" class="form-control" placeholder="Write Something..." />
-                            <i class="clearable__clear">&times;</i>
-                        </div>
-                        <div class="adv-search-caret" id="advanceSearch" data-toggle="tooltip" data-placement="bottom" title="Show search options">
-                            <i class="fa fa-caret-down"></i>
-                        </div>
+                        <div class="more-search advanceSearch" data-toggle="tooltip" data-placement="bottom" title="Show search options">(More)</div>
                     </div>
                 </div>
                 <div class="clearfix"></div>
@@ -308,16 +307,6 @@
                     <div class="col-sm-2 col-lg-2 col-md-2 ocr-float-left">
                         <div class="form-group">
                             <strong>Course</strong>
-                        </div>
-                    </div>
-                    <div class="col-sm-10 col-lg-10 col-md-10 ocr-float-left">
-                        <div class="form-group">
-                            <input type="text" class="" role="combobox" aria-autocomplete="list" />
-                        </div>
-                    </div>
-                    <div class="col-sm-2 col-lg-2 col-md-2 ocr-float-left">
-                        <div class="form-group">
-                            <strong>Keyword</strong>
                         </div>
                     </div>
                     <div class="col-sm-10 col-lg-10 col-md-10 ocr-float-left">
@@ -358,18 +347,19 @@
                     </div>
                 </div>
                 <div class="clearfix"></div>
-                <div class="container mt-50">
+                <div class="container mt-30">
                     <div class="row">
                         <div class="col-sm-12 col-lg-12 col-md-12">
                             <ul class="list-group">
                                 <li class="list-group-item justify-content-between ocr-list-group">
-                                    <div class="image-parent ocr-float-left">
-                                        <img src="assets/img/6.jpg" class="img-fluid list-image" alt="ocr" />
-                                    </div>
-                                    <div class="ocr-float-left">
+                                    <div class="ocr-float-left p-1">
                                         <div class="sm-card-title" data-toggle="tooltip" data-placement="bottom" title="Physics (Electricity and Magnetism)">
                                             <a href="attendee-enroll-course-details.html">Physics (Electricity and Magnetism)</a>
                                         </div>
+                                        <div class="enroll-course-show">
+                                            <span class="show-interest" data-toggle="tooltip" data-placement="bottom" title="Show Interest"><i class="bx bx-flag"></i></span>
+                                            <span class="add-to-favorite" data-toggle="tooltip" data-placement="bottom" title="Add to Favorite"><i class="bx bx-star"></i></span>
+                                        </div>
                                         <span class="sm-host-name">
                                             <i class="bx bxs-face"></i>Amy Drufesne
                                         </span>
@@ -379,23 +369,24 @@
                                         <p class="card-text sm-cli-text">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
                                         <div class="sm-bottom-info">
                                             <span class="sm-date">
-                                                <i class="bx bx-calendar"></i>05/08/2020
+                                                <i class="bx bx-calendar"></i>30-Aug-20
                                             </span>
                                             <span class="sm-time">
-                                                <i class="bx bx-time"></i>08.30 AM
+                                                <i class="bx bx-time"></i>11:30:20 GMT+05:30
                                             </span>
                                         </div>
                                     </div>
                                 </li>
 
                                 <li class="list-group-item justify-content-between ocr-list-group">
-                                    <div class="image-parent ocr-float-left">
-                                        <img src="assets/img/6.jpg" class="img-fluid list-image" alt="ocr" />
-                                    </div>
-                                    <div class="ocr-float-left">
+                                    <div class="ocr-float-left p-1">
                                         <div class="sm-card-title" data-toggle="tooltip" data-placement="bottom" title="Chemistry (Chemical Bonding)">
                                             <a href="attendee-enroll-course-details.html">Chemistry (Chemical Bonding)</a>
                                         </div>
+                                        <div class="enroll-course-show">
+                                            <span class="show-interest" data-toggle="tooltip" data-placement="bottom" title="Show Interest"><i class="bx bx-flag"></i></span>
+                                            <span class="add-to-favorite" data-toggle="tooltip" data-placement="bottom" title="Add to Favorite"><i class="bx bx-star"></i></span>
+                                        </div>
                                         <span class="sm-host-name">
                                             <i class="bx bxs-face"></i>Amy Drufesne
                                         </span>
@@ -405,23 +396,24 @@
                                         <p class="card-text sm-cli-text">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
                                         <div class="sm-bottom-info">
                                             <span class="sm-date">
-                                                <i class="bx bx-calendar"></i>05/08/2020
+                                                <i class="bx bx-calendar"></i>02-Aug-20
                                             </span>
                                             <span class="sm-time">
-                                                <i class="bx bx-time"></i>08.30 AM
+                                                <i class="bx bx-time"></i>11:30:20 GMT+05:30
                                             </span>
                                         </div>
                                     </div>
                                 </li>
 
                                 <li class="list-group-item justify-content-between ocr-list-group">
-                                    <div class="image-parent ocr-float-left">
-                                        <img src="assets/img/6.jpg" class="img-fluid list-image" alt="ocr" />
-                                    </div>
-                                    <div class="ocr-float-left">
+                                    <div class="ocr-float-left p-1">
                                         <div class="sm-card-title" data-toggle="tooltip" data-placement="bottom" title="Literature (Aging in Literature)">
                                             <a href="attendee-enroll-course-details.html">Literature (Aging in Literature)</a>
                                         </div>
+                                        <div class="enroll-course-show">
+                                            <span class="show-interest" data-toggle="tooltip" data-placement="bottom" title="Show Interest"><i class="bx bx-flag"></i></span>
+                                            <span class="add-to-favorite" data-toggle="tooltip" data-placement="bottom" title="Add to Favorite"><i class="bx bx-star"></i></span>
+                                        </div>
                                         <span class="sm-host-name">
                                             <i class="bx bxs-face"></i>Amy Drufesne
                                         </span>
@@ -431,22 +423,23 @@
                                         <p class="card-text sm-cli-text">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
                                         <div class="sm-bottom-info">
                                             <span class="sm-date">
-                                                <i class="bx bx-calendar"></i>05/08/2020
+                                                <i class="bx bx-calendar"></i>10-Aug-20
                                             </span>
                                             <span class="sm-time">
-                                                <i class="bx bx-time"></i>08.30 AM
+                                                <i class="bx bx-time"></i>11:30:20 GMT+05:30
                                             </span>
                                         </div>
                                     </div>
                                 </li>
 
                                 <li class="list-group-item justify-content-between ocr-list-group">
-                                    <div class="image-parent ocr-float-left">
-                                        <img src="assets/img/6.jpg" class="img-fluid list-image" alt="ocr" />
-                                    </div>
-                                    <div class="ocr-float-left">
+                                    <div class="ocr-float-left p-1">
                                         <div class="sm-card-title" data-toggle="tooltip" data-placement="bottom" title="Web Development (Development Tools/Environment)">
                                             <a href="attendee-enroll-course-details.html">Web Development (Development Tools/Environment)</a>
+                                        </div>
+                                        <div class="enroll-course-show">
+                                            <span class="show-interest" data-toggle="tooltip" data-placement="bottom" title="Show Interest"><i class="bx bx-flag"></i></span>
+                                            <span class="add-to-favorite" data-toggle="tooltip" data-placement="bottom" title="Add to Favorite"><i class="bx bx-star"></i></span>
                                         </div>
                                         <span class="sm-host-name">
                                             <i class="bx bxs-face"></i>Amy Drufesne
@@ -457,22 +450,23 @@
                                         <p class="card-text sm-cli-text">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
                                         <div class="sm-bottom-info">
                                             <span class="sm-date">
-                                                <i class="bx bx-calendar"></i>05/08/2020
+                                                <i class="bx bx-calendar"></i>05-Aug-20
                                             </span>
                                             <span class="sm-time">
-                                                <i class="bx bx-time"></i>08.30 AM
+                                                <i class="bx bx-time"></i>11:30:20 GMT+05:30
                                             </span>
                                         </div>
                                     </div>
                                 </li>
 
                                 <li class="list-group-item justify-content-between ocr-list-group">
-                                    <div class="image-parent ocr-float-left">
-                                        <img src="assets/img/6.jpg" class="img-fluid list-image" alt="ocr" />
-                                    </div>
-                                    <div class="ocr-float-left">
+                                    <div class="ocr-float-left p-1">
                                         <div class="sm-card-title" data-toggle="tooltip" data-placement="bottom" title="Web Development (Development Tools/Environment)">
                                             <a href="attendee-enroll-course-details.html">Web Development (Development Tools/Environment)</a>
+                                        </div>
+                                        <div class="enroll-course-show">
+                                            <span class="show-interest" data-toggle="tooltip" data-placement="bottom" title="Show Interest"><i class="bx bx-flag"></i></span>
+                                            <span class="add-to-favorite" data-toggle="tooltip" data-placement="bottom" title="Add to Favorite"><i class="bx bx-star"></i></span>
                                         </div>
                                         <span class="sm-host-name">
                                             <i class="bx bxs-face"></i>Amy Drufesne
@@ -483,10 +477,10 @@
                                         <p class="card-text sm-cli-text">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
                                         <div class="sm-bottom-info">
                                             <span class="sm-date">
-                                                <i class="bx bx-calendar"></i>05/08/2020
+                                                <i class="bx bx-calendar"></i>10-Sept-20
                                             </span>
                                             <span class="sm-time">
-                                                <i class="bx bx-time"></i>08.30 AM
+                                                <i class="bx bx-time"></i>11:30:20 GMT+05:30
                                             </span>
                                         </div>
                                     </div>
@@ -785,6 +779,8 @@
     <script src="assets/js/custom.js"></script>
     <!-- Enroll Courses JS -->
     <script src="assets/js/enroll-courses.js"></script>
+    <!-- Clearable Input JS -->
+    <script src="assets/js/clearable-input.js"></script>
     <!-- Datepicker JS -->
     <script src="assets/js/bootstrap-datepicker.js"></script>
     <script>
@@ -794,11 +790,6 @@
             autoclose: true
         });
     </script>
-    <!-- Calendar JS -->
-    <script src="assets/calendar/js/moment.min.js"></script>
-    <script src="assets/calendar/js/fullcalendar.min.js"></script>
-    <script src="assets/calendar/js/attendee-calendar.js"></script>
-
 
 </body>
 </html>

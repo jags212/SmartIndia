@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="assets/css/custom.css" />
     <!-- Country Code CSS -->
     <link rel="stylesheet" href="assets/css/intlTelInput.css" />
+    <!-- Datepicker CSS -->
+    <link rel="stylesheet" href="assets/css/gijgo.min.css" />
 
 </head>
 
@@ -71,7 +73,7 @@
                         <span class="icon">
                             <i class='bx bx-card'></i>
                         </span>
-                        <span class="menu-title">Class Wall</span>
+                        <span class="menu-title">My Class Wall</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -108,7 +110,7 @@
 
                 <ul class="navbar-nav left-nav align-items-center">
                     <li class="blinking" data-toggle="modal" data-target="#GetHostModal">
-                        Would You Like To Be A Host?
+                        Become A Host
                     </li>
                 </ul>
 
@@ -212,7 +214,7 @@
                     <li class="nav-item dropdown profile-nav-item">
                         <a href="javascript:void(0);" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="menu-profile">
-                                <span class="name">Hi! Arnab</span>
+                                <span class="name">Arnab</span>
                                 <img src="assets/img/user1.jpg" class="rounded-circle" alt="image">
                             </div>
                         </a>
@@ -224,6 +226,7 @@
                                 </div>
                                 <div class="info text-center">
                                     <span class="name">Arnab Sahoo</span>
+                                    <span class="sm-text">(Attendee)</span>
                                     <p class="mb-3 email">arnab@gmail.com</p>
                                 </div>
                             </div>
@@ -307,7 +310,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label>Email Address</label>
                                                 <input type="email" class="form-control" placeholder="Enter email address" value="arnab@gmail.com" id="profileEmail">
@@ -318,10 +321,10 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label>Mobile Number</label>
-                                                <input type="text" class="form-control pl-110" placeholder="Enter mobile number" value="9876564356" id="profileMobileNo">
+                                                <input type="text" class="form-control pl-100" placeholder="Enter mobile number" value="9876564356" id="profileMobileNo">
                                             </div>
 
                                             <!--- Start Country Code --->
@@ -593,93 +596,40 @@
                                                 <a href="attendee-change-mobileno.html" class="d-inline-block">Edit</a>
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <h3><i class=" bx bx-flag"></i> Interest Area</h3>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="form-group interest-area">
-                                                <label class="checkbox-label">
-                                                    <input type="checkbox" name="interestarea" value="Academics" />
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                                <span>Academics</span>
-
-                                                <label class="checkbox-label">
-                                                    <input type="checkbox" name="interestarea" value="Hospitality" />
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                                <span>Hospitality</span>
-
-                                                <label class="checkbox-label">
-                                                    <input type="checkbox" name="interestarea" value="Web Development" />
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                                <span>Web Development</span>
-
-                                                <label class="checkbox-label">
-                                                    <input type="checkbox" name="interestarea" value="Management" />
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                                <span>Management</span>
-
-                                                <label class="checkbox-label">
-                                                    <input type="checkbox" name="interestarea" value="Medicine" />
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                                <span>Medicine</span>
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <label>DOB</label>
+                                                <input type="text" class="form-control" placeholder="Enter DOB" id="dobdatepicker">
                                             </div>
-                                            <div class="form-group interest-area">
-                                                <label class="checkbox-label">
-                                                    <input type="checkbox" name="interestarea" value="Handicraft" />
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                                <span>Handicraft</span>
+                                        </div>
 
-                                                <label class="checkbox-label">
-                                                    <input type="checkbox" name="interestarea" value="Engineering" />
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                                <span>Engineering</span>
-
-                                                <label class="checkbox-label">
-                                                    <input type="checkbox" name="interestarea" value="Photography" />
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                                <span>Photography</span>
-
-                                                <label class="checkbox-label">
-                                                    <input type="checkbox" name="interestarea" value="Statistics" />
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                                <span>Statistics</span>
-
-                                                <label class="checkbox-label">
-                                                    <input type="checkbox" name="interestarea" value="Business" />
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                                <span>Business</span>
+                                        <div class="col-lg-6">
+                                            <div class="form-group d-gender">
+                                                <label>Gender</label>
+                                                <input type="radio" name="gender" /><span>Male</span>
+                                                <input type="radio" name="gender" /><span>Female</span>
+                                                <input type="radio" name="gender" /><span>Other</span>
                                             </div>
                                         </div>
                                     </div>
 
                                     <h3><i class="bx bx-building"></i> Address</h3>
                                     <div class="row">
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label>Pin Code</label>
                                                 <input type="text" class="form-control" placeholder="Enter pin code">
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label>City</label>
                                                 <input type="text" class="form-control" placeholder="Enter city">
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label>Country</label>
                                                 <select name="countryCode" class="form-control">
@@ -932,6 +882,87 @@
                                         </div>
                                     </div>
 
+                                    <h3><i class=" bx bx-flag"></i> Interest Area</h3>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group interest-area">
+                                                <label class="checkbox-label">
+                                                    <input type="checkbox" name="interestarea" value="Academics" />
+                                                    <span class="checkbox-custom"></span>
+                                                </label>
+                                                <span>Academics</span>
+
+                                                <label class="checkbox-label">
+                                                    <input type="checkbox" name="interestarea" value="Hospitality" />
+                                                    <span class="checkbox-custom"></span>
+                                                </label>
+                                                <span>Hospitality</span>
+
+                                                <label class="checkbox-label">
+                                                    <input type="checkbox" name="interestarea" value="Web Development" />
+                                                    <span class="checkbox-custom"></span>
+                                                </label>
+                                                <span>Web Development</span>
+
+                                                <label class="checkbox-label">
+                                                    <input type="checkbox" name="interestarea" value="Management" />
+                                                    <span class="checkbox-custom"></span>
+                                                </label>
+                                                <span>Management</span>
+
+                                                <label class="checkbox-label">
+                                                    <input type="checkbox" name="interestarea" value="Medicine" />
+                                                    <span class="checkbox-custom"></span>
+                                                </label>
+                                                <span>Medicine</span>
+                                            </div>
+                                            <div class="form-group interest-area">
+                                                <label class="checkbox-label">
+                                                    <input type="checkbox" name="interestarea" value="Handicraft" />
+                                                    <span class="checkbox-custom"></span>
+                                                </label>
+                                                <span>Handicraft</span>
+
+                                                <label class="checkbox-label">
+                                                    <input type="checkbox" name="interestarea" value="Engineering" />
+                                                    <span class="checkbox-custom"></span>
+                                                </label>
+                                                <span>Engineering</span>
+
+                                                <label class="checkbox-label">
+                                                    <input type="checkbox" name="interestarea" value="Photography" />
+                                                    <span class="checkbox-custom"></span>
+                                                </label>
+                                                <span>Photography</span>
+
+                                                <label class="checkbox-label">
+                                                    <input type="checkbox" name="interestarea" value="Statistics" />
+                                                    <span class="checkbox-custom"></span>
+                                                </label>
+                                                <span>Statistics</span>
+
+                                                <label class="checkbox-label">
+                                                    <input type="checkbox" name="interestarea" value="Business" />
+                                                    <span class="checkbox-custom"></span>
+                                                </label>
+                                                <span>Business</span>
+
+                                                <label class="checkbox-label">
+                                                    <input type="checkbox" name="interestarea" value="Others" id="chkOtherInterest" />
+                                                    <span class="checkbox-custom"></span>
+                                                </label>
+                                                <span>Others</span>
+                                            </div>
+                                            <div class="col-lg-4" id="otherInterestArea">
+                                                <div class="form-group">
+                                                    <label>Maximum 30 characters</label>
+                                                    <input type="text" class="form-control" placeholder="Add Interest" maxlength="30" id="interestArea" />
+                                                    <span id="rchars">30</span> Character(s) Remaining
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <a href="attendee-change-password.html" class="profile-link">
                                         <h3><i class="bx bx-lock" data-toggle="tooltip" data-placement="right" title="Click here to change password"></i> Security</h3>
                                     </a>
@@ -1128,6 +1159,13 @@
     <script src="assets/js/profile.js"></script>
     <!-- Country Code JS -->
     <script src="assets/js/countrycode.js"></script>
+    <!-- Datepicker JS -->
+    <script src="assets/js/gijgo.min.js"></script>
+    <script>
+        $('#dobdatepicker').datepicker({ format: 'dd-mmm-yy' });
+    </script>
+    <!-- Limit Character JS -->
+    <script src="assets/js/limit-character.js"></script>
 
 </body>
 </html>

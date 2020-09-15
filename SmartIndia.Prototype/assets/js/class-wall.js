@@ -35,11 +35,12 @@ $('#classwallbutton').click(function() {
 	}
 });
 
+//Host
 $(document).ready(function () {
 	$("#hostCWCalendar").css("display", "none");
 });
 
-//List
+//Host List
 $('#hostClassWallList').click(function () {
 	$("#hostCWlList").css("display", "block");
 	$("#hostCWCalendar").css("display", "none");
@@ -48,10 +49,33 @@ $('#hostClassWallList').click(function () {
 });
 
 
-//Calendar
+//Host Calendar
 $('#hostClassWallCalendar').click(function () {
 	$("#hostCWlList").css("display", "none");
 	$("#hostCWCalendar").css("display", "block");
 	$("#hostClassWallList").removeClass("up-active");
 	$("#hostClassWallCalendar").addClass("up-active");
+});
+
+
+//Attendee
+$(document).ready(function () {
+	$("#attendeeCWCalendar").css("display", "none");
+});
+
+//Attendee List
+$('#attendeeClassWallList').click(function () {
+	$("#attendeeCWlList").css("display", "block");
+	$("#attendeeCWCalendar").css("display", "none");
+	$("#attendeeClassWallList").addClass("up-active");
+	$("#attendeeClassWallCalendar").removeClass("up-active");
+});
+
+
+//Attendee Calendar
+$('#attendeeClassWallCalendar').click(function () {
+	$("#attendeeCWlList").css("display", "none");
+	$("#attendeeCWCalendar").css("display", "block");
+	$("#attendeeClassWallList").removeClass("up-active");
+	$("#attendeeClassWallCalendar").addClass("up-active");
 });
