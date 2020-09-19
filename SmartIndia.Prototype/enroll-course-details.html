@@ -8,7 +8,7 @@
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>OCR - Add Courses</title>
+    <title>OCR - Upcoming Classes</title>
 
     <link rel="icon" type="image/png" href="assets/img/favicon.png" />
 
@@ -22,8 +22,6 @@
     <link rel="stylesheet" href="assets/css/responsive.css" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/custom.css" />
-    <!-- Datepicker CSS -->
-    <link rel="stylesheet" href="assets/css/gijgo.min.css" />
 
 </head>
 
@@ -60,7 +58,7 @@
                         <span class="menu-title">Dashboard</span>
                     </a>
                 </li>
-                <li class="nav-item mm-active">
+                <li class="nav-item">
                     <a href="courses.html" class="nav-link">
                         <span class="icon">
                             <i class='bx bxl-discourse'></i>
@@ -84,7 +82,7 @@
                         <span class="menu-title">My Class Wall</span>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item mm-active">
                     <a href="host-upcomingclasses.html" class="nav-link">
                         <span class="icon">
                             <i class='bx bx-video-recording'></i>
@@ -274,200 +272,101 @@
         <!-- Main Content Layout -->
         <!-- Breadcrumb Area -->
         <div class="breadcrumb-area">
-            <h1>Add Course</h1>
+            <h1>Course Details</h1>
             <ol class="breadcrumb">
                 <li class="item">
                     <a href="host-dashboard.html"><i class='bx bx-home-alt'></i></a>
                 </li>
                 <li class="item">Dashboard</li>
-                <li class="item">Add Course</li>
+                <li class="item">My Class Wall</li>
+                <li class="item">Course Details</li>
             </ol>
         </div>
         <!-- End Breadcrumb Area -->
         <!-- Start -->
-        <div class="card mb-30">
-            <div class="card-body">
-                <form>
-                    <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label>Description</label>
-                        <textarea class="form-control"></textarea>
-                    </div>
-                    <div class="row form-group">
-                        <div class="col-md-5 res-mb-16">
-                            <label>Topics</label>
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="col-md-3 res-mb-16">
-                            <label>Course Thumbnail</label>
-                            <div class="button-wrap">
-                                <label class="upload-button" for="fileupload">
-                                    Choose File
-                                    <input id="fileupload" type="file" class="custom-file-upload">
-                                </label>
-                            </div>
-                            <span class="re-note">(only .jpg,.png allowed, maximum file size 100KB.)</span>
-                        </div>
-                        <div class="col-md-4 res-mb-16">
-                            <label>Brochure</label>
-                            <div class="button-wrap">
-                                <label class="upload-button" for="brochurefileupload">
-                                    Choose File
-                                    <input id="brochurefileupload" type="file" class="custom-file-upload">
-                                </label>
-                            </div>
-                            <span class="re-note">(only .jpg,.png,.pdf allowed, maximum file size 2MB.)</span>
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <div class="col-md-4 res-mb-16">
-                            <label>Start Date</label>
-                            <input type="text" class="form-control" id="sdatepicker" disabled>
-                        </div>
-                        <div class="col-md-4 res-mb-16">
-                            <label>End Date</label>
-                            <input type="text" class="form-control" id="edatepicker" disabled>
-                        </div>
-                        <div class="col-md-4">
-                            <label>Duration (Days)</label>
-                            <input type="text" class="form-control" id="durationDate" disabled>
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <div class="col-md-4 res-mb-16">
-                            <label>Fees</label>
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="col-md-4 res-mb-16">
-                            <label>Class Frequency</label>
-                            <select class="form-control">
-                                <option selected>Choose...</option>
-                                <option>Daily</option>
-                                <option>Weekly</option>
-                                <option>Monthly</option>
-                                <option>Yearly</option>
-                            </select>
-                        </div>
-                        <div class="col-md-4">
-                            <label>No. Of Classes</label>
-                            <input type="number" class="form-control">
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    <button type="reset" class="btn btn-warning">Reset</button>
-                </form>
-
-            </div>
-        </div>
+        <!-- Enrolls Desc -->
 
         <div class="card mb-30">
             <div class="card-body">
 
-                <div class="table-responsive">
-                    <table class="table table-hover">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Start Date</th>
-                                <th scope="col">End Date</th>
-                                <th scope="col">Duration (Days)</th>
-                                <th scope="col">Fees</th>
-                                <th scope="col">Class Frequency</th>
-                                <th scope="col">No. Of Classes</th>
-                                <th scope="col">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mahesh</td>
-                                <td>11-Jul-2020</td>
-                                <td>22-Jul-2020</td>
-                                <td>11</td>
-                                <td>10000</td>
-                                <td>Daily</td>
-                                <td>3</td>
-                                <td>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="Edit">
-                                        <a href="javascript:void(0);" class="form-control table-edit"><i class="bx bx-edit-alt"></i></a>
-                                    </div>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="View">
-                                        <a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a>
-                                    </div>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="Brochure">
-                                        <a href="javascript:void(0);" class="form-control table-brochure" data-toggle="modal" data-target="#getCourseBrochureModal"><i class="bx bx-file"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Amar Dash</td>
-                                <td>15-Jul-2020</td>
-                                <td>31-Jul-2020</td>
-                                <td>16</td>
-                                <td>10000</td>
-                                <td>Weekly</td>
-                                <td>2</td>
-                                <td>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="Edit">
-                                        <a href="javascript:void(0);" class="form-control table-edit"><i class="bx bx-edit-alt"></i></a>
-                                    </div>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="View">
-                                        <a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a>
-                                    </div>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="Brochure">
-                                        <a href="javascript:void(0);" class="form-control table-brochure" data-toggle="modal" data-target="#getCourseBrochureModal"><i class="bx bx-file"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Dipti Dash</td>
-                                <td>01-Jul-2020</td>
-                                <td>23-Jul-2020</td>
-                                <td>22</td>
-                                <td>20000</td>
-                                <td>Monthly</td>
-                                <td>8</td>
-                                <td>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="Edit">
-                                        <a href="javascript:void(0);" class="form-control table-edit"><i class="bx bx-edit-alt"></i></a>
-                                    </div>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="View">
-                                        <a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a>
-                                    </div>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="Brochure">
-                                        <a href="javascript:void(0);" class="form-control table-brochure" data-toggle="modal" data-target="#getCourseBrochureModal"><i class="bx bx-file"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">4</th>
-                                <td>Himanshu Nautiyal</td>
-                                <td>30-Jul-2020</td>
-                                <td>13-Aug-2020</td>
-                                <td>14</td>
-                                <td>50000</td>
-                                <td>Yearly</td>
-                                <td>96</td>
-                                <td>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="Edit">
-                                        <a href="javascript:void(0);" class="form-control table-edit"><i class="bx bx-edit-alt"></i></a>
-                                    </div>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="View">
-                                        <a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a>
-                                    </div>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="Brochure">
-                                        <a href="javascript:void(0);" class="form-control table-brochure" data-toggle="modal" data-target="#getCourseBrochureModal"><i class="bx bx-file"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="enroll-card">
+                    <div class="back-to-list">
+                        <a href="host-classwall.html"><i class="bx bx-arrow-back"></i>Back To List</a>
+                    </div>
+                    <div class="calendar-header">
+                        <span class="section-title">Physics</span><span class="topic-font">(Electricity and Magnetism)</span>
+                        <div class="enroll-course-banner en-co-brochure" data-toggle="modal" data-target="#GetCourseBrochureModal">Brochure<i class="bx bxs-file-image bx-pad"></i></div>
+                    </div>
+                    <hr />
+                    <div class="mb-20">
+                        <span class="sm-host-name">
+                            <i class="bx bxs-face"></i>Amy Drufesne
+                        </span>
+                        <span class="sm-batch-name">
+                            <i class="bx bx-task"></i>Batch I
+                        </span>
+                    </div>
+                    <div class="mb-20">
+                        <span class="sm-date">
+                            <i class="bx bx-calendar"></i>30-Aug-20
+                        </span>
+                        <span class="sm-time">
+                            <i class="bx bx-time"></i>11:30:20 GMT+05:30
+                        </span>
+                    </div>
+                    <div class="course-thumbnail float-right">
+                        <img src="assets/img/2.jpg" alt="OCR" />
+                    </div>
+                    <div class="text margin-y">
+                        <h3>Dear Attendee</h3>
+                        <p>Affected by the pandemic, the online course has made a few adjustments to the language programs of the 20 autumn semester. If you have studied, or are studying the course, tuition discount can also be applied to you. Join us to explore the course now!</p>
+                        <h2>The Form of Instruction</h2>
+                        <p>The program will be <strong>instructed online throughout the semester</strong>.&nbsp;</p>
+                        <p>The minimum number of students to start a class is 8.</p>
+                        <h3>Program Information</h3> <ul>
+                            <li><strong>Study Duration:</strong>&nbsp;September 7, 20 - December 17, 20</li>
+                            <li>
+                                <strong>Class Schedule:&nbsp;</strong>&nbsp;
+                                <ul><li>Monday, Wednesday, Thursday.</li> <li>18:30 - 20:45 ISO Time</li></ul>
+                            </li>
+                            <li><strong>Relevant Fees:&nbsp;</strong> <ul><li>Application Fee: ₹ 400</li> <li>Tuition: ₹ 5000</li></ul></li>
+                        </ul>
+                        <h3>Teaching Plan</h3>
+                        <p><strong>Schedule:</strong>&nbsp;</p>
+                        <ul><li>2 hour online real-time classes and 1 hour offline learning with recorded learning materials. (The teachers will be online for Q&amp;A)</li></ul>
+                        <ul><li>Elementary, Intermediate</li></ul>
+                        <p>&nbsp;*This program does not accept learners with no basic proficiency in Chinese.</p>
+                        <h3>Application Procedures</h3>
+                        <ol>
+                            <li>
+                                <strong>Online Application</strong>
+                                <ul>
+                                    <li>Please submit an online application at http://smartindia.bestwebonline.net/. We will contact you by email after we receive your application.</li>
+                                    <li>Application Deadline:&nbsp;<strong>August 20, 20</strong></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Free Audition Class</strong>
+                                <ul>
+                                    <li>A free audition class will be scheduled on the first day of online class and students may decide whether to participate in the program after the audition.&nbsp;</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Fees Payment</strong>
+                                <ul>
+                                    <li>If the student confirms to participate in the program, he/she can pay the relevant fees online.</li>
+                                    <li>* Normally, after paying the application fees and the tuition, the paid fees are non-refundable.&nbsp;</li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <h3>Software &amp; Hardware Support for Online Study</h3>
+                        <ul>
+                            <li>Computers, headsets, and microphones, can turn on the camera and is able to show up to communicate with the classmates and the teacher;</li>
+                            <li>Smooth Internet connection, can participate in the real-time interaction and use the relevant online teaching and interaction platforms;</li>
+                            <li>A suitable environment for learning, which should be quiet and without disruption.</li>
+                        </ul>
+                    </div>
+                    <div class="margin-top"><i class="small-text">Last updated Aug 20</i></div>
                 </div>
 
             </div>
@@ -491,70 +390,8 @@
         <!-- End Footer -->
     </div>
     <!-- End Main Content Wrapper -->
-    <!-- Start View Details Modal -->
-    <div class="modal fade" id="ViewDetailsModal" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Course Details</h5>
-                    <button type="button" class="close col-black" data-dismiss="modal">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body re-modal-body">
-                    <div class="table-responsive">
-                        <table class="table table-striped table-hover">
-                            <tbody>
-                                <tr>
-                                    <th>Name</th>
-                                    <td>Mahesh</td>
-                                </tr>
-                                <tr>
-                                    <th>Description</th>
-                                    <td>Des1</td>
-                                </tr>
-                                <tr>
-                                    <th>Topics</th>
-                                    <td>PhysicsI,PhysicsII,PhysicsIII</td>
-                                </tr>
-                                <tr>
-                                    <th>Course Thumbnail</th>
-                                    <td><img src="assets/img/course-pop-up-img.jpg" class="banner-img" /></td>
-                                </tr>
-                                <tr>
-                                    <th>Start Date</th>
-                                    <td>11-Jul-2020</td>
-                                </tr>
-                                <tr>
-                                    <th>End Date</th>
-                                    <td>22-Jul-2020</td>
-                                </tr>
-                                <tr>
-                                    <th>Duration (Days)</th>
-                                    <td>11</td>
-                                </tr>
-                                <tr>
-                                    <th>Fees</th>
-                                    <td>10000</td>
-                                </tr>
-                                <tr>
-                                    <th>Class Frequency</th>
-                                    <td>Daily</td>
-                                </tr>
-                                <tr>
-                                    <th>No. Of Classes</th>
-                                    <td>3</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End View Details Modal -->
-    <!-- Start Course Banner Modal -->
-    <div class="modal fade basicModalLG plan-modal" id="getCourseBrochureModal" role="dialog" aria-hidden="true">
+    <!-- Start Course Brochure Modal -->
+    <div class="modal fade" id="GetCourseBrochureModal" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content p-20">
                 <div class="modal-body">
@@ -562,26 +399,18 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                     <a href="assets/img/course-pop-up-img.jpg" class="bx bx-download sm-download" download>
-                        <img src="assets/img/course-pop-up-img.jpg" class="banner-img" />
+                        <img src="assets/img/course-pop-up-img.jpg" class="banner-img" alt="OCR" />
                     </a>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Course Banner Modal -->
+    <!-- End  Course Brochure Modal -->
     <!-- Footer Scripts -->
     <!-- Vendors Min JS -->
     <script src="assets/js/vendors.min.js"></script>
     <!-- Custom JS -->
     <script src="assets/js/custom.js"></script>
-    <!-- Datepicker JS -->
-    <script src="assets/js/gijgo.min.js"></script>
-    <script>
-        $('#sdatepicker').datepicker({ format: 'dd-mmm-yyyy' });
-        $('#edatepicker').datepicker({ format: 'dd-mmm-yyyy' });
-    </script>
-    <!-- Duration Date JS -->
-    <script src="assets/js/date-duration.js"></script>
 
 </body>
 </html>

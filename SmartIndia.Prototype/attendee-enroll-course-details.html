@@ -20,9 +20,6 @@
     <link rel="stylesheet" href="assets/css/responsive.css" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/custom.css" />
-    <!-- Calendar CSS -->
-    <link rel="stylesheet" href="assets/calendar/css/fullcalendar.css" />
-    <link rel="stylesheet" href="assets/calendar/css/fullcalendar.print.css" media="print" />
 
 </head>
 
@@ -263,7 +260,7 @@
         <!-- Main Content Layout -->
         <!-- Breadcrumb Area -->
         <div class="breadcrumb-area">
-            <h1>Enroll Courses</h1>
+            <h1>Course Details</h1>
             <ol class="breadcrumb">
                 <li class="item">
                     <a href="attendee-dashboard.html"><i class='bx bx-home-alt'></i></a>
@@ -286,10 +283,11 @@
                     </div>
                     <div class="calendar-header">
                         <h3 class="section-title">Course Description</h3>
-                        <span class="show-interest" data-toggle="tooltip" data-placement="bottom" title="Show Interest"><i class=" bx bx-flag"></i></span>
-                        <span class="add-to-favorite" data-toggle="tooltip" data-placement="bottom" title="Add to Favorite"><i class="bx bx-star"></i></span>
+                        <span class="contact-host" data-toggle="modal" data-target="#GetContactHostModal"><i class="bx bx-phone" data-toggle="tooltip" data-placement="bottom" title="Contact To Host"></i></span>
+                        <span class="show-interest" data-toggle="tooltip" data-placement="bottom" title="Show Interest"><i class="bx bx-flag"></i></span>
+                        <span class="add-to-favorite" data-toggle="tooltip" data-placement="bottom" title="Add To Favorite"><i class="bx bx-star"></i></span>
                         <div class="enroll-new-course" data-toggle="modal" data-target="#GetAttendeeModal">Enroll<i class="bx bx-plus bx-pad"></i></div>
-                        <div class="enroll-course-banner" data-toggle="modal" data-target="#GetCourseBannerModal">Brochure<i class="bx bxs-file-image bx-pad"></i></div>
+                        <div class="enroll-course-banner" data-toggle="modal" data-target="#GetCourseBrochureModal">Brochure<i class="bx bxs-file-image bx-pad"></i></div>
                     </div>
                     <hr />
                     <div class="text margin-y">
@@ -589,8 +587,8 @@
         </div>
     </div>
     <!-- End Attendee Plan Modal -->
-    <!-- Start Course Banner Modal -->
-    <div class="modal fade basicModalLG plan-modal" id="GetCourseBannerModal" role="dialog" aria-hidden="true">
+    <!-- Start Course Brochure Modal -->
+    <div class="modal fade" id="GetCourseBrochureModal" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content p-20">
                 <div class="modal-body">
@@ -604,35 +602,50 @@
             </div>
         </div>
     </div>
-    <!-- End Course Banner Modal -->
+    <!-- End  Course Brochure Modal -->
+    <!-- Start Contact To Host Modal -->
+    <div class="modal fade" id="GetContactHostModal" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Contact To Host</h5>
+                    <button type="button" class="close col-black" data-dismiss="modal">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body re-modal-body">
+                    <div class="row form-group">
+                        <div class="col-md-4 res-mb-16">
+                            <label>Name</label>
+                            <input type="text" class="form-control" placeholder="Enter Name">
+                        </div>
+                        <div class="col-md-4 res-mb-16">
+                            <label>Email</label>
+                            <input type="email" class="form-control" placeholder="Enter Email">
+                        </div>
+                        <div class="col-md-4">
+                            <label>Phone</label>
+                            <input type="text" class="form-control" placeholder="Enter Phone">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-12 res-mb-16">
+                            <label>Message</label>
+                            <textarea class="form-control" rows="4" placeholder="Enter Message"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Contact To Host Modal -->
+
     <!-- Footer Scripts -->
     <!-- Vendors Min JS -->
     <script src="assets/js/vendors.min.js"></script>
-
-    <!-- ApexCharts JS -->
-    <script src="assets/js/apexcharts/apexcharts.min.js"></script>
-    <script src="assets/js/apexcharts/apex-custom-line-chart.js"></script>
-    <script src="assets/js/apexcharts/apex-custom-pie-donut-chart.js"></script>
-
-    <!-- ChartJS -->
-    <script src="assets/js/chartjs/chartjs.min.js"></script>
-
-    <!-- jvectormap Min JS -->
-    <script src="assets/js/jvectormap-1.2.2.min.js"></script>
-    <!-- jvectormap World Mill JS -->
-    <script src="assets/js/jvectormap-world-mill-en.js"></script>
-
     <!-- Custom JS -->
     <script src="assets/js/custom.js"></script>
-
-    <!-- Enroll Courses JS -->
-    <script src="assets/js/enroll-courses.js"></script>
-
-    <!-- Calendar JS -->
-    <script src="assets/calendar/js/moment.min.js"></script>
-    <script src="assets/calendar/js/fullcalendar.min.js"></script>
-    <script src="assets/calendar/js/attendee-calendar.js"></script>
-
 
 </body>
 </html>
