@@ -25,6 +25,8 @@
     <!-- Calendar CSS -->
     <link rel="stylesheet" href="assets/calendar/css/fullcalendar.css" />
     <link rel="stylesheet" href="assets/calendar/css/fullcalendar.print.css" media="print" />
+    <!-- Text Ellipsis CSS -->
+    <link rel="stylesheet" href="assets/css/ellipsis.css" />
 
 </head>
 
@@ -286,7 +288,7 @@
         </div>
         <!-- End Breadcrumb Area -->
         <!-- Start -->
-        <div class="card mb-30">
+        <div class="card">
             <div class="card-body">
                 <div class="upcoming-section">
                     <span id="hostClassWallList" class="up-active" data-toggle="tooltip" data-placement="bottom" title="List"><i class="bx bx-list-ul"></i></span>
@@ -296,14 +298,30 @@
                     <div class="ocr-clearable">
                         <input type="text" name="search" class="dashboard-panel-search" placeholder="Search..">
                         <i class="ocr-clearable-clear">&times;</i>
+                        <span class="class-search-icon" data-toggle="tooltip" data-placement="bottom" title="Search"><i class="bx bx-search"></i></span>
                     </div>
-                    <span class="class-search-icon" data-toggle="tooltip" data-placement="bottom" title="Search"><i class="bx bx-search"></i></span>
                 </form>
                 <div class="color-legend-section">
-                    <div class="color-legend col-leg-green"></div><div class="color-legend-text">Accomplished</div>
-                    <div class="color-legend col-leg-yellow"></div><div class="color-legend-text">Upcoming</div>
-                    <div class="color-legend col-leg-seablue"></div><div class="color-legend-text">Reschedule</div>
-                    <div class="color-legend col-leg-grey"></div><div class="color-legend-text">Cancel</div>
+                    <div class="color-legend col-leg-green"></div>
+                    <div class="color-legend-text">
+                        Accomplished
+                        <div class="color-legend-number sm-attend-no">(15)</div>
+                    </div>
+                    <div class="color-legend col-leg-yellow"></div>
+                    <div class="color-legend-text">
+                        Upcoming
+                        <div class="color-legend-number sm-upclasses-no">(8)</div>
+                    </div>
+                    <div class="color-legend col-leg-seablue"></div>
+                    <div class="color-legend-text">
+                        Reschedule
+                        <div class="color-legend-number sm-reschedule-no">(2)</div>
+                    </div>
+                    <div class="color-legend col-leg-grey"></div>
+                    <div class="color-legend-text">
+                        Cancel
+                        <div class="color-legend-number sm-cancel-no">(3)</div>
+                    </div>
                 </div>
                 <div class="clearfix"></div>
                 <!-- List -->
@@ -313,8 +331,11 @@
                             <ul class="list-group">
                                 <li class="list-group-item justify-content-between ocr-list-group">
                                     <div class="ocr-float-left p-1">
-                                        <div class="sm-card-title" data-toggle="tooltip" data-placement="bottom" title="Physics (Electricity and Magnetism)">
-                                            <a href="javascript:void(0);">Physics (Electricity and Magnetism)</a>
+                                        <div class="list-color-legend col-leg-green" data-toggle="tooltip" data-placement="bottom" title="Accomplished"></div>
+                                        <div class="sm-card-title">
+                                            <a href="enroll-course-details.html" data-toggle="tooltip" data-placement="bottom" title="Physics (Electricity and Magnetism)">
+                                                Physics<span class="topic-font">(Electricity and Magnetism)</span>
+                                            </a>
                                         </div>
                                         <span class="sm-host-name">
                                             <i class="bx bxs-face"></i>Amy Drufesne
@@ -322,7 +343,18 @@
                                         <span class="sm-batch-name">
                                             <i class="bx bx-task"></i>Batch I
                                         </span>
-                                        <p class="card-text sm-cli-text">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
+                                        <p class="card-text sm-cli-text ellip-box two-lines">
+                                            Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri
+                                            Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri
+                                            Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri
+                                            Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri
+                                            Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri
+                                            Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri
+                                            Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri
+                                            Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri
+                                            Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri
+                                            Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri
+                                        </p>
                                         <div class="sm-bottom-info">
                                             <span class="sm-date">
                                                 <i class="bx bx-calendar"></i>30-Aug-20
@@ -331,19 +363,16 @@
                                                 <i class="bx bx-time"></i>11:30:20 GMT+05:30
                                             </span>
                                         </div>
-                                        <div class="sm-bottom-status-info">
-                                            <span class="sm-status sm-attend" data-toggle="tooltip" data-placement="bottom" title="Accomplished">20 </span>
-                                            <span class="sm-status sm-upclasses" data-toggle="tooltip" data-placement="bottom" title="Upcoming">18</span>
-                                            <span class="sm-status sm-reschedule" data-toggle="tooltip" data-placement="bottom" title="Reschedule">5</span>
-                                            <span class="sm-status sm-cancel" data-toggle="tooltip" data-placement="bottom" title="Cancel">1</span>
-                                        </div>
                                     </div>
                                 </li>
 
                                 <li class="list-group-item justify-content-between ocr-list-group">
                                     <div class="ocr-float-left p-1">
-                                        <div class="sm-card-title" data-toggle="tooltip" data-placement="bottom" title="Chemistry (Chemical Bonding)">
-                                            <a href="javascript:void(0);">Chemistry (Chemical Bonding)</a>
+                                        <div class="list-color-legend col-leg-yellow" data-toggle="tooltip" data-placement="bottom" title="Upcoming"></div>
+                                        <div class="sm-card-title">
+                                            <a href="enroll-course-details.html" data-toggle="tooltip" data-placement="bottom" title="Chemistry (Chemical Bonding)">
+                                                Chemistry <span class="topic-font">(Chemical Bonding)</span>
+                                            </a>
                                         </div>
                                         <span class="sm-host-name">
                                             <i class="bx bxs-face"></i>Amy Drufesne
@@ -351,7 +380,7 @@
                                         <span class="sm-batch-name">
                                             <i class="bx bx-task"></i>Batch I
                                         </span>
-                                        <p class="card-text sm-cli-text">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
+                                        <p class="card-text sm-cli-text ellip-box two-lines">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
                                         <div class="sm-bottom-info">
                                             <span class="sm-date">
                                                 <i class="bx bx-calendar"></i>02-Aug-20
@@ -360,19 +389,16 @@
                                                 <i class="bx bx-time"></i>11:30:20 GMT+05:30
                                             </span>
                                         </div>
-                                        <div class="sm-bottom-status-info">
-                                            <span class="sm-status sm-attend" data-toggle="tooltip" data-placement="bottom" title="Accomplished">15 </span>
-                                            <span class="sm-status sm-upclasses" data-toggle="tooltip" data-placement="bottom" title="Upcoming">8</span>
-                                            <span class="sm-status sm-reschedule" data-toggle="tooltip" data-placement="bottom" title="Missed">2</span>
-                                            <span class="sm-status sm-cancel" data-toggle="tooltip" data-placement="bottom" title="Cancel">3</span>
-                                        </div>
                                     </div>
                                 </li>
 
                                 <li class="list-group-item justify-content-between ocr-list-group">
                                     <div class="ocr-float-left p-1">
-                                        <div class="sm-card-title" data-toggle="tooltip" data-placement="bottom" title="Literature (Aging in Literature)">
-                                            <a href="javascript:void(0);">Literature (Aging in Literature)</a>
+                                        <div class="list-color-legend col-leg-seablue" data-toggle="tooltip" data-placement="bottom" title="Reschedule"></div>
+                                        <div class="sm-card-title">
+                                            <a href="enroll-course-details.html" data-toggle="tooltip" data-placement="bottom" title="Literature (Aging in Literature)">
+                                                Literature <span class="topic-font">(Aging in Literature)</span>
+                                            </a>
                                         </div>
                                         <span class="sm-host-name">
                                             <i class="bx bxs-face"></i>Amy Drufesne
@@ -380,7 +406,7 @@
                                         <span class="sm-batch-name">
                                             <i class="bx bx-task"></i>Batch I
                                         </span>
-                                        <p class="card-text sm-cli-text">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
+                                        <p class="card-text sm-cli-text ellip-box two-lines">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
                                         <div class="sm-bottom-info">
                                             <span class="sm-date">
                                                 <i class="bx bx-calendar"></i>10-Aug-20
@@ -389,19 +415,16 @@
                                                 <i class="bx bx-time"></i>11:30:20 GMT+05:30
                                             </span>
                                         </div>
-                                        <div class="sm-bottom-status-info">
-                                            <span class="sm-status sm-attend" data-toggle="tooltip" data-placement="bottom" title="Accomplished">10</span>
-                                            <span class="sm-status sm-upclasses" data-toggle="tooltip" data-placement="bottom" title="Upcoming">12</span>
-                                            <span class="sm-status sm-reschedule" data-toggle="tooltip" data-placement="bottom" title="Missed">2</span>
-                                            <span class="sm-status sm-cancel" data-toggle="tooltip" data-placement="bottom" title="Cancel">5</span>
-                                        </div>
                                     </div>
                                 </li>
 
                                 <li class="list-group-item justify-content-between ocr-list-group">
                                     <div class="ocr-float-left p-1">
-                                        <div class="sm-card-title" data-toggle="tooltip" data-placement="bottom" title="Web Development (Development Tools/Environment)">
-                                            <a href="javascript:void(0);">Web Development (Development Tools/Environment)</a>
+                                        <div class="list-color-legend col-leg-grey" data-toggle="tooltip" data-placement="bottom" title="Cancel"></div>
+                                        <div class="sm-card-title">
+                                            <a href="enroll-course-details.html" data-toggle="tooltip" data-placement="bottom" title="Web Development (Development Tools/Environment)">
+                                                Web Development <span class="topic-font">(Development Tools/Environment)</span>
+                                            </a>
                                         </div>
                                         <span class="sm-host-name">
                                             <i class="bx bxs-face"></i>Amy Drufesne
@@ -409,7 +432,7 @@
                                         <span class="sm-batch-name">
                                             <i class="bx bx-task"></i>Batch I
                                         </span>
-                                        <p class="card-text sm-cli-text">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
+                                        <p class="card-text sm-cli-text ellip-box two-lines">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
                                         <div class="sm-bottom-info">
                                             <span class="sm-date">
                                                 <i class="bx bx-calendar"></i>05-Aug-20
@@ -418,15 +441,59 @@
                                                 <i class="bx bx-time"></i>11:30:20 GMT+05:30
                                             </span>
                                         </div>
-                                        <div class="sm-bottom-status-info">
-                                            <span class="sm-status sm-attend" data-toggle="tooltip" data-placement="bottom" title="Accomplished">20</span>
-                                            <span class="sm-status sm-upclasses" data-toggle="tooltip" data-placement="bottom" title="Upcoming">15</span>
-                                            <span class="sm-status sm-reschedule" data-toggle="tooltip" data-placement="bottom" title="Missed">5</span>
-                                            <span class="sm-status sm-cancel" data-toggle="tooltip" data-placement="bottom" title="Cancel">2</span>
-                                        </div>
                                     </div>
                                 </li>
 
+                                <li class="list-group-item justify-content-between ocr-list-group">
+                                    <div class="ocr-float-left p-1">
+                                        <div class="list-color-legend col-leg-green" data-toggle="tooltip" data-placement="bottom" title="Accomplished"></div>
+                                        <div class="sm-card-title">
+                                            <a href="enroll-course-details.html" data-toggle="tooltip" data-placement="bottom" title="Web Development (Development Tools/Environment)">
+                                                Web Development <span class="topic-font">(Development Tools/Environment)</span>
+                                            </a>
+                                        </div>
+                                        <span class="sm-host-name">
+                                            <i class="bx bxs-face"></i>Amy Drufesne
+                                        </span>
+                                        <span class="sm-batch-name">
+                                            <i class="bx bx-task"></i>Batch I
+                                        </span>
+                                        <p class="card-text sm-cli-text ellip-box two-lines">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
+                                        <div class="sm-bottom-info">
+                                            <span class="sm-date">
+                                                <i class="bx bx-calendar"></i>05-Aug-20
+                                            </span>
+                                            <span class="sm-time">
+                                                <i class="bx bx-time"></i>11:30:20 GMT+05:30
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item justify-content-between ocr-list-group">
+                                    <div class="ocr-float-left p-1">
+                                        <div class="list-color-legend col-leg-yellow" data-toggle="tooltip" data-placement="bottom" title="Upcoming"></div>
+                                        <div class="sm-card-title">
+                                            <a href="enroll-course-details.html" data-toggle="tooltip" data-placement="bottom" title="Web Development (Development Tools/Environment)">
+                                                Web Development <span class="topic-font">(Development Tools/Environment)</span>
+                                            </a>
+                                        </div>
+                                        <span class="sm-host-name">
+                                            <i class="bx bxs-face"></i>Amy Drufesne
+                                        </span>
+                                        <span class="sm-batch-name">
+                                            <i class="bx bx-task"></i>Batch I
+                                        </span>
+                                        <p class="card-text sm-cli-text ellip-box two-lines">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
+                                        <div class="sm-bottom-info">
+                                            <span class="sm-date">
+                                                <i class="bx bx-calendar"></i>05-Aug-20
+                                            </span>
+                                            <span class="sm-time">
+                                                <i class="bx bx-time"></i>11:30:20 GMT+05:30
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -469,6 +536,11 @@
     <script src="assets/calendar/js/moment.min.js"></script>
     <script src="assets/calendar/js/fullcalendar.min.js"></script>
     <script src="assets/calendar/js/class-wall-calendar.js"></script>
+    <!-- Text Ellipsis JS -->
+    <script src="assets/js/jquery.ellipsis.js"></script>
+    <script>
+        $('.two-lines').ellipsis({ lines: 2 });
+    </script>
 
 </body>
 </html>
