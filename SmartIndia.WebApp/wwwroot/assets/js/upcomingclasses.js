@@ -1,19 +1,21 @@
+
+//Attendee
 $(document).ready(function () {
-    $("#attendeeupcomingclassesCalendar").css("display", "none");
-});
-//List
-$('#upcomingList').click(function () {
-    $("#attendeeupcomingclasses").css("display", "block");
-    $("#attendeeupcomingclassesCalendar").css("display", "none");
-    $("#upcomingList").addClass("up-active");
-    $("#upcomingCalendar").removeClass("up-active");
+    $("#attendeeUPCalendar").css("display", "none");
 });
 
+//Attendee List
+$('#attendeeUpcomingList').click(function () {
+    $("#attendeeUPlList").css("display", "block");
+    $("#attendeeUPCalendar").css("display", "none");
+    $("#attendeeUpcomingList").addClass("up-active");
+    $("#attendeeUpcomingCalendar").removeClass("up-active");
+});
 
-//Calendar
-$('#upcomingCalendar').click(function () {
-    $("#attendeeupcomingclasses").css("display", "none");
-    $("#attendeeupcomingclassesCalendar").css("display", "block");
-    $("#upcomingList").removeClass("up-active");
-    $("#upcomingCalendar").addClass("up-active");
+//Attendee Calendar
+$('#attendeeUpcomingCalendar').click(function () {
+    $("#attendeeUPlList").css("display", "none");
+    $("#attendeeUPCalendar").css("display", "block");
+    $("#attendeeUpcomingList").removeClass("up-active");
+    $("#attendeeUpcomingCalendar").addClass("up-active");
 });

@@ -1,0 +1,86 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "UpcomingClassDetail";
+    Layout = "~/Views/Shared/_FrontPannelLayout.cshtml";
+    var photoPath = Model.ImageUrl;
+}
+@section Scripts{
+    <script>
+        var sid =@ViewBag.id
+            $("#hfScId").val(sid);
+            //alert("Hi"+sid);
+    </script>
+    <script src="~/ApplicationScripts/Host/upcoming-class-detail.js"></script>
+    <script src="~/ApplicationScripts/Common/date-format-converter.js"></script>
+}
+<!-- Breadcrumb Area -->
+<div class="breadcrumb-area">
+    <h1>Course Details</h1>
+    <ol class="breadcrumb">
+        <li class="item">
+            <a href="attendee-dashboard.html"><i class='bx bx-home-alt'></i></a>
+        </li>
+        <li class="item">Dashboard</li>
+        <li class="item">Upcoming Courses</li>
+        <li class="item">Course Details</li>
+    </ol>
+</div>
+<!-- End Breadcrumb Area -->
+<div class="card mb-30">
+    <div class="card-body">
+
+        <div class="enroll-card">
+            <div class="back-to-list">
+
+                <a asp-area="Hosts" asp-controller="upcomingclasses" asp-action="upcomingclasses"><i class="bx bx-arrow-back"></i>Back To List</a>
+              
+            </div>
+            <div class="calendar-header">
+                <input type="hidden"  name="hfScId" id="hfScId">
+                <span class="section-title" id="coursename"></span><span class="topic-font" id="topic"></span>
+                <div class="enroll-course-banner en-co-brochure" data-toggle="modal" data-target="#GetCourseBrochureModal">Brochure<i class="bx bxs-file-image bx-pad"></i></div>
+            </div>
+            <hr />
+            <div class="mb-20">
+                <span class="sm-host-name">
+                    <i class="bx bxs-face"></i><span id="hostname"></span>
+                </span>
+                <span class="sm-batch-name">
+                    <i class="bx bx-task"></i><span id="Batchname"></span>
+                </span>
+            </div>
+            <div class="mb-20">
+                <span class="sm-date">
+                    <i class="bx bx-calendar"></i><span id="startdate"></span>
+                </span>
+                <span class="sm-time">
+                    <i class="bx bx-time"></i><span id="starttime"></span>
+                </span>
+            </div>
+            <div class="course-thumbnail float-right">
+                <img src="~/assets/img/2.jpg" alt="OCR" />
+            </div>
+            <div class="text margin-y">
+                <p id="desc"></p>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Start Course Brochure Modal -->
+<div class="modal fade" id="GetCourseBrochureModal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content p-20">
+            <div class="modal-body">
+                <button type="button" class="close enroll-close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <a href="~/assets/img/course-pop-up-img.jpg" class="bx bx-download sm-download" download>
+                    <img src="~/assets/img/course-pop-up-img.jpg" class="banner-img" alt="OCR" />
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End  Course Brochure Modal -->

@@ -1271,6 +1271,35 @@
         .custom-file:active::before {
             background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
         }
+
+.button-wrap {
+    position: relative;
+    z-index: 0;
+}
+
+.upload-button {
+    display: inline-block;
+    padding: 5px 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    background: #17a2b8;
+    font-size: 15px;
+    color: #fff;
+}
+
+    .upload-button:hover {
+        background: #0c97ad;
+    }
+
+.custom-file-upload {
+    position: absolute;
+    z-index: -1;
+    top: 2px;
+    left: 0;
+    font-size: 15px;
+    color: rgb(153,153,153);
+}
+
 /*--------------End Custom File-------------------*/
 /*--------------Start Access Denied File-------------------*/
 .gate {
@@ -1389,9 +1418,10 @@
 }
 
 .section-title {
-    font-size: 30px;
+    font-size: 25px;
     line-height: 1.4;
     font-weight: 600;
+    padding-right: 5px;
 }
 
 .enroll-card > hr {
@@ -1410,7 +1440,7 @@
     -webkit-transition: 0.5s;
     transition: 0.5s;
     border-radius: 30px;
-    padding: 10px 30px;
+    padding: 8px 15px;
     font-size: 15px;
     font-weight: 700;
     cursor: pointer;
@@ -1428,7 +1458,7 @@
     -webkit-transition: 0.5s;
     transition: 0.5s;
     border-radius: 30px;
-    padding: 10px 30px;
+    padding: 8px 15px;
     font-size: 15px;
     font-weight: 700;
     cursor: pointer;
@@ -1436,7 +1466,7 @@
 
 .enroll-course-banner {
     position: absolute;
-    right: 15%;
+    right: 13%;
     top: 3%;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -1446,7 +1476,7 @@
     -webkit-transition: 0.5s;
     transition: 0.5s;
     border-radius: 30px;
-    padding: 10px 30px;
+    padding: 8px 15px;
     font-size: 15px;
     font-weight: 700;
     cursor: pointer;
@@ -1455,6 +1485,10 @@
     .enroll-new-course:hover, .enroll-course-banner:hover {
         color: #fff;
     }
+
+.en-co-brochure {
+    right: 2%;
+}
 
 .enroll-close {
     color: #000;
@@ -1469,7 +1503,7 @@
     position: absolute;
     font-size: 30px;
     color: #ffc107;
-    right: 30%;
+    right: 25%;
     top: 1.5%;
     cursor: pointer;
 }
@@ -1478,8 +1512,17 @@
     position: absolute;
     font-size: 30px;
     color: #000;
-    right: 34%;
+    right: 29%;
     top: 1.7%;
+    cursor: pointer;
+}
+
+.contact-host {
+    position: absolute;
+    font-size: 30px;
+    color: #000;
+    right: 34%;
+    top: 1.8%;
     cursor: pointer;
 }
 /*---------------------------- Tabs ---------------------------------*/
@@ -1830,7 +1873,7 @@
     margin-top: 20px;
 }
 
-aside.edgt-sidebar .widget {
+.edgt-sidebar .widget {
     color: #888;
 }
 
@@ -1842,6 +1885,9 @@ aside.edgt-sidebar .widget {
     border-left: 1px solid #ebebeb;
     padding-left: 29px;
 }
+    .edgt-sidebar-right .widget {
+        color: #888;
+    }
 
 .widget {
     margin: 0 0 50px;
@@ -2128,7 +2174,40 @@ aside.edgt-sidebar .widget {
     right: 2%;
     top: 2%;
 }
-
+.edgt-course-features-holder .edgt-course-features {
+    list-style: none;
+}
+.widget ul li {
+    display: block;
+    line-height: 20px;
+    margin: 0;
+    padding: 18px 0;
+}
+.widget.edgt-course-features-widget .edgt-course-features li {
+    border-bottom: 1px solid #ebebeb;
+    padding: 13px 0 12px;
+}
+    .widget.edgt-course-features-widget .edgt-course-features li .edgt-item-icon {
+        color: #2d76b2;
+        font-size: 18px;
+        margin-right: 15px;
+    }
+.edgt-course-features-holder .edgt-course-features li .edgt-item-icon {
+    color: #2d76b2;
+    font-size: 18px;
+    margin: 0 16px 0 7px;
+    position: relative;
+    top: 5px;
+}
+.widget.edgt-course-features-widget .edgt-course-features li .edgt-item-label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #434343;
+}
+.widget.edgt-course-features-widget .edgt-course-features li .edgt-item-value {
+    float: right;
+    font-size: 14px;
+}
 /*----------------------------- //Course -----------------------------------*/
 /*--------------------- Search --------------------------------------*/
 .ocr-search-container {
@@ -2446,6 +2525,10 @@ aside.edgt-sidebar .widget {
 
 .ocr-float-left {
     float: left;
+}
+
+.ocr-float-right {
+    float: right;
 }
 
 .mr-20 {
@@ -2928,34 +3011,129 @@ aside.edgt-sidebar .widget {
     .resend i {
         margin-right: 2px;
     }
+
 .font-12 {
     font-size: 12px;
 }
-.font-14
-{
+
+.font-14 {
     font-size: 14px;
 }
+
 .pl-100 {
     padding-left: 100px !important;
 }
-.d-gender input{
+
+.d-gender input {
     margin-right: 3px;
 }
-.d-gender span{
+
+.d-gender span {
     font-size: 15px;
     font-weight: 600;
     padding-right: 5px;
 }
+
 #hostDashlList {
     height: 971px;
     overflow: auto;
 }
+
 .con-dashboard-section {
     font-size: 25px;
     color: #000;
     cursor: pointer;
 }
 
+.time-zone {
+    position: absolute;
+    right: 2%;
+    bottom: -18%;
+    color: #28a745;
+    font-weight: 700;
+}
+
+.form-radio-section {
+    position: absolute;
+    right: 7%;
+    top: 0%;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+    .form-radio-section input {
+        margin-right: 3px;
+    }
+
+    .form-radio-section span {
+        padding-right: 5px;
+    }
+
+.topic-font {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.course-thumbnail {
+    position: relative;
+    margin-top: -60px;
+    margin-left: 10px;
+}
+
+    .course-thumbnail img {
+        width: 500px;
+        height: 400px;
+    }
+
+.co-show-interest {
+    position: absolute;
+    font-size: 25px;
+    color: #000;
+    right: 17%;
+    top: 6%;
+    cursor: pointer;
+}
+
+.co-add-to-favorite {
+    position: absolute;
+    font-size: 25px;
+    color: #ffc107;
+    right: 5%;
+    top: 5.9%;
+    cursor: pointer;
+}
+
+.co-enroll {
+    position: absolute;
+    right: 3%;
+    bottom: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    border: none;
+    background-color: #e1000a;
+    color: #ffffff;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    border-radius: 5px;
+    padding: 4px 9px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+    .co-enroll:hover, .co-enroll:focus {
+        background-color: #e8232c;
+        color: #ffffff;
+    }
 /*------------------- Responsive ------------------------------------*/
 @media(min-width: 320px) and (max-width: 767px) {
     .social-login-btn {

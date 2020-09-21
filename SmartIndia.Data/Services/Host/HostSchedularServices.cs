@@ -34,7 +34,7 @@ namespace SmartIndia.Data.Services.Host
                     ,"@ClassRoomPwd", "PWD"
                     ,"@UpdatedById", item.UpdatedById
                     ,"@Duration",item.Duration
-                    ,"@BatchName",item.BatchName
+                    ,"@BatchName",item.BatchName.Replace(" ","")
                     ,"@IsPublished",(int)RecordPublished.UnPublished
                 };
                     DynamicParameters param = objArray.ToDynamicParameters("@PVCH_MSGOUT");
@@ -63,7 +63,7 @@ namespace SmartIndia.Data.Services.Host
                         ,"@ClassRoomPwd", "PWD"
                         ,"@UpdatedById", hostSchedular.UpdatedById
                         ,"@Duration",hostSchedular.Duration
-                        ,"@BatchName",hostSchedular.BatchName
+                        ,"@BatchName",hostSchedular.BatchName.Replace(" ","")
                         ,"@IsPublished",(int)RecordPublished.UnPublished
             };
             try
@@ -260,6 +260,33 @@ namespace SmartIndia.Data.Services.Host
                 // log.Error(ex);
             }
             return retMsg;
+        }
+        public bool  CkeckBatchName(CheckBatch checkBatch)
+        {
+            object[] objArray = new object[] {
+                     "@P_ACTIONCODE","E",
+                     "@CourseId",checkBatch.CourseId,
+                     "@BatchName",checkBatch.BatchName
+            };
+            try
+            {
+                DynamicParameters param = objArray.ToDynamicParameters("@PVCH_MSGOUT");
+                var result = DBConnection.Execute("USP_HostSchedular_ACTION", param, commandType: CommandType.StoredProcedure);
+                retMsg = param.Get<string>("PVCH_MSGOUT");
+                if (retMsg=="3")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
     }

@@ -297,14 +297,29 @@
                         <textarea class="form-control"></textarea>
                     </div>
                     <div class="row form-group">
-                        <div class="col-md-8 res-mb-16">
+                        <div class="col-md-5 res-mb-16">
                             <label>Topics</label>
                             <input type="text" class="form-control">
                         </div>
+                        <div class="col-md-3 res-mb-16">
+                            <label>Course Thumbnail</label>
+                            <div class="button-wrap">
+                                <label class="upload-button" for="fileupload">
+                                    Choose File
+                                    <input id="fileupload" type="file" class="custom-file-upload">
+                                </label>
+                            </div>
+                            <span class="re-note">(only .jpg,.png allowed, maximum file size 100KB.)</span>
+                        </div>
                         <div class="col-md-4 res-mb-16">
                             <label>Brochure</label>
-                            <input type="file" class="custom-file">
-                            <span class="re-note">(only .jpg,.png,.pdf allowed, maximum file size 1MB.)</span>
+                            <div class="button-wrap">
+                                <label class="upload-button" for="brochurefileupload">
+                                    Choose File
+                                    <input id="brochurefileupload" type="file" class="custom-file-upload">
+                                </label>
+                            </div>
+                            <span class="re-note">(only .jpg,.png,.pdf allowed, maximum file size 2MB.)</span>
                         </div>
                     </div>
                     <div class="row form-group">
@@ -501,6 +516,10 @@
                                 <tr>
                                     <th>Topics</th>
                                     <td>PhysicsI,PhysicsII,PhysicsIII</td>
+                                </tr>
+                                <tr>
+                                    <th>Course Thumbnail</th>
+                                    <td><img src="assets/img/course-pop-up-img.jpg" class="banner-img" /></td>
                                 </tr>
                                 <tr>
                                     <th>Start Date</th>

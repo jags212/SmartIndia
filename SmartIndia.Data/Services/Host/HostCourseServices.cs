@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using SmartIndia.Data.Entities;
 using SmartIndia.Data.Entities.Host;
 using SmartIndia.Data.Factory;
 using SmartIndia.Data.Models;
@@ -13,11 +14,12 @@ namespace SmartIndia.Data.Services.Host
     public class HostCourseServices : RepositoryBase
     {
         string retMsg = string.Empty;
+        HostCourseReturnParam retParam = new HostCourseReturnParam();
         public HostCourseServices(IConnectionFactory connectionFactory) : base(connectionFactory)
         {
 
         }
-        public string HostCourseAction(HostCourses hostCourses)
+        public HostCourseReturnParam HostCourseAction(HostCourses hostCourses)
         {
 
             object[] objArray = new object[] {
@@ -33,6 +35,8 @@ namespace SmartIndia.Data.Services.Host
                     ,"@Cost",hostCourses.Cost
                     ,"@UpdatedById", hostCourses.UserId
                     ,"@CurrencyId",1
+                    ,"@ImageExt",hostCourses.ImageExt
+                    ,"@BrochureExt",hostCourses.BrochureExt
         };
             try
             {
@@ -40,16 +44,28 @@ namespace SmartIndia.Data.Services.Host
                 param.Add("@StartDate", hostCourses.StartDate.ToUniversalTime(), DbType.DateTime, ParameterDirection.Input);
                 param.Add("@EndDate", hostCourses.EndDate.ToUniversalTime(), DbType.DateTime, ParameterDirection.Input);
                 var result = DBConnection.Execute("USP_HostCourses_ACTION", param, commandType: CommandType.StoredProcedure);
-                retMsg = param.Get<string>("PVCH_MSGOUT");
+                string retSP = param.Get<string>("PVCH_MSGOUT");
 
+                if (retSP.Contains(","))
+                {
+                    string[] arr = retSP.Split(',');
+                    retParam = new HostCourseReturnParam
+                    {
+                        retOut = arr[0],
+                        ImgName = arr[1],
+                        BroName = arr[2]
+
+                    };
+                }
+               
             }
             catch (Exception ex)
             {
                 // throw new Exception(ex.Message);
-                retMsg = "";
+                retParam = null;
                 // log.Error(ex);
             }
-            return retMsg;
+            return retParam;
         }
 
         [Obsolete]
@@ -78,7 +94,8 @@ namespace SmartIndia.Data.Services.Host
                         Duration = item.Duration,
                         ClassFrequency = item.ClassFrequency,
                         NoOfClass = item.NoOfClass,
-                        Cost = item.Cost
+                        Cost = item.Cost,
+                        Topic=item.Topic
                     };
                     HostCourses.Add(modal);
                 }
