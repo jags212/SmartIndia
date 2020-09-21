@@ -47,11 +47,20 @@ namespace SmartIndia.WebApp.Areas.ManageUsers.Controllers
             HttpContext.SignInAsync(userPrincipal);
             return Json(1);
         }
+        [HttpPost]
+        public JsonResult RomoveAuth()
+        {
+            foreach (var cookieKey in Request.Cookies.Keys)
+            {
+                Response.Cookies.Delete(cookieKey);
+            }
+            return Json(1);
+        }
         public IActionResult Thankyou()
         {
             return View();
         }
-        public IActionResult EmailVerification()
+        public IActionResult OTPVerification()
         {
             return View();
         }
@@ -71,6 +80,14 @@ namespace SmartIndia.WebApp.Areas.ManageUsers.Controllers
         public IActionResult UserVerification([FromQuery]string Id)
         {
             ViewBag.ACode = Id;
+            return View();
+        }
+        public IActionResult EmailConfirmation()
+        {
+            foreach (var cookieKey in Request.Cookies.Keys)
+            {
+                Response.Cookies.Delete(cookieKey);
+            }
             return View();
         }
     }
