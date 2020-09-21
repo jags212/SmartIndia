@@ -32,5 +32,15 @@ namespace SmartIndia.RestAPI.Controllers
 
             }
         }
+        [HttpGet("HostUpcommingClassDetail")]
+        [Obsolete]
+        public async Task<List<UpcomingClassDetails>> BindUpcommingClassDetail([FromQuery] HostParameterCourseDetail obj)
+        {
+            using (var hostUpcommingClassesServices = new HostUpcommingClassesServices(connectionFactory))
+            {
+                return await Task.FromResult(hostUpcommingClassesServices.BindUpcommingClassDetail(obj));
+
+            }
+        }
     }
 }

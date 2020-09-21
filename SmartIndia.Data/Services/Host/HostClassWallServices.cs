@@ -10,14 +10,14 @@ using System.Text;
 
 namespace SmartIndia.Data.Services.Host
 {
-   public class HostUpcommingClassesServices :RepositoryBase
+    public class HostClassWallServices : RepositoryBase
     {
-        public HostUpcommingClassesServices(IConnectionFactory connectionFactory) : base(connectionFactory)
+        public HostClassWallServices(IConnectionFactory connectionFactory) : base(connectionFactory)
         {
 
         }
         [Obsolete]
-        public List<UpcomingClassCalender> BindUpcommingClasses(HostParameter hostParameter)
+        public List<ClassWallCalender> BindClassWallCallendar(HostParameter hostParameter)
         {
             object[] objArray = new object[] {
                      "@P_ACTIONCODE",hostParameter.ACTIONCODE,
@@ -26,57 +26,14 @@ namespace SmartIndia.Data.Services.Host
             try
             {
                 DynamicParameters param = objArray.ToDynamicParameters();
-                var result = DBConnection.Query<GetHostUpcomingClassesDetails>("USP_GetHostSchedular_ACTION", param, commandType: CommandType.StoredProcedure).ToList();
-                List<UpcomingClassCalender> pcomingClassCalender = new List<UpcomingClassCalender>();
+                var result = DBConnection.Query<ClassWallsCalender>("USP_GetHostSchedular_ACTION", param, commandType: CommandType.StoredProcedure).ToList();
+                List<ClassWallCalender> classwallCalender = new List<ClassWallCalender>();
                 foreach (var item in result)
                 {
-                    var modal = new UpcomingClassCalender()
+                    var modal = new ClassWallCalender()
                     {
                         title = item.CourseName,
                         ScheduleDate = TimeZone.CurrentTimeZone.ToLocalTime(item.ScheduleDate).ToString("yyyy-MM-dd"),
-                        start = TimeZone.CurrentTimeZone.ToLocalTime(item.ScheduleDate).ToString("yyyy-MM-dd") +"T"+ item.StartTime+":00",
-                        end = "",
-                        StartTime = item.StartTime,
-                        EndTime = item.EndTime,
-                        Uname = item.Uname,
-                        BatchName = item.BatchName,
-                        CourseDesc = item.CourseDesc,
-                        Topics = item.Topics,
-                        CourseId=item.CourseId,
-                        SchedularId = item.SchedularId,
-                        color = "#ffc107",
-                        url = hostParameter.Curl + "/Hosts/UpcomingClasses/upcomingclassdetail?SID=" + item.SchedularId + ""
-
-                    };
-                    pcomingClassCalender.Add(modal);
-                }
-                return pcomingClassCalender;
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-        }
-
-        [Obsolete]
-        public List<UpcomingClassDetails> BindUpcommingClassDetail(HostParameterCourseDetail hostParameterCourseDetail)
-        {
-            object[] objArray = new object[] {
-                     "@P_ACTIONCODE",hostParameterCourseDetail.ACTIONCODE,
-                     "@UserId",hostParameterCourseDetail.UserId,
-                     "@SchedularId",hostParameterCourseDetail.SchedularId
-            };
-            try
-            {
-                DynamicParameters param = objArray.ToDynamicParameters();
-                var result = DBConnection.Query<UpcomingClassesDetails>("USP_GetHostSchedular_ACTION", param, commandType: CommandType.StoredProcedure).ToList();
-                List<UpcomingClassDetails> upcomingClassDetails = new List<UpcomingClassDetails>();
-                foreach (var item in result)
-                {
-                    var modal = new UpcomingClassDetails()
-                    {
-                        CourseName = item.CourseName,
-                        ScheduleDate =TimeZone.CurrentTimeZone.ToLocalTime(item.ScheduleDate).ToString("yyyy-MM-dd"),
                         start = TimeZone.CurrentTimeZone.ToLocalTime(item.ScheduleDate).ToString("yyyy-MM-dd") + "T" + item.StartTime + ":00",
                         end = "",
                         StartTime = item.StartTime,
@@ -86,12 +43,58 @@ namespace SmartIndia.Data.Services.Host
                         CourseDesc = item.CourseDesc,
                         Topics = item.Topics,
                         CourseId = item.CourseId,
-                        SchedularId = item.SchedularId
+                        SchedularId = item.SchedularId,
+                        color = "#ffc107",
+                        url= hostParameter.Curl + "/Hosts/ClassWall/ClassWallDetail?SID="+ item.SchedularId + ""
+
 
                     };
-                    upcomingClassDetails.Add(modal);
+                    classwallCalender.Add(modal);
                 }
-                return upcomingClassDetails;
+                return classwallCalender;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        [Obsolete]
+        public List<ClassWallClassDetails> BindClassWallDetail(HostParameterCourseDetail hostParameterCourseDetail)
+        {
+            object[] objArray = new object[] {
+                     "@P_ACTIONCODE","C",
+                     "@UserId",hostParameterCourseDetail.UserId,
+                     "@SchedularId",hostParameterCourseDetail.SchedularId
+            };
+            try
+            {
+                DynamicParameters param = objArray.ToDynamicParameters();
+                var result = DBConnection.Query<ClassWallsClassDetails>("USP_GetHostSchedular_ACTION", param, commandType: CommandType.StoredProcedure).ToList();
+                List<ClassWallClassDetails> classWallDetails = new List<ClassWallClassDetails>();
+                foreach (var item in result)
+                {
+                    var modal = new ClassWallClassDetails()
+                    {
+                        title = item.CourseName,
+                        CourseName = item.CourseName,
+                        ScheduleDate = TimeZone.CurrentTimeZone.ToLocalTime(item.ScheduleDate).ToString("yyyy-MM-dd"),
+                        start = TimeZone.CurrentTimeZone.ToLocalTime(item.ScheduleDate).ToString("yyyy-MM-dd") + "T" + item.StartTime + ":00",
+                        end = "",
+                        StartTime = item.StartTime,
+                        EndTime = item.EndTime,
+                        Uname = item.Uname,
+                        BatchName = item.BatchName,
+                        CourseDesc = item.CourseDesc,
+                        Topics = item.Topics,
+                        CourseId = item.CourseId,
+                        SchedularId = item.SchedularId,
+                        IsPublished = item.IsPublished
+
+                    };
+                    classWallDetails.Add(modal);
+                }
+                return classWallDetails;
             }
             catch (Exception ex)
             {
@@ -100,3 +103,4 @@ namespace SmartIndia.Data.Services.Host
         }
     }
 }
+

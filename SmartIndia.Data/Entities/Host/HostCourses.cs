@@ -27,6 +27,8 @@ namespace SmartIndia.Data.Entities.Host
         public DateTime UpdatedOn { get; set; }
         public bool Status { get; set; }
         public int CurrencyId { get; set; }
+        public string ImageExt { get; set; }
+        public string BrochureExt { get; set; }
 
 
     }

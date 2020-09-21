@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace SmartIndia.Data.Entities.Host
 {
-    public class GetHostUpcomingClassesDetails
+    public class ClassWallsCalender
     {
         public string CourseName { get; set; }
         public DateTime ScheduleDate { get; set; }
@@ -22,7 +21,7 @@ namespace SmartIndia.Data.Entities.Host
         public string SchedularId { get; set; }
 
     }
-    public class UpcomingClassesDetails
+    public class ClassWallsClassDetails
     {
         public string CourseName { get; set; }
         public DateTime ScheduleDate { get; set; }
@@ -37,11 +36,13 @@ namespace SmartIndia.Data.Entities.Host
         public string Topics { get; set; }
         public string CourseId { get; set; }
         public string SchedularId { get; set; }
+        public string IsPublished { get; set; }
 
     }
-    public class UpcomingClassCalender
-    { 
+    public class ClassWallCalender
+    {
         public string title { get; set; }
+        public string CourseName { get; set; }
         public string start { get; set; }
         public string ScheduleDate { get; set; }
         public string end { get; set; }
@@ -54,11 +55,13 @@ namespace SmartIndia.Data.Entities.Host
         public string CourseId { get; set; }
         public string SchedularId { get; set; }
         public string color { get; set; }
+        public string IsPublished { get; set; }
         public string url { get; set; }
     }
-    public class UpcomingClassDetails
+    public class ClassWallClassDetails
     {
         public string CourseName { get; set; }
+        public string title { get; set; }
         public string start { get; set; }
         public string ScheduleDate { get; set; }
         public string end { get; set; }
@@ -70,5 +73,6 @@ namespace SmartIndia.Data.Entities.Host
         public string Topics { get; set; }
         public string CourseId { get; set; }
         public string SchedularId { get; set; }
+        public string IsPublished { get; set; }
     }
 }

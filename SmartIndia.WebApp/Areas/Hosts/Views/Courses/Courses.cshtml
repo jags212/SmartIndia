@@ -7,8 +7,7 @@
 
 <!-- Datepicker CSS -->
 <link rel="stylesheet" href="~/assets/css/gijgo.min.css" />
-<!-- Bootstrap Datatable CSS -->
-<link rel="stylesheet" href="~/assets/css/datatables.min.css" />
+
 @section Scripts{
 
     <!-- Datepicker JS -->
@@ -53,9 +52,38 @@
     <!--hostcourse js -->
     <script src="~/ApplicationScripts/Host/hostcourses.js"></script>
     <script src="~/ApplicationScripts/Host/host-course-validate.js"></script>
-    <!-- Bootstrap Datatable JS -->
-    <script src="~/assets/js/datatables.min.js" type="text/javascript"></script> 
-    
+ 
+
+    <script>
+        $(document).ready(function () {
+
+            $('#btnUploadFile').on('click', function () {
+
+                var data = new FormData();
+
+                var files = $("#fileUpload").get(0).files;
+
+                // Add the uploaded image content to the form data collection
+                if (files.length > 0) {
+                    data.append("UploadedImage", files[0]);
+                }
+
+                // Make Ajax request with the contentType = false, and procesDate = false
+                var ajaxRequest = $.ajax({
+                    type: "POST",
+                    url: "/api/fileupload/uploadfile",
+                    contentType: false,
+                    processData: false,
+                    data: data
+                });
+
+                ajaxRequest.done(function (xhr, textStatus) {
+                    // Do other operation
+                });
+            });
+        });
+    </script>
+
 
 }
 <title>OCR - Add Course</title>
@@ -85,10 +113,35 @@
                 <label>Description</label>
                 <textarea class="form-control" maxlength="512" name="desc" id="txtDesc"></textarea>
             </div>
-            <div class="form-group">
-                <label>Topics</label>
-                <input type="text" maxlength="512" class="form-control" name="topics" id="txtTopics">
+
+            <div class="row form-group">
+                <div class="col-md-5 res-mb-16">
+                    <label>Topics</label>
+                    <input type="text" maxlength="512" class="form-control" name="topics" id="txtTopics">
+                </div>
+                <div class="col-md-3 res-mb-16">
+                    <label>Image</label>
+                    <div class="button-wrap">
+                        <label class="upload-button" for="fileuploadImg">
+                            Choose File
+                            <input id="fileuploadImg" type="file" class="custom-file-upload">
+                        </label>
+                    </div>
+                    <span class="re-note">(only .jpg,.png allowed, maximum file size 1MB.)</span>
+                </div>
+                <div class="col-md-4 res-mb-16">
+                    <label>Brochure</label>
+                    <div class="button-wrap">
+                        <label class="upload-button" for="fileuploadbrochure">
+                            Choose File
+                            <input id="fileuploadbrochure" type="file" class="custom-file-upload">
+                        </label>
+                    </div>
+                    <span class="re-note">(only .jpg,.png,.pdf allowed, maximum file size 1MB.)</span>
+                </div>
             </div>
+
+
             <div class="row form-group">
                 <div class="col-md-4 res-mb-16">
                     <label>Start Date</label>
@@ -181,6 +234,12 @@
                                 <td id="topic"></td>
                             </tr>
                             <tr>
+                                <th>Image</th>
+                                @*<td><img src="~/assets/img/course-pop-up-img.jpg" class="banner-img" /></td>*@
+                                <td><img src="~/SmartIndia.RestAPI/Resources/Images/87F3D8CF-005C-43E1-A07E-39A954DC5736.jpg" class="banner-img" /></td>
+                             
+                            </tr>
+                            <tr>
                                 <th>Start Date</th>
                                 <td id="sdt"></td>
                             </tr>
@@ -211,4 +270,20 @@
         </div>
     </div>
 </div>
-  
+
+<!-- Start Course Banner Modal -->
+<div class="modal fade basicModalLG plan-modal" id="getCourseBrochureModal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content p-20">
+            <div class="modal-body">
+                <button type="button" class="close enroll-close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <a href="~/assets/img/course-pop-up-img.jpg" class="bx bx-download sm-download" download>
+                    <img src="~/assets/img/course-pop-up-img.jpg" class="banner-img" />
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Course Banner Modal -->

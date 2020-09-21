@@ -6,11 +6,17 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace SmartIndia.WebApp.Areas.Hosts.Controllers
 {
+    [Area("Hosts")]
     public class ClassWallController : Controller
     {
-        [Area("Hosts")]
+       
         public IActionResult ClassWall()
         {
+            return View();
+        }
+        public IActionResult ClassWallDetail(string SID)
+        {
+            ViewBag.id = SID;
             return View();
         }
     }

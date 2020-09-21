@@ -324,12 +324,12 @@ function getSchedulardetails(CID, sdate, edate, stime, etime, isPub) {
                 var thead;
                 if (isPub == "0") {
                     $("#btnPublish").show();
-                    thead = '<tr class="thead-dark"><th scope="col">SLNo#</th><th scope="col">Schedule Date</th><th scope="col">Start Time</th><th scope="col">End Time</th><th scope="col">Duration (Mins)</th><th scope="col" class="table-rsaction-width">Action</th></tr>';
+                    thead = '<tr class="thead-dark"><th scope="col">Sl#</th><th scope="col">Schedule Date</th><th scope="col">Start Time</th><th scope="col">End Time</th><th scope="col">Duration (Mins)</th><th scope="col" class="table-rsaction-width">Action</th></tr>';
                 }
                 else {
 
                     $("#btnPublish").hide();
-                    thead = '<tr class="thead-dark"><th scope="col">SL#</th><th scope="col">Schedule Date</th><th scope="col">Start Time</th><th scope="col">End Time</th><th scope="col">Duration (Mins)</th></tr>';
+                    thead = '<tr class="thead-dark"><th scope="col">Sl#</th><th scope="col">Schedule Date</th><th scope="col">Start Time</th><th scope="col">End Time</th><th scope="col">Duration (Mins)</th></tr>';
 
                 }
 
