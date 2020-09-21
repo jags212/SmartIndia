@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewData["Title"] = "OTPVerification";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+@section Scripts{
+
+    <!-- Custom Bootstrap Valiation JS -->
+    <script src="~/ApplicationScripts/Common/custom-validate.js"></script>
+    <script src="~/ApplicationScripts/UserRegistration/forgot-verification.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".learn-main-content").addClass("bg-image");
+            $(".ocr-search-container").hide();
+        });
+    </script>
+}
+<div class="forgot-password-area recover-password-area">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="forgot-password-content">
+                <div class="row m-0">
+                    <div class="col-lg-12 p-0">
+                        <div class="forgot-password-form">
+                            <h2>Validate OTP</h2>
+                            <p class="mb-0">Use 4-digit OTP from registered mobile</p>
+                            <form name="verification" id="MyForm" defaultbutton='btnVerify'>
+                                <div class="form-group">
+                                    <input type="text" id="txtEmailOTP" autocomplete="off" class="form-control" maxlength="4" name="code" placeholder="4-digit OTP" oninput="this.value = this.value.replace(/[^0-9-()+ ]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');">
+                                    <span class="label-title">
+                                        <i class='bx bx-label'></i>
+                                    </span>
+                                </div>
+                                <div class="resend font-12" id="divOTP">
+                                    <i class="bx bx-repeat"></i>
+                                    <a id="resendEmail" class="resend-otp" onclick="CallEmailOTP();">
+                                        Resend OTP
+                                    </a>
+                                </div>
+                                <div class="resend font-14" id="divSuccess" style="display:none"><i class="bx bx-check"></i>Verification code was resent successfully.</div>
+                                <input type="button" id="btnVerify" class="forgot-password-btn" value="Verify" />
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

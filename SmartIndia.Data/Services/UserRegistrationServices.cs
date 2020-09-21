@@ -292,5 +292,32 @@ namespace SmartIndia.Data.Services
                 // log.Error(ex);
             }
         }
+        public bool UserActive(string acode)
+        {
+            try
+            {
+                object[] objArrayUser = new object[] {
+                     "@P_ACTIONCODE", "AC"
+                    ,"@UID", acode
+                };
+                DynamicParameters paramUser = objArrayUser.ToDynamicParameters("@PVCH_MSGOUT");
+                var result = DBConnection.Execute("USP_UserRegistrations_ACTION", paramUser, commandType: CommandType.StoredProcedure);
+                string retMsg = paramUser.Get<string>("PVCH_MSGOUT");
+                if (retMsg == "200")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                // throw new Exception(ex.Message);
+                return false;
+                // log.Error(ex);
+            }
+        }
     }
 }
