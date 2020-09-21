@@ -21,8 +21,10 @@
     <link rel="stylesheet" href="assets/css/responsive.css" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/custom.css" />
-    <!-- Scrolling Top JS -->
+    <!-- Scrolling Top CSS -->
     <link rel="stylesheet" href="assets/css/scroll-top.css" />
+    <!-- Datepicker CSS -->
+    <link rel="stylesheet" href="assets/css/gijgo.min.css" />
 
 </head>
 
@@ -75,7 +77,7 @@
                                         <a class="nav-link" href="javascript:void(0);">About</a>
                                     </li>
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="javascript:void(0);">Courses</a>
+                                        <a class="nav-link" href="courses-list.html">Courses</a>
                                         <span class="sr-only">(current)</span>
                                     </li>
                                     <li class="nav-item">
@@ -93,6 +95,7 @@
                     </div>
                     <a class="btn btn-red" href="login.html">Sign In</a>
                 </div>
+                <div class="clearfix"></div>
             </div>
         </div>
         <!--End Header Area-->
@@ -103,11 +106,11 @@
                     <div class="edgt-content">
                         <div class="edgt-content-inner">
                             <div class="edgt-title-holder edgt-standard-with-breadcrumbs-type edgt-has-bg-image edgt-bg-parallax"
-                                 style="height: 262px;background-image: url(&quot;assets/img/course-tittle-area.jpg&quot;);background-position: center 0px;" data-height="262">
+                                 style="height: 230px;background-image: url(&quot;assets/img/course-tittle-area.jpg&quot;);background-position: center 0px;" data-height="230">
                                 <div class="edgt-title-image">
                                     <img itemprop="image" src="assets/img/course-tittle-area.jpg" alt="ocr" />
                                 </div>
-                                <div class="edgt-title-wrapper" style="height: 262px">
+                                <div class="edgt-title-wrapper" style="height: 230px">
                                     <div class="edgt-title-inner">
                                         <div class="edgt-grid">
                                             <div class="edgt-title-inner-holder">
@@ -144,15 +147,16 @@
                                                 <div class="card-body">
                                                     <div class="edgt-cli-top-info">
                                                         <h5 class="card-title font-weight-bold">
-                                                            <a itemprop="url" href="javascript:void(0);" target="_self">
+                                                            <a itemprop="url" href="course-details.html" target="_self">
                                                                 Development
                                                             </a>
                                                         </h5>
-                                                        <!--<div class="edgt-ci-price-holder clearfix">
-                                                            <span class="edgt-ci-price-value">
-                                                                ₹650
-                                                            </span>
-                                                        </div>-->
+                                                        <span class="co-show-interest" data-toggle="tooltip" data-placement="bottom" title="Show Interest">
+                                                            <a href="login.html"><i class="bx bx-flag"></i></a>
+                                                        </span>
+                                                        <span class="co-add-to-favorite" data-toggle="tooltip" data-placement="bottom" title="Add To Favorite">
+                                                            <a href="login.html"><i class="bx bx-star"></i></a>
+                                                        </span>
                                                         <span class="ocr-host-name">
                                                             Amy Drufesne
                                                         </span>
@@ -169,6 +173,7 @@
                                                             <span aria-hidden="true" class="fa fa-clock"></span>
                                                             <span class="edgt-duration-period">2 hours</span>
                                                         </div>
+                                                        <a href="login.html" class="co-enroll">Enroll<i class="bx bx-plus bx-pad"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -176,10 +181,16 @@
                                                 <div class="card-body">
                                                     <div class="edgt-cli-top-info">
                                                         <h5 class="card-title font-weight-bold">
-                                                            <a itemprop="url" href="javascript:void(0);" target="_self">
+                                                            <a itemprop="url" href="course-details.html" target="_self">
                                                                 Development
                                                             </a>
                                                         </h5>
+                                                        <span class="co-show-interest" data-toggle="tooltip" data-placement="bottom" title="Show Interest">
+                                                            <a href="login.html"><i class="bx bx-flag"></i></a>
+                                                        </span>
+                                                        <span class="co-add-to-favorite" data-toggle="tooltip" data-placement="bottom" title="Add To Favorite">
+                                                            <a href="login.html"><i class="bx bx-star"></i></a>
+                                                        </span>
                                                         <span class="ocr-host-name">
                                                             Amy Drufesne
                                                         </span>
@@ -196,6 +207,7 @@
                                                             <span aria-hidden="true" class="fa fa-clock"></span>
                                                             <span class="edgt-duration-period">2 hours</span>
                                                         </div>
+                                                        <a href="login.html" class="co-enroll">Enroll<i class="bx bx-plus bx-pad"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -203,10 +215,16 @@
                                                 <div class="card-body">
                                                     <div class="edgt-cli-top-info">
                                                         <h5 class="card-title font-weight-bold">
-                                                            <a itemprop="url" href="javascript:void(0);" target="_self">
+                                                            <a itemprop="url" href="course-details.html" target="_self">
                                                                 Development
                                                             </a>
                                                         </h5>
+                                                        <span class="co-show-interest" data-toggle="tooltip" data-placement="bottom" title="Show Interest">
+                                                            <a href="login.html"><i class="bx bx-flag"></i></a>
+                                                        </span>
+                                                        <span class="co-add-to-favorite" data-toggle="tooltip" data-placement="bottom" title="Add To Favorite">
+                                                            <a href="login.html"><i class="bx bx-star"></i></a>
+                                                        </span>
                                                         <span class="ocr-host-name">
                                                             Amy Drufesne
                                                         </span>
@@ -223,6 +241,7 @@
                                                             <span aria-hidden="true" class="fa fa-clock"></span>
                                                             <span class="edgt-duration-period">2 hours</span>
                                                         </div>
+                                                        <a href="login.html" class="co-enroll">Enroll<i class="bx bx-plus bx-pad"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -232,10 +251,16 @@
                                                 <div class="card-body">
                                                     <div class="edgt-cli-top-info">
                                                         <h5 class="card-title font-weight-bold">
-                                                            <a itemprop="url" href="javascript:void(0);" target="_self">
+                                                            <a itemprop="url" href="course-details.html" target="_self">
                                                                 Development
                                                             </a>
                                                         </h5>
+                                                        <span class="co-show-interest" data-toggle="tooltip" data-placement="bottom" title="Show Interest">
+                                                            <a href="login.html"><i class="bx bx-flag"></i></a>
+                                                        </span>
+                                                        <span class="co-add-to-favorite" data-toggle="tooltip" data-placement="bottom" title="Add To Favorite">
+                                                            <a href="login.html"><i class="bx bx-star"></i></a>
+                                                        </span>
                                                         <span class="ocr-host-name">
                                                             Amy Drufesne
                                                         </span>
@@ -252,6 +277,7 @@
                                                             <span aria-hidden="true" class="fa fa-clock"></span>
                                                             <span class="edgt-duration-period">2 hours</span>
                                                         </div>
+                                                        <a href="login.html" class="co-enroll">Enroll<i class="bx bx-plus bx-pad"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -259,10 +285,16 @@
                                                 <div class="card-body">
                                                     <div class="edgt-cli-top-info">
                                                         <h5 class="card-title font-weight-bold">
-                                                            <a itemprop="url" href="javascript:void(0);" target="_self">
+                                                            <a itemprop="url" href="course-details.html" target="_self">
                                                                 Development
                                                             </a>
                                                         </h5>
+                                                        <span class="co-show-interest" data-toggle="tooltip" data-placement="bottom" title="Show Interest">
+                                                            <a href="login.html"><i class="bx bx-flag"></i></a>
+                                                        </span>
+                                                        <span class="co-add-to-favorite" data-toggle="tooltip" data-placement="bottom" title="Add To Favorite">
+                                                            <a href="login.html"><i class="bx bx-star"></i></a>
+                                                        </span>
                                                         <span class="ocr-host-name">
                                                             Amy Drufesne
                                                         </span>
@@ -279,6 +311,7 @@
                                                             <span aria-hidden="true" class="fa fa-clock"></span>
                                                             <span class="edgt-duration-period">2 hours</span>
                                                         </div>
+                                                        <a href="login.html" class="co-enroll">Enroll<i class="bx bx-plus bx-pad"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -286,10 +319,16 @@
                                                 <div class="card-body">
                                                     <div class="edgt-cli-top-info">
                                                         <h5 class="card-title font-weight-bold">
-                                                            <a itemprop="url" href="javascript:void(0);" target="_self">
+                                                            <a itemprop="url" href="course-details.html" target="_self">
                                                                 Development
                                                             </a>
                                                         </h5>
+                                                        <span class="co-show-interest" data-toggle="tooltip" data-placement="bottom" title="Show Interest">
+                                                            <a href="login.html"><i class="bx bx-flag"></i></a>
+                                                        </span>
+                                                        <span class="co-add-to-favorite" data-toggle="tooltip" data-placement="bottom" title="Add To Favorite">
+                                                            <a href="login.html"><i class="bx bx-star"></i></a>
+                                                        </span>
                                                         <span class="ocr-host-name">
                                                             Amy Drufesne
                                                         </span>
@@ -306,6 +345,7 @@
                                                             <span aria-hidden="true" class="fa fa-clock"></span>
                                                             <span class="edgt-duration-period">2 hours</span>
                                                         </div>
+                                                        <a href="login.html" class="co-enroll">Enroll<i class="bx bx-plus bx-pad"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -334,6 +374,59 @@
                                         </div>
                                     </div>
                                     <div class="col-md-3 mt-30 edgt-sidebar-right">
+                                        <div class="widget edgt-course-categories-widget">
+                                            <div class="edgt-widget-title-holder">
+                                                <h4 class="edgt-widget-title">Search</h4>
+                                            </div>
+                                            <div class="outer-adv-search-area" id="outer-advanceSearchArea">
+                                                <div class="col-sm-4 col-lg-4 col-md-4 ocr-float-left">
+                                                    <div class="outer-adv-search-text">Host</div>
+                                                </div>
+                                                <div class="col-sm-8 col-lg-8 col-md-8 ocr-float-left">
+                                                    <div class="form-group">
+                                                        <input type="text" autocomplete="off" />
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <div class="col-sm-4 col-lg-4 col-md-4 ocr-float-left">
+                                                    <div class="outer-adv-search-text">Course</div>
+                                                </div>
+                                                <div class="col-sm-8 col-lg-8 col-md-8 ocr-float-left">
+                                                    <div class="form-group">
+                                                        <input type="text" autocomplete="off" />
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <div class="col-sm-4 col-lg-4 col-md-4 ocr-float-left">
+                                                    <div class="outer-adv-search-text">Start Date</div>
+                                                </div>
+                                                <div class="col-sm-8 col-lg-8 col-md-8 ocr-float-left outer-ocr-datepicker-md">
+                                                    <div class="form-group">
+                                                        <input type="text" autocomplete="off" id="searchDate" readonly />
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <div class="col-sm-4 col-lg-4 col-md-4 ocr-float-left">
+                                                    <div class="outer-adv-search-text">Price</div>
+                                                </div>
+                                                <div class="col-sm-4 col-lg-4 col-md-4 ocr-float-left">
+                                                    <div class="form-group">
+                                                        <input type="text" autocomplete="off" placeholder="Min price" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4 col-lg-4 col-md-4 ocr-float-left">
+                                                    <div class="form-group">
+                                                        <input type="text" autocomplete="off" placeholder="Max price" />
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <div class="adv-search-btn-area">
+                                                    <button type="button" class="btn btn-outline-secondary" id="clearfilter">Clear Filter</button>
+                                                    <button type="button" class="btn btn-primary">Search</button>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
                                         <div class="widget edgt-course-categories-widget">
                                             <div class="edgt-widget-title-holder">
                                                 <h4 class="edgt-widget-title">Categories</h4>
@@ -418,8 +511,15 @@
     <script src="assets/js/vendors.min.js"></script>
     <!-- Custom JS -->
     <script src="assets/js/custom.js"></script>
+    <!-- Advance Search JS -->
+    <script src="assets/js/advance-search.js"></script>
     <!-- Scrolling Top JS -->
     <script src="assets/js/scroll-top.js"></script>
+    <!-- Datepicker JS -->
+    <script src="assets/js/gijgo.min.js"></script>
+    <script>
+        $('#searchDate').datepicker({ format: 'dd-mmm-yyyy' });
+    </script>
 
 </body>
 </html>
