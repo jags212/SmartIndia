@@ -1,0 +1,176 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Attendees";
+    Layout = "~/Views/Shared/_FrontPannelLayout.cshtml";
+}
+@section Scripts{
+    <!--  Date format JS -->
+    <script src="~/ApplicationScripts/Common/date-format-converter.js"></script>
+
+    <script src="~/ApplicationScripts/Common/custom-validate.js"></script>
+    <!-- Attendee JS -->
+    <script src="~/ApplicationScripts/Host/attendees.js"></script>
+    <script>
+
+        $('input[type=radio][name=rbtattendees]').change(function () {
+            if (this.value == 'cwa') {
+                $("#div_awc").css("display", "none");
+                $("#div_cwa").css("display", "block");
+
+            }
+            else if (this.value == 'awc') {
+                $("#div_awc").css("display", "block");
+                $("#div_cwa").css("display", "none");
+            }
+        });
+    </script>
+}
+<!-- Main Content Layout -->
+<!-- Breadcrumb Area -->
+<title>OCR - Attendees</title>
+<div class="breadcrumb-area">
+    <h1>Attendees</h1>
+    <ol class="breadcrumb">
+        <li class="item">
+            <a asp-area="ManageUsers" asp-controller="Hosts" asp-action="HostDashboard"><i class='bx bx-home-alt'></i></a>
+        </li>
+        <li class="item">Dashboard</li>
+        <li class="item">Attendees</li>
+    </ol>
+</div>
+<!-- End Breadcrumb Area -->
+<!-- Start -->
+<div class="card mb-30">
+    <div class="card-body">
+
+        <div class="existing-date">
+            <label class="radio-inline">
+                <input type="radio" name="rbtattendees" value="cwa" checked id="rbtonce">Course Wise Attendees
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="rbtattendees" value="awc">Attendees Wise Courses
+            </label>
+        </div>
+        @*Course Wise Attendees-------------start------------*@
+        <div class="table-responsive" id="div_cwa">
+            <table class="table table-hover" id="tbl_attendees" name="tbl_attendees">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Sl#</th>
+                        <th scope="col">Course</th>
+                        <th scope="col">Scheduled Date</th>
+                        <th scope="col">No of Attendees</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        @*Course Wise Attendees-------------end-------------*@
+        @* Attendees Wise Courses ----------start-----------*@
+        <div class="table-responsive" id="div_awc">
+            <table class="table table-hover" id="tbl_awc" name="tbl_awc">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Sl#</th>
+                        <th scope="col">Attendee</th>
+                        <th scope="col">No of Courses</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        @*Attendees Wise Courses------------end----------*@
+
+    </div>
+</div>
+<!--End-->
+
+<div class="modal fade" id="GetAttendeesModal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Attendee Details</h5>
+                <button type="button" class="close col-black" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body re-modal-body">
+                <div class="table-responsive">
+                    <table class="table table-hover" id="tbl_attendeeDetails">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Sl#</th>
+                                <th scope="col">Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Rakesh</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Sanat</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Bikash</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End-GetAttendeesModal-->
+
+<div class="modal fade" id="GetCoursesModal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Course Details</h5>
+                <button type="button" class="close col-black" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body re-modal-body">
+                <div class="table-responsive">
+                    <table class="table table-hover" id="tbl_attendeeDetails">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Sl#</th>
+                                <th scope="col">Course Name</th>
+                                <th scope="col">Start Date </th>
+                                <th scope="col">End Date </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>C PROGRAMMING</td>
+                                <td>31-Aug-20</td>
+                                <td>01-Sep-20</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>ELECTRONICS</td>
+                                <td>30-Aug-20</td>
+                                <td>31-Aug-20</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>MATHEMATICS</td>
+                                <td>01-Sep-20</td>
+                                <td>30-Sep-20</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

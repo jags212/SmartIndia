@@ -4,9 +4,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Areas\ManageUsers\Data\**" />
+    <Compile Remove="wwwroot\Resources\**" />
     <Content Remove="Areas\ManageUsers\Data\**" />
+    <Content Remove="wwwroot\Resources\**" />
     <EmbeddedResource Remove="Areas\ManageUsers\Data\**" />
+    <EmbeddedResource Remove="wwwroot\Resources\**" />
     <None Remove="Areas\ManageUsers\Data\**" />
+    <None Remove="wwwroot\Resources\**" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\assets\fonts\boxicons.eot" />

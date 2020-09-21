@@ -332,7 +332,7 @@
                   colors: ['#fff']
                 },
                 xaxis: {
-                    categories: ['South Korea', 'Canada', 'United Kingdom', 'Netherlands', 'Italy', 'France', 'Japan', 'United States', 'China', 'India'],
+                    categories: ['Physics', 'Chemistry', 'Literature', 'Business', 'Mathematics', 'Graphic Designing', 'App Development', 'Social Media Marketing', 'Human Resource Management', 'Web Development'],
                 },
                 yaxis: {
                     labels: {
@@ -340,12 +340,12 @@
                     }
                 },
                 title: {
-                    text: 'Custom DataLabels',
+                    text: '',
                     align: 'center',
                     floating: true
                 },
                 subtitle: {
-                    text: 'Category Names as DataLabels inside bars',
+                    text: '',
                     align: 'center',
                 },
                 tooltip: {

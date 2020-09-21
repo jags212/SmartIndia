@@ -102,7 +102,7 @@ namespace SmartIndia.Data.Services.Host
         public string UpdateHostSchedularActionOnce(HostSchedular hostSchedular)
         {
             object[] objArray = new object[] {
-                         "@P_ACTIONCODE", hostSchedular.ACTIONCODE
+                         "@P_ACTIONCODE", "H"
                         ,"@SchedularId",hostSchedular.SchedularId
                         ,"@CourseID",hostSchedular.CourseId
                         ,"@UserId",hostSchedular.UserId
