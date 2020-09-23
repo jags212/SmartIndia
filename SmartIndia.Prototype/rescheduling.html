@@ -126,6 +126,8 @@
                     <span class="bottom-bar"></span>
                 </div>
 
+                <div class="host-time-zone">IST-GMT+05:30</div>
+
                 <ul class="navbar-nav right-nav align-items-center ml-auto res-right-nav">
                     <li class="nav-item">
                         <a class="nav-link bx-fullscreen-btn" id="fullscreen-button">
@@ -310,7 +312,7 @@
                                 <td>05.00 pm</td>
                                 <td>
                                     <div class="action-inline" data-toggle="tooltip" data-placement="top" title="View">
-                                        <a href="javascript:void(0);" class="form-control table-cancel" data-toggle="modal" data-target="#ViewDetailsModal"><i class="bx bx-x"></i></a>
+                                        <a href="javascript:void(0);" class="form-control table-cancel" data-toggle="modal" data-target="#ViewCancelDetailsModal"><i class="bx bx-x"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -340,7 +342,7 @@
                                 <td>12.00 am</td>
                                 <td>
                                     <div class="action-inline" data-toggle="tooltip" data-placement="top" title="View">
-                                        <a href="javascript:void(0);" class="form-control table-cancel" data-toggle="modal" data-target="#ViewDetailsModal"><i class="bx bx-x"></i></a>
+                                        <a href="javascript:void(0);" class="form-control table-cancel" data-toggle="modal" data-target="#ViewCancelDetailsModal"><i class="bx bx-x"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -425,7 +427,6 @@
             </div>
         </div>
     </div>
-
     <!-- End View Details Modal -->
     <!-- Start Rescheduled Confirm Modal -->
     <div class="modal fade" id="ConRescheduledModal" role="dialog" aria-hidden="true">
@@ -443,7 +444,6 @@
             </div>
         </div>
     </div>
-
     <!-- End Rescheduled Confirm Modal -->
     <!-- Start Rescheduled Modal -->
     <div class="modal fade" id="RescheduledModal" role="dialog" aria-hidden="true">
@@ -456,7 +456,7 @@
                     </button>
                 </div>
                 <div class="modal-body re-modal-body">
-                    <div class="card mb-30">
+                    <div class="card">
                         <div class="card-body">
                             <div class="existing-date">Existing Date: <span class="col-black">09/07/2020</span></div>
                             <form>
@@ -502,7 +502,6 @@
             </div>
         </div>
     </div>
-
     <!-- End Rescheduled Modal -->
     <!-- Start Cancel Confirm Modal -->
     <div class="modal fade" id="ConCancelModal" role="dialog" aria-hidden="true">
@@ -520,7 +519,6 @@
             </div>
         </div>
     </div>
-
     <!-- End Cancel Confirm Modal -->
     <!-- Start Cancel Modal -->
     <div class="modal fade" id="CancelModal" role="dialog" aria-hidden="true">
@@ -541,8 +539,45 @@
             </div>
         </div>
     </div>
-
     <!-- End Cancel Modal -->
+    <!-- Start Cancel Details Modal -->
+    <div class="modal fade" id="ViewCancelDetailsModal" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header theme-col">
+                    <h5 class="modal-title">Cancelled Details</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body re-modal-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                            <tbody>
+                                <tr>
+                                    <th>Course</th>
+                                    <td>Physics</td>
+                                </tr>
+                                <tr>
+                                    <th>Date</th>
+                                    <td>09-Jul-2020</td>
+                                </tr>
+                                <tr>
+                                    <th>Start Time</th>
+                                    <td>04.00 pm</td>
+                                </tr>
+                                <tr>
+                                    <th>End Time</th>
+                                    <td>05.00 pm</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Cancel Details Modal -->
     <!-- Scrolling Top -->
     <a href="#0" class="cd-top cd-is-visible cd-fade-out"><i class="fa fa-angle-up"></i></a>
     <!-- Footer Scripts -->
