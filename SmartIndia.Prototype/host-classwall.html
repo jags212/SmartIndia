@@ -25,8 +25,6 @@
     <!-- Calendar CSS -->
     <link rel="stylesheet" href="assets/calendar/css/fullcalendar.css" />
     <link rel="stylesheet" href="assets/calendar/css/fullcalendar.print.css" media="print" />
-    <!-- Text Ellipsis CSS -->
-    <link rel="stylesheet" href="assets/css/ellipsis.css" />
 
 </head>
 
@@ -126,6 +124,8 @@
                     <span class="middle-bar"></span>
                     <span class="bottom-bar"></span>
                 </div>
+
+                <div class="host-time-zone">IST-GMT+05:30</div>
 
                 <ul class="navbar-nav right-nav align-items-center ml-auto res-right-nav">
                     <li class="nav-item">
@@ -305,22 +305,22 @@
                     <div class="color-legend col-leg-green"></div>
                     <div class="color-legend-text">
                         Accomplished
-                        <div class="color-legend-number sm-attend-no">(15)</div>
+                        <!--<div class="color-legend-number sm-attend-no">(15)</div>-->
                     </div>
                     <div class="color-legend col-leg-yellow"></div>
                     <div class="color-legend-text">
                         Upcoming
-                        <div class="color-legend-number sm-upclasses-no">(8)</div>
+                        <!--<div class="color-legend-number sm-upclasses-no">(8)</div>-->
                     </div>
                     <div class="color-legend col-leg-seablue"></div>
                     <div class="color-legend-text">
                         Reschedule
-                        <div class="color-legend-number sm-reschedule-no">(2)</div>
+                        <!--<div class="color-legend-number sm-reschedule-no">(2)</div>-->
                     </div>
                     <div class="color-legend col-leg-grey"></div>
                     <div class="color-legend-text">
                         Cancel
-                        <div class="color-legend-number sm-cancel-no">(3)</div>
+                        <!--<div class="color-legend-number sm-cancel-no">(3)</div>-->
                     </div>
                 </div>
                 <div class="clearfix"></div>
@@ -343,7 +343,7 @@
                                         <span class="sm-batch-name">
                                             <i class="bx bx-task"></i>Batch I
                                         </span>
-                                        <p class="card-text sm-cli-text ellip-box two-lines">
+                                        <p class="card-text sm-cli-text v-ellipsis">
                                             Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri
                                             Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri
                                             Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri
@@ -380,7 +380,7 @@
                                         <span class="sm-batch-name">
                                             <i class="bx bx-task"></i>Batch I
                                         </span>
-                                        <p class="card-text sm-cli-text ellip-box two-lines">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
+                                        <p class="card-text sm-cli-text v-ellipsis">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
                                         <div class="sm-bottom-info">
                                             <span class="sm-date">
                                                 <i class="bx bx-calendar"></i>02-Aug-20
@@ -406,7 +406,7 @@
                                         <span class="sm-batch-name">
                                             <i class="bx bx-task"></i>Batch I
                                         </span>
-                                        <p class="card-text sm-cli-text ellip-box two-lines">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
+                                        <p class="card-text sm-cli-text v-ellipsis">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
                                         <div class="sm-bottom-info">
                                             <span class="sm-date">
                                                 <i class="bx bx-calendar"></i>10-Aug-20
@@ -432,7 +432,7 @@
                                         <span class="sm-batch-name">
                                             <i class="bx bx-task"></i>Batch I
                                         </span>
-                                        <p class="card-text sm-cli-text ellip-box two-lines">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
+                                        <p class="card-text sm-cli-text v-ellipsis">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
                                         <div class="sm-bottom-info">
                                             <span class="sm-date">
                                                 <i class="bx bx-calendar"></i>05-Aug-20
@@ -458,7 +458,7 @@
                                         <span class="sm-batch-name">
                                             <i class="bx bx-task"></i>Batch I
                                         </span>
-                                        <p class="card-text sm-cli-text ellip-box two-lines">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
+                                        <p class="card-text sm-cli-text v-ellipsis">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
                                         <div class="sm-bottom-info">
                                             <span class="sm-date">
                                                 <i class="bx bx-calendar"></i>05-Aug-20
@@ -483,7 +483,7 @@
                                         <span class="sm-batch-name">
                                             <i class="bx bx-task"></i>Batch I
                                         </span>
-                                        <p class="card-text sm-cli-text ellip-box two-lines">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
+                                        <p class="card-text sm-cli-text v-ellipsis">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
                                         <div class="sm-bottom-info">
                                             <span class="sm-date">
                                                 <i class="bx bx-calendar"></i>05-Aug-20
@@ -537,9 +537,14 @@
     <script src="assets/calendar/js/fullcalendar.min.js"></script>
     <script src="assets/calendar/js/class-wall-calendar.js"></script>
     <!-- Text Ellipsis JS -->
-    <script src="assets/js/jquery.ellipsis.js"></script>
+    <script src="assets/js/jquery.vEllipsis.js"></script>
     <script>
-        $('.two-lines').ellipsis({ lines: 2 });
+        $(document).ready(function () {
+            $().vEllipsis({
+                'lines': 2,
+                'responsive': true
+            });
+        });
     </script>
 
 </body>

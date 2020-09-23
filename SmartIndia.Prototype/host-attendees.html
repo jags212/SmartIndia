@@ -8,7 +8,7 @@
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>OCR - Host Change Email</title>
+    <title>OCR - Attendees</title>
 
     <link rel="icon" type="image/png" href="assets/img/favicon.png" />
 
@@ -48,7 +48,7 @@
 
         <div class="sidemenu-body">
             <ul class="sidemenu-nav metisMenu h-100" id="sidemenu-nav" data-simplebar>
-                <li class="nav-item mm-active">
+                <li class="nav-item">
                     <a href="host-dashboard.html" class="nav-link">
                         <span class="icon">
                             <i class='bx bx-home-circle'></i>
@@ -88,8 +88,8 @@
                         <span class="menu-title">Upcoming Classes</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="javascript:void(0);" class="nav-link">
+                <li class="nav-item mm-active">
+                    <a href="host-attendees.html" class="nav-link">
                         <span class="icon">
                             <i class='bx bxs-user-detail'></i>
                         </span>
@@ -272,30 +272,95 @@
         <!-- Main Content Layout -->
         <!-- Breadcrumb Area -->
         <div class="breadcrumb-area">
-            <h1>Change Email</h1>
+            <h1>Attendees</h1>
             <ol class="breadcrumb">
                 <li class="item">
                     <a href="host-dashboard.html"><i class='bx bx-home-alt'></i></a>
                 </li>
                 <li class="item">Dashboard</li>
-                <li class="item">Change Email</li>
+                <li class="item">Attendees</li>
             </ol>
         </div>
         <!-- End Breadcrumb Area -->
         <!-- Start -->
         <div class="card mb-30">
             <div class="card-body">
-                <form>
-                    <div class="form-group">
-                        <label>Current Email</label>
-                        <input type="text" class="form-control col-form-6">
-                    </div>
-                    <div class="form-group">
-                        <label>New Email</label>
-                        <input type="text" class="form-control col-form-6">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Change</button>
-                </form>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Sl.#</th>
+                                <th scope="col">Courses</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Start Time</th>
+                                <th scope="col">End Time</th>
+                                <th scope="col" class="table-saction-width">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Physics</td>
+                                <td>09-Jul-2020</td>
+                                <td>04.00 pm</td>
+                                <td>05.00 pm</td>
+                                <td>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="View">
+                                        <a href="javascript:void(0);" class="form-control table-cancel" data-toggle="modal" data-target="#ViewCancelDetailsModal"><i class="bx bx-x"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Chemistry</td>
+                                <td>11-Jul-2020</td>
+                                <td>06.00 pm</td>
+                                <td>07.00 pm</td>
+                                <td>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="Rescheduling">
+                                        <a href="javascript:void(0);" class="form-control table-edit" data-toggle="modal" data-target="#ConRescheduledModal"><i class="bx bx-reset"></i></a>
+                                    </div>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="View">
+                                        <a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a>
+                                    </div>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="Cancel">
+                                        <a href="javascript:void(0);" class="form-control table-cancel" data-toggle="modal" data-target="#ConCancelModal"><i class="bx bx-trash"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Literature</td>
+                                <td>18-Aug-2020</td>
+                                <td>10.00 am</td>
+                                <td>12.00 am</td>
+                                <td>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="View">
+                                        <a href="javascript:void(0);" class="form-control table-cancel" data-toggle="modal" data-target="#ViewCancelDetailsModal"><i class="bx bx-x"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Business</td>
+                                <td>20-Aug-2020</td>
+                                <td>04.00 pm</td>
+                                <td>05.00 pm</td>
+                                <td>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="Rescheduling">
+                                        <a href="javascript:void(0);" class="form-control table-edit" data-toggle="modal" data-target="#ConRescheduledModal"><i class="bx bx-reset"></i></a>
+                                    </div>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="View">
+                                        <a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a>
+                                    </div>
+                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="Cancel">
+                                        <a href="javascript:void(0);" class="form-control table-cancel" data-toggle="modal" data-target="#ConCancelModal"><i class="bx bx-trash"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
             </div>
         </div>
@@ -322,7 +387,6 @@
     <!-- Footer Scripts -->
     <!-- Vendors Min JS -->
     <script src="assets/js/vendors.min.js"></script>
-
     <!-- Custom JS -->
     <script src="assets/js/custom.js"></script>
 
