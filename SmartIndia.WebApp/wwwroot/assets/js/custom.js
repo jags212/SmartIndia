@@ -302,63 +302,63 @@
 		});
 
 		// World Map JS
-		$("#world-map-markers").vectorMap({
-			map:"world_mill_en", normalizeFunction:"polynomial", hoverOpacity:.7, hoverColor:!1, regionStyle: {
-				initial: {
-					fill: "#419ebf"
-				}
-			},
-			markerStyle: {
-				initial: {
-					r: 9, fill: "#e1000a", "fill-opacity": .9, stroke: "#ffffff", "stroke-width": 7, "stroke-opacity": .7
-				},
-				hover: {
-					stroke: "#ffffff", "fill-opacity": 1, "stroke-width": 1.5
-				}
-			},
-			backgroundColor:"transparent", markers:[{
-				latLng: [59.9, 12.45], name: "New York"
-			}, {
-				latLng: [15.73, 7.41], name: "Melbourne"
-			}, {
-				latLng: [-.52, 130.93], name: "Chicago"
-			}, {
-				latLng: [-8.51, 179.21], name: "London"
-			}, {
-				latLng: [98.93, 25.46], name: "Los Angeles"
-			}, {
-				latLng: [47.14, 9.52], name: "Montreal"
-			}, {
-				latLng: [7.11, 171.06], name: "Berlin"
-			}, {
-				latLng: [17.3, -62.73], name: "Glasgow"
-			}, {
-				latLng: [3.2, 73.22], name: "Paris"
-			}, {
-				latLng: [35.88, 14.5], name: "Tokyo"
-			}, {
-				latLng: [12.05, -80.75], name: "Madrid"
-			}, {
-				latLng: [64.16, -61.23], name: "Cape Town"
-			}, {
-				latLng: [50.16, -59.55], name: "Las Vegas"
-			}, {
-				latLng: [88.11, -61.85], name: "Mexico City"
-			}, {
-				latLng: [-4.61, 55.45], name: "Manchester"
-			}, {
-				latLng: [61.35, 134.46], name: "Philadelphia"
-			}, {
-				latLng: [42.5, 130.51], name: "Barcelona"
-			}, {
-				latLng: [54.01, 100.98], name: "Buenos Aires"
-			}, {
-				latLng: [60.91, 90.18], name: "Lisbon"
-			}, {
-				latLng: [1.3, 103.8], name: "Washington, DC"
-			}, {
-				latLng: [.65, 6.73], name: "Toronto"
-			}]
-		});
+	//	$("#world-map-markers").vectorMap({
+	//		map:"world_mill_en", normalizeFunction:"polynomial", hoverOpacity:.7, hoverColor:!1, regionStyle: {
+	//			initial: {
+	//				fill: "#419ebf"
+	//			}
+	//		},
+	//		markerStyle: {
+	//			initial: {
+	//				r: 9, fill: "#e1000a", "fill-opacity": .9, stroke: "#ffffff", "stroke-width": 7, "stroke-opacity": .7
+	//			},
+	//			hover: {
+	//				stroke: "#ffffff", "fill-opacity": 1, "stroke-width": 1.5
+	//			}
+	//		},
+	//		backgroundColor:"transparent", markers:[{
+	//			latLng: [59.9, 12.45], name: "New York"
+	//		}, {
+	//			latLng: [15.73, 7.41], name: "Melbourne"
+	//		}, {
+	//			latLng: [-.52, 130.93], name: "Chicago"
+	//		}, {
+	//			latLng: [-8.51, 179.21], name: "London"
+	//		}, {
+	//			latLng: [98.93, 25.46], name: "Los Angeles"
+	//		}, {
+	//			latLng: [47.14, 9.52], name: "Montreal"
+	//		}, {
+	//			latLng: [7.11, 171.06], name: "Berlin"
+	//		}, {
+	//			latLng: [17.3, -62.73], name: "Glasgow"
+	//		}, {
+	//			latLng: [3.2, 73.22], name: "Paris"
+	//		}, {
+	//			latLng: [35.88, 14.5], name: "Tokyo"
+	//		}, {
+	//			latLng: [12.05, -80.75], name: "Madrid"
+	//		}, {
+	//			latLng: [64.16, -61.23], name: "Cape Town"
+	//		}, {
+	//			latLng: [50.16, -59.55], name: "Las Vegas"
+	//		}, {
+	//			latLng: [88.11, -61.85], name: "Mexico City"
+	//		}, {
+	//			latLng: [-4.61, 55.45], name: "Manchester"
+	//		}, {
+	//			latLng: [61.35, 134.46], name: "Philadelphia"
+	//		}, {
+	//			latLng: [42.5, 130.51], name: "Barcelona"
+	//		}, {
+	//			latLng: [54.01, 100.98], name: "Buenos Aires"
+	//		}, {
+	//			latLng: [60.91, 90.18], name: "Lisbon"
+	//		}, {
+	//			latLng: [1.3, 103.8], name: "Washington, DC"
+	//		}, {
+	//			latLng: [.65, 6.73], name: "Toronto"
+	//		}]
+	//	});
 	});
 }(jQuery));

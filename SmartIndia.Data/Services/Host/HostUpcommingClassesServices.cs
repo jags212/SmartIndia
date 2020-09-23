@@ -33,14 +33,65 @@ namespace SmartIndia.Data.Services.Host
                     var modal = new UpcomingClassCalender()
                     {
                         title = item.CourseName,
+                        ScheduleDate = TimeZone.CurrentTimeZone.ToLocalTime(item.ScheduleDate).ToString("yyyy-MM-dd"),
                         start = TimeZone.CurrentTimeZone.ToLocalTime(item.ScheduleDate).ToString("yyyy-MM-dd") +"T"+ item.StartTime+":00",
                         end = "",
                         StartTime = item.StartTime,
-                        EndTime = item.EndTime
+                        EndTime = item.EndTime,
+                        Uname = item.Uname,
+                        BatchName = item.BatchName,
+                        CourseDesc = item.CourseDesc,
+                        Topics = item.Topics,
+                        CourseId=item.CourseId,
+                        SchedularId = item.SchedularId,
+                        color = "#ffc107",
+                        url = hostParameter.Curl + "/Hosts/UpcomingClasses/upcomingclassdetail?SID=" + item.SchedularId + ""
+
                     };
                     pcomingClassCalender.Add(modal);
                 }
                 return pcomingClassCalender;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        [Obsolete]
+        public List<UpcomingClassDetails> BindUpcommingClassDetail(HostParameterCourseDetail hostParameterCourseDetail)
+        {
+            object[] objArray = new object[] {
+                     "@P_ACTIONCODE",hostParameterCourseDetail.ACTIONCODE,
+                     "@UserId",hostParameterCourseDetail.UserId,
+                     "@SchedularId",hostParameterCourseDetail.SchedularId
+            };
+            try
+            {
+                DynamicParameters param = objArray.ToDynamicParameters();
+                var result = DBConnection.Query<UpcomingClassesDetails>("USP_GetHostSchedular_ACTION", param, commandType: CommandType.StoredProcedure).ToList();
+                List<UpcomingClassDetails> upcomingClassDetails = new List<UpcomingClassDetails>();
+                foreach (var item in result)
+                {
+                    var modal = new UpcomingClassDetails()
+                    {
+                        CourseName = item.CourseName,
+                        ScheduleDate =TimeZone.CurrentTimeZone.ToLocalTime(item.ScheduleDate).ToString("yyyy-MM-dd"),
+                        start = TimeZone.CurrentTimeZone.ToLocalTime(item.ScheduleDate).ToString("yyyy-MM-dd") + "T" + item.StartTime + ":00",
+                        end = "",
+                        StartTime = item.StartTime,
+                        EndTime = item.EndTime,
+                        Uname = item.Uname,
+                        BatchName = item.BatchName,
+                        CourseDesc = item.CourseDesc,
+                        Topics = item.Topics,
+                        CourseId = item.CourseId,
+                        SchedularId = item.SchedularId
+
+                    };
+                    upcomingClassDetails.Add(modal);
+                }
+                return upcomingClassDetails;
             }
             catch (Exception ex)
             {

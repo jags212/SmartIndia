@@ -64,7 +64,11 @@ $('#btnSubmit').click(function () {
             success: function (data) {
                 if (data == "2") {
                     localStorage.clear();
-                    BootStrapRedirect("Your password has been reset successfully.", "/ManageUsers/Users/Login")
+                    $.post("/ManageUsers/Users/RomoveAuth", function (data) {
+                        if (data == 1) {
+                            BootStrapRedirect("Your password has been reset successfully.", "/ManageUsers/Users/Login");
+                        }
+                    });
                 }
                 else {
                     BootstrapAlert('Something went wrong. Please try again');

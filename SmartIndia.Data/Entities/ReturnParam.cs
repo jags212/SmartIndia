@@ -9,6 +9,12 @@ namespace SmartIndia.Data.Entities
         public string retOut { get; set; }
         public string userID { get; set; }
     }
+    public class HostCourseReturnParam
+    {
+        public string retOut { get; set; }
+        public string ImgName { get; set; }
+        public string BroName { get; set; }
+    }
     public class ResetParam
     {
         public string EmailId { get; set; }

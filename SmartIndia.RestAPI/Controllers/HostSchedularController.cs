@@ -84,5 +84,15 @@ namespace SmartIndia.RestAPI.Controllers
                 return await Task.FromResult(hostSchedularServices.PublishSchedular(obj));
             }
         }
+        [HttpGet("CkeckBatchName")]
+        [Obsolete]
+        public async Task<bool> CkeckBatchNameAsync([FromQuery] CheckBatch obj)
+        {
+            using (var hostSchedularServices = new HostSchedularServices(connectionFactory))
+            {
+                return await Task.FromResult(hostSchedularServices.CkeckBatchName(obj));
+
+            }
+        }
     }
 }

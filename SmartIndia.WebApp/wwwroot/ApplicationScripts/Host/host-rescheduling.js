@@ -21,13 +21,16 @@ function getallReScheduling() {
                 $.each(data, function (i, item) {
 
                     if (data[i].status == 0) {
-                        cancel = '<div class="text-red">Canceled</div>';
+                       // cancel = '<div class="text-red">Cancelled</div>';
+                        cancel = '<div class="action-inline" data-toggle="tooltip" data-placement="top" title="View"><a href="javascript:void(0);" onclick="chedularView(' + data[i].schedularId + ')" class="form-control table-cancel" data-toggle="modal" data-target="#ModalViewDetails"><i class="bx bx-x"></i></a></div>';
                     }
                     else if (data[i].status == 1) {
-                        cancel = '<div class="action-inline" data-toggle="tooltip" data-placement="right" title="Rescheduling">  <a href="javascript:void(0);" onclick="getcourseidd(' + data[i].schedularId + ')"  class="form-control table-edit" ><i class="bx bx bx-reset"></i></a> </div>   <div class="action-inline" data-toggle="tooltip" data-placement="right" title="Cancel"><a href="javascript:void(0);"onclick="getschedularId(' + data[i].schedularId + ')" class="form-control table-cancel" data-toggle="modal" data-target="#ConCancelModal"><i class="bx bx-trash"></i></a></div>';
+                        cancel = '<div class="action-inline" data-toggle="tooltip" data-placement="right" title="Rescheduling">  <a href="javascript:void(0);" onclick="getcourseidd(' + data[i].schedularId + ')"  class="form-control table-edit" ><i class="bx bx bx-reset"></i></a> </div>' 
+                            + '<div class="action-inline" data-toggle="tooltip" data-placement="top" title="View"><a href="javascript:void(0);" onclick="chedularView(' + data[i].schedularId + ')" class="form-control table-view" data-toggle="modal" data-target="#ModalViewDetails"> <i class="fa fa-fw fa-eye"></i></a></div>'
+                            +'<div class="action-inline" data - toggle="tooltip" data - placement="right" title = "Cancel" > <a href="javascript:void(0);" onclick="getschedularId(' + data[i].schedularId + ')" class="form-control table-cancel" data-toggle="modal" data-target="#ConCancelModal"><i class="bx bx-trash"></i></a></div > ';
                     }
 
-                    trHTML += '<tr  class=""><td>' + (i + 1) + '</td><td>' + data[i].courseName + '</td><td>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yyyy') + '</td><td>' + timeConvert(data[i].startTime) + '</td><td>' + timeConvert(data[i].endTime) + '</td> <td>' + data[i].batchName + '</td><td> ' + cancel + ' </td> </tr>';
+                    trHTML += '<tr  class=""><td>' + (i + 1) + '</td><td>' + data[i].courseName + '</td><td>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') + '</td><td>' + timeConvert(data[i].startTime) + '</td><td>' + timeConvert(data[i].endTime) + '</td> <td>' + data[i].batchName + '</td><td> ' + cancel + ' </td> </tr>';
 
                 });
                 $('#dataTable').append(trHTML);
@@ -60,16 +63,15 @@ function getcourseidd(CID) {
         $.ajax(
             {
                 type: "GET",
-                //url: "https://localhost:44394/api/HostCourses/GetHostCourse",
                 url: ServiceURL + "/api/HostRescheduling/GetSchedular",
                 data: JSON.parse(usersParam1),
                 dataType: "json",
                 contentType: "application/json",
                 success: function (data) {
-                    $("#existingdate").html(dateFormat(data[0].scheduleDate, 'dd-mmm-yyyy'));
+                    $("#existingdate").html(dateFormat(data[0].scheduleDate, 'dd-mmm-yy'));
                     $("#inputCourses").val(data[0].courseId);
                     $("#SccDate").val(data[0].scheduleDate);
-                    $("#ScDate").val(dateFormat(data[0].scheduleDate, 'dd-mmm-yyyy'));
+                    $("#ScDate").val(dateFormat(data[0].scheduleDate, 'dd-mmm-yy'));
                     $("#StartTime").val(data[0].startTime);
                     $("#Duration").val(data[0].duration);
                     $("#hfEndTime").val(data[0].endTime)
@@ -180,6 +182,31 @@ function getschedularId(CID) {
     else {
         return true;
     }
+}
+function chedularView(HSID) {
+    $("#uhfSchedularId").val(HSID);
+    var usersParam1 = JSON.stringify({
+        ACTIONCODE: 'G',
+        SchedularId: parseInt(HSID),
+    });
+    $.ajax(
+        {
+            type: "GET",
+            url: ServiceURL + "/api/HostSchedular/GetSchedular",
+            data: JSON.parse(usersParam1),
+            dataType: "json",
+            contentType: "application/json",
+            success: function (data) {
+                $("#vcname").html(data[0].courseName);
+                $("#vScdate").html(dateFormat(data[0].scheduleDate, 'dd-mmm-yy'));
+                $("#vstartTime").html(timeConvert(data[0].startTime));
+                $("#vendTime").html(timeConvert(data[0].endTime))
+            },
+            error: function (msg) {
+
+                alert(msg.responseText);
+            }
+        });
 }
 $('#btcancel').click(function () {
     function CallSave() {
