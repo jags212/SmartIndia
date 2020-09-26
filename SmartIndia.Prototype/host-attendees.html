@@ -14,6 +14,8 @@
 
     <!-- Vendors Min CSS -->
     <link rel="stylesheet" href="assets/css/vendors.min.css" />
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
     <!-- Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <!-- Responsive CSS -->
@@ -283,88 +285,254 @@
         </div>
         <!-- End Breadcrumb Area -->
         <!-- Start -->
-        <div class="card mb-30">
+        <div class="card">
             <div class="card-body">
-                <div class="table-responsive">
+                <div class="upcoming-section">
+                    <span id="courseAttendees" class="up-active" data-toggle="tooltip" data-placement="bottom" title="Course Wise Attendees"><i class="bx bxl-discourse"></i></span>
+                    <span id="attendeesCourses" data-toggle="tooltip" data-placement="bottom" title="Attendees Wise Courses"><i class="bx bx-id-card"></i></span>
+                </div>
+                <form>
+                    <div class="ocr-clearable">
+                        <input type="text" name="search" class="dashboard-panel-search" placeholder="Search..">
+                        <i class="ocr-clearable-clear">&times;</i>
+                        <span class="class-search-icon" data-toggle="tooltip" data-placement="bottom" title="Search"><i class="bx bx-search"></i></span>
+                    </div>
+                </form>
+                <div class="clearfix"></div>
+                <!-- Course Wise Attendees -->
+                <div class="container" id="courseAttendeesList">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card p-0 mb-30">
+                                <div class="card-body p-4 text-secondary border-secondary">
+                                    <h5 class="card-title font-weight-bold">Physics <span class="topic-font">(Electricity and Magnetism)</span></h5>
+                                    <p class="card-text v-ellipsis">
+                                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                                    </p>
+                                    <div class="sm-bottom-info">
+                                        <span class="sm-co-date">
+                                            <small><i class="bx bx-calendar"></i>30-Aug-20</small>
+                                        </span>
+                                        <span class="sm-co-users" data-toggle="modal" data-target="#GetAttendeesModal">
+                                            <small><i class="fa fa-users"></i>3</small>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card p-0 mb-30">
+                                <div class="card-body p-4 text-secondary border-secondary">
+                                    <h5 class="card-title font-weight-bold">Chemistry <span class="topic-font">(Chemical Bonding)</span></h5>
+                                    <p class="card-text v-ellipsis">
+                                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                                    </p>
+                                    <div class="sm-bottom-info">
+                                        <span class="sm-co-date">
+                                            <small><i class="bx bx-calendar"></i>30-Aug-20</small>
+                                        </span>
+                                        <span class="sm-co-users" data-toggle="modal" data-target="#GetAttendeesModal">
+                                            <small><i class="fa fa-users"></i>3</small>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card p-0 mb-30">
+                                <div class="card-body p-4 text-secondary border-secondary">
+                                    <h5 class="card-title font-weight-bold">Literature <span class="topic-font">(Aging in Literature)</span></h5>
+                                    <p class="card-text v-ellipsis">
+                                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                                    </p>
+                                    <div class="sm-bottom-info">
+                                        <span class="sm-co-date">
+                                            <small><i class="bx bx-calendar"></i>30-Aug-20</small>
+                                        </span>
+                                        <span class="sm-co-users" data-toggle="modal" data-target="#GetAttendeesModal">
+                                            <small><i class="fa fa-users"></i>3</small>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card p-0 mb-30">
+                                <div class="card-body p-4 text-secondary border-secondary">
+                                    <h5 class="card-title font-weight-bold">Mathematics <span class="topic-font">(Algebra)</span></h5>
+                                    <p class="card-text v-ellipsis">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <div class="sm-bottom-info">
+                                        <span class="sm-co-date">
+                                            <small><i class="bx bx-calendar"></i>30-Aug-20</small>
+                                        </span>
+                                        <span class="sm-co-users" data-toggle="modal" data-target="#GetAttendeesModal">
+                                            <small><i class="fa fa-users"></i>3</small>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card p-0 mb-30">
+                                <div class="card-body p-4 text-secondary border-secondary">
+                                    <h5 class="card-title font-weight-bold">Web Development <span class="topic-font">(Development Tools/Environment)</span></h5>
+                                    <p class="card-text v-ellipsis">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <div class="sm-bottom-info">
+                                        <span class="sm-co-date">
+                                            <small><i class="bx bx-calendar"></i>30-Aug-20</small>
+                                        </span>
+                                        <span class="sm-co-users" data-toggle="modal" data-target="#GetAttendeesModal">
+                                            <small><i class="fa fa-users"></i>3</small>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Attendees Wise Courses -->
+                <div class="table-responsive" id="attendeesCoursesList">
                     <table class="table table-hover">
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col">Sl.#</th>
-                                <th scope="col">Courses</th>
-                                <th scope="col">Date</th>
-                                <th scope="col">Start Time</th>
-                                <th scope="col">End Time</th>
-                                <th scope="col" class="table-saction-width">Action</th>
+                                <th scope="col">Attendee</th>
+                                <th scope="col">No of Courses</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <th scope="row">1</th>
-                                <td>Physics</td>
-                                <td>09-Jul-2020</td>
-                                <td>04.00 pm</td>
-                                <td>05.00 pm</td>
-                                <td>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="View">
-                                        <a href="javascript:void(0);" class="form-control table-cancel" data-toggle="modal" data-target="#ViewCancelDetailsModal"><i class="bx bx-x"></i></a>
-                                    </div>
-                                </td>
+                                <td>Mahesh</td>
+                                <td class="col-light-blue" data-toggle="modal" data-target="#GetCoursesModal">10</td>
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
-                                <td>Chemistry</td>
-                                <td>11-Jul-2020</td>
-                                <td>06.00 pm</td>
-                                <td>07.00 pm</td>
-                                <td>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="Rescheduling">
-                                        <a href="javascript:void(0);" class="form-control table-edit" data-toggle="modal" data-target="#ConRescheduledModal"><i class="bx bx-reset"></i></a>
-                                    </div>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="View">
-                                        <a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a>
-                                    </div>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="Cancel">
-                                        <a href="javascript:void(0);" class="form-control table-cancel" data-toggle="modal" data-target="#ConCancelModal"><i class="bx bx-trash"></i></a>
-                                    </div>
-                                </td>
+                                <td>Amar Dash</td>
+                                <td class="col-light-blue" data-toggle="modal" data-target="#GetCoursesModal">3</td>
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
-                                <td>Literature</td>
-                                <td>18-Aug-2020</td>
-                                <td>10.00 am</td>
-                                <td>12.00 am</td>
-                                <td>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="View">
-                                        <a href="javascript:void(0);" class="form-control table-cancel" data-toggle="modal" data-target="#ViewCancelDetailsModal"><i class="bx bx-x"></i></a>
-                                    </div>
-                                </td>
+                                <td>Dipti Dash</td>
+                                <td class="col-light-blue" data-toggle="modal" data-target="#GetCoursesModal">15</td>
                             </tr>
                             <tr>
                                 <th scope="row">4</th>
-                                <td>Business</td>
-                                <td>20-Aug-2020</td>
-                                <td>04.00 pm</td>
-                                <td>05.00 pm</td>
-                                <td>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="Rescheduling">
-                                        <a href="javascript:void(0);" class="form-control table-edit" data-toggle="modal" data-target="#ConRescheduledModal"><i class="bx bx-reset"></i></a>
-                                    </div>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="View">
-                                        <a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a>
-                                    </div>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="top" title="Cancel">
-                                        <a href="javascript:void(0);" class="form-control table-cancel" data-toggle="modal" data-target="#ConCancelModal"><i class="bx bx-trash"></i></a>
-                                    </div>
-                                </td>
+                                <td>Avi Ram</td>
+                                <td class="col-light-blue" data-toggle="modal" data-target="#GetCoursesModal">8</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>Nabin</td>
+                                <td class="col-light-blue" data-toggle="modal" data-target="#GetCoursesModal">10</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td>Himanshu Nautiyal</td>
+                                <td class="col-light-blue" data-toggle="modal" data-target="#GetCoursesModal">4</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-
             </div>
         </div>
-
+        <!--End-->
+        <!--Start Attendees Modal-->
+        <div class="modal fade" id="GetAttendeesModal" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Attendee Details</h5>
+                        <button type="button" class="close col-black" data-dismiss="modal">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body re-modal-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover" id="tbl_attendeeDetails">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">Sl#</th>
+                                        <th scope="col">Name</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Rakesh</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Sanat</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Bikash</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End Attendees Modal-->
+        <!--Start Courses Modal-->
+        <div class="modal fade" id="GetCoursesModal" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Course Details</h5>
+                        <button type="button" class="close col-black" data-dismiss="modal">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body re-modal-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover" id="tbl_attendeeDetails">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">Sl#</th>
+                                        <th scope="col">Course Name</th>
+                                        <th scope="col">Start Date </th>
+                                        <th scope="col">End Date </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>C PROGRAMMING</td>
+                                        <td>31-Aug-20</td>
+                                        <td>01-Sep-20</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>ELECTRONICS</td>
+                                        <td>30-Aug-20</td>
+                                        <td>31-Aug-20</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>MATHEMATICS</td>
+                                        <td>01-Sep-20</td>
+                                        <td>30-Sep-20</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End Courses Modal-->
         <!-- End -->
         <!-- Footer -->
         <div class="flex-grow-1"></div>
@@ -389,6 +557,20 @@
     <script src="assets/js/vendors.min.js"></script>
     <!-- Custom JS -->
     <script src="assets/js/custom.js"></script>
+    <!-- Attendees JS -->
+    <script src="assets/js/attendees.js"></script>
+    <!-- Clearable Input JS -->
+    <script src="assets/js/clearable-input.js"></script>
+    <!-- Text Ellipsis JS -->
+    <script src="assets/js/jquery.vEllipsis.js"></script>
+    <script>
+        $(document).ready(function () {
+            $().vEllipsis({
+                'lines': 2,
+                'responsive': true
+            });
+        });
+    </script>
 
 </body>
 </html>
