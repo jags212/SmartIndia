@@ -76,6 +76,17 @@ namespace SmartIndia.RestAPI
             //Add Connection For Dapper
             services.AddSingleton<IConnectionFactory>(new ConnectionFactory(Configuration, "SmartIndiaDatabase"));
 
+            //Add Swagger for API
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v2", new Microsoft.OpenApi.Models.OpenApiInfo
+                {
+                    Title = "OCR API",
+                    Version = "v2",
+                    Description = "All API LIST",
+                });
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -86,7 +97,7 @@ namespace SmartIndia.RestAPI
                 app.UseDeveloperExceptionPage();
             }
 
-            //  app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
 
             app.UseRouting();
             // global cors policy
@@ -104,6 +115,9 @@ namespace SmartIndia.RestAPI
             {
                 endpoints.MapControllers();
             });
+            //Add Swagger API UI
+            app.UseSwagger();
+            app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v2/swagger.json", "OCR API V2"));
         }
     }
 }

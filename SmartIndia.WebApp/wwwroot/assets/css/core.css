@@ -49,4 +49,16 @@
     z-index: 9999;
     background: url('../img/loader.gif') 50% 50% no-repeat rgb(249,249,249);
 }
+.p-red {
+    color: #e21818;
+}
 
+.p-mar-bot {
+    margin-bottom: -6px;
+}
+
+.conf-pro {
+    color: #e1000a;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
