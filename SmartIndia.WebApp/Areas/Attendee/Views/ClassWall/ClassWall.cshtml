@@ -4,10 +4,11 @@
     Layout = "~/Views/Shared/_FrontPannelLayout.cshtml";
 }
 <!-- Text Ellipsis CSS -->
-<link rel="stylesheet" href="~/assets/css/ellipsis.css" />
+@*<link rel="stylesheet" href="~/assets/css/ellipsis.css" />*@
 @section Scripts
 {
-    <script src="~/ApplicationScripts/Host/host-classwall.js"></script>
+    
+    <script src="~/ApplicationScripts/Attendee/attendee-classwall.js"></script>
     <script src="~/ApplicationScripts/Common/date-format-converter.js"></script>
     <!-- Clearable Input JS -->
     <script src="~/assets/js/clearable-input.js"></script>
@@ -15,7 +16,7 @@
     <script src="~/assets/calendar/js/moment.min.js"></script>
     <script src="~/assets/calendar/js/fullcalendar.min.js"></script>
     <!-- Text Ellipsis JS -->
-    <script src="~/assets/js/jquery.ellipsis.js"></script>
+    @*<script src="~/assets/js/jquery.ellipsis.js"></script>
     <script>
         $('.two-lines').ellipsis({ lines: 2 });
     </script>
@@ -35,7 +36,7 @@
             matching_list.show();
 
         });
-    </script>
+    </script>*@
     <script>
         $('li').click(function () {
             $(this).addClass('active').siblings().removeClass('active');
@@ -101,22 +102,22 @@
                     </ul>
                 </div>
                 @*<nav aria-label="Page navigation example">
-                    <ul class="pagination pg-blue">
-                        <li class="page-item ">
-                            <a class="page-link" tabindex="-1">Previous</a>
-                        </li>
-                        <li class="page-item"><a class="page-link">1<span class="sr-only">(current)</span></a></li>
-                        <li class="page-item active">
-                            <a class="page-link">2 </a>
-                        </li>
-                        <li class="page-item"><a class="page-link">3</a></li>
-                        <li class="page-item"><a class="page-link">4</a></li>
-                        <li class="page-item"><a class="page-link">5</a></li>
-                        <li class="page-item ">
-                            <a class="page-link">Next</a>
-                        </li>
-                    </ul>
-                </nav>*@
+                        <ul class="pagination pg-blue">
+                            <li class="page-item ">
+                                <a class="page-link" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item"><a class="page-link">1<span class="sr-only">(current)</span></a></li>
+                            <li class="page-item active">
+                                <a class="page-link">2 </a>
+                            </li>
+                            <li class="page-item"><a class="page-link">3</a></li>
+                            <li class="page-item"><a class="page-link">4</a></li>
+                            <li class="page-item"><a class="page-link">5</a></li>
+                            <li class="page-item ">
+                                <a class="page-link">Next</a>
+                            </li>
+                        </ul>
+                    </nav>*@
             </div>
         </div>
 
@@ -128,4 +129,6 @@
 <!-- End -->
 <!-- Footer -->
 <div class="flex-grow-1"></div>
+
+
 

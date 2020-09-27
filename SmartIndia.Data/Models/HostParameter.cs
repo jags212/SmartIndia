@@ -7,12 +7,9 @@ namespace SmartIndia.Data.Models
 {
     public class HostParameter
     {
-       
         public Int64 UserId { get; set; }
         public string ACTIONCODE { get; set; }
         public string Curl { get; set; }
-
-        
     }
     public class HostParameterCourseDetail
     {
@@ -45,6 +42,12 @@ namespace SmartIndia.Data.Models
     public class CheckBatch
     {
         public Int64 CourseId { get; set; }
+        public string BatchName { get; set; }
+    }
+    public class HostEnrollcourse
+    {
+        public Int64 CourseId { get; set; }
+        public string ACTIONCODE { get; set; }
         public string BatchName { get; set; }
     }
 }

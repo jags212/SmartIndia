@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace SmartIndia.WebApp.Areas.Hosts.Controllers
+namespace SmartIndia.WebApp.Areas.Attendee.Controllers
 {
-    [Area("Hosts")]
+    [Area("Attendee")]
     public class UpcomingClassesController : Controller
     {
         public IActionResult UpcomingClasses()

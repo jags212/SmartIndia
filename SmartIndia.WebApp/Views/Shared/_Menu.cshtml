@@ -52,13 +52,13 @@
             </a>
         </li>
         <li class="nav-item">
-                <a class="nav-link" asp-area="Hosts" asp-controller="upcomingclasses" asp-action="upcomingclasses">
-                    <span class="icon">
-                        <i class='bx bx-video-recording'></i>
-                    </span>
-                    <span class="menu-title">Upcoming Classes</span>
-                </a>
-</li>
+            <a class="nav-link" asp-area="Hosts" asp-controller="upcomingclasses" asp-action="upcomingclasses">
+                <span class="icon">
+                    <i class='bx bx-video-recording'></i>
+                </span>
+                <span class="menu-title">Upcoming Classes</span>
+            </a>
+        </li>
         <li class="nav-item">
             <a class="nav-link" asp-area="Hosts" asp-controller="attendees" asp-action="attendees">
                 <span class="icon">
@@ -76,5 +76,38 @@
                 <span class="menu-title">Rescheduling</span>
             </a>
         </li>
+        <!-----------------------Attendee Menu Start--- For Temp------------------------->
+        <li class="nav-item">
+
+            <a class="nav-link" asp-area="Attendee" asp-controller="upcomingclasses" asp-action="upcomingclasses">
+                <span class="icon">
+                    <i class='bx bxs-book-content'></i>
+                </span>
+                <span class="menu-title">Att-Upcoming Classes</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+
+            <a class="nav-link" asp-area="Attendee" asp-controller="EnrollCourses" asp-action="EnrollCourse">
+                <span class="icon">
+                    <i class='bx bxs-book-content'></i>
+                </span>
+                <span class="menu-title">Att-Enroll Course</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+
+            <a class="nav-link" asp-area="Attendee" asp-controller="ClassWall" asp-action="ClassWall">
+                <span class="icon">
+                    <i class='bx bxs-book-content'></i>
+                </span>
+                <span class="menu-title">Att-Class Wall</span>
+            </a>
+        </li>
+        <!-----------------------Attendee Menu End---------------------------->
+
+
     </ul>
 </div>

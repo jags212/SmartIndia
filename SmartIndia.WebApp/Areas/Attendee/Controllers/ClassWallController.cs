@@ -4,16 +4,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace SmartIndia.WebApp.Areas.Hosts.Controllers
+namespace SmartIndia.WebApp.Areas.Attendee.Controllers
 {
-    [Area("Hosts")]
-    public class UpcomingClassesController : Controller
+    [Area("Attendee")]
+    public class ClassWallController : Controller
     {
-        public IActionResult UpcomingClasses()
+        public IActionResult ClassWall()
         {
             return View();
         }
-        public IActionResult UpcomingClassDetail(string SID)
+        public IActionResult ClassWallDetail(string SID)
         {
             ViewBag.id = SID;
             return View();
