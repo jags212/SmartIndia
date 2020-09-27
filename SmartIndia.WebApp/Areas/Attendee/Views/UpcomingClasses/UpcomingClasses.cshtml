@@ -11,7 +11,7 @@
     <!-- Calendar JS -->
     <script src="~/assets/calendar/js/moment.min.js"></script>
     <script src="~/assets/calendar/js/fullcalendar.min.js"></script>
-    <script src="~/ApplicationScripts/Host/upcoming-classes.js"></script>
+    <script src="~/ApplicationScripts/Attendee/upcoming-classes.js"></script>
     <!-- Clearable Input JS -->
     <script src="~/assets/js/clearable-input.js"></script>
     <!-- Text Ellipsis JS -->
@@ -23,7 +23,7 @@
         $('#searchlist').keyup(function () {
 
             var that = this;
-            all_list = $('#hostUPlList ul > li');
+            all_list = $('#attendeeUPlList ul > li');
 
             var matching_list = all_list.filter(function (i, li) {
                 var list_item_text = $(li).text().toUpperCase();
@@ -56,8 +56,8 @@
 <div class="card mb-30">
     <div class="card-body">
         <div class="upcoming-section">
-            <span id="hostUpcomingList" class="up-active" data-toggle="tooltip" data-placement="bottom" title="List"><i class="bx bx-list-ul"></i></span>
-            <span id="hostUpcomingCalendar" data-toggle="tooltip" data-placement="bottom" title="Calendar"><i class="bx bx-calendar"></i></span>
+            <span id="attendeeUpcomingList" class="up-active" data-toggle="tooltip" data-placement="bottom" title="List"><i class="bx bx-list-ul"></i></span>
+            <span id="attendeeUpcomingCalendar" data-toggle="tooltip" data-placement="bottom" title="Calendar"><i class="bx bx-calendar"></i></span>
         </div>
         <form>
             <div class="ocr-clearable">
@@ -66,10 +66,9 @@
                 <span class="class-search-icon" data-toggle="tooltip" data-placement="bottom" title="Search"><i class="bx bx-search"></i></span>
             </div>
         </form>
-        
         <div class="clearfix"></div>
         <!-- List -->
-        <div class="container" id="hostUPlList">
+        <div class="container" id="attendeeUPlList">
             <div class="row">
                 <div class="col-sm-12 col-lg-12 col-md-12">
                     <ul class="list-group" id="coursedetails">
@@ -78,7 +77,7 @@
             </div>
         </div>
         <!-- Calendar -->
-        <div id="hostUPCalendar"></div>
+        <div id="attendeeUPCalendar"></div>
     </div>
 </div>
 <!-- End -->

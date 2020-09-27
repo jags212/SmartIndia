@@ -29,13 +29,13 @@ function BindHostUpcommingClasses() {
     var UId = localStorage.getItem("userID");
     var usersParam = JSON.stringify({
         UserId: parseInt(UId),
-        ACTIONCODE: "C",
+        ACTIONCODE: "E",
         Curl: ClientURL
     });
     $.ajax(
         {
             type: "GET",
-            url: ServiceURL + "/api/HostClassWall/BindClassWallCallendar",
+            url: ServiceURL + "/api/AttendeeClassWall/BindClassWallCallendar",
             data: JSON.parse(usersParam),
             dataType: "json",
             contentType: "application/json",
@@ -104,12 +104,12 @@ function BindList() {
     var UId = localStorage.getItem("userID");
     var usersParam = JSON.stringify({
         UserId: parseInt(UId),
-        ACTIONCODE: "C"
+        ACTIONCODE: "E"
     });
     $.ajax(
         {
             type: "GET",
-            url: ServiceURL + "/api/HostClassWall/BindClassWallDetail",
+            url: ServiceURL + "/api/AttendeeClassWall/BindClassWallDetail",
             data: JSON.parse(usersParam),
             dataType: "json",
             contentType: "application/json",
@@ -117,7 +117,7 @@ function BindList() {
                 var trHTML = '';
 
                 $.each(data, function (i, item) {
-                    if (data[i].isPublished==1) {
+                    if (data[i].isPublished == 1) {
                         var color = '<div class="list-color-legend col-leg-yellow" data-toggle="tooltip" data-placement="bottom" title="Upcoming"></div>';
 
                     } else {
@@ -125,10 +125,10 @@ function BindList() {
                     }
 
                     trHTML += '<li class="list-group-item justify-content-between ocr-list-group"> '
-                        + '<div>' + color +'</div><div class="sm-card-title">'
+                        + '<div>' + color + '</div><div class="sm-card-title">'
 
-                        + ' <a data-toggle="tooltip" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Hosts/ClassWall/ClassWallDetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
-                       
+                        + ' <a data-toggle="tooltip" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Attendee/ClassWall/ClassWallDetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
+
                         + '</div>'
                         + '<span class="sm-host-name">'
                         + '<i class="bx bx-task"></i>' + data[i].batchName + ''
@@ -141,7 +141,7 @@ function BindList() {
                         + '<span class="sm-time">'
                         + ' <i class="bx bx-time"></i> ' + timeConvert(data[i].startTime) + ''
                         + '</span>'
-                        +'</div>'
+                        + '</div>'
                         //+'<div class="sm-bottom-status-info">'
                         //        +'<span class="sm-status sm-attend" data - toggle="tooltip" data - placement="bottom" title = "Accomplished"> 20 </span>'
                         //        +'<span class="sm-status sm-upclasses" data-toggle="tooltip" data-placement="bottom" title="Upcoming">18</span>'

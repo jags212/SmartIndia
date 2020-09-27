@@ -1,26 +1,30 @@
-﻿//Host
+﻿
+//Attendee
 $(document).ready(function () {
     BindList();
-    $("#hostUPCalendar").css("display", "none");
+    $("#attendeeUPCalendar").css("display", "none");
 });
 
-//Host List
-$('#hostUpcomingList').click(function () {
-    $("#hostUPlList").css("display", "block");
-    $("#hostUPCalendar").css("display", "none");
-    $("#hostUpcomingList").addClass("up-active");
-    $("#hostUpcomingCalendar").removeClass("up-active");
-
+//Attendee List
+$('#attendeeUpcomingList').click(function () {
+    $("#attendeeUPlList").css("display", "block");
+    $("#attendeeUPCalendar").css("display", "none");
+    $("#attendeeUpcomingList").addClass("up-active");
+    $("#attendeeUpcomingCalendar").removeClass("up-active");
 });
 
-//Host Calendar
-$('#hostUpcomingCalendar').click(function () {
-    $("#hostUPlList").css("display", "none");
-    $("#hostUPCalendar").css("display", "block");
-    $("#hostUpcomingList").removeClass("up-active");
-    $("#hostUpcomingCalendar").addClass("up-active");
+//Attendee Calendar
+$('#attendeeUpcomingCalendar').click(function () {
+    $("#attendeeUPlList").css("display", "none");
+    $("#attendeeUPCalendar").css("display", "block");
+    $("#attendeeUpcomingList").removeClass("up-active");
+    $("#attendeeUpcomingCalendar").addClass("up-active");
     BindHostUpcommingClasses();
 });
+
+
+
+
 // Callendar Bind
 function BindHostUpcommingClasses() {
 	jQuery.support.cors = true;
@@ -33,13 +37,13 @@ function BindHostUpcommingClasses() {
 	$.ajax(
 		{
 			type: "GET",
-			url: ServiceURL + "/api/HostUpcomingClasses/BindHostUpcommingClasses",
+            url: ServiceURL + "/api/AttendeeUpcomingClasses/AttendeeUpcomingClass",
 			data: JSON.parse(usersParam),
 			dataType: "json",
 			contentType: "application/json",
 			success: function (data) {
 
-				$('#hostUPCalendar').fullCalendar({
+                $('#attendeeUPCalendar').fullCalendar({
 					header: {
 						left: 'prev,next',
 						center: 'title',
@@ -107,7 +111,7 @@ function BindList() {
     $.ajax(
         {
             type: "GET",
-            url: ServiceURL + "/api/HostUpcomingClasses/BindHostUpcommingClasses",
+            url: ServiceURL + "/api/AttendeeUpcomingClasses/AttendeeUpcomingClass",
             data: JSON.parse(usersParam),
             dataType: "json",
             contentType: "application/json",
@@ -115,25 +119,25 @@ function BindList() {
                 var trHTML = '';
 
                 $.each(data, function (i, item) {
-
+                   
                     trHTML += '<li class="list-group-item justify-content-between ocr-list-group"> '
                         + '<div class="sm-card-title" >'
-
-                        + ' <a data-toggle="tooltip" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Hosts/UpcomingClasses/upcomingclassdetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
-                        + '</div>'
-                        + '<span class="sm-host-name">'
-                        + '<i class="bx bx-task"></i>' + data[i].batchName + ''
-                        + '</span>'
-                        + ' <p class="card-text sm-cli-text ellip-box two-lines">' + data[i].courseDesc + '</p>'
-                        + '<div class="sm-bottom-info">'
-                        + '<span class="sm-date">'
-                        + ' <i class="bx bx-calendar"></i>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') + ''
-                        + '</span>'
-                        + '<span class="sm-time">'
-                        + ' <i class="bx bx-time"></i> ' + timeConvert(data[i].startTime) + ''
-                        + '</span>'
-                        + '</div >'
-                        + '</li >'
+                        
+                        + ' <a data-toggle="tooltip" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Attendee/UpcomingClasses/upcomingclassdetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
+                          +'</div>'
+                        +'<span class="sm-host-name">'
+                        + '<i class="bx bx-task"></i>' + data[i].batchName +''
+                                +'</span>'
+                        + ' <p class="card-text sm-cli-text ellip-box two-lines">' + data[i].courseDesc +'</p>'
+                            +'<div class="sm-bottom-info">'
+                                +'<span class="sm-date">'
+                        + ' <i class="bx bx-calendar"></i>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') +''
+                                    +'</span>'
+                                +'<span class="sm-time">'
+                        + ' <i class="bx bx-time"></i> ' + timeConvert(data[i].startTime) +''
+                                    +'</span>'
+                            +'</div >'
+                        +'</li >'
                 });
 
                 $('#coursedetails').append(trHTML);
