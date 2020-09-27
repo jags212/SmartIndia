@@ -2,6 +2,10 @@
 $(document).ready(function () {
     $("#profileForm :input").prop("disabled", true);
     $("#profileForm :input").addClass("disable-color");
+    $("#Pvpuemail :input").prop("disabled", false);
+    $("#Pvpuemail :input").removeClass("disable-color");
+    $("#Pvpumobileno :input").prop("disabled", false);
+    $("#Pvpumobileno :input").removeClass("disable-color");
 });
 
 //Enable
