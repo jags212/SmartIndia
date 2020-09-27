@@ -2,6 +2,10 @@
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "http://localhost/SmartIndia.WebApp",
+      "sslPort": 0
+    },
     "iisExpress": {
       "applicationUrl": "http://localhost:55620",
       "sslPort": 0
@@ -17,8 +21,9 @@
       }
     },
     "SmartIndia.WebApp": {
-      "commandName": "Project",
+      "commandName": "IIS",
       "launchBrowser": true,
+      "launchUrl": "ManageUsers/Users/Login",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

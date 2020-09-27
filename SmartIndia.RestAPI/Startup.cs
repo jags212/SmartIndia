@@ -102,12 +102,7 @@ namespace SmartIndia.RestAPI
             app.UseRouting();
             // global cors policy
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-            app.UseStaticFiles();
-            app.UseStaticFiles(new StaticFileOptions()
-            {
-                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "Resources")),
-                RequestPath = new PathString("/Images")
-            });
+            
             app.UseAuthentication();
             app.UseAuthorization();
 

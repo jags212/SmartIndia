@@ -319,5 +319,23 @@ namespace SmartIndia.Data.Services
                 // log.Error(ex);
             }
         }
+        public UserRegistrationDetails GetUserDetails(Int64 userid)
+        {
+            try
+            {
+                object[] objArrayUser = new object[] {
+                     "@UserId", userid
+                };
+                DynamicParameters paramUser = objArrayUser.ToDynamicParameters();
+                var result = DBConnection.QuerySingle<UserRegistrationDetails>("USP_GetUserDetailsByUserID", paramUser, commandType: CommandType.StoredProcedure);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                // throw new Exception(ex.Message);
+                return null;
+                // log.Error(ex);
+            }
+        }
     }
 }

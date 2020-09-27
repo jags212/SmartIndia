@@ -16,10 +16,5 @@
     <ProjectReference Include="..\SmartIndia.Data\SmartIndia.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Resources\Images\" />
-    <Folder Include="Resources\Brochure\" />
-  </ItemGroup>
-
 
 </Project>

@@ -69,5 +69,13 @@ namespace SmartIndia.RestAPI.Controllers
                 return await Task.FromResult(userRegistrationService.UserActive(acode));
             }
         }
+        [HttpGet("GetUserDetails")]
+        public async Task<UserRegistrationDetails> GetUserDetails(Int64 userid)
+        {
+            using (var userRegistrationService = new UserRegistrationServices(connectionFactory))
+            {
+                return await Task.FromResult(userRegistrationService.GetUserDetails(userid));
+            }
+        }
     }
 }

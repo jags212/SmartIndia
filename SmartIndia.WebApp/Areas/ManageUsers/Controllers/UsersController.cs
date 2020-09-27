@@ -90,5 +90,9 @@ namespace SmartIndia.WebApp.Areas.ManageUsers.Controllers
             }
             return View();
         }
+        public IActionResult Profile()
+        {
+            return View();
+        }
     }
 }
