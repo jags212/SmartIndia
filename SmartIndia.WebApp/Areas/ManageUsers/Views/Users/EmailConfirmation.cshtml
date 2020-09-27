@@ -1,0 +1,23 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "EmailConfirmation";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $(".ocr-search-container").hide();
+        });
+    </script>
+}
+<div class="regi-verification-area">
+    <div class="jumbotron text-center">
+        <h2><strong>Resend Confirmation Instructions</strong></h2>
+        <p class="conf-pro">Prohibited this user from being saved.</p>
+        <p class="p-mar-bot">Email was already confirmed, please try signing in.</p>
+        <p>
+            <a asp-area="ManageUsers" asp-controller="Users" asp-action="Login">Click Here</a>
+            to Sign In.
+        </p>
+    </div>
+</div> 

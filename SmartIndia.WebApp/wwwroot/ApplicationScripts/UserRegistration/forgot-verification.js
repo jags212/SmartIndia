@@ -12,6 +12,8 @@
     });
 });
 function CallEmailOTP() {
+    $('#divOTP').hide();
+    $('#divSuccess').show();
     const now = new Date()
     const itemSMS = {
         value: generateOTP(),

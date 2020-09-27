@@ -19,7 +19,11 @@
             success: function (data) {
                 if (data.retOut == "1") { 
                     if ($('#myregiTab li #email-tab').hasClass('active')) {
-                        window.location.href = "/ManageUsers/Users/VerificationEmail";
+                        $.post("/ManageUsers/Users/AthenticationUser?username=" + data.userID + "", function (data) {
+                            if (data == 1) {
+                                window.location.href = "/ManageUsers/Users/VerificationEmail";
+                            }
+                        }); 
                     }
                     else {
                         processOTPVerification(data.userID, $('#txtMobileNo').val(), $('#selected-flag-dial-code').html());
@@ -37,42 +41,6 @@
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(textStatus + "\nError Tirado: \n" + errorThrown);
             }
-        });
-    }
-    function SendEmailVerification(ActivationCode) {
-        var settings = {
-            "url": "https://api.sendinblue.com/v3/smtp/email",
-            "method": "POST",
-            "timeout": 0,
-            "headers": {
-                "api-key": "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",
-                "Content-Type": "application/json"
-            },
-            "data": JSON.stringify(
-                {
-                    "sender": {
-                        "name": "Smart India",
-                        "email": "napoleon.mohanta@gmail.com"
-                    },
-                    "to": [
-                        {
-                            "email": "" + $('#txtEmail').val() + "",
-                            "name": "" + $('#txtEmail').val() + ""
-                        }
-                    ],
-                    "subject": "Smart India OTP Confirmation",
-                    "htmlContent": "<html><head></head><body>" +
-                        "<p>Hello User,</p>" +
-                        "<p>Thanks for signing up to Smart India! </p>" +
-                        "<p> To get started, click the link below to confirm your account. </p>" +
-                        "<p> <a href='" + ServiceURL + "/ManageUsers/Users/UserVerification/" + ActivationCode + "'>Confirm your account</a></p>" +
-                        "</body></html>"
-                }
-            ),
-        };
-
-        $.ajax(settings).done(function (response) {
-            console.log(response);
         });
     }
     function processOTPVerification(userid, MobileNo, Code) {
