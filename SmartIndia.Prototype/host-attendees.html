@@ -8,22 +8,20 @@
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>OCR - Add Courses</title>
+    <title>OCR - Attendees</title>
 
     <link rel="icon" type="image/png" href="assets/img/favicon.png" />
 
     <!-- Vendors Min CSS -->
     <link rel="stylesheet" href="assets/css/vendors.min.css" />
     <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="assets/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/all.min.css">
     <!-- Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="assets/css/responsive.css" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/custom.css" />
-    <!-- Datepicker CSS -->
-    <link rel="stylesheet" href="assets/css/gijgo.min.css" />
 
 </head>
 
@@ -60,7 +58,7 @@
                         <span class="menu-title">Dashboard</span>
                     </a>
                 </li>
-                <li class="nav-item mm-active">
+                <li class="nav-item">
                     <a href="courses.html" class="nav-link">
                         <span class="icon">
                             <i class='bx bxl-discourse'></i>
@@ -71,7 +69,7 @@
                 <li class="nav-item">
                     <a href="schedular.html" class="nav-link">
                         <span class="icon">
-                            <i class='bx bxs-book-content'></i>
+                            <i class='bx bx-book-content'></i>
                         </span>
                         <span class="menu-title">Scheduler</span>
                     </a>
@@ -92,7 +90,7 @@
                         <span class="menu-title">Upcoming Classes</span>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item mm-active">
                     <a href="host-attendees.html" class="nav-link">
                         <span class="icon">
                             <i class='bx bxs-user-detail'></i>
@@ -276,204 +274,265 @@
         <!-- Main Content Layout -->
         <!-- Breadcrumb Area -->
         <div class="breadcrumb-area">
-            <h1>Add Course</h1>
+            <h1>Attendees</h1>
             <ol class="breadcrumb">
                 <li class="item">
                     <a href="host-dashboard.html"><i class='bx bx-home-alt'></i></a>
                 </li>
                 <li class="item">Dashboard</li>
-                <li class="item">Add Course</li>
+                <li class="item">Attendees</li>
             </ol>
         </div>
         <!-- End Breadcrumb Area -->
         <!-- Start -->
-        <div class="card mb-30">
+        <div class="card">
             <div class="card-body">
+                <div class="upcoming-section">
+                    <span id="courseAttendees" class="up-active" data-toggle="tooltip" data-placement="bottom" title="Course Wise Attendees"><i class="bx bxl-discourse"></i></span>
+                    <span id="attendeesCourses" data-toggle="tooltip" data-placement="bottom" title="Attendees Wise Courses"><i class="bx bx-id-card"></i></span>
+                </div>
                 <form>
-                    <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" class="form-control">
+                    <div class="ocr-clearable">
+                        <input type="text" name="search" class="dashboard-panel-search" placeholder="Search..">
+                        <i class="ocr-clearable-clear">&times;</i>
+                        <span class="class-search-icon" data-toggle="tooltip" data-placement="bottom" title="Search"><i class="bx bx-search"></i></span>
                     </div>
-                    <div class="form-group">
-                        <label>Description</label>
-                        <textarea class="form-control"></textarea>
-                    </div>
-                    <div class="row form-group">
-                        <div class="col-md-5 res-mb-16">
-                            <label>Topics</label>
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="col-md-3 res-mb-16">
-                            <label>Course Thumbnail</label>
-                            <div class="button-wrap">
-                                <label class="upload-button" for="fileupload">
-                                    Choose File
-                                    <input id="fileupload" type="file" class="custom-file-upload">
-                                </label>
-                            </div>
-                            <span class="re-note">(only .jpg,.png allowed, maximum file size 100KB.)</span>
-                        </div>
-                        <div class="col-md-4 res-mb-16">
-                            <label>Brochure</label>
-                            <div class="button-wrap">
-                                <label class="upload-button" for="brochurefileupload">
-                                    Choose File
-                                    <input id="brochurefileupload" type="file" class="custom-file-upload">
-                                </label>
-                            </div>
-                            <span class="re-note">(only .jpg,.png,.pdf allowed, maximum file size 2MB.)</span>
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <div class="col-md-4 res-mb-16">
-                            <label>Start Date</label>
-                            <input type="text" class="form-control" id="sdatepicker" disabled>
-                        </div>
-                        <div class="col-md-4 res-mb-16">
-                            <label>End Date</label>
-                            <input type="text" class="form-control" id="edatepicker" disabled>
-                        </div>
-                        <div class="col-md-4">
-                            <label>Duration (Days)</label>
-                            <input type="text" class="form-control" id="durationDate" disabled>
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <div class="col-md-4 res-mb-16">
-                            <label>Fees</label>
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="col-md-4 res-mb-16">
-                            <label>Class Frequency</label>
-                            <select class="form-control">
-                                <option selected>Choose...</option>
-                                <option>Daily</option>
-                                <option>Weekly</option>
-                                <option>Monthly</option>
-                                <option>Yearly</option>
-                            </select>
-                        </div>
-                        <div class="col-md-4">
-                            <label>No. Of Classes</label>
-                            <input type="number" class="form-control">
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    <button type="reset" class="btn btn-warning">Reset</button>
                 </form>
-
-            </div>
-        </div>
-
-        <div class="card mb-30">
-            <div class="card-body">
-
-                <div class="table-responsive">
+                <div class="clearfix"></div>
+                <!-- Course Wise Attendees -->
+                <div class="container" id="courseAttendeesList">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card p-0 mb-30">
+                                <div class="card-body p-4 text-secondary border-secondary">
+                                    <h5 class="card-title font-weight-bold">Physics <span class="topic-font">(Electricity and Magnetism)</span></h5>
+                                    <p class="card-text v-ellipsis">
+                                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                                    </p>
+                                    <div class="sm-bottom-info">
+                                        <span class="sm-co-date">
+                                            <small><i class="bx bx-calendar"></i>30-Aug-20</small>
+                                        </span>
+                                        <span class="sm-co-users" data-toggle="modal" data-target="#GetAttendeesModal">
+                                            <small><i class="fa fa-users"></i>3</small>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card p-0 mb-30">
+                                <div class="card-body p-4 text-secondary border-secondary">
+                                    <h5 class="card-title font-weight-bold">Chemistry <span class="topic-font">(Chemical Bonding)</span></h5>
+                                    <p class="card-text v-ellipsis">
+                                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                                    </p>
+                                    <div class="sm-bottom-info">
+                                        <span class="sm-co-date">
+                                            <small><i class="bx bx-calendar"></i>30-Aug-20</small>
+                                        </span>
+                                        <span class="sm-co-users" data-toggle="modal" data-target="#GetAttendeesModal">
+                                            <small><i class="fa fa-users"></i>3</small>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card p-0 mb-30">
+                                <div class="card-body p-4 text-secondary border-secondary">
+                                    <h5 class="card-title font-weight-bold">Literature <span class="topic-font">(Aging in Literature)</span></h5>
+                                    <p class="card-text v-ellipsis">
+                                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                                    </p>
+                                    <div class="sm-bottom-info">
+                                        <span class="sm-co-date">
+                                            <small><i class="bx bx-calendar"></i>30-Aug-20</small>
+                                        </span>
+                                        <span class="sm-co-users" data-toggle="modal" data-target="#GetAttendeesModal">
+                                            <small><i class="fa fa-users"></i>3</small>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card p-0 mb-30">
+                                <div class="card-body p-4 text-secondary border-secondary">
+                                    <h5 class="card-title font-weight-bold">Mathematics <span class="topic-font">(Algebra)</span></h5>
+                                    <p class="card-text v-ellipsis">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <div class="sm-bottom-info">
+                                        <span class="sm-co-date">
+                                            <small><i class="bx bx-calendar"></i>30-Aug-20</small>
+                                        </span>
+                                        <span class="sm-co-users" data-toggle="modal" data-target="#GetAttendeesModal">
+                                            <small><i class="fa fa-users"></i>3</small>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card p-0 mb-30">
+                                <div class="card-body p-4 text-secondary border-secondary">
+                                    <h5 class="card-title font-weight-bold">Web Development <span class="topic-font">(Development Tools/Environment)</span></h5>
+                                    <p class="card-text v-ellipsis">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <div class="sm-bottom-info">
+                                        <span class="sm-co-date">
+                                            <small><i class="bx bx-calendar"></i>30-Aug-20</small>
+                                        </span>
+                                        <span class="sm-co-users" data-toggle="modal" data-target="#GetAttendeesModal">
+                                            <small><i class="fa fa-users"></i>3</small>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Attendees Wise Courses -->
+                <div class="table-responsive" id="attendeesCoursesList">
                     <table class="table table-hover">
                         <thead class="thead-dark">
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Start Date</th>
-                                <th scope="col">End Date</th>
-                                <th scope="col">Duration (Days)</th>
-                                <th scope="col">Fees</th>
-                                <th scope="col">Class Frequency</th>
-                                <th scope="col">No. Of Classes</th>
-                                <th scope="col">Action</th>
+                                <th scope="col">Sl.#</th>
+                                <th scope="col">Attendee</th>
+                                <th scope="col">No of Courses</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <th scope="row">1</th>
                                 <td>Mahesh</td>
-                                <td>11-Jul-2020</td>
-                                <td>22-Jul-2020</td>
-                                <td>11</td>
-                                <td>10000</td>
-                                <td>Daily</td>
-                                <td>3</td>
-                                <td>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="Edit">
-                                        <a href="javascript:void(0);" class="form-control table-edit"><i class="bx bx-edit-alt"></i></a>
-                                    </div>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="View">
-                                        <a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a>
-                                    </div>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="Brochure">
-                                        <a href="javascript:void(0);" class="form-control table-brochure" data-toggle="modal" data-target="#getCourseBrochureModal"><i class="bx bx-file"></i></a>
-                                    </div>
-                                </td>
+                                <td class="col-light-blue" data-toggle="modal" data-target="#GetCoursesModal">10</td>
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
                                 <td>Amar Dash</td>
-                                <td>15-Jul-2020</td>
-                                <td>31-Jul-2020</td>
-                                <td>16</td>
-                                <td>10000</td>
-                                <td>Weekly</td>
-                                <td>2</td>
-                                <td>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="Edit">
-                                        <a href="javascript:void(0);" class="form-control table-edit"><i class="bx bx-edit-alt"></i></a>
-                                    </div>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="View">
-                                        <a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a>
-                                    </div>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="Brochure">
-                                        <a href="javascript:void(0);" class="form-control table-brochure" data-toggle="modal" data-target="#getCourseBrochureModal"><i class="bx bx-file"></i></a>
-                                    </div>
-                                </td>
+                                <td class="col-light-blue" data-toggle="modal" data-target="#GetCoursesModal">3</td>
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
                                 <td>Dipti Dash</td>
-                                <td>01-Jul-2020</td>
-                                <td>23-Jul-2020</td>
-                                <td>22</td>
-                                <td>20000</td>
-                                <td>Monthly</td>
-                                <td>8</td>
-                                <td>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="Edit">
-                                        <a href="javascript:void(0);" class="form-control table-edit"><i class="bx bx-edit-alt"></i></a>
-                                    </div>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="View">
-                                        <a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a>
-                                    </div>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="Brochure">
-                                        <a href="javascript:void(0);" class="form-control table-brochure" data-toggle="modal" data-target="#getCourseBrochureModal"><i class="bx bx-file"></i></a>
-                                    </div>
-                                </td>
+                                <td class="col-light-blue" data-toggle="modal" data-target="#GetCoursesModal">15</td>
                             </tr>
                             <tr>
                                 <th scope="row">4</th>
+                                <td>Avi Ram</td>
+                                <td class="col-light-blue" data-toggle="modal" data-target="#GetCoursesModal">8</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>Nabin</td>
+                                <td class="col-light-blue" data-toggle="modal" data-target="#GetCoursesModal">10</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
                                 <td>Himanshu Nautiyal</td>
-                                <td>30-Jul-2020</td>
-                                <td>13-Aug-2020</td>
-                                <td>14</td>
-                                <td>50000</td>
-                                <td>Yearly</td>
-                                <td>96</td>
-                                <td>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="Edit">
-                                        <a href="javascript:void(0);" class="form-control table-edit"><i class="bx bx-edit-alt"></i></a>
-                                    </div>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="View">
-                                        <a href="javascript:void(0);" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a>
-                                    </div>
-                                    <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="Brochure">
-                                        <a href="javascript:void(0);" class="form-control table-brochure" data-toggle="modal" data-target="#getCourseBrochureModal"><i class="bx bx-file"></i></a>
-                                    </div>
-                                </td>
+                                <td class="col-light-blue" data-toggle="modal" data-target="#GetCoursesModal">4</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-
             </div>
         </div>
+        <!--End-->
+        <!--Start Attendees Modal-->
+        <div class="modal fade" id="GetAttendeesModal" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Attendee Details</h5>
+                        <button type="button" class="close col-black" data-dismiss="modal">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body re-modal-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover" id="tbl_attendeeDetails">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">Sl#</th>
+                                        <th scope="col">Name</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Rakesh</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Sanat</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Bikash</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End Attendees Modal-->
+        <!--Start Courses Modal-->
+        <div class="modal fade" id="GetCoursesModal" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Course Details</h5>
+                        <button type="button" class="close col-black" data-dismiss="modal">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body re-modal-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover" id="tbl_attendeeDetails">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">Sl#</th>
+                                        <th scope="col">Course Name</th>
+                                        <th scope="col">Start Date </th>
+                                        <th scope="col">End Date </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>C PROGRAMMING</td>
+                                        <td>31-Aug-20</td>
+                                        <td>01-Sep-20</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>ELECTRONICS</td>
+                                        <td>30-Aug-20</td>
+                                        <td>31-Aug-20</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>MATHEMATICS</td>
+                                        <td>01-Sep-20</td>
+                                        <td>30-Sep-20</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End Courses Modal-->
         <!-- End -->
         <!-- Footer -->
         <div class="flex-grow-1"></div>
@@ -493,97 +552,25 @@
         <!-- End Footer -->
     </div>
     <!-- End Main Content Wrapper -->
-    <!-- Start View Details Modal -->
-    <div class="modal fade" id="ViewDetailsModal" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Course Details</h5>
-                    <button type="button" class="close col-black" data-dismiss="modal">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body re-modal-body">
-                    <div class="table-responsive">
-                        <table class="table table-striped table-hover">
-                            <tbody>
-                                <tr>
-                                    <th>Name</th>
-                                    <td>Mahesh</td>
-                                </tr>
-                                <tr>
-                                    <th>Description</th>
-                                    <td>Des1</td>
-                                </tr>
-                                <tr>
-                                    <th>Topics</th>
-                                    <td>PhysicsI,PhysicsII,PhysicsIII</td>
-                                </tr>
-                                <tr>
-                                    <th>Course Thumbnail</th>
-                                    <td><img src="assets/img/course-pop-up-img.jpg" class="banner-img" /></td>
-                                </tr>
-                                <tr>
-                                    <th>Start Date</th>
-                                    <td>11-Jul-2020</td>
-                                </tr>
-                                <tr>
-                                    <th>End Date</th>
-                                    <td>22-Jul-2020</td>
-                                </tr>
-                                <tr>
-                                    <th>Duration (Days)</th>
-                                    <td>11</td>
-                                </tr>
-                                <tr>
-                                    <th>Fees</th>
-                                    <td>10000</td>
-                                </tr>
-                                <tr>
-                                    <th>Class Frequency</th>
-                                    <td>Daily</td>
-                                </tr>
-                                <tr>
-                                    <th>No. Of Classes</th>
-                                    <td>3</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End View Details Modal -->
-    <!-- Start Course Banner Modal -->
-    <div class="modal fade basicModalLG plan-modal" id="getCourseBrochureModal" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content p-20">
-                <div class="modal-body">
-                    <button type="button" class="close enroll-close" data-dismiss="modal">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <a href="assets/img/course-pop-up-img.jpg" class="bx bx-download sm-download" download>
-                        <img src="assets/img/course-pop-up-img.jpg" class="banner-img" />
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Course Banner Modal -->
     <!-- Footer Scripts -->
     <!-- Vendors Min JS -->
     <script src="assets/js/vendors.min.js"></script>
     <!-- Custom JS -->
     <script src="assets/js/custom.js"></script>
-    <!-- Datepicker JS -->
-    <script src="assets/js/gijgo.min.js"></script>
+    <!-- Attendees JS -->
+    <script src="assets/js/attendees.js"></script>
+    <!-- Clearable Input JS -->
+    <script src="assets/js/clearable-input.js"></script>
+    <!-- Text Ellipsis JS -->
+    <script src="assets/js/jquery.vEllipsis.js"></script>
     <script>
-        $('#sdatepicker').datepicker({ format: 'dd-mmm-yyyy' });
-        $('#edatepicker').datepicker({ format: 'dd-mmm-yyyy' });
+        $(document).ready(function () {
+            $().vEllipsis({
+                'lines': 2,
+                'responsive': true
+            });
+        });
     </script>
-    <!-- Duration Date JS -->
-    <script src="assets/js/date-duration.js"></script>
 
 </body>
 </html>

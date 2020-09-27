@@ -485,6 +485,37 @@
     color: #a8a8a8;
 }
 
+.footer-links {
+    text-align: right;
+    color: #ffffff;
+}
+
+    .footer-links a {
+        display: inline-block;
+        line-height: 1.8;
+        font-weight: 400;
+        text-decoration: none;
+        color: inherit;
+    }
+
+        .footer-links a:active, .footer-links a:focus, .footer-links a:hover {
+            color: #a8a8a8;
+            text-decoration: none;
+        }
+
+        .footer-links a:before {
+            content: "|";
+            font-weight: 300;
+            font-size: 20px;
+            left: 0;
+            color: #fff;
+            display: inline-block;
+            padding-right: 5px;
+        }
+
+    .footer-links .link-1:before {
+        content: none;
+    }
 /*------------------------------------------------------------------*/
 
 .lh-btn-outline {
@@ -1464,6 +1495,24 @@
     cursor: pointer;
 }
 
+.btn-enroll-new-course {
+    position: absolute;
+    right: 1%;
+    bottom: -3%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    border: none;
+    background-color: #e1000a;
+    color: #ffffff;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    border-radius: 30px;
+    padding: 6px 12px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
 .enroll-course-banner {
     position: absolute;
     right: 13%;
@@ -1501,7 +1550,7 @@
 
 .add-to-favorite {
     position: absolute;
-    font-size: 30px;
+    font-size: 25px;
     color: #ffc107;
     right: 25%;
     top: 1.5%;
@@ -1510,10 +1559,10 @@
 
 .show-interest {
     position: absolute;
-    font-size: 30px;
+    font-size: 25px;
     color: #000;
-    right: 29%;
-    top: 1.7%;
+    right: 28.5%;
+    top: 1.6%;
     cursor: pointer;
 }
 
@@ -1710,6 +1759,11 @@
     color: #ffffff;
 }
 
+.edgt-title-holder.edgt-standard-with-breadcrumbs-type .edgt-page-title-black {
+    margin: 0;
+    color: #212529;
+}
+
 .edgt-title-holder.edgt-standard-with-breadcrumbs-type .edgt-breadcrumbs-info {
     display: inline-block;
     white-space: nowrap;
@@ -1728,19 +1782,30 @@
     color: #ffffff;
 }
 
-    .edgt-title-holder.edgt-standard-with-breadcrumbs-type .edgt-breadcrumbs.edgt-has-inline-style a {
-        opacity: 1;
-        -webkit-transition: opacity .2s ease-out;
-        -moz-transition: opacity .2s ease-out;
-        transition: opacity .2s ease-out;
-    }
+.edgt-title-holder.edgt-standard-with-breadcrumbs-type .edgt-black-breadcrumbs {
+    color: #888;
+}
 
-    .edgt-title-holder.edgt-standard-with-breadcrumbs-type .edgt-breadcrumbs a, .edgt-title-holder.edgt-standard-with-breadcrumbs-type .edgt-breadcrumbs span {
-        position: relative;
-        display: inline-block;
-        vertical-align: middle;
-        color: inherit;
-    }
+.edgt-title-holder.edgt-standard-with-breadcrumbs-type .edgt-breadcrumbs.edgt-has-inline-style a {
+    opacity: 1;
+    -webkit-transition: opacity .2s ease-out;
+    -moz-transition: opacity .2s ease-out;
+    transition: opacity .2s ease-out;
+}
+
+.edgt-title-holder.edgt-standard-with-breadcrumbs-type .edgt-breadcrumbs a, .edgt-title-holder.edgt-standard-with-breadcrumbs-type .edgt-breadcrumbs span {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    color: inherit;
+}
+
+.edgt-title-holder.edgt-standard-with-breadcrumbs-type .edgt-black-breadcrumbs a, .edgt-title-holder.edgt-standard-with-breadcrumbs-type .edgt-black-breadcrumbs span {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    color: inherit;
+}
 
 .edgt-container {
     padding: 0;
@@ -2167,12 +2232,12 @@
 }
 
 .enroll-course-show .show-interest {
-    right: 6%;
-    top: 2%;
+    right: 4.5%;
+    top: 3%;
 }
 
 .enroll-course-show .add-to-favorite {
-    right: 2%;
+    right: 1%;
     top: 2%;
 }
 
@@ -3177,6 +3242,32 @@
         top: 2px;
     }
 
+.sm-co-date {
+    color: #343a40;
+}
+
+    .sm-co-date i {
+        color: #343a40;
+        margin-right: 5px;
+        font-size: 18px;
+        position: relative;
+        top: 2px;
+    }
+
+.sm-co-users {
+    color: #1873b3;
+    margin: 0 0 0 20px;
+    cursor: pointer;
+}
+
+    .sm-co-users i {
+        color: #1873b3;
+        margin-right: 5px;
+        font-size: 15px;
+        position: relative;
+        top: 2px;
+    }
+
 .sm-bottom-status-info {
     float: left;
     margin-left: 40px;
@@ -3234,7 +3325,7 @@
     margin: 10px 0;
 }
 
-#hostDashlList, #hostDashCalendar, #hostCWlList, #hostCWCalendar, #attendeeCWlList, #attendeeCWCalendar, #hostUPlList, #hostUPCalendar, #attendeeUPlList, #attendeeUPCalendar {
+#hostDashlList, #hostDashCalendar, #hostCWlList, #hostCWCalendar, #attendeeCWlList, #attendeeCWCalendar, #hostUPlList, #hostUPCalendar, #attendeeUPlList, #attendeeUPCalendar, #courseAttendeesList, #attendeesCoursesList {
     animation: fadeIn 1.5s;
 }
 
@@ -3270,14 +3361,13 @@
     }
 
 .back-to-list {
-    color: #000;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 10px;
 }
 
     .back-to-list a {
-        color: #000;
+        color: #2078d6;
     }
 
         .back-to-list a:hover {
@@ -3649,12 +3739,25 @@
     cursor: pointer;
 }
 
-.time-zone {
-    position: absolute;
-    right: 2%;
-    bottom: -18%;
-    color: #28a745;
+.entry-title {
+    position: relative;
+    color: #17a2b8;
     font-weight: 700;
+    left: 20%;
+}
+
+.host-time-zone {
+    position: relative;
+    color: #17a2b8;
+    font-weight: 700;
+    left: 2%;
+}
+
+.atten-time-zone {
+    position: relative;
+    color: #17a2b8;
+    font-weight: 700;
+    left: 15%;
 }
 
 .form-radio-section {
@@ -3700,10 +3803,10 @@
 
 .co-show-interest {
     position: absolute;
-    font-size: 25px;
+    font-size: 20px;
     color: #000;
-    right: 17%;
-    top: 6%;
+    right: 13%;
+    top: 3.2%;
     cursor: pointer;
 }
 
@@ -3713,10 +3816,10 @@
 
 .co-add-to-favorite {
     position: absolute;
-    font-size: 25px;
+    font-size: 20px;
     color: #ffc107;
-    right: 5%;
-    top: 5.9%;
+    right: 3%;
+    top: 3%;
     cursor: pointer;
 }
 
@@ -3755,6 +3858,308 @@
     top: -6px;
     color: #ffffff;
 }
+
+.att-modal-body {
+    padding: 10px 20px;
+}
+
+.modal-p-text {
+    color: #6c757d !important;
+    font-size: 13px;
+}
+
+.theme-col {
+    background: #e1000a;
+}
+
+    .theme-col h5 {
+        color: #ffffff;
+    }
+
+.contact-detail h2 {
+    font-size: 35px;
+    line-height: 1.15em;
+    font-weight: 600;
+}
+
+.contact-detail p {
+    color: #888;
+    font-size: 18px;
+    line-height: 33px;
+    margin-top: 20px;
+}
+
+.cont-address {
+    font-size: 20px;
+    line-height: 30px;
+    color: #434343;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+.edgt-il-text {
+    margin-bottom: 0.7rem;
+}
+
+    .edgt-il-text i {
+        position: relative;
+        top: 4px;
+        color: #212121;
+        font-size: 20px;
+    }
+
+    .edgt-il-text span {
+        color: #999999;
+        font-size: 14px;
+        padding-left: 10px;
+    }
+
+.edgt-separator {
+    width: 80%;
+    border: 1px solid #e1e1e1;
+    margin: 30px 0;
+}
+
+.contact-form {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    padding: 0;
+}
+
+.contact-card-title {
+    background-color: #fff;
+    line-height: 33px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #000;
+    padding: 13px 15px 8px 30px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.contact-form label {
+    color: #888;
+}
+
+.display-flex {
+    display: flex;
+}
+
+.mb-40 {
+    margin-bottom: 40px;
+}
+
+.mb-80 {
+    margin-bottom: 80px;
+}
+
+.col-about h2 {
+    font-size: 2rem;
+    color: #7a7a7a;
+    margin-bottom: 30px;
+}
+
+.col-about p {
+    color: #686868;
+    line-height: 28px;
+    margin-bottom: 26px;
+}
+
+.hr-line {
+    margin: 30px 0;
+}
+
+.pri-ul li {
+    margin-bottom: 10px;
+}
+
+.pri-ol li {
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.display-inline-block {
+    display: inline-block;
+}
+
+.col-light-blue {
+    color: #1873b3;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+    .col-light-blue:hover {
+        text-decoration: underline;
+    }
+
+#attendeesCoursesList {
+    display: none;
+}
+
+/*------------ Start Cart ------------------ */
+.cart-area {
+    background-color: #ffffff;
+    -webkit-box-shadow: 1px 5px 24px 0 rgba(68, 102, 242, 0.05);
+    box-shadow: 1px 5px 24px 0 rgba(68, 102, 242, 0.05);
+    border-radius: 5px;
+    padding: 25px;
+}
+
+.cart-table table thead th {
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid #dee2e6;
+    font-size: 15px;
+    font-weight: 700;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.cart-table table tbody td {
+    vertical-align: middle;
+    color: #6084a4;
+    border-width: 1px;
+    font-size: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+    .cart-table table tbody td.total, .cart-table table tbody td.total-price {
+        color: #2a2a2a;
+        font-size: 17px;
+    }
+
+.cart-btn-box .checkout-btn {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    text-decoration: none;
+    padding: 13px 35px 12px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: 0.5s;
+    background-color: #3578e5;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+}
+/*------------ End Cart --------------------*/
+
+
+/*------------ Start Month Calendar ----------------*/
+#dayOfMonth {
+    width: 100%;
+    height: auto;
+    padding: 2px 80px 2px 2px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+    #dayOfMonth > .placeholder {
+        display: inline-block;
+        padding: 3.5px;
+    }
+
+    #dayOfMonth > button {
+        position: absolute;
+        height: 25px;
+        width: 25px;
+        background-color: transparent;
+        top: 35px;
+        border: 2px solid transparent;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+        #dayOfMonth > button:hover {
+            transform: scale(1.2);
+        }
+
+        #dayOfMonth > .select-button {
+            background: url("../img/select-all.jpg") no-repeat center center;
+            background-size: contain;
+            right: 20px;
+        }
+
+    #dayOfMonth > .deselect-button {
+        background: url("../img/deselect-all.jpg") no-repeat center center;
+        background-size: contain;
+        right: 50px;
+    }
+
+    #dayOfMonth > .month-item {
+        display: inline-block;
+        background-color: #00BCD4;
+        padding: 1px 5px 2px 5px;
+        border-radius: 2px;
+        color: #fff;
+        margin: 1px;
+    }
+
+        #dayOfMonth > .month-item > button {
+            background-color: transparent;
+            color: #fff;
+            border: 0;
+            font-weight: 900;
+            cursor: pointer;
+            vertical-align: baseline;
+            padding: 2px;
+        }
+
+#MonthCalendar {
+    display: none;
+}
+
+.month-calendar {
+    background: #ffffff;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 5px #888888;
+    width: 30%;
+    font-family: Tahoma;
+    font-size: 14px;
+    padding: 0 0 10px 0;
+    position: absolute;
+    top: 50%;
+    right: 18%;
+    z-index: 1;
+}
+
+.month-calendar-head {
+    background: #7091b7;
+    width: 100%;
+    height: 25px;
+}
+
+.month-calendar-numbers {
+    padding: 10px;
+    margin-bottom: 13px;
+}
+
+    .month-calendar-numbers div {
+        width: 14.28%;
+        height: 13%;
+        background-color: #EFF4F9;
+        float: left;
+        text-align: center;
+        padding: 5px;
+        cursor: pointer;
+    }
+
+        .month-calendar-numbers div:hover, .month-calendar-numbers div:focus, .month-calendar-numbers div:active {
+            background-color: #D8EAF1;
+        }
+/*------------ End Month Calendar ------------------*/
+
 /*------------------- Responsive ------------------------------------*/
 @media(min-width: 320px) and (max-width: 767px) {
     .social-login-btn {
@@ -3873,6 +4278,14 @@
     .panel-search-icon {
         top: -1.7%;
         left: 9%;
+    }
+
+    .res-ocr-float-right {
+        float: none;
+    }
+
+    .cart-table {
+        margin-bottom: 25px;
     }
 }
 

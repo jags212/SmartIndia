@@ -1,6 +1,6 @@
 ﻿<!doctype html>
 <html lang="en">
-    
+
 <head>
 
     <!-- Required meta tags -->
@@ -22,12 +22,15 @@
     <link rel="stylesheet" href="assets/css/responsive.css" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/custom.css" />
+    <link rel="stylesheet" href="assets/css/core.css" />
     <!-- Datepicker CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap-datepicker.css" />
     <!-- Timepicker CSS -->
     <link rel="stylesheet" href="assets/css/wickedpicker.min.css" />
     <!-- Bootstrap Datatable CSS -->
     <link rel="stylesheet" href="assets/css/datatables.min.css" />
+    <!-- Multi Select CSS -->
+    <link rel="stylesheet" href="assets/css/multi_select.css" />
 
 </head>
 
@@ -97,7 +100,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="javascript:void(0);" class="nav-link">
+                    <a href="host-attendees.html" class="nav-link">
                         <span class="icon">
                             <i class='bx bxs-user-detail'></i>
                         </span>
@@ -127,6 +130,8 @@
                     <span class="middle-bar"></span>
                     <span class="bottom-bar"></span>
                 </div>
+
+                <div class="host-time-zone">IST-GMT+05:30</div>
 
                 <ul class="navbar-nav right-nav align-items-center ml-auto res-right-nav">
                     <li class="nav-item">
@@ -291,40 +296,334 @@
         <!-- Start -->
         <div class="card mb-30">
             <div class="card-body">
+                <div class="existing-date">
+                    <span class="col-black">Schedule Type:</span>
+                    <label class="radio-inline">
+                        <input type="radio" name="rbtOnce" value="once" checked id="rbtonce">Once
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="rbtOnce" value="recurring">Recurring
+                    </label>
+                </div>
                 <form>
                     <div class="row form-group">
-                        <div class="col">
+                        <div class="col-md-4">
+                            <input type="hidden" class="form-control" name="SchedularId" id="SchedularId">
                             <label>Courses</label>
-                            <select id="inputCourses" class="form-control">
-                                <option selected>Choose...</option>
-                                <option>Physics</option>
-                                <option>Chemistry</option>
-                                <option>Literature</option>
-                                <option>Business</option>
+                            <select id="inputCourses" name="inputCourses" class="form-control">
                             </select>
                         </div>
-                        <div class="col">
+                        <div class="col-md-4">
+                            <label>Batch Name</label>
+                            <input type="text" id="BatchNameOnce" autocomplete="off" ondrop="return false;" onchange="checkBatchName();" onpaste="return false;" name="BatchNameOnce" maxlength="20" class="form-control" placeholder="Batch Name">
+
+                        </div>
+                        <div class="col" id="dtponce">
                             <label>Date</label>
-                            <input type="text" class="form-control date" placeholder="Pick the multiple dates">
-                            <i class="bx bx-calendar time-clock" role="right-icon"></i>
+                            <input type="hidden" class="form-control" name="hfonceDate" id="hfonceDate">
+                            <input type="hidden" class="form-control" name="SccDate" id="SccDate">
+                            <input type="hidden" class="form-control" name="SccTo" id="SccTo">
+                            <input type="hidden" class="form-control" name="hfEndTime" id="hfEndTime">
+                            <input type="text" id="ScDate" name="ScDate" class="form-control date-form-control" placeholder="Pick the date" disabled>
                         </div>
                     </div>
+
+                    <!--Recurring dailly start-->
+
+
+                    <div id="divdailyrecurring">
+                        <div class="row form-group">
+                            <div class="col-md-6">
+                                <label>Recurring Schedule</label>
+                                <select class="form-control" name="frequency" id="ddlrecurringschedule">
+                                    <option selected value="0">---Select---</option>
+                                    <option value="Daily">Daily</option>
+                                    <option value="Weekly">Weekly</option>
+                                    <option value="Monthly">Monthly</option>
+                                </select>
+                            </div>
+
+                            <div class="col" id="divDayofweek">
+                                <label class="res-label"> Day of Week</label>
+                                <input type="text" class="form-control" name="dayofweek" placeholder="Pick the week" data-access_multi_select="true">
+                            </div>
+
+                            <div class="col" id="divDayofMonth">
+                                <label class="res-label"> Day of Month</label>
+                                <div id="dayOfMonth">
+                                    <span class="placeholder">Pick the month</span>
+                                    <button type="button" class="select-button" onclick="selectAll(true)"></button>
+                                    <button type="button" class="deselect-button" onclick="deselectAllNo()"></button>
+                                </div>
+                            </div>
+                            <div class="month-calendar" id="MonthCalendar">
+                                <div class="month-calendar-head"></div>
+                                <div class="month-calendar-numbers">
+                                    <div>1</div>
+                                    <div>2</div>
+                                    <div>3</div>
+                                    <div>4</div>
+                                    <div>5</div>
+                                    <div>6</div>
+                                    <div>7</div>
+                                </div>
+                                <div class="month-calendar-numbers">
+                                    <div>8</div>
+                                    <div>9</div>
+                                    <div>10</div>
+                                    <div>11</div>
+                                    <div>12</div>
+                                    <div>13</div>
+                                    <div>14</div>
+                                </div>
+                                <div class="month-calendar-numbers">
+                                    <div>15</div>
+                                    <div>16</div>
+                                    <div>17</div>
+                                    <div>18</div>
+                                    <div>19</div>
+                                    <div>20</div>
+                                    <div>21</div>
+                                </div>
+                                <div class="month-calendar-numbers">
+                                    <div>22</div>
+                                    <div>23</div>
+                                    <div>24</div>
+                                    <div>25</div>
+                                    <div>26</div>
+                                    <div>27</div>
+                                    <div>28</div>
+                                </div>
+                                <div class="month-calendar-numbers">
+                                    <div>29</div>
+                                    <div>30</div>
+                                    <div>31</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--for weekly date start-->
+                        <div id="divdateforweekly">
+                            <div class="row form-group">
+                                <div class="col" id="dtpReccStart">
+                                    <label class="res-label"> From Date</label>
+
+                                    <input type="text" id="datepickerFrom" name="datepickerFrom" class="form-control date-form-control" placeholder="Pick the  date" disabled>
+
+                                </div>
+                                <div class="col" id="dtpReccEnd">
+                                    <label class="res-label">To Date</label>
+                                    <input type="hidden" class="form-control" name="hfSccDate" id="hfSccDate">
+                                    <input type="text" id="datepickerTo" name="datepickerTo" class="form-control date-form-control" placeholder="Pick the  date" disabled>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--for weekly date End-->
+                        <!--for monthly date start-->
+                        <div id="divmonthdate">
+                            <div class="row form-group">
+                                <div class="col-md-3" id="dtpReccStart">
+                                    <label class="res-label"> From Date</label>
+                                    <select class="form-control" name="frequency" id="ddlyearfrom">
+                                        <option selected value="0">---Select---</option>
+                                        <option value="2030">2030</option>
+                                        <option value="2029">2029</option>
+                                        <option value="2028">2028</option>
+                                        <option value="2027">2027</option>
+                                        <option value="2026">2026</option>
+                                        <option value="2025">2025</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" id="dtpReccEnd">
+                                    <label class="res-label">.</label>
+                                    <select class="form-control" name="frequency" id="ddlmonthfrom">
+                                        <option selected value="0">---Select---</option>
+                                        <option value="01">January</option>
+                                        <option value="02">February</option>
+                                        <option value="03">March</option>
+                                        <option value="04">April</option>
+                                        <option value="05">May</option>
+                                        <option value="06">June</option>
+                                        <option value="07">July</option>
+                                        <option value="08">August</option>
+                                        <option value="09">September</option>
+                                        <option value="10">October</option>
+                                        <option value="11">November</option>
+                                        <option value="12">December</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" id="dtpReccStart">
+                                    <label class="res-label"> To Date</label>
+                                    <select class="form-control" name="frequency" id="ddlyesrto">
+                                        <option selected value="0">---Select---</option>
+                                        <option value="2030">2030</option>
+                                        <option value="2029">2029</option>
+                                        <option value="2028">2028</option>
+                                        <option value="2027">2027</option>
+                                        <option value="2026">2026</option>
+                                        <option value="2025">2025</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" id="dtpReccEnd">
+                                    <label class="res-label">.</label>
+                                    <select class="form-control" name="frequency" id="ddlmonthto">
+                                        <option selected value="0">---Select---</option>
+                                        <option value="01">January</option>
+                                        <option value="02">February</option>
+                                        <option value="03">March</option>
+                                        <option value="04">April</option>
+                                        <option value="05">May</option>
+                                        <option value="06">June</option>
+                                        <option value="07">July</option>
+                                        <option value="08">August</option>
+                                        <option value="09">September</option>
+                                        <option value="10">October</option>
+                                        <option value="11">November</option>
+                                        <option value="12">December</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!--for monthly date End-->
+                    </div>
+                    <!--Recurring dailly End-->
+                    <!--New Time Duration Start-->
                     <div class="row form-group">
                         <div class="col">
                             <label>Start Time</label>
-                            <input type="text" class="form-control timepicker">
+                            <select class="form-control" id="StartTime" name="StartTime">
+                                <option selected value="0">---Select---</option>
+                                <option value="08:00">8 : 00 AM</option>
+                                <option value="08:15">8 : 15 AM</option>
+                                <option value="08:30">8 : 30 AM</option>
+                                <option value="08:45">8 : 45 AM</option>
+                                <option value="09:00">9 : 00 AM</option>
+                                <option value="09:15">9 : 15 AM</option>
+                                <option value="09:30">9 : 30 AM</option>
+                                <option value="09:45">9 : 45 AM</option>
+                                <option value="10:00">10 : 00 AM</option>
+                                <option value="10:15">10 : 15 AM</option>
+                                <option value="10:30">10 : 30 AM</option>
+                                <option value="10:45">10 : 45 AM</option>
+                                <option value="11:00">11 : 00 AM</option>
+                                <option value="11:15">11 : 15 AM</option>
+                                <option value="11:30">11 : 30 AM</option>
+                                <option value="11:45">11 : 45 AM</option>
+                                <option value="12:00">12 : 00 PM</option>
+                                <option value="12:15">12 : 15 PM</option>
+                                <option value="12:30">12 : 30 PM</option>
+                                <option value="12:45">12 : 45 PM</option>
+
+                                <option value="13:00">1 : 00 PM</option>
+                                <option value="13:15">1 : 15 PM</option>
+                                <option value="13:30">1 : 30 PM</option>
+                                <option value="13:45">1 : 45 PM</option>
+                                <option value="14:00">2 : 00 PM</option>
+                                <option value="14:15">2 : 15 PM</option>
+                                <option value="14:30">2 : 30 PM</option>
+                                <option value="14:45">2 : 45 PM</option>
+                                <option value="15:00">3 : 00 PM</option>
+                                <option value="15:15">3 : 15 PM</option>
+                                <option value="15:30">3 : 30 PM</option>
+                                <option value="15:45">3 : 45 PM</option>
+                                <option value="16:00">4 : 00 PM</option>
+                                <option value="16:15">4 : 15 PM</option>
+                                <option value="16:30">4 : 30 PM</option>
+                                <option value="16:45">4 : 45 PM</option>
+                                <option value="17:00">5 : 00 PM</option>
+                                <option value="17:15">5 : 15 PM</option>
+                                <option value="17:30">5 : 30 PM</option>
+                                <option value="17:45">5 : 45 PM</option>
+                                <option value="18:00">6 : 00 PM</option>
+                                <option value="18:15">6 : 15 PM</option>
+                                <option value="18:30">6 : 30 PM</option>
+                                <option value="18:45">6 : 45 PM</option>
+                                <option value="19:00">7 : 00 PM</option>
+                                <option value="19:15">7 : 15 PM</option>
+                                <option value="19:30">7 : 30 PM</option>
+                                <option value="19:45">7 : 45 PM</option>
+                                <option value="20:00">8 : 00 PM</option>
+                                <option value="20:15">8 : 15 PM</option>
+                                <option value="20:30">8 : 30 PM</option>
+                                <option value="20:45">8 : 45 PM</option>
+                                <option value="21:00">9 : 00 PM</option>
+                                <option value="21:15">9 : 15 PM</option>
+                                <option value="21:30">9 : 30 PM</option>
+                                <option value="21:45">9 : 45 PM</option>
+                                <option value="22:00">10 : 00 PM</option>
+                                <option value="22:15">10 : 15 PM</option>
+                                <option value="22:30">10 : 30 PM</option>
+                                <option value="22:45">10 : 45 PM</option>
+                                <option value="23:00">11 : 00 PM</option>
+                                <option value="23:15">11 : 15 PM</option>
+                                <option value="23:30">11 : 30 PM</option>
+                                <option value="23:45">11 : 45 PM</option>
+                                <option value="00:00">00 : 00 AM</option>
+                                <option value="00:15">00 : 15 AM</option>
+                                <option value="00:30">00 : 30 AM</option>
+                                <option value="00:45">00 : 45 AM</option>
+
+                                <option value="1:00">1 : 00 AM</option>
+                                <option value="1:15">1 : 15 AM</option>
+                                <option value="1:30">1 : 30 AM</option>
+                                <option value="1:45">1 : 45 AM</option>
+                                <option value="2:00">2 : 00 AM</option>
+                                <option value="2:15">2 : 15 AM</option>
+                                <option value="2:30">2 : 30 AM</option>
+                                <option value="2:45">2 : 45 AM</option>
+                                <option value="3:00">3 : 00 AM</option>
+                                <option value="3:15">3 : 15 AM</option>
+                                <option value="3:30">3 : 30 AM</option>
+                                <option value="3:45">3 : 45 AM</option>
+                                <option value="4:00">4 : 00 AM</option>
+                                <option value="4:15">4 : 15 AM</option>
+                                <option value="4:30">4 : 30 AM</option>
+                                <option value="4:45">4 : 45 AM</option>
+                                <option value="5:00">5 : 00 AM</option>
+                                <option value="5:15">5 : 15 AM</option>
+                                <option value="5:30">5 : 30 AM</option>
+                                <option value="5:45">5 : 45 AM</option>
+                                <option value="6:00">6 : 00 AM</option>
+                                <option value="6:15">6 : 15 AM</option>
+                                <option value="6:30">6 : 30 AM</option>
+                                <option value="6:45">6 : 45 AM</option>
+                                <option value="7:00">7 : 00 AM</option>
+                                <option value="7:15">7 : 15 AM</option>
+                                <option value="7:30">7 : 30 AM</option>
+                                <option value="7:45">7 : 45 AM</option>
+                            </select>
                             <i class="bx bx-time-five time-clock" role="right-icon"></i>
                         </div>
                         <div class="col">
-                            <label>End Time</label>
-                            <input type="text" class="form-control timepicker">
+                            <label>Duration</label>
+                            <select class="form-control" id="Duration" name="Duration">
+                                <option selected value="0">---Select---</option>
+                                <option value="30">0 : 30 Mins</option>
+                                <option value="45">0 : 45 Mins</option>
+                                <option value="60">1 : 00 Hrs</option>
+                                <option value="75">1 : 15 Hrs</option>
+                                <option value="90">1 : 30 Hrs</option>
+                                <option value="105">1 : 45 Hrs</option>
+                                <option value="120">2 : 00 Hrs</option>
+                            </select>
                             <i class="bx bx-time-five time-clock" role="right-icon"></i>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <!--New Time duration end-->
+                    <button type="button" id="btnSubmit" class="btn btn-primary">Submit</button>
                     <button type="reset" class="btn btn-warning">Reset</button>
                 </form>
-
             </div>
         </div>
 
@@ -495,10 +794,155 @@
 
     <!-- Bootstrap Datatable JS -->
     <script src="assets/js/datatables.min.js" type="text/javascript"></script>
+    <script src="assets/js/dataTables.bootstrap4.min.js" type="text/javascript"></script>
     <script src="assets/js/datatables.js" type="text/javascript"></script>
 
     <!-- Publish JS -->
     <script src="assets/js/publish.js" type="text/javascript"></script>
+
+    <!--for once and recurring JS-->
+    <script>
+
+        $('#ScDate').datepicker(
+            {
+                format: 'dd-mmm-yy',
+                disableDates: function (date) {
+                    // allow for today
+                    const currentDate = new Date().setHours(0, 0, 0, 0);
+                    return date.setHours(0, 0, 0, 0) >= currentDate ? true : false;
+                }
+            });
+
+        $("#ScDate").change(function () {
+            var startdate = $("#ScDate").val();
+            $("#hfonceDate").val(dateFormat(startdate, 'yyyy-mm-dd'));
+        });
+    </script>
+    <script>
+
+        $('#uScDate').datepicker(
+            {
+                format: 'dd-mmm-yy',
+                disableDates: function (date) {
+                    // allow for today
+                    const currentDate = new Date().setHours(0, 0, 0, 0);
+                    return date.setHours(0, 0, 0, 0) >= currentDate ? true : false;
+                }
+            });
+
+        $("#uScDate").change(function () {
+            var startdate = $("#uScDate").val();
+            $("#uSccDate").val(dateFormat(startdate, 'yyyy-mm-dd'));
+        });
+    </script>
+    <script>
+        $('#datepickerFrom').datepicker({
+            format: 'dd-mmm-yy',
+            disableDates: function (date) {
+                // allow for today
+                const currentDate = new Date().setHours(0, 0, 0, 0);
+                return date.setHours(0, 0, 0, 0) >= currentDate ? true : false;
+            }
+        });
+        $("#datepickerFrom").change(function () {
+            var fromdate = $("#datepickerFrom").val();
+            $("#SccDate").val(dateFormat(fromdate, 'yyyy-mm-dd'));
+        });
+    </script>
+    <script>
+        $('#datepickerTo').datepicker({
+            format: 'dd-mmm-yy',
+            disableDates: function (date) {
+                // allow for today
+                const currentDate = new Date().setHours(0, 0, 0, 0);
+                return date.setHours(0, 0, 0, 0) >= currentDate ? true : false;
+            }
+        });
+        $("#datepickerTo").change(function () {
+            var enddate = $("#datepickerTo").val();
+            $("#SccTo").val(dateFormat(enddate, 'yyyy-mm-dd'));
+        });
+    </script>
+    <script>
+        $('input[type=radio][name=rbtOnce]').change(function () {
+            if (this.value == 'once') {
+                $("#divdailyrecurring").css("display", "none");
+                $("#dtponce").css("display", "block");
+
+            }
+            else if (this.value == 'recurring') {
+                $("#dtponce").css("display", "none");
+                $("#divDayofweek").css("display", "none");
+                $("#divdailyrecurring").css("display", "block");
+            }
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#ddlrecurringschedule").change(function () {
+
+                var selectedValue = $(this).children("option:selected").val();
+
+                if (selectedValue == '0') {
+                    $("#divDayofweek").css("display", "none");
+                    $("#divDayofMonth").css("display", "none");
+                    $("#divmonthdate").css("display", "none");
+                    $("#divdateforweekly").css("display", "none");
+
+
+                }
+                if (selectedValue == 'Daily') {
+                    $("#divDayofweek").css("display", "none");
+                    $("#divDayofMonth").css("display", "none");
+                    $("#divmonthdate").css("display", "none");
+                    $("#divdateforweekly").css("display", "block");
+                }
+                if (selectedValue == 'Weekly') {
+                    $("#divDayofweek").css("display", "block");
+                    $("#divDayofMonth").css("display", "none");
+                    $("#divmonthdate").css("display", "none");
+                    $("#divdateforweekly").css("display", "block");
+                }
+                if (selectedValue == 'Monthly') {
+                    $("#divDayofMonth").css("display", "block");
+                    $("#divDayofweek").css("display", "none");
+                    $("#divmonthdate").css("display", "block");
+                    $("#divdateforweekly").css("display", "none");
+                }
+            });
+        });
+    </script>
+
+    <script>
+        $("#Duration").change(function () {
+            var duration = $('option:selected', $(this)).val();
+            var timestr = $("#StartTime").val();
+            var now = new Date('1900-01-01 ' + timestr + ':00');
+            var endtime = new Date(now.getTime() + parseInt(duration) * 60000);
+            $("#hfEndTime").val(endtime.toTimeString().split(' ')[0].toString('hh:mm'));
+        });
+    </script>
+    <script>
+        $("#inputCourses").change(function () {
+            //alert($('option:selected', $(this)).text());
+            $("#BatchNameOnce").focus();
+        });
+    </script>
+    <script>
+        $(function () {
+            $('#BatchNameOnce').on('keypress', function (e) {
+                if (e.which == 32) {
+                    return false;
+                }
+            });
+        });
+    </script>
+    <!-- Multi Select JS -->
+    <script src="assets/js/multi_select.js" type="text/javascript"></script>
+    <!-- Day of Week -->
+    <script src="assets/js/dayofweek.js" type="text/javascript"></script>
+    <!-- Day of Month -->
+    <script src="assets/js/dayofmonth.js" type="text/javascript"></script>
 
 </body>
 </html>
