@@ -20,7 +20,7 @@ namespace SmartIndia.WebApp.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Login", "Users", new { Area = "ManageUsers" });
         }
 
         public IActionResult Privacy()

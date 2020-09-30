@@ -36,7 +36,7 @@ $('#btnLogin').click(function () {
                     localStorage.setItem("firstName", data.firstName);
                     localStorage.setItem("jwtToken", data.jwtToken);
                     localStorage.setItem("refreshToken", data.refreshToken); 
-                    window.location.href = "/Hosts/HostDashboard/Dashboard";
+                    window.location.href = "/Attendee/Dashboard/AttendeeDashboard";
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) { 
