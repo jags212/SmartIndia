@@ -8,17 +8,16 @@ using System.Data;
 using System.Linq;
 using System.Text;
 
-namespace SmartIndia.Data.Services.Attendee
+namespace SmartIndia.Data.Services.Host
 {
-   public class AttendeeClassWallServices: RepositoryBase
+   public class HostDashboardServices : RepositoryBase
     {
-        string retMsg;
-        public AttendeeClassWallServices(IConnectionFactory connectionFactory) : base(connectionFactory)
+        public HostDashboardServices(IConnectionFactory connectionFactory) : base(connectionFactory)
         {
 
         }
         [Obsolete]
-        public List<ClassWallCalender> BindClassWallCallendar(HostParameter hostParameter)
+        public List<UpcomingClassCalender> BindUpcommingClasses(HostParameter hostParameter)
         {
             object[] objArray = new object[] {
                      "@P_ACTIONCODE",hostParameter.ACTIONCODE,
@@ -27,11 +26,11 @@ namespace SmartIndia.Data.Services.Attendee
             try
             {
                 DynamicParameters param = objArray.ToDynamicParameters();
-                var result = DBConnection.Query<ClassWallsCalender>("USP_AttendeeUpcomingClasses_ACTION", param, commandType: CommandType.StoredProcedure).ToList();
-                List<ClassWallCalender> classwallCalender = new List<ClassWallCalender>();
+                var result = DBConnection.Query<GetHostUpcomingClassesDetails>("USP_GetHostSchedular_ACTION", param, commandType: CommandType.StoredProcedure).ToList();
+                List<UpcomingClassCalender> pcomingClassCalender = new List<UpcomingClassCalender>();
                 foreach (var item in result)
                 {
-                    var modal = new ClassWallCalender()
+                    var modal = new UpcomingClassCalender()
                     {
                         title = item.CourseName,
                         ScheduleDate = TimeZone.CurrentTimeZone.ToLocalTime(item.ScheduleDate).ToString("yyyy-MM-dd"),
@@ -46,13 +45,12 @@ namespace SmartIndia.Data.Services.Attendee
                         CourseId = item.CourseId,
                         SchedularId = item.SchedularId,
                         color = "#ffc107",
-                        url = hostParameter.Curl + "/Attendee/ClassWall/ClassWallDetail?SID=" + item.SchedularId + ""
-
+                        url = hostParameter.Curl + "/Hosts/HostDashboard/CourseDetails?SID=" + item.SchedularId + ""
 
                     };
-                    classwallCalender.Add(modal);
+                    pcomingClassCalender.Add(modal);
                 }
-                return classwallCalender;
+                return pcomingClassCalender;
             }
             catch (Exception ex)
             {
@@ -61,23 +59,22 @@ namespace SmartIndia.Data.Services.Attendee
         }
 
         [Obsolete]
-        public List<ClassWallClassDetails> BindClassWallDetail(HostParameterCourseDetail hostParameterCourseDetail)
+        public List<UpcomingClassDetails> BindUpcommingClassDetail(HostParameterCourseDetail hostParameterCourseDetail)
         {
             object[] objArray = new object[] {
-                     "@P_ACTIONCODE","E",
+                     "@P_ACTIONCODE",hostParameterCourseDetail.ACTIONCODE,
                      "@UserId",hostParameterCourseDetail.UserId,
                      "@SchedularId",hostParameterCourseDetail.SchedularId
             };
             try
             {
                 DynamicParameters param = objArray.ToDynamicParameters();
-                var result = DBConnection.Query<ClassWallsClassDetails>("USP_AttendeeUpcomingClasses_ACTION", param, commandType: CommandType.StoredProcedure).ToList();
-                List<ClassWallClassDetails> classWallDetails = new List<ClassWallClassDetails>();
+                var result = DBConnection.Query<UpcomingClassesDetails>("USP_GetHostSchedular_ACTION", param, commandType: CommandType.StoredProcedure).ToList();
+                List<UpcomingClassDetails> upcomingClassDetails = new List<UpcomingClassDetails>();
                 foreach (var item in result)
                 {
-                    var modal = new ClassWallClassDetails()
+                    var modal = new UpcomingClassDetails()
                     {
-                        title = item.CourseName,
                         CourseName = item.CourseName,
                         ScheduleDate = TimeZone.CurrentTimeZone.ToLocalTime(item.ScheduleDate).ToString("yyyy-MM-dd"),
                         start = TimeZone.CurrentTimeZone.ToLocalTime(item.ScheduleDate).ToString("yyyy-MM-dd") + "T" + item.StartTime + ":00",
@@ -89,37 +86,17 @@ namespace SmartIndia.Data.Services.Attendee
                         CourseDesc = item.CourseDesc,
                         Topics = item.Topics,
                         CourseId = item.CourseId,
-                        SchedularId = item.SchedularId,
-                        IsPublished = item.IsPublished
+                        SchedularId = item.SchedularId
 
                     };
-                    classWallDetails.Add(modal);
+                    upcomingClassDetails.Add(modal);
                 }
-                return classWallDetails;
+                return upcomingClassDetails;
             }
             catch (Exception ex)
             {
                 return null;
             }
-        }
-        public string UpdateUserRole( Int64 Userid)
-        {
-            object[] objArray = new object[] {
-                         "@UserId", Userid
-            };
-            try
-            {
-                DynamicParameters param = objArray.ToDynamicParameters("@PVCH_MSGOUT");
-                var result = DBConnection.Execute("USP_UpdateUserRoleId", param, commandType: CommandType.StoredProcedure);
-                retMsg = param.Get<string>("PVCH_MSGOUT");
-            }
-            catch (Exception ex)
-            {
-                // throw new Exception(ex.Message);
-                retMsg = "";
-                // log.Error(ex);
-            }
-            return retMsg;
         }
     }
 }
