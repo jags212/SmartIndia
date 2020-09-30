@@ -32,19 +32,16 @@ $('.month-calendar-numbers div').click(function () {
 function deselectOneNo(one_select) {
     $(one_select).parent().remove();
     var removeno = $(one_select).parent().attr('data-val');
-
+    $(calendarnumber).filter(function (i, span) {
+        var matching_list = $(span).attr('data-val');
+        if (matching_list == removeno) {
+            var calnumb = '<span class="month-item" data-val="' + removeno + '">' + removeno + ' <button type="button" onclick="deselectOneNo(this);">&times;</button></span>';
+            var newcalnumb = calendarnumber.replace(calnumb, '');
+            calendarnumber = newcalnumb;
+        }
+    });
     if ($('#dayOfMonth span').length == 0) {
         $('#dayOfMonth').append('<span class="placeholder">Pick the month</span>');
-    }
-    else {
-        var matching_list;
-        $(calendarnumber).filter(function (i, span) {
-            matching_list = $(span).attr('data-val');
-            if (matching_list == removeno) {
-                calendarnumber = $(calendarnumber).remove('<span class="month-item" data-val="' + removeno + '">' + removeno + ' <button type="button" onclick="deselectOneNo(this);">&times;</button></span>');
-                return;
-            }
-        });
     }
 }
 
