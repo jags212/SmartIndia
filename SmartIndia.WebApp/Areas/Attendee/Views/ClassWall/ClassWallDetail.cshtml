@@ -1,16 +1,16 @@
 ﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-
 @{
-    ViewData["Title"] = "UpcomingClassDetail";
+    ViewData["Title"] = "ClassWallDetail";
     Layout = "~/Views/Shared/_FrontPannelLayout.cshtml";
 }
+
 @section Scripts{
     <script>
         var sid =@ViewBag.id
             $("#hfScId").val(sid);
             //alert("Hi"+sid);
     </script>
-    <script src="~/ApplicationScripts/Host/upcoming-class-detail.js"></script>
+    <script src="~/ApplicationScripts/Attendee/attendee-classwall-details.js"></script>
     <script src="~/ApplicationScripts/Common/date-format-converter.js"></script>
 }
 <!-- Breadcrumb Area -->
@@ -21,7 +21,7 @@
             <a href="attendee-dashboard.html"><i class='bx bx-home-alt'></i></a>
         </li>
         <li class="item">Dashboard</li>
-        <li class="item">Upcoming Courses</li>
+        <li class="item">My Class Wall</li>
         <li class="item">Course Details</li>
     </ol>
 </div>
@@ -32,11 +32,11 @@
         <div class="enroll-card">
             <div class="back-to-list">
 
-                <a asp-area="Hosts" asp-controller="upcomingclasses" asp-action="upcomingclasses"><i class="bx bx-arrow-back"></i>Back To List</a>
-              
+                <a asp-area="Attendee" asp-controller="ClassWall" asp-action="ClassWall"><i class="bx bx-arrow-back"></i>Back To List</a>
+
             </div>
             <div class="calendar-header">
-                <input type="hidden"  name="hfScId" id="hfScId">
+                <input type="hidden" name="hfScId" id="hfScId">
                 <span class="section-title" id="coursename"></span><span class="topic-font" id="topic"></span>
                 <div class="enroll-course-banner en-co-brochure" data-toggle="modal" data-target="#GetCourseBrochureModal">Brochure<i class="bx bxs-file-image bx-pad"></i></div>
             </div>
