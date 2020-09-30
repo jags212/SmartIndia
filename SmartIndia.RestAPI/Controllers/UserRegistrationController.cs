@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using SmartIndia.Data.Entities;
 using SmartIndia.Data.Entities.UserManagement;
 using SmartIndia.Data.Factory;
@@ -16,10 +17,12 @@ namespace SmartIndia.RestAPI.Controllers
     public class UserRegistrationController : ControllerBase
     {
         private readonly IConnectionFactory connectionFactory;
+        IConfiguration _configuration;
 
-        public UserRegistrationController(IConnectionFactory connectionFactory)
+        public UserRegistrationController(IConnectionFactory connectionFactory, IConfiguration configuration)
         {
             this.connectionFactory = connectionFactory;
+            _configuration = configuration;
         }
         [HttpPost("AddUser")]
         public async Task<ReturnParam> UserRegistrationAdd(UserRegistration obj)
@@ -38,11 +41,12 @@ namespace SmartIndia.RestAPI.Controllers
             }
         }
         [HttpGet("CheckValidEmail")]
-        public async Task<UserRegistration> CheckValidEmail(string email, string AppURL)
+        public async Task<UserRegistration> CheckValidEmail(string email)
         {
+            string url = _configuration.GetSection("HostURL")["ClientURL"];
             using (var userRegistrationService = new UserRegistrationServices(connectionFactory))
             {
-                return await Task.FromResult(userRegistrationService.CheckValidEmail(email, AppURL));
+                return await Task.FromResult(userRegistrationService.CheckValidEmail(email, url));
             }
         }
         [HttpPost("ResetPassword")]
@@ -75,6 +79,22 @@ namespace SmartIndia.RestAPI.Controllers
             using (var userRegistrationService = new UserRegistrationServices(connectionFactory))
             {
                 return await Task.FromResult(userRegistrationService.GetUserDetails(userid));
+            }
+        }
+        [HttpPost("UpdateUserProfile")]
+        public async Task<string> UpdateUser(UserRegistrationDetails userRegistration)
+        {
+            using (var userRegistrationService = new UserRegistrationServices(connectionFactory))
+            {
+                return await Task.FromResult(userRegistrationService.UpdateUserData(userRegistration));
+            }
+        }
+        [HttpGet("UserPass")]
+        public async Task<bool> UserPass(string uid, string pass)
+        {
+            using (var userRegistrationService = new UserRegistrationServices(connectionFactory))
+            {
+                return await Task.FromResult(userRegistrationService.CheckUserPass(Guid.Parse(uid), pass));
             }
         }
     }

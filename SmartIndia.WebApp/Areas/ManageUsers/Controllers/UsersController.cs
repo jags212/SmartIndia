@@ -94,5 +94,9 @@ namespace SmartIndia.WebApp.Areas.ManageUsers.Controllers
         {
             return View();
         }
+        public IActionResult ChangePassword()
+        {
+            return View();
+        }
     }
 }

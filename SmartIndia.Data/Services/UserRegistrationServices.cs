@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Globalization;
+using System.Linq;
 using System.Text;
 
 namespace SmartIndia.Data.Services
@@ -334,6 +335,68 @@ namespace SmartIndia.Data.Services
             {
                 // throw new Exception(ex.Message);
                 return null;
+                // log.Error(ex);
+            }
+        }
+        public string UpdateUserData(UserRegistrationDetails registration)
+        {
+            try
+            {
+                object[] objArray = new object[] {
+                     "@P_ACTIONCODE", registration.ACTIONCODE
+                    ,"@UserId", registration.UserId
+                    ,"@FirstName", registration.FirstName
+                    ,"@LastName", registration.LastName
+                    ,"@ProfileName", registration.ProfileName
+                    ,"@CountryId", registration.CountryId
+                    ,"@PIN", registration.PIN
+                    ,"@City", registration.City
+                    ,"@Gender", registration.Gender
+                    ,"@IsEmailPrivate", registration.IsEmailPrivate
+                    ,"@IsMobilePrivate", registration.IsMobilePrivate
+                    ,"@UpdatedById", registration.UserId
+                };
+
+                DynamicParameters param = objArray.ToDynamicParameters("@PVCH_MSGOUT");
+                param.Add("@DOB", registration.DOB, DbType.DateTime, ParameterDirection.Input);
+                var result = DBConnection.Execute("USP_UserProfile_ACTION", param, commandType: CommandType.StoredProcedure);
+                string retSP = param.Get<string>("PVCH_MSGOUT");
+                strRetMsg = retSP;
+            }
+            catch (Exception ex)
+            {
+                // throw new Exception(ex.Message);
+                strRetMsg = "404";
+                // log.Error(ex);
+            }
+            return strRetMsg;
+        }
+        public bool CheckUserPass(Guid uid, string oldPass)
+        {
+            try
+            {
+                object[] objArrayUser = new object[] {
+                     "@ActionCode", "A"
+                    ,"@UID", uid
+                };
+                DynamicParameters paramUser = objArrayUser.ToDynamicParameters();
+                var result = DBConnection.Query("USP_GetUserDetails", paramUser, commandType: CommandType.StoredProcedure).Single();
+
+                var oldhashpassword = Helper.EncodePassword(oldPass, result.VCode);
+
+                if (oldhashpassword == result.Password)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                // throw new Exception(ex.Message);
+                return false;
                 // log.Error(ex);
             }
         }

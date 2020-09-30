@@ -20,6 +20,7 @@ using Microsoft.IdentityModel.Tokens;
 using SmartIndia.Data.Factory;
 using SmartIndia.Data.Helpers;
 using SmartIndia.Data.Services;
+using SmartIndia.Data.Services.MasterData;
 using SmartIndia.RestAPI.Helpers;
 
 namespace SmartIndia.RestAPI
@@ -71,7 +72,9 @@ namespace SmartIndia.RestAPI
             });
 
             // configure DI for application services
+            services.AddSingleton(Configuration);
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IMasterDataService, MasterDataService>();
 
             //Add Connection For Dapper
             services.AddSingleton<IConnectionFactory>(new ConnectionFactory(Configuration, "SmartIndiaDatabase"));
@@ -102,7 +105,7 @@ namespace SmartIndia.RestAPI
             app.UseRouting();
             // global cors policy
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-            
+
             app.UseAuthentication();
             app.UseAuthorization();
 
