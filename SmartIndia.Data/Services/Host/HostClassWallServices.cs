@@ -30,6 +30,29 @@ namespace SmartIndia.Data.Services.Host
                 List<ClassWallCalender> classwallCalender = new List<ClassWallCalender>();
                 foreach (var item in result)
                 {
+                    string color = "";
+                    if (item.Status)
+                    {
+                        if (item.ClassType == "Accomplished")
+                        {
+                            color = "#4CAF50"; 
+                        }
+                        else
+                        {
+                            if (item.IsPublished == 2)
+                            {
+                                color = "#17a2b8";
+                            }
+                            else
+                            {
+                                color = "#ffc107";
+                            }
+                        }
+                    }
+                    else
+                    {
+                        color = "#6c757d";
+                    }
                     var modal = new ClassWallCalender()
                     {
                         title = item.CourseName,
@@ -44,7 +67,7 @@ namespace SmartIndia.Data.Services.Host
                         Topics = item.Topics,
                         CourseId = item.CourseId,
                         SchedularId = item.SchedularId,
-                        color = "#ffc107",
+                        color = color,
                         url= hostParameter.Curl + "/Hosts/ClassWall/ClassWallDetail?SID="+ item.SchedularId + ""
 
 
@@ -89,6 +112,8 @@ namespace SmartIndia.Data.Services.Host
                         Topics = item.Topics,
                         CourseId = item.CourseId,
                         SchedularId = item.SchedularId,
+                        ClassType = item.ClassType,
+                        Status = item.Status,
                         IsPublished = item.IsPublished
 
                     };
