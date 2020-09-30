@@ -8,16 +8,16 @@ using System.Data;
 using System.Linq;
 using System.Text;
 
-namespace SmartIndia.Data.Services.Host
+namespace SmartIndia.Data.Services.Attendee
 {
-    public class HostClassWallServices : RepositoryBase
+   public class AttendeeUpcommingClassesServices :RepositoryBase
     {
-        public HostClassWallServices(IConnectionFactory connectionFactory) : base(connectionFactory)
+        public AttendeeUpcommingClassesServices(IConnectionFactory connectionFactory) : base(connectionFactory)
         {
 
         }
         [Obsolete]
-        public List<ClassWallCalender> BindClassWallCallendar(HostParameter hostParameter)
+        public List<UpcomingClassCalender> BindUpcommingClasses(HostParameter hostParameter)
         {
             object[] objArray = new object[] {
                      "@P_ACTIONCODE",hostParameter.ACTIONCODE,
@@ -26,34 +26,11 @@ namespace SmartIndia.Data.Services.Host
             try
             {
                 DynamicParameters param = objArray.ToDynamicParameters();
-                var result = DBConnection.Query<ClassWallsCalender>("USP_GetHostSchedular_ACTION", param, commandType: CommandType.StoredProcedure).ToList();
-                List<ClassWallCalender> classwallCalender = new List<ClassWallCalender>();
+                var result = DBConnection.Query<GetHostUpcomingClassesDetails>("USP_AttendeeUpcomingClasses_ACTION", param, commandType: CommandType.StoredProcedure).ToList();
+                List<UpcomingClassCalender> pcomingClassCalender = new List<UpcomingClassCalender>();
                 foreach (var item in result)
                 {
-                    string color = "";
-                    if (item.Status)
-                    {
-                        if (item.ClassType == "Accomplished")
-                        {
-                            color = "#4CAF50"; 
-                        }
-                        else
-                        {
-                            if (item.IsPublished == 2)
-                            {
-                                color = "#17a2b8";
-                            }
-                            else
-                            {
-                                color = "#ffc107";
-                            }
-                        }
-                    }
-                    else
-                    {
-                        color = "#6c757d";
-                    }
-                    var modal = new ClassWallCalender()
+                    var modal = new UpcomingClassCalender()
                     {
                         title = item.CourseName,
                         ScheduleDate = TimeZone.CurrentTimeZone.ToLocalTime(item.ScheduleDate).ToString("yyyy-MM-dd"),
@@ -67,14 +44,13 @@ namespace SmartIndia.Data.Services.Host
                         Topics = item.Topics,
                         CourseId = item.CourseId,
                         SchedularId = item.SchedularId,
-                        color = color,
-                        url= hostParameter.Curl + "/Hosts/ClassWall/ClassWallDetail?SID="+ item.SchedularId + ""
-
+                        color = "#ffc107",
+                        url = hostParameter.Curl + "/Attendee/UpcomingClasses/upcomingclassdetail?SID=" + item.SchedularId + ""
 
                     };
-                    classwallCalender.Add(modal);
+                    pcomingClassCalender.Add(modal);
                 }
-                return classwallCalender;
+                return pcomingClassCalender;
             }
             catch (Exception ex)
             {
@@ -83,23 +59,22 @@ namespace SmartIndia.Data.Services.Host
         }
 
         [Obsolete]
-        public List<ClassWallClassDetails> BindClassWallDetail(HostParameterCourseDetail hostParameterCourseDetail)
+        public List<UpcomingClassDetails> BindUpcommingClassDetail(HostParameterCourseDetail hostParameterCourseDetail)
         {
             object[] objArray = new object[] {
-                     "@P_ACTIONCODE","C",
+                     "@P_ACTIONCODE",hostParameterCourseDetail.ACTIONCODE,
                      "@UserId",hostParameterCourseDetail.UserId,
                      "@SchedularId",hostParameterCourseDetail.SchedularId
             };
             try
             {
                 DynamicParameters param = objArray.ToDynamicParameters();
-                var result = DBConnection.Query<ClassWallsClassDetails>("USP_GetHostSchedular_ACTION", param, commandType: CommandType.StoredProcedure).ToList();
-                List<ClassWallClassDetails> classWallDetails = new List<ClassWallClassDetails>();
+                var result = DBConnection.Query<UpcomingClassesDetails>("USP_AttendeeUpcomingClasses_ACTION", param, commandType: CommandType.StoredProcedure).ToList();
+                List<UpcomingClassDetails> upcomingClassDetails = new List<UpcomingClassDetails>();
                 foreach (var item in result)
                 {
-                    var modal = new ClassWallClassDetails()
+                    var modal = new UpcomingClassDetails()
                     {
-                        title = item.CourseName,
                         CourseName = item.CourseName,
                         ScheduleDate = TimeZone.CurrentTimeZone.ToLocalTime(item.ScheduleDate).ToString("yyyy-MM-dd"),
                         start = TimeZone.CurrentTimeZone.ToLocalTime(item.ScheduleDate).ToString("yyyy-MM-dd") + "T" + item.StartTime + ":00",
@@ -111,15 +86,12 @@ namespace SmartIndia.Data.Services.Host
                         CourseDesc = item.CourseDesc,
                         Topics = item.Topics,
                         CourseId = item.CourseId,
-                        SchedularId = item.SchedularId,
-                        ClassType = item.ClassType,
-                        Status = item.Status,
-                        IsPublished = item.IsPublished
+                        SchedularId = item.SchedularId
 
                     };
-                    classWallDetails.Add(modal);
+                    upcomingClassDetails.Add(modal);
                 }
-                return classWallDetails;
+                return upcomingClassDetails;
             }
             catch (Exception ex)
             {
@@ -128,4 +100,3 @@ namespace SmartIndia.Data.Services.Host
         }
     }
 }
-

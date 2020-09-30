@@ -1,89 +1,5 @@
-﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-@{
-    ViewData["Title"] = "UpcomingClasses";
-    Layout = "~/Views/Shared/_FrontPannelLayout.cshtml";
-}
-<!-- Text Ellipsis CSS -->
-<link rel="stylesheet" href="~/assets/css/ellipsis.css" />
-@section Scripts{
-
-    <script src="~/ApplicationScripts/Common/date-format-converter.js"></script>
-    <!-- Calendar JS -->
-    <script src="~/assets/calendar/js/moment.min.js"></script>
-    <script src="~/assets/calendar/js/fullcalendar.min.js"></script>
-    <script src="~/ApplicationScripts/Host/upcoming-classes.js"></script>
-    <!-- Clearable Input JS -->
-    <script src="~/assets/js/clearable-input.js"></script>
-    <!-- Text Ellipsis JS -->
-    <script src="~/assets/js/jquery.ellipsis.js"></script>
-    <script>
-        $('.two-lines').ellipsis({ lines: 2 });
-    </script>
-    <script>
-        $('#searchlist').keyup(function () {
-
-            var that = this;
-            all_list = $('#hostUPlList ul > li');
-
-            var matching_list = all_list.filter(function (i, li) {
-                var list_item_text = $(li).text().toUpperCase();
-                var search_text = that.value.toUpperCase();
-                return ~list_item_text.indexOf(search_text);
-            });
-
-            all_list.hide();
-            matching_list.show();
-
-        });
-    </script>
-
-}
-<title>OCR - Upcoming Classes</title>
-<!-- Breadcrumb Area -->
-<div class="breadcrumb-area">
-    <h1>Upcoming Classes</h1>
-    <ol class="breadcrumb">
-        <li class="item">
-            <a href="attendee-dashboard.html"><i class='bx bx-home-alt'></i></a>
-        </li>
-        <li class="item">Dashboard</li>
-        <li class="item">Upcoming Classes</li>
-    </ol>
-</div>
-<!-- End Breadcrumb Area -->
-<!-- Start -->
-<!-- Calendar -->
-<div class="card mb-30">
-    <div class="card-body">
-        <div class="upcoming-section">
-            <span id="hostUpcomingList" class="up-active" data-toggle="tooltip" data-placement="bottom" title="List"><i class="bx bx-list-ul"></i></span>
-            <span id="hostUpcomingCalendar" data-toggle="tooltip" data-placement="bottom" title="Calendar"><i class="bx bx-calendar"></i></span>
-        </div>
-        <form>
-            <div class="ocr-clearable">
-                <input type="text" name="search" class="dashboard-panel-search" id="searchlist" placeholder="Search..">
-                <i class="ocr-clearable-clear">&times;</i>
-                <span class="class-search-icon" data-toggle="tooltip" data-placement="bottom" title="Search"><i class="bx bx-search"></i></span>
-            </div>
-        </form>
-        
-        <div class="clearfix"></div>
-        <!-- List -->
-        <div class="container" id="hostUPlList">
-            <div class="row">
-                <div class="col-sm-12 col-lg-12 col-md-12">
-                    <ul class="list-group" id="coursedetails">
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- Calendar -->
-        <div id="hostUPCalendar"></div>
-    </div>
-</div>
-<!-- End -->
-<!-- End Main Content Wrapper -->
-<!-- Start Host Modal -->
+﻿  
+    <!-- Start Host Modal -->
 <div class="modal fade basicModalLG host-modal" id="GetHostModal" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered cascading-modal modal-dialog-scrollable" role="document">
         <div class="modal-content">
@@ -123,7 +39,7 @@
                 </p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#GetPerminumModal">Agree</button>
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#GetPerminumModal" data-dismiss="modal">Agree</button>
             </div>
         </div>
     </div>
@@ -165,7 +81,7 @@
                                     <li><i class='bx bx-x'></i> Selection Support</li>
                                 </ul>
 
-                                <a href="host-dashboard.html" class="get-started-btn">Get Started</a>
+                                <a href="javascript:void(0);" onclick="UpdateUserRole()" class="get-started-btn">Get Started</a>
                             </div>
                         </div>
 
@@ -191,7 +107,7 @@
                                     <li><i class='bx bx-x'></i> Selection Support</li>
                                 </ul>
 
-                                <a href="host-dashboard.html" class="get-started-btn">Get Started</a>
+                                <a href="javascript:void(0);" onclick="UpdateUserRole()" class="get-started-btn">Get Started</a>
                             </div>
                         </div>
 
@@ -217,7 +133,7 @@
                                     <li><i class='bx bx-check-double'></i> Selection Support</li>
                                 </ul>
 
-                                <a href="host-dashboard.html" class="get-started-btn">Get Started</a>
+                                <a href="javascript:void(0);" onclick="UpdateUserRole()" class="get-started-btn">Get Started</a>
                             </div>
                         </div>
                     </div>

@@ -8,11 +8,12 @@ using System.Data;
 using System.Linq;
 using System.Text;
 
-namespace SmartIndia.Data.Services.Host
+namespace SmartIndia.Data.Services.Attendee
 {
-    public class HostClassWallServices : RepositoryBase
+   public class AttendeeClassWallServices: RepositoryBase
     {
-        public HostClassWallServices(IConnectionFactory connectionFactory) : base(connectionFactory)
+        string retMsg;
+        public AttendeeClassWallServices(IConnectionFactory connectionFactory) : base(connectionFactory)
         {
 
         }
@@ -26,33 +27,10 @@ namespace SmartIndia.Data.Services.Host
             try
             {
                 DynamicParameters param = objArray.ToDynamicParameters();
-                var result = DBConnection.Query<ClassWallsCalender>("USP_GetHostSchedular_ACTION", param, commandType: CommandType.StoredProcedure).ToList();
+                var result = DBConnection.Query<ClassWallsCalender>("USP_AttendeeUpcomingClasses_ACTION", param, commandType: CommandType.StoredProcedure).ToList();
                 List<ClassWallCalender> classwallCalender = new List<ClassWallCalender>();
                 foreach (var item in result)
                 {
-                    string color = "";
-                    if (item.Status)
-                    {
-                        if (item.ClassType == "Accomplished")
-                        {
-                            color = "#4CAF50"; 
-                        }
-                        else
-                        {
-                            if (item.IsPublished == 2)
-                            {
-                                color = "#17a2b8";
-                            }
-                            else
-                            {
-                                color = "#ffc107";
-                            }
-                        }
-                    }
-                    else
-                    {
-                        color = "#6c757d";
-                    }
                     var modal = new ClassWallCalender()
                     {
                         title = item.CourseName,
@@ -67,8 +45,8 @@ namespace SmartIndia.Data.Services.Host
                         Topics = item.Topics,
                         CourseId = item.CourseId,
                         SchedularId = item.SchedularId,
-                        color = color,
-                        url= hostParameter.Curl + "/Hosts/ClassWall/ClassWallDetail?SID="+ item.SchedularId + ""
+                        color = "#ffc107",
+                        url = hostParameter.Curl + "/Attendee/ClassWall/ClassWallDetail?SID=" + item.SchedularId + ""
 
 
                     };
@@ -86,14 +64,14 @@ namespace SmartIndia.Data.Services.Host
         public List<ClassWallClassDetails> BindClassWallDetail(HostParameterCourseDetail hostParameterCourseDetail)
         {
             object[] objArray = new object[] {
-                     "@P_ACTIONCODE","C",
+                     "@P_ACTIONCODE","E",
                      "@UserId",hostParameterCourseDetail.UserId,
                      "@SchedularId",hostParameterCourseDetail.SchedularId
             };
             try
             {
                 DynamicParameters param = objArray.ToDynamicParameters();
-                var result = DBConnection.Query<ClassWallsClassDetails>("USP_GetHostSchedular_ACTION", param, commandType: CommandType.StoredProcedure).ToList();
+                var result = DBConnection.Query<ClassWallsClassDetails>("USP_AttendeeUpcomingClasses_ACTION", param, commandType: CommandType.StoredProcedure).ToList();
                 List<ClassWallClassDetails> classWallDetails = new List<ClassWallClassDetails>();
                 foreach (var item in result)
                 {
@@ -112,8 +90,6 @@ namespace SmartIndia.Data.Services.Host
                         Topics = item.Topics,
                         CourseId = item.CourseId,
                         SchedularId = item.SchedularId,
-                        ClassType = item.ClassType,
-                        Status = item.Status,
                         IsPublished = item.IsPublished
 
                     };
@@ -126,6 +102,24 @@ namespace SmartIndia.Data.Services.Host
                 return null;
             }
         }
+        public string UpdateUserRole( Int64 Userid)
+        {
+            object[] objArray = new object[] {
+                         "@UserId", Userid
+            };
+            try
+            {
+                DynamicParameters param = objArray.ToDynamicParameters("@PVCH_MSGOUT");
+                var result = DBConnection.Execute("USP_UpdateUserRoleId", param, commandType: CommandType.StoredProcedure);
+                retMsg = param.Get<string>("PVCH_MSGOUT");
+            }
+            catch (Exception ex)
+            {
+                // throw new Exception(ex.Message);
+                retMsg = "";
+                // log.Error(ex);
+            }
+            return retMsg;
+        }
     }
 }
-
