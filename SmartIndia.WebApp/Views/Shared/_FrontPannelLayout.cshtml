@@ -265,7 +265,25 @@
                 complete: function () {
                     $('#img').hide();
                 }
-            });
+            }); 
+            var result = parseJwt(localStorage.getItem("jwtToken"));
+            $('#divHost').hide();
+            $('#divAttendee').hide();
+            $('#hrefAttendee').hide();
+            $('#hrefHost').hide();
+
+            if (result.role == "Host") {
+                $('#divHost').show();
+                $('#divAttendee').hide();
+                $('#hrefAttendee').hide();
+                $('#hrefHost').show();
+            }
+            else {
+                $('#divHost').hide();
+                $('#divAttendee').show();
+                $('#hrefAttendee').show();
+                $('#hrefHost').hide();
+            }
         });
         function ClearData() {
             localStorage.clear();

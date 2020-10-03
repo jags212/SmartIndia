@@ -1,0 +1,107 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $(".ocr-search-container").hide();
+            loadNavigation('About', 'about');
+        });
+    </script>
+}
+<div class="course-area">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="edgt-content">
+                <div class="edgt-content-inner">
+                    <div class="edgt-title-holder edgt-standard-with-breadcrumbs-type edgt-has-bg-image edgt-bg-parallax"
+                         style="height: 180px;background-image: url(&quot;../../assets/img/breadcrumb-img-1.png&quot;);background-position: center 0px;" data-height="180">
+                        <div class="edgt-title-image">
+                            <img itemprop="image" src="~/assets/img/breadcrumb-img-1.png" alt="ocr" />
+                        </div>
+                        <div class="edgt-title-wrapper" style="height: 180px">
+                            <div class="edgt-title-inner">
+                                <div class="edgt-grid">
+                                    <div class="edgt-title-inner-holder">
+                                        <div class="edgt-title-info">
+                                            <h2 class="edgt-page-title-black">About</h2>
+                                        </div>
+                                        <div class="edgt-breadcrumbs-info">
+                                            <div itemprop="breadcrumb" class="edgt-black-breadcrumbs edgt-has-inline-style">
+                                                <a itemprop="url" asp-area="ManageUsers" asp-controller="Users" asp-action="Login">Home</a>
+                                                <span class="edgt-delimiter">&nbsp; / &nbsp;</span>
+                                                <span class="edgt-current">About</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <section class="container mt-5">
+                        <div class="row">
+                            <div class="display-flex col-about mb-80">
+                                <div class="col-sm-12 col-md-6">
+                                    <img src="~/assets/img/about_why_us_textured.png" />
+                                </div>
+                                <div class="col-sm-12 col-md-6 mt-30">
+                                    <h2>Who we are?</h2>
+                                    <p>
+                                        OCR was created by a team which brings together the expertise of software engineers and educational specialists.
+                                        Our goal is to develop and implement innovative e-learning solutions for a wide range of learners.
+                                        Thus OCR virtual learning environment was created to promote an equal access to quality education for larger number of people across the world.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-4"><hr class="hr-line"></div>
+                            <div class="display-flex col-about mb-80">
+                                <div class="col-sm-12 col-md-6 mt-30">
+                                    <h2>What is Our Vision?</h2>
+                                    <p>
+                                        We want change – to take online education to the next level by making e-learning more efficient, easy and accessible to everyone!
+                                    </p>
+                                </div>
+                                <div class="col-sm-12 col-md-6">
+                                    <img src="~/assets/img/about_vision_textured.png" />
+                                </div>
+                            </div>
+                            <div class="col-md-4"><hr class="hr-line"></div>
+                            <div class="display-flex col-about mb-80">
+                                <div class="col-sm-12 col-md-6">
+                                    <img src="~/assets/img/about_goal_textured.png" />
+                                </div>
+                                <div class="col-sm-12 col-md-6 mt-30">
+                                    <h2>What is Our Goal?</h2>
+                                    <p>
+                                        We are focused on opportunities to continuously improve the access to education through innovative solutions.
+                                        Our efforts are aimed at providing top-quality e-learning tools to tutors, teaching organisations and corporations.
+                                        OCR is designed to support teaching professionals and organisations to start new business projects, to increase their volume while reducing logistics and overheads, to enable working with a wide range of users regardless of their location, and to better manage and diversify their traditional face-to-face training.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-4"><hr class="hr-line"></div>
+                            <div class="display-flex col-about mb-20">
+                                <div class="col-sm-12 col-md-6 mt-30">
+                                    <h2>Why OCR?</h2>
+                                    <p>
+                                        OCR was created by tutors to tutors for the needs of education.
+                                        We are driven by the idea that tutors don’t need just technology and software.
+                                        They need to make their way of teaching more comprehensible and engaging with minimum effort.
+                                        The modern education is focused on blending traditional and online learning.
+                                        From the very beginning OCR was shaped by many interactions with children.
+                                        The platform has a rich set of features which allows tutors to easily manage groups of young kids.
+                                        It is also simple and intuitive for both kids and non-technically savvy users, and is cloud based so no installation is needed.
+                                    </p>
+                                </div>
+                                <div class="col-sm-12 col-md-6">
+                                    <img src="~/assets/img/about_why_us_textured.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
