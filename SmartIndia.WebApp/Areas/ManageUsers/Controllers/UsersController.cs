@@ -90,5 +90,31 @@ namespace SmartIndia.WebApp.Areas.ManageUsers.Controllers
             }
             return View();
         }
+        public IActionResult Profile()
+        {
+            return View();
+        }
+        public IActionResult ChangePassword()
+        {
+            return View();
+        }
+        public IActionResult ChangeEmail()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult ChangeEmailVerification([FromQuery] string Id)
+        {
+            ViewBag.ACode = Id;
+            return View();
+        }
+        public IActionResult ConfirmEmail()
+        {
+            return View();
+        }
+        public IActionResult ChangeMobileNo()
+        {
+            return View();
+        }
     }
 }

@@ -210,7 +210,9 @@ namespace SmartIndia.Data.Services
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Name, userRegistration.UserId.ToString())
+                    new Claim(ClaimTypes.Name, userRegistration.UserId.ToString()),
+                    new Claim(ClaimTypes.NameIdentifier, userRegistration.UID.ToString()),
+                    new Claim(ClaimTypes.Role, userRegistration.RoleName)
                 }),
                 Expires = DateTime.UtcNow.AddMinutes(20),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)

@@ -13,6 +13,7 @@
         $(document).ready(function () {
             $(".learn-main-content").addClass("bg-image");
             $(".ocr-search-container").hide();
+            loadNavigation('Login', 'home');
         });
     </script>
 }
@@ -23,13 +24,13 @@
                 <h2>Sign In</h2>
                 <form name="login" id="MyForm" defaultbutton='btnLogin'>
                     <div class="form-group cerror">
-                        <input type="text" id="txtEmail" class="form-control" name="email" placeholder="Email Id / Mobile No" maxlength="60">
+                        <input type="text" id="txtEmail" ondrop="return false;" onpaste="return false;" class="form-control" name="email" placeholder="Email Id / Mobile No" maxlength="60">
                         <span class="label-title">
                             <i class='bx bx-user'></i>
                         </span>
                     </div>
                     <div class="form-group">
-                        <input type="password" id="txtPassword" class="form-control" name="password" placeholder="Password" maxlength="20">
+                        <input type="password" id="txtPassword" ondrop="return false;" onpaste="return false;" class="form-control" name="password" placeholder="Password" maxlength="20">
                         <span class="label-title">
                             <i class='bx bx-lock'></i>
                         </span>

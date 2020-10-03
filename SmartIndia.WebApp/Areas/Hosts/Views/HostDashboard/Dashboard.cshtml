@@ -3,176 +3,201 @@
     ViewData["Title"] = "Dashboard";
     Layout = "~/Views/Shared/_FrontPannelLayout.cshtml";
 }
+<!-- Calendar CSS -->
+<link rel="stylesheet" href="~/assets/calendar/css/fullcalendar.css" />
+<link rel="stylesheet" href="~/assets/calendar/css/fullcalendar.print.css" media="print" />
 <title>OCR - Host Dashboard</title>
+
+@section Scripts{
+    <!-- ApexCharts JS -->
+    <script src="~/assets/js/apexcharts/apexcharts.min.js"></script>
+    <!-- ChartJS -->
+    <script src="~/assets/js/chartjs/chartjs.min.js"></script>
+    <!-- Calendar JS -->
+    <script src="~/assets/calendar/js/moment.min.js"></script>
+    <script src="~/assets/calendar/js/fullcalendar.min.js"></script>
+    <!-- Dashboard JS -->
+    <script src="~/ApplicationScripts/Common/date-format-converter.js"></script>
+    <script src="~/ApplicationScripts/Host/dashboard.js"></script>
+}
 <!-- Start -->
+
+
 <div class="mt-40">
     <div class="calendar-container mb-30">
         <div class="calendar-header">
-            <h3 class="mb-0">Calendar</h3>
+            <div class="con-dashboard-section">
+                <span id="hostDList" class="up-active" data-toggle="tooltip" data-placement="bottom" title="List"><i class="bx bx-list-ul"></i></span>
+                <span id="hostDCalendar" data-toggle="tooltip" data-placement="bottom" title="Calendar"><i class="bx bx-calendar"></i></span>
+            </div>
             <a asp-area="Hosts" asp-controller="Schedular" asp-action="Schedular" class="calendar-scheduler">Add Scheduler<i class="bx bx-plus bx-pad"></i></a>
-      
         </div>
-
-        <!-- Start Calendar -->
+        <div class="clearfix"></div>
         <div class="card-body">
-            <div id="calendar"></div>
-        </div>
-        <!-- End Calendar -->
-    </div>
-</div>
-<!-- End -->
-<!-- Start -->
-<div class="row">
-    <div class="col-lg-6 col-md-12">
-        <!-- Start Class Attendance Chart -->
-        <div class="card mb-30">
-            <div class="card-header d-flex mobile-d-flex justify-content-between align-items-center">
-                <h3>Class Attendance</h3>
+            <!-- List -->
+            <div class="container" id="hostDashlList">
+                <div class="row">
+                    <div class="col-sm-12 col-lg-12 col-md-12">
+                        <ul class="list-group" id="coursedetails">
 
-                <div class="dropdown">
-                    <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class='bx bx-dots-horizontal-rounded'></i>
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
-                            <i class='bx bx-show'></i> View
-                        </a>
-                        <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
-                            <i class='bx bx-edit-alt'></i> Edit
-                        </a>
-                        <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
-                            <i class='bx bx-trash'></i> Delete
-                        </a>
-                        <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
-                            <i class='bx bx-printer'></i> Print
-                        </a>
-                        <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
-                            <i class='bx bx-download'></i> Download
-                        </a>
+
+                            @*<li class="list-group-item justify-content-between ocr-list-group">
+                                <div class="ocr-float-left p-1">
+                                    <div class="sm-card-title">
+                                        <a href="enroll-course-details.html" data-toggle="tooltip" data-placement="bottom" title="Web Development (Development Tools/Environment)">
+                                            Web Development <span class="topic-font">(Development Tools/Environment)</span>
+                                        </a>
+                                    </div>
+                                    <span class="sm-host-name">
+                                        <i class="bx bxs-face"></i>Amy Drufesne
+                                    </span>
+                                    <span class="sm-batch-name">
+                                        <i class="bx bx-task"></i>Batch I
+                                    </span>
+                                    <p class="card-text sm-cli-text">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
+                                    <div class="sm-bottom-info">
+                                        <span class="sm-date">
+                                            <i class="bx bx-calendar"></i>10-Sept-20
+                                        </span>
+                                        <span class="sm-time">
+                                            <i class="bx bx-time"></i>11:30:20 GMT+05:30
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>*@
+                        </ul>
                     </div>
                 </div>
             </div>
+            <!-- Calendar -->
+            <div id="hostDashCalendar"></div>
 
-            <div class="card-body">
-                <div id="apex-column-with-data-labels"></div>
-            </div>
         </div>
-        <!-- End Class Attendance Chart -->
     </div>
+</div>
 
-    <div class="col-lg-6 col-md-12">
+<!-- End -->
+<!-- Start -->
+
+    
+    <!-- Start -->
+    <div class="row">
 
         <!-- Class Analytics -->
-        <div class="card mb-30">
-            <div class="card-header d-flex mobile-d-flex justify-content-between align-items-center">
-                <h3>Registration / Capacity</h3>
+        <div class="col-lg-6 col-md-12">
+            <div class="card mb-30">
+                <div class="card-header d-flex mobile-d-flex justify-content-between align-items-center">
+                    <h3> Capacity / Registration / Attendance</h3>
 
-                <div class="dropdown">
-                    <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class='bx bx-dots-horizontal-rounded'></i>
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
-                            <i class='bx bx-show'></i> View
-                        </a>
-                        <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
-                            <i class='bx bx-edit-alt'></i> Edit
-                        </a>
-                        <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
-                            <i class='bx bx-trash'></i> Delete
-                        </a>
-                        <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
-                            <i class='bx bx-printer'></i> Print
-                        </a>
-                        <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
-                            <i class='bx bx-download'></i> Download
-                        </a>
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class='bx bx-dots-horizontal-rounded'></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                                <i class='bx bx-show'></i> View
+                            </a>
+                            <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                                <i class='bx bx-edit-alt'></i> Edit
+                            </a>
+                            <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                                <i class='bx bx-trash'></i> Delete
+                            </a>
+                            <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                                <i class='bx bx-printer'></i> Print
+                            </a>
+                            <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                                <i class='bx bx-download'></i> Download
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="card-body">
-                <div id="website-analytics-chart" class="extra-margin"></div>
+                <div class="card-body">
+                    <div id="class-analytics-chart" class="extra-margin"></div>
+                </div>
             </div>
+            <!-- End Class Analytics -->
+
         </div>
-        <!-- End Class Analytics -->
 
-    </div>
-</div>
-<!-- End -->
-<!-- Start -->
-<div class="row">
-    <div class="col-lg-5 col-md-12">
-        <div class="card mb-30 pt-2">
-            <div class="card-body activity-timeline-chart-box">
-                <div id="activity-timeline-chart"></div>
+        <!-- Class Popularity -->
+        <div class="col-lg-6 col-md-12">
+            <div class="card mb-30">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h3>Class Popularity</h3>
 
-                <div class="activity-timeline-content">
-                    <div class="card-header">
-                        <h3>Top 4 Courses (Monthly)</h3>
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class='bx bx-dots-horizontal-rounded'></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
+                                <i class='bx bx-show'></i> View
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
+                                <i class='bx bx-edit-alt'></i> Edit
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
+                                <i class='bx bx-trash'></i> Delete
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
+                                <i class='bx bx-printer'></i> Print
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
+                                <i class='bx bx-download'></i> Download
+                            </a>
+                        </div>
                     </div>
-                    <ul>
-                        <li>
-                            <i class='bx bx-check-double'></i>
-                            <span>Physics</span>
-                            95
-                        </li>
-                        <li>
-                            <i class='bx bx-check-double'></i>
-                            <span>Chemistry</span>
-                            80
-                        </li>
-                        <li>
-                            <i class='bx bx-check-double'></i>
-                            <span>Literature</span>
-                            90
-                        </li>
-                        <li>
-                            <i class='bx bx-check-double'></i>
-                            <span>Business</span>
-                            81
-                        </li>
-                    </ul>
+                </div>
+
+                <div class="card-body">
+                    <div id="class-popularity-bar-chart"></div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- End -->
+    <!-- Start -->
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <!-- Revenue Growth -->
+            <div class="card mb-30">
+                <div class="card-header d-flex mobile-d-flex justify-content-between align-items-center">
+                    <h3>Monthly Revenue</h3>
 
-    <div class="col-lg-7 col-md-12">
-        <!-- Revenue Growth -->
-        <div class="card mb-30">
-            <div class="card-header d-flex mobile-d-flex justify-content-between align-items-center">
-                <h3>Monthly Revenue</h3>
-
-                <div class="dropdown">
-                    <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class='bx bx-dots-horizontal-rounded'></i>
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item d-flex mobile-d-flex mobile-d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
-                            <i class='bx bx-show'></i> View
-                        </a>
-                        <a class="dropdown-item d-flex mobile-d-flex mobile-d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
-                            <i class='bx bx-edit-alt'></i> Edit
-                        </a>
-                        <a class="dropdown-item d-flex mobile-d-flex mobile-d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
-                            <i class='bx bx-trash'></i> Delete
-                        </a>
-                        <a class="dropdown-item d-flex mobile-d-flex mobile-d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
-                            <i class='bx bx-printer'></i> Print
-                        </a>
-                        <a class="dropdown-item d-flex mobile-d-flex mobile-d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
-                            <i class='bx bx-download'></i> Download
-                        </a>
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class='bx bx-dots-horizontal-rounded'></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item d-flex mobile-d-flex mobile-d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                                <i class='bx bx-show'></i> View
+                            </a>
+                            <a class="dropdown-item d-flex mobile-d-flex mobile-d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                                <i class='bx bx-edit-alt'></i> Edit
+                            </a>
+                            <a class="dropdown-item d-flex mobile-d-flex mobile-d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                                <i class='bx bx-trash'></i> Delete
+                            </a>
+                            <a class="dropdown-item d-flex mobile-d-flex mobile-d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                                <i class='bx bx-printer'></i> Print
+                            </a>
+                            <a class="dropdown-item d-flex mobile-d-flex mobile-d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                                <i class='bx bx-download'></i> Download
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="card-body">
-                <div id="revenue-growth-chart" class="extra-margin"></div>
+                <div class="card-body">
+                    <div id="host-revenue-growth-chart" class="extra-margin"></div>
+                </div>
             </div>
+            <!-- End Revenue Growth -->
         </div>
-        <!-- End Revenue Growth -->
     </div>
-</div>
-<!-- End -->
+    <!-- End -->
+    <!-- Footer -->
+    <div class="flex-grow-1"></div>
+    <!-- End -->

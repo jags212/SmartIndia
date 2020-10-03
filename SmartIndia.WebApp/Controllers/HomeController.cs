@@ -20,10 +20,23 @@ namespace SmartIndia.WebApp.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Login", "Users", new { Area = "ManageUsers" });
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+        
+        public IActionResult TermsCondition()
+        {
+            return View();
+        }
+        public IActionResult Contact()
+        {
+            return View();
+        }
+        public IActionResult About()
         {
             return View();
         }
@@ -32,6 +45,16 @@ namespace SmartIndia.WebApp.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+        public IActionResult Course()
+        {
+            return View();
+        }
+        public IActionResult CourseDetails(string SID, string bt)
+        {
+            ViewBag.id = SID;
+            ViewBag.BatchName = bt;
+            return View();
         }
     }
 }

@@ -4,7 +4,7 @@
     }
     else if (!IsSpecialCharacter1stPalce('txtEmail')) {
         return false;
-    } 
+    }
     else if (!BlankTextBox('txtPassword', 'Password')) {
         return false;
     }
@@ -16,7 +16,7 @@
     }
 }
 $('#btnLogin').click(function () {
-    function CallSave() { 
+    function CallSave() {
         var pass = $('#txtPassword').val();
         $('#txtPassword').val($('#txtPassword').val() + Math.random());
         var usersParam = JSON.stringify({
@@ -35,11 +35,16 @@ $('#btnLogin').click(function () {
                     localStorage.setItem("emailID", data.emailID);
                     localStorage.setItem("firstName", data.firstName);
                     localStorage.setItem("jwtToken", data.jwtToken);
-                    localStorage.setItem("refreshToken", data.refreshToken); 
-                    window.location.href = "/Hosts/HostDashboard/Dashboard";
+                    var resultData = parseJwt(localStorage.getItem("jwtToken"));
+                    if (resultData.role == "Host") {
+                        window.location.href = "/Hosts/HostDashboard/Dashboard";
+                    }
+                    else {
+                        window.location.href = "/Attendee/Dashboard/AttendeeDashboard";
+                    }
                 }
             },
-            error: function (jqXHR, textStatus, errorThrown) { 
+            error: function (jqXHR, textStatus, errorThrown) {
                 BootstrapAlert(jqXHR.responseJSON.message, 'txtPassword');
                 $('#txtPassword').val("");
             }

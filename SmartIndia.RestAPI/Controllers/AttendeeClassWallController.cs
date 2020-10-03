@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SmartIndia.Data.Entities.Host;
@@ -41,6 +42,15 @@ namespace SmartIndia.RestAPI.Controllers
             {
                 return await Task.FromResult(attendeeClassWallServices.BindClassWallDetail(obj));
 
+            }
+        }
+        [Authorize]
+        [HttpPost("UpdateUserRole")]
+        public async Task<string> UpdateUserRole(Int64 UserId )
+        {
+            using (var attendeeClassWallServices = new AttendeeClassWallServices(connectionFactory))
+            {
+                return await Task.FromResult(attendeeClassWallServices.UpdateUserRole(UserId));
             }
         }
     }

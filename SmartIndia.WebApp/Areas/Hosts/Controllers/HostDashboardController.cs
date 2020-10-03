@@ -13,5 +13,10 @@ namespace SmartIndia.WebApp.Areas.Hosts.Controllers
         {
             return View();
         }
+        public IActionResult CourseDetails(string SID)
+        {
+            ViewBag.id = SID;
+            return View();
+        }
     }
 }

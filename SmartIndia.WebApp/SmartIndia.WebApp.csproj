@@ -13,6 +13,12 @@
     <None Remove="wwwroot\Resources\**" />
   </ItemGroup>
   <ItemGroup>
+    <Content Remove="wwwroot\assets\img\about_goal_textured.png" />
+    <Content Remove="wwwroot\assets\img\about_vision_textured.png" />
+    <Content Remove="wwwroot\assets\img\about_why_us_textured.png" />
+    <Content Remove="wwwroot\assets\img\breadcrumb-img-1.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="wwwroot\assets\fonts\boxicons.eot" />
     <None Include="wwwroot\assets\fonts\boxicons.ttf" />
     <None Include="wwwroot\assets\fonts\boxicons.woff" />
@@ -22,6 +28,10 @@
     <None Include="wwwroot\assets\fonts\summernote.woff" />
     <None Include="wwwroot\assets\fonts\summernote.woff2" />
     <None Include="wwwroot\assets\fonts\summernoted41d.eot" />
+    <None Include="wwwroot\assets\img\about_goal_textured.png" />
+    <None Include="wwwroot\assets\img\about_vision_textured.png" />
+    <None Include="wwwroot\assets\img\about_why_us_textured.png" />
+    <None Include="wwwroot\assets\img\breadcrumb-img-1.png" />
     <None Include="wwwroot\assets\webfonts\fa-brands-400.eot" />
     <None Include="wwwroot\assets\webfonts\fa-brands-400.ttf" />
     <None Include="wwwroot\assets\webfonts\fa-brands-400.woff" />

@@ -12,6 +12,7 @@ namespace SmartIndia.Data.Services.Attendee
 {
    public class AttendeeClassWallServices: RepositoryBase
     {
+        string retMsg;
         public AttendeeClassWallServices(IConnectionFactory connectionFactory) : base(connectionFactory)
         {
 
@@ -100,6 +101,25 @@ namespace SmartIndia.Data.Services.Attendee
             {
                 return null;
             }
+        }
+        public string UpdateUserRole( Int64 Userid)
+        {
+            object[] objArray = new object[] {
+                         "@UserId", Userid
+            };
+            try
+            {
+                DynamicParameters param = objArray.ToDynamicParameters("@PVCH_MSGOUT");
+                var result = DBConnection.Execute("USP_UpdateUserRoleId", param, commandType: CommandType.StoredProcedure);
+                retMsg = param.Get<string>("PVCH_MSGOUT");
+            }
+            catch (Exception ex)
+            {
+                // throw new Exception(ex.Message);
+                retMsg = "";
+                // log.Error(ex);
+            }
+            return retMsg;
         }
     }
 }

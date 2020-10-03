@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "ChangeEmailVerification";
+    Layout = "~/Views/Shared/_FrontPannelLayout.cshtml";
+}
+
+@section Scripts{
+    <!-- Custom Bootstrap Valiation JS -->
+    <script src="~/ApplicationScripts/Common/custom-validate.js"></script>
+
+    <script> 
+        $(document).ready(function () {
+            $.get("" + ServiceURL + "/api/UserRegistration/EmailConfirm?acode=" + '@ViewBag.ACode', function (data) { 
+                if (!data) {
+                    $.ajax({
+                        url: ServiceURL + "/api/UserRegistration/UserEmailVerification",
+                        type: "GET",
+                        data: { acode : '@ViewBag.ACode' },
+                        dataType: "json",
+                        success: function (data) {
+                            if (data) {
+                                window.location.href = "/ManageUsers/Users/ConfirmEmail";
+                            }
+                            else {
+                                BootStrapRedirect("Invalid Request. Email Not Varify.", "/ManageUsers/Users/Login");
+                            }
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            BootstrapAlert(jqXHR.responseJSON.message, 'txtPassword');
+                            $('#txtPassword').val("");
+                        }
+                    });
+                }
+                else {
+                    window.location.href = "/ManageUsers/Users/EmailConfirmation";
+                }
+            });
+        });
+    </script>
+}
+
