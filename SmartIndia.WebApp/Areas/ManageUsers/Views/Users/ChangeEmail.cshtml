@@ -1,0 +1,54 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "ChangeEmail";
+    Layout = "~/Views/Shared/_FrontPannelLayout.cshtml";
+}
+
+<title>OCR - Attendee Change Email</title>
+
+@section Scripts{
+    
+    <script src="~/ApplicationScripts/UserRegistration/change-email.js"></script>
+    <script src="~/ApplicationScripts/Common/custom-validate.js"></script>
+}
+
+
+<!-- Main Content Layout -->
+<!-- Breadcrumb Area -->
+<div class="breadcrumb-area">
+    <h1>Change Email</h1>
+    <ol class="breadcrumb">
+        <li class="item">
+            <a href="attendee-dashboard.html"><i class='bx bx-home-alt'></i></a>
+        </li>
+        <li class="item">Dashboard</li>
+        <li class="item">Change Email</li>
+    </ol>
+</div>
+<!-- End Breadcrumb Area -->
+<!-- Start -->
+<div class="card mb-30">
+    <div class="card-body">
+        <form>
+            <div id="divmailchange">
+                <div class="form-group">
+                    <label>Current Email</label>
+                    <input type="text" id="currentemail" class="form-control col-form-6" @*onpaste="return false;"*@>
+                </div>
+                <div class="form-group">
+                    <label>New Email</label>
+                    <input type="text" id="newemail" class="form-control col-form-6">
+                </div>
+                <input type="button" id="btnSubmit" class="btn btn-primary" value="Submit" />
+            </div>
+            <div id="divmsg">
+                We have sent an email with a confirmation link to your email address.  please click the confirmation link.<br />
+
+                If you do not receive a confirmation email, please check your spam folder. Also, please verify that you entered a valid email address .
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<!-- End -->

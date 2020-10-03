@@ -79,7 +79,7 @@
                                     </div>
                                     <div class="profile-edit">
                                         <span id="spnEmailVer">(Verified)</span>
-                                        <a href="attendee-change-email.html" class="d-inline-block">Edit</a>
+                                        <a class="d-inline-block" asp-area="ManageUsers" asp-controller="Users" asp-action="ChangeEmail">Edit</a>
                                     </div>
                                 </div>
 
@@ -91,6 +91,7 @@
                                             <input type="radio" name="mobilepripub" value="Public" /><span>Public</span>
                                         </div>
                                         <input type="text" class="form-control pl-100" placeholder="Enter mobile number" value="" id="profileMobileNo">
+                                       
                                     </div>
 
                                     <!--- Start Country Code --->
@@ -360,7 +361,7 @@
                                     <!--- End Country Code --->
                                     <div class="profile-edit">
                                         <span id="spnMobileVer">(Verified)</span>
-                                        <a href="attendee-change-mobileno.html" class="d-inline-block">Edit</a>
+                                        <a class="d-inline-block" asp-area="ManageUsers" asp-controller="Users" asp-action="ChangeMobileNo">Edit</a>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
@@ -410,72 +411,8 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group interest-area">
-                                        <label class="checkbox-label">
-                                            <input type="checkbox" name="interestarea" value="Academics" />
-                                            <span class="checkbox-custom"></span>
-                                        </label>
-                                        <span>Academics</span>
+                                        
 
-                                        <label class="checkbox-label">
-                                            <input type="checkbox" name="interestarea" value="Hospitality" />
-                                            <span class="checkbox-custom"></span>
-                                        </label>
-                                        <span>Hospitality</span>
-
-                                        <label class="checkbox-label">
-                                            <input type="checkbox" name="interestarea" value="Web Development" />
-                                            <span class="checkbox-custom"></span>
-                                        </label>
-                                        <span>Web Development</span>
-
-                                        <label class="checkbox-label">
-                                            <input type="checkbox" name="interestarea" value="Management" />
-                                            <span class="checkbox-custom"></span>
-                                        </label>
-                                        <span>Management</span>
-
-                                        <label class="checkbox-label">
-                                            <input type="checkbox" name="interestarea" value="Medicine" />
-                                            <span class="checkbox-custom"></span>
-                                        </label>
-                                        <span>Medicine</span>
-                                    </div>
-                                    <div class="form-group interest-area">
-                                        <label class="checkbox-label">
-                                            <input type="checkbox" name="interestarea" value="Handicraft" />
-                                            <span class="checkbox-custom"></span>
-                                        </label>
-                                        <span>Handicraft</span>
-
-                                        <label class="checkbox-label">
-                                            <input type="checkbox" name="interestarea" value="Engineering" />
-                                            <span class="checkbox-custom"></span>
-                                        </label>
-                                        <span>Engineering</span>
-
-                                        <label class="checkbox-label">
-                                            <input type="checkbox" name="interestarea" value="Photography" />
-                                            <span class="checkbox-custom"></span>
-                                        </label>
-                                        <span>Photography</span>
-
-                                        <label class="checkbox-label">
-                                            <input type="checkbox" name="interestarea" value="Statistics" />
-                                            <span class="checkbox-custom"></span>
-                                        </label>
-                                        <span>Statistics</span>
-
-                                        <label class="checkbox-label">
-                                            <input type="checkbox" name="interestarea" value="Business" />
-                                            <span class="checkbox-custom"></span>
-                                        </label>
-                                        <span>Business</span>
-
-                                        <label class="checkbox-label">
-                                            <input type="checkbox" name="interestarea" value="Others" id="chkOtherInterest" />
-                                            <span class="checkbox-custom"></span>
-                                        </label>
-                                        <span>Others</span>
                                     </div>
                                     <div class="col-lg-4" id="otherInterestArea">
                                         <div class="form-group">
