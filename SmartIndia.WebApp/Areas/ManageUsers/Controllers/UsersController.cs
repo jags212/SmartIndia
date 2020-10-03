@@ -5,7 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc; 
 
 namespace SmartIndia.WebApp.Areas.ManageUsers.Controllers
 {
@@ -97,6 +97,30 @@ namespace SmartIndia.WebApp.Areas.ManageUsers.Controllers
         public IActionResult ChangePassword()
         {
             return View();
+        }
+        [HttpPost]
+        public JsonResult AthenticationUserRole(string UserId, string RoleName)
+        {
+            var userClaims = new List<Claim>()
+            {
+                new Claim(ClaimTypes.NameIdentifier, UserId.ToString()),
+                new Claim(ClaimTypes.Role, RoleName)
+            };
+
+            var grandmaIdentity = new ClaimsIdentity(userClaims, "User Identity");
+
+            var userPrincipal = new ClaimsPrincipal(new[] { grandmaIdentity });
+            HttpContext.SignInAsync(userPrincipal);
+            return Json(1);
+        }
+        public IActionResult Logout()
+        {
+            foreach (var cookieKey in Request.Cookies.Keys)
+            {
+                Response.Cookies.Delete(cookieKey);
+            }
+            HttpContext.SignOutAsync();
+            return RedirectToAction("Login", "Users", new { Area = "ManageUsers" });
         }
     }
 }
