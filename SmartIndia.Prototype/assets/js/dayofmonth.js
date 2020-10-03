@@ -6,7 +6,7 @@ var calendarnumber = '';
 var numberfilter;
 $('.month-calendar-numbers div').click(function () {
     var calnum = $(this).html();
-    if ($('#dayOfMonth span').length == 1) {
+    if ($('#dayOfMonth .placeholder').length == 1) {
         numberfilter = '<span class="month-item" data-val="' + calnum + '">' + calnum + ' <button type="button" onclick="deselectOneNo(this);">&times;</button></span>';
     }
     else {
@@ -23,7 +23,7 @@ $('.month-calendar-numbers div').click(function () {
             }
         }
     }
-    var nobutton = '<button type="button" class="select-button" onclick="selectAll()"></button><button type="button" class="deselect-button" onclick="deselectAllNo()"></button>';
+    var nobutton = '<button type="button" class="select-button" onclick="selectAllMonth()"></button><button type="button" class="deselect-button" onclick="deselectAllMonth()"></button>';
     calendarnumber = calendarnumber + numberfilter;
     $('#dayOfMonth').html(calendarnumber + nobutton);
 });
@@ -46,7 +46,7 @@ function deselectOneNo(one_select) {
 }
 
 //Select All No
-function selectAll(multi_select) {
+function selectAllMonth() {
     $('#dayOfMonth span').remove();
     var selectedno = $('.month-calendar-numbers div').map(function () {
         return $(this).html();
@@ -57,9 +57,10 @@ function selectAll(multi_select) {
 }
 
 //Deselect All No
-function deselectAllNo() {
+function deselectAllMonth() {
     $('#dayOfMonth span').remove();
     $('#dayOfMonth').append('<span class="placeholder">Pick the month</span>');
+    calendarnumber = '';
 }
 
 // When the user clicks anywhere outside of the search, close it
