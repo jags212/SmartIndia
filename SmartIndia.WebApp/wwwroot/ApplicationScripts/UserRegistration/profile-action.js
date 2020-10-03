@@ -1,6 +1,6 @@
 ﻿var uid;
+var result = parseJwt(localStorage.getItem("jwtToken"));
 $(document).ready(function () { 
-    var result = parseJwt(localStorage.getItem("jwtToken"));
     uid = parseInt(result.unique_name);
     BindCountry();
 });
@@ -13,6 +13,7 @@ function BindCountry() {
 }
 function BindUserData(obj) {
     $('#hFullName').html(obj.firstName + " " + obj.lastName);
+    $('#spnRoleName').html(result.role);
     $('#txtFirstName').val(obj.firstName);
     $('#txtLastName').val(obj.lastName);
     $('#txtProfileName').val(obj.profileName);
