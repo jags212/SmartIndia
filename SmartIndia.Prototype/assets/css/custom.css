@@ -4183,7 +4183,26 @@
 .width-100 {
     width: 100%;
 }
-
+.nav-active a {
+    background-color: #17a2b8b3;
+    padding: 10px 20px;
+    display: block;
+    position: relative;
+    z-index: 1;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.nav-active a {
+    color: #ffffff;
+}
+    .nav-active a:hover {
+        background-color: #17a2b8;
+    }
+    .nav-active a span {
+        color: #ffffff !important;
+    }
 /*------------------- Responsive ------------------------------------*/
 @media(min-width: 320px) and (max-width: 767px) {
     .social-login-btn {
