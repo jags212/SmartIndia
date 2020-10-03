@@ -1,9 +1,25 @@
-﻿<div class="sidemenu-header">
-    <a class="navbar-brand d-flex mobile-d-flex align-items-center" asp-area="ManageUsers" asp-controller="Hosts" asp-action="HostDashboard">
+﻿<div class="sidemenu-header" id="hrefHost">
+    <a class="navbar-brand d-flex mobile-d-flex align-items-center" asp-area="Hosts" asp-controller="HostDashboard" asp-action="Dashboard">
         <img src="~/assets/img/small-logo.png" alt="OCR" />
         <span>OCR</span>
     </a>
+    <div class="burger-menu d-none d-lg-block">
+        <span class="top-bar"></span>
+        <span class="middle-bar"></span>
+        <span class="bottom-bar"></span>
+    </div>
 
+    <div class="responsive-burger-menu d-block d-lg-none">
+        <span class="top-bar"></span>
+        <span class="middle-bar"></span>
+        <span class="bottom-bar"></span>
+    </div>
+</div>
+<div class="sidemenu-header" id="hrefAttendee">
+    <a class="navbar-brand d-flex mobile-d-flex align-items-center" asp-area="Attendee" asp-controller="Dashboard" asp-action="AttendeeDashboard">
+        <img src="~/assets/img/small-logo.png" alt="OCR" />
+        <span>OCR</span>
+    </a>
     <div class="burger-menu d-none d-lg-block">
         <span class="top-bar"></span>
         <span class="middle-bar"></span>
@@ -17,7 +33,9 @@
     </div>
 </div>
 
-<div class="sidemenu-body">
+
+@* ------------HOST MENU----------- *@
+<div class="sidemenu-body" id="divHost">
     <ul class="sidemenu-nav metisMenu h-100" id="sidemenu-nav" data-simplebar>
         <li class="nav-item mm-active">
             <a class="nav-link" asp-area="Hosts" asp-controller="HostDashboard" asp-action="Dashboard">
@@ -76,6 +94,7 @@
                 <span class="menu-title">Rescheduling</span>
             </a>
         </li>
+        <li class="divider"></li>
         <!-----------------------Attendee Menu Start--- For Temp------------------------->
         <li class="nav-item">
 
@@ -104,6 +123,48 @@
                     <i class='bx bxs-book-content'></i>
                 </span>
                 <span class="menu-title">Att-Class Wall</span>
+            </a>
+        </li>
+    </ul>
+</div>
+@* ------------ATTENDEE MENU----------- *@
+<div class="sidemenu-body" id="divAttendee">
+    <ul class="sidemenu-nav metisMenu h-100" id="sidemenu-nav" data-simplebar>
+        <li class="nav-item mm-active">
+            <a class="nav-link" asp-area="Attendee" asp-controller="Dashboard" asp-action="AttendeeDashboard">
+                <span class="icon">
+                    <i class='bx bx-home-circle'></i>
+                </span>
+                <span class="menu-title">Dashboard</span>
+            </a>
+        </li> 
+        <li class="nav-item">
+
+            <a class="nav-link" asp-area="Attendee" asp-controller="upcomingclasses" asp-action="upcomingclasses">
+                <span class="icon">
+                    <i class='bx bxs-book-content'></i>
+                </span>
+                <span class="menu-title">Upcoming Classes</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+
+            <a class="nav-link" asp-area="Attendee" asp-controller="EnrollCourses" asp-action="EnrollCourse">
+                <span class="icon">
+                    <i class='bx bxs-book-content'></i>
+                </span>
+                <span class="menu-title">Enroll Course</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+
+            <a class="nav-link" asp-area="Attendee" asp-controller="ClassWall" asp-action="ClassWall">
+                <span class="icon">
+                    <i class='bx bxs-book-content'></i>
+                </span>
+                <span class="menu-title">Class Wall</span>
             </a>
         </li>
 

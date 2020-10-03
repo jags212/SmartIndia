@@ -34,6 +34,8 @@ namespace SmartIndia.Data.Entities.UserManagement
         public DateTime UpdatedOn { get; set; }
         public bool Status { get; set; }
         public string ServiceURL { get; set; }
+        public int RoleId { get; set; }
+        public string RoleName { get; set; }
         [JsonIgnore]
         public List<RefreshToken> RefreshTokens { get; set; }
     } 
