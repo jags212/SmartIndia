@@ -82,7 +82,7 @@ namespace SmartIndia.RestAPI.Controllers
             }
         }
         [HttpGet("GetUserDetails")]
-        public async Task<UserRegistrationDetails> GetUserDetails(Int64 userid)
+        public async Task<UserRegistrationInterestDetails> GetUserDetails(Int64 userid)
         {
             using (var userRegistrationService = new UserRegistrationServices(connectionFactory))
             {

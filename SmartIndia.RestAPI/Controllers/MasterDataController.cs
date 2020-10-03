@@ -23,5 +23,11 @@ namespace SmartIndia.RestAPI.Controllers
             var country = _masterData.GetCountries();
             return Ok(country);
         }
+        [HttpGet("GetCourseInterest")]
+        public IActionResult GetCourseInterest()
+        {
+            var country = _masterData.GetCourseInterest();
+            return Ok(country);
+        }
     }
 }

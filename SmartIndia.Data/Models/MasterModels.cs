@@ -11,4 +11,12 @@ namespace SmartIndia.Data.Models
         public string CountryCode { get; set; }
         public int ConfigCurrencyId { get; set; }
     }
+
+    public class ConficCourseInterest
+    {
+        public int Id { get; set; }
+        public string CourseCategoryName { get; set; }
+        public string IsChecked { get; set; }
+
+    }
 }

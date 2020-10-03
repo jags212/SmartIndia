@@ -5,6 +5,7 @@ using SmartIndia.Data.Entities.UserManagement;
 using SmartIndia.Data.Enums;
 using SmartIndia.Data.Factory;
 using SmartIndia.Data.Helpers;
+using SmartIndia.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -347,16 +348,21 @@ namespace SmartIndia.Data.Services
                 // log.Error(ex);
             }
         }
-        public UserRegistrationDetails GetUserDetails(Int64 userid)
-        {
+        public UserRegistrationInterestDetails GetUserDetails(Int64 userid)
+        { 
             try
             {
                 object[] objArrayUser = new object[] {
                      "@UserId", userid
                 };
                 DynamicParameters paramUser = objArrayUser.ToDynamicParameters();
-                var result = DBConnection.QuerySingle<UserRegistrationDetails>("USP_GetUserDetailsByUserID", paramUser, commandType: CommandType.StoredProcedure);
-                return result;
+                var result = DBConnection.QueryMultiple("USP_GetUserDetailsByUserID", paramUser, commandType: CommandType.StoredProcedure);
+
+                var userDetails = result.Read<UserRegistrationInterestDetails>().Single();
+                var userInterests = result.Read<ConficCourseInterest>().ToList(); 
+                userDetails.Interests = userInterests;
+
+                return userDetails;
             }
             catch (Exception ex)
             {
@@ -383,12 +389,25 @@ namespace SmartIndia.Data.Services
                     ,"@IsMobilePrivate", registration.IsMobilePrivate
                     ,"@UpdatedById", registration.UserId
                 };
-
                 DynamicParameters param = objArray.ToDynamicParameters("@PVCH_MSGOUT");
                 param.Add("@DOB", registration.DOB, DbType.DateTime, ParameterDirection.Input);
                 var result = DBConnection.Execute("USP_UserProfile_ACTION", param, commandType: CommandType.StoredProcedure);
                 string retSP = param.Get<string>("PVCH_MSGOUT");
                 strRetMsg = retSP;
+                foreach (var item in registration.Interests)
+                {
+                    object[] objArrayInstr = new object[] {
+                     "@P_ACTIONCODE", "A"
+                    ,"@UserId", registration.UserId
+                    ,"@CourseCategoryId", item.InterestId
+                };
+                    DynamicParameters paramInt = objArrayInstr.ToDynamicParameters();
+                    var resultInt = DBConnection.Execute("USP_UserCourseInterests", paramInt, commandType: CommandType.StoredProcedure);
+                   
+                }
+                
+
+                
             }
             catch (Exception ex)
             {

@@ -8,5 +8,6 @@ namespace SmartIndia.Data.Services.MasterData
     public interface IMasterDataService
     {
         IEnumerable<ConfigCountrys> GetCountries();
+        IEnumerable<ConficCourseInterest> GetCourseInterest();
     }
 }

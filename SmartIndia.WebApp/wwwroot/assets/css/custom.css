@@ -87,6 +87,10 @@
     margin-top: 10px;
 }
 
+.mt-15 {
+    margin-top: 15px;
+}
+
 .mt-40 {
     margin-top: 40px;
 }
@@ -318,7 +322,7 @@
 }
 
 .re-note {
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 600;
     color: #F00;
     margin: 6px 0;
@@ -1897,14 +1901,14 @@
 
 .edgt-ci-price-holder {
     position: absolute;
-    top: 250px;
-    right: 21px;
+    top: 50px;
+    right: 10px;
 }
 
 .edgt-ci-price-value {
     padding: 4px 9px;
-    background-color: #e1000a;
-    color: #fff;
+    /*background-color: #e1000a;*/
+    color: #e1000a;
     font-size: 13px;
     font-weight: 600;
     text-transform: uppercase;
@@ -2954,7 +2958,7 @@
 
 .dashboard-panel-search {
     float: right;
-    width: 100%;
+    width: 90%;
     box-sizing: border-box;
     border: 2px solid #eef5f9;
     border-radius: 25px;
@@ -2975,7 +2979,7 @@
 
 .class-search-icon {
     position: relative;
-    top: -37px;
+    top: 7px;
     left: 89%;
     font-size: 25px;
     cursor: pointer;
@@ -3106,7 +3110,7 @@
 .ocr-clearable {
     position: relative;
     display: inline-block;
-    width: 35%;
+    width: 40%;
     float: right;
 }
 
@@ -3146,14 +3150,19 @@
     cursor: pointer;
 }
 /*--------------------- //Search ------------------------------------*/
+
 .ocr-list-group {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     box-sizing: border-box;
     box-shadow: -1px 3px 3px #eeeeee;
 }
 
     .ocr-list-group + .ocr-list-group {
         border-top-width: 1px;
+    }
+
+    .ocr-list-group:last-child {
+        margin-bottom: 0px;
     }
 
 .ocr-float-left {
@@ -3322,7 +3331,7 @@
 }
 
 .sm-cli-text {
-    margin: 10px 0;
+    margin: 8px 0;
 }
 
 #hostDashlList, #hostDashCalendar, #hostCWlList, #hostCWCalendar, #attendeeCWlList, #attendeeCWCalendar, #hostUPlList, #hostUPCalendar, #attendeeUPlList, #attendeeUPCalendar, #courseAttendeesList, #attendeesCoursesList {
@@ -3337,6 +3346,10 @@
     100% {
         opacity: 1;
     }
+}
+
+#courseAttendeesList p {
+    margin-bottom: 0.5rem;
 }
 
 .upcoming-section {
@@ -3400,7 +3413,8 @@
     }
 
 .interest-area {
-    display: flex;
+    display: block;
+    width: 70%;
 }
 
     .interest-area input {
@@ -3413,6 +3427,11 @@
         left: 7px;
     }
 
+.interest-area-box {
+    float: left;
+    margin-bottom: 20px;
+}
+
 /*---------------- Custom Checkbox ------------------------*/
 .checkbox-label {
     display: block;
@@ -3424,6 +3443,7 @@
     width: 15px;
     clear: both;
     margin-left: 20px;
+    float: left;
 }
 
     .checkbox-label input {
@@ -4085,11 +4105,11 @@
             transform: scale(1.2);
         }
 
-        #dayOfMonth > .select-button {
-            background: url("../img/select-all.jpg") no-repeat center center;
-            background-size: contain;
-            right: 20px;
-        }
+    #dayOfMonth > .select-button {
+        background: url("../img/select-all.jpg") no-repeat center center;
+        background-size: contain;
+        right: 20px;
+    }
 
     #dayOfMonth > .deselect-button {
         background: url("../img/deselect-all.jpg") no-repeat center center;
@@ -4159,6 +4179,10 @@
             background-color: #D8EAF1;
         }
 /*------------ End Month Calendar ------------------*/
+
+.width-100 {
+    width: 100%;
+}
 
 /*------------------- Responsive ------------------------------------*/
 @media(min-width: 320px) and (max-width: 767px) {

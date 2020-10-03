@@ -88,7 +88,10 @@ namespace SmartIndia.Data.Services.Attendee
                         NoOfClass = item.NoOfClass,
                         Cost = item.Cost,
                         Topic = item.Topic,
-                        BatchName = item.BatchName
+                        BatchName = item.BatchName,
+                        Uname = item.Uname,
+                        EmailId = item.EmailId,
+                        MobileNo = item.MobileNo
                     };
                     HostCourses.Add(modal);
                 }
