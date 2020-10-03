@@ -61,4 +61,21 @@ namespace SmartIndia.Data.Entities.UserManagement
         public bool IsEmailPrivate { get; set; }
         public bool IsMobilePrivate { get; set; } 
     }
+    public class UpdateEmail
+    {
+        public string Emailid { get; set; }
+        public string UID { get; set; }
+        public string ServiceURL { get; set; }
+    }
+    public class UpdateMob
+    {
+        public string MobileNo { get; set; }
+        public string UID { get; set; }
+        public string OTP { get; set; }
+    }
+    public class UpdateMobileConfirmed
+    {
+        public string MobileNo { get; set; }
+        public string UID { get; set; }
+    }
 }

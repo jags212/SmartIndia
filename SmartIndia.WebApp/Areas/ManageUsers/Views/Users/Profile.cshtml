@@ -79,7 +79,7 @@
                                     </div>
                                     <div class="profile-edit">
                                         <span id="spnEmailVer">(Verified)</span>
-                                        <a href="attendee-change-email.html" class="d-inline-block">Edit</a>
+                                        <a class="d-inline-block" asp-area="ManageUsers" asp-controller="Users" asp-action="ChangeEmail">Edit</a>
                                     </div>
                                 </div>
 
@@ -91,6 +91,7 @@
                                             <input type="radio" name="mobilepripub" value="Public" /><span>Public</span>
                                         </div>
                                         <input type="text" class="form-control pl-100" placeholder="Enter mobile number" value="" id="profileMobileNo">
+                                       
                                     </div>
 
                                     <!--- Start Country Code --->
@@ -360,7 +361,7 @@
                                     <!--- End Country Code --->
                                     <div class="profile-edit">
                                         <span id="spnMobileVer">(Verified)</span>
-                                        <a href="attendee-change-mobileno.html" class="d-inline-block">Edit</a>
+                                        <a class="d-inline-block" asp-area="ManageUsers" asp-controller="Users" asp-action="ChangeMobileNo">Edit</a>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">

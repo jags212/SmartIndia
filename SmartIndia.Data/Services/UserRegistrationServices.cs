@@ -320,6 +320,33 @@ namespace SmartIndia.Data.Services
                 // log.Error(ex);
             }
         }
+        public bool IsEmailConfirm(string acode)
+        {
+            try
+            {
+                object[] objArrayUser = new object[] {
+                     "@P_ACTIONCODE", "EC"
+                    ,"@UID", acode
+                };
+                DynamicParameters paramUser = objArrayUser.ToDynamicParameters("@PVCH_MSGOUT");
+                var result = DBConnection.Execute("USP_UserRegistrations_ACTION", paramUser, commandType: CommandType.StoredProcedure);
+                string retMsg = paramUser.Get<string>("PVCH_MSGOUT");
+                if (retMsg == "200")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                // throw new Exception(ex.Message);
+                return false;
+                // log.Error(ex);
+            }
+        }
         public UserRegistrationDetails GetUserDetails(Int64 userid)
         {
             try
@@ -399,6 +426,180 @@ namespace SmartIndia.Data.Services
                 return false;
                 // log.Error(ex);
             }
+        }
+        public bool CkeckEmailId(Guid uid, string currentemail)
+        {
+            try
+            {
+                object[] objArray = new object[] {
+                "@ActionCode", "E",
+                     "@UID",uid
+                };
+                DynamicParameters paramUser = objArray.ToDynamicParameters();
+                var result = DBConnection.Query("USP_GetUserDetails", paramUser, commandType: CommandType.StoredProcedure).Single();
+
+                if (currentemail == result.Emailid)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        public string UpdatEmailid(UpdateEmail updateEmail)
+        {
+            object[] objArray = new object[] {
+                         "@P_ACTIONCODE", "A"
+                        ,"@Emailid",updateEmail.Emailid
+                        ,"@UID",updateEmail.UID
+            };
+            try
+            {
+                DynamicParameters param = objArray.ToDynamicParameters("@PVCH_MSGOUT");
+                var result = DBConnection.Execute("USP_UpdateUserEmailid", param, commandType: CommandType.StoredProcedure);
+                strRetMsg = param.Get<string>("PVCH_MSGOUT");
+
+                if (strRetMsg == "1")
+                {
+                    SendEmailforMailidChange(updateEmail.Emailid, updateEmail.ServiceURL, updateEmail.UID);
+                }
+                else
+                {
+                    //Send Mobile SMS OTP
+                }
+            }
+            catch (Exception ex)
+            {
+                // throw new Exception(ex.Message);
+                strRetMsg = "";
+                // log.Error(ex);
+            }
+            return strRetMsg;
+        }
+        public string SendEmailforMailidChange(string emailID, string serviceUrl, string ActivationCode)
+        {
+            var client = new RestClient("https://api.sendinblue.com/v3/smtp/email");
+            client.Timeout = -1;
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("api-key", "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");
+            request.AddHeader("Content-Type", "application/json");
+            request.AddParameter("application/json"
+                , "{" +
+                        "\r\n" +
+                        "\"sender\": " +
+                                "{\r\n" +
+                                    "\"name\": \"Smart India\",\r\n    " +
+                                    "\"email\": \"napoleon.mohanta@gmail.com\"\r\n" +
+                                "},\r\n" +
+                        "\"to\": " +
+                                "[\r\n    " +
+                                    "{\r\n" +
+                                        "\"email\": \"" + emailID + "\",\r\n" +
+                                        "\"name\": \"" + emailID + "\"\r\n    " +
+                                    "}\r\n" +
+                                "],\r\n" +
+                        "\"subject\": \"Smart India Email Confirmation\",\r\n" +
+                        "\"htmlContent\": \"<html><head></head><body><p>Dear User,</p>" +
+                        //"<p>Thanks for signing up to Smart India!</p>" +
+                        "<p>Click the link below to verify your email id.</p>" +
+                        "<p><a href='" + serviceUrl + "/ManageUsers/Users/ChangeEmailVerification?Id=" + ActivationCode + "'>Confirm your Email</a></p>" +
+                        "</body></html>\"\r\n" +
+                    "}"
+                , ParameterType.RequestBody);
+            IRestResponse response = client.Execute(request);
+            Console.WriteLine(response.Content);
+            return "";
+        }
+        public bool CkeckCurrentmobno(Guid uid, string MobNo)
+        {
+            try
+            {
+                object[] objArray = new object[] {
+                "@ActionCode", "M",
+                     "@UID",uid
+                };
+                DynamicParameters paramUser = objArray.ToDynamicParameters();
+                var result = DBConnection.Query("USP_GetUserDetails", paramUser, commandType: CommandType.StoredProcedure).Single();
+                if (MobNo == result.MobileNo)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        public string UpdateMobileNo(UpdateMob updateMob)
+        {
+            object[] objArray = new object[] {
+                         "@P_ACTIONCODE", "A"
+                        ,"@MobileNo",updateMob.MobileNo
+                        ,"@UID",updateMob.UID
+            };
+            try
+            {
+                DynamicParameters param = objArray.ToDynamicParameters("@PVCH_MSGOUT");
+                var result = DBConnection.Execute("USP_UpdateUserMobileNo", param, commandType: CommandType.StoredProcedure);
+                strRetMsg = param.Get<string>("PVCH_MSGOUT");
+
+                if (strRetMsg == "1")
+                {
+                    SendSMS(updateMob.OTP, updateMob.MobileNo);
+                }
+                else
+                {
+                    //Send Mobile SMS OTP
+                }
+            }
+            catch (Exception ex)
+            {
+                // throw new Exception(ex.Message);
+                strRetMsg = "";
+                // log.Error(ex);
+            }
+            return strRetMsg;
+        }
+        public string SendSMS(string OTP, string MobileNo)
+        {
+            var client = new RestClient("http://59.162.167.52/api/MessageCompose?admin=napoleon.mohanta@gmail.com&user=karanjiacollege@gmail.com:G3L2P4V727&senderID=KJACLG&receipientno=" + MobileNo + "&msgtxt=Greetings from SmartIndia . Your OTP code is: " + OTP + " . Code valid for 5 minutes only.&state=4");
+            client.Timeout = -1;
+            var request = new RestRequest(Method.POST);
+            IRestResponse response = client.Execute(request);
+            return response.Content;
+
+        }
+        public string MobileConfirmed(UpdateMobileConfirmed updateMobileConfirmed)
+        {
+            object[] objArray = new object[] {
+                         "@P_ACTIONCODE", "AC"
+                        ,"@UID",updateMobileConfirmed.UID
+            };
+            try
+            {
+                DynamicParameters param = objArray.ToDynamicParameters("@PVCH_MSGOUT");
+                var result = DBConnection.Execute("USP_UpdateUserMobileNo", param, commandType: CommandType.StoredProcedure);
+                strRetMsg = param.Get<string>("PVCH_MSGOUT");
+            }
+            catch (Exception ex)
+            {
+                // throw new Exception(ex.Message);
+                strRetMsg = "";
+                // log.Error(ex);
+            }
+            return strRetMsg;
         }
     }
 }
