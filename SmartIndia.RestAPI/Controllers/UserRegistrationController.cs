@@ -73,8 +73,16 @@ namespace SmartIndia.RestAPI.Controllers
                 return await Task.FromResult(userRegistrationService.UserActive(acode));
             }
         }
+        [HttpGet("EmailConfirm")]
+        public async Task<bool> IsEmailConfirm(string acode)
+        {
+            using (var userRegistrationService = new UserRegistrationServices(connectionFactory))
+            {
+                return await Task.FromResult(userRegistrationService.IsEmailConfirm(acode));
+            }
+        }
         [HttpGet("GetUserDetails")]
-        public async Task<UserRegistrationDetails> GetUserDetails(Int64 userid)
+        public async Task<UserRegistrationInterestDetails> GetUserDetails(Int64 userid)
         {
             using (var userRegistrationService = new UserRegistrationServices(connectionFactory))
             {
@@ -95,6 +103,48 @@ namespace SmartIndia.RestAPI.Controllers
             using (var userRegistrationService = new UserRegistrationServices(connectionFactory))
             {
                 return await Task.FromResult(userRegistrationService.CheckUserPass(Guid.Parse(uid), pass));
+            }
+        }
+        [HttpGet("CkeckCurrentEmail")]
+        public async Task<bool> CkeckCurrentEmailAsync(string UID, string email)
+        {
+            using (var userRegistrationService = new UserRegistrationServices(connectionFactory))
+            {
+                return await Task.FromResult(userRegistrationService.CkeckEmailId(Guid.Parse(UID), email));
+
+            }
+        }
+        [HttpPost("UpdateEmail")]
+        public async Task<string> UpdateEmailid(UpdateEmail obj)
+        {
+            using (var userRegistrationServices = new UserRegistrationServices(connectionFactory))
+            {
+                return await Task.FromResult(userRegistrationServices.UpdatEmailid(obj));
+            }
+        }
+        [HttpGet("CkeckCurrentmob")]
+        public async Task<bool> CkeckCurrentmobAsync(string UID, string MobNo)
+        {
+            using (var userRegistrationService = new UserRegistrationServices(connectionFactory))
+            {
+                return await Task.FromResult(userRegistrationService.CkeckCurrentmobno(Guid.Parse(UID), MobNo));
+
+            }
+        }
+        [HttpPost("UpdateMobileNo")]
+        public async Task<string> UpdateMobileNo(UpdateMob obj)
+        {
+            using (var userRegistrationServices = new UserRegistrationServices(connectionFactory))
+            {
+                return await Task.FromResult(userRegistrationServices.UpdateMobileNo(obj));
+            }
+        }
+        [HttpPost("UpdateMobileConfirmed")]
+        public async Task<string> MobileConfirmed(UpdateMobileConfirmed obj)
+        {
+            using (var userRegistrationServices = new UserRegistrationServices(connectionFactory))
+            {
+                return await Task.FromResult(userRegistrationServices.MobileConfirmed(obj));
             }
         }
     }

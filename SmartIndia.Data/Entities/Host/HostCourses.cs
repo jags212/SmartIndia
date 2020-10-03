@@ -60,6 +60,9 @@ namespace SmartIndia.Data.Entities.Host
         public string BrochureExt { get; set; }
         public string url { get; set; }
         public string BatchName  { get; set; }
+        public string Uname { get; set; }
+        public string EmailId { get; set; }
+        public string MobileNo { get; set; }
 
 
     }

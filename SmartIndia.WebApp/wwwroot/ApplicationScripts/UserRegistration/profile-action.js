@@ -1,6 +1,6 @@
 ﻿var uid;
 var result = parseJwt(localStorage.getItem("jwtToken"));
-$(document).ready(function () { 
+$(document).ready(function () {
     uid = parseInt(result.unique_name);
     BindCountry();
 });
@@ -10,6 +10,15 @@ function BindCountry() {
             $("#ddlCountry").append($("<option></option>").val(value.id).html(value.countryName));
         })
     });
+}
+function BindInterest(dataList) {
+    var Interest = '';
+    $.each(dataList, function (i, value) {
+        Interest += '<div class="interest-area-box"><label class="checkbox-label">'
+            + '<input type = "checkbox" name = "interestarea" value = "' + dataList[i].id + '" ' + dataList[i].isChecked+'/>'
+            + '<span class="checkbox-custom" ></span ></label ><span>' + dataList[i].courseCategoryName + '</span></div>';
+    });
+    $(".interest-area").append(Interest);
 }
 function BindUserData(obj) {
     $('#hFullName').html(obj.firstName + " " + obj.lastName);
@@ -40,6 +49,7 @@ function BindUserData(obj) {
     else {
         $('#spnMobileVer').hide();
     }
+    BindInterest(obj.interests);
 }
 function ValidateForm() {
     if (!BlankTextBox('txtFirstName', 'First Name')) {
@@ -73,6 +83,13 @@ $('#btnSave').click(function () {
         }
     }
     function CallSave() {
+
+        var arr = new Array();
+        $('input:checkbox[name=interestarea]:checked').each(function () {
+            var interestId = {};
+            interestId.InterestId = parseInt($(this).val());
+            arr.push(interestId);
+        });
         var usersParam = JSON.stringify({
             ACTIONCODE: 'U',
             UserId: uid,
@@ -86,7 +103,8 @@ $('#btnSave').click(function () {
             DOB: dateFormat($('#dobdatepicker').val(), 'yyyy-mm-dd'),
             IsEmailPrivate: $('input[name="emailpripub"]:checked').val() == "Private" ? true : false,
             IsMobilePrivate: $('input[name="mobilepripub"]:checked').val() == "Private" ? true : false,
-            UpdatedById: uid
+            UpdatedById: uid,
+            Interests: arr
         });
         $.ajax({
             url: ServiceURL + "/api/UserRegistration/UpdateUserProfile",

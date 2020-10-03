@@ -35,5 +35,23 @@ namespace SmartIndia.Data.Services.MasterData
                 // log.Error(ex);
             }
         }
+        public IEnumerable<ConficCourseInterest> GetCourseInterest()
+        {
+            try
+            {
+                object[] objArray = new object[] {
+                     "@ActionCode", "CourseInterest"
+                };
+                DynamicParameters paramUser = objArray.ToDynamicParameters();
+                var result = DBConnection.Query<ConficCourseInterest>("USP_GetCommonData", paramUser, commandType: CommandType.StoredProcedure).ToList();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                // throw new Exception(ex.Message);
+                return null;
+                // log.Error(ex);
+            }
+        }
     }
 }

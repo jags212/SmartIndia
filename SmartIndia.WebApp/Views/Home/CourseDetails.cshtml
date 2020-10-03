@@ -1,0 +1,433 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "CourseDetails";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+<title>OCR - Course Details</title>
+<!-- Custom CSS -->
+<link rel="stylesheet" href="assets/css/custom.css" />
+@section Scripts{
+    <script>
+        var sid =@ViewBag.id;
+        $("#hfScId").val(sid);
+        var batch ='@ViewBag.BatchName';
+        $("#hfbatch").val(batch);
+
+    </script>
+    <!-- Scrolling Top JS -->
+    <script src="assets/js/scroll-top.js"></script>
+    <script src="~/ApplicationScripts/Home/course-details.js"></script>
+    <script>
+        $('#searchDate').datepicker({ format: 'dd-mmm-yyyy' });
+    </script>
+}
+<!--End Header Area-->
+<!-- Start Course Area -->
+<div class="course-area">
+    <input type="hidden" name="hfScId" id="hfScId">
+    <input type="hidden" name="hfbatch" id="hfbatch">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="edgt-content">
+                <div class="edgt-content-inner">
+                    <div class="edgt-title-holder edgt-standard-with-breadcrumbs-type edgt-has-bg-image edgt-bg-parallax"
+                         style="height: 230px;background-image: url(&quot;../../assets/img/course-tittle-area.jpg&quot;);background-position: center 0px;" data-height="230">
+                        <div class="edgt-title-image">
+                            <img itemprop="image" src="~/assets/img/course-tittle-area.jpg" alt="ocr" />
+                        </div>
+                        <div class="edgt-title-wrapper" style="height: 230px">
+                            <div class="edgt-title-inner">
+                                <div class="edgt-grid">
+                                    <div class="edgt-title-inner-holder">
+                                        <div class="edgt-title-info">
+                                            <h2 class="edgt-page-title">Course Details</h2>
+                                        </div>
+                                        <div class="edgt-breadcrumbs-info">
+                                            <div itemprop="breadcrumb" class="edgt-breadcrumbs edgt-has-inline-style">
+                                                <a itemprop="url" href="login.html">Home</a>
+                                                <span class="edgt-delimiter">&nbsp; / &nbsp;</span>
+                                                <span class="edgt-current">Courses</span>
+                                                <span class="edgt-delimiter">&nbsp; / &nbsp;</span>
+                                                <span class="edgt-current">Course Details</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-9 mt-50 edgt-content-left">
+                                <div class="edgt-course-single-outer">
+                                    <div class="edgt-course-single-wrapper">
+                                        <div class="edgt-course-title-wrapper">
+                                            <div class="edgt-course-title-section">
+                                                <h2 class="edgt-course-single-title" id="coursename">
+                                                </h2>
+                                            </div>
+                                        </div>
+                                        <div class="edgt-course-basic-info-wrapper">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-6 edgt-course-info-wrapper">
+                                                            <div class="edgt-course-instructor">
+                                                                <div class="edgt-instructor-info">
+                                                                    <span class="edgt-instructor-label">
+                                                                        Host:
+                                                                    </span>
+                                                                    <span class="edgt-instructor-name" id="Uname">
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 edgt-course-info-wrapper">
+                                                            <div class="edgt-host-categories">
+                                                                <div class="edgt-instructor-email-info">
+                                                                    <i class="bx bx-envelope"></i>
+                                                                    <span class="edgt-instructor-email-label" id="EmailId">
+                                                                    </span>
+                                                                </div>
+                                                                <div class="edgt-instructor-phone-info">
+                                                                    <span class="edgt-instructor-phone-label">
+                                                                        <i class="bx bx-phone"></i>
+                                                                        <span id="MobileNo"></span>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="edgt-course-price-detail">
+                                                        <span class="edgt-course-single-type" id="cost">
+                                                        </span>
+                                                        <div class="edgt-course-action">
+                                                            <a href="/ManageUsers/Users/Login" class="btn btn-medium btn-enroll-solid">Enroll Course</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="edgt-course-image-wrapper">
+                                            <div class="edgt-course-image">
+                                                <img src="~/assets/img/course-img-1.jpg" class="course-detail-img" alt="OCR" />
+                                            </div>
+                                        </div>
+                                        <div class="edgt-course-tabs-wrapper">
+                                            <div class="edgt-tabs edgt-tabs-standard ui-tabs ui-widget ui-widget-content ui-corner-all">
+                                                <ul class="nav nav-pills nav-justified edgt-tabs-nav clearfix" role="tablist" data-tabs="tabs">
+                                                    <li>
+                                                        <a href="#tab-description" data-toggle="tab" class="active">
+                                                            <span class="edgt-tab-icon">
+                                                                <i class="bx bx-spreadsheet" aria-hidden="true"></i>
+                                                            </span>
+                                                            <span class="edgt-tab-title">
+                                                                Overview
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#tab-reviews" data-toggle="tab">
+                                                            <span class="edgt-tab-icon">
+                                                                <i class="bx bx-star" aria-hidden="true"></i>
+                                                            </span>
+                                                            <span class="edgt-tab-title">
+                                                                Rating
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <div class="tab-content edgt-tab-container">
+                                                    <div role="tabpanel" class="tab-pane fade in active" id="tab-description">
+                                                        <div class="edgt-course-content">
+                                                            <h3 class="edgt-course-content-title">About this course</h3>
+                                                            <div class="row row-fluid">
+                                                                <div class="col-md-12 vc_column_container">
+                                                                    <div class="vc_column-inner">
+                                                                        <div class="wpb_wrapper">
+                                                                            <div class="wpb_text_column wpb_content_element ">
+                                                                                <div class="wpb_wrapper">
+                                                                                    <p id="desc">. Nullam ac urna eu felis dapibus condimentum sit amet a augue.</p>
+                                                                                    <p>&nbsp;</p>
+
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="vc_empty_space" style="height: 27px"><span class="vc_empty_space_inner"></span></div>
+                                                                            <div class="edgt-social-share-holder edgt-list">
+                                                                                <p class="edgt-social-title">Share</p>
+                                                                                <ul>
+                                                                                    <li class="edgt-facebook-share">
+                                                                                        <a itemprop="url" class="edgt-share-link" href="javascript:void(0);">
+                                                                                            <span class="bx bxl-facebook"></span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li class="edgt-twitter-share">
+                                                                                        <a itemprop="url" class="edgt-share-link" href="javascript:void(0);">
+                                                                                            <span class="bx bxl-twitter"></span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li class="edgt-google_plus-share">
+                                                                                        <a itemprop="url" class="edgt-share-link" href="javascript:void(0);">
+                                                                                            <span class="bx bxl-google-plus"></span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li class="edgt-linkedin-share">
+                                                                                        <a itemprop="url" class="edgt-share-link" href="javascript:void(0);">
+                                                                                            <span class="bx bxl-linkedin"></span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li class="edgt-pinterest-share">
+                                                                                        <a itemprop="url" class="edgt-share-link" href="javascript:void(0);">
+                                                                                            <span class="bx bxl-pinterest-alt"></span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div role="tabpanel" class="tab-pane fade" id="tab-reviews">
+                                                        <div class="edgt-course-reviews-main-title">
+                                                            <h3>Rating</h3>
+                                                        </div>
+                                                        <div class="edgt-course-reviews-list-top">
+                                                            <div class="edgt-course-reviews-number-wrapper">
+                                                                <div class="edgt-course-reviews-number">5</div>
+                                                                <div class="edgt-course-stars-wrapper">
+                                                                    <span class="edgt-course-stars">
+                                                                        <i class="bx bxs-star" aria-hidden="true"></i>
+                                                                        <i class="bx bxs-star" aria-hidden="true"></i>
+                                                                        <i class="bx bxs-star" aria-hidden="true"></i>
+                                                                        <i class="bx bxs-star" aria-hidden="true"></i>
+                                                                        <i class="bx bxs-star" aria-hidden="true"></i>
+                                                                    </span>
+                                                                    <span class="edgt-course-reviews-count">3 Ratings</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="edgt-course-rating-separator"></div>
+                                                            <div class="edgt-course-rating-percente-wrapper">
+                                                                <div class="edgt-progress-bar rating ">
+                                                                    <p class="edgt-pb-title-holder">
+                                                                        <span class="edgt-pb-title">5 Stars</span>
+                                                                    </p>
+                                                                    <div class="edgt-pb-content-holder">
+                                                                        <div class="edgt-pb-content" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                    </div>
+                                                                    <span class="edgt-pb-number-of-ratings">2</span>
+                                                                </div><div class="edgt-progress-bar rating ">
+                                                                    <p class="edgt-pb-title-holder">
+                                                                        <span class="edgt-pb-title">4 Stars</span>
+                                                                    </p>
+                                                                    <div class="edgt-pb-content-holder">
+                                                                        <div class="edgt-pb-content" role="progressbar" style="width: 33%" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                    </div>
+                                                                    <span class="edgt-pb-number-of-ratings">1</span>
+                                                                </div><div class="edgt-progress-bar rating ">
+                                                                    <p class="edgt-pb-title-holder">
+                                                                        <span class="edgt-pb-title">3 Stars</span>
+                                                                    </p>
+                                                                    <div class="edgt-pb-content-holder">
+                                                                        <div class="edgt-pb-content" role="progressbar" style="width: 0" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                    </div>
+                                                                    <span class="edgt-pb-number-of-ratings">0</span>
+                                                                </div><div class="edgt-progress-bar rating ">
+                                                                    <p class="edgt-pb-title-holder">
+                                                                        <span class="edgt-pb-title">2 Stars</span>
+                                                                    </p>
+                                                                    <div class="edgt-pb-content-holder">
+                                                                        <div class="edgt-pb-content" role="progressbar" style="width: 0" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                    </div>
+                                                                    <span class="edgt-pb-number-of-ratings">0</span>
+                                                                </div><div class="edgt-progress-bar rating ">
+                                                                    <p class="edgt-pb-title-holder">
+                                                                        <span class="edgt-pb-title">1 Stars</span>
+                                                                    </p>
+                                                                    <div class="edgt-pb-content-holder">
+                                                                        <div class="edgt-pb-content" role="progressbar" style="width: 0" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                    </div>
+                                                                    <span class="edgt-pb-number-of-ratings">0</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mt-50 edgt-sidebar-right">
+                                <div class="widget edgt-course-features-widget">
+                                    <div class="edgt-widget-title-holder">
+                                        <h4 class="edgt-widget-title">Course Features</h4>
+                                    </div>
+                                    <div class="edgt-course-features-holder">
+                                        <ul class="edgt-course-features">
+                                            <li class="edgt-feature-item">
+                                                <span class="edgt-item-icon"><i class="bx bxs-alarm" aria-hidden="true"></i></span>
+                                                <span class="edgt-item-label">Duration</span>
+                                                <span class="edgt-item-value">2 hours</span>
+                                            </li>
+                                            <li class="edgt-feature-item">
+                                                <span class="edgt-item-icon"><i class="bx bxs-bell" aria-hidden="true"></i></span>
+                                                <span class="edgt-item-label">Lectures</span>
+                                                <span class="edgt-item-value">7</span>
+                                            </li>
+                                            <li class="edgt-feature-item">
+                                                <span class="edgt-item-icon"><i class="fa fa-users" aria-hidden="true"></i></span>
+                                                <span class="edgt-item-label">Attendees</span>
+                                                <span class="edgt-item-value">12</span>
+                                            </li>
+                                            <li class="edgt-feature-item">
+                                                <span class="edgt-item-icon"><span class="bx bxs-star"></span></span>
+                                                <span class="edgt-item-label">Rating</span>
+                                                <span class="edgt-item-value">5 (3 reviews)</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="widget edgt-course-categories-widget">
+                                    <div class="edgt-widget-title-holder">
+                                        <h4 class="edgt-widget-title">Find Course</h4>
+                                    </div>
+                                    <div class="outer-adv-search-area" id="outer-advanceSearchArea">
+                                        <div class="col-sm-4 col-lg-4 col-md-4 ocr-float-left">
+                                            <div class="outer-adv-search-text">Course</div>
+                                        </div>
+                                        <div class="col-sm-8 col-lg-8 col-md-8 ocr-float-left">
+                                            <div class="form-group">
+                                                <input type="text" autocomplete="off" />
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-sm-4 col-lg-4 col-md-4 ocr-float-left">
+                                            <div class="outer-adv-search-text">Host</div>
+                                        </div>
+                                        <div class="col-sm-8 col-lg-8 col-md-8 ocr-float-left">
+                                            <div class="form-group">
+                                                <input type="text" autocomplete="off" />
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-sm-4 col-lg-4 col-md-4 ocr-float-left">
+                                            <div class="outer-adv-search-text">Start Date</div>
+                                        </div>
+                                        <div class="col-sm-8 col-lg-8 col-md-8 ocr-float-left outer-ocr-datepicker-md">
+                                            <div class="form-group">
+                                                <input type="text" autocomplete="off" id="searchDate" readonly />
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-sm-4 col-lg-4 col-md-4 ocr-float-left">
+                                            <div class="outer-adv-search-text">Price</div>
+                                        </div>
+                                        <div class="col-sm-4 col-lg-4 col-md-4 ocr-float-left">
+                                            <div class="form-group">
+                                                <input type="text" autocomplete="off" placeholder="Min price" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4 col-lg-4 col-md-4 ocr-float-left">
+                                            <div class="form-group">
+                                                <input type="text" autocomplete="off" placeholder="Max price" />
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="adv-search-btn-area">
+                                            <button type="button" class="btn btn-outline-secondary" id="clearfilter">Clear Filter</button>
+                                            <button type="button" class="btn btn-primary">Search</button>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="widget edgt-course-categories-widget">
+                                    <div class="edgt-widget-title-holder">
+                                        <h4 class="edgt-widget-title">Related Courses</h4>
+                                    </div>
+                                    <ul class="edgt-course-categories-list">
+                                        <li>
+                                            <h6 class="edgt-course-categories-list-title">
+                                                <a href="javascript:void(0);" target="_self" itemprop="url">Photography</a>
+                                            </h6>
+                                        </li>
+                                        <li>
+                                            <h6 class="edgt-course-categories-list-title">
+                                                <a href="javascript:void(0);" target="_self" itemprop="url">Statistics</a>
+                                            </h6>
+                                        </li>
+                                        <li>
+                                            <h6 class="edgt-course-categories-list-title">
+                                                <a href="javascript:void(0);" target="_self" itemprop="url">Learning CAD</a>
+                                            </h6>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="widget edgt-course-categories-widget">
+                                    <div class="edgt-widget-title-holder">
+                                        <h4 class="edgt-widget-title">Categories</h4>
+                                    </div>
+                                    <ul class="edgt-course-categories-list">
+                                        <li>
+                                            <h6 class="edgt-course-categories-list-title">
+                                                <a href="javascript:void(0);" target="_self" itemprop="url">Academics</a>
+                                            </h6>
+                                        </li>
+                                        <li>
+                                            <h6 class="edgt-course-categories-list-title">
+                                                <a href="javascript:void(0);" target="_self" itemprop="url">Hospitality</a>
+                                            </h6>
+                                        </li>
+                                        <li>
+                                            <h6 class="edgt-course-categories-list-title">
+                                                <a href="javascript:void(0);" target="_self" itemprop="url">Web Development</a>
+                                            </h6>
+                                        </li>
+                                        <li>
+                                            <h6 class="edgt-course-categories-list-title">
+                                                <a href="javascript:void(0);" target="_self" itemprop="url">Management</a>
+                                            </h6>
+                                        </li>
+                                        <li>
+                                            <h6 class="edgt-course-categories-list-title">
+                                                <a href="javascript:void(0);" target="_self" itemprop="url">Medicine</a>
+                                            </h6>
+                                        </li>
+                                        <li>
+                                            <h6 class="edgt-course-categories-list-title">
+                                                <a href="javascript:void(0);" target="_self" itemprop="url">Handicraft</a>
+                                            </h6>
+                                        </li>
+                                        <li>
+                                            <h6 class="edgt-course-categories-list-title">
+                                                <a href="javascript:void(0);" target="_self" itemprop="url">Engineering</a>
+                                            </h6>
+                                        </li>
+                                        <li>
+                                            <h6 class="edgt-course-categories-list-title">
+                                                <a href="javascript:void(0);" target="_self" itemprop="url">Photography</a>
+                                            </h6>
+                                        </li>
+                                        <li>
+                                            <h6 class="edgt-course-categories-list-title">
+                                                <a href="javascript:void(0);" target="_self" itemprop="url">Statistics</a>
+                                            </h6>
+                                        </li>
+                                        <li>
+                                            <h6 class="edgt-course-categories-list-title">
+                                                <a href="javascript:void(0);" target="_self" itemprop="url">Business</a>
+                                            </h6>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
