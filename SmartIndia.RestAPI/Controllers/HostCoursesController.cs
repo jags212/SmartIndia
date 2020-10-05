@@ -35,6 +35,7 @@ namespace SmartIndia.RestAPI.Controllers
             }
         }
         [HttpGet("GetHostCourse")]
+        [Obsolete]
         public async Task<List<HostCourses>> GetHostCourse([FromQuery] HostParameter obj)
         {
             using (var hostCourseServices = new HostCourseServices(connectionFactory))
@@ -44,6 +45,7 @@ namespace SmartIndia.RestAPI.Controllers
             }
         }
         [HttpGet("GetHostCourses")]
+        [Obsolete]
         public async Task<List<HostCourses>> GetHostCourses([FromQuery] HostParameter obj)
         {
             using (var hostCourseServices = new HostCourseServices(connectionFactory))

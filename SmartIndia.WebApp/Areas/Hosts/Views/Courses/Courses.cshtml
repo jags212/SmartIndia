@@ -52,7 +52,7 @@
     <!--hostcourse js -->
     <script src="~/ApplicationScripts/Host/hostcourses.js"></script>
     <script src="~/ApplicationScripts/Host/host-course-validate.js"></script>
- 
+
 
     <script>
         $(document).ready(function () {
@@ -83,7 +83,36 @@
             });
         });
     </script>
-
+    <script>
+        //For Image
+        $('#fileuploadImg').bind('change', function () {
+            var ext = $('#fileuploadImg').val().split('.').pop().toLowerCase();
+            if ($.inArray(ext, ['png', 'jpg']) == -1) {
+                alert("Only .jpg,.png allowed");
+                $('#fileuploadImg').val("");
+            } else {
+                var picsize = (this.files[0].size);
+                if (picsize > 1000000) {
+                    alert("Maximum file size 1MB.");
+                    $('#fileuploadImg').val("");
+                }
+            }
+        });
+        //For Brouchure
+        $('#fileuploadbrochure').bind('change', function () {
+            var ext = $('#fileuploadbrochure').val().split('.').pop().toLowerCase();
+            if ($.inArray(ext, ['png', 'jpg','pdf']) == -1) {
+                alert("Only .jpg,.png,.pdf allowed");
+                $('#fileuploadbrochure').val("");
+            } else {
+                var picsize = (this.files[0].size);
+                if (picsize > 1000000) {
+                    alert("Maximum file size 1MB.");
+                    $('#fileuploadbrochure').val("");
+                }
+            }
+        });
+    </script>
 
 }
 <title>OCR - Add Course</title>
@@ -127,7 +156,7 @@
                             <input id="fileuploadImg" type="file" class="custom-file-upload">
                         </label>
                     </div>
-                    <span class="re-note">(only .jpg,.png allowed, maximum file size 1MB.)</span>
+                    <span class="re-note" id="error1">(only .jpg,.png allowed, maximum file size 1MB.)</span>
                 </div>
                 <div class="col-md-4 res-mb-16">
                     <label>Brochure</label>
@@ -137,7 +166,7 @@
                             <input id="fileuploadbrochure" type="file" class="custom-file-upload">
                         </label>
                     </div>
-                    <span class="re-note">(only .jpg,.png,.pdf allowed, maximum file size 1MB.)</span>
+                    <span class="re-note" id="error2">(only .jpg,.png,.pdf allowed, maximum file size 1MB.)</span>
                 </div>
             </div>
 
@@ -177,7 +206,7 @@
                     <input type="number" class="form-control" name="noofclass" id="txtNoOfClass">
                 </div>
             </div>
-            <button type="button" id="btnSubmit" class="btn btn-primary">Submit</button>
+            <input type="button" id="btnSubmit" class="btn btn-primary" value="Submit" />
             <button type="button" id="btnUpdate" class="btn btn-primary">Update</button>
             <button type="reset" class="btn btn-warning">Reset</button>
         </form>
@@ -237,7 +266,7 @@
                                 <th>Image</th>
                                 @*<td><img src="~/assets/img/course-pop-up-img.jpg" class="banner-img" /></td>*@
                                 <td><img src="~/SmartIndia.RestAPI/Resources/Images/87F3D8CF-005C-43E1-A07E-39A954DC5736.jpg" class="banner-img" /></td>
-                             
+
                             </tr>
                             <tr>
                                 <th>Start Date</th>
