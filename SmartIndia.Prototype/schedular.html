@@ -59,6 +59,14 @@
 
         <div class="sidemenu-body">
             <ul class="sidemenu-nav metisMenu h-100" id="sidemenu-nav" data-simplebar>
+                <li class="nav-active">
+                    <a href="javascript:void(0);">
+                        <span class="icon">
+                            <i class='bx bxs-face'></i>
+                        </span>
+                        <span class="menu-title">Host</span>
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a href="host-dashboard.html" class="nav-link">
                         <span class="icon">
@@ -113,6 +121,46 @@
                             <i class='bx bxs-book-content'></i>
                         </span>
                         <span class="menu-title">Rescheduling</span>
+                    </a>
+                </li>
+                <li class="nav-active">
+                    <a href="javascript:void(0);">
+                        <span class="icon">
+                            <i class='bx bx-user'></i>
+                        </span>
+                        <span class="menu-title">Attendee</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="attendee-dashboard.html" class="nav-link">
+                        <span class="icon">
+                            <i class='bx bx-home-circle'></i>
+                        </span>
+                        <span class="menu-title">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="attendee-enroll-courses.html" class="nav-link">
+                        <span class="icon">
+                            <i class='bx bxl-discourse'></i>
+                        </span>
+                        <span class="menu-title">Enroll Courses</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="attendee-classwall.html" class="nav-link">
+                        <span class="icon">
+                            <i class='bx bx-card'></i>
+                        </span>
+                        <span class="menu-title">My Class Wall</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="attendee-upcomingclasses.html" class="nav-link">
+                        <span class="icon">
+                            <i class='bx bx-video-recording'></i>
+                        </span>
+                        <span class="menu-title">Upcoming Classes</span>
                     </a>
                 </li>
             </ul>
@@ -294,7 +342,7 @@
         </div>
         <!-- End Breadcrumb Area -->
         <!-- Start -->
-        <div class="card mb-30">
+        <div class="card mb-10">
             <div class="card-body">
                 <div class="existing-date">
                     <span class="col-black">Schedule Type:</span>
@@ -352,8 +400,8 @@
                                 <label class="res-label"> Day of Month</label>
                                 <div id="dayOfMonth">
                                     <span class="placeholder">Pick the month</span>
-                                    <button type="button" class="select-button" onclick="selectAll(true)"></button>
-                                    <button type="button" class="deselect-button" onclick="deselectAllNo()"></button>
+                                    <button type="button" class="select-button" onclick="selectAllMonth()"></button>
+                                    <button type="button" class="deselect-button" onclick="deselectAllMonth()"></button>
                                 </div>
                             </div>
                             <div class="month-calendar" id="MonthCalendar">
@@ -627,7 +675,7 @@
             </div>
         </div>
 
-        <div class="card mb-30">
+        <div class="card mb-20">
             <div class="card-body">
 
                 <div class="table-responsive">

@@ -28,6 +28,7 @@ namespace SmartIndia.WebApp
                  {
                      config.Cookie.Name = "UserLoginCookie";
                      config.LoginPath = "/ManageUsers/Users/Login";
+                     config.AccessDeniedPath = "/Home/AccessDenied";
                  });
              
             services.AddControllersWithViews();

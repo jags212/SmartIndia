@@ -287,22 +287,24 @@
         </div>
         <!-- End Breadcrumb Area -->
         <!-- Start -->
-        <div class="card mb-30">
+        <div class="card mb-10">
             <div class="card-body">
                 <form>
-                    <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" class="form-control">
+                    <div class="row form-group">
+                        <div class="col-md-7 res-mb-16">
+                            <label>Name</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="col-md-5 res-mb-16">
+                            <label>Topics</label>
+                            <input type="text" class="form-control">
+                        </div>
                     </div>
                     <div class="form-group">
                         <label>Description</label>
                         <textarea class="form-control"></textarea>
                     </div>
                     <div class="row form-group">
-                        <div class="col-md-5 res-mb-16">
-                            <label>Topics</label>
-                            <input type="text" class="form-control">
-                        </div>
                         <div class="col-md-3 res-mb-16">
                             <label>Course Thumbnail</label>
                             <div class="button-wrap">
@@ -313,7 +315,7 @@
                             </div>
                             <span class="re-note">(only .jpg,.png allowed, maximum file size 100KB.)</span>
                         </div>
-                        <div class="col-md-4 res-mb-16">
+                        <div class="col-md-3 res-mb-16">
                             <label>Brochure</label>
                             <div class="button-wrap">
                                 <label class="upload-button" for="brochurefileupload">
@@ -323,27 +325,7 @@
                             </div>
                             <span class="re-note">(only .jpg,.png,.pdf allowed, maximum file size 2MB.)</span>
                         </div>
-                    </div>
-                    <div class="row form-group">
-                        <div class="col-md-4 res-mb-16">
-                            <label>Start Date</label>
-                            <input type="text" class="form-control" id="sdatepicker" disabled>
-                        </div>
-                        <div class="col-md-4 res-mb-16">
-                            <label>End Date</label>
-                            <input type="text" class="form-control" id="edatepicker" disabled>
-                        </div>
-                        <div class="col-md-4">
-                            <label>Duration (Days)</label>
-                            <input type="text" class="form-control" id="durationDate" disabled>
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <div class="col-md-4 res-mb-16">
-                            <label>Fees</label>
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="col-md-4 res-mb-16">
+                        <div class="col-md-3 res-mb-16">
                             <label>Class Frequency</label>
                             <select class="form-control">
                                 <option selected>Choose...</option>
@@ -353,9 +335,27 @@
                                 <option>Yearly</option>
                             </select>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3 res-mb-16">
                             <label>No. Of Classes</label>
                             <input type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-3 res-mb-16">
+                            <label>Start Date</label>
+                            <input type="text" class="form-control" id="sdatepicker" disabled>
+                        </div>
+                        <div class="col-md-3 res-mb-16">
+                            <label>End Date</label>
+                            <input type="text" class="form-control" id="edatepicker" disabled>
+                        </div>
+                        <div class="col-md-3 res-mb-16">
+                            <label>Duration (Days)</label>
+                            <input type="text" class="form-control" id="durationDate" disabled>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Fees</label>
+                            <input type="text" class="form-control">
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
@@ -365,7 +365,7 @@
             </div>
         </div>
 
-        <div class="card mb-30">
+        <div class="card mb-20">
             <div class="card-body">
 
                 <div class="table-responsive">
@@ -373,26 +373,22 @@
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Name</th>
+                                <th scope="col">Course Name</th>
+                                <th scope="col">Topics</th>
                                 <th scope="col">Start Date</th>
                                 <th scope="col">End Date</th>
                                 <th scope="col">Duration (Days)</th>
-                                <th scope="col">Fees</th>
-                                <th scope="col">Class Frequency</th>
-                                <th scope="col">No. Of Classes</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <th scope="row">1</th>
-                                <td>Mahesh</td>
+                                <td>Physics</td>
+                                <td>Electricity and Magnetism</td>
                                 <td>11-Jul-2020</td>
                                 <td>22-Jul-2020</td>
                                 <td>11</td>
-                                <td>10000</td>
-                                <td>Daily</td>
-                                <td>3</td>
                                 <td>
                                     <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="Edit">
                                         <a href="javascript:void(0);" class="form-control table-edit"><i class="bx bx-edit-alt"></i></a>
@@ -407,13 +403,11 @@
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
-                                <td>Amar Dash</td>
+                                <td>Chemistry</td>
+                                <td>Chemical Bonding</td>
                                 <td>15-Jul-2020</td>
                                 <td>31-Jul-2020</td>
                                 <td>16</td>
-                                <td>10000</td>
-                                <td>Weekly</td>
-                                <td>2</td>
                                 <td>
                                     <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="Edit">
                                         <a href="javascript:void(0);" class="form-control table-edit"><i class="bx bx-edit-alt"></i></a>
@@ -428,13 +422,11 @@
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
-                                <td>Dipti Dash</td>
+                                <td>Literature</td>
+                                <td>Aging in Literature</td>
                                 <td>01-Jul-2020</td>
                                 <td>23-Jul-2020</td>
                                 <td>22</td>
-                                <td>20000</td>
-                                <td>Monthly</td>
-                                <td>8</td>
                                 <td>
                                     <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="Edit">
                                         <a href="javascript:void(0);" class="form-control table-edit"><i class="bx bx-edit-alt"></i></a>
@@ -449,13 +441,11 @@
                             </tr>
                             <tr>
                                 <th scope="row">4</th>
-                                <td>Himanshu Nautiyal</td>
+                                <td>Web Development</td>
+                                <td>Development Tools/Environment)</td>
                                 <td>30-Jul-2020</td>
                                 <td>13-Aug-2020</td>
                                 <td>14</td>
-                                <td>50000</td>
-                                <td>Yearly</td>
-                                <td>96</td>
                                 <td>
                                     <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="Edit">
                                         <a href="javascript:void(0);" class="form-control table-edit"><i class="bx bx-edit-alt"></i></a>
