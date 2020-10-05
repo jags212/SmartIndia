@@ -37,7 +37,6 @@ $('#btnLogin').click(function () {
                     localStorage.setItem("jwtToken", data.jwtToken);
                     var resultData = parseJwt(localStorage.getItem("jwtToken")); 
                     $.post("/ManageUsers/Users/AthenticationUserRole?UserId=" + data.id + "&RoleName=" + resultData.role, function (data) {
-                        debugger;
                         if (data == 1) {
                             if (resultData.role == "Host") {
                                 window.location.href = "/Hosts/HostDashboard/Dashboard";
