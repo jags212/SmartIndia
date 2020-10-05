@@ -265,28 +265,22 @@
                 complete: function () {
                     $('#img').hide();
                 }
-            }); 
-            var result = parseJwt(localStorage.getItem("jwtToken"));
-            $('#divHost').hide();
-            $('#divAttendee').hide();
-            $('#hrefAttendee').hide();
-            $('#hrefHost').hide();
-
-            if (result.role == "Host") {
-                $('#divHost').show();
-                $('#divAttendee').hide();
-                $('#hrefAttendee').hide();
-                $('#hrefHost').show();
-            }
-            else {
-                $('#divHost').hide();
-                $('#divAttendee').show();
-                $('#hrefAttendee').show();
-                $('#hrefHost').hide();
-            }
+            });
         });
         function ClearData() {
             localStorage.clear();
+        }
+    </script>
+    <script>
+        function loadNavigation(actionName, menuName) {
+            var pathName = window.location.pathname;
+            var path = pathName.split("/");
+            var sPath = path[2];
+            var tlen = path.length;
+            var sPath = path[tlen - 1];
+            if (actionName == sPath) {
+                $('.' + menuName).addClass('mm-active');
+            }
         }
     </script>
     <!-- Clearable Input JS -->
@@ -295,7 +289,7 @@
     <script src="~/assets/js/datatables.min.js" type="text/javascript"></script>
     <script src="~/assets/js/dataTables.bootstrap4.min.js"></script>
     <script src="~/ApplicationScripts/Host/UpdateUserRoleId.js"></script>
-    <script src="~/ApplicationScripts//UserRegistration/user-details.js"></script>
+    <script src="~/ApplicationScripts/UserRegistration/user-details.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

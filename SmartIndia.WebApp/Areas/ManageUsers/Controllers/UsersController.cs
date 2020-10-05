@@ -122,5 +122,24 @@ namespace SmartIndia.WebApp.Areas.ManageUsers.Controllers
             HttpContext.SignOutAsync();
             return RedirectToAction("Login", "Users", new { Area = "ManageUsers" });
         }
+
+        public IActionResult ChangeEmail()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult ChangeEmailVerification([FromQuery] string Id)
+        {
+            ViewBag.ACode = Id;
+            return View();
+        }
+        public IActionResult ConfirmEmail()
+        {
+            return View();
+        }
+        public IActionResult ChangeMobileNo()
+        {
+            return View();
+        }
     }
 }
