@@ -37,9 +37,11 @@
     <script>
         $('.timepicker').wickedpicker({ clearable: true });
     </script>
-
-
-
+    <script>
+        $(document).ready(function () {
+            loadNavigation('rescheduling', 'rescheduling');
+        });
+    </script>
     <!--hostSceduling js -->
     <script src="~/ApplicationScripts/Host/host-rescheduling.js"></script>
     <script src="~/ApplicationScripts/Host/bindcourse.js"></script>
