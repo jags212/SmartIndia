@@ -13,12 +13,14 @@
     <None Remove="wwwroot\Resources\**" />
   </ItemGroup>
   <ItemGroup>
+    <Content Remove="wwwroot\assets\css\custom.css" />
     <Content Remove="wwwroot\assets\img\about_goal_textured.png" />
     <Content Remove="wwwroot\assets\img\about_vision_textured.png" />
     <Content Remove="wwwroot\assets\img\about_why_us_textured.png" />
     <Content Remove="wwwroot\assets\img\breadcrumb-img-1.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="wwwroot\assets\css\custom.css" />
     <None Include="wwwroot\assets\fonts\boxicons.eot" />
     <None Include="wwwroot\assets\fonts\boxicons.ttf" />
     <None Include="wwwroot\assets\fonts\boxicons.woff" />

@@ -12,6 +12,11 @@
     </script>
     <script src="~/ApplicationScripts/Host/upcoming-class-detail.js"></script>
     <script src="~/ApplicationScripts/Common/date-format-converter.js"></script>
+    <script>
+        $(document).ready(function () {
+            loadNavigation('upcomingclassdetail', 'upcomingclasses');
+        });
+    </script>
 }
 <!-- Breadcrumb Area -->
 <div class="breadcrumb-area">
@@ -33,10 +38,10 @@
             <div class="back-to-list">
 
                 <a asp-area="Hosts" asp-controller="upcomingclasses" asp-action="upcomingclasses"><i class="bx bx-arrow-back"></i>Back To List</a>
-              
+
             </div>
             <div class="calendar-header">
-                <input type="hidden"  name="hfScId" id="hfScId">
+                <input type="hidden" name="hfScId" id="hfScId">
                 <span class="section-title" id="coursename"></span><span class="topic-font" id="topic"></span>
                 <div class="enroll-course-banner en-co-brochure" data-toggle="modal" data-target="#GetCourseBrochureModal">Brochure<i class="bx bxs-file-image bx-pad"></i></div>
             </div>

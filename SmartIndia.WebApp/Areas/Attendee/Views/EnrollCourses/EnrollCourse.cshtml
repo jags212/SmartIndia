@@ -15,6 +15,11 @@
     <!-- Datepicker JS -->
     <script src="~/assets/js/gijgo.min.js"></script>
     <script>
+        $(document).ready(function () {
+            loadNavigation('EnrollCourse', 'EnrollCourse');
+        });
+    </script>
+    <script>
         $('#searchDate').datepicker({ format: 'dd-mmm-yyyy' });
     </script>
     <script src="~/ApplicationScripts/Attendee/enroll-courses.js"></script>

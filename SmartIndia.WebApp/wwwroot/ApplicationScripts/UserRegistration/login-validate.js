@@ -35,13 +35,17 @@ $('#btnLogin').click(function () {
                     localStorage.setItem("emailID", data.emailID);
                     localStorage.setItem("firstName", data.firstName);
                     localStorage.setItem("jwtToken", data.jwtToken);
-                    var resultData = parseJwt(localStorage.getItem("jwtToken"));
-                    if (resultData.role == "Host") {
-                        window.location.href = "/Hosts/HostDashboard/Dashboard";
-                    }
-                    else {
-                        window.location.href = "/Attendee/Dashboard/AttendeeDashboard";
-                    }
+                    var resultData = parseJwt(localStorage.getItem("jwtToken")); 
+                    $.post("/ManageUsers/Users/AthenticationUserRole?UserId=" + data.id + "&RoleName=" + resultData.role, function (data) {
+                        if (data == 1) {
+                            if (resultData.role == "Host") {
+                                window.location.href = "/Hosts/HostDashboard/Dashboard";
+                            }
+                            else {
+                                window.location.href = "/Attendee/Dashboard/AttendeeDashboard";
+                            }
+                        }
+                    });
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {

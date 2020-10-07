@@ -152,7 +152,7 @@
                     <li class="nav-item dropdown profile-nav-item">
                         <a href="javascript:void(0);" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="menu-profile">
-                                <span class="name">Prateek</span>
+                                <span class="name" id="spnFirstName"></span>
                                 <img src="~/assets/img/user1.jpg" class="rounded-circle" alt="image">
                             </div>
                         </a>
@@ -163,9 +163,9 @@
                                     <img src="~/assets/img/user1.jpg" class="rounded-circle" alt="image">
                                 </div>
                                 <div class="info text-center">
-                                    <span class="name">Prateek Singh</span>
-                                    <span class="sm-text">(Host)</span>
-                                    <p class="mb-3 email">prateek@gmail.com</p>
+                                    <span class="name" id="spnFullName"></span>
+                                    <span class="sm-text" id="spnRole"></span>
+                                    <p class="mb-3 email" id="spnEmail"></p>
                                 </div>
                             </div>
 
@@ -183,7 +183,7 @@
                             <div class="dropdown-footer">
                                 <ul class="profile-nav">
                                     <li class="nav-item">
-                                        <a asp-area="ManageUsers" asp-controller="Users" asp-action="Login" onclick="ClearData();" class="nav-link">
+                                        <a asp-area="ManageUsers" asp-controller="Users" asp-action="Logout" onclick="ClearData();" class="nav-link">
                                             <i class='bx bx-log-out'></i> <span>Logout</span>
                                         </a>
                                     </li>
@@ -265,28 +265,22 @@
                 complete: function () {
                     $('#img').hide();
                 }
-            }); 
-            var result = parseJwt(localStorage.getItem("jwtToken"));
-            $('#divHost').hide();
-            $('#divAttendee').hide();
-            $('#hrefAttendee').hide();
-            $('#hrefHost').hide();
-
-            if (result.role == "Host") {
-                $('#divHost').show();
-                $('#divAttendee').hide();
-                $('#hrefAttendee').hide();
-                $('#hrefHost').show();
-            }
-            else {
-                $('#divHost').hide();
-                $('#divAttendee').show();
-                $('#hrefAttendee').show();
-                $('#hrefHost').hide();
-            }
+            });
         });
         function ClearData() {
             localStorage.clear();
+        }
+    </script>
+    <script>
+        function loadNavigation(actionName, menuName) {
+            var pathName = window.location.pathname;
+            var path = pathName.split("/");
+            var sPath = path[2];
+            var tlen = path.length;
+            var sPath = path[tlen - 1];
+            if (actionName == sPath) {
+                $('.' + menuName).addClass('mm-active');
+            }
         }
     </script>
     <!-- Clearable Input JS -->
@@ -295,6 +289,7 @@
     <script src="~/assets/js/datatables.min.js" type="text/javascript"></script>
     <script src="~/assets/js/dataTables.bootstrap4.min.js"></script>
     <script src="~/ApplicationScripts/Host/UpdateUserRoleId.js"></script>
+    <script src="~/ApplicationScripts/UserRegistration/user-details.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

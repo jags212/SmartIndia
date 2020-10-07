@@ -7,7 +7,7 @@
 @*<link rel="stylesheet" href="~/assets/css/ellipsis.css" />*@
 @section Scripts
 {
-    
+
     <script src="~/ApplicationScripts/Attendee/attendee-classwall.js"></script>
     <script src="~/ApplicationScripts/Common/date-format-converter.js"></script>
     <!-- Clearable Input JS -->
@@ -17,29 +17,34 @@
     <script src="~/assets/calendar/js/fullcalendar.min.js"></script>
     <!-- Text Ellipsis JS -->
     @*<script src="~/assets/js/jquery.ellipsis.js"></script>
-    <script>
-        $('.two-lines').ellipsis({ lines: 2 });
-    </script>
-    <script>
-        $('#searchlist').keyup(function () {
+        <script>
+            $('.two-lines').ellipsis({ lines: 2 });
+        </script>
+        <script>
+            $('#searchlist').keyup(function () {
 
-            var that = this;
-            all_list = $('#hostCWlList ul > li');
+                var that = this;
+                all_list = $('#hostCWlList ul > li');
 
-            var matching_list = all_list.filter(function (i, li) {
-                var list_item_text = $(li).text().toUpperCase();
-                var search_text = that.value.toUpperCase();
-                return ~list_item_text.indexOf(search_text);
+                var matching_list = all_list.filter(function (i, li) {
+                    var list_item_text = $(li).text().toUpperCase();
+                    var search_text = that.value.toUpperCase();
+                    return ~list_item_text.indexOf(search_text);
+                });
+
+                all_list.hide();
+                matching_list.show();
+
             });
-
-            all_list.hide();
-            matching_list.show();
-
-        });
-    </script>*@
+        </script>*@
     <script>
         $('li').click(function () {
             $(this).addClass('active').siblings().removeClass('active');
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            loadNavigation('ClassWall', 'ClassWall-Att');
         });
     </script>
 }
