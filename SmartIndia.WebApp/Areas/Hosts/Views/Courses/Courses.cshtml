@@ -106,7 +106,7 @@
         //For Brouchure
         $('#fileuploadbrochure').bind('change', function () {
             var ext = $('#fileuploadbrochure').val().split('.').pop().toLowerCase();
-            if ($.inArray(ext, ['png', 'jpg','pdf']) == -1) {
+            if ($.inArray(ext, ['png', 'jpg', 'pdf']) == -1) {
                 alert("Only .jpg,.png,.pdf allowed");
                 $('#fileuploadbrochure').val("");
             } else {
@@ -270,8 +270,7 @@
                             <tr>
                                 <th>Image</th>
                                 @*<td><img src="~/assets/img/course-pop-up-img.jpg" class="banner-img" /></td>*@
-                                <td><img src="~/SmartIndia.RestAPI/Resources/Images/87F3D8CF-005C-43E1-A07E-39A954DC5736.jpg" class="banner-img" /></td>
-
+                                <td><img id="imgBanner" class="banner-img" /></td>
                             </tr>
                             <tr>
                                 <th>Start Date</th>
@@ -313,9 +312,8 @@
                 <button type="button" class="close enroll-close" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <a href="~/assets/img/course-pop-up-img.jpg" class="bx bx-download sm-download" download>
-                    <img src="~/assets/img/course-pop-up-img.jpg" class="banner-img" />
-                </a>
+                <a id="urlbrouchure" class="bx bx-download sm-download" download></a>
+                    <img id="imgbrouchure" class="banner-img" />
             </div>
         </div>
     </div>

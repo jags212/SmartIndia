@@ -91,7 +91,11 @@ namespace SmartIndia.Data.Services.Attendee
                         BatchName = item.BatchName,
                         Uname = item.Uname,
                         EmailId = item.EmailId,
-                        MobileNo = item.MobileNo
+                        MobileNo = item.MobileNo,
+                        ImageName = item.ImageName,
+                        ImageExt = item.ImageExt,
+                        BrochureName = item.BrochureName,
+                        BrochureExt = item.BrochureExt
                     };
                     HostCourses.Add(modal);
                 }

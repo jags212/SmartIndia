@@ -25,6 +25,11 @@ function Coursedetails() {
                 $("#startdate").html(dateFormat(data[0].scheduleDate, 'dd-mmm-yy'));
                 $("#starttime").html(timeConvert(data[0].startTime));
                 $("#desc").html(data[0].courseDesc);
+
+                $("#imgBanner").attr('src', data[0].imageUrl);
+
+                $("#imgbrouchure").attr('src', data[0].brouchureUrl);
+                $("#urlbrouchure").attr('href', data[0].brouchureUrl);
             },
 
             error: function (msg) {

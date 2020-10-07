@@ -37,6 +37,13 @@ namespace SmartIndia.Data.Entities.Host
         public string Topics { get; set; }
         public string CourseId { get; set; }
         public string SchedularId { get; set; }
+        public string ImageExt { get; set; }
+        public string ImageName { get; set; }
+        public string BrochureExt { get; set; }
+        public string BrochureName { get; set; }
+        public string filePath { get; set; }
+        public string ImageUrl { get; set; }
+        public string BrouchureUrl { get; set; }
 
     }
     public class UpcomingClassCalender
@@ -70,5 +77,12 @@ namespace SmartIndia.Data.Entities.Host
         public string Topics { get; set; }
         public string CourseId { get; set; }
         public string SchedularId { get; set; }
+        public string ImageExt { get; set; }
+        public string ImageName { get; set; }
+        public string BrochureExt { get; set; }
+        public string BrochureName { get; set; }
+        public string filePath { get; set; }
+        public string ImageUrl { get; set; }
+        public string BrouchureUrl { get; set; }
     }
 }

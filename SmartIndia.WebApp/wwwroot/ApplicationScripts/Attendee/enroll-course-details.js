@@ -20,6 +20,9 @@ function Coursedetails() {
                 $("#topic").html("( " + data[0].topics + " )");
                 $("#startdate").html(dateFormat(data[0].startDate, 'dd-mmm-yy'));
                 $("#desc").html(data[0].courseDesc);
+
+                $("#imgbrouchure").attr('src', data[0].brochureUrl);
+                $("#urlbrouchure").attr('href', data[0].brochureUrl);
             },
             error: function (msg) {
                 alert(msg.responseText);
