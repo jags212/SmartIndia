@@ -144,7 +144,7 @@ function getallcourses() {
     $.ajax(
         {
             type: "GET",
-            url: ServiceURL + "/api/HostCourses/GetHostCourse",
+            url: ServiceURL + "/api/HostCourses/GetHostCourses",
             data: JSON.parse(usersParam),
             dataType: "json",
             contentType: "application/json",
@@ -154,7 +154,7 @@ function getallcourses() {
 
                 $.each(data, function (i, item) {
                     // trHTML += '<tr  class=""><td>' + (i + 1) + '</td><td>' + data[i].courseName + '</td><td>' + data[i].topic + '</td><td>' + dateFormat(data[i].startDate, 'dd-mmm-yy') + '</td><td>' + dateFormat(data[i].endDate, 'dd-mmm-yy') + '</td><td>' + data[i].duration + '</td> <td> <div class="action-inline" data-toggle="tooltip" data-placement="right" title="Edit"> <a href="javascript:void(0);" onclick="getcourseidd(' + data[i].courseId + ')"  class="form-control table-edit "><i class="bx bx-edit-alt"></i></a> </div>     <div class="action-inline" data-toggle="tooltip" data-placement="right" title="View">  <a href="javascript:void(0);" onclick="getcoursedetails(' + data[i].courseId + ')" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a> </div>  </td> </tr>';
-                    trHTML += '<tr  class=""><td>' + data[i].courseName + '</td><td>' + data[i].topic + '</td><td>' + dateFormat(data[i].startDate, 'dd-mmm-yy') + '</td><td>' + dateFormat(data[i].endDate, 'dd-mmm-yy') + '</td><td>' + data[i].duration + '</td> <td> <div class="action-inline" data-toggle="tooltip" data-placement="right" title="Edit"> <a href="javascript:void(0);" onclick="getcourseidd(' + data[i].courseId + ')"  class="form-control table-edit "><i class="bx bx-edit-alt"></i></a> </div>     <div class="action-inline" data-toggle="tooltip" data-placement="right" title="View">  <a href="javascript:void(0);" onclick="getcoursedetails(' + data[i].courseId + ')" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a> </div>  <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="Brochure"> <a href="javascript:void(0);" class="form-control table-brochure" data-toggle="modal" data-target="#getCourseBrochureModal"> <i class="bx bx-file"></i></a></div></td> </tr>';
+                    trHTML += '<tr  class=""><td>' + data[i].courseName + '</td><td>' + data[i].topic + '</td><td>' + dateFormat(data[i].startDate, 'dd-mmm-yy') + '</td><td>' + dateFormat(data[i].endDate, 'dd-mmm-yy') + '</td><td>' + data[i].duration + '</td> <td> <div class="action-inline" data-toggle="tooltip" data-placement="right" title="Edit"> <a href="javascript:void(0);" onclick="getcourseidd(' + data[i].courseId + ')"  class="form-control table-edit "><i class="bx bx-edit-alt"></i></a> </div>     <div class="action-inline" data-toggle="tooltip" data-placement="right" title="View">  <a href="javascript:void(0);" onclick="getcoursedetails(' + data[i].courseId + ')" class="form-control table-view" data-toggle="modal" data-target="#ViewDetailsModal"><i class="fa fa-fw fa-eye"></i></a> </div>  <div class="action-inline" data-toggle="tooltip" data-placement="bottom" title="Brochure"> <a href="javascript:void(0);" onclick="getbrouchure(' + data[i].courseId + ')" class="form-control table-brochure" data-toggle="modal" data-target="#getCourseBrochureModal"> <i class="bx bx-file"></i></a></div></td> </tr>';
                 });
 
                 $('#tblCourses').append(trHTML);
@@ -200,6 +200,7 @@ function getcourseidd(CID) {
                     $("#durationDate").val(data[0].duration);
                     $("#fdate").val(data[0].startDate);
                     $("#edate").val(data[0].endDate);
+                    $("#imgBanner").attr('src', data[0].imageUrl);
 
                     $("#txtCost").val(data[0].cost);
                     $("#ddlFrequency").val(data[0].classFrequency);
@@ -220,6 +221,7 @@ function getcourseidd(CID) {
 }
 
 function getcoursedetails(CID) {
+    ClearCourseDetails();
     var usersParam2 = JSON.stringify({
         ACTIONCODE: 'U',
         UserId: CID,
@@ -241,6 +243,60 @@ function getcoursedetails(CID) {
                 $("#ccost").html(data[0].cost);
                 $("#Cf").html(data[0].classFrequency);
                 $("#noclass").html(data[0].noOfClass);
+
+                $("#imgBanner").attr('src', data[0].imageUrl);
+            },
+            error: function (msg) {
+                alert(msg.responseText);
+            }
+        });
+}
+function ClearCourseDetails() {
+    $("#cname").html('');
+    $("#cdesc").html('');
+    $("#topic").html('');
+    $("#sdt").html('');
+    $("#edt").html('');
+    $("#duration").html('');
+    $("#ccost").html('');
+    $("#Cf").html('');
+    $("#noclass").html('');
+
+    $("#imgBanner").attr('src', '');
+    $("#imgbrouchure").attr('src', '');
+}
+function getbrouchure(CID) {
+    ClearCourseDetails();
+    var usersParam2 = JSON.stringify({
+        ACTIONCODE: 'U',
+        UserId: CID,
+    });
+    $.ajax(
+        {
+            type: "GET",
+            url: ServiceURL + "/api/HostCourses/GetBrouchure",
+            data: JSON.parse(usersParam2),
+            dataType: "json",
+            contentType: "application/json",
+            success: function (data) {
+                if (data[0].brochureExt=="pdf") {
+                    $("#imgbrouchurepdf").attr('src', data[0].imageUrl);
+                    $("#urlbrouchurepdf").attr('href', data[0].imageUrl);
+
+                    $("#imgbrouchure").hide();
+                    $("#urlbrouchure").hide();
+                    $("#imgbrouchurepdf").show();
+                    $("#urlbrouchurepdf").show();
+                }
+                else {
+                    $("#imgbrouchure").attr('src', data[0].imageUrl);
+                    $("#urlbrouchure").attr('href', data[0].imageUrl);
+                    $("#imgbrouchurepdf").hide();
+                    $("#urlbrouchurepdf").hide();
+                    $("#imgbrouchure").show();
+                    $("#urlbrouchure").show();
+                }
+                
             },
             error: function (msg) {
                 alert(msg.responseText);

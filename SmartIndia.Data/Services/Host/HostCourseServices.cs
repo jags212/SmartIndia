@@ -69,6 +69,45 @@ namespace SmartIndia.Data.Services.Host
         }
 
         [Obsolete]
+        public List<HostCourses> GetCourse(HostParameter hostParameter)
+        {
+            object[] objArray = new object[] {
+                     "@P_ACTIONCODE",hostParameter.ACTIONCODE,
+                     "@UserId",hostParameter.UserId
+            };
+            try
+            {
+                DynamicParameters param = objArray.ToDynamicParameters();
+                var result = DBConnection.Query<HostCourses>("USP_GetHostCourses_ACTION", param, commandType: CommandType.StoredProcedure).ToList();
+                List<HostCourses> HostCourses = new List<HostCourses>();
+                foreach (var item in result)
+                {
+                    var modal = new HostCourses()
+                    {
+                        CourseId = item.CourseId,
+                        UserId = item.UserId,
+                        CourseName = item.CourseName,
+                        CourseDesc = item.CourseDesc,
+                        Topics = item.Topics,
+                        StartDate = TimeZone.CurrentTimeZone.ToLocalTime(item.StartDate),
+                        EndDate = TimeZone.CurrentTimeZone.ToLocalTime(item.EndDate),
+                        Duration = item.Duration,
+                        ClassFrequency = item.ClassFrequency,
+                        NoOfClass = item.NoOfClass,
+                        Cost = item.Cost,
+                        Topic = item.Topic
+                    };
+                    HostCourses.Add(modal);
+                }
+                return HostCourses;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        [Obsolete]
         public List<HostCourses> GetHostCourse(HostParameter hostParameter)
         {
             object[] objArray = new object[] {
@@ -95,11 +134,44 @@ namespace SmartIndia.Data.Services.Host
                         ClassFrequency = item.ClassFrequency,
                         NoOfClass = item.NoOfClass,
                         Cost = item.Cost,
-                        Topic=item.Topic
+                        Topic=item.Topic,
+                        ImageName=item.ImageName,
+                        ImageExt= item.ImageExt,
+                        BrochureName = item.BrochureName,
+                        BrochureExt = item.BrochureExt
                     };
                     HostCourses.Add(modal);
                 }
                 return HostCourses;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        public List<GetBrouchure> GetHostBrouchure(HostParameter hostParameter)
+        {
+            object[] objArray = new object[] {
+                     "@P_ACTIONCODE",hostParameter.ACTIONCODE,
+                     "@UserId",hostParameter.UserId
+            };
+            try
+            {
+                DynamicParameters param = objArray.ToDynamicParameters();
+                var result = DBConnection.Query<GetBrouchure>("USP_GetHostCourses_ACTION", param, commandType: CommandType.StoredProcedure).ToList();
+                List<GetBrouchure> GetBrouchures = new List<GetBrouchure>();
+                foreach (var item in result)
+                {
+                    var modal = new GetBrouchure()
+                    {
+                        ImageName = item.ImageName,
+                        ImageExt = item.ImageExt,
+                        BrochureName = item.BrochureName,
+                        BrochureExt = item.BrochureExt
+                    };
+                    GetBrouchures.Add(modal);
+                }
+                return GetBrouchures;
             }
             catch (Exception ex)
             {

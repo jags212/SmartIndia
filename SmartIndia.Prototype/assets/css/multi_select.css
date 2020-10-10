@@ -82,6 +82,9 @@
     max-height: 250px;
     border-color: #ced4da;
     height: auto;
+    position: absolute;
+    z-index: 1;
+    width: 94.4%;
 }
 
 .access_multi_select > .dropdown > .filter {
