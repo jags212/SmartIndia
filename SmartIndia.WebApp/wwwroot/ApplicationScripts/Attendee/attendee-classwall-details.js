@@ -28,8 +28,23 @@ function Coursedetails() {
 
                 $("#imgBanner").attr('src', data[0].imageUrl);
 
-                $("#imgbrouchure").attr('src', data[0].brouchureUrl);
-                $("#urlbrouchure").attr('href', data[0].brouchureUrl);
+                if (data[0].brochureExt == "pdf") {
+                    $("#imgbrouchurepdf").attr('src', data[0].brouchureUrl);
+                    $("#urlbrouchurepdf").attr('href', data[0].brouchureUrl);
+
+                    $("#imgbrouchure").hide();
+                    $("#urlbrouchure").hide();
+                    $("#imgbrouchurepdf").show();
+                    $("#urlbrouchurepdf").show();
+                }
+                else {
+                    $("#imgbrouchure").attr('src', data[0].brouchureUrl);
+                    $("#urlbrouchure").attr('href', data[0].brouchureUrl);
+                    $("#imgbrouchurepdf").hide();
+                    $("#urlbrouchurepdf").hide();
+                    $("#imgbrouchure").show();
+                    $("#urlbrouchure").show();
+                }
             },
 
             error: function (msg) {

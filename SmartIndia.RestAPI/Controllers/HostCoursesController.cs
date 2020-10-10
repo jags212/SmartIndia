@@ -86,7 +86,15 @@ namespace SmartIndia.RestAPI.Controllers
                     hostCourses.BrochureName = brochureName;
                     Byte[] b;
                     b = System.IO.File.ReadAllBytes(hostCourses.filePath);
-                    hostCourses.ImageUrl = "data:image/" + hostCourses.BrochureExt + ";base64," + Convert.ToBase64String(b, 0, b.Length); ;
+                    if (hostCourses.BrochureExt=="pdf")
+                    {
+                        hostCourses.ImageUrl = "data:application/" + hostCourses.BrochureExt + ";base64," + Convert.ToBase64String(b, 0, b.Length); ;
+                    }
+                    else
+                    {
+                        hostCourses.ImageUrl = "data:image/" + hostCourses.BrochureExt + ";base64," + Convert.ToBase64String(b, 0, b.Length); ;
+                    }
+                    
                 }
 
                 List<GetBrouchure> list = new List<GetBrouchure>();

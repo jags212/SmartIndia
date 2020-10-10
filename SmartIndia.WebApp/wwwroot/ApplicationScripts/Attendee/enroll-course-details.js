@@ -21,8 +21,26 @@ function Coursedetails() {
                 $("#startdate").html(dateFormat(data[0].startDate, 'dd-mmm-yy'));
                 $("#desc").html(data[0].courseDesc);
 
-                $("#imgbrouchure").attr('src', data[0].brochureUrl);
-                $("#urlbrouchure").attr('href', data[0].brochureUrl);
+                //$("#imgbrouchure").attr('src', data[0].brochureUrl);
+                //$("#urlbrouchure").attr('href', data[0].brochureUrl);
+
+                if (data[0].brochureExt == "pdf") {
+                    $("#imgbrouchurepdf").attr('src', data[0].brochureUrl);
+                    $("#urlbrouchurepdf").attr('href', data[0].brochureUrl);
+
+                    $("#imgbrouchure").hide();
+                    $("#urlbrouchure").hide();
+                    $("#imgbrouchurepdf").show();
+                    $("#urlbrouchurepdf").show();
+                }
+                else {
+                    $("#imgbrouchure").attr('src', data[0].brochureUrl);
+                    $("#urlbrouchure").attr('href', data[0].brochureUrl);
+                    $("#imgbrouchurepdf").hide();
+                    $("#urlbrouchurepdf").hide();
+                    $("#imgbrouchure").show();
+                    $("#urlbrouchure").show();
+                }
             },
             error: function (msg) {
                 alert(msg.responseText);

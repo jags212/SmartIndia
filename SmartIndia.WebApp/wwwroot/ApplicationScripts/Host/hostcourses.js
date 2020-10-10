@@ -279,9 +279,24 @@ function getbrouchure(CID) {
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
+                if (data[0].brochureExt=="pdf") {
+                    $("#imgbrouchurepdf").attr('src', data[0].imageUrl);
+                    $("#urlbrouchurepdf").attr('href', data[0].imageUrl);
 
-                $("#imgbrouchure").attr('src', data[0].imageUrl);
-                $("#urlbrouchure").attr('href', data[0].imageUrl);
+                    $("#imgbrouchure").hide();
+                    $("#urlbrouchure").hide();
+                    $("#imgbrouchurepdf").show();
+                    $("#urlbrouchurepdf").show();
+                }
+                else {
+                    $("#imgbrouchure").attr('src', data[0].imageUrl);
+                    $("#urlbrouchure").attr('href', data[0].imageUrl);
+                    $("#imgbrouchurepdf").hide();
+                    $("#urlbrouchurepdf").hide();
+                    $("#imgbrouchure").show();
+                    $("#urlbrouchure").show();
+                }
+                
             },
             error: function (msg) {
                 alert(msg.responseText);

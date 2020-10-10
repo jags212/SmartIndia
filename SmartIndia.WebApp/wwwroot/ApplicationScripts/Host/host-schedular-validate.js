@@ -44,12 +44,51 @@ function ValidateSchedularFormRc() {
     if (!ValidateDropdown('ddlrecurringschedule', 'Recurring Schedule')) {
         return false;
     }
-    else if (!BlankTextBox('datepickerFrom', 'From Date')) {
+    //else if (!BlankTextBox('datepickerFrom', 'From Date')) {
+    //    return false;
+    //}
+    //else if (!BlankTextBox('datepickerTo', 'To Date')) {
+    //    return false;
+    //}
+    else if (!ValidateDropdown('StartTime', 'Start Time')) {
         return false;
     }
-    else if (!BlankTextBox('datepickerTo', 'To Date')) {
+    else if (!ValidateDropdown('Duration', 'Duration')) {
         return false;
     }
+
+    //else if (!CompareDateRange('datepickerFrom', 'datepickerTo', 'From Date', 'To Date')) {
+    //    return false;
+    //}
+
+    else {
+        return true;
+    }
+}
+
+function ValidateSchedularFormRcMonthly() {
+
+    if (!ValidateDropdown('inputCourses', 'Course Name')) {
+        return false;
+    }
+    else if (!BlankTextBox('BatchNameOnce', 'Batch Name')) {
+        return false;
+    }
+    else if (!IsSpecialCharacter1stPalce('BatchNameOnce')) {
+        return false;
+    }
+    else if (!IsWhiteSpace1stPalce('BatchNameOnce')) {
+        return false;
+    }
+    if (!ValidateDropdown('ddlrecurringschedule', 'Recurring Schedule')) {
+        return false;
+    }
+    //else if (!BlankTextBox('datepickerFrom', 'From Date')) {
+    //    return false;
+    //}
+    //else if (!BlankTextBox('datepickerTo', 'To Date')) {
+    //    return false;
+    //}
     else if (!ValidateDropdown('StartTime', 'Start Time')) {
         return false;
     }
@@ -65,7 +104,6 @@ function ValidateSchedularFormRc() {
         return true;
     }
 }
-
 function ValidateSchedulingForm() {
 
     if (!ValidateDropdown('inputCourses', 'Course Name')) {

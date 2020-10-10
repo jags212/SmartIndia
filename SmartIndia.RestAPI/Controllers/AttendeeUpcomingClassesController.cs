@@ -70,18 +70,19 @@ namespace SmartIndia.RestAPI.Controllers
                     hostCourses.BrochureName = brochureName;
                     Byte[] b;
                     b = System.IO.File.ReadAllBytes(hostCourses.filePath);
-                    hostCourses.BrouchureUrl = "data:image/" + hostCourses.BrochureExt + ";base64," + Convert.ToBase64String(b, 0, b.Length); ;
+                    if (hostCourses.BrochureExt == "pdf")
+                    {
+                        hostCourses.BrouchureUrl = "data:application/" + hostCourses.BrochureExt + ";base64," + Convert.ToBase64String(b, 0, b.Length); ;
+                    }
+                    else
+                    {
+                        hostCourses.BrouchureUrl = "data:image/" + hostCourses.BrochureExt + ";base64," + Convert.ToBase64String(b, 0, b.Length); ;
+                    }
                 }
                 List<UpcomingClassDetails> list = new List<UpcomingClassDetails>();
                 list.Add(hostCourses);
                 return await Task.FromResult(list);
             }
-
-            //using (var attendeeUpcommingClassesServices = new AttendeeUpcommingClassesServices(connectionFactory))
-            //{
-            //    return await Task.FromResult(attendeeUpcommingClassesServices.BindUpcommingClassDetail(obj));
-
-            //}
         }
     }
 }
