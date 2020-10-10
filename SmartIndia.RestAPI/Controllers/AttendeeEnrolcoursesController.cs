@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using SmartIndia.Data.Entities.Attendee;
 using SmartIndia.Data.Entities.Host;
 using SmartIndia.Data.Factory;
@@ -18,10 +19,11 @@ namespace SmartIndia.RestAPI.Controllers
     public class AttendeeEnrolcoursesController : ControllerBase
     {
         private readonly IConnectionFactory connectionFactory;
-
-        public AttendeeEnrolcoursesController(IConnectionFactory connectionFactory)
+        IConfiguration _configuration;
+        public AttendeeEnrolcoursesController(IConnectionFactory connectionFactory,IConfiguration configuration)
         {
             this.connectionFactory = connectionFactory;
+            _configuration = configuration;
         }
         [HttpGet("AttendeeEnrollclass")]
         [Obsolete]
@@ -65,6 +67,15 @@ namespace SmartIndia.RestAPI.Controllers
             using (var attendeeEnrollClassServices = new AttendeeEnrollClassServices(connectionFactory))
             {
                 return await Task.FromResult(attendeeEnrollClassServices.AddtoFavorites(obj));
+            }
+        }
+        [HttpGet("FilterEnrollCourses")]
+        [Obsolete]
+        public async Task<List<AttendeeEnrollclasses>> EnrollCourseFilter([FromQuery]EnrollClasseFilter obj)
+        {
+            using (var attendeeEnrollClassServices = new AttendeeEnrollClassServices(connectionFactory))
+            {
+                return await Task.FromResult(attendeeEnrollClassServices.EnrollCourseFilter(obj, _configuration.GetSection("HostURL")["ClientURL"]));
             }
         }
     }

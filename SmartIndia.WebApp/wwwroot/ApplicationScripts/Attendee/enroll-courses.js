@@ -6,18 +6,23 @@ function BindList() {
     var UId = localStorage.getItem("userID");
     jQuery.support.cors = true;
     var usersParam = JSON.stringify({
-        ACTIONCODE: "C"
+        ACTION: "A",
+        CourseName: $('#txtCourse').val(),
+        HostName: $('#txtHost').val(),
+        DATE: dateFormat($('#searchDate').val(), 'yyyy-mm-dd'),
+        MinPrice: $('#txtMinPrice').val() == "" ? 0 : parseFloat($('#txtMinPrice').val()),
+        MaxPrice: $('#txtMaxPrice').val() == "" ? 0 : parseFloat($('#txtMaxPrice').val())
     });
     $.ajax(
         {
             type: "GET",
-            url: ServiceURL + "/api/AttendeeEnrolcourses/AttendeeEnrollclass",
+            url: ServiceURL + "/api/AttendeeEnrolcourses/FilterEnrollCourses",
             data: JSON.parse(usersParam),
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
                 var trHTML = '';
-
+                $('#coursedetails').empty();
                 $.each(data, function (i, item) {
                     if (data[i].attendeeUserId == UId) {
                         var fab = '<i class="bx bxs-star">';
@@ -30,10 +35,10 @@ function BindList() {
                         + '<div class="sm-card-title" >'
                         + ' <a data-toggle="tooltip" data-placement="bottom" title="' + data[i].courseName + '" href="' + ClientURL + '/Attendee/EnrollCourses/EnrollCourseDetails?SID=' + data[i].courseId + '&bt=' + data[i].batchName + '" >' + data[i].courseName + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
                         + '</div>'
-                        +'<div class="enroll-course-show" > '
+                        + '<div class="enroll-course-show" > '
                         //+ '<span  onclick="AddShowInterest(' + data[i].courseId + ',' + data[i].batchName + ')" class="show-interest" data - toggle="tooltip" data - placement="bottom" title = "Show Interest" > <i class="bx bx-flag"></i></span>'
-                        + '<span onclick="AddShowFavorite(' + data[i].courseId + ',' + "'" + '' + data[i].batchName + '' + "'" + ')" class="add-to-favorite" data - toggle="tooltip" data - placement="bottom" title = "Add to Favorite" > '+ fab +'</i></span>'
-                        +'</div> '
+                        + '<span onclick="AddShowFavorite(' + data[i].courseId + ',' + "'" + '' + data[i].batchName + '' + "'" + ')" class="add-to-favorite" data - toggle="tooltip" data - placement="bottom" title = "Add to Favorite" > ' + fab + '</i></span>'
+                        + '</div> '
                         + '<span class="sm-host-name">'
                         + '<i class="bx bx-task"></i>' + data[i].uname + ''
                         + '</span>'
@@ -58,7 +63,15 @@ function BindList() {
             }
         });
 }
-
+$('#btnSearch').click(function () {
+    BindList();
+    $("#advanceSearchArea").hide();
+});
+//Clear Filter
+$("#clearfilter").click(function () {
+    $("#advanceSearchArea :input").val("");
+    BindList();
+});
 function AddShowInterest(CID, Batch) {
     alert("int");
     var UId = localStorage.getItem("userID");
