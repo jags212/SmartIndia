@@ -48,4 +48,14 @@ namespace SmartIndia.Data.Entities.Attendee
         public string BatchName { get; set; }
 
     }
+    public class EnrollClasseFilter
+    {
+        public string ACTION { get; set; }
+        public string CourseName { get; set; }
+        public string HostName { get; set; }
+        public string DATE { get; set; }
+        public decimal MinPrice { get; set; }
+        public decimal MaxPrice { get; set; }
+
+    }
 }
