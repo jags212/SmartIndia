@@ -64,7 +64,7 @@
                 </span>
             </div>
             <div class="course-thumbnail float-right">
-                <img src="~/assets/img/2.jpg" alt="OCR" />
+                <img id="imgBanner" alt="OCR" />
             </div>
             <div class="text margin-y">
                 <p id="desc"></p>
@@ -81,9 +81,11 @@
                 <button type="button" class="close enroll-close" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <a href="~/assets/img/course-pop-up-img.jpg" class="bx bx-download sm-download" download>
-                    <img src="~/assets/img/course-pop-up-img.jpg" class="banner-img" alt="OCR" />
-                </a>
+                <a id="urlbrouchure" class="bx bx-download sm-download" download></a>
+                <img id="imgbrouchure" class="banner-img" />
+
+                <a id="urlbrouchurepdf" class="bx bx-download sm-download"></a>
+                <embed type="application/pdf" id="imgbrouchurepdf" class="brochure-file" />
             </div>
         </div>
     </div>

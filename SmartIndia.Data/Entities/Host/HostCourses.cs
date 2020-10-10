@@ -28,7 +28,27 @@ namespace SmartIndia.Data.Entities.Host
         public bool Status { get; set; }
         public int CurrencyId { get; set; }
         public string ImageExt { get; set; }
+        public string ImageName { get; set; }
         public string BrochureExt { get; set; }
+        public string BrochureName { get; set; }
+        public string filePath { get; set; }
+        public string ImageUrl { get; set; }
+
+
+    }
+    public class GetBrouchure
+    {
+        [Key]
+        public Int64 CourseId { get; set; }
+        public Int64 UserId { get; set; }
+        public string ACTIONCODE { get; set; }
+     
+        public string ImageExt { get; set; }
+        public string ImageName { get; set; }
+        public string BrochureExt { get; set; }
+        public string BrochureName { get; set; }
+        public string filePath { get; set; }
+        public string ImageUrl { get; set; }
 
 
     }
@@ -63,6 +83,11 @@ namespace SmartIndia.Data.Entities.Host
         public string Uname { get; set; }
         public string EmailId { get; set; }
         public string MobileNo { get; set; }
+        public string ImageName { get; set; }
+        public string BrochureName { get; set; }
+        public string filePath { get; set; }
+        public string ImageUrl { get; set; }
+        public string BrochureUrl { get; set; }
 
 
     }

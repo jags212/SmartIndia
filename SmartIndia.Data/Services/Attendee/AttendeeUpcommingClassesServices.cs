@@ -86,7 +86,13 @@ namespace SmartIndia.Data.Services.Attendee
                         CourseDesc = item.CourseDesc,
                         Topics = item.Topics,
                         CourseId = item.CourseId,
-                        SchedularId = item.SchedularId
+                        SchedularId = item.SchedularId,
+                        ImageName = item.ImageName,
+                        ImageExt = item.ImageExt,
+                        BrochureName = item.BrochureName,
+                        BrochureExt = item.BrochureExt,
+                        BrouchureUrl = item.BrouchureUrl,
+                        ImageUrl = item.ImageUrl
 
                     };
                     upcomingClassDetails.Add(modal);

@@ -117,14 +117,15 @@
     left: 14px;
     border-radius: 5px;
     width: 27%;
+    height: 36px;
 }
 .intl-tel-input.separate-dial-code .profile-selected-flag {
-    padding: 10px 6px 0 8px;
+    padding: 7px 6px 0 8px;
 }
 .mobile-change-intl-tel-input {
     height: 37px;
     top: 28px;
-    left: 14px;
+    left: 0;
     border-radius: 5px;
 }
 
