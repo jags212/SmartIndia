@@ -164,6 +164,41 @@ function BlankTextBox(cntr, strText) {
     else
         return true;
 }
+function CheckSpanLength(cntr, strText) {
+    var strValue = $('.' + cntr).length;
+    if (strValue == 1) {
+        BootstrapAlert(strText + " can not be left blank", cntr);
+        return false;
+    }
+    else
+        return true;
+}
+function CheckSpanLengthFromID(cntr, strText) {
+    var result = [];
+    var days = "";
+    $('#' + cntr).each(function () {
+        days += $(this).attr("data-val") + ",";
+    });
+    var array1 = days.split(",");
+    $.each(array1, function (i) {
+        if (array1[i] == "undefined") {
+        }
+        else if (array1[i] == "") {
+        }
+        else {
+            var dayName = array1[i];
+            result.push(dayName);
+        }
+    });
+    if (result.length == 0) {
+        BootstrapAlert(strText + " can not be left blank", cntr);
+        return false;
+    }
+    else
+        return true;
+}
+
+
 
 function ValidateFile(cntr, strText) {
     //debugger;

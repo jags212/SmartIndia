@@ -173,7 +173,7 @@ function getallcourses() {
             }
         });
 }
-
+//for update bind all 
 function getcourseidd(CID) {
     function Update() {
         $("#btnSubmit").hide();
@@ -205,6 +205,12 @@ function getcourseidd(CID) {
                     $("#txtCost").val(data[0].cost);
                     $("#ddlFrequency").val(data[0].classFrequency);
                     $("#txtNoOfClass").val(data[0].noOfClass);
+
+                    var img = data[0].imageName;
+                    $("#hfimg").val(img);
+                    var bro = data[0].brochureName;
+                    var broext = data[0].brochureExt;
+                    $("#hfbro").val(bro + "." + broext);
                     $("#txtName").focus();
                 },
                 error: function (msg) {
@@ -306,8 +312,18 @@ function getbrouchure(CID) {
 
 //update 
 $('#btnUpdate').click(function () {
-    var ImgExt = $("#fileuploadImg").val().split('.')[1];
-    var BroExt = $("#fileuploadbrochure").val().split('.').pop();
+
+    if ($("#fileuploadImg").val() !="") {
+        var ImgExt = $("#fileuploadImg").val().split('.')[1];
+    } else {
+        var ImgExt = $("#hfimg").val().split('.')[1];
+    }
+    if ($("#fileuploadbrochure").val() !="") {
+        var BroExt = $("#fileuploadbrochure").val().split('.').pop();
+    }
+    else {
+        var BroExt = $("#hfbro").val().split('.')[1];
+    }
     function CallUpdate() {
         var UId = localStorage.getItem("userID");
         var usersParam = JSON.stringify({

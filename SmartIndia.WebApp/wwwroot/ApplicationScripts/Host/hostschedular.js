@@ -1,84 +1,19 @@
 ﻿
-$('#btnMonthly').click(function () {
-    if ($('#ddlrecurringschedule').val() == 'Monthly') {
-        alert("monthly");
-    }
-
-    var startDate = parseInt($('#ddlyearfrom').val()) + "-" + parseInt($('#ddlmonthfrom').val()) + "-" + "01";
-    var endDate = parseInt($('#ddlyesrto').val()) + "-" + parseInt($('#ddlmonthto').val()) + "-" + "31";
-
-    //var startDate = '2020-11-01';
-    //var endDate = '2021-01-01';
-    var dates = [];
-
-    var d0 = startDate.split('-');
-    var d1 = endDate.split('-');
-
-    for (
-        var y = d0[0];
-        y <= d1[0];
-        y++
-    ) {
-        for (
-            var m = d0[1];
-            m <= 12;
-            m++
-        ) {
-            dates.push(y + "-" + m + "-1");
-            if (y >= d1[0] && m >= d1[1]) break;
-        };
-        d0[1] = 1;
-    };
-
-    var myString = dates.toString();
-    //alert(myString);
-    var array = myString.split(",");
-    var result = [];
-    $.each(array, function (i) {
-        if (array[i] == "undefined") {
-        }
-        else if (array[i] == "") {
-        }
-        else {
-            var month = array[i].split('-');
-            var getmonth = parseInt(month[1]);
-            var Year = array[i].split('-');
-            var getyear = parseInt(Year[0]);
-
-            // get dates 
-            var days = "";
-            $("#dayOfMonthSection span").each(function () {
-                days += $(this).attr("data-val") + ",";
-            });
-            var array1 = days.split(",");
-           // var result = [];
-            $.each(array1, function (i) {
-                if (array1[i] == "undefined") {
-                }
-                else if (array1[i] == "") {
-                }
-                else {
-                    var dayName = array1[i];
-                    var CreatedDate = getyear + "-" + getmonth + "-" + dayName;
-                    result.push(new Date(CreatedDate));
-                }
-            });
-            // get dates end
-        }
-    });
-    alert(result);           
-});
-
-
 
 $('#btnSubmit').click(function () {
+
+
     var duration = $("#Duration").val();
     var timestr = $("#StartTime").val();
     var now = new Date('1900-01-01 ' + timestr + ':00');
     var endtime = new Date(now.getTime() + parseInt(duration) * 60000);
     var UId = localStorage.getItem("userID");
     var usersParam;
-    if ($('input[type=radio][name=rbtOnce]:checked').val() == 'once') {
+
+
+    var Id = $('.schedule-type-active').attr("id");
+
+    if (Id == 'rbtonce') {
         function CallSave() {
             usersParam = JSON.stringify({
                 ACTIONCODE: 'A',
@@ -124,10 +59,10 @@ $('#btnSubmit').click(function () {
             }
         }
     }
-    else if ($('input[type=radio][name=rbtOnce]:checked').val() == 'recurring') {
-        function CallSaveRc() {
-            if ($('#ddlrecurringschedule').val() == 'Daily') {
-
+    else if (Id == 'rbtrecurring') {
+        ValidateSchedularFormRcC();
+        if ($('#ddlrecurringschedule').val() == 'Daily') {
+            function CallSaveRc() {
                 var start = $("#SccDate").val(),
                     end = $("#SccTo").val(),
                     currentDate = new Date(start),
@@ -177,10 +112,20 @@ $('#btnSubmit').click(function () {
                     }
                 });
             }
-            var startdate = $("#SccDate").val(),
-                enddate = $("#SccTo").val();
-            // weekly start
-            if ($('#ddlrecurringschedule').val() == 'Weekly') {
+            if (ValidateSchedularFormRc()) {
+                if (BootStrapSubmit('btnSubmit', 'Are You Sure To Submit ?', 'Are You Sure To Update ?', CallSaveRc)) {
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+        }
+        var startdate = $("#SccDate").val(),
+            enddate = $("#SccTo").val();
+        // weekly start
+        if ($('#ddlrecurringschedule').val() == 'Weekly') {
+            function CallSaveRc() {
                 var days = "";
                 $(".selected-items span").each(function () {
                     days += $(this).attr("data-item") + ",";
@@ -244,9 +189,19 @@ $('#btnSubmit').click(function () {
                     }
                 });
             }
-            // weekly end
-            //Monthly Start
-            if ($('#ddlrecurringschedule').val() == 'Monthly') {
+            if (ValidateSchedularFormRcweek()) {
+                if (BootStrapSubmit('btnSubmit', 'Are You Sure To Submit ?', 'Are You Sure To Update ?', CallSaveRc)) {
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+        }
+        // weekly end
+        //Monthly Start
+        if ($('#ddlrecurringschedule').val() == 'Monthly') {
+            function CallSaveRc() {
                 var startDate = parseInt($('#ddlyearfrom').val()) + "-" + parseInt($('#ddlmonthfrom').val()) + "-" + "01";
                 var endDate = parseInt($('#ddlyesrto').val()) + "-" + parseInt($('#ddlmonthto').val()) + "-" + "31";
                 var dates = [];
@@ -341,10 +296,7 @@ $('#btnSubmit').click(function () {
                     }
                 });
             }
-
-            //Monthly End
-        }
-            if (ValidateSchedularFormRc()) {
+            if (ValidateSchedularFormRcMonthly()) {
                 if (BootStrapSubmit('btnSubmit', 'Are You Sure To Submit ?', 'Are You Sure To Update ?', CallSaveRc)) {
                     return false;
                 }
@@ -352,7 +304,13 @@ $('#btnSubmit').click(function () {
                     return true;
                 }
             }
+        }
+
+        //Monthly End
+        //}
+
     }
+
 });
 
 

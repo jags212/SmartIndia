@@ -38,38 +38,13 @@
             <a asp-area="Hosts" asp-controller="Schedular" asp-action="Schedular" class="calendar-scheduler">Add Scheduler<i class="bx bx-plus bx-pad"></i></a>
         </div>
         <div class="clearfix"></div>
-        <div class="card-body">
+        <div class="card-body" id="div_cardbody">
+            <span id="sp_nodata"></span>
             <!-- List -->
             <div class="container" id="hostDashlList">
                 <div class="row">
                     <div class="col-sm-12 col-lg-12 col-md-12">
                         <ul class="list-group" id="coursedetails">
-
-
-                            @*<li class="list-group-item justify-content-between ocr-list-group">
-                                <div class="ocr-float-left p-1">
-                                    <div class="sm-card-title">
-                                        <a href="enroll-course-details.html" data-toggle="tooltip" data-placement="bottom" title="Web Development (Development Tools/Environment)">
-                                            Web Development <span class="topic-font">(Development Tools/Environment)</span>
-                                        </a>
-                                    </div>
-                                    <span class="sm-host-name">
-                                        <i class="bx bxs-face"></i>Amy Drufesne
-                                    </span>
-                                    <span class="sm-batch-name">
-                                        <i class="bx bx-task"></i>Batch I
-                                    </span>
-                                    <p class="card-text sm-cli-text">Blandit accumsan ei vis, maiorum epicurei at mei nibh viderer ius pri</p>
-                                    <div class="sm-bottom-info">
-                                        <span class="sm-date">
-                                            <i class="bx bx-calendar"></i>10-Sept-20
-                                        </span>
-                                        <span class="sm-time">
-                                            <i class="bx bx-time"></i>11:30:20 GMT+05:30
-                                        </span>
-                                    </div>
-                                </div>
-                            </li>*@
                         </ul>
                     </div>
                 </div>
