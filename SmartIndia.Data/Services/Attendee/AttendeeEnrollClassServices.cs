@@ -11,7 +11,7 @@ using System.Text;
 
 namespace SmartIndia.Data.Services.Attendee
 {
-    public class AttendeeEnrollClassServices: RepositoryBase
+    public class AttendeeEnrollClassServices : RepositoryBase
     {
         public string retMsg;
         public AttendeeEnrollClassServices(IConnectionFactory connectionFactory) : base(connectionFactory)
@@ -175,6 +175,52 @@ namespace SmartIndia.Data.Services.Attendee
                 // log.Error(ex);
             }
             return retMsg;
+        }
+
+        [Obsolete]
+        public List<AttendeeEnrollclasses> EnrollCourseFilter(EnrollClasseFilter enrollClasseFilter, string CUrl)
+        {
+            object[] objArray = new object[] {
+                     "@ACTION",enrollClasseFilter.ACTION,
+                     "@HostName",enrollClasseFilter.HostName,
+                     "@CourseName",enrollClasseFilter.CourseName,
+                     "@DATE",enrollClasseFilter.DATE,
+                     "@MinPrice",enrollClasseFilter.MinPrice,
+                     "@MaxPrice",enrollClasseFilter.MaxPrice
+            };
+            try
+            {
+                DynamicParameters param = objArray.ToDynamicParameters();
+                var result = DBConnection.Query<AttendeeEnrollclass>("USP_GetEnrollCourse_Search", param, commandType: CommandType.StoredProcedure).ToList();
+                List<AttendeeEnrollclasses> Enrollclasses = new List<AttendeeEnrollclasses>();
+                foreach (var item in result)
+                {
+                    var modal = new AttendeeEnrollclasses()
+                    {
+                        CourseName = item.CourseName,
+                        StartDate = TimeZone.CurrentTimeZone.ToLocalTime(item.StartDate).ToString("yyyy-MM-dd"),
+                        EndDate = TimeZone.CurrentTimeZone.ToLocalTime(item.EndDate).ToString("yyyy-MM-dd"),
+                        Uname = item.Uname,
+                        CourseDesc = item.CourseDesc,
+                        Topics = item.Topics,
+                        CourseId = item.CourseId,
+                        Duration = item.Duration,
+                        ClassFrequency = item.ClassFrequency,
+                        NoOfClass = item.NoOfClass,
+                        Cost = item.Cost,
+                        BatchName = item.BatchName,
+                        AttendeeUserId = item.AttendeeUserId,
+                        url = CUrl + "/Hosts/UpcomingClasses/upcomingclassdetail?SID=" + item.CourseId + ""
+
+                    };
+                    Enrollclasses.Add(modal);
+                }
+                return Enrollclasses;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
     }
 }
