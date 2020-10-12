@@ -41,7 +41,7 @@
     <script src="~/assets/js/publish.js" type="text/javascript"></script>
 
     <!-- Schedular -->
-    @*<script src="~/assets/js/schedular.js" type="text/javascript"></script>*@
+    <script src="~/assets/js/host-schedular.js" type="text/javascript"></script>
     <!-- Multi Select JS -->
     <script src="~/assets/js/multi_select.js"></script>
     <!-- Day of Week -->
@@ -209,7 +209,7 @@
 <!-- Start -->
 <div class="card mb-30">
     <div class="card-body">
-        <div class="existing-date">
+        @*<div class="existing-date">
                 <span class="col-black">Schedule Type:</span>
                 <label class="radio-inline">
                     <input type="radio" name="rbtOnce" value="once" checked id="rbtonce">Once
@@ -217,11 +217,11 @@
                 <label class="radio-inline">
                     <input type="radio" name="rbtOnce" value="recurring">Recurring
                 </label>
-            </div>
-        @*<div class="ocr-float-left mb-10">
+            </div>*@
+        <div class="ocr-float-left mb-10" id="div_scheduletype">
             <div id="rbtonce" class="schedule-type schedule-type-active">Once</div>
             <div id="rbtrecurring" class="schedule-type">Recurring</div>
-        </div>*@
+        </div>
         <div class="clearfix"></div>
         <form>
             <div class="row form-group">
@@ -421,17 +421,17 @@
             <!--Recurring dailly End-->
             <!--Old time duration start-->
             @*<div class="row form-group">
-            <div class="col">
-                <label>Start Time</label>
-                <input type="text" id="StartTime" name="StartTime" class="form-control timepicker">
-                <i class="bx bx-time-five time-clock" role="right-icon"></i>
-            </div>
-            <div class="col">
-                <label>End Time</label>
-                <input type="text" id="EndTime" name="EndTime" class="form-control timepicker">
-                <i class="bx bx-time-five time-clock" role="right-icon"></i>
-            </div>
-        </div>*@
+                    <div class="col">
+                        <label>Start Time</label>
+                        <input type="text" id="StartTime" name="StartTime" class="form-control timepicker">
+                        <i class="bx bx-time-five time-clock" role="right-icon"></i>
+                    </div>
+                    <div class="col">
+                        <label>End Time</label>
+                        <input type="text" id="EndTime" name="EndTime" class="form-control timepicker">
+                        <i class="bx bx-time-five time-clock" role="right-icon"></i>
+                    </div>
+                </div>*@
             <!--Old time duration start-->
             <!--New Time Duration Start-->
             <div class="row form-group">

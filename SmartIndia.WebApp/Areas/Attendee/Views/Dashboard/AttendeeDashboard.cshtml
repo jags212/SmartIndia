@@ -1,4 +1,5 @@
-﻿
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
 @{
     ViewData["Title"] = "AttendeeDashboard";
     Layout = "~/Views/Shared/_FrontPannelLayout.cshtml";
@@ -28,7 +29,8 @@
     <div class="card-header justify-content-between align-items-center text-center msg-box">
 
         <h3>You have not enroll to any courses. Do want to enroll ? </h3>
-        <a href="attendee-enroll-courses.html" class="btn btn-success">Yes</a>
+        <a class="btn btn-success" asp-area="Attendee" asp-controller="EnrollCourses" asp-action="EnrollCourse">Yes</a>
+
         <a href="javascript:void(0);" class="btn btn-danger">No</a>
 
     </div>
