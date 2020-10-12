@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using SmartIndia.Data.Entities.Host;
 using SmartIndia.Data.Factory;
 using SmartIndia.Data.Models;
@@ -18,16 +19,19 @@ namespace SmartIndia.RestAPI.Controllers
     public class AttendeeClassWallController : ControllerBase
     {
         private readonly IConnectionFactory connectionFactory;
+        private readonly IConfiguration _configuration;
 
-        public AttendeeClassWallController(IConnectionFactory connectionFactory)
+        public AttendeeClassWallController(IConnectionFactory connectionFactory, IConfiguration configuration)
         {
             this.connectionFactory = connectionFactory;
+            _configuration = configuration;
         }
 
         [HttpGet("BindClassWallCallendar")]
         [Obsolete]
         public async Task<List<ClassWallCalender>> BindClassWallCallendar([FromQuery] HostParameter obj)
         {
+            obj.Curl = _configuration.GetSection("HostURL")["ClientURL"];
             using (var attendeeClassWallServices = new AttendeeClassWallServices(connectionFactory))
             {
                 return await Task.FromResult(attendeeClassWallServices.BindClassWallCallendar(obj));
