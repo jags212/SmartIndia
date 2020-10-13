@@ -181,13 +181,13 @@ function getcourseidd(CID) {
         $("#CourseId").val(CID);
         var usersParam1 = JSON.stringify({
             ACTIONCODE: 'U',
-            UserId: CID,
+            CourseId: CID,
         });
 
         $.ajax(
             {
                 type: "GET",
-                url: ServiceURL + "/api/HostCourses/GetHostCourse",
+                url: ServiceURL + "/api/HostCourses/GetCourseUpdateDetails",
                 data: JSON.parse(usersParam1),
                 dataType: "json",
                 contentType: "application/json",
@@ -230,12 +230,12 @@ function getcoursedetails(CID) {
     ClearCourseDetails();
     var usersParam2 = JSON.stringify({
         ACTIONCODE: 'U',
-        UserId: CID,
+        CourseId: CID,
     });
     $.ajax(
         {
             type: "GET",
-            url: ServiceURL + "/api/HostCourses/GetHostCourse",
+            url: ServiceURL + "/api/HostCourses/GetCourseUpdateDetails",
             data: JSON.parse(usersParam2),
             dataType: "json",
             contentType: "application/json",
