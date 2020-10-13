@@ -28,7 +28,7 @@
     -ms-flex-align: center;
     align-items: center;
     height: 100%;
-    padding: 7px 6px 0 8px;
+    padding: 10px 8px;
 }
 .intl-tel-input.separate-dial-code .selected-dial-code {
     margin-left: 6px;
@@ -99,7 +99,7 @@
     color: #93a0a9;
 }
 .intl-tel-input .country-list.dropup {
-    bottom: 100%;
+    top: 100%;
     margin-bottom: -1px;
 }
 .intl-tel-input .country-list .divider {
@@ -120,7 +120,7 @@
     height: 36px;
 }
 .intl-tel-input.separate-dial-code .profile-selected-flag {
-    padding: 7px 6px 0 8px;
+    padding: 7px 8px;
 }
 .mobile-change-intl-tel-input {
     height: 37px;
