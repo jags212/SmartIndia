@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using SmartIndia.Data.Entities.Host;
 using SmartIndia.Data.Factory;
 using SmartIndia.Data.Models;
@@ -16,16 +17,19 @@ namespace SmartIndia.RestAPI.Controllers
     public class HostDashboardController : ControllerBase
     {
         private readonly IConnectionFactory connectionFactory;
+        private readonly IConfiguration _configuration;
 
-        public HostDashboardController(IConnectionFactory connectionFactory)
+        public HostDashboardController(IConnectionFactory connectionFactory, IConfiguration configuration)
         {
             this.connectionFactory = connectionFactory;
+            _configuration = configuration;
         }
 
         [HttpGet("BindHostUpcommingClasses")]
         [Obsolete]
         public async Task<List<UpcomingClassCalender>> BindUpcommingClasses([FromQuery] HostParameter obj)
         {
+            obj.Curl = _configuration.GetSection("HostURL")["ClientURL"];
             using (var hostDashboardServices = new HostDashboardServices(connectionFactory))
             {
                 return await Task.FromResult(hostDashboardServices.BindUpcommingClasses(obj));

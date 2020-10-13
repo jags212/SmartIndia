@@ -31,7 +31,7 @@ function BindHostUpcommingClasses() {
     var usersParam = JSON.stringify({
         UserId: parseInt(UId),
         ACTIONCODE: "C",
-        Curl: ClientURL
+        Curl: ""
     });
     $.ajax(
         {

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using SmartIndia.Data.Entities.Host;
 using SmartIndia.Data.Factory;
 using SmartIndia.Data.Models;
@@ -20,18 +21,21 @@ namespace SmartIndia.RestAPI.Controllers
         private readonly IConnectionFactory connectionFactory;
         [Obsolete]
         private readonly IHostingEnvironment _environment;
+        private readonly IConfiguration _configuration;
 
         [Obsolete]
-        public HostUpcomingClassesController(IConnectionFactory connectionFactory, IHostingEnvironment environment)
+        public HostUpcomingClassesController(IConnectionFactory connectionFactory, IHostingEnvironment environment, IConfiguration configuration)
         {
             this.connectionFactory = connectionFactory;
             _environment = environment ?? throw new ArgumentNullException(nameof(environment));
+            _configuration = configuration;
         }
 
         [HttpGet("BindHostUpcommingClasses")]
         [Obsolete]
         public async Task<List<UpcomingClassCalender>> BindUpcommingClasses([FromQuery] HostParameter obj)
         {
+            obj.Curl = _configuration.GetSection("HostURL")["ClientURL"];
             using (var hostUpcommingClassesServices = new HostUpcommingClassesServices(connectionFactory))
             {
                 return await Task.FromResult(hostUpcommingClassesServices.BindUpcommingClasses(obj));
