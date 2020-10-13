@@ -28,7 +28,7 @@ function selectAll(id, multi_select) {
             item.prop('checked', true);
 
             select.find('.selected-items').append(
-                '<span class="item" data-val="' + item.attr('id') + '">' + item.parent().find('label').html() +
+                '<span class="item" data-val="' + item.attr('id') + '" data-item="' + item.parent().find('label').html() + '">' + item.parent().find('label').html() +
                 '   <button type="button" onclick="removeItem($(this).parent().attr(\'data-val\'));">&times;</button>' +
                 '</span>'
             );
@@ -107,7 +107,7 @@ function deselectAll(id) {
                 if (settings.defaults.includes(item['value'])) {
                     // Selected Items
                     selectedItems.append(
-                        '<span class="item" data-val="' + selectId + '-chbx-' + item['value'] + '">' + item['text'] +
+                        '<span class="item" data-val="' + selectId + '-chbx-' + item['value'] + '" data-item="' + item['text'] + '">' + item['text'] +
                         '   <button type="button" onclick="removeItem($(this).parent().attr(\'data-val\'));">&times;</button>' +
                         '</span>'
                     );
@@ -157,7 +157,7 @@ function deselectAll(id) {
                     inputElem.prop('checked', true);
 
                     select.find('.selected-items').append(
-                        '<span class="item" data-val="' + inputElem.attr('id') + '">' + item.find('label').html() +
+                        '<span class="item" data-val="' + inputElem.attr('id') + '" data-item="' + item.find('label').html() + '">' + item.find('label').html() +
                         '   <button type="button" onclick="removeItem($(this).parent().attr(\'data-val\'));">&times;</button>' +
                         '</span>'
                     );

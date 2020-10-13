@@ -23,6 +23,7 @@ $('#country-listbox li').click(function () {
     $('#selected-flag-dial-code').text(datadialcode);
     $("#country-listbox").css("display", "none");
     $("#searchCountry").val("");
+    $(".iti-arrow").addClass("up");
     chkedLi = this;
     all_list.show();
 });
@@ -43,6 +44,18 @@ $('#searchCountry').keyup(function () {
     matching_list.show();
 
 });
+
+// When the user clicks anywhere outside of the search, close it
+$(document).mouseup(function (e) {
+    var container = $("#country-listbox");
+
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
+        container.hide();
+        $(".iti-arrow").addClass("up");
+    }
+});
+
 
 //Pin Country
 $(document).ready(function () {
