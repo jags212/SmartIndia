@@ -275,7 +275,7 @@ function getbrouchure(CID) {
     ClearCourseDetails();
     var usersParam2 = JSON.stringify({
         ACTIONCODE: 'U',
-        UserId: CID,
+        CourseId: CID,
     });
     $.ajax(
         {

@@ -195,7 +195,7 @@ namespace SmartIndia.Data.Services.Host
         {
             object[] objArray = new object[] {
                      "@P_ACTIONCODE",hostParameter.ACTIONCODE,
-                     "@UserId",hostParameter.UserId
+                     "@CourseId",hostParameter.CourseId
             };
             try
             {
