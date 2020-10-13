@@ -14,9 +14,9 @@ $(document).mouseup(function (e) {
 });
 
 //Clear Filter
-$("#clearfilter").click(function () {
-    $("#advanceSearchArea :input").val("");
-});
+//$("#clearfilter").click(function () {
+//    $("#advanceSearchArea :input").val("");
+//});
 
 //Clear Filter
 $("#clearfilter").click(function () {

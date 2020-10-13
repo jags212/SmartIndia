@@ -52,7 +52,7 @@ $(document).ready(function () {
     var currentcountrycode;
     var datacountrycode;
 
-    $.get('http://www.geoplugin.net/javascript.gp', function () {
+    $.get('https://www.geoplugin.net/javascript.gp', function () {
         currentcountrycode = geoplugin_countryCode().toLowerCase();
         //$.get('https://ipinfo.io', function () { }, "jsonp").always(function (resp) {
         //    currentcountrycode = ((resp && resp.country) ? resp.country : "").toLowerCase();

@@ -24,6 +24,7 @@ function Coursedetails() {
                 //$("#topic").html("( " + data[0].topics + " )");
                // $("#startdate").html(dateFormat(data[0].startDate, 'dd-mmm-yy'));
                 $("#desc").html(data[0].courseDesc);
+                $("#imgBanner").attr('src', data[0].imageUrl);
             },
             error: function (msg) {
                 alert(msg.responseText);

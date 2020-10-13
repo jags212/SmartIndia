@@ -1161,6 +1161,9 @@
     margin-top: 60px;
 }
 
+.col-form-5 {
+    width: 40%;
+}
 .col-form-6 {
     width: 50%;
 }
@@ -3183,7 +3186,7 @@
 }
 
 .sm-card-title {
-    margin-bottom: .75rem;
+    margin-bottom: .5rem;
     font-size: 1.25rem;
     font-weight: 700;
 }
@@ -3267,6 +3270,7 @@
     color: #1873b3;
     margin: 0 0 0 20px;
     cursor: pointer;
+    text-decoration: underline;
 }
 
     .sm-co-users i {
@@ -3334,7 +3338,7 @@
     margin: 8px 0;
 }
 
-#hostDashlList, #hostDashCalendar, #hostCWlList, #hostCWCalendar, #attendeeCWlList, #attendeeCWCalendar, #hostUPlList, #hostUPCalendar, #attendeeUPlList, #attendeeUPCalendar, #courseAttendeesList, #attendeesCoursesList {
+#hostDashlList, #hostDashCalendar, #hostCWlList, #hostCWCalendar, #attendeeCWlList, #attendeeCWCalendar, #hostUPlList, #hostUPCalendar, #attendeeUPlList, #attendeeUPCalendar, #courseAttendeesList, #attendeesCoursesList, #rbtonce, #rbtrecurring {
     animation: fadeIn 1.5s;
 }
 
@@ -3367,6 +3371,8 @@
     color: #000;
     font-size: 20px;
     font-weight: 600;
+/*    position: relative;
+    top: -20px;*/
 }
 
     .sm-download:hover {
@@ -3749,7 +3755,7 @@
 }
 
 #hostDashlList {
-    height: 971px;
+    height: 865px;
     overflow: auto;
 }
 
@@ -4005,11 +4011,8 @@
     color: #1873b3;
     font-weight: 700;
     cursor: pointer;
+    text-decoration: underline;
 }
-
-    .col-light-blue:hover {
-        text-decoration: underline;
-    }
 
 #attendeesCoursesList {
     display: none;
@@ -4085,56 +4088,68 @@
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-    #dayOfMonth > .placeholder {
+#dayOfMonthSection {
+    width: 100%;
+    height: auto;
+    padding: 2px 80px 2px 2px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+}
+
+    #dayOfMonth > .placeholder, #dayOfMonthSection > .placeholder {
         display: inline-block;
         padding: 3.5px;
     }
 
-    #dayOfMonth > button {
-        position: absolute;
-        height: 25px;
-        width: 25px;
+#dayOfMonth > button {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    background-color: transparent;
+    top: 35px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+    #dayOfMonth > button:hover {
+        transform: scale(1.2);
+    }
+
+#dayOfMonth > .select-button {
+    background: url("../img/select-all.jpg") no-repeat center center;
+    background-size: contain;
+    right: 20px;
+}
+
+#dayOfMonth > .deselect-button {
+    background: url("../img/deselect-all.jpg") no-repeat center center;
+    background-size: contain;
+    right: 50px;
+}
+
+#dayOfMonth > .month-item, #dayOfMonthSection > .month-item {
+    display: inline-block;
+    background-color: #00BCD4;
+    padding: 1px 5px 2px 5px;
+    border-radius: 2px;
+    color: #fff;
+    margin: 1px;
+}
+
+    #dayOfMonth > .month-item > button, #dayOfMonthSection > .month-item > button {
         background-color: transparent;
-        top: 35px;
-        border: 2px solid transparent;
-        cursor: pointer;
-        transition: 0.2s;
-    }
-
-        #dayOfMonth > button:hover {
-            transform: scale(1.2);
-        }
-
-    #dayOfMonth > .select-button {
-        background: url("../img/select-all.jpg") no-repeat center center;
-        background-size: contain;
-        right: 20px;
-    }
-
-    #dayOfMonth > .deselect-button {
-        background: url("../img/deselect-all.jpg") no-repeat center center;
-        background-size: contain;
-        right: 50px;
-    }
-
-    #dayOfMonth > .month-item {
-        display: inline-block;
-        background-color: #00BCD4;
-        padding: 1px 5px 2px 5px;
-        border-radius: 2px;
         color: #fff;
-        margin: 1px;
+        border: 0;
+        font-weight: 900;
+        cursor: pointer;
+        vertical-align: baseline;
+        padding: 2px;
     }
-
-        #dayOfMonth > .month-item > button {
-            background-color: transparent;
-            color: #fff;
-            border: 0;
-            font-weight: 900;
-            cursor: pointer;
-            vertical-align: baseline;
-            padding: 2px;
-        }
 
 #MonthCalendar {
     display: none;
@@ -4149,7 +4164,7 @@
     font-size: 14px;
     padding: 0 0 10px 0;
     position: absolute;
-    top: 50%;
+    top: 49%;
     right: 18%;
     z-index: 1;
 }
@@ -4183,6 +4198,7 @@
 .width-100 {
     width: 100%;
 }
+
 .nav-active a {
     background-color: #17a2b8b3;
     padding: 10px 20px;
@@ -4194,15 +4210,68 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
 .nav-active a {
     color: #ffffff;
 }
+
     .nav-active a:hover {
         background-color: #17a2b8;
     }
+
     .nav-active a span {
         color: #ffffff !important;
     }
+
+.schedule-type {
+    background: #000;
+    color: #fff;
+    padding: 4px 7px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    float: left;
+    margin-right: 5px;
+}
+
+.schedule-type-active {
+    background: #e1000a;
+}
+
+.td-publish {
+    width: 10%;
+}
+.new-modal-header {
+    padding: 0.5rem 1rem;
+}
+.pd-1 {
+    padding: 1px;
+}
+.p-0 {
+    padding: 0;
+}
+.p-10 {
+    padding: 10px;
+}
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #a8a8a8;
+}
+    ::-webkit-scrollbar-thumb:hover {
+        background: #888;
+    }
+/*---------------*/
+.brochure-file {
+    width: 565px;
+    height: 350px;
+}
+
 /*------------------- Responsive ------------------------------------*/
 @media(min-width: 320px) and (max-width: 767px) {
     .social-login-btn {

@@ -9,8 +9,14 @@
 <script src="~/ApplicationScripts/Common/date-format-converter.js"></script>
 <!-- Datepicker CSS -->
 <link rel="stylesheet" href="~/assets/css/gijgo.min.css" />
+
+
 <!-- Timepicker CSS -->
 <link rel="stylesheet" href="~/assets/css/wickedpicker.min.css" />
+<!-- Bootstrap Datatable CSS -->
+<link rel="stylesheet" href="~/assets/css/datatables.min.css" />
+<!-- Multi Select CSS -->
+<link rel="stylesheet" href="~/assets/css/multi_select.css" />
 
 
 @section Scripts{
@@ -33,6 +39,17 @@
 
     <!-- Publish JS -->
     <script src="~/assets/js/publish.js" type="text/javascript"></script>
+
+    <!-- Schedular -->
+    <script src="~/assets/js/host-schedular.js" type="text/javascript"></script>
+    <!-- Multi Select JS -->
+    <script src="~/assets/js/multi_select.js"></script>
+    <!-- Day of Week -->
+
+    <script src="~/assets/js/dayofweek.js"></script>
+    <!-- Day of Month -->
+
+    <script src="~/assets/js/dayofmonth.js" type="text/javascript"></script>
     <script>
         $(document).ready(function () {
             loadNavigation('schedular', 'schedular');
@@ -192,15 +209,20 @@
 <!-- Start -->
 <div class="card mb-30">
     <div class="card-body">
-        <div class="existing-date">
-            <span class="col-black">Schedule Type:</span>
-            <label class="radio-inline">
-                <input type="radio" name="rbtOnce" value="once" checked id="rbtonce">Once
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="rbtOnce" value="recurring">Recurring
-            </label>
+        @*<div class="existing-date">
+                <span class="col-black">Schedule Type:</span>
+                <label class="radio-inline">
+                    <input type="radio" name="rbtOnce" value="once" checked id="rbtonce">Once
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="rbtOnce" value="recurring">Recurring
+                </label>
+            </div>*@
+        <div class="ocr-float-left mb-10" id="div_scheduletype">
+            <div id="rbtonce" class="schedule-type schedule-type-active">Once</div>
+            <div id="rbtrecurring" class="schedule-type">Recurring</div>
         </div>
+        <div class="clearfix"></div>
         <form>
             <div class="row form-group">
                 <div class="col-md-4">
@@ -241,54 +263,62 @@
 
                     <div class="col" id="divDayofweek">
                         <label class="res-label"> Day of Week</label>
-                        <select class="form-control" name="ddlDayofweek" id="ddlDayofweek">
-                            <option selected value="0">---Select---</option>
-                            <option value="Sunday">Sunday</option>
-                            <option value="Monday">Monday</option>
-                            <option value="Tuesday">Tuesday</option>
-                            <option value="Wednesday">Wednesday</option>
-                            <option value="Thursday">Thursday</option>
-                            <option value="Friday">Friday</option>
-                            <option value="Saturday">Saturday</option>
-                        </select>
+                        <input type="text" class="form-control" id="txt_days" name="dayofweek" placeholder="Pick the week" data-access_multi_select="true">
                     </div>
 
                     <div class="col" id="divDayofMonth">
                         <label class="res-label"> Day of Month</label>
-                        <select class="form-control" name="frequency" id="ddlDateofMonth">
-                            <option selected value="0">---Select---</option>
-                            <option value="01">1st</option>
-                            <option value="02">2nd</option>
-                            <option value="03">3rd</option>
-                            <option value="04">4th</option>
-                            <option value="05">5th</option>
-                            <option value="06">6th</option>
-                            <option value="07">7th</option>
-                            <option value="08">8th</option>
-                            <option value="09">9th</option>
-                            <option value="10">10th</option>
-                            <option value="11">11th</option>
-                            <option value="12">12th</option>
-                            <option value="13">13th</option>
-                            <option value="14">14th</option>
-                            <option value="15">15th</option>
-                            <option value="16">16th</option>
-                            <option value="17">17th</option>
-                            <option value="18">18th</option>
-                            <option value="19">19th</option>
-                            <option value="20">20th</option>
-                            <option value="21">21th</option>
-                            <option value="22">22th</option>
-                            <option value="23">23th</option>
-                            <option value="24">24th</option>
-                            <option value="25">25th</option>
-                            <option value="26">26th</option>
-                            <option value="27">27th</option>
-                            <option value="28">28th</option>
-                            <option value="29">29th</option>
-                            <option value="30">30th</option>
-                            <option value="31">31th</option>
-                        </select>
+                        <div id="dayOfMonth">
+                            <div id="dayOfMonthSection">
+                                <span class="placeholder">Pick the month</span>
+                            </div>
+                            <button type="button" class="select-button" onclick="selectAllMonth()"></button>
+                            <button type="button" class="deselect-button" onclick="deselectAllMonth()"></button>
+                        </div>
+                    </div>
+                    <div class="month-calendar" id="MonthCalendar">
+                        <div class="month-calendar-head"></div>
+                        <div class="month-calendar-numbers">
+                            <div>1</div>
+                            <div>2</div>
+                            <div>3</div>
+                            <div>4</div>
+                            <div>5</div>
+                            <div>6</div>
+                            <div>7</div>
+                        </div>
+                        <div class="month-calendar-numbers">
+                            <div>8</div>
+                            <div>9</div>
+                            <div>10</div>
+                            <div>11</div>
+                            <div>12</div>
+                            <div>13</div>
+                            <div>14</div>
+                        </div>
+                        <div class="month-calendar-numbers">
+                            <div>15</div>
+                            <div>16</div>
+                            <div>17</div>
+                            <div>18</div>
+                            <div>19</div>
+                            <div>20</div>
+                            <div>21</div>
+                        </div>
+                        <div class="month-calendar-numbers">
+                            <div>22</div>
+                            <div>23</div>
+                            <div>24</div>
+                            <div>25</div>
+                            <div>26</div>
+                            <div>27</div>
+                            <div>28</div>
+                        </div>
+                        <div class="month-calendar-numbers">
+                            <div>29</div>
+                            <div>30</div>
+                            <div>31</div>
+                        </div>
                     </div>
 
                 </div>
@@ -526,9 +556,11 @@
                 </div>
             </div>
             <!--New Time duration end-->
-            <button type="button" id="btnSubmit" class="btn btn-primary">Submit</button>
+            <input type="button" id="btnSubmit" class="btn btn-primary" value="Submit" />
+            @*<input type="button" id="btnMonthly" class="btn btn-primary" value="Submit" />*@
             <button type="button" id="btnUpdate" class="btn btn-primary">Update</button>
             <button type="reset" class="btn btn-warning">Reset</button>
+
         </form>
     </div>
 </div>

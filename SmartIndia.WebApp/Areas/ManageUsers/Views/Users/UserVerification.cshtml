@@ -7,9 +7,10 @@
     <!-- Custom Bootstrap Valiation JS -->
     <script src="~/ApplicationScripts/Common/custom-validate.js"></script>
 
-    <script> 
+    <script>
+
         $(document).ready(function () {
-            $.get("" + ServiceURL + "/api/UserRegistration/UserActive?acode=" + '@ViewBag.ACode', function (data) { 
+            $.get("" + ServiceURL + "/api/UserRegistration/UserActive?acode=" + '@ViewBag.ACode', function (data) {
                 if (!data) {
                     $.ajax({
                         url: ServiceURL + "/api/UserRegistration/UserEmailVerification",
@@ -35,14 +36,18 @@
                                             localStorage.setItem("jwtToken", data.jwtToken);
                                             localStorage.setItem("refreshToken", data.refreshToken);
                                             localStorage.setItem("direct", 1);
-                                            window.location.href = "/Attendee/Dashboard/AttendeeDashboard";
+                                            $.post("/ManageUsers/Users/AthenticationUserRole?UserId=" + data.id + "&RoleName=Attendee", function (data) {
+                                                if (data == 1) {
+                                                    window.location.href = "/Attendee/Dashboard/AttendeeDashboard";
+                                                }
+                                            });
                                         }
                                     },
                                     error: function (jqXHR, textStatus, errorThrown) {
                                         BootstrapAlert(jqXHR.responseJSON.message, 'txtPassword');
                                         $('#txtPassword').val("");
                                     }
-                                }); 
+                                });
                             }
                             else {
                                 BootStrapRedirect("Invalid Request. Email Not Varify.", "/ManageUsers/Users/Login");
