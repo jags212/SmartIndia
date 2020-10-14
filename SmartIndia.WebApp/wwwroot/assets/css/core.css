@@ -49,4 +49,16 @@
     z-index: 9999;
     background: url('../img/loader.gif') 50% 50% no-repeat rgb(249,249,249);
 }
+.nodata 
+{
+    display: block;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    color: #5cbecd;
+}
+.nodata-btn-schedular {
+    top: 280%;
+}
+
 

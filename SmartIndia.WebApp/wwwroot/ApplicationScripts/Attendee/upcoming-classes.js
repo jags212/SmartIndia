@@ -1,6 +1,7 @@
 ﻿
 //Attendee
 $(document).ready(function () {
+    $("#divcardbodynodata").css("display", "none");
     BindList();
     $("#attendeeUPCalendar").css("display", "none");
 });
@@ -45,11 +46,12 @@ function BindHostUpcommingClasses() {
             success: function (data) {
                 if (data.length == 0) {
                     $("#attendeeUPCalendar").css("display", "none");
-                    $("#sp_nodata").css("display", "block");
-                    $("#sp_nodata").html("No data available")
+                    $("#divcardbodynodata").css("display", "block");
+                    $("#divcardbody").css("display", "none");
                 }
                 else {
-                    $("#sp_nodata").css("display", "none");
+                    $("#divcardbodynodata").css("display", "none");
+                    $("#divcardbody").css("display", "block");
                     $('#attendeeUPCalendar').fullCalendar({
                         header: {
                             left: 'prev,next',
@@ -126,11 +128,12 @@ function BindList() {
             success: function (data) {
                 if (data.length == 0) {
                     $("#hostCWlList").css("display", "none");
-                    $("#sp_nodata").css("display", "block");
-                    $("#sp_nodata").html("No data available")
+                    $("#divcardbodynodata").css("display", "block");
+                    $("#divcardbody").css("display", "none");
                 }
                 else {
-                    $("#sp_nodata").css("display", "none");
+                    $("#divcardbodynodata").css("display", "none");
+                    $("#divcardbody").css("display", "block");
                     var trHTML = '';
 
                     $.each(data, function (i, item) {

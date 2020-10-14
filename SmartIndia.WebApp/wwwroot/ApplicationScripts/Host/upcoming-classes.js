@@ -1,5 +1,6 @@
 ﻿//Host
 $(document).ready(function () {
+    $("#divcardbodynodata").css("display", "none");
     BindList();
     $("#hostUPCalendar").css("display", "none");
 });
@@ -41,10 +42,12 @@ function BindHostUpcommingClasses() {
             success: function (data) {
                 if (data.length == 0) {
                     $("#hostUPCalendar").css("display", "none");
-                    $("#sp_nodata").css("display", "block");
+                    $("#divcardbody").css("display", "none");
+                    $("#divcardbodynodata").css("display", "block");
                 }
                 else {
-                    $("#sp_nodata").css("display", "none");
+                    $("#divcardbodynodata").css("display", "none");
+                    $("#divcardbody").css("display", "block");
                     $('#hostUPCalendar').fullCalendar({
                         header: {
                             left: 'prev,next',
@@ -121,10 +124,12 @@ function BindList() {
             success: function (data) {
                 if (data.length == 0) {
                     $("#hostUPlList").css("display", "none");
-                    $("#sp_nodata").css("display", "block");
+                    $("#divcardbodynodata").css("display", "block");
+                    $("#divcardbody").css("display", "none");
                 }
                 else {
-                    $("#sp_nodata").css("display", "none");
+                    $("#divcardbodynodata").css("display", "none");
+                    $("#divcardbody").css("display", "block");
                     var trHTML = '';
                     $.each(data, function (i, item) {
 

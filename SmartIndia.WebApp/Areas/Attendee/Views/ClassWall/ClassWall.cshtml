@@ -64,7 +64,7 @@
 <!-- Start -->
 
 <div class="card mb-30">
-    <div class="card-body">
+    <div class="card-body" id="divcardbody">
         <div class="upcoming-section">
             <span id="hostClassWallList" class="up-active" data-toggle="tooltip" data-placement="bottom" title="List"><i class="bx bx-list-ul"></i></span>
             <span id="hostClassWallCalendar" data-toggle="tooltip" data-placement="bottom" title="Calendar"><i class="bx bx-calendar"></i></span>
@@ -80,26 +80,21 @@
             <div class="color-legend col-leg-green"></div>
             <div class="color-legend-text">
                 Accomplished
-                @*<div class="color-legend-number sm-attend-no">(15)</div>*@
             </div>
             <div class="color-legend col-leg-yellow"></div>
             <div class="color-legend-text">
                 Upcoming
-                @*<div class="color-legend-number sm-upclasses-no">(8)</div>*@
             </div>
             <div class="color-legend col-leg-seablue"></div>
             <div class="color-legend-text">
                 Reschedule
-                @*<div class="color-legend-number sm-reschedule-no">(2)</div>*@
             </div>
             <div class="color-legend col-leg-grey"></div>
             <div class="color-legend-text">
                 Cancel
-                @*<div class="color-legend-number sm-cancel-no">(3)</div>*@
             </div>
         </div>
         <div class="clearfix"></div>
-        <span id="sp_nodata"></span>
         <!-- List -->
         <div class="container" id="hostCWlList">
             <div class="row">
@@ -113,6 +108,9 @@
         <!-- Calendar -->
         <div id="hostCWCalendar"></div>
 
+    </div>
+    <div class="card-body" id="divcardbodynodata">
+        <div id="sp_nodata" class="nodata">No data available</div>
     </div>
 </div>
 <!-- End -->

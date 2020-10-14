@@ -39,6 +39,8 @@ namespace SmartIndia.Data.Services.Host
                         CourseName = item.CourseName,
                         StartDate = TimeZone.CurrentTimeZone.ToLocalTime(item.StartDate),
                         NoOfAttendee = item.NoOfAttendee,
+                        CourseDesc = item.CourseDesc,
+                        Topics = item.Topics,
                     };
                     GetAttendeesDetails.Add(modal);
                 }

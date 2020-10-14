@@ -12,6 +12,8 @@ namespace SmartIndia.Data.Entities.Host
         public string CourseName { get; set; }
         public DateTime StartDate { get; set; }
         public string NoOfAttendee { get; set; }
+        public string CourseDesc { get; set; }
+        public string Topics { get; set; }
     }
     // Attendee wise course
     public class GetAWC 
