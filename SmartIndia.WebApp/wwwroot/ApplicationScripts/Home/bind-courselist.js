@@ -2,22 +2,34 @@
     BindList();
 });
 //List Bind
+$('#btnSearch').click(function () {
+    BindList();
+});
+$("#clearfilter").click(function () {
+    BindList();
+});
 function BindList() {
     var UId = localStorage.getItem("userID");
     jQuery.support.cors = true;
     var usersParam = JSON.stringify({
-        ACTIONCODE: "C"
+        ACTION: "A",
+        CourseName: $('#txtCourse').val(),
+        HostName: $('#txtHost').val(),
+        DATE: dateFormat($('#searchDate').val(), 'yyyy-mm-dd'),
+        MinPrice: $('#txtMinPrice').val() == "" ? 0 : parseFloat($('#txtMinPrice').val()),
+        MaxPrice: $('#txtMaxPrice').val() == "" ? 0 : parseFloat($('#txtMaxPrice').val())
     });
     $.ajax(
         {
             type: "GET",
-            url: ServiceURL + "/api/AttendeeEnrolcourses/AttendeeEnrollclass",
+           // url: ServiceURL + "/api/AttendeeEnrolcourses/AttendeeEnrollclass",
+            url: ServiceURL + "/api/AttendeeEnrolcourses/FilterEnrollCourses",
             data: JSON.parse(usersParam),
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
                 var trHTML = '';
-
+                $('#div_courselist').empty();
                 $.each(data, function (i, item) {
                     if (data[i].attendeeUserId == UId) {
                         var fab = '<i class="bx bxs-star">';

@@ -1,7 +1,9 @@
 ﻿
 //Host
 $(document).ready(function () {
+    $("#divcardbodynodata").css("display", "none");
     BindList();
+   
     $("#hostCWCalendar").css("display", "none");
 });
 
@@ -43,10 +45,12 @@ function BindHostUpcommingClasses() {
             success: function (data) {
                 if (data.length == 0) {
                     $("#hostCWCalendar").css("display", "none");
-                    $("#sp_nodata").css("display", "block");
+                    $("#divcardbody").css("display", "none");
+                    $("#divcardbodynodata").css("display", "block");
                 }
                 else {
-                    $("#sp_nodata").css("display", "none");
+                    $("#divcardbodynodata").css("display", "none");
+                    $("#divcardbody").css("display", "block");
                     $('#hostCWCalendar').fullCalendar({
                         header: {
                             left: 'prev,next',
@@ -123,10 +127,12 @@ function BindList() {
             success: function (data) {
                 if (data.length == 0) {
                     $("#hostDashlList").css("display", "none");
-                    $("#sp_nodata").css("display", "block");
+                    $("#divcardbody").css("display", "none");
+                    $("#divcardbodynodata").css("display", "block");
                 }
                 else {
-                    $("#sp_nodata").css("display", "none");
+                    $("#divcardbody").css("display", "block");
+                    $("#divcardbodynodata").css("display", "none");
                     var trHTML = '';
                     $.each(data, function (i, item) {
                         if (data[i].status) {
