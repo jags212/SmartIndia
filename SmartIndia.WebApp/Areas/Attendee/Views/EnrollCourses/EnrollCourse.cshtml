@@ -23,6 +23,16 @@
     <script>
         $('#searchDate').datepicker({ format: 'dd-mmm-yyyy' });
     </script>
+    <script>
+        function isNumber(evt) {
+            evt = (evt) ? evt : window.event;
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                return false;
+            }
+            return true;
+        }
+    </script>
     <script src="~/ApplicationScripts/Attendee/enroll-courses.js"></script>
     <script src="~/ApplicationScripts/Common/date-format-converter.js"></script>
     <script>
@@ -116,12 +126,12 @@
             </div>
             <div class="col-sm-5 col-lg-5 col-md-5 ocr-float-left">
                 <div class="form-group">
-                    <input type="text" id="txtMinPrice" autocomplete="off" placeholder="Min price" />
+                    <input type="text" id="txtMinPrice" autocomplete="off" placeholder="Min price" onkeypress="return isNumber(event)" />
                 </div>
             </div>
             <div class="col-sm-5 col-lg-5 col-md-5 ocr-float-left">
                 <div class="form-group">
-                    <input type="text" id="txtMaxPrice" autocomplete="off" placeholder="Max price" />
+                    <input type="text" id="txtMaxPrice" autocomplete="off" placeholder="Max price" onkeypress="return isNumber(event)" />
                 </div>
             </div>
             <div class="clearfix"></div>

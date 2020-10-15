@@ -484,6 +484,7 @@ $('#btnRSUpdate').click(function () {
 });
 $('#btnCancel').click(function () {
     $("#reschedulingModal").modal("hide");
+    $("#ViewDetailsModal").modal("hide");
 });
 
 function getSchedulardetails(CID, sdate, edate, stime, etime, isPub) {

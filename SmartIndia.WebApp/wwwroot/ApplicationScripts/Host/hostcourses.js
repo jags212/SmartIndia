@@ -66,6 +66,13 @@
     }
 
 });
+
+$('#btnReset').click(function () {
+    $("#btnSubmit").show();
+    $("#btnUpdate").hide();
+    $("#btnReset").text("Reset");
+});
+
 function SaveImage(imgId) {
     const fdata = new FormData();
 
@@ -178,6 +185,8 @@ function getcourseidd(CID) {
     function Update() {
         $("#btnSubmit").hide();
         $("#btnUpdate").show();
+        $("#btnReset").text("Cancel");
+
         $("#CourseId").val(CID);
         var usersParam1 = JSON.stringify({
             ACTIONCODE: 'U',

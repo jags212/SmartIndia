@@ -106,6 +106,21 @@ function CompareDateRange(Controlname1, Controlname2, Fieldname1, Fieldname2) {
     }
 }
 
+
+function CompareNumberRange(Controlname1, Controlname2, Fieldname1, Fieldname2) {
+
+    var min = $("#" + Controlname1).val();
+    var max = $("#" + Controlname2).val();
+    if (max != null && max != "") {
+        alert("o");
+        if (min > max) {
+            BootstrapAlert("Invalid Price Range!\n" + Fieldname2 + " can not be less than " + Fieldname1, Controlname2);
+            return false;
+        }
+        return true;
+    }
+}
+
 function CompareTwoDate(Controlname1, Controlname2, Fieldname1, Fieldname2) {
     var fromDate = $("input#" + Controlname1).val();
     var toDate = $("input#" + Controlname2).val();
