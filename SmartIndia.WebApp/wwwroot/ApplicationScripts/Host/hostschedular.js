@@ -1,11 +1,19 @@
-﻿$('#btnSubmit').click(function () {
+﻿
+
+$('#btnSubmit').click(function () {
+
+
     var duration = $("#Duration").val();
     var timestr = $("#StartTime").val();
     var now = new Date('1900-01-01 ' + timestr + ':00');
     var endtime = new Date(now.getTime() + parseInt(duration) * 60000);
     var UId = localStorage.getItem("userID");
     var usersParam;
-    if ($('input[type=radio][name=rbtOnce]:checked').val() == 'once') {
+
+
+    var Id = $('.schedule-type-active').attr("id");
+
+    if (Id == 'rbtonce') {
         function CallSave() {
             usersParam = JSON.stringify({
                 ACTIONCODE: 'A',
@@ -51,10 +59,10 @@
             }
         }
     }
-    else if ($('input[type=radio][name=rbtOnce]:checked').val() == 'recurring') {
-        function CallSaveRc() {
-            if ($('#ddlrecurringschedule').val() == 'Daily') {
-
+    else if (Id == 'rbtrecurring') {
+        ValidateSchedularFormRcC();
+        if ($('#ddlrecurringschedule').val() == 'Daily') {
+            function CallSaveRc() {
                 var start = $("#SccDate").val(),
                     end = $("#SccTo").val(),
                     currentDate = new Date(start),
@@ -104,16 +112,205 @@
                     }
                 });
             }
-        }
-        if (ValidateSchedularFormRc()) {
-            if (BootStrapSubmit('btnSubmit', 'Are You Sure To Submit ?', 'Are You Sure To Update ?', CallSaveRc)) {
-                return false;
+            if (ValidateSchedularFormRc()) {
+                if (BootStrapSubmit('btnSubmit', 'Are You Sure To Submit ?', 'Are You Sure To Update ?', CallSaveRc)) {
+                    return false;
+                }
+                else {
+                    return true;
+                }
             }
-            else {
-                return true;
+        }
+        var startdate = $("#SccDate").val(),
+            enddate = $("#SccTo").val();
+        // weekly start
+        if ($('#ddlrecurringschedule').val() == 'Weekly') {
+            function CallSaveRc() {
+                var days = "";
+                $(".selected-items span").each(function () {
+                    days += $(this).attr("data-item") + ",";
+                });
+                var array = days.split(",");
+                var result = [];
+                $.each(array, function (i) {
+                    if (array[i] == "undefined") {
+                    }
+                    else if (array[i] == "") {
+                    }
+                    else {
+                        var dayName = array[i];
+                        var days = { sun: 0, mon: 1, tue: 2, wed: 3, thu: 4, fri: 5, sat: 6 };
+                        var day = days[dayName.toLowerCase().substr(0, 3)];
+                        var current = new Date(moment(startdate));
+                        current.setDate(current.getDate() + (day - current.getDay() + 7) % 7);
+                        while (current < moment(enddate)) {
+                            result.push(new Date(+current));
+                            current.setDate(current.getDate() + 7);
+                        }
+                    }
+                });
+                //alert(result);
+                var schedularArray = new Array();
+                $.each(result, function (i) {
+                    var schedularParam = {};
+                    schedularParam.ACTIONCODE = 'A',
+                        schedularParam.UserId = parseInt(UId),
+                        schedularParam.UpdatedById = parseInt(UId),
+                        schedularParam.CourseId = parseInt($('#inputCourses').val(), 10),
+                        schedularParam.ScheduleDate = dateFormat(result[i], 'yyyy-mm-dd'),
+                        schedularParam.StartTime = $('#StartTime').val(),
+                        schedularParam.EndTime = endtime.toTimeString().split(' ')[0].toString('hh:mm'),
+                        schedularParam.Duration = $('#Duration').val(),
+                        schedularParam.BatchName = $('#BatchNameOnce').val(),
+                        schedularArray.push(schedularParam);
+                });
+                $.ajax({
+                    url: ServiceURL + "/api/HostSchedular/AddSchedular",
+                    type: "POST",
+                    data: JSON.stringify(schedularArray),
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        usersParam = null;
+                        $('#dataTable tbody').empty();
+                        if (data == "1") {
+                            BootStrapRedirect(' Saved Successfully.', '/Hosts/Schedular/Schedular');
+                            clearinput();
+                        }
+                        else if (data == "3") {
+                            BootstrapAlert('Data Alreday Exist.');
+                        }
+                        else {
+                            BootstrapAlert('Something went wrong. Please try again');
+                        }
+                    },
+                    error: function (error) {
+                        console.log(error.statusText);
+                    }
+                });
+            }
+            if (ValidateSchedularFormRcweek()) {
+                if (BootStrapSubmit('btnSubmit', 'Are You Sure To Submit ?', 'Are You Sure To Update ?', CallSaveRc)) {
+                    return false;
+                }
+                else {
+                    return true;
+                }
             }
         }
+        // weekly end
+        //Monthly Start
+        if ($('#ddlrecurringschedule').val() == 'Monthly') {
+            function CallSaveRc() {
+                var startDate = parseInt($('#ddlyearfrom').val()) + "-" + parseInt($('#ddlmonthfrom').val()) + "-" + "01";
+                var endDate = parseInt($('#ddlyesrto').val()) + "-" + parseInt($('#ddlmonthto').val()) + "-" + "31";
+                var dates = [];
+                var d0 = startDate.split('-');
+                var d1 = endDate.split('-');
+                for (
+                    var y = d0[0];
+                    y <= d1[0];
+                    y++
+                ) {
+                    for (
+                        var m = d0[1];
+                        m <= 12;
+                        m++
+                    ) {
+                        dates.push(y + "-" + m + "-1");
+                        if (y >= d1[0] && m >= d1[1]) break;
+                    };
+                    d0[1] = 1;
+                };
+
+                var myString = dates.toString();
+                var array = myString.split(",");
+                var result = [];
+                $.each(array, function (i) {
+                    if (array[i] == "undefined") {
+                    }
+                    else if (array[i] == "") {
+                    }
+                    else {
+                        var month = array[i].split('-');
+                        var getmonth = parseInt(month[1]);
+                        var Year = array[i].split('-');
+                        var getyear = parseInt(Year[0]);
+                        // get dates 
+                        var days = "";
+                        $("#dayOfMonthSection span").each(function () {
+                            days += $(this).attr("data-val") + ",";
+                        });
+                        var array1 = days.split(",");
+                        $.each(array1, function (i) {
+                            if (array1[i] == "undefined") {
+                            }
+                            else if (array1[i] == "") {
+                            }
+                            else {
+                                var dayName = array1[i];
+                                var CreatedDate = getyear + "-" + getmonth + "-" + dayName;
+                                result.push(new Date(CreatedDate));
+                            }
+                        });
+                        // get dates end
+                    }
+                });
+                //alert(result);
+                var schedularArray = new Array();
+                $.each(result, function (i) {
+                    var schedularParam = {};
+                    schedularParam.ACTIONCODE = 'A',
+                        schedularParam.UserId = parseInt(UId),
+                        schedularParam.UpdatedById = parseInt(UId),
+                        schedularParam.CourseId = parseInt($('#inputCourses').val(), 10),
+                        schedularParam.ScheduleDate = dateFormat(result[i], 'yyyy-mm-dd'),
+                        schedularParam.StartTime = $('#StartTime').val(),
+                        schedularParam.EndTime = endtime.toTimeString().split(' ')[0].toString('hh:mm'),
+                        schedularParam.Duration = $('#Duration').val(),
+                        schedularParam.BatchName = $('#BatchNameOnce').val(),
+                        schedularArray.push(schedularParam);
+                });
+                $.ajax({
+                    url: ServiceURL + "/api/HostSchedular/AddSchedular",
+                    type: "POST",
+                    data: JSON.stringify(schedularArray),
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        usersParam = null;
+                        $('#dataTable tbody').empty();
+                        if (data == "1") {
+                            BootStrapRedirect(' Saved Successfully.', '/Hosts/Schedular/Schedular');
+                            clearinput();
+                        }
+                        else if (data == "3") {
+                            BootstrapAlert('Data Alreday Exist.');
+                        }
+                        else {
+                            BootstrapAlert('Something went wrong. Please try again');
+                        }
+                    },
+                    error: function (error) {
+                        console.log(error.statusText);
+                    }
+                });
+            }
+            if (ValidateSchedularFormRcMonthly()) {
+                if (BootStrapSubmit('btnSubmit', 'Are You Sure To Submit ?', 'Are You Sure To Update ?', CallSaveRc)) {
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+        }
+
+        //Monthly End
+        //}
+
     }
+
 });
 
 
@@ -316,7 +513,7 @@ function getSchedulardetails(CID, sdate, edate, stime, etime, isPub) {
             contentType: "application/json",
             success: function (data) {
                 $("#divCoursename").html(data[0].courseName);
-                $("#divBatchname").html(data[0].batchName );
+                $("#divBatchname").html(data[0].batchName);
                 $('#tblDetails thead').empty();
                 $('#tblDetails tbody').empty();
 
@@ -419,7 +616,7 @@ function checkBatchName() {
             success: function (data) {
                 if (data == true) {
                     $("#BatchNameOnce").val('');
-                    BootstrapAlert('Batch Name Already Exists...','BatchNameOnce');
+                    BootstrapAlert('Batch Name Already Exists...', 'BatchNameOnce');
                 }
                 else {
                 }
@@ -429,6 +626,6 @@ function checkBatchName() {
             }
         });
 
-   
+
 }
 

@@ -20,7 +20,7 @@ function getallcoursesDDL() {
         {
 
             type: "GET",
-            url: ServiceURL + "/api/HostCourses/GetHostCourse",
+            url: ServiceURL + "/api/HostCourses/GetCourse",
             data: JSON.parse(usersParam),
             dataType: "json",
             contentType: "application/json",

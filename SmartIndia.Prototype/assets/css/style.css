@@ -6990,7 +6990,7 @@ Login CSS
   position: relative;
   /*z-index: 1;
   background: #ffffff;*/
-  padding-top: 168px;
+  padding-top: 173px;
   padding-bottom: 80px;
 }
 
@@ -7016,7 +7016,7 @@ Login CSS
   border-radius: 5px;
   overflow: hidden;
   text-align: center;
-  padding: 10px 40px;
+  padding: 10px 30px;
   /*-webkit-box-shadow: -4px -5px 24px 0 rgba(68, 102, 242, 0.05);
           box-shadow: -4px -5px 24px 0 rgba(68, 102, 242, 0.05);*/
   margin-left: auto;
@@ -7032,7 +7032,7 @@ Login CSS
 
 .login-area .login-form form {
   margin-top: 25px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .login-area .login-form form .form-group {
@@ -7258,8 +7258,8 @@ Register CSS
   position:relative;
   /*z-index: 1;*/
   /*background: #ffffff;*/
-  padding-top: 150px;
-  padding-bottom: 50px;
+  padding-top: 125px;
+  padding-bottom: 25px;
 }
 
     .register-area.bg-image {
@@ -7284,7 +7284,7 @@ Register CSS
   border-radius: 5px;
   /*overflow: hidden;*/
   text-align: center;
-  padding: 10px 40px;
+  padding: 10px 35px;
   /*-webkit-box-shadow: -4px -5px 24px 0 rgba(68, 102, 242, 0.05);
           box-shadow: -4px -5px 24px 0 rgba(68, 102, 242, 0.05);*/
   margin-left: auto;
@@ -7301,11 +7301,11 @@ Register CSS
 }
 
 .register-area .register-form form {
-  margin-top: 25px;
+  margin-top: 20px;
 }
 
 .register-area .register-form form .form-group {
-  margin-bottom: 27.5px;
+  margin-bottom: 20px;
   width: 100%;
   position: relative;
 }
@@ -7516,8 +7516,8 @@ Reset Password CSS
   position: relative;
   /*z-index: 1;
   background: #ffffff;*/
-  padding-top: 190px;
-  padding-bottom: 90px;
+  padding-top: 210px;
+  padding-bottom: 100px;
 }
 
     .reset-password-area.bg-image {
@@ -7541,7 +7541,7 @@ Reset Password CSS
   background: #ffffff;
   border-radius: 5px;
   overflow: hidden;
-  padding: 10px 60px 50px 30px;
+  padding: 10px 30px 30px 20px;
   /*-webkit-box-shadow: 1px 5px 24px 0 rgba(68, 102, 242, 0.05);
           box-shadow: 1px 5px 24px 0 rgba(68, 102, 242, 0.05);*/
   margin-left: auto;
@@ -7553,13 +7553,13 @@ Reset Password CSS
 }
 
 .reset-password-area .reset-password-content .reset-password-form {
-  padding-left: 30px;
+  padding-left: 15px;
 }
 
 .reset-password-area .reset-password-content .reset-password-form h2 {
   font-size: 25px;
   font-weight: 700;
-  margin-top: 30px;
+  margin-top: 20px;
   margin-bottom: 0;
 }
 
@@ -7704,8 +7704,8 @@ Forgot Password CSS
   position: relative;
   /*z-index: 1;
   background: #ffffff;*/
-  padding-top: 194px;
-  padding-bottom: 100px;
+  padding-top: 220px;
+  padding-bottom: 109px;
 }
 
     .forgot-password-area.bg-image {
@@ -7729,7 +7729,7 @@ Forgot Password CSS
   background: #ffffff;
   border-radius: 5px;
   overflow: hidden;
-  padding: 10px 60px 50px 30px;
+  padding: 10px 30px 30px 20px;
   /*-webkit-box-shadow: 1px 5px 24px 0 rgba(68, 102, 242, 0.05);
           box-shadow: 1px 5px 24px 0 rgba(68, 102, 242, 0.05);*/
   margin-left: auto;
@@ -7741,13 +7741,13 @@ Forgot Password CSS
 }
 
 .forgot-password-area .forgot-password-content .forgot-password-form {
-  padding-left: 30px;
+  padding-left: 15px;
 }
 
 .forgot-password-area .forgot-password-content .forgot-password-form h2 {
   font-size: 25px;
   font-weight: 700;
-  margin-top: 30px;
+  margin-top: 20px;
   margin-bottom: 0;
 }
 
@@ -7757,7 +7757,7 @@ Forgot Password CSS
 }
 
 .forgot-password-area .forgot-password-content .forgot-password-form form {
-  margin-top: 25px;
+  margin-top: 20px;
 }
 
 .forgot-password-area .forgot-password-content .forgot-password-form form .form-group {
