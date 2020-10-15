@@ -49,6 +49,7 @@ function getallReScheduling() {
 }
 $('#btnCancel').click(function () {
     $("#reschedulingModal").modal("hide");
+    $("#CancelModal").modal("hide");
 });
 function getcourseidd(CID) {
     function Update() {

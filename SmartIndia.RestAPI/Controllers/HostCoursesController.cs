@@ -57,8 +57,15 @@ namespace SmartIndia.RestAPI.Controllers
                     hostCourses.ImageExt = fi.Extension.Replace(".", string.Empty);
                     hostCourses.ImageName = imageName;
                     Byte[] b;
-                    b = System.IO.File.ReadAllBytes(hostCourses.filePath);
-                    hostCourses.ImageUrl = "data:image/" + hostCourses.ImageExt + ";base64," + Convert.ToBase64String(b, 0, b.Length); ;
+                    if (System.IO.File.Exists(hostCourses.filePath))
+                    {
+                        b = System.IO.File.ReadAllBytes(hostCourses.filePath);
+                        hostCourses.ImageUrl = "data:image/" + hostCourses.ImageExt + ";base64," + Convert.ToBase64String(b, 0, b.Length); ;
+                    }
+                    else
+                    {
+                        hostCourses.ImageUrl = "";
+                    }
                 }
 
                 List<HostCourses> list = new List<HostCourses>();
@@ -87,8 +94,17 @@ namespace SmartIndia.RestAPI.Controllers
                     hostCourses.ImageExt = fi.Extension.Replace(".", string.Empty);
                     hostCourses.ImageName = imageName;
                     Byte[] b;
-                    b = System.IO.File.ReadAllBytes(hostCourses.filePath);
-                    hostCourses.ImageUrl = "data:image/" + hostCourses.ImageExt + ";base64," + Convert.ToBase64String(b, 0, b.Length); ;
+
+                    if (System.IO.File.Exists(hostCourses.filePath))
+                    {
+                        b = System.IO.File.ReadAllBytes(hostCourses.filePath);
+                        hostCourses.ImageUrl = "data:image/" + hostCourses.ImageExt + ";base64," + Convert.ToBase64String(b, 0, b.Length); ;
+                    }
+                    else
+                    {
+                        hostCourses.ImageUrl = ""; 
+                    }
+                        
                 }
 
                 List<HostCourses> list = new List<HostCourses>();
@@ -116,16 +132,23 @@ namespace SmartIndia.RestAPI.Controllers
                     hostCourses.BrochureExt = fi.Extension.Replace(".", string.Empty);
                     hostCourses.BrochureName = brochureName;
                     Byte[] b;
-                    b = System.IO.File.ReadAllBytes(hostCourses.filePath);
-                    if (hostCourses.BrochureExt=="pdf")
+
+                    if (System.IO.File.Exists(hostCourses.filePath))
                     {
-                        hostCourses.ImageUrl = "data:application/" + hostCourses.BrochureExt + ";base64," + Convert.ToBase64String(b, 0, b.Length); ;
+                        b = System.IO.File.ReadAllBytes(hostCourses.filePath);
+                        if (hostCourses.BrochureExt == "pdf")
+                        {
+                            hostCourses.ImageUrl = "data:application/" + hostCourses.BrochureExt + ";base64," + Convert.ToBase64String(b, 0, b.Length); ;
+                        }
+                        else
+                        {
+                            hostCourses.ImageUrl = "data:image/" + hostCourses.BrochureExt + ";base64," + Convert.ToBase64String(b, 0, b.Length); ;
+                        }
                     }
                     else
                     {
-                        hostCourses.ImageUrl = "data:image/" + hostCourses.BrochureExt + ";base64," + Convert.ToBase64String(b, 0, b.Length); ;
+                        hostCourses.ImageUrl = "";
                     }
-                    
                 }
 
                 List<GetBrouchure> list = new List<GetBrouchure>();

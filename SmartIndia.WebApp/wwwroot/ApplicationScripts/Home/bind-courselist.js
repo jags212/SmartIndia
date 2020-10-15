@@ -2,8 +2,36 @@
     BindList();
 });
 //List Bind
+function ValidateForm() {
+     if (!IsSpecialCharacter1stPalce('txtCourse')) {
+        return false;
+     }
+     else if (!IsWhiteSpace1stPalce('txtCourse')) {
+         return false;
+     }
+     else if (!IsWhiteSpace1stPalce('txtHost')) {
+         return false;
+     }
+    else if (!IsSpecialCharacter1stPalce('txtHost')) {
+        return false;
+    }
+    // else if (!CompareNumberRange('txtMinPrice', 'txtMaxPrice', 'Min Price', 'Max Price')) {
+    //    return false;
+    //}
+    else {
+        return true;
+    }
+    alert("hi validation");
+} 
 $('#btnSearch').click(function () {
-    BindList();
+    if (ValidateForm()) {
+        if (BindList()) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
 });
 $("#clearfilter").click(function () {
     BindList();
@@ -86,6 +114,8 @@ function BindList() {
             }
         });
 }
+
+
 
 function AddShowInterest(CID, Batch) {
     alert("int");

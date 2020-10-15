@@ -126,3 +126,6 @@ $('#btnSave').click(function () {
         });
     }
 });
+$('#btnCancel').click(function () {
+    window.location.href = '/ManageUsers/Users/Profile';
+});
