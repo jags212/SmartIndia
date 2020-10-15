@@ -15,13 +15,12 @@ function ValidateForm() {
     else if (!IsSpecialCharacter1stPalce('txtHost')) {
         return false;
     }
-    // else if (!CompareNumberRange('txtMinPrice', 'txtMaxPrice', 'Min Price', 'Max Price')) {
-    //    return false;
-    //}
+     else if (!CompareNumberRange('txtMinPrice', 'txtMaxPrice', 'Min Price', 'Max Price')) {
+        return false;
+    }
     else {
         return true;
-    }
-    alert("hi validation");
+    } 
 } 
 $('#btnSearch').click(function () {
     if (ValidateForm()) {
