@@ -330,8 +330,8 @@
 }
 
 .recover-password-area {
-    padding-top: 200px;
-    padding-bottom: 103px;
+    padding-top: 230px;
+    padding-bottom: 105px;
 }
 
 .host-color {
@@ -1406,7 +1406,7 @@
     font-size: 12px;
     font-weight: 600;
     color: #ff8100;
-    margin: -20px 0 25px 10px;
+    margin: -20px 0 20px 10px;
     text-align: left;
 }
 
@@ -1586,7 +1586,7 @@
     display: block;
     min-width: 100%;
     overflow-x: auto;
-    margin: 20px 20px 13px 0;
+    margin: 10px 20px 10px 0;
 }
 
 .regitabbable {
