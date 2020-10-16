@@ -123,7 +123,7 @@ $('#btnRSUpdate').click(function () {
             type: "POST",
             data: usersParam,
             dataType: "json",
-            contentType: "application/json; charset=utf-8",
+            contentType: "application/json",
             success: function (data) {
                 $('#dataTable tbody').empty();
                 if (data == "1") {
@@ -225,7 +225,7 @@ $('#btcancel').click(function () {
             type: "POST",
             data: usersParam,
             dataType: "json",
-            contentType: "application/json; charset=utf-8",
+            contentType: "application/json",
             success: function (data) {
                 clearinput();
                 $('#dataTable tbody').empty();
