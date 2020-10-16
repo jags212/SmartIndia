@@ -53,6 +53,23 @@
     <script>
         $(document).ready(function () {
             loadNavigation('schedular', 'schedular');
+
+
+            const date = new Date();
+            const formattedDate = date.toLocaleDateString('en-GB', {
+                day: '2-digit', month: 'short', year: '2-digit'
+            }).replace(/ /g, '-');
+            $('#ScDate').val(formattedDate);
+            $('#datepickerFrom').val(formattedDate);
+            $('#datepickerTo').val(formattedDate);
+
+            var d = new Date();
+            var strDate = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+            $("#hfonceDate").val(strDate);
+            $("#SccDate").val(strDate);
+            $("#SccTo").val(strDate);
+
+
         });
     </script>
     <!--for once and recurring JS-->
@@ -344,25 +361,8 @@
                 <!--for monthly date start-->
                 <div id="divmonthdate">
                     <div class="row form-group">
-                        <div class="col-md-3" id="dtpReccStart">
-                            <label class="res-label"> From Date</label>
-                            <select class="form-control" name="frequency" id="ddlyearfrom">
-                                <option selected value="0">---Select---</option>
-                                <option value="2030">2030</option>
-                                <option value="2029">2029</option>
-                                <option value="2028">2028</option>
-                                <option value="2027">2027</option>
-                                <option value="2026">2026</option>
-                                <option value="2025">2025</option>
-                                <option value="2024">2024</option>
-                                <option value="2023">2023</option>
-                                <option value="2022">2022</option>
-                                <option value="2021">2021</option>
-                                <option value="2020">2020</option>
-                            </select>
-                        </div>
                         <div class="col-md-3" id="dtpReccEnd">
-                            <label class="res-label">.</label>
+                            <label class="res-label"> From </label>
                             <select class="form-control" name="frequency" id="ddlmonthfrom">
                                 <option selected value="0">---Select---</option>
                                 <option value="01">January</option>
@@ -380,8 +380,8 @@
                             </select>
                         </div>
                         <div class="col-md-3" id="dtpReccStart">
-                            <label class="res-label"> To Date</label>
-                            <select class="form-control" name="frequency" id="ddlyesrto">
+                            <label class="res-label">.</label>
+                            <select class="form-control" name="frequency" id="ddlyearfrom">
                                 <option selected value="0">---Select---</option>
                                 <option value="2030">2030</option>
                                 <option value="2029">2029</option>
@@ -396,8 +396,10 @@
                                 <option value="2020">2020</option>
                             </select>
                         </div>
+
+
                         <div class="col-md-3" id="dtpReccEnd">
-                            <label class="res-label">.</label>
+                            <label class="res-label">To</label>
                             <select class="form-control" name="frequency" id="ddlmonthto">
                                 <option selected value="0">---Select---</option>
                                 <option value="01">January</option>
@@ -412,6 +414,23 @@
                                 <option value="10">October</option>
                                 <option value="11">November</option>
                                 <option value="12">December</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3" id="dtpReccStart">
+                            <label class="res-label"> . </label>
+                            <select class="form-control" name="frequency" id="ddlyesrto">
+                                <option selected value="0">---Select---</option>
+                                <option value="2030">2030</option>
+                                <option value="2029">2029</option>
+                                <option value="2028">2028</option>
+                                <option value="2027">2027</option>
+                                <option value="2026">2026</option>
+                                <option value="2025">2025</option>
+                                <option value="2024">2024</option>
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
                             </select>
                         </div>
                     </div>
@@ -792,7 +811,7 @@
             </div>
             <div class="modal-footer re-modal-footer">
                 <button type="button" id="btnRSUpdate" class="btn btn-primary">Submit</button>
-                <button type="button" id="btnCancel" class="btn btn-danger">Cancel</button>
+                <button type="button" id="btnCancelRes" class="btn btn-danger">Cancel</button>
             </div>
         </div>
     </div>

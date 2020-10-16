@@ -15,6 +15,21 @@
     <script>
         $(document).ready(function () {
             loadNavigation('Courses', 'add-course');
+
+            const date = new Date();
+            const formattedDate = date.toLocaleDateString('en-GB', {
+                day: '2-digit', month: 'short', year: '2-digit'
+            }).replace(/ /g, '-');
+            $('#sdatepicker').val(formattedDate);
+            $('#edatepicker').val(formattedDate);
+
+            var d = new Date();
+            var strDate = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+            $("#fdate").val(strDate);
+            $("#edate").val(strDate);
+
+            $("#durationDate").val(0);
+            $("#txtCost").val(0);
         });
     </script>
     <script>
@@ -32,6 +47,7 @@
         $("#sdatepicker").change(function () {
             var startdate = $("#sdatepicker").val();
             $("#fdate").val(dateFormat(startdate, 'yyyy-mm-dd'));
+            
 
         });
         $('#edatepicker').datepicker(
@@ -216,7 +232,7 @@
             <input type="button" id="btnSubmit" class="btn btn-primary" value="Submit" />
             <button type="button" id="btnUpdate" class="btn btn-primary">Update</button>
             <button type="reset" class="btn btn-warning" id="btnReset">Reset</button>
-           @* <input type="button" class="btn btn-warning" id="btnReset" value="Reset">*@
+            @* <input type="button" class="btn btn-warning" id="btnReset" value="Reset">*@
         </form>
 
     </div>
@@ -318,7 +334,7 @@
                 <a id="urlbrouchure" class="bx bx-download sm-download" download></a>
                 <img id="imgbrouchure" class="banner-img" />
 
-                <a id="urlbrouchurepdf" class="bx bx-download sm-download" ></a>
+                <a id="urlbrouchurepdf" class="bx bx-download sm-download"></a>
                 <embed type="application/pdf" id="imgbrouchurepdf" class="brochure-file" />
             </div>
         </div>
