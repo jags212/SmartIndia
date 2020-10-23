@@ -67,7 +67,7 @@
 <!-- End Breadcrumb Area -->
 <!-- Start -->
 <div class="card mb-30">
-    <div class="card-body">
+    <div class="card-body" id="divcardbody">
         <div class="upcoming-section">
             <span id="courseAttendees" class="up-active" data-toggle="tooltip" data-placement="bottom" title="Course Wise Attendees"><i class="bx bxl-discourse"></i></span>
             <span id="attendeesCourses" data-toggle="tooltip" data-placement="bottom" title="Attendees Wise Courses"><i class="bx bx-id-card"></i></span>
@@ -100,6 +100,9 @@
             </table>
         </div>
     </div>
+    <div class="card-body" id="divcardbodynodata">
+        <div id="sp_nodata" class="nodata">No data available</div>
+    </div>
 </div>
 <!--End-->
 
@@ -122,18 +125,6 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Rakesh</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Sanat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Bikash</td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -154,7 +145,7 @@
             </div>
             <div class="modal-body re-modal-body">
                 <div class="table-responsive">
-                    <table class="table table-hover" id="tbl_attendeeDetails">
+                    <table class="table table-hover" id="tbl_courseDetails">
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col">Sl#</th>

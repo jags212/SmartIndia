@@ -39,7 +39,7 @@
     background: #ffffff !important;
 }
 
-/*--------------loader css--------------------*/
+/*-------------entire-loader css--------------------*/
 .loader {
     position: fixed;
     left: 0px;
@@ -60,5 +60,25 @@
 .nodata-btn-schedular {
     top: 280%;
 }
+/*-------------------------Details page loader------------*/
+#loading {
+    background: url('../img/loader.gif') no-repeat center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9999999;
+}
+.noofdata {
+    color: blue;
+    font-weight: 700;
+    
+}
+.noofdatadiv {
+    padding-left: 39px;
+    padding-bottom: 9px;
+}
+
 
 

@@ -69,8 +69,71 @@ namespace SmartIndia.Data.Services.Host
                 {
                     var modal = new GetAWC()
                     {
+                        Hostname = item.Hostname,
                         UserId = item.UserId,
                         NoOfCourses = item.NoOfCourses,
+                    };
+                    AWCDETAILS.Add(modal);
+                }
+                return AWCDETAILS;
+
+
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        public List<GetCWA> BindCWA(HostParameter hostParameter)
+        {
+            object[] objArray = new object[] {
+                     "@P_ACTIONCODE",hostParameter.ACTIONCODE,
+                     "@CourseId",hostParameter.CourseId,
+                     "@UserId",hostParameter.UserId
+            };
+            try
+            {
+                DynamicParameters param = objArray.ToDynamicParameters();
+                var result = DBConnection.Query<GetCWA>("USP_ATTENDEEDETAILS_ACTION", param, commandType: CommandType.StoredProcedure).ToList();
+                List<GetCWA> AWCDETAILS = new List<GetCWA>();
+                foreach (var item in result)
+                {
+                    var modal = new GetCWA()
+                    {
+                        FirstName = item.FirstName,
+                        UserId = item.UserId
+                    };
+                    AWCDETAILS.Add(modal);
+                }
+                return AWCDETAILS;
+
+
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public List<GetCoursedetails> BindAttendeeCourseDetails(CourseWiseAttendee courseWiseAttendee)
+        {
+            object[] objArray = new object[] {
+                     "@P_ACTIONCODE",courseWiseAttendee.ACTIONCODE,
+                     "@AttendeeId",courseWiseAttendee.AttendeeId,
+                     "@UserId",courseWiseAttendee.UserId
+            };
+            try
+            {
+                DynamicParameters param = objArray.ToDynamicParameters();
+                var result = DBConnection.Query<GetCoursedetails>("USP_ATTENDEEDETAILS_ACTION", param, commandType: CommandType.StoredProcedure).ToList();
+                List<GetCoursedetails> AWCDETAILS = new List<GetCoursedetails>();
+                foreach (var item in result)
+                {
+                    var modal = new GetCoursedetails()
+                    {
+                        CourseName = item.CourseName,
+                        StartDate = item.StartDate,
+                        EndDate = item.EndDate
                     };
                     AWCDETAILS.Add(modal);
                 }

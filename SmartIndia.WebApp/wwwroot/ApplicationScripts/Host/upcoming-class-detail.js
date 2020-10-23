@@ -1,4 +1,5 @@
 ﻿$(document).ready(function () {
+    $("#Divimgbanner").hide();
     Coursedetails();
 });
 function Coursedetails() {
@@ -26,9 +27,12 @@ function Coursedetails() {
                 $("#starttime").html(timeConvert(data[0].startTime));
                 $("#desc").html(data[0].courseDesc);
                 $("#imgBanner").attr('src', data[0].imageUrl);
-
-                //$("#imgbrouchure").attr('src', data[0].brouchureUrl);
-                //$("#urlbrouchure").attr('href', data[0].brouchureUrl);
+                if (data[0].imageExt != null && data[0].imageExt != "") {
+                    $("#Divimgbanner").show();
+                } else {
+                    $("#Divimgbanner").hide();
+                }
+                
 
                 if (data[0].brochureExt == "pdf") {
                     $("#imgbrouchurepdf").attr('src', data[0].brouchureUrl);

@@ -12,22 +12,36 @@
     <script src="~/assets/js/countrycode.js"></script>
     <!-- Datepicker JS -->
     <script src="~/assets/js/gijgo.min.js"></script>
+    <!-- Limit Character JS -->
+    <script src="~/assets/js/limit-character.js"></script>
     <script>
         $('#dobdatepicker').datepicker({ format: 'dd-mmm-yy' });
     </script>
     <script src="~/ApplicationScripts/Common/custom-validate.js"></script>
     <script src="~/ApplicationScripts/Common/date-format-converter.js"></script>
     <script src="~/ApplicationScripts/UserRegistration/profile-action.js"></script>
+    <script>
+        function hideLoader() {
+            $('#loading').hide();
+        }
+        $(window).ready(hideLoader);
+        setTimeout(hideLoader, 20 * 1000);
+    </script>
 }
 <!-- Start Profile Area -->
+<div id="loading"></div>
+
 <section class="profile-area">
     <div class="profile-header mb-30">
         <div class="user-profile-images">
             <img src="~/assets/img/profile-banner.jpg" class="cover-image" alt="cover image" />
             <div class="profile-image">
-                <img src="~/assets/img/user1.jpg" alt="user image" />
+                <img id="imgProfilee"/>
                 <div class="upload-profile-photo">
-                    <a href="javascript:void(0);"><i class='bx bx-camera'></i> <span>Update</span></a>
+                    @*<a href="javascript:void(0);"><i class='bx bx-camera'></i> <span>Update</span></a>*@
+                    <input type="hidden" class="form-control" name="hfimg" id="hfimg">
+                    <input type="hidden" class="form-control" name="hfimgName" id="hfimgName">
+                    <input id="fileuploadImg" type="file" class="bx bx-camera" style="padding-left: 137px; padding-bottom: 14px;"> <span></span>
                 </div>
             </div>
             <div class="user-profile-text">
@@ -91,7 +105,7 @@
                                             <input type="radio" name="mobilepripub" value="Public" /><span>Public</span>
                                         </div>
                                         <input type="text" class="form-control pl-100" placeholder="Enter mobile number" value="" id="profileMobileNo">
-                                       
+
                                     </div>
 
                                     <!--- Start Country Code --->
@@ -411,8 +425,17 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group interest-area">
-                                        
 
+
+                                    </div>
+                                    <div class="form-group interest-other">
+                                        <div class="interest-area-box">
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" name="otherinterestarea" value="Others" id="chkOtherInterest" />
+                                                <span class="checkbox-custom"></span>
+                                            </label>
+                                            <span id="Others" style="padding-left: 8px;">Others</span>
+                                        </div>
                                     </div>
                                     <div class="col-lg-4" id="otherInterestArea">
                                         <div class="form-group">
@@ -441,7 +464,7 @@
                                 @*<button type="submit" class="submit-btn"><i class='bx bx-save'></i> Save</button>*@
                                 <input type="button" id="btnSave" class="submit-btn" value="Update" />
                                 <input type="button" id="btnCancel" class="btn btn-warning " value="Cancel" />
-                                
+
                             </div>
                         </form>
                     </div>

@@ -9,7 +9,12 @@
 <link rel="stylesheet" href="~/assets/css/gijgo.min.css" />
 
 @section Scripts{
-
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css" />
     <!-- Datepicker JS -->
     <script src="~/assets/js/gijgo.min.js"></script>
     <script>
@@ -47,7 +52,7 @@
         $("#sdatepicker").change(function () {
             var startdate = $("#sdatepicker").val();
             $("#fdate").val(dateFormat(startdate, 'yyyy-mm-dd'));
-            
+
 
         });
         $('#edatepicker').datepicker(
@@ -154,23 +159,35 @@
 <div class="card mb-30">
     <div class="card-body">
         <form>
-            <div class="form-group">
-                <input type="hidden" class="form-control" name="CourseId" id="CourseId">
-                <label>Name</label>
-                <input type="text" maxlength="64" class="form-control" name="Name" id="txtName">
+
+
+
+         
+
+
+
+            <div class="row form-group">
+                <div class="col-md-7 res-mb-16">
+                    <input type="hidden" class="form-control" name="CourseId" id="CourseId">
+                    <label>Name</label>
+                    <input type="text" maxlength="64" class="form-control" name="Name" id="txtName">
+                </div>
+                <div class="col-md-5 res-mb-16">
+                    <label>Topics</label>
+                    <input type="text" maxlength="512" class="form-control" name="topics" id="txtTopics">
+                </div>
             </div>
+
+
             <div class="form-group">
                 <label>Description</label>
                 <textarea class="form-control" maxlength="512" name="desc" id="txtDesc"></textarea>
             </div>
 
             <div class="row form-group">
-                <div class="col-md-5 res-mb-16">
-                    <label>Topics</label>
-                    <input type="text" maxlength="512" class="form-control" name="topics" id="txtTopics">
-                </div>
+
                 <div class="col-md-3 res-mb-16">
-                    <label>Image</label>
+                    <label>Course Thumbnail</label>
                     <div class="button-wrap">
                         <label class="upload-button" for="fileuploadImg">
                             Choose File
@@ -180,7 +197,7 @@
                     </div>
                     <span class="re-note" id="error1">(only .jpg,.png allowed, maximum file size 1MB.)</span>
                 </div>
-                <div class="col-md-4 res-mb-16">
+                <div class="col-md-3 res-mb-16">
                     <label>Brochure</label>
                     <div class="button-wrap">
                         <label class="upload-button" for="fileuploadbrochure">
@@ -191,31 +208,7 @@
                     </div>
                     <span class="re-note" id="error2">(only .jpg,.png,.pdf allowed, maximum file size 1MB.)</span>
                 </div>
-            </div>
-
-
-            <div class="row form-group">
-                <div class="col-md-4 res-mb-16">
-                    <label>Start Date</label>
-                    <input type="hidden" class="form-control" name="fdate" id="fdate">
-                    <input type="text" class="form-control date-form-control" name="sdatepicker" id="sdatepicker" disabled>
-                </div>
-                <div class="col-md-4 res-mb-16">
-                    <label>End Date</label>
-                    <input type="hidden" class="form-control" name="edate" id="edate">
-                    <input type="text" class="form-control date-form-control" name="edatepicker" id="edatepicker" disabled>
-                </div>
-                <div class="col-md-4">
-                    <label>Duration (Days)</label>
-                    <input type="text" class="form-control" name="durationDate" id="durationDate" disabled>
-                </div>
-            </div>
-            <div class="row form-group">
-                <div class="col-md-4 res-mb-16">
-                    <label>Cost</label>
-                    <input type="number" class="form-control" name="cost" id="txtCost">
-                </div>
-                <div class="col-md-4 res-mb-16">
+                <div class="col-md-3 res-mb-16">
                     <label>Class Frequency</label>
                     <select class="form-control" name="frequency" id="ddlFrequency">
                         <option selected value="0">Choose...</option>
@@ -224,9 +217,31 @@
                         <option value="Monthly">Monthly</option>
                     </select>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <label>Total No. Of Classes</label>
                     <input type="number" class="form-control" name="noofclass" id="txtNoOfClass">
+                </div>
+            </div>
+
+
+            <div class="row form-group">
+                <div class="col-md-3 res-mb-16">
+                    <label>Start Date</label>
+                    <input type="hidden" class="form-control" name="fdate" id="fdate">
+                    <input type="text" class="form-control date-form-control" name="sdatepicker" id="sdatepicker" disabled>
+                </div>
+                <div class="col-md-3 res-mb-16">
+                    <label>End Date</label>
+                    <input type="hidden" class="form-control" name="edate" id="edate">
+                    <input type="text" class="form-control date-form-control" name="edatepicker" id="edatepicker" disabled>
+                </div>
+                <div class="col-md-3">
+                    <label>Duration (Days)</label>
+                    <input type="text" class="form-control" name="durationDate" id="durationDate" disabled>
+                </div>
+                <div class="col-md-3 res-mb-16">
+                    <label>Cost</label>
+                    <input type="number" class="form-control" name="cost" id="txtCost">
                 </div>
             </div>
             <input type="button" id="btnSubmit" class="btn btn-primary" value="Submit" />
@@ -234,6 +249,11 @@
             <button type="reset" class="btn btn-warning" id="btnReset">Reset</button>
             @* <input type="button" class="btn btn-warning" id="btnReset" value="Reset">*@
         </form>
+
+
+
+
+        
 
     </div>
 </div>

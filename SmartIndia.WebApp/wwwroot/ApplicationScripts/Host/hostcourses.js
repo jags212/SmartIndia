@@ -1,4 +1,8 @@
-﻿$('#btnSubmit').click(function () {
+﻿$(document).ready(function () {
+    getallcourses();
+});
+
+$('#btnSubmit').click(function () {
     var ImgExt = $("#fileuploadImg").val().split('.')[1];
     var BroExt = $("#fileuploadbrochure").val().split('.').pop();
     function CallSave() {
@@ -137,9 +141,7 @@ function clearinput() {
 }
 
 
-$(document).ready(function () {
-    getallcourses();
-});
+
 function getallcourses() {
     $("#btnSubmit").show();
     $("#btnUpdate").hide();
@@ -210,6 +212,12 @@ function getcourseidd(CID) {
                     $("#fdate").val(data[0].startDate);
                     $("#edate").val(data[0].endDate);
                     $("#imgBanner").attr('src', data[0].imageUrl);
+
+                    //if (data[0].imageExt != null && data[0].imageExt != "") {
+                    //    $("#imgBanner").show();
+                    //} else {
+                    //    $("#imgBanner").hide();
+                    //}
 
                     $("#txtCost").val(data[0].cost);
                     $("#ddlFrequency").val(data[0].classFrequency);

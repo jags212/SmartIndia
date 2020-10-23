@@ -125,6 +125,7 @@ function BindList() {
                 if (data.length == 0) {
                     $("#hostDashlList").css("display", "none");
                     $("#divaction").css("display", "none");
+                    $("#divnoofdata").css("display", "none");
                     $("#sp_nodata").css("display", "block");
                     $("#sp_nodata").html("No data available");
                     $(".calendar-scheduler").addClass("nodata-btn-schedular");
@@ -132,6 +133,8 @@ function BindList() {
                 else {
                     $("#sp_nodata").css("display", "none");
                     $(".calendar-scheduler").removeClass("nodata-btn-schedular");
+                    $("#divnoofdata").css("display", "block");
+                    $("#spannoofdata").html(data[0].noOfData);
                     var trHTML = '';
                     $.each(data, function (i, item) {
 

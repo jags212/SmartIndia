@@ -25,6 +25,11 @@ function Coursedetails() {
                // $("#startdate").html(dateFormat(data[0].startDate, 'dd-mmm-yy'));
                 $("#desc").html(data[0].courseDesc);
                 $("#imgBanner").attr('src', data[0].imageUrl);
+                if (data[0].imageExt != null && data[0].imageExt != "") {
+                    $("#imgBanner").show();
+                } else {
+                    $("#imgBanner").hide();
+                }
             },
             error: function (msg) {
                 alert(msg.responseText);

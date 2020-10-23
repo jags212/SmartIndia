@@ -45,7 +45,8 @@ namespace SmartIndia.Data.Services.Attendee
                         CourseId = item.CourseId,
                         SchedularId = item.SchedularId,
                         color = "#ffc107",
-                        url = hostParameter.Curl + "/Attendee/UpcomingClasses/upcomingclassdetail?SID=" + item.SchedularId + ""
+                        url = hostParameter.Curl + "/Attendee/UpcomingClasses/upcomingclassdetail?SID=" + item.SchedularId + "",
+                        NoOfData=result.Count.ToString()
 
                     };
                     pcomingClassCalender.Add(modal);

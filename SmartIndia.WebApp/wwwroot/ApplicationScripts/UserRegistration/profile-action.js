@@ -3,6 +3,7 @@ var result = parseJwt(localStorage.getItem("jwtToken"));
 $(document).ready(function () {
     uid = parseInt(result.unique_name);
     BindCountry();
+    getProfileImagee();
 });
 function BindCountry() {
     $.get("" + ServiceURL + "/api/MasterData/GetCountryData", function (dataList) {
@@ -37,6 +38,18 @@ function BindUserData(obj) {
     $('input[name="emailpripub"][value="' + isEmailPrivate + '"]').prop('checked', true);
     var isMobilePrivate = obj.isMobilePrivate == true ? "Private" : "Public";
     $('input[name="mobilepripub"][value="' + isMobilePrivate + '"]').prop('checked', true);
+
+    var img = obj.imageName;
+    var imgext = obj.imageExt;
+    $("#hfimg").val(img + "." + imgext);
+    $("#hfimgName").val(img);
+
+    if (obj.otherCourseCategoryName) {
+        $('#chkOtherInterest').prop('checked', true);
+        $('#interestArea').val(obj.otherCourseCategoryName);
+        $("#otherInterestArea").slideDown("2000");
+    }
+
     if (obj.emailConfirmed) {
         $('#spnEmailVer').show();
     }
@@ -50,6 +63,30 @@ function BindUserData(obj) {
         $('#spnMobileVer').hide();
     }
     BindInterest(obj.interests);
+}
+
+function getProfileImagee() {
+
+    var UId = localStorage.getItem("userID");
+    var usersParam2 = JSON.stringify({
+        UserId: parseInt(UId),
+    });
+    $.ajax(
+        {
+            type: "GET",
+            url: ServiceURL + "/api/UserRegistration/GetProfileImage",
+            data: JSON.parse(usersParam2),
+            dataType: "json",
+            contentType: "application/json",
+            success: function (data) {
+
+                $("#imgProfilee").attr('src', data[0].imageUrl);
+               // $("#imgProfile").attr('src', data[0].imageUrl);
+            },
+            error: function (msg) {
+                alert(msg.responseText);
+            }
+        });
 }
 function ValidateForm() {
     if (!BlankTextBox('txtFirstName', 'First Name')) {
@@ -73,7 +110,36 @@ $(window).on('load', function () {
         BindUserData(data);
     });
 });
+function SaveImage(imgId) {
+    const fdata = new FormData();
+
+    var files = $("#fileuploadImg").get(0).files;
+
+    // Add the uploaded image content to the form data collection
+    if (files.length > 0) {
+        fdata.append("UploadedImage", files[0]);
+    }
+
+    // Make Ajax request with the contentType = false, and procesDate = false
+    var ajaxRequest = $.ajax({
+        type: "POST",
+        url: ServiceURL + "/api/UserRegistration/UploadImage?id=" + imgId,
+        contentType: false,
+        processData: false,
+        data: fdata
+    });
+
+    ajaxRequest.done(function (responseData, textStatus) {
+        if (textStatus == 'success') {
+            $("#fileuploadImg").val('');
+        }
+    });
+}
 $('#btnSave').click(function () {
+    
+   
+
+    
     if (ValidateForm()) {
         if (BootStrapSubmit('btnSave', 'Are You Sure To Update ?', 'Are You Sure To Update ?', CallSave)) {
             return false;
@@ -83,13 +149,23 @@ $('#btnSave').click(function () {
         }
     }
     function CallSave() {
-
+        //var ImgExt = $("#fileuploadImg").val().split('.')[1];
+        if ($("#fileuploadImg").val() != "") {
+            var ImgExt = $("#fileuploadImg").val().split('.')[1];
+        } else {
+            var ImgExt = $("#hfimg").val().split('.')[1];
+        }
         var arr = new Array();
         $('input:checkbox[name=interestarea]:checked').each(function () {
             var interestId = {};
             interestId.InterestId = parseInt($(this).val());
             arr.push(interestId);
         });
+        var OtherInterest = '';
+        if ($('#chkOtherInterest').is(":checked")) {
+
+            OtherInterest = $('#interestArea').val();
+        }
         var usersParam = JSON.stringify({
             ACTIONCODE: 'U',
             UserId: uid,
@@ -104,6 +180,8 @@ $('#btnSave').click(function () {
             IsEmailPrivate: $('input[name="emailpripub"]:checked').val() == "Private" ? true : false,
             IsMobilePrivate: $('input[name="mobilepripub"]:checked').val() == "Private" ? true : false,
             UpdatedById: uid,
+            OtherCourseCategoryName: OtherInterest,
+            ImageExt: ImgExt,
             Interests: arr
         });
         $.ajax({
@@ -113,6 +191,14 @@ $('#btnSave').click(function () {
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
+
+                var fileIMG = $("#fileuploadImg").val();
+
+                if (fileIMG) {
+                    SaveImage($("#hfimgName").val());
+                } else {
+                }
+
                 if (data == "2") {
                     BootStrapRedirect("Data updated successfully.", "/ManageUsers/Users/Profile");
                 }

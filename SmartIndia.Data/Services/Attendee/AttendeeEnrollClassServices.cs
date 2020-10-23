@@ -46,7 +46,8 @@ namespace SmartIndia.Data.Services.Attendee
                         Cost = item.Cost,
                         BatchName = item.BatchName,
                         AttendeeUserId = item.AttendeeUserId,
-                        url = attendeeParameterEnrolclass.Curl + "/Hosts/UpcomingClasses/upcomingclassdetail?SID=" + item.CourseId + ""
+                        url = attendeeParameterEnrolclass.Curl + "/Hosts/UpcomingClasses/upcomingclassdetail?SID=" + item.CourseId + "",
+                        NoOfData=result.Count.ToString()
 
                     };
                     Enrollclasses.Add(modal);
@@ -210,7 +211,8 @@ namespace SmartIndia.Data.Services.Attendee
                         Cost = item.Cost,
                         BatchName = item.BatchName,
                         AttendeeUserId = item.AttendeeUserId,
-                        url = CUrl + "/Hosts/UpcomingClasses/upcomingclassdetail?SID=" + item.CourseId + ""
+                        url = CUrl + "/Hosts/UpcomingClasses/upcomingclassdetail?SID=" + item.CourseId + "",
+                        NoOfData = result.Count.ToString()
 
                     };
                     Enrollclasses.Add(modal);
