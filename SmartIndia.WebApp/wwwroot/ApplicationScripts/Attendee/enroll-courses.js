@@ -22,7 +22,7 @@ function BindList() {
             contentType: "application/json",
             success: function (data) {
                 $("#divnoofdata").css("display", "block");
-                $("#spannoofdata").html(data[0].noOfData);
+                
                 var trHTML = '';
                 $('#coursedetails').empty();
                 $.each(data, function (i, item) {
@@ -32,7 +32,7 @@ function BindList() {
                     else {
                         var fab = '<i class="bx bx-star">';
                     }
-
+                    $("#spannoofdata").html(data[i].noOfData);
                     trHTML += '<li class="list-group-item justify-content-between ocr-list-group"> '
                         + '<div class="sm-card-title" >'
                         + ' <a data-toggle="tooltip" data-placement="bottom" title="' + data[i].courseName + '" href="' + ClientURL + '/Attendee/EnrollCourses/EnrollCourseDetails?SID=' + data[i].courseId + '&bt=' + data[i].batchName + '" >' + data[i].courseName + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
