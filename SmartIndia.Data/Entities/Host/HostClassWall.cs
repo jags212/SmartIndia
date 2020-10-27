@@ -41,7 +41,9 @@ namespace SmartIndia.Data.Entities.Host
         public string SchedularId { get; set; }
         public string IsPublished { get; set; }
         public string ClassType { get; set; }
+        public string NoOfData { get; set; }
         public bool Status { get; set; }
+
     }
     public class ClassWallCalender
     {
@@ -61,6 +63,7 @@ namespace SmartIndia.Data.Entities.Host
         public string color { get; set; }
         public string IsPublished { get; set; }
         public string url { get; set; }
+        public string NoOfData { get; set; }
     }
     public class ClassWallClassDetails
     {
@@ -80,6 +83,7 @@ namespace SmartIndia.Data.Entities.Host
         public string IsPublished { get; set; }
         public string ClassType { get; set; }
         public bool Status { get; set; }
+        public string NoOfData { get; set; }
 
     }
 }

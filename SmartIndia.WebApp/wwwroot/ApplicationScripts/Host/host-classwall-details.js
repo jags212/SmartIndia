@@ -26,6 +26,11 @@ function Coursedetails() {
                 $("#starttime").html(timeConvert(data[0].startTime));
                 $("#desc").html(data[0].courseDesc);
                 $("#imgBanner").attr('src', data[0].imageUrl);
+                if (data[0].imageExt != null && data[0].imageExt != "") {
+                    $("#imgBanner").show();
+                } else {
+                    $("#imgBanner").hide();
+                }
 
                 if (data[0].brochureExt == "pdf") {
                     $("#imgbrouchurepdf").attr('src',  data[0].brouchureUrl);

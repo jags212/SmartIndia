@@ -63,6 +63,11 @@ namespace SmartIndia.Data.Entities.UserManagement
         public DateTime? DOB { get; set; } 
         public bool IsEmailPrivate { get; set; }
         public bool IsMobilePrivate { get; set; }
+        public string OtherCourseCategoryName { get; set; }
+        public string ImageExt { get; set; }
+        public string ImageName { get; set; }
+        public string filePath { get; set; }
+        public string ImageUrl { get; set; }
         public List<CourseInterest> Interests { get; set; }
     }
     public class UserRegistrationInterestDetails
@@ -88,6 +93,11 @@ namespace SmartIndia.Data.Entities.UserManagement
         public DateTime? DOB { get; set; } 
         public bool IsEmailPrivate { get; set; }
         public bool IsMobilePrivate { get; set; }
+        public string OtherCourseCategoryName { get; set; }
+        public string ImageExt { get; set; }
+        public string ImageName { get; set; }
+        public string filePath { get; set; }
+        public string ImageUrl { get; set; }
         public List<ConficCourseInterest> Interests { get; set; }
     }
     public class CourseInterest

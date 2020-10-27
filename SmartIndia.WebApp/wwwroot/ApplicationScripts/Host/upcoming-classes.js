@@ -124,12 +124,15 @@ function BindList() {
             success: function (data) {
                 if (data.length == 0) {
                     $("#hostUPlList").css("display", "none");
+                    $("#divnoofdata").css("display", "none");
                     $("#divcardbodynodata").css("display", "block");
                     $("#divcardbody").css("display", "none");
                 }
                 else {
                     $("#divcardbodynodata").css("display", "none");
                     $("#divcardbody").css("display", "block");
+                    $("#divnoofdata").css("display", "block");
+                    $("#spannoofdata").html(data[0].noOfData);
                     var trHTML = '';
                     $.each(data, function (i, item) {
 

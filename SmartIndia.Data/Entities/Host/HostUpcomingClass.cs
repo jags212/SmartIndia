@@ -62,6 +62,7 @@ namespace SmartIndia.Data.Entities.Host
         public string SchedularId { get; set; }
         public string color { get; set; }
         public string url { get; set; }
+        public string NoOfData { get; set; }
     }
     public class UpcomingClassDetails
     {
@@ -84,5 +85,6 @@ namespace SmartIndia.Data.Entities.Host
         public string filePath { get; set; }
         public string ImageUrl { get; set; }
         public string BrouchureUrl { get; set; }
+        public string NoOfData { get; set; }
     }
 }

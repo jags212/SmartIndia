@@ -94,6 +94,7 @@ namespace SmartIndia.Data.Services.Host
             {
                 DynamicParameters param = objArray.ToDynamicParameters();
                 var result = DBConnection.Query<ClassWallsClassDetails>("USP_GetHostSchedular_ACTION", param, commandType: CommandType.StoredProcedure).ToList();
+                string noofdada = result.Count.ToString();
                 List<ClassWallClassDetails> classWallDetails = new List<ClassWallClassDetails>();
                 foreach (var item in result)
                 {
@@ -114,7 +115,8 @@ namespace SmartIndia.Data.Services.Host
                         SchedularId = item.SchedularId,
                         ClassType = item.ClassType,
                         Status = item.Status,
-                        IsPublished = item.IsPublished
+                        IsPublished = item.IsPublished,
+                        NoOfData = noofdada
 
                     };
                     classWallDetails.Add(modal);

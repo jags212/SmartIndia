@@ -38,6 +38,7 @@ namespace SmartIndia.Data.Entities.Attendee
         public string BatchName { get; set; }
         public string url { get; set; }
         public string AttendeeUserId { get; set; }
+        public string NoOfData { get; set; }
 
     }
     public class EnrollClasses

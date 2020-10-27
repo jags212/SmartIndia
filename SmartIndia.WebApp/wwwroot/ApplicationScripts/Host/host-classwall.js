@@ -125,16 +125,23 @@ function BindList() {
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
+                
+                
                 if (data.length == 0) {
                     $("#hostDashlList").css("display", "none");
                     $("#divcardbody").css("display", "none");
+                    $("#divnoofdata").css("display", "none");
                     $("#divcardbodynodata").css("display", "block");
                 }
                 else {
                     $("#divcardbody").css("display", "block");
+                    
                     $("#divcardbodynodata").css("display", "none");
+                    $("#divnoofdata").css("display", "block");
+                    $("#spannoofdata").html(data[0].noOfData);
                     var trHTML = '';
                     $.each(data, function (i, item) {
+                        
                         if (data[i].status) {
                             if (data[i].classType == "Accomplished") {
                                 var color = '<div class="list-color-legend col-leg-green" data-toggle="tooltip" data-placement="bottom" title="Accomplished"></div>';

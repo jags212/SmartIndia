@@ -21,6 +21,8 @@ function BindList() {
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
+                $("#divnoofdata").css("display", "block");
+                $("#spannoofdata").html(data[0].noOfData);
                 var trHTML = '';
                 $('#coursedetails').empty();
                 $.each(data, function (i, item) {
