@@ -330,8 +330,8 @@
 }
 
 .recover-password-area {
-    padding-top: 200px;
-    padding-bottom: 103px;
+    padding-top: 230px;
+    padding-bottom: 105px;
 }
 
 .host-color {
@@ -467,7 +467,7 @@
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1;
+    z-index: 2;
     /*overflow: hidden;*/
 }
 
@@ -1406,7 +1406,7 @@
     font-size: 12px;
     font-weight: 600;
     color: #ff8100;
-    margin: -20px 0 25px 10px;
+    margin: -20px 0 20px 10px;
     text-align: left;
 }
 
@@ -1586,7 +1586,7 @@
     display: block;
     min-width: 100%;
     overflow-x: auto;
-    margin: 20px 20px 13px 0;
+    margin: 10px 20px 10px 0;
 }
 
 .regitabbable {
@@ -4207,8 +4207,8 @@
     z-index: 1;
     font-size: 18px;
     font-weight: 500;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .nav-active a {
@@ -4272,6 +4272,19 @@
     height: 350px;
 }
 
+/*-------------------------------------*/
+.user-settings-box form .btn-box .cancel-btn {
+    border-radius: 5px;
+    background-color: #ffc107;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 30px;
+    border: none;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    font-size: 15px;
+    font-weight: 700;
+}
 /*------------------- Responsive ------------------------------------*/
 @media(min-width: 320px) and (max-width: 767px) {
     .social-login-btn {

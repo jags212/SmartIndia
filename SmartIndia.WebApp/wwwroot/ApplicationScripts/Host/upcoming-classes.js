@@ -109,6 +109,19 @@ function BindHostUpcommingClasses() {
 //List Bind
 function BindList() {
     jQuery.support.cors = true;
+
+    var result = parseJwt(localStorage.getItem("jwtToken"));
+    var uid = result.unique_name;
+    var role = result.role;
+    var moderator;
+    if (role == "Host") {
+        moderator = true;
+    }
+    else {
+        moderator = false;
+    }
+    var name = localStorage.getItem("firstName");
+    var EmailId = localStorage.getItem("emailID");
     var UId = localStorage.getItem("userID");
     var usersParam = JSON.stringify({
         UserId: parseInt(UId),
@@ -138,21 +151,23 @@ function BindList() {
 
                         trHTML += '<li class="list-group-item justify-content-between ocr-list-group"> '
                             + '<div class="sm-card-title" >'
-
                             + ' <a data-toggle="tooltip" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Hosts/UpcomingClasses/upcomingclassdetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
                             + '</div>'
+                            + ' <p class="card-text sm-cli-text ellip-box two-lines">' + data[i].courseDesc + '</p>'
+                            + '<div class="sm-bottom-info">'
                             + '<span class="sm-host-name">'
                             + '<i class="bx bx-task"></i>' + data[i].batchName + ''
                             + '</span>'
-                            + ' <p class="card-text sm-cli-text ellip-box two-lines">' + data[i].courseDesc + '</p>'
-                            + '<div class="sm-bottom-info">'
                             + '<span class="sm-date">'
                             + ' <i class="bx bx-calendar"></i>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') + ''
                             + '</span>'
                             + '<span class="sm-time">'
-                            + ' <i class="bx bx-time"></i> ' + timeConvert(data[i].startTime) + ''
+                            + '<i class="bx bx-time"></i> ' + timeConvert(data[i].startTime) + ''
                             + '</span>'
                             + '</div >'
+                            + '<div style="float:right">'
+                            + ' <a data-toggle="tooltip" data-placement="bottom" title="Join" target="_blank" href="' + ClientURL + '/VideoClass/MeetingUp/Index?CRID=' + data[i].classRoomId + '&Id=' + UId + '&Name=' + name + '&EmailId=' + EmailId + '&moderator=' + moderator + '"><strong><u>Start</u> </strong></span></a>'
+                            + '</div>'
                             + '</li >'
                     });
 

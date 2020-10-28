@@ -1,125 +1,130 @@
-﻿
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     Layout = null;
 }
+@section Scripts{
 
-
-<!DOCTYPE html>
-@*
-    <html>
+}
+    <!DOCTYPE html>
+    <html itemscope itemtype="http://schema.org/Product" prefix="og: http://ogp.me/ns#" xmlns="http://www.w3.org/1999/html">
     <head>
-        <meta name="viewport" content="width=device-width" />
-        <title>OCR - Meeting Up</title>
 
-        <script src="~/lib/jquery/dist/jquery.min.js"></script>
-            <script src="~/js/external_api.js"></script>*@
+        <meta charset="utf-8">
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        @*<link rel="stylesheet" type="text/css" href="css/styles_meet.css">*@
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://vc.easternbay.in/external_api.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+        <script src="~/assets/js/custom.js"></script>
 
 
+        <script>
+            $(document).ready(function () {
+                var crid = '@ViewBag.crid';//classroom id
+                var uid = '@ViewBag.UserId';
+                var name = '@ViewBag.name';
+                var EmailId = '@ViewBag.EmailId';
+                var moderator = '@ViewBag.moderator';
 
+                $('#room_id').val(crid);
+                localStorage.setItem('cId', crid);
+                $('#inv_id').val(crid);
+                $('#user_id').val(uid);
+                $('#user_name').val(name);
+                $('#user_email').val(EmailId);
+                $('#user_role').val(moderator);
 
-@*
+                $('#fname').val(name);
+                $('#fuser').val(name);
+                $('#fmail').val(EmailId);
+            });
+        </script>
+        <script>
+            $(function () {
+
+                StartMeeting();
+            });
+
+        </script>
+        <script src="~/ApplicationScripts/VideoClass/video-class.js"></script>
+        <script src="~/ApplicationScripts/VideoClass/meeting.js"></script>
     </head>
-    <body id="jitsi-meet-conf-container">
-        <div id='jitsi-meet-conf-container'></div>
-    </body>
-    </html>*@
 
-
-
-
-<html itemscope itemtype="http://schema.org/Product" prefix="og: http://ogp.me/ns#" xmlns="http://www.w3.org/1999/html">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <link rel="stylesheet" type="text/css" href="css/styles_meet.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://vc.easternbay.in/external_api.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
-    <script src="~/assets/js/custom.js"></script>
-    <script src="~/ApplicationScripts/VideoClass/video-class.js"></script>
-    <script src="~/ApplicationScripts/VideoClass/meeting.js"></script>
-    <script>
-        $(function () {
-
-            StartMeeting();
-        });
-
-    </script>
-</head>
-
-<body class="webbody">
-    @*<div id="section-preloader" class="loader" style="display: none;">
-        <div class="boxes">
-            <div class="box"> <div></div> <div></div> <div></div> <div></div> </div> <div class="box"> <div></div> <div></div> <div></div> <div></div> </div> <div class="box"> <div></div> <div></div> <div></div> <div></div> </div> <div class="box"> <div></div> <div></div> <div></div> <div></div> </div>
+    <body class="webbody">
+        @*<div id="section-preloader" class="loader" style="display: none;">
+            <div class="boxes">
+                <div class="box"> <div></div> <div></div> <div></div> <div></div> </div> <div class="box"> <div></div> <div></div> <div></div> <div></div> </div> <div class="box"> <div></div> <div></div> <div></div> <div></div> </div> <div class="box"> <div></div> <div></div> <div></div> <div></div> </div>
+            </div>
+            <p>LOADING . . .</p>
         </div>
-        <p>LOADING . . .</p>
-    </div>
-    <div id="loader2" style="display: none;">
-        <div class="loadbox"> 
-            <img src="~/assets/img/loader.gif" />
-            <p>Please wait for the host of the meeting <span id="meeting_host"></span> to join.</p>
-        </div>
-    </div>*@
-    <div class="meeting_heading" id="meet_head"></div>
-    <input type="hidden" id="rtype" value="web">
-    <input type="hidden" id="utype" value="moderator">
-
-    <script src="https://139.59.29.40:3098/socket.io/socket.io.js"></script>
-    <input type="hidden" id="inv_id" value="12345" name="">
-    <input type="hidden" id="rname" value="12345">
-    <input type="hidden" id="fname" value="Surya sagar" name="">
-    <input type="hidden" id="fmail" value="suryasagar091@gmail.com" name="">
-    <input type="hidden" id="fuser" value="Surya" name="">
-    <script>view_meeting_details($('#inv_id').val());</script>
-    <div class="videoFrameContainer d-flex w-100">
-        <div id="videoContainer" class="web col-9"></div>
-        @*<div id="sideContainer" class="col-3">
-            <h5>Viewer queries</h5>
-            <div id="messages" class="card-block"></div>
+        <div id="loader2" style="display: none;">
+            <div class="loadbox">
+                <img src="~/assets/img/loader.gif" />
+                <p>Please wait for the host of the meeting <span id="meeting_host"></span> to join.</p>
+            </div>
         </div>*@
-    </div>
-    <div class="btn-section">
-        <div class="custmSec">
-            <!-- <div onclick="toggleAviAud(this.id);" id="aviAud"><img src="img/micon.png"></div> -->
-            <div id="aviAud"><img src="~/assets/img/micon.png" title="Mute/Unmute"></div>
-            <div id="aviMeetEnd"><img src="~/assets/img/hangup.png" title="End Call"></div>
-            <div id="aviVid"><img src="~/assets/img/von.png" title="Start/Stop Camera"></div>
-            <!-- <div id="aviCont">Toggle Contact</div> -->
+        <div class="meeting_heading" id="meet_head"></div>
+        <input type="hidden" id="rtype" value="web">
+        <input type="hidden" id="utype" value="moderator">
+
+        <script src="https://139.59.29.40:3098/socket.io/socket.io.js"></script>
+        <input type="hidden" name="room_id" id="room_id">
+        <input type="hidden" name="user_id" id="user_id">
+        <input type="hidden" name="user_name" id="user_name">
+        <input type="hidden" name="user_email" id="user_email">
+        <input type="hidden" name="user_role" id="user_role">
+
+        <input type="hidden" id="inv_id" value="12345" name="">
+        <input type="hidden" id="rname" value="12345">
+        <input type="hidden" id="fname" value="Surya sagar" name="">
+        <input type="hidden" id="fmail" value="suryasagar091@gmail.com" name="">
+        <input type="hidden" id="fuser" value="Surya" name="">
+        <script>view_meeting_details($('#inv_id').val());</script>
+        <div class="videoFrameContainer d-flex w-100">
+            <div id="videoContainer" class="web col-9"></div>
         </div>
-    </div>
-    <!-- <div id="aviGetPart"><span id="partNos">1</span> User(s)</div> -->
-    <div id="meetdets" style="display: none;">Moderator : <span id="moderator"></span> Start date :<span id="start_date"></span> Participants : <span id="mem_list"></span></div>
-    @*<div class="inv_box">
-        <div class="inv_box_inner">
-            <div id="inv_box_img"><img src="img/invite.png" title="Add Participant"></div>
-            <h3>Invite participants</h3>
-            <a href="javascript:void(0)" class="btn btn-default btn-wp" id="share_btn"><img class="wp-icon" src="img/wp.png"><span>Invite via whatsapp</span></a>
-            <hr>
-            <div id="inv_user_list_box">
-                <div id="inv_user_list">
-                    <div id="search">
-                        <input type="text" id="searchfield" placeholder="Search contacts..." data-search />
-                    </div>
-                    <div id="friends"></div>
-                    <a href="javascript:void(0)" class="btn btn-default" id="addPartNew">Add Participants</a>
-                </div>
+        <div class="btn-section">
+            <div class="custmSec">
+                <!-- <div onclick="toggleAviAud(this.id);" id="aviAud"><img src="img/micon.png"></div> -->
+                <div id="aviAud"><img src="~/assets/img/micon.png" title="Mute/Unmute"></div>
+                <div id="aviMeetEnd"><img src="~/assets/img/hangup.png" title="End Call"></div>
+                <div id="aviVid"><img src="~/assets/img/von.png" title="Start/Stop Camera"></div>
+                <!-- <div id="aviCont">Toggle Contact</div> -->
             </div>
         </div>
-    </div>*@
-    @*<button type="button" class="btn btn-web" id="web-btn">Activate Webinar</button>*@
-    <script>
-        showChatFun();
-        function showChatFun() {
-            rname = $('#rname').val();
-            if (rname == '') {
-                myVar = setTimeout(function () { showChatFun(); }, 1000);
+        <!-- <div id="aviGetPart"><span id="partNos">1</span> User(s)</div> -->
+        <div id="meetdets" style="display: none;">Moderator : <span id="moderator"></span> Start date :<span id="start_date"></span> Participants : <span id="mem_list"></span></div>
+        @*<div class="inv_box">
+            <div class="inv_box_inner">
+                <div id="inv_box_img"><img src="img/invite.png" title="Add Participant"></div>
+                <h3>Invite participants</h3>
+                <a href="javascript:void(0)" class="btn btn-default btn-wp" id="share_btn"><img class="wp-icon" src="img/wp.png"><span>Invite via whatsapp</span></a>
+                <hr>
+                <div id="inv_user_list_box">
+                    <div id="inv_user_list">
+                        <div id="search">
+                            <input type="text" id="searchfield" placeholder="Search contacts..." data-search />
+                        </div>
+                        <div id="friends"></div>
+                        <a href="javascript:void(0)" class="btn btn-default" id="addPartNew">Add Participants</a>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+        @*<button type="button" class="btn btn-web" id="web-btn">Activate Webinar</button>*@
+        <script>
+            showChatFun();
+            function showChatFun() {
+                rname = $('#rname').val();
+                if (rname == '') {
+                    myVar = setTimeout(function () { showChatFun(); }, 1000);
+                }
+                else {
+                    // clearTimeout(myVar);
+                    showChat(rname);
+                }
             }
-            else {
-                clearTimeout(myVar);
-                showChat(rname);
-            }
-        }
-    </script>
-</body>
+        </script>
+    </body>
 </html>
 

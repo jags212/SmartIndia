@@ -2,54 +2,54 @@
 function view_meeting_details(meet_id) {
 	// console.log(meet_id);
 	var data = { meet_id: meet_id, action: 'meeting_det' };
-	$.ajax({
-		url: "include/dashboard.php",
-		type: "POST",
-		data: data,
-		beforeSend: function () {
-			$('.loader').show();
-		},
-		success: function (response) {
-			// console.log(response);
-			jobj = JSON.parse(response);
-			// console.log(jobj);
-			// $('#meet_link').attr("href",);
-			$('#meet_head').html(jobj[0]['discuss_heading']);
-			$('#rname').val(jobj[0]['room_name']);
-			$('#moderator').html(jobj[0]['invite_from']);
-			var meet_status = jobj[0]['status'];
-			$('#mem_list').html(' ');
-			$('#start_date').html(jobj[0]['start_date'] + ' ' + jobj[0]['start_time']);
-			for (var i = 0; i < jobj[0]['participants'].length; i++) {
-				userdets = jobj[0]['participants'][i].split('@@');
-				divcont = userdets[0] + ',';
-				$('#mem_list').append(divcont);
-			}
-			// starttimer(link);
-			getmod_user = jobj[0]['invite_from'].split(' ');
-			getses_user = $('#fuser').val();
-			// console.log(getmod_user[0]+ '--' +getses_user);
-			if (getmod_user[0] == getses_user) {
-				showParticipants($('#inv_id').val(), $('#mem_list').html().trim());
-				update_meet_status(meet_id);
-				startvideo();
-			}
-			else {
-				$(".inv_box").hide();
-				if (meet_status == 1) {
-					startvideo();
-				}
-				else {
-					// console.log("meetstatus 0");
-					$('.loader').hide();
-					// $('#loader2').show();
-					// check_meet(meet_id);
-					startvideo();
-				}
-			}
-			$('.loader').hide();
-		}
-	});
+	//$.ajax({
+	//	url: "include/dashboard.php",
+	//	type: "POST",
+	//	data: data,
+	//	beforeSend: function () {
+	//		$('.loader').show();
+	//	},
+	//	success: function (response) {
+	//		// console.log(response);
+	//		jobj = JSON.parse(response);
+	//		// console.log(jobj);
+	//		// $('#meet_link').attr("href",);
+	//		$('#meet_head').html(jobj[0]['discuss_heading']);
+	//		$('#rname').val(jobj[0]['room_name']);
+	//		$('#moderator').html(jobj[0]['invite_from']);
+	//		var meet_status = jobj[0]['status'];
+	//		$('#mem_list').html(' ');
+	//		$('#start_date').html(jobj[0]['start_date'] + ' ' + jobj[0]['start_time']);
+	//		for (var i = 0; i < jobj[0]['participants'].length; i++) {
+	//			userdets = jobj[0]['participants'][i].split('@@');
+	//			divcont = userdets[0] + ',';
+	//			$('#mem_list').append(divcont);
+	//		}
+	//		// starttimer(link);
+	//		getmod_user = jobj[0]['invite_from'].split(' ');
+	//		getses_user = $('#fuser').val();
+	//		// console.log(getmod_user[0]+ '--' +getses_user);
+	//		if (getmod_user[0] == getses_user) {
+	//			showParticipants($('#inv_id').val(), $('#mem_list').html().trim());
+	//			update_meet_status(meet_id);
+	//			startvideo();
+	//		}
+	//		else {
+	//			$(".inv_box").hide();
+	//			if (meet_status == 1) {
+	//				startvideo();
+	//			}
+	//			else {
+	//				// console.log("meetstatus 0");
+	//				$('.loader').hide();
+	//				// $('#loader2').show();
+	//				// check_meet(meet_id);
+	//				startvideo();
+	//			}
+	//		}
+	//		$('.loader').hide();
+	//	}
+	//});
 }
 
 function update_meet_status(meet_id) {

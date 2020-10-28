@@ -18,7 +18,6 @@ var header = {
     "alg": "HS256",
     "typ": "JWT"
 };
-
 var stringifiedHeader = CryptoJS.enc.Utf8.parse(JSON.stringify(header));
 var encodedHeader = base64url(stringifiedHeader);
 
@@ -38,7 +37,7 @@ var EmailId = localStorage.getItem("emailID");
 var payload1 = {
     "context": {
         "user": {
-            "avatar": "img/user.png",
+            "avatar": "https://smart.datatech.ind.in/assets/img/user1.jpg",
             "name": name,
             "email": EmailId,
             "id": uid.toString(),
@@ -80,10 +79,11 @@ function StartMeeting() {
     else { toolbar = toolbarPart; }
     // console.log(toolbar);
     var options = {
-        roomName: "12345",
+
+        roomName: $('#room_id').val().toString(),
         width: '100%',
         onload: this.afterLoadComplete(),
-        height: '650px',
+        height: '500px',
         parentNode: document.querySelector('#videoContainer'),
         jwt: signedToken,
         configOverwrite: {
@@ -99,6 +99,7 @@ function StartMeeting() {
             displayName: name
         }
     };
+    debugger;
     var api = new JitsiMeetExternalAPI(domain, options);
     $('body').on('click', '#aviMeetEnd', function () {
         api.dispose();

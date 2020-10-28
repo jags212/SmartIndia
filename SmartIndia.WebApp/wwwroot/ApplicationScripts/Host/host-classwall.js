@@ -139,6 +139,7 @@ function BindList() {
                     $("#divcardbodynodata").css("display", "none");
                     $("#divnoofdata").css("display", "block");
                     $("#spannoofdata").html(data[0].noOfData);
+                    $("#sp_nodata").html("No data available");
                     var trHTML = '';
                     $.each(data, function (i, item) {
                         
@@ -166,11 +167,12 @@ function BindList() {
                             + ' <a data-toggle="tooltip" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Hosts/ClassWall/ClassWallDetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
 
                             + '</div>'
+                           
+                            + ' <p class="card-text sm-cli-text">' + data[i].courseDesc + '</p>'
+                            + '<div class="sm-bottom-info">'
                             + '<span class="sm-host-name">'
                             + '<i class="bx bx-task"></i>' + data[i].batchName + ''
                             + '</span>'
-                            + ' <p class="card-text sm-cli-text">' + data[i].courseDesc + '</p>'
-                            + '<div class="sm-bottom-info">'
                             + '<span class="sm-date">'
                             + ' <i class="bx bx-calendar"></i>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') + ''
                             + '</span>'
