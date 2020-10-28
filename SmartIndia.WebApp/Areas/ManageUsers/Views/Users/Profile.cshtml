@@ -3,7 +3,7 @@
     ViewData["Title"] = "Profile";
     Layout = "~/Views/Shared/_FrontPannelLayout.cshtml";
 }
-<title>OCR | Profile</title>
+<title>OCR - Profile</title>
 <!-- Datepicker CSS -->
 <link rel="stylesheet" href="~/assets/css/gijgo.min.css" />
 @section Scripts{
@@ -20,6 +20,54 @@
     <script src="~/ApplicationScripts/Common/custom-validate.js"></script>
     <script src="~/ApplicationScripts/Common/date-format-converter.js"></script>
     <script src="~/ApplicationScripts/UserRegistration/profile-action.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $('#btnUploadFile').on('click', function () {
+
+                var data = new FormData();
+
+                var files = $("#fileUpload").get(0).files;
+
+                // Add the uploaded image content to the form data collection
+                if (files.length > 0) {
+                    data.append("UploadedImage", files[0]);
+                }
+
+                // Make Ajax request with the contentType = false, and procesDate = false
+                var ajaxRequest = $.ajax({
+                    type: "POST",
+                    url: "/api/fileupload/uploadfile",
+                    contentType: false,
+                    processData: false,
+                    data: data
+                });
+
+                ajaxRequest.done(function (xhr, textStatus) {
+                    // Do other operation
+                });
+            });
+        });
+    </script>
+    <script>
+        //For Image
+        $('#fileuploadImg').bind('change', function () {
+            var ext = $('#fileuploadImg').val().split('.').pop().toLowerCase();
+            if ($.inArray(ext, ['png', 'jpg']) == -1) {
+                alert("Only .jpg,.png allowed");
+                $('#fileuploadImg').val("");
+            } else {
+                var picsize = (this.files[0].size);
+                if (picsize > 1000000) {
+                    alert("Maximum file size 1MB.");
+                    $('#fileuploadImg').val("");
+                }
+            }
+        });
+        
+    </script>
+
     <script>
         function hideLoader() {
             $('#loading').hide();
@@ -36,7 +84,7 @@
         <div class="user-profile-images">
             <img src="~/assets/img/profile-banner.jpg" class="cover-image" alt="cover image" />
             <div class="profile-image">
-                <img id="imgProfilee"/>
+                <img id="imgProfilee" />
                 <div class="upload-profile-photo">
                     @*<a href="javascript:void(0);"><i class='bx bx-camera'></i> <span>Update</span></a>*@
                     <input type="hidden" class="form-control" name="hfimg" id="hfimg">
@@ -110,18 +158,16 @@
 
                                     <!--- Start Country Code --->
 
-                                    <div id="intel-flag-title" class="intl-tel-input allow-dropdown separate-dial-code profile-intl-tel-input" data-toggle="tooltip" data-placement="bottom" title="United States of America: +1">
+                                    <div id="intel-flag-title" class="intl-tel-input allow-dropdown separate-dial-code profile-intl-tel-input" data-toggle="tooltip" data-placement="bottom" title="India: +91">
                                         <div class="flag-container">
                                             <div id="selected-flag-title" class="selected-flag profile-selected-flag" role="combobox" aria-owns="country-listbox">
-                                                <div class="iti-flag us"></div>
-                                                <div class="selected-dial-code" id="selected-flag-dial-code">+1</div>
+                                                <div class="iti-flag in"></div>
+                                                <div class="selected-dial-code" id="selected-flag-dial-code">+91</div>
                                                 <div class="iti-arrow up"></div>
                                             </div>
                                             <ul class="country-list dropup" id="country-listbox" aria-expanded="true" role="listbox" aria-activedescendant="iti-item-us">
                                                 <div class="m-10"><input type="text" class="search-form-control" placeholder="Search Country" id="searchCountry" /></div>
-                                                <li class="country preferred" tabindex="-1" id="iti-item-us" role="option" data-dial-code="1" data-country-code="us" aria-selected="true">
-                                                    <div class="flag-box"><div class="iti-flag us"></div></div>
-                                                    <span class="country-name">United States of America</span><span class="dial-code">+1</span>
+                                                <li class="country preferred" tabindex="-1" id="iti-item-us" role="option" data-dial-code="1" data-country-code="us" aria-selected="true"><div class="flag-box"><div class="iti-flag us"></div></div><span class="country-name">United States of America</span><span class="dial-code">+1</span>
                                                 </li>
                                                 <li class="country preferred" tabindex="-1" id="iti-item-gb" role="option" data-dial-code="44" data-country-code="gb"><div class="flag-box"><div class="iti-flag gb"></div></div><span class="country-name">United Kingdom</span><span class="dial-code">+44</span></li>
                                                 <li class="divider" role="separator" aria-disabled="true"></li>
@@ -463,7 +509,9 @@
                             <div class="btn-box text-right">
                                 @*<button type="submit" class="submit-btn"><i class='bx bx-save'></i> Save</button>*@
                                 <input type="button" id="btnSave" class="submit-btn" value="Update" />
-                                <input type="button" id="btnCancel" class="btn btn-warning " value="Cancel" />
+                                <input type="button" id="btnCancel" class="cancel-btn" value="Cancel" />
+                                @*<button type="submit" class="submit-btn">Save</button>
+                                <button type="submit" class="cancel-btn">Cancel</button>*@
 
                             </div>
                         </form>

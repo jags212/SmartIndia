@@ -2023,7 +2023,7 @@ Main Content CSS
 }
 
 .card .card-body.border-secondary {
-  border-width: 1px;
+  border-width: 0px;
   border-style: solid;
 }
 

@@ -20,7 +20,7 @@ namespace SmartIndia.Data.Entities.Host
         public string Topics { get; set; }
         public string CourseId { get; set; }
         public string SchedularId { get; set; }
-
+        public string ClassRoomId { get; set; }
     }
     public class UpcomingClassesDetails
     {
@@ -62,6 +62,7 @@ namespace SmartIndia.Data.Entities.Host
         public string SchedularId { get; set; }
         public string color { get; set; }
         public string url { get; set; }
+        public string ClassRoomId { get; set; }
         public string NoOfData { get; set; }
     }
     public class UpcomingClassDetails
