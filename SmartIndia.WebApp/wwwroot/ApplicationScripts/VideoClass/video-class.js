@@ -83,7 +83,7 @@ function StartMeeting() {
         roomName: $('#room_id').val().toString(),
         width: '100%',
         onload: this.afterLoadComplete(),
-        height: '500px',
+        height: '637px',
         parentNode: document.querySelector('#videoContainer'),
         jwt: signedToken,
         configOverwrite: {
@@ -200,7 +200,7 @@ function showChat(rname, refresh = 0) {
 }
 
 function scrollSmoothToBottom(id) {
-    $("#" + id).animate({ scrollTop: $('#' + id).prop("scrollHeight") }, 500);
+    $("#" + id).animate({ scrollTop: $('#' + id).prop("scrollHeight") }, 637);
 }
 
 $('body').on('click', '#web-btn', function () {
