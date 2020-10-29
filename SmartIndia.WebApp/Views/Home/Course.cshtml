@@ -4,19 +4,38 @@
     ViewData["Title"] = "Course";
     Layout = "~/Views/Shared/_LayoutLogin.cshtml";
 }
-
+    <title>OCR - Course</title>
+<!-- Datepicker CSS -->
+<link rel="stylesheet" href="~/assets/css/gijgo.min.css" />
 @section Scripts{
+
     <script src="~/ApplicationScripts/Common/date-format-converter.js"></script>
     <script src="~/ApplicationScripts/Home/bind-courselist.js"></script>
+    <script src="~/ApplicationScripts/Common/custom-validate.js"></script>
     <!-- Advance Search JS -->
     <script src="~/assets/js/advance-search.js"></script>
     <!-- Text Ellipsis JS -->
     <script src="~/assets/js/jquery.vEllipsis.js"></script>
+    <!-- Datepicker JS -->
+    <script src="~/assets/js/gijgo.min.js"></script>
     <script>
         $(document).ready(function () {
             $(".ocr-search-container").hide();
             loadNavigation('Course', 'course');
         });
+    </script>
+    <script>
+        function isNumber(evt) {
+            evt = (evt) ? evt : window.event;
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                return false;
+            }
+            return true;
+        }
+    </script>
+    <script>
+        $('#searchDate').datepicker({ format: 'dd-mmm-yyyy' });
     </script>
 }
 <!-- Start Course Area -->
@@ -53,41 +72,41 @@
                         <div class="row">
                             <div class="col-md-9 mt-30 edgt-content-left">
                                 @*<div class="edgt-cl-filter-holder">
-                                    <div class="edgt-course-items-counter">
-                                        <span class="counter-label">Showing</span>
-                                        <span class="counter-min-value">1</span>
-                                        <span class="counter-dash">–</span>
-                                        <span class="counter-max-value">6</span>
-                                        <span class="counter-label">of</span>
-                                        <span class="counter-total">23</span>
-                                    </div>
-                                </div>*@
+                                        <div class="edgt-course-items-counter">
+                                            <span class="counter-label">Showing</span>
+                                            <span class="counter-min-value">1</span>
+                                            <span class="counter-dash">–</span>
+                                            <span class="counter-max-value">6</span>
+                                            <span class="counter-label">of</span>
+                                            <span class="counter-total">23</span>
+                                        </div>
+                                    </div>*@
                                 <div class="row" id="div_courselist">
                                 </div>
 
 
                                 @*<div class="edgt-cl-standard-pagination">
-                                    <ul>
-                                        <li class="edgt-cl-pag-prev">
-                                            <a href="javascript:void(0);" data-paged="1"><span class="bx bx-chevron-left"></span></a>
-                                        </li>
-                                        <li class="edgt-cl-pag-number edgt-cl-pag-active">
-                                            <a href="javascript:void(0);" data-paged="1">1</a>
-                                        </li>
-                                        <li class="edgt-cl-pag-number ">
-                                            <a href="javascript:void(0);" data-paged="2">2</a>
-                                        </li>
-                                        <li class="edgt-cl-pag-number ">
-                                            <a href="javascript:void(0);" data-paged="3">3</a>
-                                        </li>
-                                        <li class="edgt-cl-pag-number ">
-                                            <a href="javascript:void(0);" data-paged="4">4</a>
-                                        </li>
-                                        <li class="edgt-cl-pag-next">
-                                            <a href="javascript:void(0);" data-paged="2"><span class="bx bx-chevron-right"></span></a>
-                                        </li>
-                                    </ul>
-                                </div>*@
+                                        <ul>
+                                            <li class="edgt-cl-pag-prev">
+                                                <a href="javascript:void(0);" data-paged="1"><span class="bx bx-chevron-left"></span></a>
+                                            </li>
+                                            <li class="edgt-cl-pag-number edgt-cl-pag-active">
+                                                <a href="javascript:void(0);" data-paged="1">1</a>
+                                            </li>
+                                            <li class="edgt-cl-pag-number ">
+                                                <a href="javascript:void(0);" data-paged="2">2</a>
+                                            </li>
+                                            <li class="edgt-cl-pag-number ">
+                                                <a href="javascript:void(0);" data-paged="3">3</a>
+                                            </li>
+                                            <li class="edgt-cl-pag-number ">
+                                                <a href="javascript:void(0);" data-paged="4">4</a>
+                                            </li>
+                                            <li class="edgt-cl-pag-next">
+                                                <a href="javascript:void(0);" data-paged="2"><span class="bx bx-chevron-right"></span></a>
+                                            </li>
+                                        </ul>
+                                    </div>*@
                             </div>
                             <div class="col-md-3 mt-30 edgt-sidebar-right">
                                 <div class="widget edgt-course-categories-widget">
@@ -95,21 +114,22 @@
                                         <h4 class="edgt-widget-title">Find Course</h4>
                                     </div>
                                     <div class="outer-adv-search-area" id="outer-advanceSearchArea">
-                                        <div class="col-sm-4 col-lg-4 col-md-4 ocr-float-left">
-                                            <div class="outer-adv-search-text">Course</div>
-                                        </div>
-                                        <div class="col-sm-8 col-lg-8 col-md-8 ocr-float-left">
-                                            <div class="form-group">
-                                                <input type="text" autocomplete="off" />
-                                            </div>
-                                        </div>
-                                        <div class="clearfix"></div>
+
                                         <div class="col-sm-4 col-lg-4 col-md-4 ocr-float-left">
                                             <div class="outer-adv-search-text">Host</div>
                                         </div>
                                         <div class="col-sm-8 col-lg-8 col-md-8 ocr-float-left">
                                             <div class="form-group">
-                                                <input type="text" autocomplete="off" />
+                                                <input type="text" id="txtHost" autocomplete="off" />
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-sm-4 col-lg-4 col-md-4 ocr-float-left">
+                                            <div class="outer-adv-search-text">Course</div>
+                                        </div>
+                                        <div class="col-sm-8 col-lg-8 col-md-8 ocr-float-left">
+                                            <div class="form-group">
+                                                <input type="text" id="txtCourse" autocomplete="off" />
                                             </div>
                                         </div>
                                         <div class="clearfix"></div>
@@ -127,18 +147,18 @@
                                         </div>
                                         <div class="col-sm-4 col-lg-4 col-md-4 ocr-float-left">
                                             <div class="form-group">
-                                                <input type="text" autocomplete="off" placeholder="Min price" />
+                                                <input type="text" autocomplete="off" id="txtMinPrice" placeholder="Min price" onkeypress="return isNumber(event)" />
                                             </div>
                                         </div>
                                         <div class="col-sm-4 col-lg-4 col-md-4 ocr-float-left">
                                             <div class="form-group">
-                                                <input type="text" autocomplete="off" placeholder="Max price" />
+                                                <input type="text" autocomplete="off" id="txtMaxPrice" placeholder="Max price" onkeypress="return isNumber(event)" />
                                             </div>
                                         </div>
                                         <div class="clearfix"></div>
                                         <div class="adv-search-btn-area">
                                             <button type="button" class="btn btn-outline-secondary" id="clearfilter">Clear Filter</button>
-                                            <button type="button" class="btn btn-primary">Search</button>
+                                            <button type="button" class="btn btn-primary" id="btnSearch">Search</button>
                                         </div>
                                     </div>
                                     <div class="clearfix"></div>

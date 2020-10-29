@@ -28,7 +28,7 @@ function BindHostUpcommingClasses() {
     var usersParam = JSON.stringify({
         UserId: parseInt(UId),
         ACTIONCODE: "E",
-        Curl: ClientURL
+        Curl: ""
     });
     $.ajax(
         {
@@ -40,11 +40,14 @@ function BindHostUpcommingClasses() {
             success: function (data) {
                 if (data.length == 0) {
                     $("#hostDashCalendar").css("display", "none");
+                   $("#divaction").css("display", "none");
                     $("#sp_nodata").css("display", "block");
-                    $("#sp_nodata").html("No data available")
+                    $("#sp_nodata").html("No data available");
+                    $(".calendar-scheduler").addClass("nodata-btn-schedular");
                 }
                 else {
                     $("#sp_nodata").css("display", "none");
+                    $(".calendar-scheduler").removeClass("nodata-btn-schedular");
                     $('#hostDashCalendar').fullCalendar({
                         header: {
                             left: 'prev,next',
@@ -121,11 +124,17 @@ function BindList() {
             success: function (data) {
                 if (data.length == 0) {
                     $("#hostDashlList").css("display", "none");
+                    $("#divaction").css("display", "none");
+                    $("#divnoofdata").css("display", "none");
                     $("#sp_nodata").css("display", "block");
-                    $("#sp_nodata").html("No data available")
+                    $("#sp_nodata").html("No data available");
+                    $(".calendar-scheduler").addClass("nodata-btn-schedular");
                 }
                 else {
                     $("#sp_nodata").css("display", "none");
+                    $(".calendar-scheduler").removeClass("nodata-btn-schedular");
+                    $("#divnoofdata").css("display", "block");
+                    $("#spannoofdata").html(data[0].noOfData);
                     var trHTML = '';
                     $.each(data, function (i, item) {
 
@@ -134,11 +143,12 @@ function BindList() {
 
                             + ' <a data-toggle="tooltip" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Hosts/HostDashboard/CourseDetails?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
                             + '</div>'
+                            
+                            + ' <p class="card-text sm-cli-text ellip-box two-lines">' + data[i].courseDesc + '</p>'
+                            + '<div class="sm-bottom-info">'
                             + '<span class="sm-host-name">'
                             + '<i class="bx bx-task"></i>' + data[i].batchName + ''
                             + '</span>'
-                            + ' <p class="card-text sm-cli-text ellip-box two-lines">' + data[i].courseDesc + '</p>'
-                            + '<div class="sm-bottom-info">'
                             + '<span class="sm-date">'
                             + ' <i class="bx bx-calendar"></i>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') + ''
                             + '</span>'

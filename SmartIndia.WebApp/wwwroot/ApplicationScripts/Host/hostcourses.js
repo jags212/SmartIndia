@@ -1,4 +1,8 @@
-﻿$('#btnSubmit').click(function () {
+﻿$(document).ready(function () {
+    getallcourses();
+});
+
+$('#btnSubmit').click(function () {
     var ImgExt = $("#fileuploadImg").val().split('.')[1];
     var BroExt = $("#fileuploadbrochure").val().split('.').pop();
     function CallSave() {
@@ -66,6 +70,13 @@
     }
 
 });
+
+$('#btnReset').click(function () {
+    $("#btnSubmit").show();
+    $("#btnUpdate").hide();
+    $("#btnReset").text("Reset");
+});
+
 function SaveImage(imgId) {
     const fdata = new FormData();
 
@@ -130,9 +141,7 @@ function clearinput() {
 }
 
 
-$(document).ready(function () {
-    getallcourses();
-});
+
 function getallcourses() {
     $("#btnSubmit").show();
     $("#btnUpdate").hide();
@@ -178,16 +187,18 @@ function getcourseidd(CID) {
     function Update() {
         $("#btnSubmit").hide();
         $("#btnUpdate").show();
+        $("#btnReset").text("Cancel");
+
         $("#CourseId").val(CID);
         var usersParam1 = JSON.stringify({
             ACTIONCODE: 'U',
-            UserId: CID,
+            CourseId: CID,
         });
 
         $.ajax(
             {
                 type: "GET",
-                url: ServiceURL + "/api/HostCourses/GetHostCourse",
+                url: ServiceURL + "/api/HostCourses/GetCourseUpdateDetails",
                 data: JSON.parse(usersParam1),
                 dataType: "json",
                 contentType: "application/json",
@@ -201,6 +212,12 @@ function getcourseidd(CID) {
                     $("#fdate").val(data[0].startDate);
                     $("#edate").val(data[0].endDate);
                     $("#imgBanner").attr('src', data[0].imageUrl);
+
+                    //if (data[0].imageExt != null && data[0].imageExt != "") {
+                    //    $("#imgBanner").show();
+                    //} else {
+                    //    $("#imgBanner").hide();
+                    //}
 
                     $("#txtCost").val(data[0].cost);
                     $("#ddlFrequency").val(data[0].classFrequency);
@@ -230,12 +247,12 @@ function getcoursedetails(CID) {
     ClearCourseDetails();
     var usersParam2 = JSON.stringify({
         ACTIONCODE: 'U',
-        UserId: CID,
+        CourseId: CID,
     });
     $.ajax(
         {
             type: "GET",
-            url: ServiceURL + "/api/HostCourses/GetHostCourse",
+            url: ServiceURL + "/api/HostCourses/GetCourseUpdateDetails",
             data: JSON.parse(usersParam2),
             dataType: "json",
             contentType: "application/json",
@@ -275,7 +292,7 @@ function getbrouchure(CID) {
     ClearCourseDetails();
     var usersParam2 = JSON.stringify({
         ACTIONCODE: 'U',
-        UserId: CID,
+        CourseId: CID,
     });
     $.ajax(
         {

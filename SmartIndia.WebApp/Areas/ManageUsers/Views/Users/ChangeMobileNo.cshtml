@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_FrontPannelLayout.cshtml";
 }
 
-<title>OCR - Attendee Change Mobile No</title>
+<title>OCR - Change Mobile No</title>
 @section Scripts{
     <!-- Country Code JS -->
     <script src="~/assets/js/countrycode.js"></script>
@@ -42,11 +42,11 @@
 
                 <!--- Start Country Code --->
 
-                <div id="intel-flag-title" class="intl-tel-input allow-dropdown separate-dial-code mobile-change-intl-tel-input" data-toggle="tooltip" data-placement="bottom" title="United States of America: +1">
+                <div id="intel-flag-title" class="intl-tel-input allow-dropdown separate-dial-code mobile-change-intl-tel-input" data-toggle="tooltip" data-placement="bottom" title="India: +91">
                     <div class="flag-container">
                         <div id="selected-flag-title" class="selected-flag" role="combobox" aria-owns="country-listbox">
-                            <div class="iti-flag us"></div>
-                            <div class="selected-dial-code" id="selected-flag-dial-code">+1</div>
+                            <div class="iti-flag in"></div>
+                            <div class="selected-dial-code" id="selected-flag-dial-code">+91</div>
                             <div class="iti-arrow up"></div>
                         </div>
                         <ul class="country-list dropup" id="country-listbox" aria-expanded="true" role="listbox" aria-activedescendant="iti-item-us">
@@ -307,7 +307,8 @@
                 <!--- End Country Code --->
             </div>
             <div class="col-lg-12">
-                <input type="button" id="btnSubmit" class="btn btn-primary" value="Change" data-toggle="modal"  />
+                <input type="button" id="btnSubmit" class="btn btn-primary" value="Change" data-toggle="modal" />
+                <a asp-area="ManageUsers" asp-controller="Users" asp-action="Profile" class="btn btn-warning">Cancel</a>
             </div>
         </form>
     </div>

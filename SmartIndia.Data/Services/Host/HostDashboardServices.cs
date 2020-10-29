@@ -45,7 +45,8 @@ namespace SmartIndia.Data.Services.Host
                         CourseId = item.CourseId,
                         SchedularId = item.SchedularId,
                         color = "#ffc107",
-                        url = hostParameter.Curl + "/Hosts/HostDashboard/CourseDetails?SID=" + item.SchedularId + ""
+                        url = hostParameter.Curl + "/Hosts/HostDashboard/CourseDetails?SID=" + item.SchedularId + "",
+                        NoOfData = result.Count.ToString()
 
                     };
                     pcomingClassCalender.Add(modal);
@@ -86,7 +87,8 @@ namespace SmartIndia.Data.Services.Host
                         CourseDesc = item.CourseDesc,
                         Topics = item.Topics,
                         CourseId = item.CourseId,
-                        SchedularId = item.SchedularId
+                        SchedularId = item.SchedularId,
+                        NoOfData = result.Count.ToString()
 
                     };
                     upcomingClassDetails.Add(modal);

@@ -43,7 +43,7 @@
     </script>
 
 }
-<title>OCR - Upcoming Classes</title>
+<title>OCR - Attendee Upcoming Classes</title>
 <!-- Breadcrumb Area -->
 <div class="breadcrumb-area">
     <h1>Upcoming Classes</h1>
@@ -59,7 +59,7 @@
 <!-- Start -->
 <!-- Calendar -->
 <div class="card mb-30">
-    <div class="card-body">
+    <div class="card-body" id="divcardbody">
         <div class="upcoming-section">
             <span id="attendeeUpcomingList" class="up-active" data-toggle="tooltip" data-placement="bottom" title="List"><i class="bx bx-list-ul"></i></span>
             <span id="attendeeUpcomingCalendar" data-toggle="tooltip" data-placement="bottom" title="Calendar"><i class="bx bx-calendar"></i></span>
@@ -74,6 +74,7 @@
         <div class="clearfix"></div>
         <span id="sp_nodata"></span>
         <!-- List -->
+        <div id="divnoofdata" class="noofdatadiv">Total no of data :  <span id="spannoofdata" class="noofdata"></span></div>
         <div class="container" id="attendeeUPlList">
             <div class="row">
                 <div class="col-sm-12 col-lg-12 col-md-12">
@@ -84,6 +85,9 @@
         </div>
         <!-- Calendar -->
         <div id="attendeeUPCalendar"></div>
+    </div>
+    <div class="card-body" id="divcardbodynodata">
+        <div id="sp_nodata" class="nodata">No data available</div>
     </div>
 </div>
 <!-- End --> 

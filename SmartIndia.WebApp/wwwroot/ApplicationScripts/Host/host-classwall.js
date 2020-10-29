@@ -1,7 +1,9 @@
 ﻿
 //Host
 $(document).ready(function () {
+    $("#divcardbodynodata").css("display", "none");
     BindList();
+   
     $("#hostCWCalendar").css("display", "none");
 });
 
@@ -31,7 +33,7 @@ function BindHostUpcommingClasses() {
     var usersParam = JSON.stringify({
         UserId: parseInt(UId),
         ACTIONCODE: "C",
-        Curl: ClientURL
+        Curl: ""
     });
     $.ajax(
         {
@@ -43,10 +45,12 @@ function BindHostUpcommingClasses() {
             success: function (data) {
                 if (data.length == 0) {
                     $("#hostCWCalendar").css("display", "none");
-                    $("#sp_nodata").css("display", "block");
+                    $("#divcardbody").css("display", "none");
+                    $("#divcardbodynodata").css("display", "block");
                 }
                 else {
-                    $("#sp_nodata").css("display", "none");
+                    $("#divcardbodynodata").css("display", "none");
+                    $("#divcardbody").css("display", "block");
                     $('#hostCWCalendar').fullCalendar({
                         header: {
                             left: 'prev,next',
@@ -121,14 +125,24 @@ function BindList() {
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
+                
+                
                 if (data.length == 0) {
                     $("#hostDashlList").css("display", "none");
-                    $("#sp_nodata").css("display", "block");
+                    $("#divcardbody").css("display", "none");
+                    $("#divnoofdata").css("display", "none");
+                    $("#divcardbodynodata").css("display", "block");
                 }
                 else {
-                    $("#sp_nodata").css("display", "none");
+                    $("#divcardbody").css("display", "block");
+                    
+                    $("#divcardbodynodata").css("display", "none");
+                    $("#divnoofdata").css("display", "block");
+                    $("#spannoofdata").html(data[0].noOfData);
+                    $("#sp_nodata").html("No data available");
                     var trHTML = '';
                     $.each(data, function (i, item) {
+                        
                         if (data[i].status) {
                             if (data[i].classType == "Accomplished") {
                                 var color = '<div class="list-color-legend col-leg-green" data-toggle="tooltip" data-placement="bottom" title="Accomplished"></div>';
@@ -153,11 +167,12 @@ function BindList() {
                             + ' <a data-toggle="tooltip" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Hosts/ClassWall/ClassWallDetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
 
                             + '</div>'
+                           
+                            + ' <p class="card-text sm-cli-text">' + data[i].courseDesc + '</p>'
+                            + '<div class="sm-bottom-info">'
                             + '<span class="sm-host-name">'
                             + '<i class="bx bx-task"></i>' + data[i].batchName + ''
                             + '</span>'
-                            + ' <p class="card-text sm-cli-text">' + data[i].courseDesc + '</p>'
-                            + '<div class="sm-bottom-info">'
                             + '<span class="sm-date">'
                             + ' <i class="bx bx-calendar"></i>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') + ''
                             + '</span>'

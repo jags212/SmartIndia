@@ -153,14 +153,16 @@
                         <a href="javascript:void(0);" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="menu-profile">
                                 <span class="name" id="spnFirstName"></span>
-                                <img src="~/assets/img/user1.jpg" class="rounded-circle" alt="image">
+                                @*<img src="~/assets/img/user1.jpg" class="rounded-circle" alt="image">*@
+                                <img id="imgProfile" class="rounded-circle"/>
                             </div>
                         </a>
 
                         <div class="dropdown-menu">
                             <div class="dropdown-header d-flex mobile-d-flex flex-column align-items-center">
                                 <div class="figure mb-3">
-                                    <img src="~/assets/img/user1.jpg" class="rounded-circle" alt="image">
+                                    @*<img src="~/assets/img/user1.jpg" class="rounded-circle" alt="image">*@
+                                    <img id="imgProfileee" class="rounded-circle"/>
                                 </div>
                                 <div class="info text-center">
                                     <span class="name" id="spnFullName"></span>
@@ -208,7 +210,7 @@
         <footer class="footer-area">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-sm-6 col-md-6">
-                    <p>Copyright <i class='bx bx-copyright'></i> 2020 <a href="javascript:void(0);">OCR</a>. All rights reserved</p>
+                    <p>Copyright <i class='bx bx-copyright'></i> @DateTime.Now.Year <a href="javascript:void(0);">OCR</a>. All rights reserved</p>
                 </div>
 
                 <div class="col-lg-6 col-sm-6 col-md-6 text-right">
@@ -264,7 +266,10 @@
                 },
                 complete: function () {
                     $('#img').hide();
-                }
+                },
+                error: function () {
+                    $('#img').hide();
+                }   
             });
         });
         function ClearData() {

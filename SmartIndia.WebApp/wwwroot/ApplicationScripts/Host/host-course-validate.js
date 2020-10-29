@@ -5,18 +5,19 @@
     else if (!IsSpecialCharacter1stPalce('txtName')) {
         return false;
     }
-    else if (!BlankTextBox('txtDesc', 'Description')) {
-        return false;
-    }
-    else if (!IsSpecialCharacter1stPalce('txtDesc')) {
-        return false;
-    }
     else if (!BlankTextBox('txtTopics', 'Topics')) {
         return false;
     }
     else if (!IsSpecialCharacter1stPalce('txtTopics')) {
         return false;
     }
+    else if (!BlankTextBox('txtDesc', 'Description')) {
+        return false;
+    }
+    else if (!IsSpecialCharacter1stPalce('txtDesc')) {
+        return false;
+    }
+   
     else if (!BlankTextBox('sdatepicker', 'Start Date')) {
         return false;
     }

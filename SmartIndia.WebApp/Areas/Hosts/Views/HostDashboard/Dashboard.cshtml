@@ -31,16 +31,17 @@
 <div class="mt-40">
     <div class="calendar-container mb-30">
         <div class="calendar-header">
-            <div class="con-dashboard-section">
+            <div class="con-dashboard-section" id="divaction">
                 <span id="hostDList" class="up-active" data-toggle="tooltip" data-placement="bottom" title="List"><i class="bx bx-list-ul"></i></span>
                 <span id="hostDCalendar" data-toggle="tooltip" data-placement="bottom" title="Calendar"><i class="bx bx-calendar"></i></span>
             </div>
             <a asp-area="Hosts" asp-controller="Schedular" asp-action="Schedular" class="calendar-scheduler">Add Scheduler<i class="bx bx-plus bx-pad"></i></a>
         </div>
         <div class="clearfix"></div>
-        <div class="card-body" id="div_cardbody">
-            <span id="sp_nodata"></span>
+        <div class="card-body">
+            <div id="sp_nodata" class="nodata"></div>
             <!-- List -->
+            <div id="divnoofdata" class="noofdatadiv">Total no of data :  <span id="spannoofdata" class="noofdata"></span></div>
             <div class="container" id="hostDashlList">
                 <div class="row">
                     <div class="col-sm-12 col-lg-12 col-md-12">

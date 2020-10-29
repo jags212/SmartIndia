@@ -21,6 +21,8 @@ function BindList() {
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
+                $("#divnoofdata").css("display", "block");
+                
                 var trHTML = '';
                 $('#coursedetails').empty();
                 $.each(data, function (i, item) {
@@ -30,7 +32,7 @@ function BindList() {
                     else {
                         var fab = '<i class="bx bx-star">';
                     }
-
+                    $("#spannoofdata").html(data[i].noOfData);
                     trHTML += '<li class="list-group-item justify-content-between ocr-list-group"> '
                         + '<div class="sm-card-title" >'
                         + ' <a data-toggle="tooltip" data-placement="bottom" title="' + data[i].courseName + '" href="' + ClientURL + '/Attendee/EnrollCourses/EnrollCourseDetails?SID=' + data[i].courseId + '&bt=' + data[i].batchName + '" >' + data[i].courseName + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
@@ -64,9 +66,36 @@ function BindList() {
         });
 }
 $('#btnSearch').click(function () {
-    BindList();
+    if (ValidateForm()) {
+        if (BindList()) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
     $("#advanceSearchArea").hide();
 });
+function ValidateForm() {
+    if (!IsSpecialCharacter1stPalce('txtCourse')) {
+        return false;
+    }
+    else if (!IsWhiteSpace1stPalce('txtCourse')) {
+        return false;
+    }
+    else if (!IsWhiteSpace1stPalce('txtHost')) {
+        return false;
+    }
+    else if (!IsSpecialCharacter1stPalce('txtHost')) {
+        return false;
+    }
+    else if (!CompareNumberRange('txtMinPrice', 'txtMaxPrice', 'Min Price', 'Max Price')) {
+        return false;
+    }
+    else {
+        return true;
+    } 
+} 
 //Clear Filter
 $("#clearfilter").click(function () {
     $("#advanceSearchArea :input").val("");

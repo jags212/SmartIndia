@@ -1,6 +1,7 @@
 ﻿
 //Attendee
 $(document).ready(function () {
+    $("#divcardbodynodata").css("display", "none");
     BindList();
     $("#attendeeUPCalendar").css("display", "none");
 });
@@ -33,7 +34,7 @@ function BindHostUpcommingClasses() {
     var usersParam = JSON.stringify({
         UserId: parseInt(UId),
         ACTIONCODE: "E",
-        Curl: ClientURL
+        Curl: ""
     });
     $.ajax(
         {
@@ -45,11 +46,12 @@ function BindHostUpcommingClasses() {
             success: function (data) {
                 if (data.length == 0) {
                     $("#attendeeUPCalendar").css("display", "none");
-                    $("#sp_nodata").css("display", "block");
-                    $("#sp_nodata").html("No data available")
+                    $("#divcardbodynodata").css("display", "block");
+                    $("#divcardbody").css("display", "none");
                 }
                 else {
-                    $("#sp_nodata").css("display", "none");
+                    $("#divcardbodynodata").css("display", "none");
+                    $("#divcardbody").css("display", "block");
                     $('#attendeeUPCalendar').fullCalendar({
                         header: {
                             left: 'prev,next',
@@ -111,6 +113,20 @@ function BindHostUpcommingClasses() {
 //List Bind
 function BindList() {
     jQuery.support.cors = true;
+
+    var result = parseJwt(localStorage.getItem("jwtToken"));
+    var uid = result.unique_name;
+    var role = result.role;
+    var moderator;
+    if (role == "Host") {
+        moderator = true;
+    }
+    else {
+        moderator = false;
+    }
+    var name = localStorage.getItem("firstName");
+    var EmailId = localStorage.getItem("emailID");
+
     var UId = localStorage.getItem("userID");
     var usersParam = JSON.stringify({
         UserId: parseInt(UId),
@@ -126,11 +142,15 @@ function BindList() {
             success: function (data) {
                 if (data.length == 0) {
                     $("#hostCWlList").css("display", "none");
-                    $("#sp_nodata").css("display", "block");
-                    $("#sp_nodata").html("No data available")
+                    $("#divnoofdata").css("display", "none");
+                    $("#divcardbodynodata").css("display", "block");
+                    $("#divcardbody").css("display", "none");
                 }
                 else {
-                    $("#sp_nodata").css("display", "none");
+                    $("#divcardbodynodata").css("display", "none");
+                    $("#divcardbody").css("display", "block");
+                    $("#divnoofdata").css("display", "block");
+                    $("#spannoofdata").html(data[0].noOfData);
                     var trHTML = '';
 
                     $.each(data, function (i, item) {
@@ -140,19 +160,25 @@ function BindList() {
 
                             + ' <a data-toggle="tooltip" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Attendee/UpcomingClasses/upcomingclassdetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
                             + '</div>'
+                           
+                            + ' <p class="card-text sm-cli-text ellip-box two-lines">' + data[i].courseDesc + '</p>'
+                            + '<div class="sm-bottom-info">'
                             + '<span class="sm-host-name">'
                             + '<i class="bx bx-task"></i>' + data[i].batchName + ''
                             + '</span>'
-                            + ' <p class="card-text sm-cli-text ellip-box two-lines">' + data[i].courseDesc + '</p>'
-                            + '<div class="sm-bottom-info">'
                             + '<span class="sm-date">'
                             + ' <i class="bx bx-calendar"></i>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') + ''
                             + '</span>'
                             + '<span class="sm-time">'
                             + ' <i class="bx bx-time"></i> ' + timeConvert(data[i].startTime) + ''
                             + '</span>'
-                            + '</div >'
-                            + '</li >'
+                            + '</div>'
+
+                            + '<div style="float:right">'
+                            + ' <a data-toggle="tooltip" data-placement="bottom" title="Join" target="_blank" href="' + ClientURL + '/VideoClass/MeetingUp/Index?CRID=' + data[i].classRoomId + '&Id=' + UId + '&Name=' + name + '&EmailId=' + EmailId + '&moderator=' + moderator + '"><strong><u> Join</u> </strong></span></a>'
+                            +'</div>'
+
+                            + '</li>'
                     });
 
                     $('#coursedetails').append(trHTML);

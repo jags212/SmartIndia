@@ -149,11 +149,53 @@ namespace SmartIndia.Data.Services.Host
                 return null;
             }
         }
+
+        public List<HostCourses> UpdateCourse(HostParameter hostParameter)
+        {
+            object[] objArray = new object[] {
+                     "@P_ACTIONCODE",hostParameter.ACTIONCODE,
+                     "@CourseId",hostParameter.CourseId
+            };
+            try
+            {
+                DynamicParameters param = objArray.ToDynamicParameters();
+                var result = DBConnection.Query<HostCourses>("USP_GetHostCourses_ACTION", param, commandType: CommandType.StoredProcedure).ToList();
+                List<HostCourses> HostCourses = new List<HostCourses>();
+                foreach (var item in result)
+                {
+                    var modal = new HostCourses()
+                    {
+                        CourseId = item.CourseId,
+                        UserId = item.UserId,
+                        CourseName = item.CourseName,
+                        CourseDesc = item.CourseDesc,
+                        Topics = item.Topics,
+                        StartDate = TimeZone.CurrentTimeZone.ToLocalTime(item.StartDate),
+                        EndDate = TimeZone.CurrentTimeZone.ToLocalTime(item.EndDate),
+                        Duration = item.Duration,
+                        ClassFrequency = item.ClassFrequency,
+                        NoOfClass = item.NoOfClass,
+                        Cost = item.Cost,
+                        Topic = item.Topic,
+                        ImageName = item.ImageName,
+                        ImageExt = item.ImageExt,
+                        BrochureName = item.BrochureName,
+                        BrochureExt = item.BrochureExt
+                    };
+                    HostCourses.Add(modal);
+                }
+                return HostCourses;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
         public List<GetBrouchure> GetHostBrouchure(HostParameter hostParameter)
         {
             object[] objArray = new object[] {
                      "@P_ACTIONCODE",hostParameter.ACTIONCODE,
-                     "@UserId",hostParameter.UserId
+                     "@CourseId",hostParameter.CourseId
             };
             try
             {

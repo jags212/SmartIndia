@@ -3,12 +3,12 @@
     ViewData["Title"] = "CourseDetails";
     Layout = "~/Views/Shared/_FrontPannelLayout.cshtml";
 }
+<title>OCR - Course Details</title>
 
 @section Scripts{
     <script>
         var sid =@ViewBag.id
             $("#hfScId").val(sid);
-            //alert("Hi"+sid);
     </script>
     <script src="~/ApplicationScripts/Host/upcoming-class-detail.js"></script>
     <script src="~/ApplicationScripts/Common/date-format-converter.js"></script>
@@ -17,8 +17,16 @@
             loadNavigation('CourseDetails', 'host-dash');
         });
     </script>
+    <script>
+        function hideLoader() {
+            $('#loading').hide();
+        }
+        $(window).ready(hideLoader);
+        setTimeout(hideLoader, 20 * 1000);
+    </script>
 }
 <!-- Breadcrumb Area -->
+<div id="loading"></div>
 <div class="breadcrumb-area">
     <h1>Course Details</h1>
     <ol class="breadcrumb">
@@ -61,7 +69,7 @@
                     <i class="bx bx-time"></i><span id="starttime"></span>
                 </span>
             </div>
-            <div class="course-thumbnail float-right">
+            <div class="course-thumbnail float-right" id="Divimgbanner">
                 <img id="imgBanner" alt="OCR" />
             </div>
             <div class="text margin-y">

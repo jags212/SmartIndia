@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using SmartIndia.Data.Entities.Host;
 using SmartIndia.Data.Factory;
 using SmartIndia.Data.Models;
@@ -20,18 +21,21 @@ namespace SmartIndia.RestAPI.Controllers
         private readonly IConnectionFactory connectionFactory;
         [Obsolete]
         private readonly IHostingEnvironment _environment;
+        private readonly IConfiguration _configuration;
 
         [Obsolete]
-        public HostUpcomingClassesController(IConnectionFactory connectionFactory, IHostingEnvironment environment)
+        public HostUpcomingClassesController(IConnectionFactory connectionFactory, IHostingEnvironment environment, IConfiguration configuration)
         {
             this.connectionFactory = connectionFactory;
             _environment = environment ?? throw new ArgumentNullException(nameof(environment));
+            _configuration = configuration;
         }
 
         [HttpGet("BindHostUpcommingClasses")]
         [Obsolete]
         public async Task<List<UpcomingClassCalender>> BindUpcommingClasses([FromQuery] HostParameter obj)
         {
+            obj.Curl = _configuration.GetSection("HostURL")["ClientURL"];
             using (var hostUpcommingClassesServices = new HostUpcommingClassesServices(connectionFactory))
             {
                 return await Task.FromResult(hostUpcommingClassesServices.BindUpcommingClasses(obj));
@@ -56,8 +60,15 @@ namespace SmartIndia.RestAPI.Controllers
                     hostCourses.ImageExt = fi.Extension.Replace(".", string.Empty);
                     hostCourses.ImageName = imageName;
                     Byte[] b;
-                    b = System.IO.File.ReadAllBytes(hostCourses.filePath);
-                    hostCourses.ImageUrl = "data:image/" + hostCourses.ImageExt + ";base64," + Convert.ToBase64String(b, 0, b.Length); ;
+                    if (System.IO.File.Exists(hostCourses.filePath))
+                    {
+                        b = System.IO.File.ReadAllBytes(hostCourses.filePath);
+                        hostCourses.ImageUrl = "data:image/" + hostCourses.ImageExt + ";base64," + Convert.ToBase64String(b, 0, b.Length); ;
+                    }
+                    else
+                    {
+                        hostCourses.ImageUrl = "";
+                    }
                 }
                 if (hostCourses.BrochureExt != null && hostCourses.BrochureExt != "")
                 {
@@ -68,16 +79,22 @@ namespace SmartIndia.RestAPI.Controllers
                     hostCourses.BrochureExt = fi.Extension.Replace(".", string.Empty);
                     hostCourses.BrochureName = brochureName;
                     Byte[] b;
-                    b = System.IO.File.ReadAllBytes(hostCourses.filePath);
-                    if (hostCourses.BrochureExt == "pdf")
+                    if (System.IO.File.Exists(hostCourses.filePath))
                     {
-                        hostCourses.BrouchureUrl = "data:application/" + hostCourses.BrochureExt + ";base64," + Convert.ToBase64String(b, 0, b.Length); ;
+                        b = System.IO.File.ReadAllBytes(hostCourses.filePath);
+                        if (hostCourses.BrochureExt == "pdf")
+                        {
+                            hostCourses.BrouchureUrl = "data:application/" + hostCourses.BrochureExt + ";base64," + Convert.ToBase64String(b, 0, b.Length); ;
+                        }
+                        else
+                        {
+                            hostCourses.BrouchureUrl = "data:image/" + hostCourses.BrochureExt + ";base64," + Convert.ToBase64String(b, 0, b.Length); ;
+                        }
                     }
                     else
                     {
-                        hostCourses.BrouchureUrl = "data:image/" + hostCourses.BrochureExt + ";base64," + Convert.ToBase64String(b, 0, b.Length); ;
+                        hostCourses.BrouchureUrl = "";
                     }
-                   // hostCourses.BrouchureUrl = "data:image/" + hostCourses.BrochureExt + ";base64," + Convert.ToBase64String(b, 0, b.Length); ;
                 }
                 List<UpcomingClassDetails> list = new List<UpcomingClassDetails>();
                 list.Add(hostCourses);

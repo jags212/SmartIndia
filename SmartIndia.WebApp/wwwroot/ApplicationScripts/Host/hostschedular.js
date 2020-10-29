@@ -31,7 +31,7 @@ $('#btnSubmit').click(function () {
                 type: "POST",
                 data: usersParam,
                 dataType: "json",
-                contentType: "application/json; charset=utf-8",
+                contentType: "application/json",
                 success: function (data) {
                     $('#dataTable tbody').empty();
                     if (data == "1") {
@@ -91,7 +91,7 @@ $('#btnSubmit').click(function () {
                     type: "POST",
                     data: JSON.stringify(schedularArray),
                     dataType: "json",
-                    contentType: "application/json; charset=utf-8",
+                    contentType: "application/json",
                     success: function (data) {
                         usersParam = null;
                         $('#dataTable tbody').empty();
@@ -169,7 +169,7 @@ $('#btnSubmit').click(function () {
                     type: "POST",
                     data: JSON.stringify(schedularArray),
                     dataType: "json",
-                    contentType: "application/json; charset=utf-8",
+                    contentType: "application/json",
                     success: function (data) {
                         usersParam = null;
                         $('#dataTable tbody').empty();
@@ -276,7 +276,7 @@ $('#btnSubmit').click(function () {
                     type: "POST",
                     data: JSON.stringify(schedularArray),
                     dataType: "json",
-                    contentType: "application/json; charset=utf-8",
+                    contentType: "application/json",
                     success: function (data) {
                         usersParam = null;
                         $('#dataTable tbody').empty();
@@ -453,7 +453,7 @@ $('#btnRSUpdate').click(function () {
             type: "POST",
             data: usersParam,
             dataType: "json",
-            contentType: "application/json; charset=utf-8",
+            contentType: "application/json",
             success: function (data) {
                 $('#dataTable tbody').empty();
                 if (data == "2") {
@@ -483,6 +483,9 @@ $('#btnRSUpdate').click(function () {
     }
 });
 $('#btnCancel').click(function () {
+    $("#ViewDetailsModal").modal("hide");
+});
+$('#btnCancelRes').click(function () {
     $("#reschedulingModal").modal("hide");
 });
 
@@ -571,7 +574,7 @@ $('#btnPublish').click(function () {
             type: "POST",
             data: usersParam,
             dataType: "json",
-            contentType: "application/json; charset=utf-8",
+            contentType: "application/json",
             success: function (data) {
                 if (data == "5") {
 

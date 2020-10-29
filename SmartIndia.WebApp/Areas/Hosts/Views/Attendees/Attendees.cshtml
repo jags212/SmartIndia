@@ -11,18 +11,38 @@
     <script src="~/ApplicationScripts/Common/custom-validate.js"></script>
     <!-- Attendee JS -->
     <script src="~/ApplicationScripts/Host/attendees.js"></script>
+
+
+    <!-- Attendees JS -->
+    <script src="~/assets/js/attendees.js"></script>
+    <!-- Clearable Input JS -->
+    <script src="~/assets/js/clearable-input.js"></script>
+    <!-- Text Ellipsis JS -->
+    <script src="~/assets/js/jquery.vEllipsis.js"></script>
     <script>
+        $(document).ready(function () {
+            $().vEllipsis({
+                'lines': 2,
+                'responsive': true
+            });
+        });
+    </script>
 
-        $('input[type=radio][name=rbtattendees]').change(function () {
-            if (this.value == 'cwa') {
-                $("#div_awc").css("display", "none");
-                $("#div_cwa").css("display", "block");
+    <script>
+        $('#searchlist').keyup(function () {
 
-            }
-            else if (this.value == 'awc') {
-                $("#div_awc").css("display", "block");
-                $("#div_cwa").css("display", "none");
-            }
+            var that = this;
+            all_list = $('#divcoursewiseattendee div > div');
+
+            var matching_list = all_list.filter(function (i, li) {
+                var list_item_text = $(li).text().toUpperCase();
+                var search_text = that.value.toUpperCase();
+                return ~list_item_text.indexOf(search_text);
+            });
+
+            all_list.hide();
+            matching_list.show();
+
         });
     </script>
     <script>
@@ -47,34 +67,26 @@
 <!-- End Breadcrumb Area -->
 <!-- Start -->
 <div class="card mb-30">
-    <div class="card-body">
+    <div class="card-body" id="divcardbody">
+        <div class="upcoming-section">
+            <span id="courseAttendees" class="up-active" data-toggle="tooltip" data-placement="bottom" title="Course Wise Attendees"><i class="bx bxl-discourse"></i></span>
+            <span id="attendeesCourses" data-toggle="tooltip" data-placement="bottom" title="Attendees Wise Courses"><i class="bx bx-id-card"></i></span>
+        </div>
+        <div class="ocr-clearable">
+            <input type="text" name="search" class="dashboard-panel-search" id="searchlist" placeholder="Search..">
+            <i class="ocr-clearable-clear">&times;</i>
+            <span class="class-search-icon" data-toggle="tooltip" data-placement="bottom" title="Search"><i class="bx bx-search"></i></span>
+        </div>
+        <div class="clearfix"></div>
 
-        <div class="existing-date">
-            <label class="radio-inline">
-                <input type="radio" name="rbtattendees" value="cwa" checked id="rbtonce">Course Wise Attendees
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="rbtattendees" value="awc">Attendees Wise Courses
-            </label>
-        </div>
         @*Course Wise Attendees-------------start------------*@
-        <div class="table-responsive" id="div_cwa">
-            <table class="table table-hover" id="tbl_attendees" name="tbl_attendees">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">Sl#</th>
-                        <th scope="col">Course</th>
-                        <th scope="col">Scheduled Date</th>
-                        <th scope="col">No of Attendees</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
+        <div class="container mt-20" id="courseAttendeesList">
+            <div class="row" id="divcoursewiseattendee">
+
+            </div>
         </div>
-        @*Course Wise Attendees-------------end-------------*@
         @* Attendees Wise Courses ----------start-----------*@
-        <div class="table-responsive" id="div_awc">
+        <div class="table-responsive mt-15" id="attendeesCoursesList">
             <table class="table table-hover" id="tbl_awc" name="tbl_awc">
                 <thead class="thead-dark">
                     <tr>
@@ -87,8 +99,9 @@
                 </tbody>
             </table>
         </div>
-        @*Attendees Wise Courses------------end----------*@
-
+    </div>
+    <div class="card-body" id="divcardbodynodata">
+        <div id="sp_nodata" class="nodata">No data available</div>
     </div>
 </div>
 <!--End-->
@@ -112,18 +125,6 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Rakesh</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Sanat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Bikash</td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -144,7 +145,7 @@
             </div>
             <div class="modal-body re-modal-body">
                 <div class="table-responsive">
-                    <table class="table table-hover" id="tbl_attendeeDetails">
+                    <table class="table table-hover" id="tbl_courseDetails">
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col">Sl#</th>

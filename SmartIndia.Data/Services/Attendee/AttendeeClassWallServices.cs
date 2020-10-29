@@ -46,7 +46,8 @@ namespace SmartIndia.Data.Services.Attendee
                         CourseId = item.CourseId,
                         SchedularId = item.SchedularId,
                         color = "#ffc107",
-                        url = hostParameter.Curl + "/Attendee/ClassWall/ClassWallDetail?SID=" + item.SchedularId + ""
+                        url = hostParameter.Curl + "/Attendee/ClassWall/ClassWallDetail?SID=" + item.SchedularId + "",
+                        NoOfData = result.Count.ToString()
 
 
                     };
@@ -90,7 +91,8 @@ namespace SmartIndia.Data.Services.Attendee
                         Topics = item.Topics,
                         CourseId = item.CourseId,
                         SchedularId = item.SchedularId,
-                        IsPublished = item.IsPublished
+                        IsPublished = item.IsPublished,
+                        NoOfData = result.Count.ToString()
 
                     };
                     classWallDetails.Add(modal);

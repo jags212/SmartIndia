@@ -349,7 +349,7 @@ namespace SmartIndia.Data.Services
             }
         }
         public UserRegistrationInterestDetails GetUserDetails(Int64 userid)
-        { 
+        {
             try
             {
                 object[] objArrayUser = new object[] {
@@ -359,7 +359,7 @@ namespace SmartIndia.Data.Services
                 var result = DBConnection.QueryMultiple("USP_GetUserDetailsByUserID", paramUser, commandType: CommandType.StoredProcedure);
 
                 var userDetails = result.Read<UserRegistrationInterestDetails>().Single();
-                var userInterests = result.Read<ConficCourseInterest>().ToList(); 
+                var userInterests = result.Read<ConficCourseInterest>().ToList();
                 userDetails.Interests = userInterests;
 
                 return userDetails;
@@ -369,6 +369,35 @@ namespace SmartIndia.Data.Services
                 // throw new Exception(ex.Message);
                 return null;
                 // log.Error(ex);
+            }
+        }
+        [Obsolete]
+        public List<UserRegistrationInterestDetails> GetProfileImage(Getprofileimage getprofileimage)
+        {
+            object[] objArray = new object[] {
+                     "@UserId",getprofileimage.UserId
+            };
+            try
+            {
+                DynamicParameters param = objArray.ToDynamicParameters();
+                var result = DBConnection.Query<UserRegistrationInterestDetails>("USP_GetUserProfileImgByUserID", param, commandType: CommandType.StoredProcedure).ToList();
+                List<UserRegistrationInterestDetails> getimage = new List<UserRegistrationInterestDetails>();
+                foreach (var item in result)
+                {
+                    var modal = new UserRegistrationInterestDetails()
+                    {
+
+                        ImageName = item.ImageName,
+                        ImageExt = item.ImageExt,
+                        ImageUrl = item.ImageUrl
+                    };
+                    getimage.Add(modal);
+                }
+                return getimage;
+            }
+            catch (Exception ex)
+            {
+                return null;
             }
         }
         public string UpdateUserData(UserRegistrationDetails registration)
@@ -388,6 +417,8 @@ namespace SmartIndia.Data.Services
                     ,"@IsEmailPrivate", registration.IsEmailPrivate
                     ,"@IsMobilePrivate", registration.IsMobilePrivate
                     ,"@UpdatedById", registration.UserId
+                    ,"@OtherCourseCategoryName", registration.OtherCourseCategoryName
+                    ,"@ImageExt", registration.ImageExt
                 };
                 DynamicParameters param = objArray.ToDynamicParameters("@PVCH_MSGOUT");
                 param.Add("@DOB", registration.DOB, DbType.DateTime, ParameterDirection.Input);
@@ -403,11 +434,11 @@ namespace SmartIndia.Data.Services
                 };
                     DynamicParameters paramInt = objArrayInstr.ToDynamicParameters();
                     var resultInt = DBConnection.Execute("USP_UserCourseInterests", paramInt, commandType: CommandType.StoredProcedure);
-                   
-                }
-                
 
-                
+                }
+
+
+
             }
             catch (Exception ex)
             {

@@ -59,8 +59,16 @@ namespace SmartIndia.RestAPI.Controllers
                     hostCourses.ImageExt = fi.Extension.Replace(".", string.Empty);
                     hostCourses.ImageName = imageName;
                     Byte[] b;
-                    b = System.IO.File.ReadAllBytes(hostCourses.filePath);
-                    hostCourses.ImageUrl = "data:image/" + hostCourses.ImageExt + ";base64," + Convert.ToBase64String(b, 0, b.Length); ;
+                    if (System.IO.File.Exists(hostCourses.filePath))
+                    {
+                        b = System.IO.File.ReadAllBytes(hostCourses.filePath);
+                        hostCourses.ImageUrl = "data:image/" + hostCourses.ImageExt + ";base64," + Convert.ToBase64String(b, 0, b.Length); ;
+                    }
+                    else
+                    {
+                        hostCourses.ImageUrl = "";
+                    }
+                    
                 }
                 if (hostCourses.BrochureExt != null && hostCourses.BrochureExt != "")
                 {
@@ -71,16 +79,22 @@ namespace SmartIndia.RestAPI.Controllers
                     hostCourses.BrochureExt = fi.Extension.Replace(".", string.Empty);
                     hostCourses.BrochureName = brochureName;
                     Byte[] b;
-                    b = System.IO.File.ReadAllBytes(hostCourses.filePath);
-                    if (hostCourses.BrochureExt == "pdf")
+                    if (System.IO.File.Exists(hostCourses.filePath))
                     {
-                        hostCourses.BrochureUrl = "data:application/" + hostCourses.BrochureExt + ";base64," + Convert.ToBase64String(b, 0, b.Length); ;
+                        b = System.IO.File.ReadAllBytes(hostCourses.filePath);
+                        if (hostCourses.BrochureExt == "pdf")
+                        {
+                            hostCourses.BrochureUrl = "data:application/" + hostCourses.BrochureExt + ";base64," + Convert.ToBase64String(b, 0, b.Length); ;
+                        }
+                        else
+                        {
+                            hostCourses.BrochureUrl = "data:image/" + hostCourses.BrochureExt + ";base64," + Convert.ToBase64String(b, 0, b.Length); ;
+                        }
                     }
                     else
                     {
-                        hostCourses.BrochureUrl = "data:image/" + hostCourses.BrochureExt + ";base64," + Convert.ToBase64String(b, 0, b.Length); ;
+                        hostCourses.BrochureUrl = "";
                     }
-                    //hostCourses.BrochureUrl = "data:image/" + hostCourses.BrochureExt + ";base64," + Convert.ToBase64String(b, 0, b.Length); ;
                 }
                 List<HostCoursesforEnroll> list = new List<HostCoursesforEnroll>();
                 list.Add(hostCourses);

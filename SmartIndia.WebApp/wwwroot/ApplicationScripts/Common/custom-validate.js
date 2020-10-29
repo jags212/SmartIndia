@@ -106,6 +106,23 @@ function CompareDateRange(Controlname1, Controlname2, Fieldname1, Fieldname2) {
     }
 }
 
+
+function CompareNumberRange(Controlname1, Controlname2, Fieldname1, Fieldname2) {
+
+    var min = $("#" + Controlname1).val();
+    var max = $("#" + Controlname2).val();
+    if (max != null && max != "") { 
+        if (parseFloat(min) > parseFloat(max)) {
+            BootstrapAlert("Invalid Price Range!\n" + Fieldname2 + " can not be less than " + Fieldname1, Controlname2);
+            return false;
+        }
+        return true;
+    }
+    else {
+        return true;
+    }
+}
+
 function CompareTwoDate(Controlname1, Controlname2, Fieldname1, Fieldname2) {
     var fromDate = $("input#" + Controlname1).val();
     var toDate = $("input#" + Controlname2).val();
@@ -1101,14 +1118,14 @@ function trim(strString) {
     return strCopy.toString()
 }
 //-------------------------------------Function to Generate 4 digit Random Number for OTP--------------------------------------------
-function generateOTP() { 
+function generateOTP() {
     var digits = '0123456789';
     let OTP = '';
     for (let i = 0; i < 4; i++) {
         OTP += digits[Math.floor(Math.random() * 10)];
     }
     return OTP;
-} 
+}
 //-----------------------Get Query String Parameter values using param name
 function GetParameterValues(param) {
     var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');

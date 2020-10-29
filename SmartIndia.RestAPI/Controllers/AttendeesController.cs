@@ -42,5 +42,26 @@ namespace SmartIndia.RestAPI.Controllers
 
             }
         }
+        [HttpGet("BindCWA")]//Course Wise Attendee
+        [Obsolete]
+        public async Task<List<GetCWA>> BindCWA([FromQuery] HostParameter obj)
+        {
+            using (var attendeesServices = new AttendeesServices(connectionFactory))
+            {
+                return await Task.FromResult(attendeesServices.BindCWA(obj));
+
+            }
+        }
+
+        [HttpGet("BindAttendeeCourseDetails")]//Attendee wise course details
+        [Obsolete]
+        public async Task<List<GetCoursedetails>> BindAttendeeCourseDetails([FromQuery] CourseWiseAttendee obj)
+        {
+            using (var attendeesServices = new AttendeesServices(connectionFactory))
+            {
+                return await Task.FromResult(attendeesServices.BindAttendeeCourseDetails(obj));
+
+            }
+        }
     }
 }

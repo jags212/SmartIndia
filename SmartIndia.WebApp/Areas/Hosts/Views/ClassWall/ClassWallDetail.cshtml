@@ -4,7 +4,7 @@
     ViewData["Title"] = "ClassWallDetail";
     Layout = "~/Views/Shared/_FrontPannelLayout.cshtml";
 }
-
+    <title>OCR - Course Details</title>
 @section Scripts{
     <script>
         var sid =@ViewBag.id
@@ -18,8 +18,16 @@
             loadNavigation('ClassWallDetail', 'classwall');
         });
     </script>
+    <script>
+        function hideLoader() {
+            $('#loading').hide();
+        }
+        $(window).ready(hideLoader);
+        setTimeout(hideLoader, 20 * 1000);
+    </script>
 }
 <!-- Breadcrumb Area -->
+<div id="loading"></div>
 <div class="breadcrumb-area">
     <h1>Course Details</h1>
     <ol class="breadcrumb">

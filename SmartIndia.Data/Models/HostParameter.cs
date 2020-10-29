@@ -8,8 +8,20 @@ namespace SmartIndia.Data.Models
     public class HostParameter
     {
         public Int64 UserId { get; set; }
+        public Int64 CourseId { get; set; }
         public string ACTIONCODE { get; set; }
         public string Curl { get; set; }
+    }
+    public class Getprofileimage
+    {
+        public Int64 UserId { get; set; }
+        public string Curl { get; set; }
+    }
+    public class CourseWiseAttendee
+    {
+        public Int64 UserId { get; set; }
+        public Int64 AttendeeId { get; set; }
+        public string ACTIONCODE { get; set; }
     }
     public class HostParameterCourseDetail
     {

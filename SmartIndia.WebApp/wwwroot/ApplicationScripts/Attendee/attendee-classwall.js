@@ -1,6 +1,7 @@
 ﻿
 //Host
 $(document).ready(function () {
+    $("#divcardbodynodata").css("display", "none");
     BindList();
     $("#hostCWCalendar").css("display", "none");
 });
@@ -30,7 +31,7 @@ function BindHostUpcommingClasses() {
     var usersParam = JSON.stringify({
         UserId: parseInt(UId),
         ACTIONCODE: "E",
-        Curl: ClientURL
+        Curl: ""
     });
     $.ajax(
         {
@@ -42,11 +43,16 @@ function BindHostUpcommingClasses() {
             success: function (data) {
                 if (data.length == 0) {
                     $("#hostCWCalendar").css("display", "none");
-                    $("#sp_nodata").css("display", "block");
-                    $("#sp_nodata").html("No data available")
+                    $("#divcardbody").css("display", "none");
+                    $("#divnoofdata").css("display", "none");
+                    $("#divcardbodynodata").css("display", "block");
+                    //$("#sp_nodata").html("No data available")
                 }
                 else {
-                    $("#sp_nodata").css("display", "none");
+                    $("#divcardbodynodata").css("display", "none");
+                    $("#divcardbody").css("display", "block");
+                    $("#divnoofdata").css("display", "block");
+                    $("#spannoofdata").html(data[0].noOfData);
                     $('#hostCWCalendar').fullCalendar({
                         header: {
                             left: 'prev,next',
@@ -123,11 +129,15 @@ function BindList() {
             success: function (data) {
                 if (data.length == 0) {
                     $("#hostCWlList").css("display", "none");
-                    $("#sp_nodata").css("display", "block");
-                    $("#sp_nodata").html("No data available")
+                    $("#divcardbody").css("display", "none");
+                    $("#divnoofdata").css("display", "none");
+                    $("#divcardbodynodata").css("display", "block");
                 }
                 else {
-                    $("#sp_nodata").css("display", "none");
+                    $("#divcardbodynodata").css("display", "none");
+                    $("#divcardbody").css("display", "block");
+                    $("#divnoofdata").css("display", "block");
+                    $("#spannoofdata").html(data[0].noOfData);
                     var trHTML = '';
 
                     $.each(data, function (i, item) {
@@ -144,11 +154,11 @@ function BindList() {
                             + ' <a data-toggle="tooltip" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Attendee/ClassWall/ClassWallDetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
 
                             + '</div>'
+                            + ' <p class="card-text sm-cli-text">' + data[i].courseDesc + '</p>'
+                            + '<div class="sm-bottom-info">'
                             + '<span class="sm-host-name">'
                             + '<i class="bx bx-task"></i>' + data[i].batchName + ''
                             + '</span>'
-                            + ' <p class="card-text sm-cli-text">' + data[i].courseDesc + '</p>'
-                            + '<div class="sm-bottom-info">'
                             + '<span class="sm-date">'
                             + ' <i class="bx bx-calendar"></i>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') + ''
                             + '</span>'

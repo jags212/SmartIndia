@@ -16,8 +16,17 @@
             loadNavigation('upcomingclassdetail', 'upcomingclasses-att');
         });
     </script>
+    <script>
+        function hideLoader() {
+            $('#loading').hide();
+        }
+        $(window).ready(hideLoader);
+        setTimeout(hideLoader, 20 * 1000);
+    </script>
 }
+<title>OCR - Course Details</title>
 <!-- Breadcrumb Area -->
+<div id="loading"></div>
 <div class="breadcrumb-area">
     <h1>Course Details</h1>
     <ol class="breadcrumb">
