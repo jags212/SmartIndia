@@ -1,0 +1,49 @@
+﻿.custmSec {
+    display: inline-flex;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+}
+
+#aviAud, #aviMeetEnd, #aviVid {
+    cursor: pointer;
+}
+
+    #aviAud img {
+        width: 35px;
+        height: auto;
+        margin-right: 5px;
+    }
+
+    #aviMeetEnd img {
+        width: 37px;
+        height: auto;
+        margin-right: 5px;
+    }
+
+    #aviVid img {
+        width: 35px;
+        height: auto;
+    }
+
+@media(min-width: 320px) and (max-width: 374px){
+    .custmSec {
+        left: 30%;
+    }
+}
+@media(min-width: 375px) and (max-width: 767px){
+    .custmSec {
+        left: 36%;
+    }
+}
+@media(min-width: 768px) and (max-width: 1023px){
+    .custmSec {
+        left: 45%;
+    }
+}
+@media(min-width: 1024px) and (max-width: 1240px) {
+    .custmSec {
+        bottom: 16%;
+        left: 45%;
+    }
+}
