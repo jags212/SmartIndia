@@ -151,7 +151,7 @@ function BindList() {
                         trHTML += '<li class="list-group-item justify-content-between ocr-list-group"> '
                             + '<div>' + color + '</div><div class="sm-card-title">'
 
-                            + ' <a data-toggle="tooltip" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Attendee/ClassWall/ClassWallDetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
+                            + ' <a data-toggle="tooltip" class="action-inline" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Attendee/ClassWall/ClassWallDetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
 
                             + '</div>'
                             + ' <p class="card-text sm-cli-text">' + data[i].courseDesc + '</p>'

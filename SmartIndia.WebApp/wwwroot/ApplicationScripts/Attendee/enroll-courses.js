@@ -35,7 +35,7 @@ function BindList() {
                     $("#spannoofdata").html(data[i].noOfData);
                     trHTML += '<li class="list-group-item justify-content-between ocr-list-group"> '
                         + '<div class="sm-card-title" >'
-                        + ' <a data-toggle="tooltip" data-placement="bottom" title="' + data[i].courseName + '" href="' + ClientURL + '/Attendee/EnrollCourses/EnrollCourseDetails?SID=' + data[i].courseId + '&bt=' + data[i].batchName + '" >' + data[i].courseName + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
+                        + ' <a data-toggle="tooltip" class="action-inline" data-placement="bottom" title="' + data[i].courseName + '" href="' + ClientURL + '/Attendee/EnrollCourses/EnrollCourseDetails?SID=' + data[i].courseId + '&bt=' + data[i].batchName + '" >' + data[i].courseName + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
                         + '</div>'
                         + '<div class="enroll-course-show" > '
                         //+ '<span  onclick="AddShowInterest(' + data[i].courseId + ',' + data[i].batchName + ')" class="show-interest" data - toggle="tooltip" data - placement="bottom" title = "Show Interest" > <i class="bx bx-flag"></i></span>'
