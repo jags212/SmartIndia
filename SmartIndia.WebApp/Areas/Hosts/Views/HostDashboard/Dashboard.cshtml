@@ -73,14 +73,13 @@
     <script src="~/ApplicationScripts/Common/date-format-converter.js"></script>
 
     <script src="~/ApplicationScripts/Host/dashboard.js"></script>
-    <script src="~/ApplicationScripts/Pagignation/Pagination.js"></script>
     <script>
         $(document).ready(function () {
             loadNavigation('Dashboard', 'host-dash');
             $("#gallary").Pagination();
         });
     </script>
-    <script src="~/ApplicationScripts/Pagignation/Pagination.js"></script>
+    <script src="~/ApplicationScripts/Home/Pagination.js"></script>
 }
 <!-- Start -->
 
@@ -98,18 +97,12 @@
         <div class="card-body">
             <div id="sp_nodata" class="nodata"></div>
             <!-- List -->
-            <div id="divnoofdata" class="noofdatadiv">Total no of data :  <span id="spannoofdata" class="noofdata"></span></div>
+            <div id="divnoofdata" class="noofdatadiv"><span id="spannoofdata" class="noofdata"></span></div>
             <div class="container" id="hostDashlList">
                 <div class="row">
                     <div class="col-sm-12 col-lg-12 col-md-12">
                         <ul class="list-group" id="coursedetails">
                         </ul>
-                    </div>
-                    <div>
-                        List
-                        <center>
-                            @*<span id="PageList" class="clear"></span>*@
-                        </center>
                     </div>
                 </div>
             </div>

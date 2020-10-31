@@ -37,6 +37,7 @@ namespace SmartIndia.Data.Services.Host
                     ,"@CurrencyId",1
                     ,"@ImageExt",hostCourses.ImageExt
                     ,"@BrochureExt",hostCourses.BrochureExt
+                    ,"@DeviceResources",hostCourses.DeviceResources
         };
             try
             {

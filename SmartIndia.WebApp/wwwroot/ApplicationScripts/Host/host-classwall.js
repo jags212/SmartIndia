@@ -138,7 +138,7 @@ function BindList() {
                     
                     $("#divcardbodynodata").css("display", "none");
                     $("#divnoofdata").css("display", "block");
-                    $("#spannoofdata").html(data[0].noOfData);
+                    $("#spannoofdata").html("Total no of data : "+data[0].noOfData);
                     $("#sp_nodata").html("No data available");
                     var trHTML = '';
                     $.each(data, function (i, item) {

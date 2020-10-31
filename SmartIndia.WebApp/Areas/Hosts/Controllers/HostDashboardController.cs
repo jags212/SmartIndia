@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace SmartIndia.WebApp.Areas.Hosts.Controllers
 {
     [Area("Hosts")]
+    [Authorize("Hosts")]
     public class HostDashboardController : Controller
     {
         public IActionResult Dashboard()

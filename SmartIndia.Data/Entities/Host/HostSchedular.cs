@@ -21,6 +21,7 @@ namespace SmartIndia.Data.Entities.Host
         public string ClassRoomPwd { get; set; }
         public bool IsDeleted { get; set; }
         public int IsPublished { get; set; }
+        public int DeviceResources { get; set; }
         public Int64 UpdatedById { get; set; }
         public DateTime CreatedOn { get; set; }
         public DateTime UpdatedOn { get; set; }

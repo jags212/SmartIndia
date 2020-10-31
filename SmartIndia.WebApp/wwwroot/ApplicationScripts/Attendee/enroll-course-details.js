@@ -1,5 +1,7 @@
 ﻿$(document).ready(function () {
     Coursedetails();
+    var name = localStorage.getItem("firstName");
+    $("#div_Name").html(name);
 });
 function Coursedetails() {
     jQuery.support.cors = true;
@@ -17,12 +19,11 @@ function Coursedetails() {
             contentType: "application/json",
             success: function (data) {
                 $("#coursename").html(data[0].courseName);
+                $("#div_Course").html(data[0].courseName);
+                $("#cost").html(data[0].cost);
                 $("#topic").html("( " + data[0].topics + " )");
                 $("#startdate").html(dateFormat(data[0].startDate, 'dd-mmm-yy'));
                 $("#desc").html(data[0].courseDesc);
-
-                //$("#imgbrouchure").attr('src', data[0].brochureUrl);
-                //$("#urlbrouchure").attr('href', data[0].brochureUrl);
 
                 if (data[0].brochureExt == "pdf") {
                     $("#imgbrouchurepdf").attr('src', data[0].brochureUrl);
@@ -48,7 +49,7 @@ function Coursedetails() {
         });
 }
 $('#btn_enroll').click(function () {
-    //$('#GetAttendeePerminumModal').css("display", "none");
+    $('#GetAttendeePerminumModal').css("display", "none");
     function CallSave() {
         var UId = localStorage.getItem("userID");
         var usersParam = JSON.stringify({
@@ -56,6 +57,7 @@ $('#btn_enroll').click(function () {
             UserId: parseInt(UId),
             CourseId: parseInt($('#hfScId').val()),
             BatchName: $('#hfbatch').val(),
+            DeviceResources: 1
         });
         $.ajax({
             url: ServiceURL + "/api/AttendeeEnrolcourses/EnrollClass",

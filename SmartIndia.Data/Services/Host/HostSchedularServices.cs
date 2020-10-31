@@ -36,6 +36,7 @@ namespace SmartIndia.Data.Services.Host
                     ,"@Duration",item.Duration
                     ,"@BatchName",item.BatchName.Replace(" ","")
                     ,"@IsPublished",(int)RecordPublished.UnPublished
+                    ,"@DeviceResources",item.DeviceResources
                 };
                     DynamicParameters param = objArray.ToDynamicParameters("@PVCH_MSGOUT");
                     param.Add("@ScheduleDate", item.ScheduleDate.ToUniversalTime(), DbType.DateTime, ParameterDirection.Input);
@@ -65,6 +66,7 @@ namespace SmartIndia.Data.Services.Host
                         ,"@Duration",hostSchedular.Duration
                         ,"@BatchName",hostSchedular.BatchName.Replace(" ","")
                         ,"@IsPublished",(int)RecordPublished.UnPublished
+                        ,"@DeviceResources",hostSchedular.DeviceResources
             };
             try
             {

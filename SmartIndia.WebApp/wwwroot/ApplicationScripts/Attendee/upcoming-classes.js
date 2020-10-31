@@ -150,7 +150,7 @@ function BindList() {
                     $("#divcardbodynodata").css("display", "none");
                     $("#divcardbody").css("display", "block");
                     $("#divnoofdata").css("display", "block");
-                    $("#spannoofdata").html(data[0].noOfData);
+                    $("#spannoofdata").html("Total no of data : "+data[0].noOfData);
                     var trHTML = '';
 
                     $.each(data, function (i, item) {

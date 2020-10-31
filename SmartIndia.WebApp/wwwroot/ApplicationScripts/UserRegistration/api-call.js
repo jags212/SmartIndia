@@ -8,7 +8,9 @@
             Password: $('#txtCnfmPassword').val(),
             MobileCountryCode: $('#selected-flag-dial-code').html(),
             ServiceURL: ClientURL,
-            SignUpBy: $('#myregiTab li #email-tab').hasClass('active') == true ? 1 : 2
+            SignUpBy: $('#myregiTab li #email-tab').hasClass('active') == true ? 1 : 2,
+            DeviceResources: 1
+
         });
         $.ajax({
             url: ServiceURL + "/api/UserRegistration/AddUser",

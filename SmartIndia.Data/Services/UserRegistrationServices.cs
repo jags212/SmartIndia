@@ -50,6 +50,7 @@ namespace SmartIndia.Data.Services
                     ,"@UserNo", ""
                     ,"@SignUpBy", registration.SignUpBy
                     ,"@UpdatedById", 0
+                    ,"@DeviceResources", registration.DeviceResources
                 };
 
                 DynamicParameters param = objArray.ToDynamicParameters("@PVCH_MSGOUT");

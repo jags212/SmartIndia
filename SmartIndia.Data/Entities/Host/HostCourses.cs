@@ -33,6 +33,7 @@ namespace SmartIndia.Data.Entities.Host
         public string BrochureName { get; set; }
         public string filePath { get; set; }
         public string ImageUrl { get; set; }
+        public int DeviceResources { get; set; }
 
 
     }
