@@ -148,10 +148,10 @@ function BindList() {
                             color = '<div class="list-color-legend col-leg-seablue" data-toggle="tooltip" data-placement="bottom" title="Reschedule"></div>';
                         }
 
-                        trHTML += '<li class="list-group-item justify-content-between ocr-list-group"> '
+                        trHTML += '<li class="list-group-item justify-content-between ocr-list-group li-page"> '
                             + '<div>' + color + '</div><div class="sm-card-title">'
 
-                            + ' <a data-toggle="tooltip" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Attendee/ClassWall/ClassWallDetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
+                            + ' <a class="action-inline" data-toggle="tooltip" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Attendee/ClassWall/ClassWallDetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
 
                             + '</div>'
                             + ' <p class="card-text sm-cli-text">' + data[i].courseDesc + '</p>'
@@ -165,19 +165,16 @@ function BindList() {
                             + '<span class="sm-time">'
                             + ' <i class="bx bx-time"></i> ' + timeConvert(data[i].startTime) + ''
                             + '</span>'
-                            + '</div>'
-                            //+'<div class="sm-bottom-status-info">'
-                            //        +'<span class="sm-status sm-attend" data - toggle="tooltip" data - placement="bottom" title = "Accomplished"> 20 </span>'
-                            //        +'<span class="sm-status sm-upclasses" data-toggle="tooltip" data-placement="bottom" title="Upcoming">18</span>'
-                            //        +'<span class="sm-status sm-reschedule" data-toggle="tooltip" data-placement="bottom" title="Reschedule">5</span>'
-                            //        +'<span class="sm-status sm-cancel" data-toggle="tooltip" data-placement="bottom" title="Cancel">1</span>'
-                            //+'</div >'
+                            + '</div>' 
                             + '</div >'
                             + '</li >'
                     });
 
                     $('#coursedetails').append(trHTML);
                     $('.action-inline').tooltip();
+                    $("#coursedetails").JPaging({
+                        pageSize: 5
+                    });
                 }
             },
 

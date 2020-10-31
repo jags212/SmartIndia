@@ -83,7 +83,7 @@ function StartMeeting() {
         roomName: $('#room_id').val().toString(),
         width: '100%',
         onload: this.afterLoadComplete(),
-        height: '637px',
+        height: '100%',
         parentNode: document.querySelector('#videoContainer'),
         jwt: signedToken,
         configOverwrite: {
@@ -98,8 +98,7 @@ function StartMeeting() {
             email: EmailId,
             displayName: name
         }
-    };
-    debugger;
+    }; 
     var api = new JitsiMeetExternalAPI(domain, options);
     $('body').on('click', '#aviMeetEnd', function () {
         api.dispose();

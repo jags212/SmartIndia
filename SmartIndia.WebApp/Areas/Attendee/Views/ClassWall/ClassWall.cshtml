@@ -3,7 +3,7 @@
     ViewData["Title"] = "ClassWall";
     Layout = "~/Views/Shared/_FrontPannelLayout.cshtml";
 }
-    <title>OCR - Attendee My Class Wall</title>
+<title>OCR - Attendee My Class Wall</title>
 <!-- Text Ellipsis CSS -->
 @*<link rel="stylesheet" href="~/assets/css/ellipsis.css" />*@
 @section Scripts
@@ -48,6 +48,9 @@
             loadNavigation('ClassWall', 'ClassWall-Att');
         });
     </script>
+    <!-- ul li Pagination -->
+    <link href="~/assets/css/PagingStyle.css" rel="stylesheet" />
+    <script src="~/assets/js/paging.js"></script>
 }
 <!-- Main Content Layout -->
 <!-- Breadcrumb Area -->
@@ -101,7 +104,7 @@
         <div class="container" id="hostCWlList">
             <div class="row">
                 <div class="col-sm-12 col-lg-12 col-md-12">
-                    <ul class="list-group" id="coursedetails">
+                    <ul class="list-group ul-page" id="coursedetails">
                     </ul>
                 </div>
             </div>
