@@ -24,6 +24,23 @@
         });
     </script>
     <script>
+        $('#searchlist').keyup(function () {
+
+            var that = this;
+            all_list = $('#hostCWlList ul > li');
+
+            var matching_list = all_list.filter(function (i, li) {
+                var list_item_text = $(li).text().toUpperCase();
+                var search_text = that.value.toUpperCase();
+                return ~list_item_text.indexOf(search_text);
+            });
+
+            all_list.hide();
+            matching_list.show();
+
+        });
+    </script>
+    <script>
         $(document).ready(function () {
             loadNavigation('ClassWall', 'ClassWall-Att');
         });
