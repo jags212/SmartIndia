@@ -134,17 +134,17 @@ function BindList() {
                     $("#sp_nodata").css("display", "none");
                     $(".calendar-scheduler").removeClass("nodata-btn-schedular");
                     $("#divnoofdata").css("display", "block");
-                    $("#spannoofdata").html(data[0].noOfData);
+                    $("#spannoofdata").html("Total no of data : "+data[0].noOfData);
                     var trHTML = '';
                     $.each(data, function (i, item) {
 
                         trHTML += '<li class="list-group-item justify-content-between ocr-list-group"> '
                             + '<div class="sm-card-title" >'
 
-                            + ' <a data-toggle="tooltip" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Hosts/HostDashboard/CourseDetails?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
+                            + ' <a data-toggle="tooltip" class="action-inline" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Hosts/HostDashboard/CourseDetails?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
                             + '</div>'
                             
-                            + ' <p class="card-text sm-cli-text ellip-box two-lines">' + data[i].courseDesc + '</p>'
+                            + ' <div class="card-text sm-cli-text ellip-box two-lines">' + data[i].courseDesc + '</div>'
                             + '<div class="sm-bottom-info">'
                             + '<span class="sm-host-name">'
                             + '<i class="bx bx-task"></i>' + data[i].batchName + ''
@@ -155,11 +155,21 @@ function BindList() {
                             + '<span class="sm-time">'
                             + ' <i class="bx bx-time"></i> ' + timeConvert(data[i].startTime) + ''
                             + '</span>'
-                            + '</div >'
-                            + '</li >'
+                            + '</div>'
+                            + '</li>'
                     });
                     $('#coursedetails').append(trHTML);
                     $('.action-inline').tooltip();
+
+
+                    var trHTM = '';
+                    $.each(data, function (i, item) {
+
+                        trHTM += '<li><div>' + data[i].courseDesc + '</div>'
+                            + '<div>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') +'</div>'
+                        +'</li > '
+                    });
+                    //$('#gallary').append(trHTM);
                 }
 
             },

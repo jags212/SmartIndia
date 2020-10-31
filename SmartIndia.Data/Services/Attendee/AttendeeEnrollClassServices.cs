@@ -114,7 +114,8 @@ namespace SmartIndia.Data.Services.Attendee
                      "@P_ACTIONCODE",enrollClasses.ACTIONCODE,
                      "@CourseId",enrollClasses.CourseId,
                      "@UserId",enrollClasses.UserId,
-                     "@BatchName",enrollClasses.BatchName
+                     "@BatchName",enrollClasses.BatchName,
+                     "@DeviceResources",enrollClasses.DeviceResources
 
             };
             try

@@ -138,7 +138,7 @@ function BindList() {
                     
                     $("#divcardbodynodata").css("display", "none");
                     $("#divnoofdata").css("display", "block");
-                    $("#spannoofdata").html(data[0].noOfData);
+                    $("#spannoofdata").html("Total no of data : "+data[0].noOfData);
                     $("#sp_nodata").html("No data available");
                     var trHTML = '';
                     $.each(data, function (i, item) {
@@ -164,7 +164,7 @@ function BindList() {
                         trHTML += '<li class="list-group-item justify-content-between ocr-list-group"> '
                             + '<div>' + color + '</div><div class="sm-card-title">'
 
-                            + ' <a data-toggle="tooltip" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Hosts/ClassWall/ClassWallDetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
+                            + ' <a data-toggle="tooltip" class="action-inline" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Hosts/ClassWall/ClassWallDetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
 
                             + '</div>'
                            

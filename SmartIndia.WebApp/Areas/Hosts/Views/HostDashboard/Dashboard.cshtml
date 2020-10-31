@@ -6,6 +6,59 @@
 <!-- Calendar CSS -->
 <link rel="stylesheet" href="~/assets/calendar/css/fullcalendar.css" />
 <link rel="stylesheet" href="~/assets/calendar/css/fullcalendar.print.css" media="print" />
+
+<style>
+    /* Below are the css apply to paging. */
+
+    li {
+        list-style: none;
+    }
+
+    .phGallary {
+        padding: 10px;
+        width: 800px;
+    }
+
+        .phGallary div {
+            float: left;
+            margin: 10px;
+            background-color: #e4e4e4;
+            padding: 10px;
+            border: 1px solid #9f9f9f;
+            border-radius: 5px 5px 5px 5px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 10px;
+        }
+
+        .phGallary img {
+            border-radius: 5px 5px 5px 5px;
+            border: 1px solid #abd305;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+        }
+
+        .phGallary a {
+            text-decoration: none;
+            padding: 5px;
+            border: 1px solid #000;
+            margin-right: 5px;
+        }
+
+    .activePageLink {
+        background-color: #abd305;
+    }
+
+    .phGallary a:hover {
+        background-color: #abd305;
+    }
+
+    .clear {
+        clear: both
+    }
+</style>
+
+
+
 <title>OCR - Host Dashboard</title>
 
 @section Scripts{
@@ -18,12 +71,15 @@
     <script src="~/assets/calendar/js/fullcalendar.min.js"></script>
     <!-- Dashboard JS -->
     <script src="~/ApplicationScripts/Common/date-format-converter.js"></script>
+
     <script src="~/ApplicationScripts/Host/dashboard.js"></script>
     <script>
-        $(document).ready(function () { 
+        $(document).ready(function () {
             loadNavigation('Dashboard', 'host-dash');
+            $("#gallary").Pagination();
         });
     </script>
+    <script src="~/ApplicationScripts/Home/Pagination.js"></script>
 }
 <!-- Start -->
 
@@ -41,7 +97,7 @@
         <div class="card-body">
             <div id="sp_nodata" class="nodata"></div>
             <!-- List -->
-            <div id="divnoofdata" class="noofdatadiv">Total no of data :  <span id="spannoofdata" class="noofdata"></span></div>
+            <div id="divnoofdata" class="noofdatadiv"><span id="spannoofdata" class="noofdata"></span></div>
             <div class="container" id="hostDashlList">
                 <div class="row">
                     <div class="col-sm-12 col-lg-12 col-md-12">
@@ -50,6 +106,38 @@
                     </div>
                 </div>
             </div>
+
+            @*st*@
+            <div class="phGallary">
+                <ul id="gallary">
+
+                    <li><div>This course covers the basic topics of mathematics as well as the advanced calculative concepts in the field of applied mathematics. Students are prepared for applied research and masters in this field.</div><div>21-Dec-20</div></li>
+                    <li><div>This course covers the basic topics of mathematics as well as the advanced calculative concepts in the field of applied mathematics. Students are prepared for applied research and masters in this field.</div><div>15-Dec-20</div></li>
+                    <li><div>This course covers the basic topics of mathematics as well as the advanced calculative concepts in the field of applied mathematics. Students are prepared for applied research and masters in this field.</div><div>05-Dec-20</div></li>
+                    <li><div>This course covers the basic topics of mathematics as well as the advanced calculative concepts in the field of applied mathematics. Students are prepared for applied research and masters in this field.</div><div>02-Dec-20</div></li>
+                    <li><div>This course covers the basic topics of mathematics as well as the advanced calculative concepts in the field of applied mathematics. Students are prepared for applied research and masters in this field.</div><div>01-Dec-20</div></li>
+                    <li><div>This course covers the basic topics of mathematics as well as the advanced calculative concepts in the field of applied mathematics. Students are prepared for applied research and masters in this field.</div><div>01-Dec-20</div></li>
+                    <li><div>This course covers the basic topics of mathematics as well as the advanced calculative concepts in the field of applied mathematics. Students are prepared for applied research and masters in this field.</div><div>21-Nov-20</div></li>
+                    <li><div>This course covers the basic topics of mathematics as well as the advanced calculative concepts in the field of applied mathematics. Students are prepared for applied research and masters in this field.</div><div>15-Nov-20</div></li>
+                    <li><div>This course covers the basic topics of mathematics as well as the advanced calculative concepts in the field of applied mathematics. Students are prepared for applied research and masters in this field.</div><div>05-Nov-20</div></li>
+                    <li><div>This course covers the basic topics of mathematics as well as the advanced calculative concepts in the field of applied mathematics. Students are prepared for applied research and masters in this field.</div><div>02-Nov-20</div></li>
+                    <li><div>This course covers the basic topics of mathematics as well as the advanced calculative concepts in the field of applied mathematics. Students are prepared for applied research and masters in this field.</div><div>01-Nov-20</div></li>
+                    <li><div>This course covers the basic topics of mathematics as well as the advanced calculative concepts in the field of applied mathematics. Students are prepared for applied research and masters in this field.</div><div>01-Nov-20</div></li>
+                    <li><div>Being an applied science, this course is compiled of genetic study and environmental biotechnology. The purpose of the course is to train students to make human life better with a high level of microbial research.</div><div>29-Oct-20</div></li>
+                </ul>
+            </div>
+            <div class="phGallary">
+                <center>
+                    <span id="PageList" class="clear"></span>
+                </center>
+            </div>
+            @*<script type="text/javascript">
+                    $(document).ready(function () {
+                        $("#gallary").Pagination();
+                    });
+                </script>*@
+
+            @*end*@
             <!-- Calendar -->
             <div id="hostDashCalendar"></div>
 
@@ -59,126 +147,124 @@
 
 <!-- End -->
 <!-- Start -->
+<!-- Start -->
+<div class="row">
 
-    
-    <!-- Start -->
-    <div class="row">
+    <!-- Class Analytics -->
+    <div class="col-lg-6 col-md-12">
+        <div class="card mb-30">
+            <div class="card-header d-flex mobile-d-flex justify-content-between align-items-center">
+                <h3> Capacity / Registration / Attendance</h3>
 
-        <!-- Class Analytics -->
-        <div class="col-lg-6 col-md-12">
-            <div class="card mb-30">
-                <div class="card-header d-flex mobile-d-flex justify-content-between align-items-center">
-                    <h3> Capacity / Registration / Attendance</h3>
-
-                    <div class="dropdown">
-                        <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class='bx bx-dots-horizontal-rounded'></i>
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
-                                <i class='bx bx-show'></i> View
-                            </a>
-                            <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
-                                <i class='bx bx-edit-alt'></i> Edit
-                            </a>
-                            <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
-                                <i class='bx bx-trash'></i> Delete
-                            </a>
-                            <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
-                                <i class='bx bx-printer'></i> Print
-                            </a>
-                            <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
-                                <i class='bx bx-download'></i> Download
-                            </a>
-                        </div>
+                <div class="dropdown">
+                    <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class='bx bx-dots-horizontal-rounded'></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                            <i class='bx bx-show'></i> View
+                        </a>
+                        <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                            <i class='bx bx-edit-alt'></i> Edit
+                        </a>
+                        <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                            <i class='bx bx-trash'></i> Delete
+                        </a>
+                        <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                            <i class='bx bx-printer'></i> Print
+                        </a>
+                        <a class="dropdown-item d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                            <i class='bx bx-download'></i> Download
+                        </a>
                     </div>
-                </div>
-
-                <div class="card-body">
-                    <div id="class-analytics-chart" class="extra-margin"></div>
                 </div>
             </div>
-            <!-- End Class Analytics -->
 
+            <div class="card-body">
+                <div id="class-analytics-chart" class="extra-margin"></div>
+            </div>
         </div>
+        <!-- End Class Analytics -->
 
-        <!-- Class Popularity -->
-        <div class="col-lg-6 col-md-12">
-            <div class="card mb-30">
-                <div class="card-header d-flex justify-content-between align-items-center">
-                    <h3>Class Popularity</h3>
+    </div>
 
-                    <div class="dropdown">
-                        <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class='bx bx-dots-horizontal-rounded'></i>
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
-                                <i class='bx bx-show'></i> View
-                            </a>
-                            <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
-                                <i class='bx bx-edit-alt'></i> Edit
-                            </a>
-                            <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
-                                <i class='bx bx-trash'></i> Delete
-                            </a>
-                            <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
-                                <i class='bx bx-printer'></i> Print
-                            </a>
-                            <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
-                                <i class='bx bx-download'></i> Download
-                            </a>
-                        </div>
+    <!-- Class Popularity -->
+    <div class="col-lg-6 col-md-12">
+        <div class="card mb-30">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h3>Class Popularity</h3>
+
+                <div class="dropdown">
+                    <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class='bx bx-dots-horizontal-rounded'></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
+                            <i class='bx bx-show'></i> View
+                        </a>
+                        <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
+                            <i class='bx bx-edit-alt'></i> Edit
+                        </a>
+                        <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
+                            <i class='bx bx-trash'></i> Delete
+                        </a>
+                        <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
+                            <i class='bx bx-printer'></i> Print
+                        </a>
+                        <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
+                            <i class='bx bx-download'></i> Download
+                        </a>
                     </div>
                 </div>
+            </div>
 
-                <div class="card-body">
-                    <div id="class-popularity-bar-chart"></div>
-                </div>
+            <div class="card-body">
+                <div id="class-popularity-bar-chart"></div>
             </div>
         </div>
     </div>
-    <!-- End -->
-    <!-- Start -->
-    <div class="row">
-        <div class="col-lg-12 col-md-12">
-            <!-- Revenue Growth -->
-            <div class="card mb-30">
-                <div class="card-header d-flex mobile-d-flex justify-content-between align-items-center">
-                    <h3>Monthly Revenue</h3>
+</div>
+<!-- End -->
+<!-- Start -->
+<div class="row">
+    <div class="col-lg-12 col-md-12">
+        <!-- Revenue Growth -->
+        <div class="card mb-30">
+            <div class="card-header d-flex mobile-d-flex justify-content-between align-items-center">
+                <h3>Monthly Revenue</h3>
 
-                    <div class="dropdown">
-                        <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class='bx bx-dots-horizontal-rounded'></i>
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item d-flex mobile-d-flex mobile-d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
-                                <i class='bx bx-show'></i> View
-                            </a>
-                            <a class="dropdown-item d-flex mobile-d-flex mobile-d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
-                                <i class='bx bx-edit-alt'></i> Edit
-                            </a>
-                            <a class="dropdown-item d-flex mobile-d-flex mobile-d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
-                                <i class='bx bx-trash'></i> Delete
-                            </a>
-                            <a class="dropdown-item d-flex mobile-d-flex mobile-d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
-                                <i class='bx bx-printer'></i> Print
-                            </a>
-                            <a class="dropdown-item d-flex mobile-d-flex mobile-d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
-                                <i class='bx bx-download'></i> Download
-                            </a>
-                        </div>
+                <div class="dropdown">
+                    <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class='bx bx-dots-horizontal-rounded'></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item d-flex mobile-d-flex mobile-d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                            <i class='bx bx-show'></i> View
+                        </a>
+                        <a class="dropdown-item d-flex mobile-d-flex mobile-d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                            <i class='bx bx-edit-alt'></i> Edit
+                        </a>
+                        <a class="dropdown-item d-flex mobile-d-flex mobile-d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                            <i class='bx bx-trash'></i> Delete
+                        </a>
+                        <a class="dropdown-item d-flex mobile-d-flex mobile-d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                            <i class='bx bx-printer'></i> Print
+                        </a>
+                        <a class="dropdown-item d-flex mobile-d-flex mobile-d-flex mobile-d-flex align-items-center" href="javascript:void(0);">
+                            <i class='bx bx-download'></i> Download
+                        </a>
                     </div>
                 </div>
-
-                <div class="card-body">
-                    <div id="host-revenue-growth-chart" class="extra-margin"></div>
-                </div>
             </div>
-            <!-- End Revenue Growth -->
+
+            <div class="card-body">
+                <div id="host-revenue-growth-chart" class="extra-margin"></div>
+            </div>
         </div>
+        <!-- End Revenue Growth -->
     </div>
-    <!-- End -->
-    <!-- Footer -->
-    <div class="flex-grow-1"></div>
-    <!-- End -->
+</div>
+<!-- End -->
+<!-- Footer -->
+<div class="flex-grow-1"></div>
+<!-- End -->

@@ -47,6 +47,7 @@ namespace SmartIndia.Data.Entities.Attendee
         public Int64 UserId { get; set; }
         public Int64 CourseId { get; set; }
         public string BatchName { get; set; }
+        public int DeviceResources { get; set; }
 
     }
     public class EnrollClasseFilter

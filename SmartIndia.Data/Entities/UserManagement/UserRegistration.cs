@@ -37,6 +37,7 @@ namespace SmartIndia.Data.Entities.UserManagement
         public string ServiceURL { get; set; }
         public int RoleId { get; set; }
         public string RoleName { get; set; }
+        public int DeviceResources { get; set; }
         [JsonIgnore]
         public List<RefreshToken> RefreshTokens { get; set; }
     } 
