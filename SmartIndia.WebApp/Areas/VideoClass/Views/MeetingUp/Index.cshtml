@@ -18,7 +18,11 @@
         <script src="https://vc.easternbay.in/external_api.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
         <script src="~/assets/js/custom.js"></script>
-
+        <style>
+            body, html {
+                height: 100%;
+            }
+        </style>
 
         <script>
             $(document).ready(function () {
@@ -81,10 +85,8 @@
         <input type="hidden" id="fname" value="Surya sagar" name="">
         <input type="hidden" id="fmail" value="suryasagar091@gmail.com" name="">
         <input type="hidden" id="fuser" value="Surya" name="">
-        <script>view_meeting_details($('#inv_id').val());</script>
-        <div class="videoFrameContainer d-flex w-100">
-            <div id="videoContainer" class="web col-9"></div>
-        </div>
+        <script>view_meeting_details($('#inv_id').val());</script> 
+            <div id="videoContainer" style="height:100%"></div> 
         <div class="btn-section">
             <div class="custmSec">
                 <!-- <div onclick="toggleAviAud(this.id);" id="aviAud"><img src="img/micon.png"></div> -->
