@@ -52,7 +52,7 @@ function BindHostUpcommingClasses() {
                     $("#divcardbodynodata").css("display", "none");
                     $("#divcardbody").css("display", "block");
                     $("#divnoofdata").css("display", "block");
-                    $("#spannoofdata").html(data[0].noOfData);
+                    $("#spannoofdata").html("Total no of data : "+data[0].noOfData);
                     $('#hostCWCalendar').fullCalendar({
                         header: {
                             left: 'prev,next',
@@ -137,7 +137,7 @@ function BindList() {
                     $("#divcardbodynodata").css("display", "none");
                     $("#divcardbody").css("display", "block");
                     $("#divnoofdata").css("display", "block");
-                    $("#spannoofdata").html(data[0].noOfData);
+                    $("#spannoofdata").html("Total no of data : "+data[0].noOfData);
                     var trHTML = '';
 
                     $.each(data, function (i, item) {
@@ -151,7 +151,7 @@ function BindList() {
                         trHTML += '<li class="list-group-item justify-content-between ocr-list-group li-page"> '
                             + '<div>' + color + '</div><div class="sm-card-title">'
 
-                            + ' <a class="action-inline" data-toggle="tooltip" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Attendee/ClassWall/ClassWallDetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
+                            + ' <a data-toggle="tooltip" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Attendee/ClassWall/ClassWallDetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
 
                             + '</div>'
                             + ' <p class="card-text sm-cli-text">' + data[i].courseDesc + '</p>'

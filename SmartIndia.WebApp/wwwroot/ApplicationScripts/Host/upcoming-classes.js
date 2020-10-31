@@ -145,13 +145,13 @@ function BindList() {
                     $("#divcardbodynodata").css("display", "none");
                     $("#divcardbody").css("display", "block");
                     $("#divnoofdata").css("display", "block");
-                    $("#spannoofdata").html(data[0].noOfData);
+                    $("#spannoofdata").html("Total no of data : "+data[0].noOfData);
                     var trHTML = '';
                     $.each(data, function (i, item) {
 
                         trHTML += '<li class="list-group-item justify-content-between ocr-list-group"> '
                             + '<div class="sm-card-title" >'
-                            + ' <a data-toggle="tooltip" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Hosts/UpcomingClasses/upcomingclassdetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
+                            + ' <a data-toggle="tooltip"  class="action-inline" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Hosts/UpcomingClasses/upcomingclassdetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
                             + '</div>'
                             + ' <p class="card-text sm-cli-text ellip-box two-lines">' + data[i].courseDesc + '</p>'
                             + '<div class="sm-bottom-info">'
@@ -164,9 +164,9 @@ function BindList() {
                             + '<span class="sm-time">'
                             + '<i class="bx bx-time"></i> ' + timeConvert(data[i].startTime) + ''
                             + '</span>'
-                            + '</div >'
+                            + '</div>'
                             + '<div style="float:right">'
-                            + ' <a data-toggle="tooltip" data-placement="bottom" title="Join" target="_blank" href="' + ClientURL + '/VideoClass/MeetingUp/Index?CRID=' + data[i].classRoomId + '&Id=' + UId + '&Name=' + name + '&EmailId=' + EmailId + '&moderator=' + moderator + '"><strong><u>Start</u> </strong></span></a>'
+                            + ' <a data-toggle="tooltip" class="action-inline" data-placement="top" title="Start" target="_blank" href="' + ClientURL + '/VideoClass/MeetingUp/Index?CRID=' + data[i].classRoomId + '&Id=' + UId + '&Name=' + name + '&EmailId=' + EmailId + '&moderator=' + moderator + '"><strong><u>Start</u> </strong></span></a>'
                             + '</div>'
                             + '</li >'
                     });

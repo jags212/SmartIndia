@@ -22,7 +22,9 @@ $('#btnSubmit').click(function () {
             ClassFrequency: $('#ddlFrequency').val(),
             NoOfClass: parseInt($('#txtNoOfClass').val(), 10),
             ImageExt: ImgExt,
-            BrochureExt: BroExt
+            BrochureExt: BroExt,
+            DeviceResources: 1
+
 
         });
         $.ajax({

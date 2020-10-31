@@ -25,6 +25,7 @@ $('#btnSubmit').click(function () {
                 EndTime: endtime.toTimeString().split(' ')[0].toString('hh:mm'),
                 Duration: $('#Duration').val(),
                 BatchName: $('#BatchNameOnce').val(),
+                DeviceResources: 1,
             })
             $.ajax({
                 url: ServiceURL + "/api/HostSchedular/AddSchedularOnce",
@@ -84,6 +85,7 @@ $('#btnSubmit').click(function () {
                         schedularParam.EndTime = endtime.toTimeString().split(' ')[0].toString('hh:mm'),
                         schedularParam.Duration = $('#Duration').val(),
                         schedularParam.BatchName = $('#BatchNameOnce').val(),
+                        schedularParam.DeviceResources = 1,
                         schedularArray.push(schedularParam);
                 });
                 $.ajax({
@@ -162,6 +164,7 @@ $('#btnSubmit').click(function () {
                         schedularParam.EndTime = endtime.toTimeString().split(' ')[0].toString('hh:mm'),
                         schedularParam.Duration = $('#Duration').val(),
                         schedularParam.BatchName = $('#BatchNameOnce').val(),
+                        schedularParam.DeviceResources = 1,
                         schedularArray.push(schedularParam);
                 });
                 $.ajax({
@@ -269,6 +272,7 @@ $('#btnSubmit').click(function () {
                         schedularParam.EndTime = endtime.toTimeString().split(' ')[0].toString('hh:mm'),
                         schedularParam.Duration = $('#Duration').val(),
                         schedularParam.BatchName = $('#BatchNameOnce').val(),
+                        schedularParam.DeviceResources = 1,
                         schedularArray.push(schedularParam);
                 });
                 $.ajax({
@@ -365,7 +369,7 @@ function getallSchedular() {
                 var publish = '';
                 $.each(data, function (i, item) {
                     if (data[i].isPublished == 0) {
-                        publish = '<div class="form-control table-publish">Publish</div>';
+                        publish = '<div class="form-control table-publish">Not Publish</div>';
                     }
                     else if (data[i].isPublished == 1) {
                         publish = '<div class="form-control publish-active">Published</div>';
