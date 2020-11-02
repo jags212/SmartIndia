@@ -61,6 +61,10 @@ namespace SmartIndia.WebApp.Areas.ManageUsers.Controllers
         {
             return View();
         }
+        public IActionResult mThankyou()
+        {
+            return View();
+        }
         public IActionResult OTPVerification()
         {
             return View();
@@ -78,9 +82,10 @@ namespace SmartIndia.WebApp.Areas.ManageUsers.Controllers
         }
         [Authorize]
         [HttpGet]
-        public IActionResult UserVerification([FromQuery]string Id)
+        public IActionResult UserVerification([FromQuery]string Id,int Resources)
         {
             ViewBag.ACode = Id;
+            ViewBag.DeviceResources = Resources;
             return View();
         }
         public IActionResult EmailConfirmation()

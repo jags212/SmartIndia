@@ -127,14 +127,14 @@ function BindList() {
                     $("#divaction").css("display", "none");
                     $("#divnoofdata").css("display", "none");
                     $("#sp_nodata").css("display", "block");
-                    $("#sp_nodata").html("No data available");
+                    $("#sp_nodata").html("No records available");
                     $(".calendar-scheduler").addClass("nodata-btn-schedular");
                 }
                 else {
                     $("#sp_nodata").css("display", "none");
                     $(".calendar-scheduler").removeClass("nodata-btn-schedular");
                     $("#divnoofdata").css("display", "block");
-                    $("#spannoofdata").html("Total no of data : "+data[0].noOfData);
+                    $("#spannoofdata").html("Records found: "+data[0].noOfData);
                     var trHTML = '';
                     $.each(data, function (i, item) {
 
@@ -160,16 +160,9 @@ function BindList() {
                     });
                     $('#coursedetails').append(trHTML);
                     $('.action-inline').tooltip();
-
-
-                    var trHTM = '';
-                    $.each(data, function (i, item) {
-
-                        trHTM += '<li><div>' + data[i].courseDesc + '</div>'
-                            + '<div>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') +'</div>'
-                        +'</li > '
+                    $("#coursedetails").JPaging({
+                        pageSize: 5
                     });
-                    //$('#gallary').append(trHTM);
                 }
 
             },

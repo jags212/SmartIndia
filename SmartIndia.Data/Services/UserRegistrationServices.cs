@@ -69,7 +69,7 @@ namespace SmartIndia.Data.Services
                     {
                         if (registration.SignUpBy == 1)
                         {
-                            SendEmail(registration.EmailId, registration.ServiceURL, ACode.ToString());
+                            SendEmail(registration.EmailId, registration.ServiceURL, ACode.ToString(), registration.DeviceResources);
                         }
                         else
                         {
@@ -199,7 +199,7 @@ namespace SmartIndia.Data.Services
             return strRetMsg;
         }
 
-        public string SendEmail(string emailID, string serviceUrl, string ActivationCode)
+        public string SendEmail(string emailID, string serviceUrl, string ActivationCode,int DeviceResources)
         {
             var client = new RestClient("https://api.sendinblue.com/v3/smtp/email");
             client.Timeout = -1;
@@ -211,7 +211,7 @@ namespace SmartIndia.Data.Services
                         "\r\n" +
                         "\"sender\": " +
                                 "{\r\n" +
-                                    "\"name\": \"Smart India\",\r\n    " +
+                                    "\"name\": \"OCR\",\r\n    " +
                                     "\"email\": \"napoleon.mohanta@gmail.com\"\r\n" +
                                 "},\r\n" +
                         "\"to\": " +
@@ -221,11 +221,11 @@ namespace SmartIndia.Data.Services
                                         "\"name\": \"" + emailID + "\"\r\n    " +
                                     "}\r\n" +
                                 "],\r\n" +
-                        "\"subject\": \"Smart India Email Confirmation\",\r\n" +
+                        "\"subject\": \"OCR Email Confirmation\",\r\n" +
                         "\"htmlContent\": \"<html><head></head><body><p>Dear User,</p>" +
-                        "<p>Thanks for signing up to Smart India!</p>" +
+                        "<p>Thanks for signing up to OCR!</p>" +
                         "<p>To get started, click the link below to confirm your account.</p>" +
-                        "<p><a href='" + serviceUrl + "/ManageUsers/Users/UserVerification?Id=" + ActivationCode + "'>Confirm your account</a></p>" +
+                        "<p><a href='" + serviceUrl + "/ManageUsers/Users/UserVerification?Id=" + ActivationCode + "&Resources="+ DeviceResources + "'>Confirm your account</a></p>" +
                         "</body></html>\"\r\n" +
                     "}"
                 , ParameterType.RequestBody);

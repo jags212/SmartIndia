@@ -4,7 +4,7 @@
     ViewData["Title"] = "Course";
     Layout = "~/Views/Shared/_LayoutLogin.cshtml";
 }
-    <title>OCR - Course</title>
+<title>OCR - Course</title>
 <!-- Datepicker CSS -->
 <link rel="stylesheet" href="~/assets/css/gijgo.min.css" />
 @section Scripts{
@@ -37,6 +37,9 @@
     <script>
         $('#searchDate').datepicker({ format: 'dd-mmm-yyyy' });
     </script>
+    <!-- ul li Pagination -->
+    <link href="~/assets/css/PagingStyle.css" rel="stylesheet" />
+    <script src="~/assets/js/paging.js"></script>
 }
 <!-- Start Course Area -->
 <div class="course-area">
@@ -84,29 +87,6 @@
                                 <div class="row" id="div_courselist">
                                 </div>
 
-
-                                @*<div class="edgt-cl-standard-pagination">
-                                        <ul>
-                                            <li class="edgt-cl-pag-prev">
-                                                <a href="javascript:void(0);" data-paged="1"><span class="bx bx-chevron-left"></span></a>
-                                            </li>
-                                            <li class="edgt-cl-pag-number edgt-cl-pag-active">
-                                                <a href="javascript:void(0);" data-paged="1">1</a>
-                                            </li>
-                                            <li class="edgt-cl-pag-number ">
-                                                <a href="javascript:void(0);" data-paged="2">2</a>
-                                            </li>
-                                            <li class="edgt-cl-pag-number ">
-                                                <a href="javascript:void(0);" data-paged="3">3</a>
-                                            </li>
-                                            <li class="edgt-cl-pag-number ">
-                                                <a href="javascript:void(0);" data-paged="4">4</a>
-                                            </li>
-                                            <li class="edgt-cl-pag-next">
-                                                <a href="javascript:void(0);" data-paged="2"><span class="bx bx-chevron-right"></span></a>
-                                            </li>
-                                        </ul>
-                                    </div>*@
                             </div>
                             <div class="col-md-3 mt-30 edgt-sidebar-right">
                                 <div class="widget edgt-course-categories-widget">

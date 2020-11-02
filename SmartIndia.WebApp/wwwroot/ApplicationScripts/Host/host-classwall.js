@@ -132,14 +132,15 @@ function BindList() {
                     $("#divcardbody").css("display", "none");
                     $("#divnoofdata").css("display", "none");
                     $("#divcardbodynodata").css("display", "block");
+                    $("#sp_nodata").html("No records available");
                 }
                 else {
                     $("#divcardbody").css("display", "block");
                     
                     $("#divcardbodynodata").css("display", "none");
                     $("#divnoofdata").css("display", "block");
-                    $("#spannoofdata").html("Total no of data : "+data[0].noOfData);
-                    $("#sp_nodata").html("No data available");
+                    $("#spannoofdata").html("Records found : "+data[0].noOfData);
+                    
                     var trHTML = '';
                     $.each(data, function (i, item) {
                         
@@ -180,18 +181,15 @@ function BindList() {
                             + ' <i class="bx bx-time"></i> ' + timeConvert(data[i].startTime) + ''
                             + '</span>'
                             + '</div>'
-                            //+'<div class="sm-bottom-status-info">'
-                            //        +'<span class="sm-status sm-attend" data - toggle="tooltip" data - placement="bottom" title = "Accomplished"> 20 </span>'
-                            //        +'<span class="sm-status sm-upclasses" data-toggle="tooltip" data-placement="bottom" title="Upcoming">18</span>'
-                            //        +'<span class="sm-status sm-reschedule" data-toggle="tooltip" data-placement="bottom" title="Reschedule">5</span>'
-                            //        +'<span class="sm-status sm-cancel" data-toggle="tooltip" data-placement="bottom" title="Cancel">1</span>'
-                            //+'</div >'
                             + '</div >'
                             + '</li >'
                     });
 
                     $('#coursedetails').append(trHTML);
                     $('.action-inline').tooltip();
+                    $("#coursedetails").JPaging({
+                        pageSize: 5
+                    });
                 }
             },
 

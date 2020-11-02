@@ -106,6 +106,9 @@ function BindList() {
                     'lines': 2,
                     'responsive': true
                 });
+                $("#div_courselist").JPaging({
+                    pageSize: 5
+                });
             },
 
             error: function (msg) {

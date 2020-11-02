@@ -144,7 +144,7 @@ function getattendeedetails(AID) {
                 var trHTML = '';
                 var cancel = '';
                 $.each(data, function (i, item) {
-                    trHTML += '<tr  class=""><td>' + (i + 1) + '</td><td>' + data[i].courseName + '</td> <td>' + dateFormat(data[0].startDate, 'dd-mmm-yy') + '</td> <td>' + dateFormat(data[0].endDate, 'dd-mmm-yy') + '</td> </tr>';
+                    trHTML += '<tr  class=""><td>' + (i + 1) + '</td><td>' + data[i].courseName + '</td> <td>' + dateFormat(data[i].startDate, 'dd-mmm-yy') + '</td> <td>' + dateFormat(data[i].endDate, 'dd-mmm-yy') + '</td> </tr>';
                 });
                 $('#tbl_courseDetails').append(trHTML);
                 $('.attendee-tooltip').tooltip();

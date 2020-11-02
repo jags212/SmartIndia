@@ -36,11 +36,16 @@
                                             localStorage.setItem("jwtToken", data.jwtToken);
                                             localStorage.setItem("refreshToken", data.refreshToken);
                                             localStorage.setItem("direct", 1);
-                                            $.post("/ManageUsers/Users/AthenticationUserRole?UserId=" + data.id + "&RoleName=Attendee", function (data) {
-                                                if (data == 1) {
-                                                    window.location.href = "/Attendee/Dashboard/AttendeeDashboard";
-                                                }
-                                            });
+                                            if (@ViewBag.DeviceResources==1) {
+                                                $.post("/ManageUsers/Users/AthenticationUserRole?UserId=" + data.id + "&RoleName=Attendee", function (data) {
+                                                    if (data == 1) {
+                                                        window.location.href = "/Attendee/Dashboard/AttendeeDashboard";
+                                                    }
+                                                });
+                                            }
+                                            else {
+                                                window.location.href = "/manageUsers/Users/mThankYou";
+                                            }
                                         }
                                     },
                                     error: function (jqXHR, textStatus, errorThrown) {

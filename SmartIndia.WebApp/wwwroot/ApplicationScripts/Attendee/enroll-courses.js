@@ -32,7 +32,7 @@ function BindList() {
                     else {
                         var fab = '<i class="bx bx-star">';
                     }
-                    $("#spannoofdata").html("Total no of data : "+data[i].noOfData);
+                    $("#spannoofdata").html("Records found : "+data[i].noOfData);
                     trHTML += '<li class="list-group-item justify-content-between ocr-list-group"> '
                         + '<div class="sm-card-title" >'
                         + ' <a data-toggle="tooltip" class="action-inline" data-placement="bottom" title="' + data[i].courseName + '" href="' + ClientURL + '/Attendee/EnrollCourses/EnrollCourseDetails?SID=' + data[i].courseId + '&bt=' + data[i].batchName + '" >' + data[i].courseName + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
@@ -58,6 +58,9 @@ function BindList() {
 
                 $('#coursedetails').append(trHTML);
                 $('.action-inline').tooltip();
+                $("#coursedetails").JPaging({
+                    pageSize: 5
+                });
             },
 
             error: function (msg) {

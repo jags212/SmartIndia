@@ -46,13 +46,13 @@ function BindHostUpcommingClasses() {
                     $("#divcardbody").css("display", "none");
                     $("#divnoofdata").css("display", "none");
                     $("#divcardbodynodata").css("display", "block");
-                    //$("#sp_nodata").html("No data available")
+                    $("#sp_nodata").html("No records available")
                 }
                 else {
                     $("#divcardbodynodata").css("display", "none");
                     $("#divcardbody").css("display", "block");
                     $("#divnoofdata").css("display", "block");
-                    $("#spannoofdata").html("Total no of data : "+data[0].noOfData);
+                    $("#spannoofdata").html("Records found : "+data[0].noOfData);
                     $('#hostCWCalendar').fullCalendar({
                         header: {
                             left: 'prev,next',
@@ -132,12 +132,13 @@ function BindList() {
                     $("#divcardbody").css("display", "none");
                     $("#divnoofdata").css("display", "none");
                     $("#divcardbodynodata").css("display", "block");
+                    $("#sp_nodata").html("No data available");
                 }
                 else {
                     $("#divcardbodynodata").css("display", "none");
                     $("#divcardbody").css("display", "block");
                     $("#divnoofdata").css("display", "block");
-                    $("#spannoofdata").html("Total no of data : "+data[0].noOfData);
+                    $("#spannoofdata").html("Records found : "+data[0].noOfData);
                     var trHTML = '';
 
                     $.each(data, function (i, item) {
