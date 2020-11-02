@@ -145,12 +145,13 @@ function BindList() {
                     $("#divnoofdata").css("display", "none");
                     $("#divcardbodynodata").css("display", "block");
                     $("#divcardbody").css("display", "none");
+                    $("#sp_nodata").html("No records available");
                 }
                 else {
                     $("#divcardbodynodata").css("display", "none");
                     $("#divcardbody").css("display", "block");
                     $("#divnoofdata").css("display", "block");
-                    $("#spannoofdata").html("Total no of data : "+data[0].noOfData);
+                    $("#spannoofdata").html("Records found : "+data[0].noOfData);
                     var trHTML = '';
 
                     $.each(data, function (i, item) {
@@ -183,6 +184,9 @@ function BindList() {
 
                     $('#coursedetails').append(trHTML);
                     $('.action-inline').tooltip();
+                    $("#coursedetails").JPaging({
+                        pageSize: 5
+                    });
                 }
             },
 
