@@ -77,6 +77,7 @@ $('#btnReset').click(function () {
     $("#btnSubmit").show();
     $("#btnUpdate").hide();
     $("#btnReset").text("Reset");
+    clearinput();
 });
 
 function SaveImage(imgId) {
@@ -134,12 +135,25 @@ function clearinput() {
     $('#txtName').val("");
     $('#txtDesc').val("");
     $('#txtTopics').val("");
-    $('#sdatepicker').val("");
-    $('#edatepicker').val("");
-    $('#durationDate').val("");
-    $('#txtCost').val("");
     $('#ddlFrequency').val(0);
     $('#txtNoOfClass').val("");
+
+    const date = new Date();
+    const formattedDate = date.toLocaleDateString('en-GB', {
+        day: '2-digit', month: 'short', year: '2-digit'
+    }).replace(/ /g, '-');
+    $('#sdatepicker').val(formattedDate);
+    $('#edatepicker').val(formattedDate);
+
+    var d = new Date();
+    var strDate = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+    $("#fdate").val(strDate);
+    $("#edate").val(strDate);
+
+    $("#durationDate").val(1);
+    $("#txtCost").val(0);
+
+
 }
 
 

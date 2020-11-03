@@ -56,5 +56,9 @@ namespace SmartIndia.WebApp.Controllers
             ViewBag.BatchName = bt;
             return View();
         }
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
     }
 }

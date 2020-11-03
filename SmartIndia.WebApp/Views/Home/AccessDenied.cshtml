@@ -1,0 +1,107 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <link rel="icon" type="image/png" href="~/assets/img/favicon.png" />
+    <!-- Vendors Min CSS -->
+    <link rel="stylesheet" href="~/assets/css/vendors.min.css" />
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="~/assets/css/all.min.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="~/assets/css/style.css" />
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="~/assets/css/responsive.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/assets/css/custom.css" />
+    <link href="~/assets/css/core.css" rel="stylesheet" />
+    <!-- Country Code CSS -->
+    <link rel="stylesheet" href="~/assets/css/intlTelInput.css" />
+    <!-- Bootstrap Dialog Alert CSS -->
+    <link href="~/assets/css/bootstrap-dialog.min.css" rel="stylesheet" />
+</head>
+<body class="main-body">
+    <!-- Main Content Layout -->
+    <!--Start Header Area-->
+    <div class="learn-main-content">
+        <div class="col-position">
+            <div id="black-topbar" class="hidden-xs noanimate" role="navigation" aria-label="Resources">
+                <ul class="list-inline pull-left res-pull-left" role="menubar">
+                    <li>
+                        <span>Call <a href="callto:+123467897">+44 300 303 0266</a></span>
+                    </li>
+                    <li>
+                        <span>
+                            Follow Us
+                            <a href="https://www.facebook.com/" class="nav-social-media"><i class="bx bxl-facebook"></i></a>
+                            <a href="https://twitter.com/" class="nav-social-media"><i class="bx bxl-twitter"></i></a>
+                            <a href="https://www.linkedin.com/" class="nav-social-media"><i class="bx bxl-linkedin"></i></a>
+                            <a href="https://www.instagram.com/" class="nav-social-media"><i class="bx bxl-instagram"></i></a>
+                        </span>
+                    </li>
+                </ul>
+                <ul class="list-inline pull-right" role="menubar">
+                    <li role="none">
+                        <a role="menuitem" href="javascript:void(0);">Get App</a>
+                    </li>
+                    <li>
+                        <a role="menuitem" href="javascript:void(0);">Support</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!--End Header Area-->
+        <!-- Start Thank You Area -->
+
+        <div class="regi-verification-area">
+            <div class="jumbotron text-center">
+                <div class="regi-info"><h1><strong>Access Denied</strong></h1></div>
+                <hr />
+                <h3 class="display-5">You do not have permission to access this page.</h3>
+                <p class="lead">Try <a asp-area="ManageUsers" asp-controller="Users" asp-action="Login">Logging out</a> and log in with a different account.</p>
+            </div>
+        </div>
+
+        <!-- End Thank You Area -->
+
+    </div>
+    <div class="clearfix"></div>
+    <!-- End Login Area -->
+    <!-- Start Footer Area -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="display-inline-block">
+                <span class="footer-text-muted">Copyright ©2020 OCR. All rights reserved. </span>
+            </div>
+            <div class="display-inline-block ocr-float-right res-ocr-float-right">
+                <div class="footer-links">
+                    <a href="terms-conditions.html" class="link-1">Terms and Conditions</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- End Footer Area -->
+    <!-- Scrolling Top -->
+    <a href="#0" class="cd-top cd-is-visible cd-fade-out"><i class="fa fa-angle-up"></i></a>
+    <!-- Footer Scripts -->
+    <!-- Vendors Min JS -->
+    <script src="assets/js/vendors.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/custom.js"></script>
+    <!-- Scrolling Top JS -->
+    <script src="assets/js/scroll-top.js"></script>
+
+</body>
+</html>
