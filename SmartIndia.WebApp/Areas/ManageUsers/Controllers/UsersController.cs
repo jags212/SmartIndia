@@ -73,14 +73,12 @@ namespace SmartIndia.WebApp.Areas.ManageUsers.Controllers
         {
             return View();
         }
-        [Authorize]
         [HttpGet]
         public IActionResult ResetPassword([FromQuery]string Id)
         {
             ViewBag.ACode = Id;
             return View();
         }
-        [Authorize]
         [HttpGet]
         public IActionResult UserVerification([FromQuery]string Id,int Resources)
         {

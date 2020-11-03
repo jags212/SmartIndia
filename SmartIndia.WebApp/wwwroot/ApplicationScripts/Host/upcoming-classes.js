@@ -11,7 +11,7 @@ $('#hostUpcomingList').click(function () {
     $("#hostUPCalendar").css("display", "none");
     $("#hostUpcomingList").addClass("up-active");
     $("#hostUpcomingCalendar").removeClass("up-active");
-    BindList();
+    //BindList();
 
 });
 

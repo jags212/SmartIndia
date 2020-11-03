@@ -13,7 +13,7 @@ $('#hostClassWallList').click(function () {
     $("#hostCWCalendar").css("display", "none");
     $("#hostClassWallList").addClass("up-active");
     $("#hostClassWallCalendar").removeClass("up-active");
-    BindList();
+    //BindList();
 });
 
 
