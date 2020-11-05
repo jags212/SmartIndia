@@ -62,7 +62,7 @@ $('#btnSubmit').click(function () {
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
-                if (data == "2") {
+                if (data.retOut == "2") {
                     localStorage.clear();
                     $.post("/ManageUsers/Users/RomoveAuth", function (data) {
                         if (data == 1) {

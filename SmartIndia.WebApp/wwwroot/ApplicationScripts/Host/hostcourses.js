@@ -147,8 +147,10 @@ function clearinput() {
 
     var d = new Date();
     var strDate = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
-    $("#fdate").val(strDate);
-    $("#edate").val(strDate);
+    //$("#fdate").val(strDate);
+    //$("#edate").val(strDate);
+    $("#fdate").val(dateFormat(d, 'yyyy-mm-dd'));
+    $("#edate").val(dateFormat(d, 'yyyy-mm-dd'));
 
     $("#durationDate").val(1);
     $("#txtCost").val(0);
@@ -284,6 +286,13 @@ function getcoursedetails(CID) {
                 $("#noclass").html(data[0].noOfClass);
 
                 $("#imgBanner").attr('src', data[0].imageUrl);
+                if (data[0].imageExt != null && data[0].imageExt != "") {
+                    $("#imgBanner").show();
+                    $("#imgg").show();
+                } else {
+                    $("#imgg").hide();
+                }
+
             },
             error: function (msg) {
                 alert(msg.responseText);

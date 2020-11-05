@@ -7,15 +7,16 @@
 
 <!-- Datepicker CSS -->
 <link rel="stylesheet" href="~/assets/css/gijgo.min.css" />
+<!-- Style CSS -->
+<link rel="stylesheet" href="~/assets/css/style.css" />
+<!-- Responsive CSS -->
+<link rel="stylesheet" href="~/assets/css/responsive.css" />
+<!-- Custom CSS -->
+<link rel="stylesheet" href="~/assets/css/custom.css" />
+<!-- Datepicker JS -->
 
 @section Scripts{
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" href="assets/css/responsive.css" />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/custom.css" />
-    <!-- Datepicker JS -->
+
     <script src="~/assets/js/gijgo.min.js"></script>
     <script>
         $(document).ready(function () {
@@ -30,8 +31,8 @@
 
             var d = new Date();
             var strDate = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
-            $("#fdate").val(strDate);
-            $("#edate").val(strDate);
+            $("#fdate").val(dateFormat(d, 'yyyy-mm-dd'));
+            $("#edate").val(dateFormat(d, 'yyyy-mm-dd'));
 
             $("#durationDate").val(1);
             $("#txtCost").val(0);
@@ -114,12 +115,12 @@
         $('#fileuploadImg').bind('change', function () {
             var ext = $('#fileuploadImg').val().split('.').pop().toLowerCase();
             if ($.inArray(ext, ['png', 'jpg']) == -1) {
-                alert("Only .jpg,.png allowed");
+                BootstrapAlert('"Only .jpg, .png allowed"');
                 $('#fileuploadImg').val("");
             } else {
                 var picsize = (this.files[0].size);
                 if (picsize > 1000000) {
-                    alert("Maximum file size 1MB.");
+                    BootstrapAlert("Maximum file size 1MB.");
                     $('#fileuploadImg').val("");
                 }
             }
@@ -128,12 +129,12 @@
         $('#fileuploadbrochure').bind('change', function () {
             var ext = $('#fileuploadbrochure').val().split('.').pop().toLowerCase();
             if ($.inArray(ext, ['png', 'jpg', 'pdf']) == -1) {
-                alert("Only .jpg,.png,.pdf allowed");
+                BootstrapAlert("Only .jpg, .png, .pdf allowed");
                 $('#fileuploadbrochure').val("");
             } else {
                 var picsize = (this.files[0].size);
                 if (picsize > 1000000) {
-                    alert("Maximum file size 1MB.");
+                    BootstrapAlert("Maximum file size 1MB.");
                     $('#fileuploadbrochure').val("");
                 }
             }
@@ -162,7 +163,7 @@
 
 
 
-         
+
 
 
 
@@ -253,7 +254,7 @@
 
 
 
-        
+
 
     </div>
 </div>
@@ -306,7 +307,7 @@
                                 <th>Topics</th>
                                 <td id="topic"></td>
                             </tr>
-                            <tr>
+                            <tr id="imgg">
                                 <th>Image</th>
                                 @*<td><img src="~/assets/img/course-pop-up-img.jpg" class="banner-img" /></td>*@
                                 <td><img id="imgBanner" class="banner-img" /></td>

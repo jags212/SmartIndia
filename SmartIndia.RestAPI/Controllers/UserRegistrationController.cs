@@ -58,7 +58,7 @@ namespace SmartIndia.RestAPI.Controllers
             }
         }
         [HttpPost("ResetPassword")]
-        public async Task<string> ResetPassword(ResetParam obj)
+        public async Task<ReturnParamMsg> ResetPassword(ResetParam obj)
         {
             using (var userRegistrationService = new UserRegistrationServices(connectionFactory))
             {
@@ -138,7 +138,7 @@ namespace SmartIndia.RestAPI.Controllers
             }
         }
         [HttpPost("UpdateUserProfile")]
-        public async Task<string> UpdateUser(UserRegistrationDetails userRegistration)
+        public async Task<ReturnParamMsg> UpdateUser(UserRegistrationDetails userRegistration)
         {
             using (var userRegistrationService = new UserRegistrationServices(connectionFactory))
             {

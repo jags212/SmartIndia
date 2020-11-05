@@ -54,7 +54,7 @@ $('#btnChange').click(function () {
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
-                if (data == "2") {
+                if (data.retOut == "2") {
                     BootStrapRedirect("Your password has been changed successfully.", "/ManageUsers/Users/Profile");
                 }
                 else {

@@ -25,9 +25,9 @@ function getallReScheduling() {
                         cancel = '<div class="action-inline" data-toggle="tooltip" data-placement="top" title="View"><a href="javascript:void(0);" onclick="chedularView(' + data[i].schedularId + ')" class="form-control table-cancel" data-toggle="modal" data-target="#ModalViewDetails"><i class="bx bx-x"></i></a></div>';
                     }
                     else if (data[i].status == 1) {
-                        cancel = '<div class="action-inline" data-toggle="tooltip" data-placement="right" title="Rescheduling">  <a href="javascript:void(0);" onclick="getcourseidd(' + data[i].schedularId + ')"  class="form-control table-edit" ><i class="bx bx bx-reset"></i></a> </div>' 
+                        cancel = '<div class="action-inline" data-toggle="tooltip" data-placement="top" title="Rescheduling">  <a href="javascript:void(0);" onclick="getcourseidd(' + data[i].schedularId + ')"  class="form-control table-edit" ><i class="bx bx bx-reset"></i></a> </div>' 
                             + '<div class="action-inline" data-toggle="tooltip" data-placement="top" title="View"><a href="javascript:void(0);" onclick="chedularView(' + data[i].schedularId + ')" class="form-control table-view" data-toggle="modal" data-target="#ModalViewDetails"> <i class="fa fa-fw fa-eye"></i></a></div>'
-                            +'<div class="action-inline" data - toggle="tooltip" data - placement="right" title = "Cancel" > <a href="javascript:void(0);" onclick="getschedularId(' + data[i].schedularId + ')" class="form-control table-cancel" data-toggle="modal" data-target="#ConCancelModal"><i class="bx bx-trash"></i></a></div > ';
+                            +'<div class="action-inline" data-toggle="tooltip" data-placement="top" title = "Cancel"> <a href="javascript:void(0);" onclick="getschedularId(' + data[i].schedularId + ')" class="form-control table-cancel" data-toggle="modal" data-target="#ConCancelModal"><i class="bx bx-trash"></i></a></div> ';
                     }
 
                     trHTML += '<tr  class=""><td>' + (i + 1) + '</td><td>' + data[i].courseName + '</td><td>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') + '</td><td>' + timeConvert(data[i].startTime) + '</td><td>' + timeConvert(data[i].endTime) + '</td> <td>' + data[i].batchName + '</td><td> ' + cancel + ' </td> </tr>';
@@ -48,6 +48,10 @@ function getallReScheduling() {
         });
 }
 $('#btnCancel').click(function () {
+    $("#reschedulingModal").modal("hide");
+    $("#CancelModal").modal("hide");
+});
+$('#btnRCancel').click(function () {
     $("#reschedulingModal").modal("hide");
     $("#CancelModal").modal("hide");
 });
@@ -129,7 +133,7 @@ $('#btnRSUpdate').click(function () {
                 if (data == "1") {
                     $("#reschedulingModal").modal("hide");
                     clearinput();
-                    BootStrapRedirect(' Saved Successfully.', '/Hosts/Rescheduling/Rescheduling');
+                    BootStrapRedirect(' Rescheduled Successfully.', '/Hosts/Rescheduling/Rescheduling');
 
                 }
                 else if (data == "3") {

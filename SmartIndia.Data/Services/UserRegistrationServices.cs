@@ -18,6 +18,7 @@ namespace SmartIndia.Data.Services
     public class UserRegistrationServices : RepositoryBase
     {
         ReturnParam retMsg = new ReturnParam();
+        ReturnParamMsg retParamMsg = new ReturnParamMsg();
         string strRetMsg = "";
         private readonly IConnectionFactory connectionFactory;
 
@@ -171,7 +172,7 @@ namespace SmartIndia.Data.Services
                 // log.Error(ex);
             }
         }
-        public string UpdareResetPassword(ResetParam resetParam)
+        public ReturnParamMsg UpdareResetPassword(ResetParam resetParam)
         {
             try
             {
@@ -188,17 +189,24 @@ namespace SmartIndia.Data.Services
                 var result = DBConnection.Execute("USP_UserRegistrations_ACTION", param, commandType: CommandType.StoredProcedure);
                 string retMsg = param.Get<string>("PVCH_MSGOUT");
                 strRetMsg = retMsg;
+                retParamMsg = new ReturnParamMsg
+                {
+                    retOut = strRetMsg,
+                    status = "200"
+                };
             }
             catch (Exception ex)
             {
-                // throw new Exception(ex.Message);
-                strRetMsg = "404";
-                return null;
-                // log.Error(ex);
-            }
-            return strRetMsg;
-        }
 
+                // throw new Exception(ex.Message);
+                retParamMsg = new ReturnParamMsg
+                {
+                    retOut = "",
+                    status = "404"
+                };
+            }
+            return retParamMsg;
+        }
         public string SendEmail(string emailID, string serviceUrl, string ActivationCode,int DeviceResources)
         {
             var client = new RestClient("https://api.sendinblue.com/v3/smtp/email");
@@ -401,7 +409,7 @@ namespace SmartIndia.Data.Services
                 return null;
             }
         }
-        public string UpdateUserData(UserRegistrationDetails registration)
+        public ReturnParamMsg UpdateUserData(UserRegistrationDetails registration)
         {
             try
             {
@@ -437,17 +445,25 @@ namespace SmartIndia.Data.Services
                     var resultInt = DBConnection.Execute("USP_UserCourseInterests", paramInt, commandType: CommandType.StoredProcedure);
 
                 }
-
+                retParamMsg = new ReturnParamMsg
+                {
+                    retOut = strRetMsg,
+                    status = "200"
+                };
 
 
             }
             catch (Exception ex)
             {
                 // throw new Exception(ex.Message);
-                strRetMsg = "404";
+                retParamMsg = new ReturnParamMsg
+                {
+                    retOut = "",
+                    status = "404"
+                };
                 // log.Error(ex);
             }
-            return strRetMsg;
+            return retParamMsg;
         }
         public bool CheckUserPass(Guid uid, string oldPass)
         {

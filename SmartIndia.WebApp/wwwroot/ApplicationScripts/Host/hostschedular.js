@@ -317,6 +317,12 @@ $('#btnSubmit').click(function () {
 
 });
 
+$('#btnReset').click(function () {
+    $("#btnSubmit").show();
+    $("#btnUpdate").hide();
+    $("#btnReset").text("Reset");
+    clearinput();
+});
 
 function clearinput() {
     $('#ScDate').val("");
@@ -327,8 +333,8 @@ function clearinput() {
     $('#BatchNameOnce').val("");
     $('#ddlDayofweek').val(0);
     $('#ddlDateofMonth').val(0);
-    $('#datepickerFrom').val("");
-    $('#datepickerTo').val("");
+    //$('#datepickerFrom').val("");
+    //$('#datepickerTo').val("");
     $('#ddlyearfrom').val(0);
     $('#ddlmonthfrom').val(0);
     $('#ddlyesrto').val(0);
@@ -341,6 +347,20 @@ function clearinput() {
     $('#uBatchNameOnce').val("");
     $('#uRemarks').val("");
     $('#uDuration').val(0);
+
+
+
+    const date = new Date();
+    const formattedDate = date.toLocaleDateString('en-GB', {
+        day: '2-digit', month: 'short', year: '2-digit'
+    }).replace(/ /g, '-');
+    $('#datepickerFrom').val(formattedDate);
+    $('#datepickerTo').val(formattedDate);
+
+    var d = new Date();
+    var strDate = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+    $("#SccDate").val(strDate);
+    $("#SccTo").val(strDate);
 }
 //------------------------------------- get host schedular-----------------------------------------
 $(document).ready(function () {
@@ -463,7 +483,7 @@ $('#btnRSUpdate').click(function () {
                 if (data == "2") {
                     $("#reschedulingModal").modal("hide");
                     clearinput();
-                    BootStrapRedirect(' Updated Successfully.', '/Hosts/Schedular/Schedular');
+                    BootStrapRedirect(' Rescheduled Successfully.', '/Hosts/Schedular/Schedular');
                 }
                 else if (data == "3") {
                     BootstrapAlert('Data Alreday Exist.');
@@ -540,7 +560,7 @@ function getSchedulardetails(CID, sdate, edate, stime, etime, isPub) {
                 $.each(data, function (i, item) {
 
                     if (isPub == "0") {
-                        publish = ' <div class="action-inline" data-toggle="tooltip" data-placement="top" title="Edit"> <a  id= "scId" href="javascript:void(0);" onclick="getcourseidd(' + data[i].schedularId + ')"  class="form-control table-edit "><i class="bx bx-edit-alt"></i></a> </div>  ';
+                        publish = ' <div class="action-inline" data-toggle="tooltip" data-placement="right" title="Edit"> <a  id= "scId" href="javascript:void(0);" onclick="getcourseidd(' + data[i].schedularId + ')"  class="form-control table-edit "><i class="bx bx-edit-alt"></i></a> </div>  ';
                         trHTML += '<tr  class=""><td>' + (i + 1) + '</td><td>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') + '</td><td>' + timeConvert(data[i].startTime) + '</td><td>' + timeConvert(data[i].endTime) + '</td><td>' + data[i].duration + '</td><td> ' + publish + ' </td>  </tr>';
                     }
                     else if (isPub == "1") {
@@ -551,6 +571,7 @@ function getSchedulardetails(CID, sdate, edate, stime, etime, isPub) {
                 });
                 $("#tblDetails").append(thead);
                 $('#tblDetails').append(trHTML);
+                $('.action-inline').tooltip();
 
 
             },

@@ -199,7 +199,7 @@ $('#btnSave').click(function () {
                 } else {
                 }
 
-                if (data == "2") {
+                if (data.retOut == "2") {
                     BootStrapRedirect("Data updated successfully.", "/ManageUsers/Users/Profile");
                 }
                 else {

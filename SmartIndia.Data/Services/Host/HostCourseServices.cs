@@ -58,6 +58,16 @@ namespace SmartIndia.Data.Services.Host
 
                     };
                 }
+                else
+                {
+                    retParam = new HostCourseReturnParam
+                    {
+                        retOut = retSP,
+                        ImgName = "",
+                        BroName = ""
+
+                    };
+                }
                
             }
             catch (Exception ex)
