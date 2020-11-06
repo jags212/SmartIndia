@@ -52,15 +52,20 @@ function BindUserData(obj) {
 
     if (obj.emailConfirmed) {
         $('#spnEmailVer').show();
+        $('#spnEmailVer').html("Verified");
     }
     else {
-        $('#spnEmailVer').hide();
+        
+        $('#spnEmailVer').html("Not Verified");
+        $('#spnEmailVer').css('color', 'red');
     }
     if (obj.mobileConfirmed) {
         $('#spnMobileVer').show();
+        $('#spnMobileVer').html("Verified");
     }
     else {
-        $('#spnMobileVer').hide();
+        $('#spnMobileVer').html("Not Verified");
+        $('#spnMobileVer').css('color', 'red');
     }
     BindInterest(obj.interests);
 }

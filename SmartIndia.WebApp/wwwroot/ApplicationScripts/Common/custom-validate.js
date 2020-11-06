@@ -801,8 +801,11 @@ function groupTable($rows, startIndex, total) {
 
 
 function BootStrapRedirect(msg, url) {
-
+    var $textAndPic = $('<div></div>');
+    $textAndPic.append('<img src="../../assets/img/white-logo.png" />');
+    $textAndPic.append('Information');
     BootstrapDialog.show({
+        title: $textAndPic,
         closable: false, // <-- Default value is false
         message: msg,
         buttons: [{

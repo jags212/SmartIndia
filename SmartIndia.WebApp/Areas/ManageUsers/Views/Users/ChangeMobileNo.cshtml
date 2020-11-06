@@ -10,6 +10,20 @@
     <script src="~/assets/js/countrycode.js"></script>
     <script src="~/ApplicationScripts/UserRegistration/change-mobileno.js"></script>
     <script src="~/ApplicationScripts/Common/custom-validate.js"></script>
+    <script>
+        $(function () {
+            $('#txt_currentmob').on('keypress', function (e) {
+                if (e.which == 32) {
+                    return false;
+                }
+            });
+            $('#txt_newmob').on('keypress', function (e) {
+                if (e.which == 32) {
+                    return false;
+                }
+            });
+        });
+    </script>
 }
 <!-- Main Content Layout -->
 <!-- Breadcrumb Area -->
@@ -31,18 +45,18 @@
             <div class="col-lg-6">
                 <div class="form-group">
                     <label>Current Mobile No</label>
-                    <input type="text" class="form-control" id="txt_currentmob">
+                    <input id="txt_currentmob" type="tel" maxlength="15" ondrop="return false;" onpaste="return false;" name="mobileno" class="form-control pl-110" oninput="this.value = this.value.replace(/[^0-9-()+ ]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" data-eloqua-input="mobileno" autocomplete="off" data-intl-tel-input-id="0" placeholder="Mobile No">
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="form-group">
                     <label>New Mobile No</label>
-                    <input type="text" class="form-control pl-110" id="txt_newmob">
+                    <input id="txt_newmob" type="tel" maxlength="15" ondrop="return false;" onpaste="return false;" name="mobileno" class="form-control pl-110" oninput="this.value = this.value.replace(/[^0-9-()+ ]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" data-eloqua-input="mobileno" autocomplete="off" data-intl-tel-input-id="0" placeholder="Mobile No">
                 </div>
 
                 <!--- Start Country Code --->
 
-                <div id="intel-flag-title" class="intl-tel-input allow-dropdown separate-dial-code mobile-change-intl-tel-input" data-toggle="tooltip" data-placement="bottom" title="India: +91">
+                <div id="intel-flag-title" class="intl-tel-input allow-dropdown separate-dial-code mobile-change-intl-tel-input" data-toggle="tooltip" data-placement="top" title="India: +91">
                     <div class="flag-container">
                         <div id="selected-flag-title" class="selected-flag" role="combobox" aria-owns="country-listbox">
                             <div class="iti-flag in"></div>
@@ -316,25 +330,25 @@
 
 <!-- End -->
 <!-- Start Mobileno OTP Modal -->
-    <div class="modal fade basicModalSM" id="MobilenoOTPModal" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Change Mobile No</h5>
-                    <button type="button" class="close col-black" data-dismiss="modal">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body att-modal-body">
-                    <p class="modal-p-text">Use 4-digit OTP for change your mobile no</p>
-                    <div class="row form-group">
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="4-digit OTP" maxlength="4" id="txtVerifyOtp" />
-                        </div>
+<div class="modal fade basicModalSM" id="MobilenoOTPModal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Change Mobile No</h5>
+                <button type="button" class="close col-black" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body att-modal-body">
+                <p class="modal-p-text">Use 4-digit OTP for change your mobile no</p>
+                <div class="row form-group">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" placeholder="4-digit OTP" maxlength="4" id="txtVerifyOtp" />
                     </div>
-                    <input type="submit" class="btn btn-primary" value="Verify" id="btn_OtpVerify"/>
                 </div>
+                <input type="submit" class="btn btn-primary" value="Verify" id="btn_OtpVerify" />
             </div>
         </div>
     </div>
+</div>
 <!-- End Mobileno OTP Modal -->

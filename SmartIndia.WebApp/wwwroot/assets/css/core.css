@@ -71,9 +71,14 @@
     z-index: 9999999;
 }
 .noofdata {
-    color: blue;
+    color: #0c9bb3;
     font-weight: 700;
     margin-left: -21px;
+}
+.noodata {
+    color: #1b1b1d;
+    margin-left: 1px;
+    font-weight: 700;
 }
 .noofdatadiv {
     padding-left: 39px;

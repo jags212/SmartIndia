@@ -55,12 +55,12 @@
         $('#fileuploadImg').bind('change', function () {
             var ext = $('#fileuploadImg').val().split('.').pop().toLowerCase();
             if ($.inArray(ext, ['png', 'jpg']) == -1) {
-                alert("Only .jpg,.png allowed");
+                BootstrapAlert("Only .jpg,.png allowed");
                 $('#fileuploadImg').val("");
             } else {
                 var picsize = (this.files[0].size);
                 if (picsize > 1000000) {
-                    alert("Maximum file size 1MB.");
+                    BootstrapAlert("Maximum file size 1MB.");
                     $('#fileuploadImg').val("");
                 }
             }
@@ -140,7 +140,7 @@
                                         <input type="email" class="form-control" placeholder="Enter email address" value="" id="profileEmail">
                                     </div>
                                     <div class="profile-edit">
-                                        <span id="spnEmailVer">(Verified)</span>
+                                        <span id="spnEmailVer"></span>
                                         <a class="d-inline-block" asp-area="ManageUsers" asp-controller="Users" asp-action="ChangeEmail">Edit</a>
                                     </div>
                                 </div>
@@ -420,7 +420,7 @@
 
                                     <!--- End Country Code --->
                                     <div class="profile-edit">
-                                        <span id="spnMobileVer">(Verified)</span>
+                                        <span id="spnMobileVer"></span>
                                         <a class="d-inline-block" asp-area="ManageUsers" asp-controller="Users" asp-action="ChangeMobileNo">Edit</a>
                                     </div>
                                 </div>

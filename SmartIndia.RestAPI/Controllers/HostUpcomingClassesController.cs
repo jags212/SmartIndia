@@ -67,6 +67,9 @@ namespace SmartIndia.RestAPI.Controllers
                     }
                     else
                     {
+                        //hostCourses.filePath = Path.Combine(_environment.WebRootPath, "Images" + "\\logo.png");
+                        //b = System.IO.File.ReadAllBytes(hostCourses.filePath);
+                        //hostCourses.ImageUrl = "data:image/" + hostCourses.ImageExt + ";base64," + Convert.ToBase64String(b, 0, b.Length); ;
                         hostCourses.ImageUrl = "";
                     }
                 }

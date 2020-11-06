@@ -32,7 +32,8 @@ function BindList() {
                     else {
                         var fab = '<i class="bx bx-star">';
                     }
-                    $("#spannoofdata").html("Records found : "+data[i].noOfData);
+                    $("#spannoofdata").html(data[0].noOfData);
+                    $("#spdata").html("Records found: ");
                     trHTML += '<li class="list-group-item justify-content-between ocr-list-group"> '
                         + '<div class="sm-card-title" >'
                         + ' <a data-toggle="tooltip" class="action-inline" data-placement="bottom" title="' + data[i].courseName + '" href="' + ClientURL + '/Attendee/EnrollCourses/EnrollCourseDetails?SID=' + data[i].courseId + '&bt=' + data[i].batchName + '" >' + data[i].courseName + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
