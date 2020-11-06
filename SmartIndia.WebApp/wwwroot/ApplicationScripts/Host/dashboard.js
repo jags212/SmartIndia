@@ -134,7 +134,8 @@ function BindList() {
                     $("#sp_nodata").css("display", "none");
                     $(".calendar-scheduler").removeClass("nodata-btn-schedular");
                     $("#divnoofdata").css("display", "block");
-                    $("#spannoofdata").html("Records found: "+data[0].noOfData);
+                    $("#spannoofdata").html(data[0].noOfData);
+                    $("#spdata").html("Records found: ");
                     var trHTML = '';
                     $.each(data, function (i, item) {
 

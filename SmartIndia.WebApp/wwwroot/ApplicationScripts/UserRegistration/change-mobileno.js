@@ -81,7 +81,13 @@ function ValidateBlankCheck() {
     if (!BlankTextBox('txt_currentmob', 'Current mobile no')) {
         return false;
     }
+    else if (!IsSpecialCharacter1stPalce('txt_currentmob')) {
+        return false;
+    }
     else if (!BlankTextBox('txt_newmob', 'New mobile no')) {
+        return false;
+    }
+    else if (!IsSpecialCharacter1stPalce('txt_newmob')) {
         return false;
     }
     else {

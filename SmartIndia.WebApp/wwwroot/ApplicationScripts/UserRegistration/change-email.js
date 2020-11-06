@@ -75,9 +75,23 @@ function ValidateBlankCheck() {
     if (!BlankTextBox('currentemail', 'Current email')) {
         return false;
     }
+    else if (!IsSpecialCharacter1stPalce('currentemail')) {
+        return false;
+    }
+    else if (!ValidateEmail('currentemail')) {
+        return false;
+    }
     else if (!BlankTextBox('newemail', 'New email')) {
         return false;
     }
+    else if (!IsSpecialCharacter1stPalce('newemail')) {
+        return false;
+    }
+    else if (!ValidateEmail('newemail')) {
+        return false;
+    }
+
+
     else {
         return true;
     }

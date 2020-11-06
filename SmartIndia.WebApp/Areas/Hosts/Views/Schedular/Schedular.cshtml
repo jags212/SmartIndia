@@ -65,9 +65,9 @@
 
             var d = new Date();
             var strDate = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
-            $("#hfonceDate").val(strDate);
-            $("#SccDate").val(strDate);
-            $("#SccTo").val(strDate);
+            $("#hfonceDate").val(dateFormat(d, 'yyyy-mm-dd'));
+            $("#SccDate").val(dateFormat(d, 'yyyy-mm-dd'));
+            $("#SccTo").val(dateFormat(d, 'yyyy-mm-dd'));
 
 
             $("#ddlmonthfrom").val((d.getMonth() + 1));
