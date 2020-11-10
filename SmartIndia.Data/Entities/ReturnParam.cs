@@ -13,6 +13,10 @@ namespace SmartIndia.Data.Entities
     {
         public string retOut { get; set; }
         public string status { get; set; }
+    }public class ReturnBoolParam
+    {
+        public bool retOut { get; set; }
+        public string status { get; set; }
     }
     public class HostCourseReturnParam
     {

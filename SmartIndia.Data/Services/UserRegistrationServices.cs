@@ -19,6 +19,7 @@ namespace SmartIndia.Data.Services
     {
         ReturnParam retMsg = new ReturnParam();
         ReturnParamMsg retParamMsg = new ReturnParamMsg();
+        ReturnBoolParam retBoolParamMsg = new ReturnBoolParam();
         string strRetMsg = "";
         private readonly IConnectionFactory connectionFactory;
 
@@ -253,7 +254,7 @@ namespace SmartIndia.Data.Services
                         "\r\n" +
                         "\"sender\": " +
                                 "{\r\n" +
-                                    "\"name\": \"Smart India\",\r\n    " +
+                                    "\"name\": \"OCR\",\r\n    " +
                                     "\"email\": \"napoleon.mohanta@gmail.com\"\r\n" +
                                 "},\r\n" +
                         "\"to\": " +
@@ -263,7 +264,7 @@ namespace SmartIndia.Data.Services
                                         "\"name\": \"" + emailID + "\"\r\n    " +
                                     "}\r\n" +
                                 "],\r\n" +
-                        "\"subject\": \"Smart India Reset Your Password\",\r\n" +
+                        "\"subject\": \"OCR Reset Your Password\",\r\n" +
                         "\"htmlContent\": \"<html><head></head><body><p>Dear User,</p>" +
                         "<p>You recently asked to reset your OCR account password.</p>" +
                         "<p>Click the link below to reset your password.</p>" +
@@ -494,7 +495,7 @@ namespace SmartIndia.Data.Services
                 // log.Error(ex);
             }
         }
-        public bool CkeckEmailId(Guid uid, string currentemail)
+        public ReturnBoolParam CkeckEmailId(Guid uid, string currentemail)
         {
             try
             {
@@ -507,20 +508,33 @@ namespace SmartIndia.Data.Services
 
                 if (currentemail == result.Emailid)
                 {
-                    return true;
+                    retBoolParamMsg = new ReturnBoolParam
+                    {
+                        retOut = true,
+                        status = "200"
+                    };
                 }
                 else
                 {
-                    return false;
+                    retBoolParamMsg = new ReturnBoolParam
+                    {
+                        retOut = false,
+                        status = "200"
+                    };
                 }
 
             }
             catch (Exception ex)
             {
-                return false;
+                retBoolParamMsg = new ReturnBoolParam
+                {
+                    retOut = false,
+                    status = "500"
+                };
             }
+            return retBoolParamMsg;
         }
-        public string UpdatEmailid(UpdateEmail updateEmail)
+        public ReturnParamMsg UpdatEmailid(UpdateEmail updateEmail)
         {
             object[] objArray = new object[] {
                          "@P_ACTIONCODE", "A"
@@ -541,14 +555,21 @@ namespace SmartIndia.Data.Services
                 {
                     //Send Mobile SMS OTP
                 }
+                retParamMsg = new ReturnParamMsg
+                {
+                    retOut = strRetMsg,
+                    status = "200"
+                };
             }
             catch (Exception ex)
             {
-                // throw new Exception(ex.Message);
-                strRetMsg = "";
-                // log.Error(ex);
+                retParamMsg = new ReturnParamMsg
+                {
+                    retOut = ex.Message,
+                    status = "500"
+                };
             }
-            return strRetMsg;
+            return retParamMsg;
         }
         public string SendEmailforMailidChange(string emailID, string serviceUrl, string ActivationCode)
         {
@@ -562,7 +583,7 @@ namespace SmartIndia.Data.Services
                         "\r\n" +
                         "\"sender\": " +
                                 "{\r\n" +
-                                    "\"name\": \"Smart India\",\r\n    " +
+                                    "\"name\": \"OCR\",\r\n    " +
                                     "\"email\": \"napoleon.mohanta@gmail.com\"\r\n" +
                                 "},\r\n" +
                         "\"to\": " +
@@ -572,7 +593,7 @@ namespace SmartIndia.Data.Services
                                         "\"name\": \"" + emailID + "\"\r\n    " +
                                     "}\r\n" +
                                 "],\r\n" +
-                        "\"subject\": \"Smart India Email Confirmation\",\r\n" +
+                        "\"subject\": \"OCR Email Confirmation\",\r\n" +
                         "\"htmlContent\": \"<html><head></head><body><p>Dear User,</p>" +
                         //"<p>Thanks for signing up to Smart India!</p>" +
                         "<p>Click the link below to verify your email id.</p>" +
@@ -584,7 +605,7 @@ namespace SmartIndia.Data.Services
             Console.WriteLine(response.Content);
             return "";
         }
-        public bool CkeckCurrentmobno(Guid uid, string MobNo)
+        public ReturnBoolParam CkeckCurrentmobno(Guid uid, string MobNo)
         {
             try
             {
@@ -596,20 +617,33 @@ namespace SmartIndia.Data.Services
                 var result = DBConnection.Query("USP_GetUserDetails", paramUser, commandType: CommandType.StoredProcedure).Single();
                 if (MobNo == result.MobileNo)
                 {
-                    return true;
+                    retBoolParamMsg = new ReturnBoolParam
+                    {
+                        retOut = true,
+                        status = "200"
+                    };
                 }
                 else
                 {
-                    return false;
+                    retBoolParamMsg = new ReturnBoolParam
+                    {
+                        retOut = false,
+                        status = "200"
+                    };
                 }
 
             }
             catch (Exception ex)
             {
-                return false;
+                retBoolParamMsg = new ReturnBoolParam
+                {
+                    retOut = false,
+                    status = "500"
+                };
             }
+            return retBoolParamMsg;
         }
-        public string UpdateMobileNo(UpdateMob updateMob)
+        public ReturnParamMsg UpdateMobileNo(UpdateMob updateMob)
         {
             object[] objArray = new object[] {
                          "@P_ACTIONCODE", "A"
@@ -630,14 +664,21 @@ namespace SmartIndia.Data.Services
                 {
                     //Send Mobile SMS OTP
                 }
+                retParamMsg = new ReturnParamMsg
+                {
+                    retOut = strRetMsg,
+                    status = "200"
+                };
             }
             catch (Exception ex)
             {
-                // throw new Exception(ex.Message);
-                strRetMsg = "";
-                // log.Error(ex);
+                retParamMsg = new ReturnParamMsg
+                {
+                    retOut = ex.Message,
+                    status = "500"
+                };
             }
-            return strRetMsg;
+            return retParamMsg;
         }
         public string SendSMS(string OTP, string MobileNo)
         {

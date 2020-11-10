@@ -389,7 +389,7 @@ function getallSchedular() {
                 var publish = '';
                 $.each(data, function (i, item) {
                     if (data[i].isPublished == 0) {
-                        publish = '<div class="form-control table-publish">Not Publish</div>';
+                        publish = '<div class="form-control table-publish">Not Published</div>';
                     }
                     else if (data[i].isPublished == 1) {
                         publish = '<div class="form-control publish-active">Published</div>';

@@ -58,6 +58,7 @@ namespace SmartIndia.Data.Entities.Attendee
         public string DATE { get; set; }
         public decimal MinPrice { get; set; }
         public decimal MaxPrice { get; set; }
+        public Int64 UserId { get; set; }
 
     }
 }

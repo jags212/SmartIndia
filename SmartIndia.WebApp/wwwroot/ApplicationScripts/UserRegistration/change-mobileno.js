@@ -20,7 +20,7 @@ function checkMobileNo() {
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
-                if (data == true) {
+                if (data.retOut == true) {
                     $('#MobilenoOTPModal').modal("show");
                     const now = new Date()
                     const itemSMS = {
@@ -39,9 +39,9 @@ function checkMobileNo() {
                         type: "POST",
                         data: usersParam,
                         dataType: "json",
-                        contentType: "application/json; charset=utf-8",
+                        contentType: "application/json;",
                         success: function (data) {
-                            if (data == "1") {
+                            if (data.retOut == "1") {
                                 // BootStrapRedirect(' Successfully.', '');
 
                             }

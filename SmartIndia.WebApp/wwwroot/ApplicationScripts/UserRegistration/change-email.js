@@ -19,7 +19,7 @@ function checkEmail() {
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
-                if (data == true) {
+                if (data.retOut == true) {
                     var usersParam;
                     usersParam = JSON.stringify({
                         Emailid: $('#newemail').val(),
@@ -31,9 +31,9 @@ function checkEmail() {
                         type: "POST",
                         data: usersParam,
                         dataType: "json",
-                        contentType: "application/json; charset=utf-8",
+                        contentType: "application/json;",
                         success: function (data) {
-                            if (data == "1") {
+                            if (data.retOut == "1") {
                                 $("#divmailchange").css("display", "none");
                                 $("#divmsg").css("display", "block");
                                // BootStrapRedirect(' Successfully.', '');

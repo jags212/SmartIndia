@@ -188,7 +188,8 @@ namespace SmartIndia.Data.Services.Attendee
                      "@CourseName",enrollClasseFilter.CourseName,
                      "@DATE",enrollClasseFilter.DATE,
                      "@MinPrice",enrollClasseFilter.MinPrice,
-                     "@MaxPrice",enrollClasseFilter.MaxPrice
+                     "@MaxPrice",enrollClasseFilter.MaxPrice,
+                     "@UserId",enrollClasseFilter.UserId
             };
             try
             {

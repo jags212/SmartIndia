@@ -7,6 +7,15 @@
 <title>OCR - Enroll Courses</title>
 <!-- Datepicker CSS -->
 <link rel="stylesheet" href="~/assets/css/gijgo.min.css" />
+<style>
+    .dataTables_filter {
+        display: none;
+    }
+    .dataTable > thead > tr > th[class*="sort"]::after {
+        display: none
+    }
+
+</style>
 @section Scripts{
     <script src="~/ApplicationScripts/Common/custom-validate.js"></script>
     <!-- Enroll Courses JS -->
@@ -52,9 +61,6 @@
 
         });
     </script>
-    <!-- ul li Pagination -->
-    <link href="~/assets/css/PagingStyle.css" rel="stylesheet" />
-    <script src="~/assets/js/paging.js"></script>
 }
 <!-- Main Content Layout -->
 <!-- Breadcrumb Area -->
@@ -76,7 +82,7 @@
             <div class="input-group mb-1 adv-search">
                 <div class="clearable">
                     <input type="text" class="form-control" id="searchlist" placeholder="Search..." />
-                    <i class="clearable__clear">&times;</i>
+                    <i class="clearable__clear clear-datatable">&times;</i>
                 </div>
                 <div class="adv-search-caret advanceSearch" data-toggle="tooltip" data-placement="bottom" title="Show search options">
                     <i class="fa fa-caret-down"></i>
@@ -84,7 +90,7 @@
                 <div class="input-group-append" data-toggle="tooltip" data-placement="bottom" title="Search">
                     <span class="adv-search-icon"><i class="bx bx-search"></i></span>
                 </div>
-                <div class="more-search advanceSearch" data-toggle="tooltip" data-placement="bottom" title="Show search options">(More)</div>
+                <div class="more-search advanceSearch" data-toggle="tooltip" data-placement="bottom" title="Show search options"></div>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -145,14 +151,21 @@
         </div>
         <div class="clearfix"></div>
         <div id="divnoofdata" class="noofdatadiv">
-            <span id="spdata" class="noofdata"></span>
-            <span id="spannoofdata" class="noodata"></span>
         </div>
         <div class="container mt-30" id="AttendeeUPlList">
             <div class="row">
                 <div class="col-sm-12 col-lg-12 col-md-12">
-                    <ul class="list-group" id="coursedetails">
-                    </ul>
+                    <div class="list-group">
+                        <table class="" id="tblCourses">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

@@ -11,7 +11,8 @@ function BindList() {
         HostName: $('#txtHost').val(),
         DATE: dateFormat($('#searchDate').val(), 'yyyy-mm-dd'),
         MinPrice: $('#txtMinPrice').val() == "" ? 0 : parseFloat($('#txtMinPrice').val()),
-        MaxPrice: $('#txtMaxPrice').val() == "" ? 0 : parseFloat($('#txtMaxPrice').val())
+        MaxPrice: $('#txtMaxPrice').val() == "" ? 0 : parseFloat($('#txtMaxPrice').val()),
+        UserId: UId
     });
     $.ajax(
         {
@@ -21,10 +22,10 @@ function BindList() {
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
+                $('#tblCourses').DataTable().destroy();
                 $("#divnoofdata").css("display", "block");
-                
+                $('#tblCourses tbody').empty();
                 var trHTML = '';
-                $('#coursedetails').empty();
                 $.each(data, function (i, item) {
                     if (data[i].attendeeUserId == UId) {
                         var fab = '<i class="bx bxs-star">';
@@ -34,38 +35,40 @@ function BindList() {
                     }
                     $("#spannoofdata").html(data[0].noOfData);
                     $("#spdata").html("Records found: ");
-                    trHTML += '<li class="list-group-item justify-content-between ocr-list-group"> '
-                        + '<div class="sm-card-title" >'
-                        + ' <a data-toggle="tooltip" class="action-inline" data-placement="bottom" title="' + data[i].courseName + '" href="' + ClientURL + '/Attendee/EnrollCourses/EnrollCourseDetails?SID=' + data[i].courseId + '&bt=' + data[i].batchName + '" >' + data[i].courseName + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
-                        + '</div>'
-                        + '<div class="enroll-course-show" > '
-                        //+ '<span  onclick="AddShowInterest(' + data[i].courseId + ',' + data[i].batchName + ')" class="show-interest" data - toggle="tooltip" data - placement="bottom" title = "Show Interest" > <i class="bx bx-flag"></i></span>'
-                        + '<span onclick="AddShowFavorite(' + data[i].courseId + ',' + "'" + '' + data[i].batchName + '' + "'" + ')" class="add-to-favorite" data - toggle="tooltip" data - placement="bottom" title = "Add to Favorite" > ' + fab + '</i></span>'
-                        + '</div> '
-                        + '<span class="sm-host-name">'
-                        + '<i class="bx bx-task"></i>' + data[i].uname + ''
-                        + '</span>'
-                        + ' <p class="card-text sm-cli-text ellip-box two-lines">' + data[i].courseDesc + '</p>'
+                    trHTML += '<tr class="odd list-group-item justify-content-between ocr-list-group">'
+                        + '<td><div class="sm-card-title"><a data-toggle="tooltip" class="action-inline" data-placement="bottom" title="' + data[i].courseName + '" href="' + ClientURL + '/Attendee/EnrollCourses/EnrollCourseDetails?SID=' + data[i].courseId + '&bt=' + data[i].batchName + '" >' + data[i].courseName + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a></div>'
+                        + '<div class="enroll-course-show"><span onclick="AddShowFavorite(' + data[i].courseId + ',' + "'" + '' + data[i].batchName + '' + "'" + ')" class="add-to-favorite" data - toggle="tooltip" data - placement="bottom" title = "Add to Favorite" > ' + fab + '</i></span></div>'
+                        + '<span class="sm-host-name"><i class="bx bx-task"></i>' + data[i].uname + '</span>'
+                        + '<p class="card-text sm-cli-text ellip-box two-lines">' + data[i].courseDesc + '</p>'
                         + '<div class="sm-bottom-info">'
-                        + '<span class="sm-date">'
-                        + ' <i class="bx bx-calendar"></i>' + dateFormat(data[i].startDate, 'dd-mmm-yy') + ' To ' + dateFormat(data[i].endDate, 'dd-mmm-yy') + ''
-                        + '</span>'
-                        + '<span class="sm-time">'
-                        + ' <i class="bx bx-time"></i> ' + data[i].duration + ' Days'
-                        + '</span>'
-                        + '</div >'
-                        + '</li >'
+                        + '<span class="sm-host-name"> <i class="bx bx-task"></i>' + data[i].batchName + '</span> '
+                        + '<span class="sm-date"> <i class="bx bx-calendar"></i>' + dateFormat(data[i].startDate, 'dd-mmm-yy') + ' To ' + dateFormat(data[i].endDate, 'dd-mmm-yy') + '</span>'
+                        + '<span class="sm-time"> <i class="bx bx-time"></i>' + data[i].duration + ' Days</span></div></td>'
+                        + '</tr>';
                 });
-
-                $('#coursedetails').append(trHTML);
+                $('#tblCourses').append(trHTML);
+                var table = $('#tblCourses').DataTable(
+                    {
+                        "bSort": false,
+                        //"bPaginate": false,
+                        //"bFilter": false,
+                        //"bInfo": false,
+                        "lengthMenu": [[5, 10, 50, -1], [5, 10, 50, "All"]],
+                        "pageLength": 5
+                    }
+                );
+                $('#searchlist').keyup(function () {
+                    table.search(this.value).draw();
+                });
+                $('.clear-datatable').click(function () {
+                    table.search($('#searchlist').val()).draw();
+                });
                 $('.action-inline').tooltip();
-                $("#coursedetails").JPaging({
-                    pageSize: 5
-                });
+                $('.add-to-favorite').tooltip();
             },
 
             error: function (msg) {
-                alert(msg.responseText);
+                //alert(msg.responseText);
             }
         });
 }
@@ -158,15 +161,12 @@ function AddShowFavorite(CID, Batch) {
             contentType: "application/json",
             success: function (data) {
                 if (data == "1") {
-                    //BootstrapAlert('Add To Favorite.');
-                    //BootStrapRedirect('Add To Favorite.', '/Attendee/EnrollCourses/EnrollCourse');
-                    $('#coursedetails').empty();
                     BindList();
+                    //window.location.href = '/Attendee/EnrollCourses/EnrollCourse';
                 }
                 else if (data == "3") {
-                    $('#coursedetails').empty();
                     BindList();
-                    //BootStrapRedirect('Data Alreday Exist.', '/Attendee/EnrollCourses/EnrollCourse');
+                    //window.location.href = '/Attendee/EnrollCourses/EnrollCourse';
                 }
                 else {
                     BootstrapAlert('Something went wrong. Please try again');
