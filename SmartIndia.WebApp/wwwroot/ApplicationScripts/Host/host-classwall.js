@@ -3,7 +3,7 @@
 $(document).ready(function () {
     $("#divcardbodynodata").css("display", "none");
     BindList();
-   
+
     $("#hostCWCalendar").css("display", "none");
 });
 
@@ -125,8 +125,6 @@ function BindList() {
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
-                
-                
                 if (data.length == 0) {
                     $("#hostDashlList").css("display", "none");
                     $("#divcardbody").css("display", "none");
@@ -136,63 +134,129 @@ function BindList() {
                 }
                 else {
                     $("#divcardbody").css("display", "block");
-                    
+
                     $("#divcardbodynodata").css("display", "none");
                     $("#divnoofdata").css("display", "block");
-                    $("#spannoofdata").html(data[0].noOfData);
-                    $("#spdata").html("Records found: ");
-                    
-                    var trHTML = '';
-                    $.each(data, function (i, item) {
-                        
-                        if (data[i].status) {
-                            if (data[i].classType == "Accomplished") {
-                                var color = '<div class="list-color-legend col-leg-green" data-toggle="tooltip" data-placement="bottom" title="Accomplished"></div>';
+                }
+                $('#tblCourses tbody').empty();
+                var trHTML = '';
+                $.each(data, function (i, item) {
 
-                            }
-                            else {
-                                if (data[i].isPublished == 2) {
-                                    color = '<div class="list-color-legend col-leg-seablue" data-toggle="tooltip" data-placement="bottom" title="Reschedule"></div>';
-                                }
-                                else {
-                                    color = '<div class="list-color-legend col-leg-yellow" data-toggle="tooltip" data-placement="bottom" title="Upcoming"></div>';
-                                }
-                            }
+                    if (data[i].status) {
+                        if (data[i].classType == "Accomplished") {
+                            var color = '<div class="list-color-legend col-leg-green" data-toggle="tooltip" data-placement="bottom" title="Accomplished"></div>';
                         }
                         else {
-                            var color = '<div class="list-color-legend col-leg-grey" data-toggle="tooltip" data-placement="bottom" title="Cancel"></div>';
+                            if (data[i].isPublished == 2) {
+                                color = '<div class="list-color-legend col-leg-seablue" data-toggle="tooltip" data-placement="bottom" title="Reschedule"></div>';
+                            }
+                            else {
+                                color = '<div class="list-color-legend col-leg-yellow" data-toggle="tooltip" data-placement="bottom" title="Upcoming"></div>';
+                            }
                         }
+                    }
+                    else {
+                        var color = '<div class="list-color-legend col-leg-grey" data-toggle="tooltip" data-placement="bottom" title="Cancel"></div>';
+                    }
 
-                        trHTML += '<li class="list-group-item justify-content-between ocr-list-group"> '
-                            + '<div>' + color + '</div><div class="sm-card-title">'
 
-                            + ' <a data-toggle="tooltip" class="action-inline" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Hosts/ClassWall/ClassWallDetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
-
-                            + '</div>'
-                           
-                            + ' <p class="card-text sm-cli-text">' + data[i].courseDesc + '</p>'
-                            + '<div class="sm-bottom-info">'
-                            + '<span class="sm-host-name">'
-                            + '<i class="bx bx-task"></i>' + data[i].batchName + ''
-                            + '</span>'
-                            + '<span class="sm-date">'
-                            + ' <i class="bx bx-calendar"></i>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') + ''
-                            + '</span>'
-                            + '<span class="sm-time">'
-                            + ' <i class="bx bx-time"></i> ' + timeConvert(data[i].startTime) + ''
-                            + '</span>'
-                            + '</div>'
-                            + '</div >'
-                            + '</li >'
-                    });
-
-                    $('#coursedetails').append(trHTML);
-                    $('.action-inline').tooltip();
-                    $("#coursedetails").JPaging({
-                        pageSize: 5
-                    });
-                }
+                    trHTML += '<tr class="odd list-group-item justify-content-between ocr-list-group">'
+                        + '<td><div>' + color + '</div><div class="sm-card-title"><a data-toggle="tooltip" class="action-inline" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Hosts/ClassWall/ClassWallDetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a></div>'
+                        + '<p class="card-text sm-cli-text ellip-box two-lines">' + data[i].courseDesc + '</p>'
+                        + '<div class="sm-bottom-info">'
+                        + '<span class="sm-host-name"> <i class="bx bx-task"></i>' + data[i].batchName + '</span> '
+                        + '<span class="sm-date"> <i class="bx bx-calendar"></i>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') + '</span>'
+                        + '<span class="sm-time"> <i class="bx bx-time"></i>' + timeConvert(data[i].startTime) + '</span></div></td>'
+                        + '</tr>';
+                });
+                $('#tblCourses').append(trHTML); 
+                var table = $('#tblCourses').DataTable(
+                    {
+                    "bSort": false,
+                    //"bPaginate": false,
+                    //"bFilter": false,
+                    //"bInfo": false,
+                    "lengthMenu": [[5, 10, 50, -1], [5, 10, 50, "All"]],
+                    "pageLength": 5
+                    }
+                ); 
+                $('#searchlist').keyup(function () {
+                    table.search(this.value).draw();
+                });
+                $('.clear-datatable').click(function () {
+                    table.search($('#searchlist').val()).draw();
+                });
+                $('.action-inline').tooltip();
             },
+            //success: function (data) {
+
+
+            //    if (data.length == 0) {
+            //        $("#hostDashlList").css("display", "none");
+            //        $("#divcardbody").css("display", "none");
+            //        $("#divnoofdata").css("display", "none");
+            //        $("#divcardbodynodata").css("display", "block");
+            //        $("#sp_nodata").html("No records available");
+            //    }
+            //    else {
+            //        $("#divcardbody").css("display", "block");
+
+            //        $("#divcardbodynodata").css("display", "none");
+            //        $("#divnoofdata").css("display", "block");
+            //        $("#spannoofdata").html(data[0].noOfData);
+            //        $("#spdata").html("Records found: ");
+
+            //        var trHTML = '';
+            //        $.each(data, function (i, item) {
+
+            //            if (data[i].status) {
+            //                if (data[i].classType == "Accomplished") {
+            //                    var color = '<div class="list-color-legend col-leg-green" data-toggle="tooltip" data-placement="bottom" title="Accomplished"></div>';
+
+            //                }
+            //                else {
+            //                    if (data[i].isPublished == 2) {
+            //                        color = '<div class="list-color-legend col-leg-seablue" data-toggle="tooltip" data-placement="bottom" title="Reschedule"></div>';
+            //                    }
+            //                    else {
+            //                        color = '<div class="list-color-legend col-leg-yellow" data-toggle="tooltip" data-placement="bottom" title="Upcoming"></div>';
+            //                    }
+            //                }
+            //            }
+            //            else {
+            //                var color = '<div class="list-color-legend col-leg-grey" data-toggle="tooltip" data-placement="bottom" title="Cancel"></div>';
+            //            }
+
+            //            trHTML += '<li class="list-group-item justify-content-between ocr-list-group"> '
+            //                + '<div>' + color + '</div><div class="sm-card-title">'
+
+            //                + ' <a data-toggle="tooltip" class="action-inline" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Hosts/ClassWall/ClassWallDetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
+
+            //                + '</div>'
+
+            //                + ' <p class="card-text sm-cli-text">' + data[i].courseDesc + '</p>'
+            //                + '<div class="sm-bottom-info">'
+            //                + '<span class="sm-host-name">'
+            //                + '<i class="bx bx-task"></i>' + data[i].batchName + ''
+            //                + '</span>'
+            //                + '<span class="sm-date">'
+            //                + ' <i class="bx bx-calendar"></i>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') + ''
+            //                + '</span>'
+            //                + '<span class="sm-time">'
+            //                + ' <i class="bx bx-time"></i> ' + timeConvert(data[i].startTime) + ''
+            //                + '</span>'
+            //                + '</div>'
+            //                + '</div >'
+            //                + '</li >'
+            //        });
+
+            //        $('#coursedetails').append(trHTML);
+            //        $('.action-inline').tooltip();
+            //        $("#coursedetails").JPaging({
+            //            pageSize: 5
+            //        });
+            //    }
+            //},
 
             error: function (msg) {
                 alert(msg.responseText);

@@ -5,6 +5,11 @@
 }
 <!-- Text Ellipsis CSS -->
 <link rel="stylesheet" href="~/assets/css/ellipsis.css" />
+<style>
+    .dataTables_filter {
+        display: none;
+    }
+</style>
 @section Scripts{
 
     <script src="~/ApplicationScripts/Common/date-format-converter.js"></script>
@@ -24,26 +29,7 @@
             loadNavigation('upcomingclasses', 'upcomingclasses');
         });
     </script>
-    <script>
-        $('#searchlist').keyup(function () {
-
-            var that = this;
-            all_list = $('#hostUPlList ul > li');
-
-            var matching_list = all_list.filter(function (i, li) {
-                var list_item_text = $(li).text().toUpperCase();
-                var search_text = that.value.toUpperCase();
-                return ~list_item_text.indexOf(search_text);
-            });
-
-            all_list.hide();
-            matching_list.show();
-
-        });
-    </script>
-    <!-- ul li Pagination -->
-    <link href="~/assets/css/PagingStyle.css" rel="stylesheet" />
-    <script src="~/assets/js/paging.js"></script>
+    
 
 }
 <title>OCR - Host Upcoming Classes</title>
@@ -70,7 +56,7 @@
         <form>
             <div class="ocr-clearable">
                 <input type="text" name="search" class="dashboard-panel-search" id="searchlist" placeholder="Search..">
-                <i class="ocr-clearable-clear">&times;</i>
+                <i class="ocr-clearable-clear clear-datatable">&times;</i>
                 <span class="class-search-icon" data-toggle="tooltip" data-placement="bottom" title="Search"><i class="bx bx-search"></i></span>
             </div>
         </form>
@@ -78,14 +64,21 @@
         <div class="clearfix"></div>
         <!-- List -->
         <div id="divnoofdata" class="noofdatadiv">
-            <span id="spdata" class="noofdata"></span>
-            <span id="spannoofdata" class="noodata"></span>
         </div>
         <div class="container" id="hostUPlList">
             <div class="row">
                 <div class="col-sm-12 col-lg-12 col-md-12">
-                    <ul class="list-group" id="coursedetails">
-                    </ul>
+                    <div class="list-group">
+                        <table class="" id="tblCourses">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

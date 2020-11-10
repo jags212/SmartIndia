@@ -40,7 +40,7 @@ function BindHostUpcommingClasses() {
             success: function (data) {
                 if (data.length == 0) {
                     $("#hostDashCalendar").css("display", "none");
-                   $("#divaction").css("display", "none");
+                    $("#divaction").css("display", "none");
                     $("#sp_nodata").css("display", "block");
                     $("#sp_nodata").html("No data available");
                     $(".calendar-scheduler").addClass("nodata-btn-schedular");
@@ -134,47 +134,43 @@ function BindList() {
                     $("#sp_nodata").css("display", "none");
                     $(".calendar-scheduler").removeClass("nodata-btn-schedular");
                     $("#divnoofdata").css("display", "block");
-                    $("#spannoofdata").html(data[0].noOfData);
-                    $("#spdata").html("Records found: ");
-                    var trHTML = '';
-                    $.each(data, function (i, item) {
-
-                        trHTML += '<li class="list-group-item justify-content-between ocr-list-group"> '
-                            + '<div class="sm-card-title" >'
-
-                            + ' <a data-toggle="tooltip" class="action-inline" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Hosts/HostDashboard/CourseDetails?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
-                            + '</div>'
-                            
-                            + ' <div class="card-text sm-cli-text ellip-box two-lines">' + data[i].courseDesc + '</div>'
-                            + '<div class="sm-bottom-info">'
-                            + '<span class="sm-host-name">'
-                            + '<i class="bx bx-task"></i>' + data[i].batchName + ''
-                            + '</span>'
-                            + '<span class="sm-date">'
-                            + ' <i class="bx bx-calendar"></i>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') + ''
-                            + '</span>'
-                            + '<span class="sm-time">'
-                            + ' <i class="bx bx-time"></i> ' + timeConvert(data[i].startTime) + ''
-                            + '</span>'
-                            + '</div>'
-                            + '</li>'
-                    });
-                    $('#coursedetails').append(trHTML);
-                    $('.action-inline').tooltip();
-                    $("#coursedetails").JPaging({
-                        pageSize: 5
-                    });
                 }
-
+                $('#tblCourses tbody').empty();
+                var trHTML = '';
+                $.each(data, function (i, item) {
+                    trHTML += '<tr class="odd list-group-item justify-content-between ocr-list-group">'
+                        + '<td><div class="sm-card-title"><a data-toggle="tooltip" class="action-inline" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Hosts/HostDashboard/CourseDetails?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a></div>'
+                        + '<p class="card-text sm-cli-text ellip-box two-lines">' + data[i].courseDesc + '</p>'
+                        + '<div class="sm-bottom-info">'
+                        + '<span class="sm-host-name"> <i class="bx bx-task"></i>' + data[i].batchName + '</span> '
+                        + '<span class="sm-date"> <i class="bx bx-calendar"></i>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') + '</span>'
+                        + '<span class="sm-time"> <i class="bx bx-time"></i>' + timeConvert(data[i].startTime) + '</span></div></td>'
+                        + '</tr>';
+                });
+                $('#tblCourses').append(trHTML);
+                var table = $('#tblCourses').DataTable(
+                    {
+                        "bSort": false,
+                        //"bPaginate": false,
+                        //"bFilter": false,
+                        //"bInfo": false,
+                        "lengthMenu": [[5, 10, 50, -1], [5, 10, 50, "All"]],
+                        "pageLength": 5
+                    }
+                );
+                $('#searchlist').keyup(function () {
+                    table.search(this.value).draw();
+                });
+                $('.clear-datatable').click(function () {
+                    table.search($('#searchlist').val()).draw();
+                });
+                $('.action-inline').tooltip();
             },
-
             error: function (msg) {
                 alert(msg.responseText);
             }
         });
 }
-
-
 // Class Analytics Chart JS
 if (document.getElementById("class-analytics-chart")) {
     var options = {

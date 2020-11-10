@@ -30,8 +30,10 @@ function Coursedetails() {
 
                 if (data[0].imageExt != null && data[0].imageExt != "") {
                     $("#imgg").show();
+                    $("#Divimgbanner").show();
                 } else {
                     $("#imgg").hide();
+                    $("#Divimgbanner").hide();
                 }
                 
 

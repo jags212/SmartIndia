@@ -52,8 +52,6 @@ function BindHostUpcommingClasses() {
                     $("#divcardbodynodata").css("display", "none");
                     $("#divcardbody").css("display", "block");
                     $("#divnoofdata").css("display", "block");
-                    $("#spannoofdata").html(data[0].noOfData);
-                    $("#spdata").html("Records found: ");
                     $('#hostCWCalendar').fullCalendar({
                         header: {
                             left: 'prev,next',
@@ -144,6 +142,7 @@ function BindList() {
                     var trHTML = '';
 
                     $.each(data, function (i, item) {
+
                         if (data[i].isPublished == 1) {
                             var color = '<div class="list-color-legend col-leg-yellow" data-toggle="tooltip" data-placement="bottom" title="Upcoming"></div>';
 
@@ -151,33 +150,71 @@ function BindList() {
                             color = '<div class="list-color-legend col-leg-seablue" data-toggle="tooltip" data-placement="bottom" title="Reschedule"></div>';
                         }
 
-                        trHTML += '<li class="list-group-item justify-content-between ocr-list-group li-page"> '
-                            + '<div>' + color + '</div><div class="sm-card-title">'
 
-                            + ' <a class="action-inline" data-toggle="tooltip" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Attendee/ClassWall/ClassWallDetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
-
-                            + '</div>'
-                            + ' <p class="card-text sm-cli-text">' + data[i].courseDesc + '</p>'
+                        trHTML += '<tr class="odd list-group-item justify-content-between ocr-list-group">'
+                            + '<td><div>' + color + '</div><div class="sm-card-title"><a data-toggle="tooltip" class="action-inline" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Hosts/ClassWall/ClassWallDetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a></div>'
+                            + '<p class="card-text sm-cli-text ellip-box two-lines">' + data[i].courseDesc + '</p>'
                             + '<div class="sm-bottom-info">'
-                            + '<span class="sm-host-name">'
-                            + '<i class="bx bx-task"></i>' + data[i].batchName + ''
-                            + '</span>'
-                            + '<span class="sm-date">'
-                            + ' <i class="bx bx-calendar"></i>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') + ''
-                            + '</span>'
-                            + '<span class="sm-time">'
-                            + ' <i class="bx bx-time"></i> ' + timeConvert(data[i].startTime) + ''
-                            + '</span>'
-                            + '</div>' 
-                            + '</div >'
-                            + '</li >'
+                            + '<span class="sm-host-name"> <i class="bx bx-task"></i>' + data[i].batchName + '</span> '
+                            + '<span class="sm-date"> <i class="bx bx-calendar"></i>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') + '</span>'
+                            + '<span class="sm-time"> <i class="bx bx-time"></i>' + timeConvert(data[i].startTime) + '</span></div></td>'
+                            + '</tr>';
                     });
-
-                    $('#coursedetails').append(trHTML);
+                    $('#tblCourses').append(trHTML);
+                    var table = $('#tblCourses').DataTable(
+                        {
+                            "bSort": false,
+                            //"bPaginate": false,
+                            //"bFilter": false,
+                            //"bInfo": false,
+                            "lengthMenu": [[5, 10, 50, -1], [5, 10, 50, "All"]],
+                            "pageLength": 5
+                        }
+                    );
+                    $('#searchlist').keyup(function () {
+                        table.search(this.value).draw();
+                    });
+                    $('.clear-datatable').click(function () {
+                        table.search($('#searchlist').val()).draw();
+                    });
                     $('.action-inline').tooltip();
-                    $("#coursedetails").JPaging({
-                        pageSize: 5
-                    });
+
+
+                    //$.each(data, function (i, item) {
+                    //    if (data[i].isPublished == 1) {
+                    //        var color = '<div class="list-color-legend col-leg-yellow" data-toggle="tooltip" data-placement="bottom" title="Upcoming"></div>';
+
+                    //    } else {
+                    //        color = '<div class="list-color-legend col-leg-seablue" data-toggle="tooltip" data-placement="bottom" title="Reschedule"></div>';
+                    //    }
+
+                    //    trHTML += '<li class="list-group-item justify-content-between ocr-list-group li-page"> '
+                    //        + '<div>' + color + '</div><div class="sm-card-title">'
+
+                    //        + ' <a class="action-inline" data-toggle="tooltip" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Attendee/ClassWall/ClassWallDetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
+
+                    //        + '</div>'
+                    //        + ' <p class="card-text sm-cli-text">' + data[i].courseDesc + '</p>'
+                    //        + '<div class="sm-bottom-info">'
+                    //        + '<span class="sm-host-name">'
+                    //        + '<i class="bx bx-task"></i>' + data[i].batchName + ''
+                    //        + '</span>'
+                    //        + '<span class="sm-date">'
+                    //        + ' <i class="bx bx-calendar"></i>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') + ''
+                    //        + '</span>'
+                    //        + '<span class="sm-time">'
+                    //        + ' <i class="bx bx-time"></i> ' + timeConvert(data[i].startTime) + ''
+                    //        + '</span>'
+                    //        + '</div>' 
+                    //        + '</div >'
+                    //        + '</li >'
+                    //});
+
+                    //$('#coursedetails').append(trHTML);
+                    //$('.action-inline').tooltip();
+                    //$("#coursedetails").JPaging({
+                    //    pageSize: 5
+                    //});
                 }
             },
 

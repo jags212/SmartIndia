@@ -154,7 +154,7 @@ namespace SmartIndia.RestAPI.Controllers
             }
         }
         [HttpGet("CkeckCurrentEmail")]
-        public async Task<bool> CkeckCurrentEmailAsync(string UID, string email)
+        public async Task<ReturnBoolParam> CkeckCurrentEmailAsync(string UID, string email)
         {
             using (var userRegistrationService = new UserRegistrationServices(connectionFactory))
             {
@@ -163,7 +163,7 @@ namespace SmartIndia.RestAPI.Controllers
             }
         }
         [HttpPost("UpdateEmail")]
-        public async Task<string> UpdateEmailid(UpdateEmail obj)
+        public async Task<ReturnParamMsg> UpdateEmailid(UpdateEmail obj)
         {
             using (var userRegistrationServices = new UserRegistrationServices(connectionFactory))
             {
@@ -171,7 +171,7 @@ namespace SmartIndia.RestAPI.Controllers
             }
         }
         [HttpGet("CkeckCurrentmob")]
-        public async Task<bool> CkeckCurrentmobAsync(string UID, string MobNo)
+        public async Task<ReturnBoolParam> CkeckCurrentmobAsync(string UID, string MobNo)
         {
             using (var userRegistrationService = new UserRegistrationServices(connectionFactory))
             {
@@ -180,7 +180,7 @@ namespace SmartIndia.RestAPI.Controllers
             }
         }
         [HttpPost("UpdateMobileNo")]
-        public async Task<string> UpdateMobileNo(UpdateMob obj)
+        public async Task<ReturnParamMsg> UpdateMobileNo(UpdateMob obj)
         {
             using (var userRegistrationServices = new UserRegistrationServices(connectionFactory))
             {

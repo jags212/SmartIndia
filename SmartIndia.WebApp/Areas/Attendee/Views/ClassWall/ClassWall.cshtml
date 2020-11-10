@@ -4,6 +4,11 @@
     Layout = "~/Views/Shared/_FrontPannelLayout.cshtml";
 }
 <title>OCR - Attendee My Class Wall</title>
+<style>
+    .dataTables_filter {
+        display: none;
+    }
+</style>
 <!-- Text Ellipsis CSS -->
 @*<link rel="stylesheet" href="~/assets/css/ellipsis.css" />*@
 @section Scripts
@@ -23,31 +28,12 @@
             $(this).addClass('active').siblings().removeClass('active');
         });
     </script>
-    <script>
-        $('#searchlist').keyup(function () {
-
-            var that = this;
-            all_list = $('#hostCWlList ul > li');
-
-            var matching_list = all_list.filter(function (i, li) {
-                var list_item_text = $(li).text().toUpperCase();
-                var search_text = that.value.toUpperCase();
-                return ~list_item_text.indexOf(search_text);
-            });
-
-            all_list.hide();
-            matching_list.show();
-
-        });
-    </script>
+    
     <script>
         $(document).ready(function () {
             loadNavigation('ClassWall', 'ClassWall-Att');
         });
     </script>
-    <!-- ul li Pagination -->
-    <link href="~/assets/css/PagingStyle.css" rel="stylesheet" />
-    <script src="~/assets/js/paging.js"></script>
 }
 <!-- Main Content Layout -->
 <!-- Breadcrumb Area -->
@@ -98,14 +84,21 @@
         <div class="clearfix"></div>
         <!-- List -->
         <div id="divnoofdata" class="noofdatadiv">
-            <span id="spdata" class="noofdata"></span>
-            <span id="spannoofdata" class="noodata"></span>
         </div>
         <div class="container" id="hostCWlList">
             <div class="row">
                 <div class="col-sm-12 col-lg-12 col-md-12">
-                    <ul class="list-group ul-page" id="coursedetails">
-                    </ul>
+                    <div class="list-group">
+                        <table class="" id="tblCourses">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

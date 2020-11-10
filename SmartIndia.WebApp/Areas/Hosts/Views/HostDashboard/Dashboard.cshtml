@@ -7,7 +7,11 @@
 <link rel="stylesheet" href="~/assets/calendar/css/fullcalendar.css" />
 <link rel="stylesheet" href="~/assets/calendar/css/fullcalendar.print.css" media="print" />
 
-
+<style>
+    .dataTables_filter {
+        display: none;
+    }
+</style>
 
 
 <title>OCR - Host Dashboard</title>
@@ -50,14 +54,29 @@
             <div id="sp_nodata" class="nodata"></div>
             <!-- List -->
             <div id="divnoofdata" class="noofdatadiv">
-                <span id="spdata" class="noofdata"></span>
-                <span id="spannoofdata" class="noodata"></span>
+                <div class="ocr-clearable">
+                    <input type="text" name="search" class="dashboard-panel-search" id="searchlist" placeholder="Search..">
+                    <i class="ocr-clearable-clear clear-datatable">&times;</i>
+                    <span class="class-search-icon" data-toggle="tooltip" data-placement="bottom" title="Search"><i class="bx bx-search"></i></span>
+                </div>
             </div>
+           
             <div class="container" id="hostDashlList">
                 <div class="row">
                     <div class="col-sm-12 col-lg-12 col-md-12">
-                        <ul class="list-group" id="coursedetails">
-                        </ul>
+
+
+                        <div class="list-group">
+                            <table class="" id="tblCourses">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
