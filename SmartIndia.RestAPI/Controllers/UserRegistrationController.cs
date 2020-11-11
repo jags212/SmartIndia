@@ -146,7 +146,7 @@ namespace SmartIndia.RestAPI.Controllers
             }
         }
         [HttpGet("UserPass")]
-        public async Task<bool> UserPass(string uid, string pass)
+        public async Task<ReturnBoolParam> UserPass(string uid, string pass)
         {
             using (var userRegistrationService = new UserRegistrationServices(connectionFactory))
             {

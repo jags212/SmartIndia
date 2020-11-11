@@ -466,7 +466,7 @@ namespace SmartIndia.Data.Services
             }
             return retParamMsg;
         }
-        public bool CheckUserPass(Guid uid, string oldPass)
+        public ReturnBoolParam CheckUserPass(Guid uid, string oldPass)
         {
             try
             {
@@ -481,19 +481,30 @@ namespace SmartIndia.Data.Services
 
                 if (oldhashpassword == result.Password)
                 {
-                    return true;
+                    retBoolParamMsg = new ReturnBoolParam
+                    {
+                        retOut = true,
+                        status = "200"
+                    };
                 }
                 else
                 {
-                    return false;
+                    retBoolParamMsg = new ReturnBoolParam
+                    {
+                        retOut = false,
+                        status = "200"
+                    };
                 }
             }
             catch (Exception ex)
             {
-                // throw new Exception(ex.Message);
-                return false;
-                // log.Error(ex);
+                retBoolParamMsg = new ReturnBoolParam
+                {
+                    retOut = false,
+                    status = "500"
+                };
             }
+            return retBoolParamMsg;
         }
         public ReturnBoolParam CkeckEmailId(Guid uid, string currentemail)
         {

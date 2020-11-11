@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using SmartIndia.Data.Entities;
 using SmartIndia.Data.Entities.Attendee;
 using SmartIndia.Data.Entities.Host;
 using SmartIndia.Data.Factory;

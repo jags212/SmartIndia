@@ -29,16 +29,18 @@ function BindList() {
                 $.each(data, function (i, item) {
                     if (data[i].attendeeUserId == UId) {
                         var fab = '<i class="bx bxs-star">';
+                        var toltip = 'Remove from your favorite';
                     }
                     else {
                         var fab = '<i class="bx bx-star">';
+                        var toltip = 'Add to Favorite';
                     }
                     $("#spannoofdata").html(data[0].noOfData);
                     $("#spdata").html("Records found: ");
                     trHTML += '<tr class="odd list-group-item justify-content-between ocr-list-group">'
                         + '<td><div class="sm-card-title"><a data-toggle="tooltip" class="action-inline" data-placement="bottom" title="' + data[i].courseName + '" href="' + ClientURL + '/Attendee/EnrollCourses/EnrollCourseDetails?SID=' + data[i].courseId + '&bt=' + data[i].batchName + '" >' + data[i].courseName + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a></div>'
-                        + '<div class="enroll-course-show"><span onclick="AddShowFavorite(' + data[i].courseId + ',' + "'" + '' + data[i].batchName + '' + "'" + ')" class="add-to-favorite" data - toggle="tooltip" data - placement="bottom" title = "Add to Favorite" > ' + fab + '</i></span></div>'
-                        + '<span class="sm-host-name"><i class="bx bx-task"></i>' + data[i].uname + '</span>'
+                        + '<div class="enroll-course-show"><span onclick="AddShowFavorite(' + data[i].courseId + ',' + "'" + '' + data[i].batchName + '' + "'" + ')" class="add-to-favorite" data - toggle="tooltip" data - placement="bottom" title = "' + toltip+'">' + fab + '</i></span></div>'
+                        + '<span class="sm-host-name"><i class="bx bxs-face"></i>' + data[i].uname + '</span>'
                         + '<p class="card-text sm-cli-text ellip-box two-lines">' + data[i].courseDesc + '</p>'
                         + '<div class="sm-bottom-info">'
                         + '<span class="sm-host-name"> <i class="bx bx-task"></i>' + data[i].batchName + '</span> '
