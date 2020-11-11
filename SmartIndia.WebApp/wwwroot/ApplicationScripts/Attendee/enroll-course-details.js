@@ -4,6 +4,7 @@
     $("#div_Name").html(name);
 });
 function Coursedetails() {
+    var UserID = localStorage.getItem("userID");
     jQuery.support.cors = true;
     var usersParam = JSON.stringify({
         ACTIONCODE: "D",
@@ -25,6 +26,12 @@ function Coursedetails() {
                 $("#startdate").html(dateFormat(data[0].startDate, 'dd-mmm-yy'));
                 $("#desc").html(data[0].courseDesc);
 
+                if (data[0].enrolledUserId == UserID) {
+                    $("#div_enrol").hide();
+                }
+                else {
+                    $("#div_enrol").show();
+                }
                 if (data[0].brochureExt == "pdf") {
                     $("#imgbrouchurepdf").attr('src', data[0].brochureUrl);
                     $("#urlbrouchurepdf").attr('href', data[0].brochureUrl);

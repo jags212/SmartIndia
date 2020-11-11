@@ -142,17 +142,27 @@ function BindList() {
                     var trHTML = '';
 
                     $.each(data, function (i, item) {
-
-                        if (data[i].isPublished == 1) {
-                            var color = '<div class="list-color-legend col-leg-yellow" data-toggle="tooltip" data-placement="bottom" title="Upcoming"></div>';
-
-                        } else {
-                            color = '<div class="list-color-legend col-leg-seablue" data-toggle="tooltip" data-placement="bottom" title="Reschedule"></div>';
+                        if (data[i].status) {
+                            if (data[i].classType == "Accomplished") {
+                                var color = '<div class="list-color-legend col-leg-green action-inline" data-toggle="tooltip" data-placement="bottom" title="Accomplished"></div>';
+                            }
+                            else {
+                                if (data[i].isPublished == 2) {
+                                    color = '<div class="list-color-legend col-leg-seablue action-inline" data-toggle="tooltip" data-placement="bottom" title="Reschedule"></div>';
+                                }
+                                else {
+                                    color = '<div class="list-color-legend col-leg-yellow action-inline" data-toggle="tooltip" data-placement="bottom" title="Upcoming"></div>';
+                                }
+                            }
+                        }
+                        else {
+                            var color = '<div class="list-color-legend col-leg-grey action-inline" data-toggle="tooltip" data-placement="bottom" title="Cancel"></div>';
                         }
 
 
                         trHTML += '<tr class="odd list-group-item justify-content-between ocr-list-group">'
-                            + '<td><div>' + color + '</div><div class="sm-card-title"><a data-toggle="tooltip" class="action-inline" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Hosts/ClassWall/ClassWallDetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a></div>'
+                            + '<td><div>' + color + '</div><div class="sm-card-title"><a data-toggle="tooltip" class="action-inline" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Attendee/ClassWall/ClassWallDetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a></div>'
+                            + '<span class="sm-host-name"><i class="bx bxs-face"></i>' + data[i].uname + '</span>'
                             + '<p class="card-text sm-cli-text ellip-box two-lines">' + data[i].courseDesc + '</p>'
                             + '<div class="sm-bottom-info">'
                             + '<span class="sm-host-name"> <i class="bx bx-task"></i>' + data[i].batchName + '</span> '
@@ -178,43 +188,6 @@ function BindList() {
                         table.search($('#searchlist').val()).draw();
                     });
                     $('.action-inline').tooltip();
-
-
-                    //$.each(data, function (i, item) {
-                    //    if (data[i].isPublished == 1) {
-                    //        var color = '<div class="list-color-legend col-leg-yellow" data-toggle="tooltip" data-placement="bottom" title="Upcoming"></div>';
-
-                    //    } else {
-                    //        color = '<div class="list-color-legend col-leg-seablue" data-toggle="tooltip" data-placement="bottom" title="Reschedule"></div>';
-                    //    }
-
-                    //    trHTML += '<li class="list-group-item justify-content-between ocr-list-group li-page"> '
-                    //        + '<div>' + color + '</div><div class="sm-card-title">'
-
-                    //        + ' <a class="action-inline" data-toggle="tooltip" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Attendee/ClassWall/ClassWallDetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
-
-                    //        + '</div>'
-                    //        + ' <p class="card-text sm-cli-text">' + data[i].courseDesc + '</p>'
-                    //        + '<div class="sm-bottom-info">'
-                    //        + '<span class="sm-host-name">'
-                    //        + '<i class="bx bx-task"></i>' + data[i].batchName + ''
-                    //        + '</span>'
-                    //        + '<span class="sm-date">'
-                    //        + ' <i class="bx bx-calendar"></i>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') + ''
-                    //        + '</span>'
-                    //        + '<span class="sm-time">'
-                    //        + ' <i class="bx bx-time"></i> ' + timeConvert(data[i].startTime) + ''
-                    //        + '</span>'
-                    //        + '</div>' 
-                    //        + '</div >'
-                    //        + '</li >'
-                    //});
-
-                    //$('#coursedetails').append(trHTML);
-                    //$('.action-inline').tooltip();
-                    //$("#coursedetails").JPaging({
-                    //    pageSize: 5
-                    //});
                 }
             },
 

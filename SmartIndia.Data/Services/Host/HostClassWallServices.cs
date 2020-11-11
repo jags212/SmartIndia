@@ -89,7 +89,7 @@ namespace SmartIndia.Data.Services.Host
                      "@P_ACTIONCODE","C",
                      "@UserId",hostParameterCourseDetail.UserId,
                      "@SchedularId",hostParameterCourseDetail.SchedularId
-            };
+            }; 
             try
             {
                 DynamicParameters param = objArray.ToDynamicParameters();

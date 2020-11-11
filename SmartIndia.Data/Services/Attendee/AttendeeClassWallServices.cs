@@ -92,7 +92,9 @@ namespace SmartIndia.Data.Services.Attendee
                         CourseId = item.CourseId,
                         SchedularId = item.SchedularId,
                         IsPublished = item.IsPublished,
-                        NoOfData = result.Count.ToString()
+                        NoOfData = result.Count.ToString(),
+                        ClassType = item.ClassType,
+                        Status = item.Status,
 
                     };
                     classWallDetails.Add(modal);

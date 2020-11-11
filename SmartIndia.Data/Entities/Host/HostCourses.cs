@@ -89,6 +89,7 @@ namespace SmartIndia.Data.Entities.Host
         public string filePath { get; set; }
         public string ImageUrl { get; set; }
         public string BrochureUrl { get; set; }
+        public string EnrolledUserId { get; set; }
 
 
     }

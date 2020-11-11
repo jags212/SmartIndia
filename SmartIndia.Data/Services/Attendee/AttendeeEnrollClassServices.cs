@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using SmartIndia.Data.Entities;
 using SmartIndia.Data.Entities.Attendee;
 using SmartIndia.Data.Entities.Host;
 using SmartIndia.Data.Factory;
@@ -13,6 +14,7 @@ namespace SmartIndia.Data.Services.Attendee
 {
     public class AttendeeEnrollClassServices : RepositoryBase
     {
+        ReturnBoolParam retBoolParamMsg = new ReturnBoolParam();
         public string retMsg;
         public AttendeeEnrollClassServices(IConnectionFactory connectionFactory) : base(connectionFactory)
         {
@@ -64,7 +66,7 @@ namespace SmartIndia.Data.Services.Attendee
         public List<HostCoursesforEnroll> GetCoursedetail(HostEnrollcourse hostParameter)
         {
             object[] objArray = new object[] {
-                     "@P_ACTIONCODE",hostParameter.ACTIONCODE,
+                     "@P_ACTIONCODE",hostParameter.ACTIONCODE,//D
                      "@CourseId",hostParameter.CourseId,
                      "@BatchName",hostParameter.BatchName
             };
@@ -96,7 +98,8 @@ namespace SmartIndia.Data.Services.Attendee
                         ImageName = item.ImageName,
                         ImageExt = item.ImageExt,
                         BrochureName = item.BrochureName,
-                        BrochureExt = item.BrochureExt
+                        BrochureExt = item.BrochureExt,
+                        EnrolledUserId = item.EnrolledUserId
                     };
                     HostCourses.Add(modal);
                 }
@@ -107,7 +110,7 @@ namespace SmartIndia.Data.Services.Attendee
                 return null;
             }
         }
-
+        
         public string EnrollClasses(EnrollClasses enrollClasses)
         {
             object[] objArray = new object[] {
