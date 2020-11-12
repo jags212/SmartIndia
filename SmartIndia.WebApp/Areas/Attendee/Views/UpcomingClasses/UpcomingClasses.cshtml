@@ -29,6 +29,15 @@
     <script>
         $('.two-lines').ellipsis({ lines: 2 });
     </script>
+    <script src="~/assets/js/jquery.vEllipsis.js"></script>
+    <script>
+        $(document).ready(function () {
+            $().vEllipsis({
+                'lines': 2,
+                'responsive': true
+            });
+        });
+    </script>
     <script>
         $('#searchlist').keyup(function () {
 
@@ -46,9 +55,6 @@
 
         });
     </script>
-    <!-- ul li Pagination -->
-    <link href="~/assets/css/PagingStyle.css" rel="stylesheet" />
-    <script src="~/assets/js/paging.js"></script>
 
 }
 <title>OCR - Attendee Upcoming Classes</title>

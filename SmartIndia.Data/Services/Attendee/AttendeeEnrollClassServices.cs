@@ -15,6 +15,7 @@ namespace SmartIndia.Data.Services.Attendee
     public class AttendeeEnrollClassServices : RepositoryBase
     {
         ReturnBoolParam retBoolParamMsg = new ReturnBoolParam();
+        ReturnParamMsg retParamMsg = new ReturnParamMsg();
         public string retMsg;
         public AttendeeEnrollClassServices(IConnectionFactory connectionFactory) : base(connectionFactory)
         {
@@ -111,7 +112,7 @@ namespace SmartIndia.Data.Services.Attendee
             }
         }
         
-        public string EnrollClasses(EnrollClasses enrollClasses)
+        public ReturnParamMsg EnrollClasses(EnrollClasses enrollClasses)
         {
             object[] objArray = new object[] {
                      "@P_ACTIONCODE",enrollClasses.ACTIONCODE,
@@ -126,16 +127,23 @@ namespace SmartIndia.Data.Services.Attendee
                 DynamicParameters param = objArray.ToDynamicParameters("@PVCH_MSGOUT");
                 var result = DBConnection.Execute("USP_AttendeeEnrollCourses_ACTION", param, commandType: CommandType.StoredProcedure);
                 retMsg = param.Get<string>("PVCH_MSGOUT");
+                retParamMsg = new ReturnParamMsg
+                {
+                    retOut = retMsg,
+                    status = "200"
+                };
             }
             catch (Exception ex)
             {
-                // throw new Exception(ex.Message);
-                retMsg = "";
-                // log.Error(ex);
+                retParamMsg = new ReturnParamMsg
+                {
+                    retOut = "",
+                    status = "500"
+                };
             }
-            return retMsg;
+            return retParamMsg;
         }
-        public string ShowInterests(EnrollClasses enrollClasses)
+        public ReturnParamMsg ShowInterests(EnrollClasses enrollClasses)
         {
             object[] objArray = new object[] {
                      "@P_ACTIONCODE",enrollClasses.ACTIONCODE,
@@ -149,16 +157,23 @@ namespace SmartIndia.Data.Services.Attendee
                 DynamicParameters param = objArray.ToDynamicParameters("@PVCH_MSGOUT");
                 var result = DBConnection.Execute("USP_CourseInterest_ACTION", param, commandType: CommandType.StoredProcedure);
                 retMsg = param.Get<string>("PVCH_MSGOUT");
+                retParamMsg = new ReturnParamMsg
+                {
+                    retOut = retMsg,
+                    status = "200"
+                };
             }
             catch (Exception ex)
             {
-                // throw new Exception(ex.Message);
-                retMsg = "";
-                // log.Error(ex);
+                retParamMsg = new ReturnParamMsg
+                {
+                    retOut = "",
+                    status = "500"
+                };
             }
-            return retMsg;
+            return retParamMsg;
         }
-        public string AddtoFavorites(EnrollClasses enrollClasses)
+        public ReturnParamMsg AddtoFavorites(EnrollClasses enrollClasses)
         {
             object[] objArray = new object[] {
                      "@P_ACTIONCODE",enrollClasses.ACTIONCODE,
@@ -172,14 +187,21 @@ namespace SmartIndia.Data.Services.Attendee
                 DynamicParameters param = objArray.ToDynamicParameters("@PVCH_MSGOUT");
                 var result = DBConnection.Execute("USP_CourseFavorite_ACTION", param, commandType: CommandType.StoredProcedure);
                 retMsg = param.Get<string>("PVCH_MSGOUT");
+                retParamMsg = new ReturnParamMsg
+                {
+                    retOut = retMsg,
+                    status = "200"
+                };
             }
             catch (Exception ex)
             {
-                // throw new Exception(ex.Message);
-                retMsg = "";
-                // log.Error(ex);
+                retParamMsg = new ReturnParamMsg
+                {
+                    retOut = "",
+                    status = "500"
+                };
             }
-            return retMsg;
+            return retParamMsg;
         }
 
         [Obsolete]

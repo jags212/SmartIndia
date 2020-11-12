@@ -41,7 +41,7 @@ function BindList() {
                         + '<td><div class="sm-card-title"><a data-toggle="tooltip" class="action-inline" data-placement="bottom" title="' + data[i].courseName + '" href="' + ClientURL + '/Attendee/EnrollCourses/EnrollCourseDetails?SID=' + data[i].courseId + '&bt=' + data[i].batchName + '" >' + data[i].courseName + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a></div>'
                         + '<div class="enroll-course-show"><span onclick="AddShowFavorite(' + data[i].courseId + ',' + "'" + '' + data[i].batchName + '' + "'" + ')" class="add-to-favorite" data - toggle="tooltip" data - placement="bottom" title = "' + toltip+'">' + fab + '</i></span></div>'
                         + '<span class="sm-host-name"><i class="bx bxs-face"></i>' + data[i].uname + '</span>'
-                        + '<p class="card-text sm-cli-text ellip-box two-lines">' + data[i].courseDesc + '</p>'
+                        + '<p class="card-text sm-cli-text v-ellipsis">' + data[i].courseDesc + '</p>'
                         + '<div class="sm-bottom-info">'
                         + '<span class="sm-host-name"> <i class="bx bx-task"></i>' + data[i].batchName + '</span> '
                         + '<span class="sm-date"> <i class="bx bx-calendar"></i>' + dateFormat(data[i].startDate, 'dd-mmm-yy') + ' To ' + dateFormat(data[i].endDate, 'dd-mmm-yy') + '</span>'
@@ -162,11 +162,11 @@ function AddShowFavorite(CID, Batch) {
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
-                if (data == "1") {
+                if (data.retOut == "1") {
                     BindList();
                     //window.location.href = '/Attendee/EnrollCourses/EnrollCourse';
                 }
-                else if (data == "3") {
+                else if (data.retOut == "3") {
                     BindList();
                     //window.location.href = '/Attendee/EnrollCourses/EnrollCourse';
                 }

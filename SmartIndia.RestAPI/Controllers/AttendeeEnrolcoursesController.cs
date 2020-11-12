@@ -103,7 +103,7 @@ namespace SmartIndia.RestAPI.Controllers
             }
         }
         [HttpPost("EnrollClass")]
-        public async Task<string> EnrollClasses(EnrollClasses obj)
+        public async Task<ReturnParamMsg> EnrollClasses(EnrollClasses obj)
         {
             using (var attendeeEnrollClassServices = new AttendeeEnrollClassServices(connectionFactory))
             {
@@ -111,7 +111,7 @@ namespace SmartIndia.RestAPI.Controllers
             }
         }
         [HttpPost("ShowInterest")]
-        public async Task<string> ShowInterests(EnrollClasses obj)
+        public async Task<ReturnParamMsg> ShowInterests(EnrollClasses obj)
         {
             using (var attendeeEnrollClassServices = new AttendeeEnrollClassServices(connectionFactory))
             {
@@ -119,7 +119,7 @@ namespace SmartIndia.RestAPI.Controllers
             }
         }
         [HttpPost("AddtoFavorite")]
-        public async Task<string> AddtoFavorites(EnrollClasses obj)
+        public async Task<ReturnParamMsg> AddtoFavorites(EnrollClasses obj)
         {
             using (var attendeeEnrollClassServices = new AttendeeEnrollClassServices(connectionFactory))
             {

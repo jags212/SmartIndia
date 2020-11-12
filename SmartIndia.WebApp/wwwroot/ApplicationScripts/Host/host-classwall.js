@@ -162,7 +162,7 @@ function BindList() {
 
                     trHTML += '<tr class="odd list-group-item justify-content-between ocr-list-group">'
                         + '<td><div>' + color + '</div><div class="sm-card-title"><a data-toggle="tooltip" class="action-inline" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Hosts/ClassWall/ClassWallDetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a></div>'
-                        + '<p class="card-text sm-cli-text ellip-box two-lines">' + data[i].courseDesc + '</p>'
+                        + '<p class="card-text sm-cli-text v-ellipsis">' + data[i].courseDesc + '</p>'
                         + '<div class="sm-bottom-info">'
                         + '<span class="sm-host-name"> <i class="bx bx-task"></i>' + data[i].batchName + '</span> '
                         + '<span class="sm-date"> <i class="bx bx-calendar"></i>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') + '</span>'

@@ -27,10 +27,10 @@ function Coursedetails() {
                 $("#desc").html(data[0].courseDesc);
 
                 if (data[0].enrolledUserId == UserID) {
-                    $("#div_enrol").hide();
+                    $("#div_enrol").css("display", "none");
                 }
                 else {
-                    $("#div_enrol").show();
+                    $("#div_enrol").css("display", "block");
                 }
                 if (data[0].brochureExt == "pdf") {
                     $("#imgbrouchurepdf").attr('src', data[0].brochureUrl);
@@ -73,10 +73,10 @@ $('#btn_enroll').click(function () {
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
-                if (data == "1") {
+                if (data.retOut == "1") {
                     BootStrapRedirect('Course Enrolled Successfully.', '/Attendee/EnrollCourses/EnrollCourse');
                 }
-                else if (data == "3") {
+                else if (data.retOut == "3") {
                     BootstrapAlert('Course Alreday Enrolled.');
                 }
                 else {

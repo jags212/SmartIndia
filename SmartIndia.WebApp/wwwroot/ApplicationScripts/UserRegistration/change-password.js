@@ -32,7 +32,7 @@ $('#btnChange').click(function () {
         var result = parseJwt(localStorage.getItem("jwtToken"));
         var uid = result.nameid;
         $.get("" + ServiceURL + "/api/UserRegistration/UserPass?uid=" + uid + "&pass=" + $('#txtCurrentPass').val(), function (data) {
-            if (data) {
+            if (data.retOut) {
                 CallSave();
             }
             else {
