@@ -7,9 +7,9 @@
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
-                if (data == "1") {
+                if (data.retOut == "1") {
                     $.post("/ManageUsers/Users/AthenticationUserRole?UserId=" + UId + "&RoleName=Host", function (data) {
-                        if (data == 1) {
+                        if (data.retOut == 1) {
                             window.location.href = "/Hosts/HostDashboard/Dashboard";
                         }
                     });

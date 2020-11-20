@@ -106,6 +106,87 @@ function BindHostUpcommingClasses() {
         });
 }
 
+
+// Class Popularity JS
+if (document.getElementById("class-popularity-bar-chartt")) {
+
+
+
+    $(function () {
+        var data = getData();
+    });
+
+    function getData() {
+        var noOfAttendee = [];
+        var courseName = [];
+
+        jQuery.support.cors = true;
+        var UId = localStorage.getItem("userID");
+        var usersParam = JSON.stringify({
+            UserId: parseInt(UId),
+            ACTIONCODE: "E"
+        });
+
+        $.ajax({
+            type: "GET",
+            url: ServiceURL + "/api/Attendees/BindAttendees",
+            data: JSON.parse(usersParam),
+            dataType: "json",
+            contentType: "application/json",
+            async: false
+        }).done(function (data) {
+            if (data.length != 0) {
+                $('#classpopularity').show();
+                data.forEach(function (obj) {
+                    courseName.push(obj.courseName);
+                    noOfAttendee.push(parseInt(obj.noOfAttendee));
+                });
+            }
+            else {
+
+                $('#classpopularity').hide();
+            }
+
+            var options = {
+                chart: {
+                    height: 350,
+                    type: 'bar',
+                },
+                plotOptions: {
+                    bar: {
+                        horizontal: true,
+                    }
+                },
+                dataLabels: {
+                    enabled: false
+                },
+
+                series: [
+                    {
+                        name: "No of Attendee",
+                        data: noOfAttendee
+                    }
+                ],
+
+                xaxis: {
+                    categories: courseName,
+                }
+            }
+            var chart = new ApexCharts(
+                document.querySelector("#class-popularity-bar-chartt"),
+                options
+            );
+            chart.render();
+        });
+        return {
+        };
+    }
+
+
+
+
+
+}
 //List Bind
 function BindList() {
     jQuery.support.cors = true;
@@ -140,7 +221,7 @@ function BindList() {
                 $.each(data, function (i, item) {
                     trHTML += '<tr class="odd list-group-item justify-content-between ocr-list-group">'
                         + '<td><div class="sm-card-title"><a data-toggle="tooltip" class="action-inline" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Hosts/HostDashboard/CourseDetails?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a></div>'
-                        + '<p class="card-text sm-cli-text ellip-box two-lines">' + data[i].courseDesc + '</p>'
+                        + '<p class="card-text sm-cli-text v-ellipsis">' + data[i].courseDesc + '</p>'
                         + '<div class="sm-bottom-info">'
                         + '<span class="sm-host-name"> <i class="bx bx-task"></i>' + data[i].batchName + '</span> '
                         + '<span class="sm-date"> <i class="bx bx-calendar"></i>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') + '</span>'
@@ -175,7 +256,7 @@ function BindList() {
 if (document.getElementById("class-analytics-chart")) {
     var options = {
         chart: {
-            height: 395,
+            height: 350,
             type: 'bar',
         },
         plotOptions: {

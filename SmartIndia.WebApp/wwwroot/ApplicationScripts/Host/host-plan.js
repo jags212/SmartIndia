@@ -1,7 +1,9 @@
 ﻿
 $(document).ready(function () {
+   // CheckEnrollOrNot();
     BindHostPlan();
 })
+
 function BindHostPlan() {
     jQuery.support.cors = true;
     var usersParam = JSON.stringify({

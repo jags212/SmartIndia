@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SmartIndia.Data.Entities;
 using SmartIndia.Data.Entities.Host;
 using SmartIndia.Data.Factory;
 using SmartIndia.Data.Models;
@@ -22,7 +23,7 @@ namespace SmartIndia.RestAPI.Controllers
             this.connectionFactory = connectionFactory;
         }
         [HttpPost("AddSchedular")]
-        public async Task<string> HostSchedularAction(List<HostSchedular> obj)
+        public async Task<ReturnParamMsg> HostSchedularAction(List<HostSchedular> obj)
         {
             using (var hostSchedularServices = new HostSchedularServices(connectionFactory))
             {
@@ -30,7 +31,7 @@ namespace SmartIndia.RestAPI.Controllers
             }
         }
         [HttpPost("AddSchedularOnce")]
-        public async Task<string> HostSchedularActionOnce(HostSchedular obj)
+        public async Task<ReturnParamMsg> HostSchedularActionOnce(HostSchedular obj)
         {
             using (var hostSchedularServices = new HostSchedularServices(connectionFactory))
             {
@@ -38,7 +39,7 @@ namespace SmartIndia.RestAPI.Controllers
             }
         }
         [HttpPost("UpdateSchedular")]
-        public async Task<string> UpdateHostSchedularActionOnce(HostSchedular obj)
+        public async Task<ReturnParamMsg> UpdateHostSchedularActionOnce(HostSchedular obj)
         {
             using (var hostSchedularServices = new HostSchedularServices(connectionFactory))
             {
@@ -77,7 +78,7 @@ namespace SmartIndia.RestAPI.Controllers
             }
         }
         [HttpPost("Publish")]
-        public async Task<string> HostSchedularPublish(getHostRecSchedularParameter obj)
+        public async Task<ReturnParamMsg> HostSchedularPublish(getHostRecSchedularParameter obj)
         {
             using (var hostSchedularServices = new HostSchedularServices(connectionFactory))
             {
@@ -86,7 +87,7 @@ namespace SmartIndia.RestAPI.Controllers
         }
         [HttpGet("CkeckBatchName")]
         [Obsolete]
-        public async Task<bool> CkeckBatchNameAsync([FromQuery] CheckBatch obj)
+        public async Task<ReturnBoolParam> CkeckBatchNameAsync([FromQuery] CheckBatch obj)
         {
             using (var hostSchedularServices = new HostSchedularServices(connectionFactory))
             {

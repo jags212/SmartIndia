@@ -28,12 +28,21 @@
     <script src="~/ApplicationScripts/Common/date-format-converter.js"></script>
 
     <script src="~/ApplicationScripts/Host/dashboard.js"></script>
-    <!-- ul li Pagination -->
-    <link href="~/assets/css/PagingStyle.css" rel="stylesheet" />
-    <script src="~/assets/js/paging.js"></script>
     <script>
         $(document).ready(function () {
             loadNavigation('Dashboard', 'host-dash');
+        });
+    </script>
+
+    <script src="~/assets/js/jquery.vEllipsis.js"></script>
+
+    
+    <script>
+        $(document).ready(function () {
+            $().vEllipsis({
+                'lines': 2,
+                'responsive': true
+            });
         });
     </script>
 }
@@ -60,7 +69,7 @@
                     <span class="class-search-icon" data-toggle="tooltip" data-placement="bottom" title="Search"><i class="bx bx-search"></i></span>
                 </div>
             </div>
-           
+
             <div class="container" id="hostDashlList">
                 <div class="row">
                     <div class="col-sm-12 col-lg-12 col-md-12">
@@ -132,7 +141,7 @@
     </div>
 
     <!-- Class Popularity -->
-    <div class="col-lg-6 col-md-12">
+    <div class="col-lg-6 col-md-12" id="classpopularity">
         <div class="card mb-30">
             <div class="card-header d-flex justify-content-between align-items-center">
                 <h3>Class Popularity</h3>
@@ -161,8 +170,8 @@
                 </div>
             </div>
 
-            <div class="card-body">
-                <div id="class-popularity-bar-chart"></div>
+            <div class="card-body" >
+                <div id="class-popularity-bar-chartt"></div>
             </div>
         </div>
     </div>

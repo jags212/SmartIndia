@@ -130,13 +130,13 @@ $('#btnRSUpdate').click(function () {
             contentType: "application/json",
             success: function (data) {
                 $('#dataTable tbody').empty();
-                if (data == "1") {
+                if (data.retOut == "1") {
                     $("#reschedulingModal").modal("hide");
                     clearinput();
                     BootStrapRedirect(' Rescheduled Successfully.', '/Hosts/Rescheduling/Rescheduling');
 
                 }
-                else if (data == "3") {
+                else if (data.retOut == "3") {
                     BootstrapAlert('Data Alreday Exist.');
                 }
                 else {
@@ -233,11 +233,11 @@ $('#btcancel').click(function () {
             success: function (data) {
                 clearinput();
                 $('#dataTable tbody').empty();
-                if (data == "1") {
+                if (data.retOut == "1") {
                     BootStrapRedirect(' Canceled Successfully.', '/Hosts/Rescheduling/Rescheduling');
                 }
-                else if (data == "3") {
-                    BootstrapAlert('Data Alreday Exist.');
+                else if (data.retOut == "3") {
+                    BootstrapAlert('Alreday Exist.');
                 }
                 else {
                     BootstrapAlert('Something went wrong. Please try again');

@@ -33,7 +33,7 @@ function BindHostUpcommingClasses() {
     var UId = localStorage.getItem("userID");
     var usersParam = JSON.stringify({
         UserId: parseInt(UId),
-        ACTIONCODE: "E",
+        ACTIONCODE: "I",
         Curl: ""
     });
     $.ajax(
@@ -158,11 +158,11 @@ function BindList() {
                         trHTML += '<tr class="odd list-group-item justify-content-between ocr-list-group">'
                             + '<td><div class="sm-card-title"><a data-toggle="tooltip" class="action-inline" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Attendee/UpcomingClasses/upcomingclassdetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a></div>'
                             + '<span class="sm-host-name"><i class="bx bxs-face"></i>' + data[i].uname + '</span>'
-                            + '<p class="card-text sm-cli-text ellip-box two-lines">' + data[i].courseDesc + '</p>'
+                            + '<p class="card-text sm-cli-text v-ellipsis">' + data[i].courseDesc + '</p>'
                             + '<div class="sm-bottom-info">'
                             + '<span class="sm-host-name"> <i class="bx bx-task"></i>' + data[i].batchName + '</span> '
                             + '<span class="sm-date"> <i class="bx bx-calendar"></i>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') + '</span>'
-                            + '<span class="sm-time"> <i class="bx bx-time"></i>' + timeConvert(data[i].startTime) + '</span></div><div style="float:right"><a data-toggle="tooltip" class="action-inline buttonstyled" data-placement="top" title="Join" target="_blank" href="' + ClientURL + '/VideoClass/MeetingUp/Index?CRID=' + data[i].classRoomId + '&Id=' + UId + '&Name=' + name + '&EmailId=' + EmailId + '&moderator=' + moderator + '"><strong><u>Join</u> </strong></span></a></div></td>'
+                            + '<span class="sm-time"> <i class="bx bx-time"></i>' + timeConvert(data[i].startTime) + '</span></div><div style="float:right"><a data-toggle="tooltip" class="action-inline buttonstyled" data-placement="top" title="Join" target="_blank" href="' + ClientURL + '/VideoClass/MeetingUp/Index?CRID=' + data[i].classRoomId + '&Id=' + UId + '&Name=' + name + '&EmailId=' + EmailId + '&moderator=' + moderator + '&CourseId=' + data[i].courseId + '"><strong><u>Join</u> </strong></span></a></div></td>'
                             + '</tr>';
                     });
                     $('#tblCourses').append(trHTML);
@@ -184,40 +184,6 @@ function BindList() {
                     });
                     $('.action-inline').tooltip();
 
-
-                    //$.each(data, function (i, item) {
-
-                    //    trHTML += '<li class="list-group-item justify-content-between ocr-list-group"> '
-                    //        + '<div class="sm-card-title" >'
-
-                    //        + ' <a data-toggle="tooltip" class="action-inline" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Attendee/UpcomingClasses/upcomingclassdetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a>'
-                    //        + '</div>'
-                           
-                    //        + ' <p class="card-text sm-cli-text ellip-box two-lines">' + data[i].courseDesc + '</p>'
-                    //        + '<div class="sm-bottom-info">'
-                    //        + '<span class="sm-host-name">'
-                    //        + '<i class="bx bx-task"></i>' + data[i].batchName + ''
-                    //        + '</span>'
-                    //        + '<span class="sm-date">'
-                    //        + ' <i class="bx bx-calendar"></i>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') + ''
-                    //        + '</span>'
-                    //        + '<span class="sm-time">'
-                    //        + ' <i class="bx bx-time"></i> ' + timeConvert(data[i].startTime) + ''
-                    //        + '</span>'
-                    //        + '</div>'
-
-                    //        + '<div style="float:right">'
-                    //        + ' <a class="action-inline buttonstyled" data-toggle="tooltip" data-placement="top" title="Join" target="_blank" href="' + ClientURL + '/VideoClass/MeetingUp/Index?CRID=' + data[i].classRoomId + '&Id=' + UId + '&Name=' + name + '&EmailId=' + EmailId + '&moderator=' + moderator + '"><strong><u> Join</u> </strong></span></a>'
-                    //        +'</div>'
-
-                    //        + '</li>'
-                    //});
-
-                    //$('#coursedetails').append(trHTML);
-                    //$('.action-inline').tooltip();
-                    //$("#coursedetails").JPaging({
-                    //    pageSize: 5
-                    //});
                 }
             },
 

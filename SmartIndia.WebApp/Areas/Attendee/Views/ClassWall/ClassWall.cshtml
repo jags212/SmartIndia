@@ -22,13 +22,21 @@
     <script src="~/assets/calendar/js/moment.min.js"></script>
     <script src="~/assets/calendar/js/fullcalendar.min.js"></script>
     <!-- Text Ellipsis JS -->
-    
+
     <script>
         $('li').click(function () {
             $(this).addClass('active').siblings().removeClass('active');
         });
     </script>
-    
+    <script src="~/assets/js/jquery.vEllipsis.js"></script>
+    <script>
+        $(document).ready(function () {
+            $().vEllipsis({
+                'lines': 2,
+                'responsive': true
+            });
+        });
+    </script>
     <script>
         $(document).ready(function () {
             loadNavigation('ClassWall', 'ClassWall-Att');

@@ -10,13 +10,14 @@ namespace SmartIndia.WebApp.Areas.VideoClass.Controllers
     public class MeetingUpController : Controller
     {
 
-        public IActionResult Index(string CRID,string Id,string Name,string EmailId,string moderator)
+        public IActionResult Index(string CRID,string Id,string Name,string EmailId,string moderator,string CourseId)
         {
             ViewBag.UserId = Id;
             ViewBag.crid = CRID;
             ViewBag.name = Name;
             ViewBag.EmailId = EmailId;
             ViewBag.moderator = moderator;
+            ViewBag.CourseId = CourseId;
             return View();
         }
     }

@@ -11,10 +11,10 @@
     .dataTables_filter {
         display: none;
     }
+
     .dataTable > thead > tr > th[class*="sort"]::after {
         display: none
     }
-
 </style>
 @section Scripts{
     <script src="~/ApplicationScripts/Common/custom-validate.js"></script>
@@ -59,6 +59,15 @@
             all_list.hide();
             matching_list.show();
 
+        });
+    </script>
+    <script src="~/assets/js/jquery.vEllipsis.js"></script>
+    <script>
+        $(document).ready(function () {
+            $().vEllipsis({
+                'lines': 2,
+                'responsive': true
+            });
         });
     </script>
 }

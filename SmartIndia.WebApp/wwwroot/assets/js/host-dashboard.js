@@ -132,34 +132,34 @@ if (document.getElementById("class-analytics-chart")) {
 
 
 
-// Class Popularity JS
-if (document.getElementById("class-popularity-bar-chart")) {
-    var options = {
-        chart: {
-            height: 360,
-            type: 'bar',
-        },
-        plotOptions: {
-            bar: {
-                horizontal: true,
-            }
-        },
-        dataLabels: {
-            enabled: false
-        },
-        series: [{
-            data: [400, 448, 580, 690, 1100, 1200]
-        }],
-        xaxis: {
-            categories: ['B.Sc. (Hons.) Chemistry', 'B.Sc. (Hons.) Computer Science', 'B.Sc. (Hons.) Mathematics', 'B.Sc. (Hons.) Physics', 'Literature', 'Web Development'],
-        }
-    }
-    var chart = new ApexCharts(
-        document.querySelector("#class-popularity-bar-chart"),
-        options
-    );
-    chart.render();
-}
+//// Class Popularity JS
+//if (document.getElementById("class-popularity-bar-chart")) {
+//    var options = {
+//        chart: {
+//            height: 360,
+//            type: 'bar',
+//        },
+//        plotOptions: {
+//            bar: {
+//                horizontal: true,
+//            }
+//        },
+//        dataLabels: {
+//            enabled: false
+//        },
+//        series: [{
+//            data: [400, 448, 580, 690, 1100, 1200]
+//        }],
+//        xaxis: {
+//            categories: ['B.Sc. (Hons.) Chemistry', 'B.Sc. (Hons.) Computer Science', 'B.Sc. (Hons.) Mathematics', 'B.Sc. (Hons.) Physics', 'Literature', 'Web Development'],
+//        }
+//    }
+//    var chart = new ApexCharts(
+//        document.querySelector("#class-popularity-bar-chart"),
+//        options
+//    );
+//    chart.render();
+//}
 
 // Revenue Growth Chart JS
 if (document.getElementById("host-revenue-growth-chart")) {

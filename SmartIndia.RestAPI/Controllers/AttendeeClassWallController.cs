@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using SmartIndia.Data.Entities;
 using SmartIndia.Data.Entities.Host;
 using SmartIndia.Data.Factory;
 using SmartIndia.Data.Models;
@@ -50,7 +51,7 @@ namespace SmartIndia.RestAPI.Controllers
         }
         [Authorize]
         [HttpPost("UpdateUserRole")]
-        public async Task<string> UpdateUserRole(Int64 UserId )
+        public async Task<ReturnParamMsg> UpdateUserRole(Int64 UserId )
         {
             using (var attendeeClassWallServices = new AttendeeClassWallServices(connectionFactory))
             {
