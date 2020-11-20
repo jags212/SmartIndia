@@ -35,11 +35,11 @@ $('#btnSubmit').click(function () {
                 contentType: "application/json",
                 success: function (data) {
                     $('#dataTable tbody').empty();
-                    if (data == "1") {
+                    if (data.retOut == "1") {
                         BootStrapRedirect(' Saved Successfully.', '/Hosts/Schedular/Schedular');
                         clearinput();
                     }
-                    else if (data == "3") {
+                    else if (data.retOut == "3") {
                         BootstrapAlert('Data Alreday Exist.');
                     }
                     else {
@@ -97,11 +97,11 @@ $('#btnSubmit').click(function () {
                     success: function (data) {
                         usersParam = null;
                         $('#dataTable tbody').empty();
-                        if (data == "1") {
+                        if (data.retOut == "1") {
                             BootStrapRedirect(' Saved Successfully.', '/Hosts/Schedular/Schedular');
                             clearinput();
                         }
-                        else if (data == "3") {
+                        else if (data.retOut == "3") {
                             BootstrapAlert('Data Alreday Exist.');
                         }
                         else {
@@ -176,11 +176,11 @@ $('#btnSubmit').click(function () {
                     success: function (data) {
                         usersParam = null;
                         $('#dataTable tbody').empty();
-                        if (data == "1") {
+                        if (data.retOut == "1") {
                             BootStrapRedirect(' Saved Successfully.', '/Hosts/Schedular/Schedular');
                             clearinput();
                         }
-                        else if (data == "3") {
+                        else if (data.retOut == "3") {
                             BootstrapAlert('Data Alreday Exist.');
                         }
                         else {
@@ -284,11 +284,11 @@ $('#btnSubmit').click(function () {
                     success: function (data) {
                         usersParam = null;
                         $('#dataTable tbody').empty();
-                        if (data == "1") {
+                        if (data.retOut == "1") {
                             BootStrapRedirect(' Saved Successfully.', '/Hosts/Schedular/Schedular');
                             clearinput();
                         }
-                        else if (data == "3") {
+                        else if (data.retOut == "3") {
                             BootstrapAlert('Data Alreday Exist.');
                         }
                         else {
@@ -480,12 +480,12 @@ $('#btnRSUpdate').click(function () {
             contentType: "application/json",
             success: function (data) {
                 $('#dataTable tbody').empty();
-                if (data == "2") {
+                if (data.retOut == "2") {
                     $("#reschedulingModal").modal("hide");
                     clearinput();
                     BootStrapRedirect(' Rescheduled Successfully.', '/Hosts/Schedular/Schedular');
                 }
-                else if (data == "3") {
+                else if (data.retOut == "3") {
                     BootstrapAlert('Data Alreday Exist.');
                 }
                 else {
@@ -601,7 +601,7 @@ $('#btnPublish').click(function () {
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
-                if (data == "5") {
+                if (data.retOut == "5") {
 
                     BootStrapRedirect('Published Successfully.', '/Hosts/Schedular/schedular');
 
@@ -642,7 +642,7 @@ function checkBatchName() {
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
-                if (data == true) {
+                if (data.retOut == true) {
                     $("#BatchNameOnce").val('');
                     BootstrapAlert('Batch Name Already Exists...', 'BatchNameOnce');
                 }

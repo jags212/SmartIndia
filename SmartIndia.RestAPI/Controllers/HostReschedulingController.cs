@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SmartIndia.Data.Entities;
 using SmartIndia.Data.Entities.Host;
 using SmartIndia.Data.Factory;
 using SmartIndia.Data.Models;
@@ -44,7 +45,7 @@ namespace SmartIndia.RestAPI.Controllers
             }
         }
         [HttpPost("UpdateSchedular")]
-        public async Task<string> UpdateHostSchedularActionOnce(HostSchedular obj)
+        public async Task<ReturnParamMsg> UpdateHostSchedularActionOnce(HostSchedular obj)
         {
             using (var hostReschedulingServices = new HostReschedulingServices(connectionFactory))
             {
@@ -52,7 +53,7 @@ namespace SmartIndia.RestAPI.Controllers
             }
         }
         [HttpPost("CancelSchedular")]
-        public async Task<string> CancelHostSchedular(HostSchedularCancel obj)
+        public async Task<ReturnParamMsg> CancelHostSchedular(HostSchedularCancel obj)
         {
             using (var hostReschedulingServices = new HostReschedulingServices(connectionFactory))
             {

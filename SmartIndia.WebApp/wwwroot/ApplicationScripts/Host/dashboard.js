@@ -106,6 +106,87 @@ function BindHostUpcommingClasses() {
         });
 }
 
+
+// Class Popularity JS
+if (document.getElementById("class-popularity-bar-chartt")) {
+
+
+
+    $(function () {
+        var data = getData();
+    });
+
+    function getData() {
+        var noOfAttendee = [];
+        var courseName = [];
+
+        jQuery.support.cors = true;
+        var UId = localStorage.getItem("userID");
+        var usersParam = JSON.stringify({
+            UserId: parseInt(UId),
+            ACTIONCODE: "E"
+        });
+
+        $.ajax({
+            type: "GET",
+            url: ServiceURL + "/api/Attendees/BindAttendees",
+            data: JSON.parse(usersParam),
+            dataType: "json",
+            contentType: "application/json",
+            async: false
+        }).done(function (data) {
+            if (data.length != 0) {
+                $('#classpopularity').show();
+                data.forEach(function (obj) {
+                    courseName.push(obj.courseName);
+                    noOfAttendee.push(parseInt(obj.noOfAttendee));
+                });
+            }
+            else {
+
+                $('#classpopularity').hide();
+            }
+
+            var options = {
+                chart: {
+                    height: 350,
+                    type: 'bar',
+                },
+                plotOptions: {
+                    bar: {
+                        horizontal: true,
+                    }
+                },
+                dataLabels: {
+                    enabled: false
+                },
+
+                series: [
+                    {
+                        name: "No of Attendee",
+                        data: noOfAttendee
+                    }
+                ],
+
+                xaxis: {
+                    categories: courseName,
+                }
+            }
+            var chart = new ApexCharts(
+                document.querySelector("#class-popularity-bar-chartt"),
+                options
+            );
+            chart.render();
+        });
+        return {
+        };
+    }
+
+
+
+
+
+}
 //List Bind
 function BindList() {
     jQuery.support.cors = true;
@@ -175,7 +256,7 @@ function BindList() {
 if (document.getElementById("class-analytics-chart")) {
     var options = {
         chart: {
-            height: 395,
+            height: 350,
             type: 'bar',
         },
         plotOptions: {

@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using SmartIndia.Data.Entities;
 using SmartIndia.Data.Entities.Host;
 using SmartIndia.Data.Enums;
 using SmartIndia.Data.Factory;
@@ -16,6 +17,8 @@ namespace SmartIndia.Data.Services.Host
     public class HostReschedulingServices : RepositoryBase
     {
         string retMsg;
+        ReturnParamMsg retParamMsg = new ReturnParamMsg();
+         
         public HostReschedulingServices(IConnectionFactory connectionFactory) : base(connectionFactory)
         {
 
@@ -99,7 +102,7 @@ namespace SmartIndia.Data.Services.Host
                 return null;
             }
         }
-        public string UpdateHostSchedularActionOnce(HostSchedular hostSchedular)
+        public ReturnParamMsg UpdateHostSchedularActionOnce(HostSchedular hostSchedular)
         {
             object[] objArray = new object[] {
                          "@P_ACTIONCODE", "H"
@@ -142,17 +145,24 @@ namespace SmartIndia.Data.Services.Host
                 param.Add("@EndTime", hostSchedular.EndTime);
                 var result = DBConnection.Execute("USP_HostSchedular_ACTION", param, commandType: CommandType.StoredProcedure);
                 retMsg = param.Get<string>("PVCH_MSGOUT");
+                retParamMsg = new ReturnParamMsg
+                {
+                    retOut = retMsg,
+                    status = "200"
+                };
             }
             catch (Exception ex)
             {
-                // throw new Exception(ex.Message);
-                retMsg = "";
-                // log.Error(ex);
+                retParamMsg = new ReturnParamMsg
+                {
+                    retOut = "",
+                    status = "500"
+                };
             }
-            return retMsg;
+            return retParamMsg;
         }
 
-        public string CancelHostSchedular(HostSchedularCancel hostSchedularCancel)
+        public ReturnParamMsg CancelHostSchedular(HostSchedularCancel hostSchedularCancel)
         {
             object[] objArray = new object[] {
                          "@P_ACTIONCODE", hostSchedularCancel.ACTIONCODE
@@ -176,14 +186,21 @@ namespace SmartIndia.Data.Services.Host
                 DynamicParameters param = objArray.ToDynamicParameters("@PVCH_MSGOUT");
                 var result = DBConnection.Execute("USP_HostSchedularDetails_ACTION", param, commandType: CommandType.StoredProcedure);
                 retMsg = param.Get<string>("PVCH_MSGOUT");
+                retParamMsg = new ReturnParamMsg
+                {
+                    retOut = retMsg,
+                    status = "200"
+                };
             }
             catch (Exception ex)
             {
-                // throw new Exception(ex.Message);
-                retMsg = "";
-                // log.Error(ex);
+                retParamMsg = new ReturnParamMsg
+                {
+                    retOut = "",
+                    status = "500"
+                };
             }
-            return retMsg;
+            return retParamMsg;
         }
     }
 

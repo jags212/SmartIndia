@@ -31,6 +31,7 @@
                 var name = '@ViewBag.name';
                 var EmailId = '@ViewBag.EmailId';
                 var moderator = '@ViewBag.moderator';
+                var CourseId = '@ViewBag.CourseId';
 
                 $('#room_id').val(crid);
                 localStorage.setItem('cId', crid);
@@ -43,6 +44,7 @@
                 $('#fname').val(name);
                 $('#fuser').val(name);
                 $('#fmail').val(EmailId);
+                $('#fCourseId').val(CourseId);
             });
         </script>
         <script>
@@ -79,6 +81,8 @@
         <input type="hidden" name="user_name" id="user_name">
         <input type="hidden" name="user_email" id="user_email">
         <input type="hidden" name="user_role" id="user_role">
+
+        <input type="hidden" name="fCourseId" id="fCourseId">
 
         <input type="hidden" id="inv_id" value="12345" name="">
         <input type="hidden" id="rname" value="12345">

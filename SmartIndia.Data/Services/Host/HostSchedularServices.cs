@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using SmartIndia.Data.Entities;
 using SmartIndia.Data.Entities.Host;
 using SmartIndia.Data.Enums;
 using SmartIndia.Data.Factory;
@@ -14,11 +15,13 @@ namespace SmartIndia.Data.Services.Host
     public class HostSchedularServices : RepositoryBase
     {
         string retMsg = string.Empty;
+        ReturnParamMsg retParamMsg = new ReturnParamMsg();
+        ReturnBoolParam retBoolParamMsg = new ReturnBoolParam();
         public HostSchedularServices(IConnectionFactory connectionFactory) : base(connectionFactory)
         {
 
         }
-        public string HostSchedularAction(List<HostSchedular> hostSchedular)
+        public ReturnParamMsg HostSchedularAction(List<HostSchedular> hostSchedular)
         {
 
 
@@ -44,17 +47,24 @@ namespace SmartIndia.Data.Services.Host
                     param.Add("@EndTime", item.EndTime);
                     var result = DBConnection.Execute("USP_HostSchedular_ACTION", param, commandType: CommandType.StoredProcedure);
                     retMsg = param.Get<string>("PVCH_MSGOUT");
+                    retParamMsg = new ReturnParamMsg
+                    {
+                        retOut = retMsg,
+                        status = "200"
+                    };
                 }
             }
             catch (Exception ex)
             {
-                // throw new Exception(ex.Message);
-                retMsg = "";
-                // log.Error(ex);
+                retParamMsg = new ReturnParamMsg
+                {
+                    retOut = "",
+                    status = "500"
+                };
             }
-            return retMsg;
+            return retParamMsg;
         }
-        public string HostSchedularActionOnce(HostSchedular hostSchedular)
+        public ReturnParamMsg HostSchedularActionOnce(HostSchedular hostSchedular)
         {
             object[] objArray = new object[] {
                          "@P_ACTIONCODE", hostSchedular.ACTIONCODE
@@ -76,14 +86,21 @@ namespace SmartIndia.Data.Services.Host
                 param.Add("@EndTime", hostSchedular.EndTime);
                 var result = DBConnection.Execute("USP_HostSchedular_ACTION", param, commandType: CommandType.StoredProcedure);
                 retMsg = param.Get<string>("PVCH_MSGOUT");
+                retParamMsg = new ReturnParamMsg
+                {
+                    retOut = retMsg,
+                    status = "200"
+                };
             }
             catch (Exception ex)
             {
-                // throw new Exception(ex.Message);
-                retMsg = "";
-                // log.Error(ex);
+                retParamMsg = new ReturnParamMsg
+                {
+                    retOut = "",
+                    status = "500"
+                };
             }
-            return retMsg;
+            return retParamMsg;
         }
 
         [Obsolete]
@@ -203,7 +220,7 @@ namespace SmartIndia.Data.Services.Host
             }
         }
 
-        public string PublishSchedular(getHostRecSchedularParameter getHostRecSchedularParameter)
+        public ReturnParamMsg PublishSchedular(getHostRecSchedularParameter getHostRecSchedularParameter)
         {
             object[] objArray = new object[] {
                      "@P_ACTIONCODE",getHostRecSchedularParameter.ACTIONCODE,
@@ -220,16 +237,23 @@ namespace SmartIndia.Data.Services.Host
                 param.Add("@EndScheduleDate", getHostRecSchedularParameter.EndScheduleDate.ToUniversalTime(), DbType.DateTime, ParameterDirection.Input);
                 var result = DBConnection.Execute("USP_HostSchedularPublish_ACTION", param, commandType: CommandType.StoredProcedure);
                 retMsg = param.Get<string>("PVCH_MSGOUT");
+                retParamMsg = new ReturnParamMsg
+                {
+                    retOut = retMsg,
+                    status = "200"
+                };
             }
             catch (Exception ex)
             {
-                // throw new Exception(ex.Message);
-                retMsg = "";
-                // log.Error(ex);
+                retParamMsg = new ReturnParamMsg
+                {
+                    retOut = "",
+                    status = "500"
+                };
             }
-            return retMsg;
+            return retParamMsg;
         }
-        public string UpdateHostSchedularActionOnce(HostSchedular hostSchedular)
+        public ReturnParamMsg UpdateHostSchedularActionOnce(HostSchedular hostSchedular)
         {
             object[] objArray = new object[] {
                          "@P_ACTIONCODE", hostSchedular.ACTIONCODE
@@ -254,16 +278,23 @@ namespace SmartIndia.Data.Services.Host
                 param.Add("@EndTime", hostSchedular.EndTime);
                 var result = DBConnection.Execute("USP_HostSchedular_ACTION", param, commandType: CommandType.StoredProcedure);
                 retMsg = param.Get<string>("PVCH_MSGOUT");
+                retParamMsg = new ReturnParamMsg
+                {
+                    retOut = retMsg,
+                    status = "200"
+                };
             }
             catch (Exception ex)
             {
-                // throw new Exception(ex.Message);
-                retMsg = "";
-                // log.Error(ex);
+                retParamMsg = new ReturnParamMsg
+                {
+                    retOut = "",
+                    status = "500"
+                };
             }
-            return retMsg;
+            return retParamMsg;
         }
-        public bool  CkeckBatchName(CheckBatch checkBatch)
+        public ReturnBoolParam CkeckBatchName(CheckBatch checkBatch)
         {
             object[] objArray = new object[] {
                      "@P_ACTIONCODE","E",
@@ -277,18 +308,31 @@ namespace SmartIndia.Data.Services.Host
                 retMsg = param.Get<string>("PVCH_MSGOUT");
                 if (retMsg=="3")
                 {
-                    return true;
+                    retBoolParamMsg = new ReturnBoolParam
+                    {
+                        retOut = true,
+                        status = "200"
+                    };
                 }
                 else
                 {
-                    return false;
+                    retBoolParamMsg = new ReturnBoolParam
+                    {
+                        retOut = false,
+                        status = "200"
+                    };
                 }
                 
             }
             catch (Exception ex)
             {
-                return false;
+                retBoolParamMsg = new ReturnBoolParam
+                {
+                    retOut = false,
+                    status = "500"
+                };
             }
+            return retBoolParamMsg;
         }
 
     }

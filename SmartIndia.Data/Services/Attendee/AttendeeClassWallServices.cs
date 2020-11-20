@@ -128,7 +128,7 @@ namespace SmartIndia.Data.Services.Attendee
             {
                 retParamMsg = new ReturnParamMsg
                 {
-                    retOut = retMsg,
+                    retOut = "",
                     status = "500"
                 };
             }
