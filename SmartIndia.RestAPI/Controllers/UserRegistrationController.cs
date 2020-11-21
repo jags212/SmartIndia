@@ -49,7 +49,7 @@ namespace SmartIndia.RestAPI.Controllers
             }
         }
         [HttpGet("CheckValidEmail")]
-        public async Task<UserRegistration> CheckValidEmail(string email)
+        public async Task<ForgotParam> CheckValidEmail(string email)
         {
             string url = _configuration.GetSection("HostURL")["ClientURL"];
             using (var userRegistrationService = new UserRegistrationServices(connectionFactory))

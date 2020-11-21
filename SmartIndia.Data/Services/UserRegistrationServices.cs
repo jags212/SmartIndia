@@ -142,8 +142,9 @@ namespace SmartIndia.Data.Services
             }
             return retMsg;
         }
-        public UserRegistration CheckValidEmail(string email, string AppURL)
+        public ForgotParam CheckValidEmail(string email, string AppURL)
         {
+            ForgotParam forgotParam = new ForgotParam();
             try
             {
                 object[] objArrayUser = new object[] {
@@ -152,10 +153,12 @@ namespace SmartIndia.Data.Services
                 };
                 DynamicParameters paramUser = objArrayUser.ToDynamicParameters();
                 var getUser = DBConnection.QueryFirstOrDefault<UserRegistration>("USP_LoginManagement_ACTION", paramUser, commandType: CommandType.StoredProcedure);
-
+                
                 if (getUser == null)
                 {
-                    return null;
+                    forgotParam.retOut = "User Not Found";
+                    forgotParam.status = "200";
+                    forgotParam.userRegistration = null;
                 }
                 else
                 {
@@ -163,15 +166,21 @@ namespace SmartIndia.Data.Services
                     {
                         SendEmailForResetPassword(email, AppURL, getUser.UID.ToString());
                     }
-                    return getUser;
+                    forgotParam.status = "200";
+                    forgotParam.retOut = "User Found";
+                    forgotParam.userRegistration = getUser;
                 }
+                
             }
             catch (Exception ex)
             {
                 // throw new Exception(ex.Message);
-                return null;
+                forgotParam.retOut = ex.Message;
+                forgotParam.status = "400";
+                forgotParam.userRegistration = null;
                 // log.Error(ex);
             }
+            return forgotParam;
         }
         public ReturnParamMsg UpdareResetPassword(ResetParam resetParam)
         {
