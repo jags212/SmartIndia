@@ -157,7 +157,7 @@ namespace SmartIndia.Data.Services
                 if (getUser == null)
                 {
                     forgotParam.retOut = "User Not Found";
-                    forgotParam.status = "200";
+                    forgotParam.status = "201";
                     forgotParam.userRegistration = null;
                 }
                 else
@@ -531,7 +531,8 @@ namespace SmartIndia.Data.Services
                     retBoolParamMsg = new ReturnBoolParam
                     {
                         retOut = true,
-                        status = "200"
+                        status = "200",
+                        retMsg="Email Verified"
                     };
                 }
                 else
@@ -539,7 +540,8 @@ namespace SmartIndia.Data.Services
                     retBoolParamMsg = new ReturnBoolParam
                     {
                         retOut = false,
-                        status = "200"
+                        status = "200",
+                        retMsg = "Current email is not correct..."
                     };
                 }
 
@@ -640,7 +642,9 @@ namespace SmartIndia.Data.Services
                     retBoolParamMsg = new ReturnBoolParam
                     {
                         retOut = true,
-                        status = "200"
+                        status = "200",
+                        retMsg="Mobile Number Verified"
+
                     };
                 }
                 else
@@ -648,7 +652,8 @@ namespace SmartIndia.Data.Services
                     retBoolParamMsg = new ReturnBoolParam
                     {
                         retOut = false,
-                        status = "200"
+                        status = "200",
+                        retMsg= "Current mobile no is not correct..."
                     };
                 }
 
