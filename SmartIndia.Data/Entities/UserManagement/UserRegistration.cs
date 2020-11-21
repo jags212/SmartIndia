@@ -40,7 +40,13 @@ namespace SmartIndia.Data.Entities.UserManagement
         public int DeviceResources { get; set; }
         [JsonIgnore]
         public List<RefreshToken> RefreshTokens { get; set; }
-    } 
+    }
+    public class ForgotParam 
+    {
+        public string retOut { get; set; }
+        public string status { get; set; }
+        public UserRegistration userRegistration { get; set; }
+    }
     public class UserRegistrationDetails
     {
         public string ACTIONCODE { get; set; }
