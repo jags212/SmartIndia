@@ -17,6 +17,7 @@ namespace SmartIndia.Data.Entities
     {
         public bool retOut { get; set; }
         public string status { get; set; }
+        public string retMsg { get; set; }
     }
     public class HostCourseReturnParam
     {
