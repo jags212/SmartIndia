@@ -108,6 +108,49 @@ namespace SmartIndia.Data.Services.Attendee
                 return null;
             }
         }
+        [Obsolete]
+        public List<UpcomingClassCalender> BindUpcommingClasses(HostParameter hostParameter)
+        {
+            object[] objArray = new object[] {
+                     "@P_ACTIONCODE",hostParameter.ACTIONCODE,
+                     "@UserId",hostParameter.UserId
+            };
+            try
+            {
+                DynamicParameters param = objArray.ToDynamicParameters();
+                var result = DBConnection.Query<GetHostUpcomingClassesDetails>("USP_AttendeeUpcomingClasses_ACTION", param, commandType: CommandType.StoredProcedure).ToList();
+                List<UpcomingClassCalender> pcomingClassCalender = new List<UpcomingClassCalender>();
+                foreach (var item in result)
+                {
+                    var modal = new UpcomingClassCalender()
+                    {
+                        title = item.CourseName,
+                        ScheduleDate = TimeZone.CurrentTimeZone.ToLocalTime(item.ScheduleDate).ToString("yyyy-MM-dd"),
+                        start = TimeZone.CurrentTimeZone.ToLocalTime(item.ScheduleDate).ToString("yyyy-MM-dd") + "T" + item.StartTime + ":00",
+                        end = "",
+                        StartTime = item.StartTime,
+                        EndTime = item.EndTime,
+                        Uname = item.Uname,
+                        BatchName = item.BatchName,
+                        CourseDesc = item.CourseDesc,
+                        Topics = item.Topics,
+                        CourseId = item.CourseId,
+                        SchedularId = item.SchedularId,
+                        ClassRoomId = item.ClassRoomId.ToString(),
+                        color = "#ffc107",
+                        url = hostParameter.Curl + "/Attendee/UpcomingClasses/upcomingclassdetail?SID=" + item.SchedularId + "",
+                        NoOfData = result.Count.ToString()
+
+                    };
+                    pcomingClassCalender.Add(modal);
+                }
+                return pcomingClassCalender;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
         public ReturnParamMsg UpdateUserRole( Int64 Userid)
         {
             object[] objArray = new object[] {

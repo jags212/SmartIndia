@@ -121,7 +121,7 @@ function BindList() {
     $.ajax(
         {
             type: "GET",
-            url: ServiceURL + "/api/AttendeeClassWall/BindClassWallDetail",
+            url: ServiceURL + "/api/AttendeeClassWall/BindClassWallList",
             data: JSON.parse(usersParam),
             dataType: "json",
             contentType: "application/json",
