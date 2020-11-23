@@ -13,7 +13,8 @@ function Coursedetails() {
     $.ajax(
         {
             type: "GET",
-            url: ServiceURL + "/api/AttendeeUpcomingClasses/AttendeeUpcommingClassDetail",
+            //url: ServiceURL + "/api/AttendeeUpcomingClasses/AttendeeUpcommingClassDetail",
+            url: ServiceURL + "/api/AttendeeClassWall/ClasswallDetail",
             data: JSON.parse(usersParam),
             dataType: "json",
             contentType: "application/json",
