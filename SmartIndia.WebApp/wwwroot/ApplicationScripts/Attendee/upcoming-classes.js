@@ -44,7 +44,7 @@ function BindHostUpcommingClasses() {
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
-                if (data.length == 0) {
+                if (data.upcomingClassCalenders.length == 0) {
                     $("#attendeeUPCalendar").css("display", "none");
                     $("#divcardbodynodata").css("display", "block");
                     $("#divcardbody").css("display", "none");
@@ -69,7 +69,7 @@ function BindHostUpcommingClasses() {
                         eventLimit: true, // allow "more" link when too many events
                         timeFormat: 'hh:mm a',
                         eventMouseover: function (data, event, view) {
-                            tooltip = '<div class="tooltiptopicevent" style="width:auto;height:auto;background:#feb811;position:absolute;z-index:10001;padding:10px 10px 10px 10px ;  line-height: 200%;">' + '' + '' + data.title + '</br>' + ' ' + ' ' + ' ' + timeConvert(data.startTime) + ' - ' + timeConvert(data.endTime) + '</div>';
+                            tooltip = '<div class="tooltiptopicevent" style="width:auto;height:auto;background:#feb811;position:absolute;z-index:10001;padding:10px 10px 10px 10px ;  line-height: 200%;">' + '' + '' + data.upcomingClassCalenders.title + '</br>' + ' ' + ' ' + ' ' + timeConvert(data.upcomingClassCalenders.startTime) + ' - ' + timeConvert(data.upcomingClassCalenders.endTime) + '</div>';
                             $("body").append(tooltip);
                             $(this).mouseover(function (e) {
                                 $(this).css('z-index', 10000);
@@ -100,7 +100,7 @@ function BindHostUpcommingClasses() {
                         viewDisplay: function () {
                             tooltip.hide()
                         },
-                        events: JSON.parse(JSON.stringify(data))
+                        events: JSON.parse(JSON.stringify(data.upcomingClassCalenders))
                     });
                 }
             },
@@ -140,7 +140,7 @@ function BindList() {
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
-                if (data.length == 0) {
+                if (data.upcomingClassCalenders.length == 0) {
                     $("#hostCWlList").css("display", "none");
                     $("#divnoofdata").css("display", "none");
                     $("#divcardbodynodata").css("display", "block");
@@ -151,18 +151,18 @@ function BindList() {
                     $("#divcardbodynodata").css("display", "none");
                     $("#divcardbody").css("display", "block");
                     $("#divnoofdata").css("display", "block");
-                    $("#spannoofdata").html(data[0].noOfData);
+                    $("#spannoofdata").html(data.upcomingClassCalenders[0].noOfData);
                     $("#spdata").html("Records found: ");
                     var trHTML = '';
-                    $.each(data, function (i, item) {
+                    $.each(data.upcomingClassCalenders, function (i, item) {
                         trHTML += '<tr class="odd list-group-item justify-content-between ocr-list-group">'
-                            + '<td><div class="sm-card-title"><a data-toggle="tooltip" class="action-inline" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Attendee/UpcomingClasses/upcomingclassdetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a></div>'
-                            + '<span class="sm-host-name"><i class="bx bxs-face"></i>' + data[i].uname + '</span>'
-                            + '<p class="card-text sm-cli-text v-ellipsis">' + data[i].courseDesc + '</p>'
+                            + '<td><div class="sm-card-title"><a data-toggle="tooltip" class="action-inline" data-placement="bottom" title="' + data.upcomingClassCalenders[i].title + '" href="' + ClientURL + '/Attendee/UpcomingClasses/upcomingclassdetail?SID=' + data.upcomingClassCalenders[i].schedularId + '" >' + data.upcomingClassCalenders[i].title + ' ' + "<span class='topic-font'>(" + '' + data.upcomingClassCalenders[i].topics + '' + ")</span>" + ' </a></div>'
+                            + '<span class="sm-host-name"><i class="bx bxs-face"></i>' + data.upcomingClassCalenders[i].uname + '</span>'
+                            + '<p class="card-text sm-cli-text v-ellipsis">' + data.upcomingClassCalenders[i].courseDesc + '</p>'
                             + '<div class="sm-bottom-info">'
-                            + '<span class="sm-host-name"> <i class="bx bx-task"></i>' + data[i].batchName + '</span> '
-                            + '<span class="sm-date"> <i class="bx bx-calendar"></i>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') + '</span>'
-                            + '<span class="sm-time"> <i class="bx bx-time"></i>' + timeConvert(data[i].startTime) + '</span></div><div style="float:right"><a data-toggle="tooltip" class="action-inline buttonstyled" data-placement="top" title="Join" target="_blank" href="' + ClientURL + '/VideoClass/MeetingUp/Index?CRID=' + data[i].classRoomId + '&Id=' + UId + '&Name=' + name + '&EmailId=' + EmailId + '&moderator=' + moderator + '&CourseId=' + data[i].courseId + '"><strong><u>Join</u> </strong></span></a></div></td>'
+                            + '<span class="sm-host-name"> <i class="bx bx-task"></i>' + data.upcomingClassCalenders[i].batchName + '</span> '
+                            + '<span class="sm-date"> <i class="bx bx-calendar"></i>' + dateFormat(data.upcomingClassCalenders[i].scheduleDate, 'dd-mmm-yy') + '</span>'
+                            + '<span class="sm-time"> <i class="bx bx-time"></i>' + timeConvert(data.upcomingClassCalenders[i].startTime) + '</span></div><div style="float:right"><a data-toggle="tooltip" class="action-inline buttonstyled" data-placement="top" title="Join" target="_blank" href="' + ClientURL + '/VideoClass/MeetingUp/Index?CRID=' + data.upcomingClassCalenders[i].classRoomId + '&Id=' + UId + '&Name=' + name + '&EmailId=' + EmailId + '&moderator=' + moderator + '&CourseId=' + data.upcomingClassCalenders[i].courseId + '"><strong><u>Join</u> </strong></span></a></div></td>'
                             + '</tr>';
                     });
                     $('#tblCourses').append(trHTML);

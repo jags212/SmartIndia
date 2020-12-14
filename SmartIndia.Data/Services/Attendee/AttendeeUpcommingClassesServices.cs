@@ -17,12 +17,13 @@ namespace SmartIndia.Data.Services.Attendee
 
         }
         [Obsolete]
-        public List<UpcomingClassCalender> BindUpcommingClasses(HostParameter hostParameter)
+        public UpcomingClassCalender_New BindUpcommingClasses(HostParameter hostParameter)
         {
             object[] objArray = new object[] {
                      "@P_ACTIONCODE",hostParameter.ACTIONCODE,
                      "@UserId",hostParameter.UserId
             };
+            UpcomingClassCalender_New upcomingClassCalender_New = new UpcomingClassCalender_New();
             try
             {
                 DynamicParameters param = objArray.ToDynamicParameters();
@@ -52,22 +53,28 @@ namespace SmartIndia.Data.Services.Attendee
                     };
                     pcomingClassCalender.Add(modal);
                 }
-                return pcomingClassCalender;
+                upcomingClassCalender_New.retOut = "Success";
+                upcomingClassCalender_New.status = "200";
+                upcomingClassCalender_New.upcomingClassCalenders = pcomingClassCalender;
             }
             catch (Exception ex)
             {
-                return null;
+                upcomingClassCalender_New.retOut = ex.Message;
+                upcomingClassCalender_New.status = "500";
+                upcomingClassCalender_New.upcomingClassCalenders = null;
             }
+            return upcomingClassCalender_New;
         }
 
         [Obsolete]
-        public List<UpcomingClassDetails> BindUpcommingClassDetail(HostParameterCourseDetail hostParameterCourseDetail)
+        public UpcomingClassDetails_New BindUpcommingClassDetail(HostParameterCourseDetail hostParameterCourseDetail)
         {
             object[] objArray = new object[] {
                      "@P_ACTIONCODE",hostParameterCourseDetail.ACTIONCODE,
                      "@UserId",hostParameterCourseDetail.UserId,
                      "@SchedularId",hostParameterCourseDetail.SchedularId
             };
+            UpcomingClassDetails_New upcomingClassDetails_New = new UpcomingClassDetails_New();
             try
             {
                 DynamicParameters param = objArray.ToDynamicParameters();
@@ -99,12 +106,17 @@ namespace SmartIndia.Data.Services.Attendee
                     };
                     upcomingClassDetails.Add(modal);
                 }
-                return upcomingClassDetails;
+                upcomingClassDetails_New.retOut = "Success";
+                upcomingClassDetails_New.status = "200";
+                upcomingClassDetails_New.upcomingClassDetails = upcomingClassDetails;
             }
             catch (Exception ex)
             {
-                return null;
+                upcomingClassDetails_New.retOut = ex.Message;
+                upcomingClassDetails_New.status = "500";
+                upcomingClassDetails_New.upcomingClassDetails = null;
             }
+            return upcomingClassDetails_New;
         }
     }
 }

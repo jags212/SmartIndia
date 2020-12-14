@@ -45,6 +45,12 @@ namespace SmartIndia.Data.Entities.Host
         public bool Status { get; set; }
 
     }
+    public class ClassWallCalender_New
+    {
+        public string retOut { get; set; }
+        public string status { get; set; }
+        public List<ClassWallCalender> classWallCalenders { get; set; }
+    }
     public class ClassWallCalender
     {
         public string title { get; set; }
@@ -64,6 +70,12 @@ namespace SmartIndia.Data.Entities.Host
         public string IsPublished { get; set; }
         public string url { get; set; }
         public string NoOfData { get; set; }
+    }
+    public class ClassWallClassDetails_New
+    {
+        public string retOut { get; set; }
+        public string status { get; set; }
+        public List<ClassWallClassDetails> classWallClassDetails { get; set; }
     }
     public class ClassWallClassDetails
     {

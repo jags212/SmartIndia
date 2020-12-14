@@ -22,7 +22,13 @@ namespace SmartIndia.Data.Entities.Attendee
         public string url { get; set; }
 
     }
-    public class AttendeeEnrollclasses
+    public class AttendeeEnrollclasses_New
+    {
+        public string retOut { get; set; }
+        public string status { get; set; }
+        public List<AttendeeEnrollclasses> attendeeEnrollclasses { get; set; }
+    }
+        public class AttendeeEnrollclasses
     {
         public string CourseId { get; set; }
         public string CourseName { get; set; }
