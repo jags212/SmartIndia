@@ -35,7 +35,7 @@ namespace SmartIndia.RestAPI.Controllers
         }
         [HttpGet("AttendeeEnrollclass")]
         [Obsolete]
-        public async Task<List<AttendeeEnrollclasses>> BindCourses([FromQuery] AttendeeParameterEnrolclass obj)
+        public async Task<AttendeeEnrollclasses_New> BindCourses([FromQuery] AttendeeParameterEnrolclass obj)
         {
             using (var attendeeEnrollClassServices = new AttendeeEnrollClassServices(connectionFactory))
             {
@@ -45,12 +45,12 @@ namespace SmartIndia.RestAPI.Controllers
         }
         [HttpGet("GetCoursedetails")]
         [Obsolete]
-        public async Task<List<HostCoursesforEnroll>> GetCoursedetail([FromQuery] HostEnrollcourse obj)
+        public async Task<HostCoursesforEnroll_New> GetCoursedetail([FromQuery] HostEnrollcourse obj)
         {
             using (var attendeeEnrollClassServices = new AttendeeEnrollClassServices(connectionFactory))
             {
                 HostCoursesforEnroll hostCourses = new HostCoursesforEnroll();
-                hostCourses = attendeeEnrollClassServices.GetCoursedetail(obj).SingleOrDefault();
+                hostCourses = attendeeEnrollClassServices.GetCoursedetail(obj).hostCoursesforEnrolls.SingleOrDefault();
                 if (hostCourses.ImageExt != null && hostCourses.ImageExt != "")
                 {
                     var imageName = hostCourses.ImageName + "." + hostCourses.ImageExt;
@@ -99,7 +99,9 @@ namespace SmartIndia.RestAPI.Controllers
                 }
                 List<HostCoursesforEnroll> list = new List<HostCoursesforEnroll>();
                 list.Add(hostCourses);
-                return await Task.FromResult(list);
+                HostCoursesforEnroll_New course = new HostCoursesforEnroll_New();
+                course.hostCoursesforEnrolls = list;
+                return await Task.FromResult(course);
             }
         }
         [HttpPost("EnrollClass")]
@@ -128,7 +130,7 @@ namespace SmartIndia.RestAPI.Controllers
         }
         [HttpGet("FilterEnrollCourses")]
         [Obsolete]
-        public async Task<List<AttendeeEnrollclasses>> EnrollCourseFilter([FromQuery]EnrollClasseFilter obj)
+        public async Task<AttendeeEnrollclasses_New> EnrollCourseFilter([FromQuery]EnrollClasseFilter obj)
         {
             using (var attendeeEnrollClassServices = new AttendeeEnrollClassServices(connectionFactory))
             {

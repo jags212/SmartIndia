@@ -19,22 +19,22 @@ function Coursedetails() {
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
-                $("#coursename").html(data[0].courseName);
-                $("#div_Course").html(data[0].courseName);
-                $("#cost").html(data[0].cost);
-                $("#topic").html("( " + data[0].topics + " )");
-                $("#startdate").html(dateFormat(data[0].startDate, 'dd-mmm-yy'));
-                $("#desc").html(data[0].courseDesc);
+                $("#coursename").html(data.hostCoursesforEnrolls[0].courseName);
+                $("#div_Course").html(data.hostCoursesforEnrolls[0].courseName);
+                $("#cost").html(data.hostCoursesforEnrolls[0].cost);
+                $("#topic").html("( " + data.hostCoursesforEnrolls[0].topics + " )");
+                $("#startdate").html(dateFormat(data.hostCoursesforEnrolls[0].startDate, 'dd-mmm-yy'));
+                $("#desc").html(data.hostCoursesforEnrolls[0].courseDesc);
 
-                if (data[0].enrolledUserId == UserID) {
+                if (data.hostCoursesforEnrolls[0].enrolledUserId == UserID) {
                     $("#div_enrol").css("display", "none");
                 }
                 else {
                     $("#div_enrol").css("display", "block");
                 }
-                if (data[0].brochureExt == "pdf") {
-                    $("#imgbrouchurepdf").attr('src', data[0].brochureUrl);
-                    $("#urlbrouchurepdf").attr('href', data[0].brochureUrl);
+                if (data.hostCoursesforEnrolls[0].brochureExt == "pdf") {
+                    $("#imgbrouchurepdf").attr('src', data.hostCoursesforEnrolls[0].brochureUrl);
+                    $("#urlbrouchurepdf").attr('href', data.hostCoursesforEnrolls[0].brochureUrl);
 
                     $("#imgbrouchure").hide();
                     $("#urlbrouchure").hide();
@@ -42,8 +42,8 @@ function Coursedetails() {
                     $("#urlbrouchurepdf").show();
                 }
                 else {
-                    $("#imgbrouchure").attr('src', data[0].brochureUrl);
-                    $("#urlbrouchure").attr('href', data[0].brochureUrl);
+                    $("#imgbrouchure").attr('src', data.hostCoursesforEnrolls[0].brochureUrl);
+                    $("#urlbrouchure").attr('href', data.hostCoursesforEnrolls[0].brochureUrl);
                     $("#imgbrouchurepdf").hide();
                     $("#urlbrouchurepdf").hide();
                     $("#imgbrouchure").show();

@@ -41,7 +41,7 @@ function BindHostUpcommingClasses() {
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
-                if (data.length == 0) {
+                if (data.classWallCalenders.length == 0) {
                     $("#hostCWCalendar").css("display", "none");
                     $("#divcardbody").css("display", "none");
                     $("#divnoofdata").css("display", "none");
@@ -69,7 +69,7 @@ function BindHostUpcommingClasses() {
                         eventLimit: true, // allow "more" link when too many events
                         timeFormat: 'hh:mm a',
                         eventMouseover: function (data, event, view) {
-                            tooltip = '<div class="tooltiptopicevent" style="width:auto;height:auto;background:#feb811;position:absolute;z-index:10001;padding:10px 10px 10px 10px ;  line-height: 200%;">' + '' + '' + data.title + '</br>' + ' ' + ' ' + ' ' + timeConvert(data.startTime) + ' - ' + timeConvert(data.endTime) + '</div>';
+                            tooltip = '<div class="tooltiptopicevent" style="width:auto;height:auto;background:#feb811;position:absolute;z-index:10001;padding:10px 10px 10px 10px ;  line-height: 200%;">' + '' + '' + data.classWallCalenders.title + '</br>' + ' ' + ' ' + ' ' + timeConvert(data.classWallCalenders.startTime) + ' - ' + timeConvert(data.classWallCalenders.endTime) + '</div>';
                             $("body").append(tooltip);
                             $(this).mouseover(function (e) {
                                 $(this).css('z-index', 10000);
@@ -100,7 +100,7 @@ function BindHostUpcommingClasses() {
                         viewDisplay: function () {
                             tooltip.hide()
                         },
-                        events: JSON.parse(JSON.stringify(data))
+                        events: JSON.parse(JSON.stringify(data.classWallCalenders))
                     });
                 }
             },
@@ -126,7 +126,7 @@ function BindList() {
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
-                if (data.length == 0) {
+                if (data.classWallClassDetails.length == 0) {
                     $("#hostCWlList").css("display", "none");
                     $("#divcardbody").css("display", "none");
                     $("#divnoofdata").css("display", "none");
@@ -137,17 +137,17 @@ function BindList() {
                     $("#divcardbodynodata").css("display", "none");
                     $("#divcardbody").css("display", "block");
                     $("#divnoofdata").css("display", "block");
-                    $("#spannoofdata").html(data[0].noOfData);
+                    $("#spannoofdata").html(data.classWallClassDetails[0].noOfData);
                     $("#spdata").html("Records found: ");
                     var trHTML = '';
 
-                    $.each(data, function (i, item) {
-                        if (data[i].status) {
-                            if (data[i].classType == "Accomplished") {
+                    $.each(data.classWallClassDetails, function (i, item) {
+                        if (data.classWallClassDetails[i].status) {
+                            if (data.classWallClassDetails[i].classType == "Accomplished") {
                                 var color = '<div class="list-color-legend col-leg-green action-inline" data-toggle="tooltip" data-placement="bottom" title="Accomplished"></div>';
                             }
                             else {
-                                if (data[i].isPublished == 2) {
+                                if (data.classWallClassDetails[i].isPublished == 2) {
                                     color = '<div class="list-color-legend col-leg-seablue action-inline" data-toggle="tooltip" data-placement="bottom" title="Reschedule"></div>';
                                 }
                                 else {
@@ -161,13 +161,13 @@ function BindList() {
 
 
                         trHTML += '<tr class="odd list-group-item justify-content-between ocr-list-group">'
-                            + '<td><div>' + color + '</div><div class="sm-card-title"><a data-toggle="tooltip" class="action-inline" data-placement="bottom" title="' + data[i].title + '" href="' + ClientURL + '/Attendee/ClassWall/ClassWallDetail?SID=' + data[i].schedularId + '" >' + data[i].title + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a></div>'
-                            + '<span class="sm-host-name"><i class="bx bxs-face"></i>' + data[i].uname + '</span>'
-                            + '<p class="card-text sm-cli-text v-ellipsis">' + data[i].courseDesc + '</p>'
+                            + '<td><div>' + color + '</div><div class="sm-card-title"><a data-toggle="tooltip" class="action-inline" data-placement="bottom" title="' + data.classWallClassDetails[i].title + '" href="' + ClientURL + '/Attendee/ClassWall/ClassWallDetail?SID=' + data.classWallClassDetails[i].schedularId + '" >' + data.classWallClassDetails[i].title + ' ' + "<span class='topic-font'>(" + '' + data.classWallClassDetails[i].topics + '' + ")</span>" + ' </a></div>'
+                            + '<span class="sm-host-name"><i class="bx bxs-face"></i>' + data.classWallClassDetails[i].uname + '</span>'
+                            + '<p class="card-text sm-cli-text v-ellipsis">' + data.classWallClassDetails[i].courseDesc + '</p>'
                             + '<div class="sm-bottom-info">'
-                            + '<span class="sm-host-name"> <i class="bx bx-task"></i>' + data[i].batchName + '</span> '
-                            + '<span class="sm-date"> <i class="bx bx-calendar"></i>' + dateFormat(data[i].scheduleDate, 'dd-mmm-yy') + '</span>'
-                            + '<span class="sm-time"> <i class="bx bx-time"></i>' + timeConvert(data[i].startTime) + '</span></div></td>'
+                            + '<span class="sm-host-name"> <i class="bx bx-task"></i>' + data.classWallClassDetails[i].batchName + '</span> '
+                            + '<span class="sm-date"> <i class="bx bx-calendar"></i>' + dateFormat(data.classWallClassDetails[i].scheduleDate, 'dd-mmm-yy') + '</span>'
+                            + '<span class="sm-time"> <i class="bx bx-time"></i>' + timeConvert(data.classWallClassDetails[i].startTime) + '</span></div></td>'
                             + '</tr>';
                     });
                     $('#tblCourses').append(trHTML);

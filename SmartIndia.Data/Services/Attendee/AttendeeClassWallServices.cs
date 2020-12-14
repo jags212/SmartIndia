@@ -20,12 +20,13 @@ namespace SmartIndia.Data.Services.Attendee
 
         }
         [Obsolete]
-        public List<ClassWallCalender> BindClassWallCallendar(HostParameter hostParameter)
+        public ClassWallCalender_New BindClassWallCallendar(HostParameter hostParameter)
         {
             object[] objArray = new object[] {
                      "@P_ACTIONCODE",hostParameter.ACTIONCODE,
                      "@UserId",hostParameter.UserId
             };
+            ClassWallCalender_New classWallCalender_New = new ClassWallCalender_New();
             try
             {
                 DynamicParameters param = objArray.ToDynamicParameters();
@@ -55,22 +56,30 @@ namespace SmartIndia.Data.Services.Attendee
                     };
                     classwallCalender.Add(modal);
                 }
-                return classwallCalender;
+                //return classwallCalender;
+                classWallCalender_New.retOut = "Success";
+                classWallCalender_New.status = "200";
+                classWallCalender_New.classWallCalenders = classwallCalender;
             }
             catch (Exception ex)
             {
-                return null;
+               
+                classWallCalender_New.retOut = ex.Message;
+                classWallCalender_New.status = "500";
+                classWallCalender_New.classWallCalenders = null;
             }
+            return classWallCalender_New;
         }
 
         [Obsolete]
-        public List<ClassWallClassDetails> BindClassWallDetail(HostParameterCourseDetail hostParameterCourseDetail)
+        public ClassWallClassDetails_New BindClassWallDetail(HostParameterCourseDetail hostParameterCourseDetail)
         {
             object[] objArray = new object[] {
                      "@P_ACTIONCODE","E",
                      "@UserId",hostParameterCourseDetail.UserId,
                      "@SchedularId",hostParameterCourseDetail.SchedularId
             };
+            ClassWallClassDetails_New classWallClassDetails_New = new ClassWallClassDetails_New();
             try
             {
                 DynamicParameters param = objArray.ToDynamicParameters();
@@ -101,12 +110,17 @@ namespace SmartIndia.Data.Services.Attendee
                     };
                     classWallDetails.Add(modal);
                 }
-                return classWallDetails;
+                classWallClassDetails_New.retOut = "Success";
+                classWallClassDetails_New.status = "200";
+                classWallClassDetails_New.classWallClassDetails = classWallDetails;
             }
             catch (Exception ex)
             {
-                return null;
+                classWallClassDetails_New.retOut = ex.Message;
+                classWallClassDetails_New.status = "500";
+                classWallClassDetails_New.classWallClassDetails = null;
             }
+            return classWallClassDetails_New;
         }
         [Obsolete]
         public List<UpcomingClassCalender> BindUpcommingClasses(HostParameter hostParameter)
