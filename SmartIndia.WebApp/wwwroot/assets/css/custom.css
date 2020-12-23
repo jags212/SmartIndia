@@ -4497,6 +4497,16 @@
         font-size: 11px;
         margin-right: 6px;
     }
+    .section-title {
+        font-size: 17px;
+    }
+    .back-to-list {
+        font-size: 14px;
+    }
+    .enroll-course-banner {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
 }
 
 @media(min-width: 768px) and (max-width: 1208px) {

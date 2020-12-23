@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/png" href="~/assets/img/favicon.png" />
 
-    <title>OCR - Attendee My Class Wall</title>
+    <title>OCR - Attendee Upcoming Classes</title>
     <!-- Vendors Min CSS -->
     <link rel="stylesheet" href="~/assets/css/vendors.min.css" />
     <!-- Fontawesome CSS -->
@@ -35,39 +35,40 @@
     <link href="~/assets/css/bootstrap-dialog.min.css" rel="stylesheet" />
     <!-- Bootstrap Datatable CSS -->
     <link rel="stylesheet" href="~/assets/css/datatables.min.css" />
+    <!-- Text Ellipsis CSS -->
+    <link rel="stylesheet" href="~/assets/css/ellipsis.css" />
     <style>
         .dataTables_filter {
             display: none;
         }
     </style>
-
 </head>
-
 <body>
+
     <!-- Main Content Wrapper -->
     <div class="d-flex mobile-d-flex flex-column">
         <div class="loader" id="img" style="display:none">
         </div>
-        <!-- Main Content Layout -->
+
         <!-- Breadcrumb Area -->
         <div class="breadcrumb-area text-center">
-            <h1>My Class Wall</h1>
+            <h1>Upcoming Classes</h1>
             <ol class="breadcrumb">
                 <li class="item">
                     <a href="attendee-dashboard.html"><i class='bx bx-home-alt'></i></a>
                 </li>
                 <li class="item">Dashboard</li>
-                <li class="item">My Class Wall</li>
+                <li class="item">Upcoming Classes</li>
             </ol>
         </div>
         <!-- End Breadcrumb Area -->
         <!-- Start -->
-
+        <!-- Calendar -->
         <div class="card mb-30">
             <div class="card-body" id="divcardbody">
                 <div class="upcoming-section">
-                    <span id="hostClassWallList" class="up-active" data-toggle="tooltip" data-placement="bottom" title="List"><i class="bx bx-list-ul"></i></span>
-                    <span id="hostClassWallCalendar" data-toggle="tooltip" data-placement="bottom" title="Calendar"><i class="bx bx-calendar"></i></span>
+                    <span id="attendeeUpcomingList" class="up-active" data-toggle="tooltip" data-placement="bottom" title="List"><i class="bx bx-list-ul"></i></span>
+                    <span id="attendeeUpcomingCalendar" data-toggle="tooltip" data-placement="bottom" title="Calendar"><i class="bx bx-calendar"></i></span>
                 </div>
                 <form>
                     <div class="ocr-clearable">
@@ -76,29 +77,12 @@
                         <span class="class-search-icon" data-toggle="tooltip" data-placement="bottom" title="Search"><i class="bx bx-search"></i></span>
                     </div>
                 </form>
-                <div class="color-legend-section">
-                    <div class="color-legend col-leg-green"></div>
-                    <div class="color-legend-text">
-                        Accomplished
-                    </div>
-                    <div class="color-legend col-leg-yellow"></div>
-                    <div class="color-legend-text">
-                        Upcoming
-                    </div>
-                    <div class="color-legend col-leg-seablue"></div>
-                    <div class="color-legend-text">
-                        Reschedule
-                    </div>
-                    <div class="color-legend col-leg-grey"></div>
-                    <div class="color-legend-text">
-                        Cancel
-                    </div>
-                </div>
                 <div class="clearfix"></div>
+                <span id="sp_nodata"></span>
                 <!-- List -->
                 <div id="divnoofdata" class="noofdatadiv">
                 </div>
-                <div id="hostCWlList">
+                <div id="attendeeUPlList">
                     <div class="col-sm-12 col-lg-12 col-md-12 res-mb-col-12">
                         <div class="list-group">
                             <table class="" id="tblCourses">
@@ -113,10 +97,8 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Calendar -->
-                <div id="hostCWCalendar"></div>
-
+                <div id="attendeeUPCalendar"></div>
             </div>
             <div class="card-body" id="divcardbodynodata">
                 <div id="sp_nodata" class="nodata"></div>
@@ -125,7 +107,6 @@
         <!-- End -->
     </div>
 
-    <!-- End Main Content Wrapper -->
     <!-- Footer Scripts -->
     <script type="text/javascript">
         ServiceURL = "@Configuration.GetSection("HostURL")["ServiceURL"]";
@@ -184,19 +165,17 @@
     <script src="~/ApplicationScripts/Host/UpdateUserRoleId.js"></script>
     <script src="~/ApplicationScripts/UserRegistration/user-details.js"></script>
 
-    <script src="~/ApplicationScripts/Attendee/attendee-classwall-webview.js"></script>
     <script src="~/ApplicationScripts/Common/date-format-converter.js"></script>
-    <!-- Clearable Input JS -->
-    <script src="~/assets/js/clearable-input.js"></script>
     <!-- Calendar JS -->
     <script src="~/assets/calendar/js/moment.min.js"></script>
     <script src="~/assets/calendar/js/fullcalendar.min.js"></script>
+    <script src="~/ApplicationScripts/Attendee/upcoming-classes-webview.js"></script>
+    <!-- Clearable Input JS -->
+    <script src="~/assets/js/clearable-input.js"></script>
     <!-- Text Ellipsis JS -->
-
+    <script src="~/assets/js/jquery.ellipsis.js"></script>
     <script>
-        $('li').click(function () {
-            $(this).addClass('active').siblings().removeClass('active');
-        });
+        $('.two-lines').ellipsis({ lines: 2 });
     </script>
     <script src="~/assets/js/jquery.vEllipsis.js"></script>
     <script>
@@ -207,7 +186,22 @@
             });
         });
     </script>
+    <script>
+        $('#searchlist').keyup(function () {
 
+            var that = this;
+            all_list = $('#attendeeUPlList ul > li');
+
+            var matching_list = all_list.filter(function (i, li) {
+                var list_item_text = $(li).text().toUpperCase();
+                var search_text = that.value.toUpperCase();
+                return ~list_item_text.indexOf(search_text);
+            });
+
+            all_list.hide();
+            matching_list.show();
+
+        });
+    </script>
 </body>
 </html>
-
