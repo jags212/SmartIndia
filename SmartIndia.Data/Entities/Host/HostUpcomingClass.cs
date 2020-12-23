@@ -46,6 +46,12 @@ namespace SmartIndia.Data.Entities.Host
         public string BrouchureUrl { get; set; }
 
     }
+    public class UpcomingClassCalender_New
+    {
+        public string retOut { get; set; }
+        public string status { get; set; }
+        public List<UpcomingClassCalender> upcomingClassCalenders { get; set; }
+    }
     public class UpcomingClassCalender
     { 
         public string title { get; set; }
@@ -64,6 +70,12 @@ namespace SmartIndia.Data.Entities.Host
         public string url { get; set; }
         public string ClassRoomId { get; set; }
         public string NoOfData { get; set; }
+    }
+    public class UpcomingClassDetails_New
+    {
+        public string retOut { get; set; }
+        public string status { get; set; }
+        public List<UpcomingClassDetails> upcomingClassDetails { get; set; }
     }
     public class UpcomingClassDetails
     {

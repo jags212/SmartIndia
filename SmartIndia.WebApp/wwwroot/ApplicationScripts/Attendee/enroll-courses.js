@@ -26,8 +26,8 @@ function BindList() {
                 $("#divnoofdata").css("display", "block");
                 $('#tblCourses tbody').empty();
                 var trHTML = '';
-                $.each(data, function (i, item) {
-                    if (data[i].attendeeUserId == UId) {
+                $.each(data.attendeeEnrollclasses, function (i, item) {
+                    if (data.attendeeEnrollclasses[i].attendeeUserId == UId) {
                         var fab = '<i class="bx bxs-star">';
                         var toltip = 'Remove from your favorite';
                     }
@@ -35,17 +35,17 @@ function BindList() {
                         var fab = '<i class="bx bx-star">';
                         var toltip = 'Add to Favorite';
                     }
-                    $("#spannoofdata").html(data[0].noOfData);
+                    $("#spannoofdata").html(data.attendeeEnrollclasses[0].noOfData);
                     $("#spdata").html("Records found: ");
                     trHTML += '<tr class="odd list-group-item justify-content-between ocr-list-group">'
-                        + '<td><div class="sm-card-title"><a data-toggle="tooltip" class="action-inline" data-placement="bottom" title="' + data[i].courseName + '" href="' + ClientURL + '/Attendee/EnrollCourses/EnrollCourseDetails?SID=' + data[i].courseId + '&bt=' + data[i].batchName + '" >' + data[i].courseName + ' ' + "<span class='topic-font'>(" + '' + data[i].topics + '' + ")</span>" + ' </a></div>'
-                        + '<div class="enroll-course-show"><span onclick="AddShowFavorite(' + data[i].courseId + ',' + "'" + '' + data[i].batchName + '' + "'" + ')" class="add-to-favorite" data - toggle="tooltip" data - placement="bottom" title = "' + toltip+'">' + fab + '</i></span></div>'
-                        + '<span class="sm-host-name"><i class="bx bxs-face"></i>' + data[i].uname + '</span>'
-                        + '<p class="card-text sm-cli-text v-ellipsis">' + data[i].courseDesc + '</p>'
+                        + '<td><div class="sm-card-title"><a data-toggle="tooltip" class="action-inline" data-placement="bottom" title="' + data.attendeeEnrollclasses[i].courseName + '" href="' + ClientURL + '/Attendee/EnrollCourses/EnrollCourseDetails?SID=' + data.attendeeEnrollclasses[i].courseId + '&bt=' + data.attendeeEnrollclasses[i].batchName + '" >' + data.attendeeEnrollclasses[i].courseName + ' ' + "<span class='topic-font'>(" + '' + data.attendeeEnrollclasses[i].topics + '' + ")</span>" + ' </a></div>'
+                        + '<div class="enroll-course-show"><span onclick="AddShowFavorite(' + data.attendeeEnrollclasses[i].courseId + ',' + "'" + '' + data.attendeeEnrollclasses[i].batchName + '' + "'" + ')" class="add-to-favorite" data - toggle="tooltip" data - placement="bottom" title = "' + toltip+'">' + fab + '</i></span></div>'
+                        + '<span class="sm-host-name"><i class="bx bxs-face"></i>' + data.attendeeEnrollclasses[i].uname + '</span>'
+                        + '<p class="card-text sm-cli-text v-ellipsis">' + data.attendeeEnrollclasses[i].courseDesc + '</p>'
                         + '<div class="sm-bottom-info">'
-                        + '<span class="sm-host-name"> <i class="bx bx-task"></i>' + data[i].batchName + '</span> '
-                        + '<span class="sm-date"> <i class="bx bx-calendar"></i>' + dateFormat(data[i].startDate, 'dd-mmm-yy') + ' To ' + dateFormat(data[i].endDate, 'dd-mmm-yy') + '</span>'
-                        + '<span class="sm-time"> <i class="bx bx-time"></i>' + data[i].duration + ' Days</span></div></td>'
+                        + '<span class="sm-host-name"> <i class="bx bx-task"></i>' + data.attendeeEnrollclasses[i].batchName + '</span> '
+                        + '<span class="sm-date"> <i class="bx bx-calendar"></i>' + dateFormat(data.attendeeEnrollclasses[i].startDate, 'dd-mmm-yy') + ' To ' + dateFormat(data.attendeeEnrollclasses[i].endDate, 'dd-mmm-yy') + '</span>'
+                        + '<span class="sm-time"> <i class="bx bx-time"></i>' + data.attendeeEnrollclasses[i].duration + ' Days</span></div></td>'
                         + '</tr>';
                 });
                 $('#tblCourses').append(trHTML);

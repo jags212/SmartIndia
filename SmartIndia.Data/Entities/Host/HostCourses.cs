@@ -53,6 +53,12 @@ namespace SmartIndia.Data.Entities.Host
 
 
     }
+    public class HostCoursesforEnroll_New
+    {
+        public string retOut { get; set; }
+        public string status { get; set; }
+        public List<HostCoursesforEnroll> hostCoursesforEnrolls { get; set; }
+    }
     public class HostCoursesforEnroll
     {
         [Key]

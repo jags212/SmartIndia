@@ -34,7 +34,7 @@ namespace SmartIndia.RestAPI.Controllers
 
         [HttpGet("AttendeeUpcomingClass")]
         [Obsolete]
-        public async Task<List<UpcomingClassCalender>> BindUpcommingClasses([FromQuery] HostParameter obj)
+        public async Task<UpcomingClassCalender_New> BindUpcommingClasses([FromQuery] HostParameter obj)
         {
             obj.Curl = _configuration.GetSection("HostURL")["ClientURL"];
             using (var attendeeUpcommingClassesServices = new AttendeeUpcommingClassesServices(connectionFactory))
@@ -45,12 +45,12 @@ namespace SmartIndia.RestAPI.Controllers
         }
         [HttpGet("AttendeeUpcommingClassDetail")]
         [Obsolete]
-        public async Task<List<UpcomingClassDetails>> BindUpcommingClassDetail([FromQuery] HostParameterCourseDetail obj)
+        public async Task<UpcomingClassDetails_New> BindUpcommingClassDetail([FromQuery] HostParameterCourseDetail obj)
         {
             using (var attendeeUpcommingClassesServices = new AttendeeUpcommingClassesServices(connectionFactory))
             {
                 UpcomingClassDetails hostCourses = new UpcomingClassDetails();
-                hostCourses = attendeeUpcommingClassesServices.BindUpcommingClassDetail(obj).SingleOrDefault();
+                hostCourses = attendeeUpcommingClassesServices.BindUpcommingClassDetail(obj).upcomingClassDetails.SingleOrDefault();
 
                 if (hostCourses.ImageExt != null && hostCourses.ImageExt != "")
                 {
@@ -98,8 +98,10 @@ namespace SmartIndia.RestAPI.Controllers
                     }
                 }
                 List<UpcomingClassDetails> list = new List<UpcomingClassDetails>();
+                UpcomingClassDetails_New cdetails = new UpcomingClassDetails_New();
+                cdetails.upcomingClassDetails = list;
                 list.Add(hostCourses);
-                return await Task.FromResult(list);
+                return await Task.FromResult(cdetails);
             }
         }
     }

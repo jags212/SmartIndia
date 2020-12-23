@@ -36,7 +36,7 @@ namespace SmartIndia.RestAPI.Controllers
 
         [HttpGet("BindClassWallCallendar")]
         [Obsolete]
-        public async Task<List<ClassWallCalender>> BindClassWallCallendar([FromQuery] HostParameter obj)
+        public async Task<ClassWallCalender_New> BindClassWallCallendar([FromQuery] HostParameter obj)
         {
             obj.Curl = _configuration.GetSection("HostURL")["ClientURL"];
             using (var attendeeClassWallServices = new AttendeeClassWallServices(connectionFactory))
@@ -47,7 +47,7 @@ namespace SmartIndia.RestAPI.Controllers
         }
         [HttpGet("BindClassWallList")]
         [Obsolete]
-        public async Task<List<ClassWallClassDetails>> BindClassWallDetail([FromQuery] HostParameterCourseDetail obj)
+        public async Task<ClassWallClassDetails_New> BindClassWallDetail([FromQuery] HostParameterCourseDetail obj)
         {
             using (var attendeeClassWallServices = new AttendeeClassWallServices(connectionFactory))
             {
@@ -66,12 +66,12 @@ namespace SmartIndia.RestAPI.Controllers
         }
         [HttpGet("ClasswallDetail")]
         [Obsolete]
-        public async Task<List<UpcomingClassDetails>> BindUpcommingClassDetail([FromQuery] HostParameterCourseDetail obj)
+        public async Task<UpcomingClassDetails_New> BindUpcommingClassDetail([FromQuery] HostParameterCourseDetail obj)
         {
             using (var attendeeUpcommingClassesServices = new AttendeeUpcommingClassesServices(connectionFactory))
             {
                 UpcomingClassDetails hostCourses = new UpcomingClassDetails();
-                hostCourses = attendeeUpcommingClassesServices.BindUpcommingClassDetail(obj).SingleOrDefault();
+                hostCourses = attendeeUpcommingClassesServices.BindUpcommingClassDetail(obj).upcomingClassDetails.SingleOrDefault();
 
                 if (hostCourses.ImageExt != null && hostCourses.ImageExt != "")
                 {
@@ -119,8 +119,10 @@ namespace SmartIndia.RestAPI.Controllers
                     }
                 }
                 List<UpcomingClassDetails> list = new List<UpcomingClassDetails>();
+                UpcomingClassDetails_New cdetails = new UpcomingClassDetails_New();
+                cdetails.upcomingClassDetails=list;
                 list.Add(hostCourses);
-                return await Task.FromResult(list);
+                return await Task.FromResult(cdetails);
             }
         }
     }

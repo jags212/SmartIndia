@@ -22,11 +22,12 @@ namespace SmartIndia.Data.Services.Attendee
 
         }
         [Obsolete]
-        public List<AttendeeEnrollclasses> BindCourses(AttendeeParameterEnrolclass attendeeParameterEnrolclass)
+        public AttendeeEnrollclasses_New BindCourses(AttendeeParameterEnrolclass attendeeParameterEnrolclass)
         {
             object[] objArray = new object[] {
                      "@P_ACTIONCODE",attendeeParameterEnrolclass.ACTIONCODE
             };
+            AttendeeEnrollclasses_New enrollclasses_New = new AttendeeEnrollclasses_New();
             try
             {
                 DynamicParameters param = objArray.ToDynamicParameters();
@@ -55,22 +56,29 @@ namespace SmartIndia.Data.Services.Attendee
                     };
                     Enrollclasses.Add(modal);
                 }
-                return Enrollclasses;
+                enrollclasses_New.retOut = "Success";
+                enrollclasses_New.status = "200";
+                enrollclasses_New.attendeeEnrollclasses = Enrollclasses;
+                
             }
             catch (Exception ex)
             {
-                return null;
+                enrollclasses_New.retOut = ex.Message;
+                enrollclasses_New.status = "500";
+                enrollclasses_New.attendeeEnrollclasses = null;
             }
+            return enrollclasses_New;
         }
 
         [Obsolete]
-        public List<HostCoursesforEnroll> GetCoursedetail(HostEnrollcourse hostParameter)
+        public HostCoursesforEnroll_New GetCoursedetail(HostEnrollcourse hostParameter)
         {
             object[] objArray = new object[] {
                      "@P_ACTIONCODE",hostParameter.ACTIONCODE,//D
                      "@CourseId",hostParameter.CourseId,
                      "@BatchName",hostParameter.BatchName
             };
+            HostCoursesforEnroll_New hostCoursesforEnroll_New = new HostCoursesforEnroll_New();
             try
             {
                 DynamicParameters param = objArray.ToDynamicParameters();
@@ -104,12 +112,17 @@ namespace SmartIndia.Data.Services.Attendee
                     };
                     HostCourses.Add(modal);
                 }
-                return HostCourses;
+                hostCoursesforEnroll_New.retOut = "Success";
+                hostCoursesforEnroll_New.status = "200";
+                hostCoursesforEnroll_New.hostCoursesforEnrolls = HostCourses;
             }
             catch (Exception ex)
             {
-                return null;
+                hostCoursesforEnroll_New.retOut = ex.Message;
+                hostCoursesforEnroll_New.status = "500";
+                hostCoursesforEnroll_New.hostCoursesforEnrolls = null;
             }
+            return hostCoursesforEnroll_New;
         }
         
         public ReturnParamMsg EnrollClasses(EnrollClasses enrollClasses)
@@ -197,7 +210,7 @@ namespace SmartIndia.Data.Services.Attendee
             {
                 retParamMsg = new ReturnParamMsg
                 {
-                    retOut = "",
+                    retOut = ex.Message,
                     status = "500"
                 };
             }
@@ -205,7 +218,7 @@ namespace SmartIndia.Data.Services.Attendee
         }
 
         [Obsolete]
-        public List<AttendeeEnrollclasses> EnrollCourseFilter(EnrollClasseFilter enrollClasseFilter, string CUrl)
+        public AttendeeEnrollclasses_New EnrollCourseFilter(EnrollClasseFilter enrollClasseFilter, string CUrl)
         {
             object[] objArray = new object[] {
                      "@ACTION",enrollClasseFilter.ACTION,
@@ -216,6 +229,7 @@ namespace SmartIndia.Data.Services.Attendee
                      "@MaxPrice",enrollClasseFilter.MaxPrice,
                      "@UserId",enrollClasseFilter.UserId
             };
+            AttendeeEnrollclasses_New enrollclasses_New = new AttendeeEnrollclasses_New();
             try
             {
                 DynamicParameters param = objArray.ToDynamicParameters();
@@ -244,12 +258,18 @@ namespace SmartIndia.Data.Services.Attendee
                     };
                     Enrollclasses.Add(modal);
                 }
-                return Enrollclasses;
+                
+                enrollclasses_New.retOut = "Success";
+                enrollclasses_New.status = "200";
+                enrollclasses_New.attendeeEnrollclasses = Enrollclasses;
             }
             catch (Exception ex)
             {
-                return null;
+                enrollclasses_New.retOut = ex.Message;
+                enrollclasses_New.status = "500";
+                enrollclasses_New.attendeeEnrollclasses = null;
             }
+            return enrollclasses_New;
         }
     }
 }
