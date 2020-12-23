@@ -4286,6 +4286,19 @@
     font-size: 15px;
     font-weight: 700;
 }
+.sidemenu-area.toggle-sidemenu-area .sidemenu-body .sidemenu-nav .nav-active .menu-title {
+    display: none;
+}
+.sidemenu-area.toggle-sidemenu-area .sidemenu-body .sidemenu-nav .nav-active::after {
+    display: none;
+}
+.sidemenu-area:hover.toggle-sidemenu-area .sidemenu-nav .nav-active .menu-title {
+    display: inline-block;
+}
+.sidemenu-area:hover.toggle-sidemenu-area .sidemenu-nav .nav-active::after {
+    display: block;
+}
+
 /*------------------- Responsive ------------------------------------*/
 @media(min-width: 320px) and (max-width: 767px) {
     .social-login-btn {
