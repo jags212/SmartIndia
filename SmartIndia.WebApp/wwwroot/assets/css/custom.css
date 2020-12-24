@@ -1523,7 +1523,7 @@
 .enroll-course-banner {
     position: absolute;
     right: 9%;
-    top: 3%;
+    top: 7%;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     border: none;
@@ -3756,7 +3756,7 @@
 }
 
 #hostDashlList {
-    height: 865px;
+    height: 750px;
     overflow: auto;
 }
 
@@ -4286,6 +4286,22 @@
     font-size: 15px;
     font-weight: 700;
 }
+.sidemenu-area.toggle-sidemenu-area .sidemenu-body .sidemenu-nav .nav-active .menu-title {
+    display: none;
+}
+
+.sidemenu-area.toggle-sidemenu-area .sidemenu-body .sidemenu-nav .nav-active::after {
+    display: none;
+}
+
+.sidemenu-area:hover.toggle-sidemenu-area .sidemenu-nav .nav-active .menu-title {
+    display: inline-block;
+}
+
+.sidemenu-area:hover.toggle-sidemenu-area .sidemenu-nav .nav-active::after {
+    display: block;
+}
+
 /*------------------- Responsive ------------------------------------*/
 @media(min-width: 320px) and (max-width: 767px) {
     .social-login-btn {
@@ -4413,6 +4429,84 @@
     .cart-table {
         margin-bottom: 25px;
     }
+    .ocr-clearable
+    {
+        width: 100%;
+    }
+    .dashboard-panel-search {
+        width: 100%;
+    }
+    .class-search-icon {
+        top: -37px;
+        left: 87%;
+    }
+    .color-legend-section {
+        position: relative;
+        top: -20px;
+        margin-left: 0;
+    }
+    .res-mb-col-12 {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    .pagination {
+        display: list-item;
+    }
+    #hostCWlList , #attendeeUPlList {
+        margin-top: -9px;
+    }
+    .res-cw-enroll-course-banner {
+        top: 4%;
+    }
+    .res-com-enroll-course-banner {
+        top: 12%;
+    }
+    .course-thumbnail {
+        margin-top: 0;
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+    .course-thumbnail img {
+        width: 100%;
+        height: auto;
+    }
+    .sm-batch-name {
+        float: left;
+        padding-left: 0;
+        padding-top: 10px;
+    }
+    .res-mt-40 {
+        margin-top: 40px;
+    }
+    .sm-card-title {
+        font-size: 1rem;
+    }
+    .topic-font {
+        font-size: .9rem;
+    }
+    .sm-time {
+        margin-left: 0;
+        margin-top: 5px;
+        display: block;
+    }
+    .color-legend {
+        width: 8px;
+        height: 8px;
+    }
+    .color-legend-text {
+        font-size: 11px;
+        margin-right: 6px;
+    }
+    .section-title {
+        font-size: 17px;
+    }
+    .back-to-list {
+        font-size: 14px;
+    }
+    .enroll-course-banner {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
 }
 
 @media(min-width: 768px) and (max-width: 1208px) {
@@ -4456,6 +4550,10 @@
     .panel-search-icon {
         top: -3.3%;
         left: 27.5%;
+    }
+    .course-thumbnail img {
+        width: 340px;
+        height: 300px;
     }
 }
 
