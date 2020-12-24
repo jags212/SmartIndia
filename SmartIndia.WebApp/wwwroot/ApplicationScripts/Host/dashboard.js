@@ -109,9 +109,6 @@ function BindHostUpcommingClasses() {
 
 // Class Popularity JS
 if (document.getElementById("class-popularity-bar-chartt")) {
-
-
-
     $(function () {
         var data = getData();
     });

@@ -3,82 +3,82 @@
     jQuery(document).on('ready', function() {
 
         // Basic Area Chart JS
-        if(document.getElementById("apex-basic-area-chart")){
-            var options = {
-                chart: {
-                    height: 374,
-                    type: 'area',
-                    zoom: {
-                        enabled: false
-                    }
-                },
-                dataLabels: {
-                    enabled: false
-                },
-                stroke: {
-                    curve: 'straight'
-                },
-                series: [{
-                    name: "Host",
-                    data: series.monthDataSeries1.prices
-                }],
-                title: {
-                    text: '',
-                    align: 'left',
-                    style: {
-                        fontSize: "13px",
-                        color: '#666'
-                    }
-                },
-                subtitle: {
-                    text: '',
-                    align: 'left'
-                },
-                labels: series.monthDataSeries1.dates,
-                xaxis: {
-                    type: 'datetime',
-                    labels: {
-                        style: {
-                            colors: '#686c71',
-                            fontSize: '12px',
-                        },
-                    },
-                    axisBorder: {
-                        show: true,
-                        color: '#f6f6f7',
-                        height: 1,
-                        width: '100%',
-                        offsetX: 0,
-                        offsetY: 0
-                    },
-                },
-                yaxis: {
-                    opposite: true,
-                    labels: {
-                        style: {
-                            color: '#686c71',
-                            fontSize: '12px',
-                        },
-                    },
-                    axisBorder: {
-                        show: false,
-                        color: '#f6f6f7',
-                    },
-                },
-                legend: {
-                    horizontalAlign: 'left'
-                },
-                grid: {
-                    show: true,
-                    borderColor: '#f6f6f7',
-                },
-            }
-            var chart = new ApexCharts(
-                document.querySelector("#apex-basic-area-chart"),
-                options
-            );
-            chart.render();
-        }
+        //if(document.getElementById("apex-basic-area-chart")){
+        //    var options = {
+        //        chart: {
+        //            height: 374,
+        //            type: 'area',
+        //            zoom: {
+        //                enabled: false
+        //            }
+        //        },
+        //        dataLabels: {
+        //            enabled: false
+        //        },
+        //        stroke: {
+        //            curve: 'straight'
+        //        },
+        //        series: [{
+        //            name: "Host",
+        //            data: series.monthDataSeries1.prices
+        //        }],
+        //        title: {
+        //            text: '',
+        //            align: 'left',
+        //            style: {
+        //                fontSize: "13px",
+        //                color: '#666'
+        //            }
+        //        },
+        //        subtitle: {
+        //            text: '',
+        //            align: 'left'
+        //        },
+        //        labels: series.monthDataSeries1.dates,
+        //        xaxis: {
+        //            type: 'datetime',
+        //            labels: {
+        //                style: {
+        //                    colors: '#686c71',
+        //                    fontSize: '12px',
+        //                },
+        //            },
+        //            axisBorder: {
+        //                show: true,
+        //                color: '#f6f6f7',
+        //                height: 1,
+        //                width: '100%',
+        //                offsetX: 0,
+        //                offsetY: 0
+        //            },
+        //        },
+        //        yaxis: {
+        //            opposite: true,
+        //            labels: {
+        //                style: {
+        //                    color: '#686c71',
+        //                    fontSize: '12px',
+        //                },
+        //            },
+        //            axisBorder: {
+        //                show: false,
+        //                color: '#f6f6f7',
+        //            },
+        //        },
+        //        legend: {
+        //            horizontalAlign: 'left'
+        //        },
+        //        grid: {
+        //            show: true,
+        //            borderColor: '#f6f6f7',
+        //        },
+        //    }
+        //    var chart = new ApexCharts(
+        //        document.querySelector("#apex-basic-area-chart"),
+        //        options
+        //    );
+        //    chart.render();
+        //}
 
         // Spline Area Chart JS
         if(document.getElementById("apex-spline-area-chart")){
