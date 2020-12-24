@@ -20,5 +20,14 @@ namespace SmartIndia.WebApp.Areas.Attendee.Controllers
             ViewBag.id = SID;
             return View();
         }
+        public IActionResult UpcomingClassesWebView()
+        {
+            return View();
+        }
+        public IActionResult UpcomingClassDetailWebView(string SID)
+        {
+            ViewBag.id = SID;
+            return View();
+        }
     }
 }
