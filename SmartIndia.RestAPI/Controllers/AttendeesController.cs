@@ -63,5 +63,15 @@ namespace SmartIndia.RestAPI.Controllers
 
             }
         }
+        [HttpGet("BindMonthlyRevienue")]// Course wise attendee
+        [Obsolete]
+        public async Task<List<GetMonthlyRevienue>> BindMonthlyRevienue([FromQuery] HostParameter obj)
+        {
+            using (var attendeesServices = new AttendeesServices(connectionFactory))
+            {
+                return await Task.FromResult(attendeesServices.BindMonthlyRevienue(obj));
+
+            }
+        }
     }
 }
