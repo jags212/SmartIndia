@@ -162,58 +162,58 @@ if (document.getElementById("class-analytics-chart")) {
 //}
 
 // Revenue Growth Chart JS
-if (document.getElementById("host-revenue-growth-chart")) {
-    var options = {
-        chart: {
-            height: 395,
-            type: 'line',
-            shadow: {
-                enabled: false,
-                color: '#eeeeee',
-                top: 3,
-                left: 2,
-                blur: 3,
-                opacity: 1
-            },
-        },
-        stroke: {
-            width: 7,
-            curve: 'smooth'
-        },
-        series: [{
-            name: 'Revenue Growth',
-            data: [0, 5000, 7000, 10000, 15000, 9000, 11000, 13000, 20000, 25000, 27000, 30000]
-        }],
-        xaxis: {
-            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-        },
-        fill: {
-            type: 'gradient',
-            gradient: {
-                shade: 'dark',
-                gradientToColors: ['#1da1f2'],
-                shadeIntensity: 1,
-                type: 'horizontal',
-                opacityFrom: 1,
-                opacityTo: 1,
-                stops: [100, 100, 100, 100],
-            },
-        },
-        markers: {
-            size: 4,
-            opacity: 0.9,
-            colors: ["#1da1f2"],
-            strokeColor: "#ffffff",
-            strokeWidth: 2,
+//if (document.getElementById("host-revenue-growth-chart")) {
+//    var options = {
+//        chart: {
+//            height: 395,
+//            type: 'line',
+//            shadow: {
+//                enabled: false,
+//                color: '#eeeeee',
+//                top: 3,
+//                left: 2,
+//                blur: 3,
+//                opacity: 1
+//            },
+//        },
+//        stroke: {
+//            width: 7,
+//            curve: 'smooth'
+//        },
+//        series: [{
+//            name: 'Revenue Growth',
+//            data: [0, 5000, 7000, 10000, 15000, 9000, 11000, 13000, 20000, 25000, 27000, 30000]
+//        }],
+//        xaxis: {
+//            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+//        },
+//        fill: {
+//            type: 'gradient',
+//            gradient: {
+//                shade: 'dark',
+//                gradientToColors: ['#1da1f2'],
+//                shadeIntensity: 1,
+//                type: 'horizontal',
+//                opacityFrom: 1,
+//                opacityTo: 1,
+//                stops: [100, 100, 100, 100],
+//            },
+//        },
+//        markers: {
+//            size: 4,
+//            opacity: 0.9,
+//            colors: ["#1da1f2"],
+//            strokeColor: "#ffffff",
+//            strokeWidth: 2,
 
-            hover: {
-                size: 7,
-            }
-        },
-    }
-    var chart = new ApexCharts(
-        document.querySelector("#host-revenue-growth-chart"),
-        options
-    );
-    chart.render();
-}
+//            hover: {
+//                size: 7,
+//            }
+//        },
+//    }
+//    var chart = new ApexCharts(
+//        document.querySelector("#host-revenue-growth-chart"),
+//        options
+//    );
+//    chart.render();
+//}

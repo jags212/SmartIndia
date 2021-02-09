@@ -146,6 +146,37 @@ namespace SmartIndia.Data.Services.Host
                 return null;
             }
         }
+        [Obsolete]
+        public List<GetMonthlyRevienue> BindMonthlyRevienue(HostParameter hostParameter)
+        {
+            object[] objArray = new object[] {
+                     "@P_ACTIONCODE",hostParameter.ACTIONCODE,//R
+                     "@UserId",hostParameter.UserId
+            };
+            try
+            {
+                DynamicParameters param = objArray.ToDynamicParameters();
+                var result = DBConnection.Query<GetMonthlyRevienue>("USP_ATTENDEEDETAILS_ACTION", param, commandType: CommandType.StoredProcedure).ToList();
+                List<GetMonthlyRevienue> GetMonthlyRevienues = new List<GetMonthlyRevienue>();
+                foreach (var item in result)
+                {
+                    var modal = new GetMonthlyRevienue()
+                    {
+                        MonthName = item.MonthName,
+                        Month = item.Month,
+                        MonthlyRevienue = item.MonthlyRevienue,
+                    };
+                    GetMonthlyRevienues.Add(modal);
+                }
+                return GetMonthlyRevienues;
+
+
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 
 }

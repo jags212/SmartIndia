@@ -21,6 +21,12 @@ namespace SmartIndia.Data.Entities.Host
         public string CourseName { get; set; }
         public string NoOfClass { get; set; }
     }
+    public class GetMonthlyRevienue
+    {
+        public string MonthName { get; set; }
+        public int Month { get; set; }
+        public decimal MonthlyRevienue { get; set; }
+    }
     public class GetNoofHost
     {
         public string ACTIONCODE { get; set; }

@@ -12,4 +12,13 @@ namespace SmartIndia.RestAPI
 
         public string Summary { get; set; }
     }
+    public class MobWebViewURL
+    {
+        public int SlNo { get; set; }
+       
+
+        public string LinkName { get; set; }
+
+        public string URLName { get; set; }
+    }
 }
