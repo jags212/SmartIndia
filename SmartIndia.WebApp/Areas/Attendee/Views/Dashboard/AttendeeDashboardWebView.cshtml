@@ -1,4 +1,5 @@
-﻿@using Microsoft.Extensions.Configuration
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Microsoft.Extensions.Configuration
 @inject IConfiguration Configuration
 @{
     Layout = null;
@@ -7,8 +8,10 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
     <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width" />
     <meta charset="utf-8">
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -41,10 +44,55 @@
         }
     </style>
 
-</head>
 
+
+
+    <link rel="stylesheet" href="~/assets/calendar/css/fullcalendar.css" />
+    <link rel="stylesheet" href="~/assets/calendar/css/fullcalendar.print.css" media="print" />
+
+    <style>
+        .dataTables_filter {
+            display: none;
+        }
+    </style>
+
+
+
+
+
+    <!-- ApexCharts JS -->
+    <script src="~/assets/js/apexcharts/apexcharts.min.js"></script>
+    <!-- ChartJS -->
+    <script src="~/assets/js/chartjs/chartjs.min.js"></script>
+    <!-- Calendar JS -->
+    <script src="~/assets/calendar/js/moment.min.js"></script>
+    <script src="~/assets/calendar/js/fullcalendar.min.js"></script>
+    <!-- Dashboard JS -->
+    <script src="~/ApplicationScripts/Common/date-format-converter.js"></script>
+
+    <script src="~/ApplicationScripts/Host/dashboard.js"></script>
+    <script>
+            $(document).ready(function () {
+                loadNavigation('Dashboard', 'host-dash');
+            });
+    </script>
+
+    <script src="~/assets/js/jquery.vEllipsis.js"></script>
+
+
+    <script>
+            $(document).ready(function () {
+                $().vEllipsis({
+                    'lines': 2,
+                    'responsive': true
+                });
+            });
+    </script>
+
+
+
+</head>
 <body>
-    <!-- Main Content Wrapper -->
     <div class="modal fade" id="regimsgModal" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -143,8 +191,7 @@
         </div>
     </div>
 
-    <!-- End Main Content Wrapper -->
-    <!-- Footer Scripts -->
+    <!-- End -->
     <script type="text/javascript">
         ServiceURL = "@Configuration.GetSection("HostURL")["ServiceURL"]";
         ClientURL = "@Configuration.GetSection("HostURL")["ClientURL"]";
@@ -214,6 +261,7 @@
     <script src="~/ApplicationScripts/Host/UpdateUserRoleId.js"></script>
     <script src="~/ApplicationScripts/UserRegistration/user-details.js"></script>
 
+    <!-- ApexCharts JS -->
     <script src="~/assets/js/apexcharts/apexcharts.min.js"></script>
     <script src="~/assets/js/apexcharts/apex-custom-bar-charts.js"></script>
     <script src="~/assets/js/apexcharts/apexcharts-stock-prices.js"></script>

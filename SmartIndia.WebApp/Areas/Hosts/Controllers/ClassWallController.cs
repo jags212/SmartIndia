@@ -21,5 +21,16 @@ namespace SmartIndia.WebApp.Areas.Hosts.Controllers
             ViewBag.id = SID;
             return View();
         }
+
+        public IActionResult ClassWallWebView()
+        {
+            return View();
+        }
+
+        public IActionResult ClassWallDetailWebView(string SID)
+        {
+            ViewBag.id = SID;
+            return View();
+        }
     }
 }
