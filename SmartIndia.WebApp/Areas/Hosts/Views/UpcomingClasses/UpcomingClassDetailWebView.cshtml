@@ -1,0 +1,214 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <title>Upcoming Classes</title>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="~/assets/img/favicon.png" />
+
+    <!-- Vendors Min CSS -->
+    <link rel="stylesheet" href="~/assets/css/vendors.min.css" />
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="~/assets/css/all.min.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="~/assets/css/style.css" />
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="~/assets/css/responsive.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/assets/css/custom.css" />
+    <link href="~/assets/css/core.css" rel="stylesheet" />
+    <!-- Calendar CSS -->
+    <link rel="stylesheet" href="~/assets/calendar/css/fullcalendar.css" />
+    <link rel="stylesheet" href="~/assets/calendar/css/fullcalendar.print.css" media="print" />
+    <!-- Country Code CSS -->
+    <link rel="stylesheet" href="~/assets/css/intlTelInput.css" />
+    <!-- Bootstrap Dialog Alert CSS -->
+    <link href="~/assets/css/bootstrap-dialog.min.css" rel="stylesheet" />
+    <!-- Bootstrap Datatable CSS -->
+    <link rel="stylesheet" href="~/assets/css/datatables.min.css" />
+</head>
+<body>
+    <div id="loading"></div>
+    <div class="breadcrumb-area">
+        <h1>Course Details</h1>
+        <ol class="breadcrumb">
+            <li class="item">
+                <a href="attendee-dashboard.html"><i class='bx bx-home-alt'></i></a>
+            </li>
+            <li class="item">Dashboard</li>
+            <li class="item">Upcoming Courses</li>
+            <li class="item">Course Details</li>
+        </ol>
+    </div>
+    <!-- End Breadcrumb Area -->
+    <div class="card mb-30">
+        <div class="card-body">
+
+            <div class="enroll-card">
+                <div class="back-to-list">
+
+                    <a asp-area="Hosts" asp-controller="upcomingclasses" asp-action="upcomingclasseswebview"><i class="bx bx-arrow-back"></i>Back To List</a>
+
+                </div>
+                <div class="calendar-header">
+                    <input type="hidden" name="hfScId" id="hfScId">
+                    <span class="section-title" id="coursename"></span><span class="topic-font" id="topic"></span>
+                    <div class="enroll-course-banner en-co-brochure" data-toggle="modal" data-target="#GetCourseBrochureModal">Brochure<i class="bx bxs-file-image bx-pad"></i></div>
+                </div>
+                <hr />
+                <div class="mb-20">
+                    <span class="sm-host-name">
+                        <i class="bx bxs-face"></i><span id="hostname"></span>
+                    </span>
+                    <span class="sm-batch-name">
+                        <i class="bx bx-task"></i><span id="Batchname"></span>
+                    </span>
+                </div>
+                <div class="mb-20">
+                    <span class="sm-date">
+                        <i class="bx bx-calendar"></i><span id="startdate"></span>
+                    </span>
+                    <span class="sm-time">
+                        <i class="bx bx-time"></i><span id="starttime"></span>
+                    </span>
+                </div>
+                <div class="course-thumbnail float-right" id="imgg">
+                    <img id="imgBanner" alt="OCR" />
+                </div>
+                <div class="text margin-y">
+                    <p id="desc"></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Start Course Brochure Modal -->
+    <div class="modal fade" id="GetCourseBrochureModal" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content p-20">
+                <div class="modal-body">
+                    <button type="button" class="close enroll-close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <a id="urlbrouchure" class="bx bx-download sm-download" download></a>
+                    <img id="imgbrouchure" class="banner-img" />
+
+                    <a id="urlbrouchurepdf" class="bx bx-download sm-download"></a>
+                    <embed type="application/pdf" id="imgbrouchurepdf" class="brochure-file" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End  Course Brochure Modal -->
+    <script type="text/javascript">
+        ServiceURL = "@Configuration.GetSection("HostURL")["ServiceURL"]";
+        ClientURL = "@Configuration.GetSection("HostURL")["ClientURL"]";
+    </script>
+    <script src="~/assets/js/vendors.min.js"></script>
+
+    <!-- ApexCharts JS -->
+    <script src="~/assets/js/apexcharts/apexcharts.min.js"></script>
+    <script src="~/assets/js/apexcharts/apex-custom-line-chart.js"></script>
+    <script src="~/assets/js/apexcharts/apex-custom-pie-donut-chart.js"></script>
+    <script src="~/assets/js/apexcharts/apex-custom-column-chart.js"></script>
+
+    <!-- ChartJS -->
+    <script src="~/assets/js/chartjs/chartjs.min.js"></script>
+
+    <!-- jvectormap Min JS -->
+    <script src="~/assets/js/jvectormap-1.2.2.min.js"></script>
+    <!-- jvectormap World Mill JS -->
+    <script src="~/assets/js/jvectormap-world-mill-en.js"></script>
+
+    <!-- Custom JS -->
+    <script src="~/assets/js/custom.js"></script>
+
+    <!-- Calendar JS -->
+    <script src="~/assets/calendar/js/moment.min.js"></script>
+    <script src="~/assets/calendar/js/fullcalendar.min.js"></script>
+    <script src="~/assets/calendar/js/calendar.js"></script>
+    <!-- Bootstrap Dialog Min Alert JS -->
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/bootstrap-dialog.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajaxSetup({
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.getItem("jwtToken"));
+                    $('#img').show();
+                },
+                complete: function () {
+                    $('#img').hide();
+                },
+                error: function () {
+                    $('#img').hide();
+                }
+            });
+        });
+        function ClearData() {
+            localStorage.clear();
+        }
+    </script>
+    <script>
+        function loadNavigation(actionName, menuName) {
+            var pathName = window.location.pathname;
+            var path = pathName.split("/");
+            var sPath = path[2];
+            var tlen = path.length;
+            var sPath = path[tlen - 1];
+            if (actionName == sPath) {
+                $('.' + menuName).addClass('mm-active');
+            }
+        }
+    </script>
+    <!-- Clearable Input JS -->
+    <script src="~/assets/js/clearable-input.js"></script>
+    <!-- Bootstrap Datatable JS -->
+    <script src="~/assets/js/datatables.min.js" type="text/javascript"></script>
+    <script src="~/assets/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/ApplicationScripts/Host/UpdateUserRoleId.js"></script>
+    <script src="~/ApplicationScripts/UserRegistration/user-details.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        var sid =@ViewBag.id
+            $("#hfScId").val(sid);
+            //alert("Hi"+sid);
+    </script>
+    <script src="~/ApplicationScripts/Host/upcoming-class-detail.js"></script>
+    <script src="~/ApplicationScripts/Common/date-format-converter.js"></script>
+    <script>
+        $(document).ready(function () {
+            loadNavigation('upcomingclassdetail', 'upcomingclasses');
+        });</script>
+    <script>
+        function hideLoader() {
+            $('#loading').hide();
+        }
+        $(window).ready(hideLoader);
+        setTimeout(hideLoader, 20 * 1000);</script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/assets/css/ellipsis.css" />
+    <style>
+        .dataTables_filter {
+            display: none;
+        }
+    </style>
+    <title>Upcoming Classes</title>
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="~/assets/img/favicon.png" />
+
+    <!-- Vendors Min CSS -->
+    <link rel="stylesheet" href="~/assets/css/vendors.min.css" />
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="~/assets/css/all.min.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="~/assets/css/style.css" />
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="~/assets/css/responsive.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/assets/css/custom.css" />
+    <link href="~/assets/css/core.css" rel="stylesheet" />
+    <!-- Calendar CSS -->
+    <link rel="stylesheet" href="~/assets/calendar/css/fullcalendar.css" />
+    <link rel="stylesheet" href="~/assets/calendar/css/fullcalendar.print.css" media="print" />
+    <!-- Country Code CSS -->
+    <link rel="stylesheet" href="~/assets/css/intlTelInput.css" />
+    <!-- Bootstrap Dialog Alert CSS -->
+    <link href="~/assets/css/bootstrap-dialog.min.css" rel="stylesheet" />
+    <!-- Bootstrap Datatable CSS -->
+    <link rel="stylesheet" href="~/assets/css/datatables.min.css" />
+</head>
+<body>
+    <div class="breadcrumb-area">
+        <h1>Upcoming Classes</h1>
+        <ol class="breadcrumb">
+            <li class="item">
+                <a href="attendee-dashboard.html"><i class='bx bx-home-alt'></i></a>
+            </li>
+            <li class="item">Dashboard</li>
+            <li class="item">Upcoming Classes</li>
+        </ol>
+    </div>
+    <!-- End Breadcrumb Area -->
+    <!-- Start -->
+    <!-- Calendar -->
+    <div class="card mb-30">
+        <div class="card-body" id="divcardbody">
+            <div class="upcoming-section">
+                <span id="hostUpcomingList" class="up-active" data-toggle="tooltip" data-placement="bottom" title="List"><i class="bx bx-list-ul"></i></span>
+                <span id="hostUpcomingCalendar" data-toggle="tooltip" data-placement="bottom" title="Calendar"><i class="bx bx-calendar"></i></span>
+            </div>
+            <form>
+                <div class="ocr-clearable">
+                    <input type="text" name="search" class="dashboard-panel-search" id="searchlist" placeholder="Search..">
+                    <i class="ocr-clearable-clear clear-datatable">&times;</i>
+                    <span class="class-search-icon" data-toggle="tooltip" data-placement="bottom" title="Search"><i class="bx bx-search"></i></span>
+                </div>
+            </form>
+
+            <div class="clearfix"></div>
+            <!-- List -->
+            <div id="divnoofdata" class="noofdatadiv">
+            </div>
+            <div class="col-sm-12 col-lg-12 col-md-12" id="hostUPlList">
+                <div class="list-group">
+                    <table class="" id="tblCourses">
+                        <thead>
+                            <tr>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Calendar -->
+            <div id="hostUPCalendar"></div>
+        </div>
+        <div class="card-body" id="divcardbodynodata">
+            <div id="sp_nodata" class="nodata"></div>
+        </div>
+    </div>
+    <!-- End -->
+
+
+    <script type="text/javascript">
+        ServiceURL = "@Configuration.GetSection("HostURL")["ServiceURL"]";
+        ClientURL = "@Configuration.GetSection("HostURL")["ClientURL"]";
+    </script>
+    <script src="~/assets/js/vendors.min.js"></script>
+
+    <!-- ApexCharts JS -->
+    <script src="~/assets/js/apexcharts/apexcharts.min.js"></script>
+    <script src="~/assets/js/apexcharts/apex-custom-line-chart.js"></script>
+    <script src="~/assets/js/apexcharts/apex-custom-pie-donut-chart.js"></script>
+    <script src="~/assets/js/apexcharts/apex-custom-column-chart.js"></script>
+
+    <!-- ChartJS -->
+    <script src="~/assets/js/chartjs/chartjs.min.js"></script>
+
+    <!-- jvectormap Min JS -->
+    <script src="~/assets/js/jvectormap-1.2.2.min.js"></script>
+    <!-- jvectormap World Mill JS -->
+    <script src="~/assets/js/jvectormap-world-mill-en.js"></script>
+
+    <!-- Custom JS -->
+    <script src="~/assets/js/custom.js"></script>
+
+    <!-- Calendar JS -->
+    <script src="~/assets/calendar/js/moment.min.js"></script>
+    <script src="~/assets/calendar/js/fullcalendar.min.js"></script>
+    <script src="~/assets/calendar/js/calendar.js"></script>
+    <!-- Bootstrap Dialog Min Alert JS -->
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/bootstrap-dialog.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajaxSetup({
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.getItem("jwtToken"));
+                    $('#img').show();
+                },
+                complete: function () {
+                    $('#img').hide();
+                },
+                error: function () {
+                    $('#img').hide();
+                }
+            });
+        });
+        function ClearData() {
+            localStorage.clear();
+        }
+    </script>
+    <script>
+        function loadNavigation(actionName, menuName) {
+            var pathName = window.location.pathname;
+            var path = pathName.split("/");
+            var sPath = path[2];
+            var tlen = path.length;
+            var sPath = path[tlen - 1];
+            if (actionName == sPath) {
+                $('.' + menuName).addClass('mm-active');
+            }
+        }
+    </script>
+    <!-- Clearable Input JS -->
+    <script src="~/assets/js/clearable-input.js"></script>
+    <!-- Bootstrap Datatable JS -->
+    <script src="~/assets/js/datatables.min.js" type="text/javascript"></script>
+    <script src="~/assets/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/ApplicationScripts/Host/UpdateUserRoleId.js"></script>
+    <script src="~/ApplicationScripts/UserRegistration/user-details.js"></script>
+
+
+
+
+
+
+
+
+
+
+    <script src="~/ApplicationScripts/Common/date-format-converter.js"></script>
+    <!-- Calendar JS -->
+    <script src="~/assets/calendar/js/moment.min.js"></script>
+    <script src="~/assets/calendar/js/fullcalendar.min.js"></script>
+    <script src="~/ApplicationScripts/Host/upcoming-classes-webview.js"></script>
+    <!-- Clearable Input JS -->
+    <script src="~/assets/js/clearable-input.js"></script>
+    <!-- Text Ellipsis JS -->
+    <script src="~/assets/js/jquery.ellipsis.js"></script>
+    <script>$('.two-lines').ellipsis({ lines: 2 });</script>
+
+    <script src="~/assets/js/jquery.vEllipsis.js"></script>
+    <script>
+        $(document).ready(function () {
+            $().vEllipsis({
+                'lines': 2,
+                'responsive': true
+            });
+        });</script>
+
+    <script>
+        $(document).ready(function () {
+            loadNavigation('upcomingclasses', 'upcomingclasses');
+        });</script>
+</body>
+</html>

@@ -19,5 +19,9 @@ namespace SmartIndia.WebApp.Areas.Hosts.Controllers
         {
             return View();
         }
+        public IActionResult AttendeesWebView()
+        {
+            return View();
+        }
     }
 }
