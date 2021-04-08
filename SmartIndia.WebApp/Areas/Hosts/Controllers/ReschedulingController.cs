@@ -8,13 +8,14 @@ using Microsoft.AspNetCore.Mvc;
 namespace SmartIndia.WebApp.Areas.Hosts.Controllers
 {
     [Area("Hosts")]
-    [Authorize(Roles = "Host")]
     public class ReschedulingController : Controller
     {
+        [Authorize(Roles = "Host")]
         public IActionResult HostDashboard()
         {
             return View();
         }
+        [Authorize(Roles = "Host")]
         public IActionResult Rescheduling()
         {
             return View();
