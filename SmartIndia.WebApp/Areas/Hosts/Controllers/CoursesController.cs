@@ -10,13 +10,14 @@ using SmartIndia.WebApp.Models;
 namespace SmartIndia.WebApp.Areas.Hosts.Controllers
 {
     [Area("Hosts")]
-    [Authorize(Roles = "Host")]
     public class CoursesController : Controller
     {
+        [Authorize(Roles = "Host")]
         public IActionResult HostDashboard()
         {
             return View();
         }
+        [Authorize(Roles = "Host")]
         public IActionResult Courses()
         {
             return View();

@@ -8,13 +8,14 @@ using Microsoft.AspNetCore.Mvc;
 namespace SmartIndia.WebApp.Areas.Hosts.Controllers
 {
     [Area("Hosts")]
-    [Authorize(Roles = "Host")]
     public class UpcomingClassesController : Controller
     {
+        [Authorize(Roles = "Host")]
         public IActionResult UpcomingClasses()
         {
             return View();
         }
+        [Authorize(Roles = "Host")]
         public IActionResult UpcomingClassDetail(string SID)
         {
             ViewBag.id = SID;

@@ -8,9 +8,10 @@ using Microsoft.AspNetCore.Mvc;
 namespace SmartIndia.WebApp.Areas.Attendee.Controllers
 {
     [Area("Attendee")]
-    [Authorize(Roles = "Host,Attendee")]
+    
     public class DashboardController : Controller
     {
+        [Authorize(Roles = "Host,Attendee")]
         public IActionResult AttendeeDashboard()
         {
             return View();

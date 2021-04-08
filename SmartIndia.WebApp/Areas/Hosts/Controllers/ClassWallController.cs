@@ -8,14 +8,15 @@ using Microsoft.AspNetCore.Mvc;
 namespace SmartIndia.WebApp.Areas.Hosts.Controllers
 {
     [Area("Hosts")]
-    [Authorize(Roles = "Host")]
+    
     public class ClassWallController : Controller
     {
-       
+        [Authorize(Roles = "Host")]
         public IActionResult ClassWall()
         {
             return View();
         }
+        [Authorize(Roles = "Host")]
         public IActionResult ClassWallDetail(string SID)
         {
             ViewBag.id = SID;

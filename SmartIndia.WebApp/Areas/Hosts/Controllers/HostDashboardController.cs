@@ -8,13 +8,14 @@ using Microsoft.AspNetCore.Mvc;
 namespace SmartIndia.WebApp.Areas.Hosts.Controllers
 {
     [Area("Hosts")]
-    [Authorize(Roles = "Host")]
     public class HostDashboardController : Controller
     {
+        [Authorize(Roles = "Host")]
         public IActionResult Dashboard()
         {
             return View();
         }
+        [Authorize(Roles = "Host")]
         public IActionResult CourseDetails(string SID)
         {
             ViewBag.id = SID;
